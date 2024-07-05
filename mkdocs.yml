@@ -1,0 +1,84 @@
+# 站名
+site_name: dixi's BLOG
+# 站点地址
+site_url: https://localhost:8000/
+
+# 项目信息
+site_author: dixi         # 作者
+# 代码仓库信息
+repo_name:  dixiLOG # 仓库名称
+repo_url: https://github.com/ZJUCCnocc/BlogCode.git/ # 仓库地址
+# 导航栏分类名称
+nav:
+  - Home: index.md
+  - About: about.md
+
+
+# 网站主题
+theme:
+  # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
+  name: material # 主题名称，Material已经是最优秀的选择了，相信我。
+  # logo: static/images/logo.png # logo 图片
+  # language: Chinese # 默认语言
+  features: # 功能
+    - announce.dismiss # 可以叉掉公告的功能
+    # # - content.action.edit # 编辑按钮，会跳转到你的仓库里编辑当前页面内容
+    # - content.action.view # 查看按钮，会跳转到你的仓库里查看当前页面内容
+    - content.code.annotate # 代码注释，具体不清楚
+    - content.code.copy # 复制代码按钮
+    - content.code.select # 选择代码按钮
+    - content.tabs.link # 链接标签
+    - content.tooltips # 不太清楚呢这个
+    # - header.autohide # 自动隐藏header
+    - navigation.expand # 默认展开导航栏
+    - navigation.footer # 底部导航栏
+    - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
+    # - navigation.instant # 瞬间加载 最好注释掉，多语言切换这个会导致跳回首页
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    - navigation.path # 导航路径， 目前好像没啥用
+    # - navigation.prune # 只构建可见的页面
+    - navigation.sections # 导航栏的section
+    - navigation.tabs # 顶级索引被作为tab
+    - navigation.tabs.sticky # tab始终可见
+    - navigation.top # 开启顶部导航栏
+    - navigation.tracking # 导航栏跟踪
+    - search.highlight # 搜索高亮
+    - search.share # 搜索分享
+    - search.suggest # 搜索建议
+    - toc.follow # 目录跟踪-页面右侧的小目录
+    - toc.integrate # 目录跟踪集成到左侧大目录中
+  palette:
+    - media: "(prefers-color-scheme)" # 主题颜色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)" # 浅色
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" # 深色
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  font: # 字体，大概率不需要换
+    text: Roboto
+    code: Roboto Mono
+  favicon: docs/img/favicon.ico # 网站图标，因为你使用了主题会覆盖之前设置的site_favicon属性，所以在这里最好重新设置一下
+  icon: # 一些用到的icon
+    logo: logo
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    tag:
+      default-tag: fontawesome/solid/tag
+      hardware-tag: fontawesome/solid/microchip
+      software-tag: fontawesome/solid/laptop-code

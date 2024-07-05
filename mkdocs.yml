@@ -7,7 +7,7 @@ site_url: https://localhost:8000/
 site_author: dixi         # 作者
 # 代码仓库信息
 repo_name:  dixiLOG # 仓库名称
-repo_url: https://github.com/ZJUCCnocc/BlogCode.git/ # 仓库地址
+repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
 # 导航栏分类名称
 nav:
   - Home: index.md

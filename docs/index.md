@@ -1,22 +1,11 @@
-# Welcome to dixi's BLOG
+# Welcome to dixi's BLOG~
 
-这是一份测试文档
+!!! note "Who am I?"
+    青龙山外派光明顶发电厂首席技工
+!!! warning "本博客尚在施工中~"
 
+!!! quote "打油诗"
+    多少桐柳不得问，匆忙梦里寻佳人  
+    辗转衾湿茫然顾，恍惚秦皇骊山坟
 
-$$
-sad
-$$
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+>QQ:1444127184

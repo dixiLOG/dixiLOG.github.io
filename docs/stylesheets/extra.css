@@ -1,0 +1,91 @@
+body {
+    font-family: "LXGW WenKai", sans-serif;
+    /* Lite version */
+    /* font-family: "LXGW WenKai Lite", sans-serif; */
+    /* TC version */
+    /* font-family: "LXGW WenKai TC", sans-serif; */
+    /* Screen version */
+    /* font-family: "LXGW WenKai Screen", sans-serif; */
+  }
+
+button.md-top {
+    font-family: LXGW WenKai; /* 修改字体 */
+    font-size: 16px; /* 修改字体大小 */
+    font-weight: bold; /* 修改字体粗细 */
+    color: #374148; /* 修改字体颜色 */
+  }
+/* 鼠标样式 */
+#cursor {
+    position: fixed;
+    width: 16px;
+    height: 16px;
+    /* 这里改变跟随的底色 */
+    background: rgb(75, 30, 47);
+    border-radius: 10px;
+    opacity: 0.4;
+    z-index: 10086;
+    pointer-events: none;
+    transition: 0.15s ease-in-out;
+    transition-property: background, opacity, transform;
+  }
+  
+  #cursor.hidden {
+    opacity: 0;
+  } */
+  
+  #cursor.hover {
+    opacity: 0.001;
+    transform: scale(2.5);
+    -webkit-transform: scale(2.5);
+    -moz-transform: scale(2.5);
+    -ms-transform: scale(2.5);
+    -o-transform: scale(2.5);
+  }
+  
+  #cursor.active {
+    opacity: 0.01;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+/* 烟花容器 */
+.fireworks {
+    position: absolute;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.firework {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+    animation: firework 1s ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* 重力动画 */
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+

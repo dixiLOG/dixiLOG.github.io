@@ -1,84 +1,164 @@
+
+#路径 D:\application\anaconda3\envs\dixiLOG\Lib\site-packages\material\templates
+
+# 项目信息
+site_author: dixi         # 作者
 # 站名
 site_name: dixi's BLOG
 # 站点地址
 site_url: https://localhost:8000/
-
-# 项目信息
-site_author: dixi         # 作者
+site_description: >- # 项目描述
+  Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.
 # 代码仓库信息
 repo_name:  dixiLOG # 仓库名称
 repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
-# 导航栏分类名称
+# 版权信息
+copyright: Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+# 导航树配置
 nav:
-  - Home: index.md
-  - About: about.md
+  - Home[TODO]: 
+    - index.md
+    - About: about.md
+  - NBU-NOTEBOOK[TODO]: 
+      - NBU-NOTEBOOK/index.md
+  - 随手记[TODO]:
+      - 随手记/index.md
+  - Chronic Study[TODO]:
+      - Chronic Study/index.md
+  - 闲言碎语[TODO]:
+      - 闲言碎语/index.md
 
 
-# 网站主题
+# 主题配置
 theme:
   # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
-  name: material # 主题名称，Material已经是最优秀的选择了，相信我。
-  # logo: static/images/logo.png # logo 图片
-  # language: Chinese # 默认语言
-  features: # 功能
-    - announce.dismiss # 可以叉掉公告的功能
-    # # - content.action.edit # 编辑按钮，会跳转到你的仓库里编辑当前页面内容
-    # - content.action.view # 查看按钮，会跳转到你的仓库里查看当前页面内容
-    - content.code.annotate # 代码注释，具体不清楚
-    - content.code.copy # 复制代码按钮
-    - content.code.select # 选择代码按钮
-    - content.tabs.link # 链接标签
-    - content.tooltips # 不太清楚呢这个
-    # - header.autohide # 自动隐藏header
-    - navigation.expand # 默认展开导航栏
-    - navigation.footer # 底部导航栏
-    - navigation.indexes # 索引按钮可以直接触发文件，而不是只能点击其下属选项浏览，这个功能可以给对应的section提供很好的预览和导航功能
-    # - navigation.instant # 瞬间加载 最好注释掉，多语言切换这个会导致跳回首页
-    - navigation.instant.prefetch # 预加载
-    - navigation.instant.progress # 进度条
-    - navigation.path # 导航路径， 目前好像没啥用
-    # - navigation.prune # 只构建可见的页面
-    - navigation.sections # 导航栏的section
-    - navigation.tabs # 顶级索引被作为tab
-    - navigation.tabs.sticky # tab始终可见
-    - navigation.top # 开启顶部导航栏
-    - navigation.tracking # 导航栏跟踪
-    - search.highlight # 搜索高亮
-    - search.share # 搜索分享
-    - search.suggest # 搜索建议
-    - toc.follow # 目录跟踪-页面右侧的小目录
-    - toc.integrate # 目录跟踪集成到左侧大目录中
-  palette:
-    - media: "(prefers-color-scheme)" # 主题颜色
-      scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/link
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)" # 浅色
-      scheme: default
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)" # 深色
-      scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/toggle-switch-off
-        name: Switch to system preference
+  name: material # 主题名称
+  # logo: static/images/logo.png # logo 图片  
+  favicon: img/favicon.ico
+  language: zh # 语言
   font: # 字体，大概率不需要换
     text: Roboto
     code: Roboto Mono
-  favicon: docs/img/favicon.ico # 网站图标，因为你使用了主题会覆盖之前设置的site_favicon属性，所以在这里最好重新设置一下
+  palette:
+  - media: "(prefers-color-scheme: light)" # 浅色
+    scheme: default
+    primary: light green
+    accent: orange
+    toggle:
+      icon: material/lightbulb-variant
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)" # 深色
+    scheme: slate
+    primary: blue grey
+    accent: amber
+    toggle:
+      icon: material/lightbulb-variant-outline
+      name: Switch to light mode
   icon: # 一些用到的icon
     logo: logo
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
-    tag:
-      default-tag: fontawesome/solid/tag
-      hardware-tag: fontawesome/solid/microchip
-      software-tag: fontawesome/solid/laptop-code
+    repo: fontawesome/brands/git-alt 
+  # 功能
+  features:
+    # - header.autohide # 自动隐藏头部
+    - navigation.instant # 导航栏快速跳转
+    - navigation.tabs # 导航栏多标签
+    # - navigation.tabs.sticky # 导航栏多标签固定
+    - navigation.sections # 导航栏分组
+    - navigation.tracking # 导航栏URL跟踪
+    - navigation.footer # 底部导航栏
+    - search.highlight # 搜索结果高亮
+    - navigation.expand # 导航栏展开
+    - navigation.indexes # 提供概述页面
+    - toc.follow # 目录跟随
+    # - toc.integrate # 目录集成
+    - navigation.top # 快速回到顶部
+    # - content.code.annotate # 代码注解
+    # - search.share # 搜索结果分享 
+    - search.suggest # 搜索建议
+    - search.share # 搜索结果分享
+    - content.code.copy # 复制代码按钮
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+# 插件配置
+plugins:
+  - search # 搜索
+  - tags # 标签功能插件
+  - blog # 博客功能插件
+  # - statistics # 统计功能插件
+  # - git-revision-date-localized:
+      # enable_creation_date: true # 启用创建日期
+      # enable_last_updated_date: true # 启用最后更新日期
+      # fallback_to_build_date: false # 启用日期，如果没有git信息，则使用构建日期
+      # format: "%Y-%m-%d" # 日期格式化
+      # locale: zh_CN # 语言
+# mk扩展配置
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+      title: On this page
+  # - meta
+  - abbr
+  - tables
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - markdown.extensions.attr_list
+  - pymdownx.smartsymbols
+  - pymdownx.arithmatex
+  - pymdownx.caret
+  - footnotes
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+# 其他配置
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/dixiLOG
+      name: 我滴GitHub
+  analytics:
+    provider: google
+    property: G-WNP42HF8NE
+    feedback:
+      title: Looking for your feedback!
+      ratings:
+        - icon: material/thumb-up-outline 
+          name: This page was helpful
+          data: 1
+          note: >-
+           O(∩_∩)O谢谢啦~
+        - icon: material/thumb-down-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            嘿呀嘿呀，努力搬砖...
+extra_javascript:
+  - javascripts/extra.js
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css

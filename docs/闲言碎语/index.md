@@ -1,3 +1,7 @@
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
 # DIXI的碎碎念[TODO]
 
 !!! bug "最愉快的板块"

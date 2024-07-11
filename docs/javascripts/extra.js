@@ -119,3 +119,20 @@ document.addEventListener('click', (event) => {
     const y = event.clientY + window.scrollY;
     createFirework(x, y);
 });
+
+document.querySelectorAll('.zoom').forEach(item => {
+    item.addEventListener('click', function () {
+        this.classList.toggle('image-zoom-large');
+    })
+});
+
+// 监听滚动条事件
+document.addEventListener('scroll', function () {
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (window.scrollY / docHeight) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${scrolled}%`;
+  });
+
+  
+  

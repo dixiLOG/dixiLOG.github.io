@@ -18,7 +18,11 @@ copyright: Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
 nav:
   - Home[TODO]: 
     - index.md
-    - About: about.md
+    - Build Your Own Blog: 
+      - build_your_web/index.md
+      - build_your_web/access your github.io.md
+      - build_your_web/玩转 Material.md
+      - build_your_web/markdown 速记.md
   - NBU-NOTEBOOK[TODO]: 
       - NBU-NOTEBOOK/index.md
   - 随手记[TODO]:
@@ -64,14 +68,15 @@ theme:
     # - header.autohide # 自动隐藏头部
     - navigation.instant # 导航栏快速跳转
     - navigation.tabs # 导航栏多标签
-    # - navigation.tabs.sticky # 导航栏多标签固定
     - navigation.sections # 导航栏分组
     - navigation.tracking # 导航栏URL跟踪
     - navigation.footer # 底部导航栏
     - search.highlight # 搜索结果高亮
-    - navigation.expand # 导航栏展开
+    # - navigation.expand # 导航栏展开
     - navigation.indexes # 提供概述页面
     - toc.follow # 目录跟随
+    # - navigation.tabs # 顶级索引被作为tab
+    # - navigation.tabs.sticky # 导航栏始终可见
     # - toc.integrate # 目录集成
     - navigation.top # 快速回到顶部
     # - content.code.annotate # 代码注解
@@ -83,10 +88,27 @@ theme:
     - navigation.instant.progress # 进度条
 # 插件配置
 plugins:
-  - search # 搜索
-  - tags # 标签功能插件
-  - blog # 博客功能插件
-  # - statistics # 统计功能插件
+- search # 搜索
+- tags # 标签功能 插件
+- meta-descriptions:
+    export_csv: false
+    quiet: false
+    enable_checks: false
+    min_length: 50
+    max_length: 160
+    trim: false # 元描述插件
+  # - statistics # 统计功能插件 
+  
+  # - blog: # 博客功能插件
+  #     blog_dir: .
+  #     blog_toc: true
+  #     post_date_format: full
+  #     archive_toc: true
+  #     categories_toc: true
+  #     pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+  #     pagination_keep_content: true
+  #     draft_if_future_date: true
+  
   # - git-revision-date-localized:
       # enable_creation_date: true # 启用创建日期
       # enable_last_updated_date: true # 启用最后更新日期
@@ -121,6 +143,7 @@ markdown_extensions:
   - pymdownx.arithmatex
   - pymdownx.caret
   - footnotes
+  
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.emoji:

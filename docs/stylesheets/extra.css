@@ -89,3 +89,47 @@ button.md-top {
     }
 }
 
+/* 图片放大start */
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.zoom {
+  transition: transform ease-in-out 0.5s;
+  cursor: zoom-in;
+}
+
+.image-zoom-large {
+  transform: scale(1.9);
+  cursor: zoom-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 100;
+  position: relative;
+}
+/* 图片放大end*/
+
+
+
+
+
+ 
+/* 整体 */
+#progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0;
+  background: #ccd938;
+  transition: width 0.25s;
+}
+
+
+ 

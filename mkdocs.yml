@@ -90,13 +90,13 @@ theme:
 plugins:
 - search # 搜索
 - tags # 标签功能 插件
-- meta-descriptions:
-    export_csv: false
-    quiet: false
-    enable_checks: false
-    min_length: 50
-    max_length: 160
-    trim: false # 元描述插件
+# - meta-descriptions:
+#     export_csv: false
+#     quiet: false
+#     enable_checks: false
+#     min_length: 50
+#     max_length: 160
+#     trim: false # 元描述插件
   # - statistics # 统计功能插件 
   
   # - blog: # 博客功能插件
@@ -147,7 +147,7 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true 

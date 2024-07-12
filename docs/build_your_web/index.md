@@ -1,8 +1,10 @@
+
+
+# 记录从零开始的网站搭建[TODO]
+
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
-
-# 记录从零开始的网站搭建[TODO]
 
 !!! note "TAKE NOTE"
     作为喜欢折腾的人，我认为搭建自己的网站去分享记录自己的成长是一件很酷的事情~~    

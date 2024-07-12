@@ -1,9 +1,11 @@
 
+
+
+# Markdown 速记
+
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
-
-# Markdown 速记
 
 !!! note "这是一个Markdown速查表"
 
@@ -238,8 +240,8 @@ dixi
 ---
 
 ## 目录生成
-    ```text title="就一行"
-    [TOC]
-    ```
+```text title="就一行"
+[TOC]
+```
 !!! success "渲染结果"
     [TOC]

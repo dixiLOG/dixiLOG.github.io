@@ -24,7 +24,7 @@ comments: true
 
     - [ ] 网页搭建与发布
     - [ ] 玩转 Materail 
-    - [x] Markdown 速记 [95%]
+    - [x] [Markdown 速记](http://dixilog.github.io/build_your_web/markdown%20%E9%80%9F%E8%AE%B0/) [95%]
 
 
 !!! quote "打油诗"

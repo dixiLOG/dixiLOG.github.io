@@ -22,6 +22,7 @@ nav:
       - build_your_web/index.md
       - build_your_web/access your github.io.md
       - build_your_web/玩转 Material.md
+      - build_your_web/feishu2githubPages.md
       - build_your_web/markdown 速记.md
   - NBU-NOTEBOOK[TODO]: 
       - NBU-NOTEBOOK/index.md
@@ -66,7 +67,6 @@ theme:
   # 功能
   features:
     # - header.autohide # 自动隐藏头部
-    - navigation.indexes
     - navigation.instant # 导航栏快速跳转
     - navigation.tabs # 导航栏多标签
     - navigation.sections # 开启后左侧导航栏不折叠
@@ -81,7 +81,6 @@ theme:
     # - toc.integrate # 目录集成左边栏
     - navigation.top # 快速回到顶部
     - content.code.annotate # 代码注解
-    - search.share # 搜索结果分享 
     - search.suggest # 搜索建议
     - search.share # 搜索结果分享
     - content.code.copy # 复制代码按钮
@@ -145,13 +144,12 @@ markdown_extensions:
   - sane_lists
   - admonition
   - pymdownx.keys
-  - pymdownx.mark
+  - pymdownx.mark #支持高亮标记文本。
   - pymdownx.tilde
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.snippets
   - pymdownx.magiclink
-  - pymdownx.mark #支持高亮标记文本。
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - markdown.extensions.attr_list
@@ -198,6 +196,7 @@ extra:
             嘿呀嘿呀，努力搬砖...
 extra_javascript:
   - javascripts/extra.js
+  # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css

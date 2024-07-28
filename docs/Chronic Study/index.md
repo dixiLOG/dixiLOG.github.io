@@ -7,4 +7,4 @@
 </div>
 
 !!! abstract "关于Chronic Study"
-    这一板块将持续跟进一些系统学习的进展
+    相对与随手记，会分享一些chronic study的过程 ( ~~如果有的话~~)

@@ -1,6 +1,6 @@
 ---
 comments: true
-# title: 随便取的标题
+title: DIXI的个人博客
 ---
 
 # Welcome to dixi's BLOG~
@@ -35,6 +35,7 @@ comments: true
 
       - [ ] 网页搭建与发布
       - [ ] 玩转 Materail 
+      - [ ] 飞书文档的md迁移 
       - [x] [Markdown 速记](http://dixilog.github.io/build_your_web/markdown%20%E9%80%9F%E8%AE%B0/) [95%]
 
     ---
@@ -42,8 +43,12 @@ comments: true
     >2024年7月8日 | 建站 
 
 !!! question "dixi有话说"
-    原来以前认为狄更斯的小说味如嚼蜡是由于找错翻译了🤣  
-    >路上的人把苍耳带到世界各地，可没有人会拥抱苍耳
+    - 原来以前认为狄更斯的小说味如嚼蜡是由于找错翻译了🤣  
+    >路上的人把苍耳带到世界各地，可没有人会拥抱苍耳   
+    ---   
+    
+    - slowroads真好丸😋
+
 
 !!! quote "打油诗"
     多少桐柳不得问，匆忙梦里寻佳人  

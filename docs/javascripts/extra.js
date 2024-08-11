@@ -133,6 +133,3 @@ document.addEventListener('scroll', function () {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = `${scrolled}%`;
   });
-
-  
-  

@@ -6,7 +6,9 @@ site_author: dixi         # 作者
 # 站名
 site_name: dixi's BLOG
 # 站点地址
-site_url: https://localhost:8000/
+# site_url: https://localhost:8000/
+site_url: https://dixilog.github.io/
+
 site_description: >- # 项目描述
   Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.
 # 代码仓库信息
@@ -33,11 +35,11 @@ nav:
   - 闲言碎语:
       - blog/index.md
 
-
 # 主题配置
 theme:
-  # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
+ 
   name: material # 主题名称
+  # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   # logo: static/images/logo.png # logo 图片  
   favicon: img/favicon.ico
   language: zh # 语言
@@ -122,7 +124,8 @@ plugins:
     # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
     post_readtime: false   # 关闭阅读时间
     # post_readtime_words_per_minute: 300
-  
+
+
 # - git-revision-date-localized:
 #     enable_creation_date: true # 启用创建日期
 #     enable_last_updated_date: true # 启用最后更新日期
@@ -130,6 +133,7 @@ plugins:
 #     format: "%Y-%m-%d" # 日期格式化
 #     locale: zh_CN # 语言
 # mk扩展配置
+
 markdown_extensions:
   - toc:
       permalink: true

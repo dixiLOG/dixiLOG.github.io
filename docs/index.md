@@ -1,5 +1,5 @@
 ---
-comments: true
+# comments: true
 title: DIXI的个人博客
 ---
 
@@ -58,6 +58,83 @@ title: DIXI的个人博客
 > 
 > QQ:1444127184  
 
+> 转载请标明出处及作者呦~
 
 ---
-> 转载请标明出处及作者呦~
+
+
+<!-- Giscus 评论功能 -->
+<div id="giscus-container"></div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="dixiLOG/dixiLOG.github.io"
+        data-repo-id="R_kgDOMSVlpg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOMSVlps4CgoIQ"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="0"    
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var feedbackSection = document.querySelector('md-feedback'); // 确保选择器正确
+        var giscusContainer = document.querySelector('#giscus-container');
+
+        if (feedbackSection && giscusContainer) {
+            // 调试输出
+            console.log('Feedback section found:', feedbackSection);
+            console.log('Giscus container found:', giscusContainer);
+
+            // 确保 feedbackSection 在页面中
+            if (feedbackSection.parentNode) {
+                feedbackSection.parentNode.appendChild(giscusContainer); // 尝试 appendChild
+            }
+        } else {
+            console.log('Feedback section or Giscus container not found.');
+        }
+
+        // 设置初始主题
+        var palette = __md_get("__palette");
+        var theme = palette && palette.color.scheme === "slate" ? "dark" : "light";
+        var giscusScript = document.querySelector("#giscus-container script");
+        if (giscusScript) {
+            giscusScript.setAttribute("data-theme", theme);
+        }
+
+        // 注册主题切换事件
+        var paletteToggle = document.querySelector("[data-md-component=palette]");
+        if (paletteToggle) {
+            paletteToggle.addEventListener("change", function() {
+                var newPalette = __md_get("__palette");
+                var newTheme = newPalette && newPalette.color.scheme === "slate" ? "dark_dimmed" : "light_high_contrast";
+                // 主题颜色
+                // | 'light'
+                // | 'light_high_contrast'
+                // | 'light_protanopia'
+                // | 'dark'
+                // | 'dark_high_contrast'
+                // | 'dark_protanopia'
+                // | 'dark_dimmed'
+                // | 'transparent_dark'
+
+                // 更新 Giscus 评论主题
+                var giscusFrame = document.querySelector("iframe.giscus-frame");
+                if (giscusFrame) {
+                    giscusFrame.contentWindow.postMessage(
+                        { giscus: { setConfig: { theme: newTheme } } },
+                        "https://giscus.app"
+                    );
+                }
+
+            });
+        }
+    });
+</script>
+

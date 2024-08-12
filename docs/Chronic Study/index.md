@@ -1,10 +1,12 @@
 
-
-# DIXI的系统学习日志[TODO]
+# Chronic Study[TODO]
 
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
 
-!!! abstract "关于Chronic Study"
-    相对与随手记，会分享一些chronic study的过程 ( ~~如果有的话~~)
+!!! abstract "关于 Chronic Study"
+    chronic study 过程记录 ( ~~如果有的话~~)
+
+  
+

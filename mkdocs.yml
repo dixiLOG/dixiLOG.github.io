@@ -18,7 +18,7 @@ repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
 copyright: Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
 # 导航树配置
 nav:
-  - Home[TODO]: 
+  - Home: 
     - index.md
     - Build Your Own Blog: 
       - build_your_web/index.md
@@ -32,6 +32,9 @@ nav:
       - 随手记/index.md
   - Chronic Study[TODO]:
       - Chronic Study/index.md
+  - NBU_ROCOS:
+      - ROCOS/index.md
+      - ROCOS/info&ref.md
   - 闲言碎语:
       - blog/index.md
 
@@ -103,6 +106,7 @@ plugins:
 #     trim: false # 元描述插件
 - statistics: # 统计功能插件 
     page_template: "page_template/page_statistics.html"
+    words_per_minute: 200
 - blog: # 博客功能插件
     blog_dir: blog
     # blog_toc: true
@@ -199,7 +203,11 @@ extra:
           note: >- 
             嘿呀嘿呀，努力搬砖...
 extra_javascript:
+  # 自定义js文件，一定要放在最后面，不然会覆盖掉主题的js文件
+  # - https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js   
+  # - https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js
   - javascripts/extra.js
+
   # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:
   - stylesheets/extra.css

@@ -3,11 +3,15 @@
 title: DIXI的个人博客
 ---
 
+
 # Welcome to dixi's BLOG~
 
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
+
+
+
 
 这里是 dixi ，希望你能喜欢这里~~
 

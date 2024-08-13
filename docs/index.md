@@ -26,7 +26,14 @@ title: DIXI的个人博客
     2024-07-08
 
 ??? success "装修&上新流水"
+    
+    >2024年8月12日 | COMPLETE&UPDATE  
+    > 1.  修补评论不可见问题  
+    > 2.  增添身份认证  
+    > 3.  增添 [NBU_ROCOS 板块](https://dixilog.github.io/ROCOS/)
 
+    ---
+    
     >2024年7月14日 | COMPLETE&UPDATE  
     > 1.  修补HOME页  
     > 2.  添加 reading-time  

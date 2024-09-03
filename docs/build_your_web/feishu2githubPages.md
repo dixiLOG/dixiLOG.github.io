@@ -21,7 +21,7 @@
 
 跟着下图操作即可
 
-![](static/DZqQbsmLjof0X1x4fMKcf3nPneh.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DZqQbsmLjof0X1x4fMKcf3nPneh.png)
 
 下载 feishu2md 与配置生成完成后，需要打开终端配置文件
 
@@ -30,7 +30,7 @@
 
 效果如下图所示
 
-![](static/Sq6gbsQvnotlsxxCZRGc2Eu8nfg.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Sq6gbsQvnotlsxxCZRGc2Eu8nfg.png)
 
 ---
 
@@ -54,7 +54,8 @@ $ feishu2md dl --wiki -o output_directory "wiki settings链接"
 
 把文件夹放到合适的位置，对 .yml 稍加调整，最后一步我想应该不必多言了
 
-> 还是有一点 bug，比如缩进不规范会导致转 md 失效，不过无伤大雅，我改就是
+> 还是有一点 bug，比如缩进不规范会导致转 md 失效，代码块注释识别异常  
+> 不过无伤大雅，我改就是
 
 !!! note "碎碎念"
     - 对自己硬盘容量有自信的同学可不用图床  

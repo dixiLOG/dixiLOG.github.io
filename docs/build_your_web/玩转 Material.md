@@ -178,7 +178,7 @@ docs
     ??? example "我的配置"  
         ```yaml title="mkdocs.yml"
         name: material # 主题名称
-        _# custom_dir: overrides # 自定义文件夹，对于个别页面，如果您不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档_
+        # custom_dir: overrides # 自定义文件夹，对于个别页面，如果您不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档
         favicon: img/favicon.ico  # 网站图标
         language: zh # 语言
         font: # 字体，大概率不需要换
@@ -492,23 +492,23 @@ docs
 比较凌乱（因为当初复制粘贴的时候看不懂），只是参考，推荐大家基于官方文档慢慢配置
 
 ```yaml
-_# 项目信息_
-_# 站点作者_
+# 项目信息_
+# 站点作者_
 site_author: dixi  
-_# 站名_
+# 站名_
 site_name: dixi's BLOG
-_# 站点地址_
-_# site_url: https://localhost:8000/_
+# 站点地址_
+# site_url: https://localhost:8000/_
 site_url: https://dixilog.github.io/
 
-site_description: >**-** _# 项目描述_
+site_description: >- # 项目描述
   Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.
-_# 代码仓库信息_
-repo_name:  dixiLOG _# 仓库名称_
-repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git _# 仓库地址_
-_# 版权信息_
+# 代码仓库信息
+repo_name:  dixiLOG # 仓库名称_
+repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
+# 版权信息
 copyright: Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
-_# 导航树配置_
+# 导航树配置
 nav:
   - Home: 
     - index.md
@@ -531,116 +531,117 @@ nav:
   - 闲言碎语:
       - blog/index.md
 
-_# 主题配置_
+# 主题配置
 theme:
-  name: material _# 主题名称_
-  _# custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果您不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档_
-  _# logo: static/images/logo.png # logo 图片  _
-  favicon: img/favicon.ico  _# 网站图标_
-  language: zh _# 语言_
-  font: _# 字体，大概率不需要换_
+  name: material # 主题名称
+  # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果您不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档
+  # logo: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/images/logo.png # logo 图片  
+  favicon: img/favicon.ico  # 网站图标
+  language: zh # 语言
+  font: # 字体，大概率不需要换
     text: Roboto
     code: Roboto Mono
   palette:
-  - media: "(prefers-color-scheme: light)" _# 浅色_
+  - media: "(prefers-color-scheme: light)" # 浅色
     scheme: default
     primary: light green
     accent: orange
     toggle:
       icon: material/lightbulb-variant
       name: Switch to dark mode
-  - media: "(prefers-color-scheme: dark)" _# 深色_
+  - media: "(prefers-color-scheme: dark)" # 深色
     scheme: slate
     primary: blue grey
     accent: amber
     toggle:
       icon: material/lightbulb-variant-outline
       name: Switch to light mode
-  icon: _# 一些用到的icon_
+  icon: # 一些用到的icon
     logo: logo
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
     repo: fontawesome/brands/git-alt 
     annotation: material/chevron-right-circle
-  _# 功能_
+  # 功能
   features:
-    _# - header.autohide # 自动隐藏头部_
-    - navigation.instant _# 导航栏快速跳转_
-    - navigation.tabs _# 导航栏多标签_
-    - navigation.sections _# 开启后左侧导航栏不折叠_
-    - navigation.tracking _# 导航栏URL跟踪_
-    - navigation.footer _# 底部导航栏_
-    - search.highlight _# 搜索结果高亮_
-    _# - navigation.expand # 导航栏展开_
-    - navigation.indexes _# 提供概述页面_
-    - toc.follow _# 目录跟随_
-    _# - navigation.tabs # 顶级索引被作为tab_
-    _# - navigation.tabs.sticky # 导航栏始终可见_
-    _# - toc.integrate # 目录集成左边栏_
-    - navigation.top _# 快速回到顶部_
-    - content.code.annotate _# 代码注解_
-    - content.tooltips _# 工具提示_
-    - search.suggest _# 搜索建议_
-    - search.share _# 搜索结果分享_
-    - content.code.copy _# 复制代码按钮_
-    - navigation.instant.prefetch _# 预加载_
-    - navigation.instant.progress _# 进度条_
-    _# - content.action.edit_
-    _# - content.action.view_
+    # - header.autohide # 自动隐藏头部
+    - navigation.instant # 导航栏快速跳转
+    - navigation.tabs # 导航栏多标签
+    - navigation.sections # 开启后左侧导航栏不折叠
+    - navigation.tracking # 导航栏URL跟踪
+    - navigation.footer # 底部导航栏
+    - search.highlight # 搜索结果高亮
+    # - navigation.expand # 导航栏展开
+    - navigation.indexes # 提供概述页面
+    - toc.follow # 目录跟随
+    # - navigation.tabs # 顶级索引被作为tab
+    # - navigation.tabs.sticky # 导航栏始终可见
+    # - toc.integrate # 目录集成左边栏
+    - navigation.top # 快速回到顶部
+    - content.code.annotate # 代码注解
+    - content.tooltips # 工具提示
+    - search.suggest # 搜索建议
+    - search.share # 搜索结果分享
+    - content.code.copy # 复制代码按钮
+    - navigation.instant.prefetch # 预加载
+    - navigation.instant.progress # 进度条
+    # - content.action.edit
+    # - content.action.view
 
-_# 插件配置_
+# 插件配置
 plugins:
-- search: _# 搜索_
+- glightbox # 图片灯箱
+- search: # 搜索
     lang: 
       - en
-      - zh  _# 中文搜索支持_
-- tags _# 标签功能 插件_
-_# - meta-descriptions:_
-_#     export_csv: false_
-_#     quiet: false_
-_#     enable_checks: false_
-_#     min_length: 50_
-_#     max_length: 160_
-_#     trim: false # 元描述插件_
-- statistics: _# 统计功能插件 _
+      - zh  # 中文搜索支持
+- tags # 标签功能 插件
+# - meta-descriptions:
+#     export_csv: false
+#     quiet: false
+#     enable_checks: false
+#     min_length: 50
+#     max_length: 160
+#     trim: false # 元描述插件
+- statistics: # 统计功能插件 
     page_template: "page_template/page_statistics.html"
     words_per_minute: 200
-- blog: _# 博客功能插件_
+- blog: # 博客功能插件
     blog_dir: blog
-    _# blog_toc: true_
+    # blog_toc: true
     post_date_format: full
     archive_toc: true
     categories_toc: true
     archive_name: DIXI的碎碎念流水
-    _# archive_date_format: MMMM_
+    # archive_date_format: MMMM
     category_name: DIXI的碎碎念分类
-    _# categories_allowed:_
-      _# - 口水鸡  #书 电影_
-      _# - 豆腐脑  #输出观点_
-      _# - 碎碎念  #随笔_
-    pagination_per_page: 15 _# 每页文章数_
-    _# post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句_
+    # categories_allowed:
+      # - 口水鸡  #书 电影
+      # - 豆腐脑  #输出观点
+      # - 碎碎念  #随笔
+    pagination_per_page: 15 # 每页文章数
+    # post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句
     post_excerpt_separator: <!-- more -->
-    pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   _# 页码格式_
-    _# pagination_keep_content: true   # 保留分页内容_
-    _# draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿_
-    post_readtime: false   _# 关闭阅读时间_
-    _# post_readtime_words_per_minute: 300_
+    pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   # 页码格式_
+    # pagination_keep_content: true   # 保留分页内容
+    # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
+    post_readtime: false   # 关闭阅读时间
+    # post_readtime_words_per_minute: 300
 
-_# - git-revision-date-localized:_
-_#     enable_creation_date: true # 启用创建日期_
-_#     enable_last_updated_date: true # 启用最后更新日期_
-_#     fallback_to_build_date: false # 启用日期，如果没有git信息，则使用构建日期_
-_#     format: "%Y-%m-%d" # 日期格式化_
-_#     locale: zh_CN # 语言_
+# - git-revision-date-localized:
+#     enable_creation_date: true # 启用创建日期
+#     enable_last_updated_date: true # 启用最后更新日期
+#     fallback_to_build_date: false # 启用日期，如果没有git信息，则使用构建日期
+#     format: "%Y-%m-%d" # 日期格式化
+#     locale: zh_CN # 语言
 
-_# mk扩展配置_
+# mk扩展配置_
 markdown_extensions:
-  - toc:      _# 目录_
+  - toc:      # 目录
       permalink: true
       toc_depth: 4
       title: Contents
-  _# - meta_
+  # - meta
   - abbr
   - tables
   - def_list
@@ -649,7 +650,7 @@ markdown_extensions:
   - sane_lists
   - admonition
   - pymdownx.keys
-  - pymdownx.mark _#支持高亮标记文本
+  - pymdownx.mark #支持高亮标记文本
   - pymdownx.tilde
   - pymdownx.critic
   - pymdownx.details
@@ -663,26 +664,26 @@ markdown_extensions:
   - pymdownx.caret
   - footnotes
   
-  - pymdownx.betterem:     _# 改进的强调_
+  - pymdownx.betterem:     # 改进的强调
       smart_enable: all
   - pymdownx.emoji:
       emoji_index: **!!python/name:material.extensions.emoji.twemoji**
       emoji_generator: **!!python/name:material.extensions.emoji.to_svg**
-  - pymdownx.tabbed:      _# 标签页_
+  - pymdownx.tabbed:      # 标签页
       alternate_style: true 
-  - pymdownx.tasklist:    _# 任务列表_
+  - pymdownx.tasklist:    # 任务列表
       custom_checkbox: true
-  - pymdownx.highlight:    _# 代码高亮_
+  - pymdownx.highlight:    # 代码高亮
       anchor_linenums: true
-  - pymdownx.arithmatex:  _# 数学公式_
+  - pymdownx.arithmatex:  # 数学公式
       generic: true
-  - pymdownx.superfences:    _# diagrams | 流程图_
+  - pymdownx.superfences:    # diagrams | 流程图
       custom_fences:
       - name: mermaid
         class: mermaid
         format: **!!python/name:pymdownx.superfences.fence_code_format**
 
-_# 其他配置_
+# 其他配置
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -705,11 +706,11 @@ extra:
           note: >**-** 
             嘿呀嘿呀，努力搬砖...
 
-_# 额外的js文件和css文件_
+# 额外的js文件和css文件
 extra_javascript:
-  _# 自定义js文件，一定要放在最后面，不然会覆盖掉主题的js文件_
-  _# - https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js   _
-  _# - https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js_
+  # 自定义js文件，一定要放在最后面，不然会覆盖掉主题的js文件
+  # - https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js   
+  # - https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js
   - javascripts/extra.js
   - https://imgbb.com/upload.js
   - javascripts/katex.js
@@ -718,7 +719,7 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
-  _# - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'_
+  # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
@@ -735,7 +736,7 @@ extra_css:
 [这篇教程](https://yliu-fe.github.io/Techs/Notes%20for%20Mkdocs/Comment%20with%20Giscus/)说的已然是非常清楚，我就不照搬了  
 如果教程的方法 OK ，那就不需要往下看啦
 
-!!! failure "BUG"
+!!! failure "我的问题"
     我发现本地渲染下正常而托管发布后评论模块不显示
 
 没找到原因，于是我换了个思路  
@@ -827,7 +828,7 @@ extra_css:
 
 首先您需要注册一个 [Google Analytics](https://analytics.google.com/ ) 的账号并创建一个与网站绑定的数据流，最终得到一个 ID，就在下图的框框里
 
-![](static/GM74btDk6oy0jKxxCngchbOlnMc.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GM74btDk6oy0jKxxCngchbOlnMc.png)
 
 如果有问题，可以看看 [support.google.com](https://support.google.com/analytics/answer/9304153?hl=zh-Hans#zippy=) 或者其他类似的帮助文档
 
@@ -849,39 +850,39 @@ extra:
 
 同样的，您需要先拥有一个与网页绑定的 [firebase](https://firebase.google.com/?hl=zh-cn) 账号
 
-![](static/F1U4b7WJuoaWnrxKtB8c1KpDnXc.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/F1U4b7WJuoaWnrxKtB8c1KpDnXc.png)
 
 如果是第一次登陆，则无任何项目，所以下一步就是创建一个新的项目
 
 找到"创建项目"，输入您的名称，继续
 
-![](static/MOo1bGEKPoBqvzx18ClcU68Mnlg.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MOo1bGEKPoBqvzx18ClcU68Mnlg.png)
 
 勾选 Analytics，继续
 
-![](static/WXB5bG07QoMgoXxNg1CcjRYqnGg.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WXB5bG07QoMgoXxNg1CcjRYqnGg.png)
 
 选择账号，创建项目
 
-![](static/WckwbLayTokbVpxeZ8YcVeUwn0g.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WckwbLayTokbVpxeZ8YcVeUwn0g.png)
 
 转完圈圈，选择网页创建新的应用
 
-![](static/H4fUbYkvcogs25xp5wBc9cSgnee.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/H4fUbYkvcogs25xp5wBc9cSgnee.png)
 
 输入名称，^^ 勾选 hosting^^ ，创建即可
 
-![](static/Fc9vbpsAroshBix2j9FcHFQWnAi.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Fc9vbpsAroshBix2j9FcHFQWnAi.png)
 
-![](static/XGPmbAFdHo54HnxNiZpcWH8onKe.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XGPmbAFdHo54HnxNiZpcWH8onKe.png)
 
 进入应用的设置界面下拉，得到配置段
 
-![](static/YZvWbC2aXoXTEzxH1pic0sVnnL7.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YZvWbC2aXoXTEzxH1pic0sVnnL7.png)
 
 左边导航栏选择 Authentic 进入后即可开始配置
 
-![](static/MbaqbvLtQohk1IxsvM5cDaOMnzh.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MbaqbvLtQohk1IxsvM5cDaOMnzh.png)
 
 ---
 
@@ -889,11 +890,11 @@ extra:
 
 选择电子邮件/密码登陆，创建一个用户
 
-![](static/DBBlb0zZso8c00xYWcUcKsiRnnd.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DBBlb0zZso8c00xYWcUcKsiRnnd.png)
 
 设置为只登陆（因为是身份认证）
 
-![](static/TXGGb4JSBo3tAKxOBkQcWh4Vnwd.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TXGGb4JSBo3tAKxOBkQcWh4Vnwd.png)
 
 ---
 
@@ -1180,7 +1181,7 @@ extra:
 
 如此，当未登录用户点击时就会跳转 login.html
 
-![](static/QvP1b6xo0ohFd3x1GTScAL5cnoh.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QvP1b6xo0ohFd3x1GTScAL5cnoh.png)
 
 而成功登陆之后，即可根据 cookie 自动登陆
 
@@ -1211,27 +1212,27 @@ authors:
 字段不多解释，具体见 [Built-in blog plugin](https://squidfunk.github.io/mkdocs-material/plugins/blog/)
 
 ```yaml title="我的 mkdocs.yml"
-- blog: _# 博客功能插件_
+- blog: # 博客功能插件
     blog_dir: blog
-    _# blog_toc: true_
+    # blog_toc: true
     post_date_format: full
     archive_toc: true
     categories_toc: true
     archive_name: DIXI的碎碎念流水
-    _# archive_date_format: MMMM_
+    # archive_date_format: MMMM
     category_name: DIXI的碎碎念分类
-    _# categories_allowed:      # 允许的分类_
-      _# - 口水鸡  #书 电影_
-      _# - 豆腐脑  #输出观点_
-      _# - 碎碎念  #随笔_
-    pagination_per_page: 15 _# 每页文章数_
-    _# post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句_
+    # categories_allowed:      # 允许的分类
+      # - 口水鸡  #书 电影
+      # - 豆腐脑  #输出观点
+      # - 碎碎念  #随笔
+    pagination_per_page: 15 # 每页文章数_
+    # post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句
     post_excerpt_separator: <!-- more -->
-    pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   _# 页码格式_
-    _# pagination_keep_content: true   # 保留分页内容_
-    _# draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿_
-    post_readtime: false   _# 关闭阅读时间_
-    _# post_readtime_words_per_minute: 300_
+    pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   # 页码格式_
+    # pagination_keep_content: true   # 保留分页内容
+    # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
+    post_readtime: false   # 关闭阅读时间
+    # post_readtime_words_per_minute: 300
 ```
 !!! success "使用"
     ```markdown title=".md"
@@ -1253,7 +1254,7 @@ authors:
 
 参考：[mkdocs-statistics-plugin](https://pypi.org/project/mkdocs-statistics-plugin/)
 
-![](static/LO7pbg6rsoMCC1xVplgc2xdSnoh.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LO7pbg6rsoMCC1xVplgc2xdSnoh.png)
 
 添加插件
 ```yaml title="mkdocs.yml"
@@ -1329,6 +1330,15 @@ button.md-top {
 ```
 
 两个地方上下对应，区别见[参考文档](https://blog.csdn.net/m0_63203517/article/details/131946304)
+
+---
+
+### github 图床
+
+!!! abstract "思路"
+    创建新仓库与 token -> 下载并配置 PicGo -> 上传图片 ->  替换 md 图片链接 
+    
+个人感觉讲解意义不大，看[这一篇](https://zhuanlan.zhihu.com/p/347342082)即可  
 
 ---
 
@@ -1541,6 +1551,10 @@ button.md-top {
 
 #### 图片放大
 
+!!! bug "bug"
+    目前发现鼠标单击导航栏/目录后，图片放大失效，原因未知  
+    建议先用[插件](https://squidfunk.github.io/mkdocs-material/reference/images/)
+
 ??? example "js | css"
     ```javascript title="extra.js"
     // 监听图片放大事件
@@ -1573,14 +1587,14 @@ button.md-top {
     ```
 
 ```markdown title="使用"
-![](#) =={: .zoom}==
+![](#) {.zoom}
 ```
 
 ---
 
 #### 上方进度条
 
-![](static/FmzxbD7tfoTQAbxxEW5ckT2onVh.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FmzxbD7tfoTQAbxxEW5ckT2onVh.png)
 
 ??? example "js | css"
     ```javascript    title="extra.js"

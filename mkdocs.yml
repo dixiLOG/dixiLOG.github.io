@@ -100,6 +100,7 @@ theme:
 
 # 插件配置
 plugins:
+- glightbox # 图片灯箱
 - search: # 搜索
     lang: 
       - en

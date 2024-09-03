@@ -41,7 +41,7 @@
 
 下面以 conda 为例创建 mkdocs 依赖环境
 
-![](static/KdH0brzzeo9MtCxco3lcSZIHnPc.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KdH0brzzeo9MtCxco3lcSZIHnPc.png)
 
 复制下面命令检查 conda 配置，若正常输出则此前安装成功
 
@@ -59,7 +59,7 @@ conda config --show
 conda env list
 ```
 
-![](static/ZFSVbbrTQoTS1xxkP3Ic5EY1ng9.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZFSVbbrTQoTS1xxkP3Ic5EY1ng9.png)
 
 此时应只有 base 环境
 
@@ -77,7 +77,7 @@ build 结束后，再次 `conda env list` 即可看见自己新创建环境
 conda activate env_name
 ```
 
-![](static/O03zbHuVQoUdYjxa4NtcJ10Pnwf.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/O03zbHuVQoUdYjxa4NtcJ10Pnwf.png)
 
 前带环境名称即为成功进入
 
@@ -108,6 +108,8 @@ conda activate env_name
     pip install mkdocs-statistics-plugin -i https://mirrors.aliyun.com/pypi/simple  
     # 添加jieba，用于修复中文搜索问题，但需覆写，后续不再涉及
     pip install jieba -i https://mirrors.aliyun.com/pypi/simple/
+    # 添加图片放大插件
+    pip install mkdocs-glightbox -i https://mirrors.aliyun.com/pypi/simple/
     ```
 === "纯享复制版"
 
@@ -117,6 +119,7 @@ conda activate env_name
     pip install pymdown-extensions -i https://mirrors.aliyun.com/pypi/simple/ 
     pip install mkdocs-statistics-plugin -i https://mirrors.aliyun.com/pypi/simple  
     pip install jieba -i https://mirrors.aliyun.com/pypi/simple/
+    pip install mkdocs-glightbox -i https://mirrors.aliyun.com/pypi/simple/
     ```
     
 
@@ -154,7 +157,7 @@ INFO    -  [15:58:19] Serving on http://127.0.0.1:8000/
 
 说明启动成功。在浏览器打开 `127.0.0.1:8000` 即可打开网站，即 `index.md`
 
-![](static/Aakhbdy42oSqcXx66g8cj743neb.png){ : .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Aakhbdy42oSqcXx66g8cj743neb.png)
 
 
 !!! tip "tip"
@@ -202,7 +205,7 @@ hold on，让我们把最复杂的配置留到最后 ~~复制粘贴~~ ，先解�
 
 修改 Settings->Actions->General 选项与图示一致，尤其注意蓝框部分
 
-![](static/CJEYbwAOfoXRY2x22zXcxF4BnEc.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CJEYbwAOfoXRY2x22zXcxF4BnEc.png)
 
 接着找个记得住的位置 `git clone`，再把 docs 文件夹和 mkdocs.yml 复制到这一本地仓库
 
@@ -259,29 +262,30 @@ dixiLOG
 
 ```yaml title="PublishMySite.yml"
 name: publish site
-on: _# 在什么时候触发工作流_
-  push: _# 在从本地main分支被push到GitHub仓库时_
+on: # 在什么时候触发工作流
+  push: # 在从本地main分支被push到GitHub仓库时
     branches:
       - main
-  pull_request: _# 在main分支合并别人提的pr时_
+  pull_request: # 在main分支合并别人提的pr时
     branches:
       - main
-jobs: _# 工作流的具体内容_
+jobs: # 工作流的具体内容
   deploy:
-    runs-on: ubuntu-latest _# 创建一个新的云端虚拟机 使用最新Ubuntu系统_
+    runs-on: ubuntu-latest # 创建一个新的云端虚拟机 使用最新Ubuntu系统
     steps:
-      - uses: actions/checkout@v2 _# 先checkout到main分支_
-      - uses: actions/setup-python@v2 _# 再安装Python3和相关环境_
+      - uses: actions/checkout@v2 # 先checkout到main分支
+      - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material _# 使用pip包管理工具安装mkdocs-material_
+      - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: pip install mkdocs-statistics-plugin    # 附加statistics插件，这句不加则github报错
-      - run: mkdocs gh-deploy --force _# 使用mkdocs-material部署gh-pages分支_
+      - run: pip install mkdocs-glightbox # 附加图片放大插件，这句不加则github可能报错
+      - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
 ```
 
 保存退出，**推送到仓库** ，再如下图修改 Pages 选项，大功告成 ヾ(o◕∀◕)ﾉヾ  
 
-![](static/SmRwbyfMSoxi9FxkQUEcKGZMnvb.png){: .zoom}
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SmRwbyfMSoxi9FxkQUEcKGZMnvb.png)
 
 > 不出意外的话，互联网上又多了一个博客:men_with_bunny_ears_partying:
 

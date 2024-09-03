@@ -27,6 +27,13 @@ title: DIXI的个人博客
 
 ??? success "装修&上新流水"
     
+    >2024年9月3日 | COMPLETE&UPDATE  
+    > 1.  修复已知问题   
+    > 2.  完成 [Build your own blog](https://dixilog.github.io/build_your_web/)  
+    > 3.  完善 [Markdown 速记](http://dixilog.github.io/build_your_web/markdown%20%E9%80%9F%E8%AE%B0/) 
+
+    ---
+
     >2024年8月12日 | COMPLETE&UPDATE  
     > 1.  修补评论不可见问题  
     > 2.  增添身份认证  

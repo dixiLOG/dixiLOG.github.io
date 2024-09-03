@@ -1,3 +1,9 @@
+/* 页面宽度 */
+.md-grid {
+  max-width: 1440px; 
+}
+
+/* 自定义字体 */
 body {
     font-family: "LXGW WenKai", sans-serif;
     /* Lite version */
@@ -7,20 +13,21 @@ body {
     /* Screen version */
     /* font-family: "LXGW WenKai Screen", sans-serif; */
   }
-
+/* 按钮字体 */
 button.md-top {
     font-family: LXGW WenKai; /* 修改字体 */
     font-size: 16px; /* 修改字体大小 */
     font-weight: bold; /* 修改字体粗细 */
     color: #374148; /* 修改字体颜色 */
   }
+
 /* 鼠标样式 */
 #cursor {
     position: fixed;
     width: 16px;
     height: 16px;
     /* 这里改变跟随的底色 */
-    background: rgb(75, 30, 47);
+    background: rgb(209, 181, 116);
     border-radius: 10px;
     opacity: 0.4;
     z-index: 10086;
@@ -100,7 +107,7 @@ button.md-top {
 }
 
 .image-zoom-large {
-  transform: scale(1.9);
+  transform: scale(1.5);
   cursor: zoom-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   z-index: 100;
@@ -112,7 +119,7 @@ button.md-top {
 
 
 
- 
+/* 进度条样式 */
 /* 整体 */
 #progress-container {
   position: fixed;
@@ -132,54 +139,7 @@ button.md-top {
 }
 
 
-
-登录表单样式
-/* #login-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: #fff;
-}
-
-#login-form input {
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#login-form button {
-  padding: 10px;
-  font-size: 14px;
-  background-color: #374148;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#login-form button:hover {
-  background-color: #555;
-} */
-
-/* 保护内容区样式 */
-/* #protected-content {
-  display: none;
-  padding: 20px;
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-} */
-
-
-// 友情链接样式
+/* 友情链接样式 */
 
 .flink-list {
   overflow: auto;

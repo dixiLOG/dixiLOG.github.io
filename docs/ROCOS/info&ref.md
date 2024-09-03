@@ -75,7 +75,7 @@
 :   使代码与规则对齐颗粒度，是开启代码之旅的基础与关键
 
 ??? abstract "具体而言"
-    - 文件存储结构
+    - 数据存储结构
     - lua层下 play-status-task-skill 架构
     - c++层?
     - （持续更新）...
@@ -118,6 +118,7 @@
             <a href="https://rocos.salta.top" title="湖师wiki" target="_blank">
                 <div class="flink-item-icon">
                     <img src="../rocos_img/Vue.png "  alt="wiki" >
+                    <!-- ![wiki](../rocos_img/wiki.png)  -->似乎不行
                 </div>
                 <div class="flink-item-name heti-skip">湖师 WIKI</div>
                 <div class="flink-item-desc"> tql，猛猛学( ˘ω˘ )</div>

@@ -112,13 +112,15 @@ function createFirework(x, y) {
         fireworkContainer.remove();
     }, 300);
 }
-
 // 监听单击事件
 document.addEventListener('click', (event) => {
     const x = event.clientX;
     const y = event.clientY + window.scrollY;
     createFirework(x, y);
 });
+
+
+
 // 监听图片放大事件
 document.querySelectorAll('.zoom').forEach(item => {
     item.addEventListener('click', function () {
@@ -134,46 +136,3 @@ document.addEventListener('scroll', function () {
     progressBar.style.width = `${scrolled}%`;
 });
 
-
-
-// // 初始化 Firebase
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAa66EUv9NGTgQ2MmRrSUzvmWQIh7DAH0w",
-//   authDomain: "dixilog-cc0be.firebaseapp.com",
-//   projectId: "dixilog-cc0be",
-//   storageBucket: "dixilog-cc0be.appspot.com",
-//   messagingSenderId: "317567263984",
-//   appId: "1:317567263984:web:58fa672ce564bf554d0e35",
-//   measurementId: "G-XKHLTS0VXB"
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
-// // 登录函数
-// function login() {
-//   const email = document.getElementById("email").value;
-//   const password = document.getElementById("password").value;
-
-//   firebase.auth().signInWithEmailAndPassword(email, password)
-//     .then((userCredential) => {
-//       const user = userCredential.user;
-//       document.getElementById("login-form").style.display = "none";
-//       document.getElementById("protected-content").style.display = "block";
-//     })
-//     .catch((error) => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       alert(`Login failed: ${errorMessage}`);
-//     });
-// }
-
-// // 检查用户登录状态
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     document.getElementById("login-form").style.display = "none";
-//     document.getElementById("protected-content").style.display = "block";
-//   } else {
-//     document.getElementById("login-form").style.display = "block";
-//     document.getElementById("protected-content").style.display = "none";
-//   }
-// });

@@ -2,7 +2,8 @@
 #路径 D:\application\anaconda3\envs\dixiLOG\Lib\site-packages\material\templates
 
 # 项目信息
-site_author: dixi         # 作者
+# 站点作者
+site_author: dixi  
 # 站名
 site_name: dixi's BLOG
 # 站点地址
@@ -25,9 +26,10 @@ nav:
       - build_your_web/access your github.io.md
       - build_your_web/玩转 Material.md
       - build_your_web/feishu2githubPages.md
-      - build_your_web/markdown 速记.md
-  - NBU-NOTEBOOK[TODO]: 
+    - build_your_web/markdown 速记.md
+  - NBU-NOTEBOOK: 
       - NBU-NOTEBOOK/index.md
+      - NBU-NOTEBOOK/S&S.md
   - 随手记[TODO]:
       - 随手记/index.md
   - Chronic Study[TODO]:
@@ -40,11 +42,10 @@ nav:
 
 # 主题配置
 theme:
- 
   name: material # 主题名称
   # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   # logo: static/images/logo.png # logo 图片  
-  favicon: img/favicon.ico
+  favicon: img/favicon.ico  # 网站图标
   language: zh # 语言
   font: # 字体，大概率不需要换
     text: Roboto
@@ -66,9 +67,12 @@ theme:
       name: Switch to light mode
   icon: # 一些用到的icon
     logo: logo
-    previous: fontawesome/solid/angle-left
-    next: fontawesome/solid/angle-right
+    previous: material/skip-previous
+    next: material/skip-next
     repo: fontawesome/brands/git-alt 
+    annotation: material/chevron-right-circle
+    search: material/text-box-search
+    close: material/close-box-outline
   # 功能
   features:
     # - header.autohide # 自动隐藏头部
@@ -80,22 +84,26 @@ theme:
     - search.highlight # 搜索结果高亮
     # - navigation.expand # 导航栏展开
     - navigation.indexes # 提供概述页面
+    - navigation.prune # 导航栏修剪
     - toc.follow # 目录跟随
     # - navigation.tabs # 顶级索引被作为tab
     # - navigation.tabs.sticky # 导航栏始终可见
     # - toc.integrate # 目录集成左边栏
     - navigation.top # 快速回到顶部
     - content.code.annotate # 代码注解
+    - content.tooltips # 工具提示
     - search.suggest # 搜索建议
     - search.share # 搜索结果分享
     - content.code.copy # 复制代码按钮
-    - navigation.instant.prefetch # 预加载
-    - navigation.instant.progress # 进度条
-    # - content.action.edit
-    # - content.action.view
+    # - navigation.instant.prefetch # 预加载
+    # - navigation.instant.progress # 进度条
+
 # 插件配置
 plugins:
-- search # 搜索
+- search: # 搜索
+    lang: 
+      - en
+      - zh  # 中文搜索支持
 - tags # 标签功能 插件
 # - meta-descriptions:
 #     export_csv: false
@@ -104,9 +112,9 @@ plugins:
 #     min_length: 50
 #     max_length: 160
 #     trim: false # 元描述插件
-- statistics: # 统计功能插件 
+- statistics: # 统计功能插件
     page_template: "page_template/page_statistics.html"
-    words_per_minute: 200
+    words_per_minute: 180
 - blog: # 博客功能插件
     blog_dir: blog
     # blog_toc: true
@@ -116,7 +124,7 @@ plugins:
     archive_name: DIXI的碎碎念流水
     # archive_date_format: MMMM
     category_name: DIXI的碎碎念分类
-    # categories_allowed:
+    # categories_allowed:      # 允许的分类
       # - 口水鸡  #书 电影
       # - 豆腐脑  #输出观点
       # - 碎碎念  #随笔
@@ -136,13 +144,14 @@ plugins:
 #     fallback_to_build_date: false # 启用日期，如果没有git信息，则使用构建日期
 #     format: "%Y-%m-%d" # 日期格式化
 #     locale: zh_CN # 语言
-# mk扩展配置
 
+
+# mk扩展配置
 markdown_extensions:
-  - toc:
+  - toc:      # 目录
       permalink: true
       toc_depth: 4
-      title: On this page
+      title: Contents
   # - meta
   - abbr
   - tables
@@ -166,19 +175,24 @@ markdown_extensions:
   - pymdownx.caret
   - footnotes
   
-  - pymdownx.betterem:
+  - pymdownx.betterem:     # 改进的强调
       smart_enable: all
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.tabbed:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:      # 标签页
       alternate_style: true 
-  - pymdownx.tasklist:
+  - pymdownx.tasklist:    # 任务列表
       custom_checkbox: true
-  - pymdownx.highlight:
+  - pymdownx.highlight:    # 代码高亮
       anchor_linenums: true
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex:  # 数学公式
       generic: true
+  - pymdownx.superfences:    # diagrams | 流程图
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
 
 # 其他配置
 extra:
@@ -202,13 +216,22 @@ extra:
           data: 0
           note: >- 
             嘿呀嘿呀，努力搬砖...
+
+# 额外的js文件和css文件
 extra_javascript:
   # 自定义js文件，一定要放在最后面，不然会覆盖掉主题的js文件
   # - https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js   
   # - https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js
   - javascripts/extra.js
+  - https://imgbb.com/upload.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
   # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://unpkg.com/katex@0/dist/katex.min.css

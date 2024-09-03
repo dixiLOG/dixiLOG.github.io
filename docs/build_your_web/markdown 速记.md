@@ -1,13 +1,13 @@
 
 
 
-# Markdown 速记
+# pyMarkdown 速记
 
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
 
-!!! note "这是一个Markdown速查表"
+!!! note "这是一个pyMarkdown速查表"
 
 ---
 
@@ -31,12 +31,20 @@
     ***斜体加粗***  
     --- 分隔符  
     ~~删除线~~  
-    <u>下划线</u>     
+    ^^下划线^^
+    ==高亮==
+    ++shift+alt++ +`A`  
     ```
+    
+    ``` text title="效果"
+    Text can be {--deleted--} and replacement text {++added++}. 
+    This can also becombined into {~~one~>a single~~} operation. 
+    {==Highlighting==} is also possible {>>and comments can be added inline<<}.
+    ```
+    ++shift+alt++ +`A`  
 
 === "引用"
     > 引用内容  
-    > 引用内容（跨行需要空两格）
 
 === "列表"
 
@@ -62,8 +70,26 @@
         ```
     ```
 
-    ```python
+    ```py
     print("hello world")
+    ```
+
+    ``` text title="Advanced code block"
+        ``` py hl_lines="3-5" title="代码块标题"
+        def bubble_sort(items):
+            for i in range(len(items)):
+                for j in range(len(items) - 1 - i):
+                    if items[j] > items[j + 1]:
+                        items[j], items[j + 1] = items[j + 1], items[j]
+        ```
+    ```
+
+    ``` py hl_lines="3-5" title="代码块标题"
+    def bubble_sort(items):
+        for i in range(len(items)):
+            for j in range(len(items) - 1 - i):
+                if items[j] > items[j + 1]:
+                    items[j], items[j + 1] = items[j + 1], items[j]
     ```
 
 === "链接"
@@ -80,7 +106,11 @@
 
     ```
     [![图片名称](图片地址 "悬停label")](超链接地址)
+    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){: .zoom}
+    
     ```
+    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){: .zoom}
+
 
 === "表格"
     
@@ -114,14 +144,14 @@
 
 -----
 
-## python—markdown
+## markdown-extensions
 
 > display basic usage of markdown in python  
-> details click <u>***[here](https://blog.csdn.net/P_LarT/article/details/55819896?ops_request_misc=&request_id=&biz_id=102&utm_term=python%20markdown&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-55819896.nonecase&spm=1018.2226.3001.4187)***</u>
-
+> details click ***[here](https://blog.csdn.net/P_LarT/article/details/55819896?ops_request_misc=&request_id=&biz_id=102&utm_term=python%20markdown&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-55819896.nonecase&spm=1018.2226.3001.4187)***  
+> 关于 Reference，demo 取自[官方文档](https://squidfunk.github.io/mkdocs-material/reference/)
 ### 缩写
 
-```text title="缩写格式,也可作英文注释"
+```text title="缩写格式,也可作注释(中文则需要空格分隔)"
 The HTML specification is maintained by the W3C.
 
 *[HTML]: Hyper Text Markup Language
@@ -138,7 +168,7 @@ Example：The HTML specification is maintained by the W3C.
 
 ### 标题tag
 
-```text title="标题tag，用于文件内跳转"
+```text title="标题tag，用于文档内跳转"
 # 标题1{: #title1 }
 
 [name_yourself](#title1)
@@ -239,9 +269,293 @@ dixi
 
 ---
 
-## 目录生成
-```text title="就一行"
-[TOC]
-```
+### 目录生成
+
+    ```text title="就一行"
+    [TOC]
+    ```
 !!! success "渲染结果"
     [TOC]
+
+---
+
+### 注释
+
+    ```text title="一般注释"
+    Lorem ipsum dolor sit amet, 是时(1) consectetur adipiscing elit.
+    { .annotate }
+
+    1.  :man_raising_hand: 我`是`**注**^^释^^
+    ```
+
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+{ .annotate }
+
+1.  :man_raising_hand: ~~我~~`是`**注**^^释^^  
+
+---
+
+    ```text title="套娃注释"
+    Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+    { .annotate }
+
+    1.  :man_raising_hand: I'm an annotation! (1)
+        { .annotate }
+
+        1.  :woman_raising_hand: I'm an annotation as well!
+    ```
+
+Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
+    { .annotate }
+
+2.  :man_raising_hand: I'm an annotation! (1)
+    { .annotate }
+
+    1.  :woman_raising_hand: I'm an annotation as well!
+
+
+---
+
+### 按钮
+
+```text title="格式"
+[icon search :material-file-find:](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search){ .md-button }
+```
+
+[icon search :material-file-find:](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search){ .md-button }
+
+Icon 和 Emojis :point_up_tone1:
+
+---
+
+### 图 diagrams
+
+```text title="流程图 Flow chart"
+    ``` mermaid
+    graph LR
+    A[Start] --> B{Error?};
+    B -->|Yes| C[Hmm...];
+    C --> D[Debug];
+    D --> B;
+    B ---->|No| E[Yay!];
+    ```
+```
+
+``` mermaid
+graph LR
+A[Start] --> B{Error?};
+B -->|Yes| C[Hmm...];
+C --> D[Debug];
+D --> B;
+B ---->|No| E[Yay!];
+```
+
+---
+
+```text title="时序图 Sequence diagram"
+    ``` mermaid
+    sequenceDiagram
+    autonumber
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+    ```
+```
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  Alice->>John: Hello John, how are you?
+  loop Healthcheck
+      John->>John: Fight against hypochondria
+  end
+  Note right of John: Rational thoughts!
+  John-->>Alice: Great!
+  John->>Bob: How about you?
+  Bob-->>John: Jolly good!
+```
+
+---
+
+```text title="状态机 State diagram"
+    ``` mermaid
+    stateDiagram-v2
+    state fork_state <<fork>>
+        [*] --> fork_state
+        fork_state --> State2
+        fork_state --> State3
+
+        state join_state <<join>>
+        State2 --> join_state
+        State3 --> join_state
+        join_state --> State4
+        State4 --> [*]
+    ```
+```
+
+``` mermaid
+stateDiagram-v2
+  state fork_state <<fork>>
+    [*] --> fork_state
+    fork_state --> State2
+    fork_state --> State3
+
+    state join_state <<join>>
+    State2 --> join_state
+    State3 --> join_state
+    join_state --> State4
+    State4 --> [*]
+```
+
+---
+
+```text title="类图 Class diagram"
+    ``` mermaid
+    classDiagram
+    Person <|-- Student
+    Person <|-- Professor
+    Person : +String name
+    Person : +String phoneNumber
+    Person : +String emailAddress
+    Person: +purchaseParkingPass()
+    Address "1" <-- "0..1" Person:lives at
+    class Student{
+        +int studentNumber
+        +int averageMark
+        +isEligibleToEnrol()
+        +getSeminarsTaken()
+    }
+    class Professor{
+        +int salary
+    }
+    class Address{
+        +String street
+        +String city
+        +String state
+        +int postalCode
+        +String country
+        -validate()
+        +outputAsLabel()  
+    }
+    ```
+```
+
+``` mermaid
+classDiagram
+  Person <|-- Student
+  Person <|-- Professor
+  Person : +String name
+  Person : +String phoneNumber
+  Person : +String emailAddress
+  Person: +purchaseParkingPass()
+  Address "1" <-- "0..1" Person:lives at
+  class Student{
+    +int studentNumber
+    +int averageMark
+    +isEligibleToEnrol()
+    +getSeminarsTaken()
+  }
+  class Professor{
+    +int salary
+  }
+  class Address{
+    +String street
+    +String city
+    +String state
+    +int postalCode
+    +String country
+    -validate()
+    +outputAsLabel()  
+  }
+```
+
+---
+
+### Grid
+
+```html title="格式"
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } **Set up in 5 minutes**
+
+    ---
+
+    Install [`mkdocs-material`](#) with [`pip`](#) and get up
+    and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](#)
+
+-   :fontawesome-brands-markdown:{ .lg .middle } **It's just Markdown**
+
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } **Made to measure**
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } **Open Source, MIT**
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+```
+
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } **Set up in 5 minutes**
+
+    ---
+
+    Install [`mkdocs-material`](#) with [`pip`](#) and get up
+    and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](#)
+
+-   :fontawesome-brands-markdown:{ .lg .middle } **It's just Markdown**
+
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } **Made to measure**
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } **Open Source, MIT**
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+
+---
+
+### 公式
+
+simpleTex 扫描复制粘贴即可

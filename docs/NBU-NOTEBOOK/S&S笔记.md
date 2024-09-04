@@ -1,22 +1,19 @@
 # S&S 笔记
 
-<div id="progress-container">
-  <div id="progress-bar"></div>
-</div>
+# 学习视频：[https://www.bilibili.com/video/BV1g94y1Q76G](https://www.bilibili.com/video/BV1g94y1Q76G)
 
-> 学习视频：[https://www.bilibili.com/video/BV1g94y1Q76G](https://www.bilibili.com/video/BV1g94y1Q76G)
+# 编号：101G06D04
 
+# 划重点（抓瞎版）
 
-
-## 划重点（抓瞎版）
-
-> LT 和 ZT 各至少出一道超级大题，其余以小计算题形式出现  
+> LT 和 ZT 各至少出一道超级大题，其余以小计算题形式出现
 
 > 以下“例题”为课后习题
 
 | 章节<br/>                                | 考点<br/>                                                                                                                                                                                                                                                                                                                                         | 注意点<br/>                                                                                                                                                                                                                                                                                                                                             |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **第一章**<br/>**信号概念**<br/>         | 1. 离散 / 连续 信号图<br/>2. **冲激函数的性质（尤其是 **$$\delta\{f(t)\}$$**的变换 ）**<br/>3. 信号基础变换--平移/反褶/比例变换<br/>4. 奇分量/偶分量 <br/>                                                                                                                                                                                            | 1. 在 FT 中 F(jw)的余弦量（实部）的逆变换为 f(t)的偶分量<br/>2. 看 1-5 1-11<br/><br/>                                                                                                                                                                                     
+| **第一章**<br/>**信号概念**<br/>         | 1. 离散 / 连续 信号图<br/>2. **冲激函数的性质（尤其是 **$\delta\{f(t)\}$**的变换 ）**<br/>3. 信号基础变换--平移/反褶/比例变换<br/>4. 奇分量/偶分量 <br/>                                                                                                                                                                                            | 1. 在 FT 中 F(jw)的余弦量（实部）的逆变换为 f(t)的偶分量<br/>2. 看 1-5 1-11<br/><br/>                                                                                                                                                                                                                                                                   |
+| <br/>                                    | <br/>                                                                                                                                                                                                                                                                                                                                             | <br/>                                                                                                                                                                                                                                                                                                                                                   |
 | **第二章**<br/>**LTI**<br/>              | 1. 线性/时不变/因果的判定<br/>2. 解微分/差分方程 的 齐次解$y_n$/特解$y_p$/自由响应$y_f$/强迫响应$y_F$以及$y_{zi} ,y_{zs},y_{ss}$<br/>3. **利用线性 / 微积分性质求响应****｛**起始状态对应零输入，激励对应零状态｝<br/>4. 求冲激响应与阶跃响应<br/>5. 卷积/卷积和计算与电路上的应用｛注意利用性质，如一导一积，或直接用 s 域求解｝<br/>6. 框图<br/><br/> | 1. 离散下慎用 Z 变换，正确率不高，如 2-12<br/>2. 2-16 2-17 典型求卷积积分/卷积和，注意积分限<br/>3. **注意时移特性！！是整体的！！**<br/>4. 看 2-9<br/><br/>                                                                                                                                                                                            |
 | **第三章**<br/>**FS/FT**<br/>            | 1. 傅里叶级数的三角/复数指数形式以及其转化、奇谐/偶谐<br/>2. **FT 的性质** 正逆变换 / 熟练掌握 **矩形波、三角波**转换 <br/>3. 三角信号调制，周期信号 的 FT 表达式，卷积<br/>4. 理想低通滤波器<br/>5. 求 LTI 响应<br/><br/>                                                                                                                        | 1. FS 中三角形式$\sum_{n=1}^{+\infty}$,指数形式$\sum_{n=-\infty}^{+\infty}$<br/>2. 考前过一遍 FS 典型信号 <br/>3. <br/>![](static/EzeAbGKDQozNgfxedBWcKmEUnDh.png)<br/>1. 时域**微分定理** 可以用画图解决 见 3-15  3-16<br/>2. 3-23 周期信号的 FT 表达典型例题<br/>3.    <br/>![](static/HC9TbrNfWoc16FxuA7CcOzN2nBg.png)<br/><br/>1. 3-25 解 LTI<br/><br/> |
 | **第四章**<br/>**抽样、调制与解调**<br/> | 1. 最低抽样频率 $f_s$ 奈奎斯特频率，$T_s$ 奈奎斯特间隔选择/判断/求解<br/>2. 调幅与解调<br/>                                                                                                                                                                                                                                                           | 5-1 **5-2** **5-10 5-11** 一共就没几道题<br/><br/>                                                                                                                                                                                                                                                                                                      |
@@ -35,41 +32,40 @@ $$
 
 | FT<br/>                                                                                                                                               | LT<br/>                                                                                               | ZT<br/>                                                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![](static/DvoEbBEtaofo4NxFwH2cMMAEnle.png){: .zoom}<br/>![](static/Hb3nbsyIOobo6fxlMyZcdOqgnwe.png)<br/>![](static/Nk0fbLAJJopJIzx5eGFcRuhsnhc.png)<br/><br/> | ![](static/BoCBbQgURo8VXMxDJdHcchWXnuf.png)<br/>![](static/XiLRb8IIqoWxajxCyw1cHzWHnGc.png)<br/><br/> | ![](static/BfSCb2Z2TousJOxWVUncuOrOn2e.png)<br/>![](static/HIxRbNlsho5S5vxQcWYcTcdYn8f.png)<br/>![](static/O78ObQErLoqxR9xi8eecbqCunHd.png)<br/><br/> |
+| ![](static/DvoEbBEtaofo4NxFwH2cMMAEnle.png)<br/>![](static/Hb3nbsyIOobo6fxlMyZcdOqgnwe.png)<br/>![](static/Nk0fbLAJJopJIzx5eGFcRuhsnhc.png)<br/><br/> | ![](static/BoCBbQgURo8VXMxDJdHcchWXnuf.png)<br/>![](static/XiLRb8IIqoWxajxCyw1cHzWHnGc.png)<br/><br/> | ![](static/BfSCb2Z2TousJOxWVUncuOrOn2e.png)<br/>![](static/HIxRbNlsho5S5vxQcWYcTcdYn8f.png)<br/>![](static/O78ObQErLoqxR9xi8eecbqCunHd.png)<br/><br/> |
 
-## 前瞻
+# 前瞻
 
-> 学习目的：**用拉氏变换解决微分方程，Z 变换解决差分方程**
+## 学习目的：**用拉氏变换解决微分方程，Z 变换解决差分方程**
 
-> 学习难点：分清 LT 和 ZT
+## 学习难点：分清 LT 和 ZT
 
 > [参考文章](https://www.zhihu.com/question/21064916)
 
-### 高等数学基础：常系数微分方程 + 差分方程
+## 高等数学基础：常系数微分方程 + 差分方程
 
 ![](static/S6B2bJpoSoKQy1xRyGrclY0BnEd.png)
-
 **积化和差**
 
-### 电路知识
+## 电路知识
 
 ![](static/ZWlOb41BcoG2m3xQyClcQGTznAd.png)
 
-### 知识框架
+## 知识框架
 
 ![](static/FXb5bAAPOo7JTxxzOCoc5b4UnGh.png)
 
-## 信号与系统基本概念
+# 信号与系统基本概念
 
-### 概念：
+## 概念：
 
-信息：能让我看清世界的 **咒语（状态描述）——mantra**  
-信息量：与承载发生可能性成负相关  
-$  =-\log_{2}\left[p(x)\right]$  
-信号（signal）：承载咒语的媒介（光、电、声音）  
-系统（system）：input&output  
+信息：能让我看清世界的**咒语（状态描述）——mantra**
+信息量：与承载发生可能性成负相关
+$  =-\log_{2}\left[p(x)\right]$
+信号（signal）：承载咒语的媒介（光、电、声音）
+系统（system）：input&output
 
-### 分类：
+## 分类：
 
 维度：一维（声音）、二维（rgb 图像）、三维（视频）
 性质：确定性信号/随机信号
@@ -89,9 +85,11 @@ $  =-\log_{2}\left[p(x)\right]$
 > [!TIP]
 > **一个信号可被唯一地拆分为一奇一偶两个子信号**
 
- $$ x(t)=[\frac{x(t)+x(-t)}{2}]+[\frac{x(t)-x(-t)}{2}]=x_e(t)+x_o(t) $$
+> $$
+> x(t)=[\frac{x(t)+x(-t)}{2}]+[\frac{x(t)-x(-t)}{2}]=x_e(t)+x_o(t)
+> $$
 
-### E&P
+## E&P
 
 在一定范围内：
 
@@ -103,19 +101,11 @@ $$
 \begin{aligned}E&=\int_{t_{0}}^{t_{1}}|x(t)|^{2}dt,P&=\frac{1}{t_{1}-t_{0}}\int_{t_{0}}^{t_{1}}|x(t_{1})|^{2}dt\end{aligned}
 $$
 
-### 复指数信号
+## 复指数信号
 
-#### 概念
+### 概念
+
 **公式：**$x(t)=A\mathrm{e}^{(\sigma+\mathrm{j}\omega_0)t}=A\mathrm{e}^{st}$
-分类：  
-直流信号： \sigma、\omega_{0}=0 
-实指数信号： $$\sigma\neq0,\omega_0=0$$  
-正弦指数信号： $$\sigma=0,\omega_0\neq0$$  
-此时根据欧拉公式，有：
-
-$$\begin{cases}\sin(\omega_0t)=\frac{1}{2j}(\mathrm{e}^{\mathrm{i}\omega_0t}-\mathrm{e}^{-\mathrm{j}\omega_0t})\\\\\cos(\omega_0t)=\frac{1}{2}(\mathrm{e}^{\mathrm{j}\omega_0t}+\mathrm{e}^{-\mathrm{j}\omega_0t})\end{cases}$$
-
-
 
 ## 典型信号
 

@@ -93,13 +93,12 @@
 
 ## 能想到的学习资料
 
-
 !!! info "一些参考"
     <div class="flink-list">
         <div class="flink-list-item">
             <a href="https://pan.baidu.com/s/1EhdWpNXY1i0R5pamc0gbxA?pwd=y65p " title="wht视频" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/baidu.png"  alt="百度网盘" >
+                    ![](../rocos_img/baidu.png){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">wht老师的妙妙视频</div>
                 <div class="flink-item-desc">分为技能赛和团体赛 | 录制于23年5月</div>
@@ -108,7 +107,7 @@
         <div class="flink-list-item">
             <a href="https://rocos.readthedocs.io/zh-cn/latest" title="官方wiki" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/githubwiki.png "  alt="wiki" >
+                    ![](../rocos_img/githubwiki.png){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">官方 WIKI</div>
                 <div class="flink-item-desc">都抄的这里O__O "…</div>
@@ -117,8 +116,7 @@
         <div class="flink-list-item">
             <a href="https://rocos.salta.top" title="湖师wiki" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/Vue.png "  alt="wiki" >
-                    <!-- ![wiki](../rocos_img/wiki.png)  -->似乎不行
+                    ![](../rocos_img/Vue.png){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">湖师 WIKI</div>
                 <div class="flink-item-desc"> tql，猛猛学( ˘ω˘ )</div>
@@ -127,7 +125,7 @@
         <div class="flink-list-item">
             <a href="https://rvwy34k2yev.feishu.cn/wiki/X9ASwKfa9ilr8CkqzhcceyCynyc" title="足球机器人参数" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/feishu.png "  alt="robot" >
+                    ![](../rocos_img/feishu.png){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">Client&硬件环境</div>
                 <div class="flink-item-desc"> 对比赛产品的官方说明文档 </div>
@@ -136,7 +134,7 @@
         <div class="flink-list-item">
             <a href="https://space.bilibili.com/298653126?spm_id_from=333.337.search-card.all.click" title="乐博" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/bilibili.png "  alt="乐博视频" >
+                    ![](../rocos_img/bilibili.png){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">ChinaOpenSSL公开课</div>
                 <div class="flink-item-desc"> 每看每新 </div>
@@ -145,7 +143,7 @@
         <div class="flink-list-item">
             <a href="https://space.bilibili.com/15068259" title="Mark" target="_blank">
                 <div class="flink-item-icon">
-                    <img src="../rocos_img/turing.avif"  alt="mark" >
+                    ![](../rocos_img/turing.avif){ .off-glb }
                 </div>
                 <div class="flink-item-name heti-skip">Markの主页</div>
                 <div class="flink-item-desc"> 比赛总裁判，超级牛人 </div>

@@ -51,9 +51,9 @@ title: DIXI的个人博客
     >2027年7月12日 | UPDATE  
     >Build Your Own Blog 装修中...
 
-      - [ ] 网页搭建与发布
-      - [ ] 玩转 Materail 
-      - [ ] 飞书文档的md迁移 
+      - [x] 网页搭建与发布
+      - [x] 玩转 Materail 
+      - [x] 飞书文档的md迁移 
       - [x] [Markdown 速记](http://dixilog.github.io/build_your_web/markdown%20%E9%80%9F%E8%AE%B0/)  
 
     ---

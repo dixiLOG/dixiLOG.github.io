@@ -167,6 +167,7 @@ button.md-top {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片阴影效果 */
   transition: 0.25s;
 }
+
 .flink-item-icon {
   float: left;
   overflow: hidden;
@@ -218,3 +219,4 @@ button.md-top {
     width: calc(100% - 15px) !important;
   }
 }
+

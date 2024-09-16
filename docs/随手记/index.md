@@ -1,6 +1,6 @@
 
 
-# DIXI的随手记[TODO]
+# DIXI的随手记
 
 <div id="progress-container">
   <div id="progress-bar"></div>

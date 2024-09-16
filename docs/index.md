@@ -26,7 +26,14 @@ title: DIXI的个人博客
     2024-07-08
 
 ??? success "装修&上新流水"
-    
+
+    >2024年9月16日 | COMPLETE&UPDATE  
+    > 1.  修改导航栏配置   
+    > 2.  第一份笔记搬运完成 [信号与系统](https://dixilog.github.io/NBU-NOTEBOOK/S%26S/)  
+    > 3.  开辟“随手记”第一个板块 [十万个为什么](https://dixilog.github.io/随手记/whywhy/)  
+
+    ---    
+
     >2024年9月3日 | COMPLETE&UPDATE  
     > 1.  修复已知问题   
     > 2.  完成 [Build your own blog](https://dixilog.github.io/build_your_web/)  

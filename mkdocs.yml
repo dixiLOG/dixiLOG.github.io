@@ -40,9 +40,11 @@ nav:
 
   - 随手记:
       - 随手记/index.md
+      - 随手记/boringBetter.md
       - 十万个为什么:
         - 随手记/whywhy/index.md
         - 随手记/whywhy/huangli.md
+        - 随手记/whywhy/runningGap.md
   - Chronic Study[TODO]:
       - Chronic Study/index.md
   - NBU_ROCOS:
@@ -108,6 +110,7 @@ theme:
     - content.code.copy # 复制代码按钮
     # - navigation.instant.prefetch # 预加载
     # - navigation.instant.progress # 进度条
+    - navigation.instant 
 
 # 插件配置
 plugins:
@@ -150,7 +153,8 @@ plugins:
     # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
     post_readtime: false   # 关闭阅读时间
     # post_readtime_words_per_minute: 300
-  
+- print-site: # 打印功能插件
+
 
 
 # - git-revision-date-localized:

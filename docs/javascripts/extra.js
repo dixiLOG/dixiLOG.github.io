@@ -135,3 +135,53 @@ document.addEventListener('scroll', function () {
     const progressBar = document.getElementById('progress-bar');
     progressBar.style.width = `${scrolled}%`;
 });
+
+// 监听页面可见性变化事件
+document.addEventListener("DOMContentLoaded", function () {
+    const originalTitle = document.title; // 存储原始标题
+    const awayTitle = "跑哪去惹(*´･д･`)"; // 当用户离开页面时显示的标题
+
+    // 监听页面是否可见
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            document.title = awayTitle; // 当页面失去焦点时更改标题
+        } else {
+            document.title = originalTitle; // 当用户回到页面时恢复原来的标题
+        }
+    });
+});
+
+
+
+// 页面访问记录
+document.addEventListener("DOMContentLoaded", function () {
+    // 获取当前页面的完整 URL
+    const currentUrl = document.location.href;
+    const currentPath = document.location.pathname;
+    // console.log("Current URL:", currentUrl, currentPath);
+
+    // 获取最后访问的页面 URL
+    const lastVisitedUrl = localStorage.getItem("lastVisitedUrl");
+
+    // 检查是否在主页
+    const isHomePage = currentPath === '/';
+
+    // 如果在主页、最后访问的 URL 存在且不等于当前 URL（规避死循环），跳转到最后访问的页面
+    if (isHomePage && lastVisitedUrl && lastVisitedUrl !== currentUrl) {
+        document.location.href = lastVisitedUrl;
+    }
+
+    // 每隔1秒检查当前 URL 并更新 lastVisitedUrl
+    setInterval(function () {
+        // 获取当前页面的完整 URL
+        const currentUrl = document.location.href;
+
+        // 获取最后访问的页面 URL
+        const lastVisitedUrl = localStorage.getItem("lastVisitedUrl");
+
+        // 如果当前 URL 与最后访问的 URL 不同，则更新 lastVisitedUrl
+        if (currentUrl !== lastVisitedUrl) {
+            localStorage.setItem("lastVisitedUrl", currentUrl);
+        }
+    }, 1000);
+});

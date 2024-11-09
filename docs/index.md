@@ -26,10 +26,17 @@ title: DIXI的个人博客
     2024-07-08
 
 ??? success "装修&上新流水"
+    >2024年11月9日 | COMPLETE&UPDATE  
+    > 1.  增添 [个性化地址栏](https://dixilog.github.io/build_your_web/玩转%20Material/#_12)  
+    > 2.  增添“[上一次看到](https://dixilog.github.io/build_your_web/玩转%20Material/#_13)”跳转功能  
+    > 3.  同步部分文章至[闲言碎语](http://dixilog.github.io/blog/)   
+    > 4.  [十万个为什么](https://dixilog.github.io/随手记/whywhy/)上新  
+    > 5.  开辟“随手记”第二个板块 [无聊可期](https://dixilog.github.io/随手记/boringBetter/)  
+    ---
 
     >2024年9月16日 | COMPLETE&UPDATE  
     > 1.  修改导航栏配置   
-    > 2.  第一份笔记搬运完成 [信号与系统](https://dixilog.github.io/NBU-NOTEBOOK/S%26S/)  
+    > 2.  第一份笔记搬运完成 “[信号与系统笔记](https://dixilog.github.io/NBU-NOTEBOOK/S%26S/)”  
     > 3.  开辟“随手记”第一个板块 [十万个为什么](https://dixilog.github.io/随手记/whywhy/)  
 
     ---    
@@ -72,7 +79,12 @@ title: DIXI的个人博客
     >路上的人把苍耳带到世界各地，可没有人会拥抱苍耳   
     ---   
     
-    - slowroads真好丸😋
+    没想到最能治愈自己内耗的竟然是曾经写的那些无病呻吟的杂文
+
+    ---
+
+    啊啊啊突然发现不挂图片加载好慢，不过能挖到这的应该没有这个烦恼吧🤔
+
 
 
 !!! quote "打油诗"

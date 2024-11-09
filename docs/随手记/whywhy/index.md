@@ -8,5 +8,4 @@
 
 !!! info "有幸收录的问题"
     - 手机黄历怎么看？  
-    - Running Gap ？  
-    - 刷牙的最好时机？  
+    - Running Gap ？

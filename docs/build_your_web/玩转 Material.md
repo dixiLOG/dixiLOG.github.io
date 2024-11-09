@@ -268,7 +268,7 @@ docs
     除了基础设定，material 还提供了一些 [plugins](https://squidfunk.github.io/mkdocs-material/plugins/) 以提高幸福度  
     对于我使用的 ^^search、blog 和 statistics^^ 插件见后  
 
-    至于其他插件，，目前没用过也没需求，不会捏 😋  
+    至于其他插件，目前没用过也没需求，不会捏 😋  
     可以自己折腾一下，到这里其实应该能看出官网写的是很很清晰惹
 === "markdown_extensions"
     
@@ -870,7 +870,7 @@ extra:
 
 ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/H4fUbYkvcogs25xp5wBc9cSgnee.png)
 
-输入名称，^^ 勾选 hosting^^ ，创建即可
+输入名称，^^勾选 hosting^^ ，创建即可
 
 ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Fc9vbpsAroshBix2j9FcHFQWnAi.png)
 
@@ -1248,7 +1248,7 @@ authors:
     # title
     ```
 
-
+---
 
 ### 基于 statistics 插件的阅读时长计算
 
@@ -1641,5 +1641,73 @@ button.md-top {
 ```
 
 ---
+
+#### 个性化地址栏
+
+在当前页面失去焦点时卖萌(´･д･`)
+
+??? example "js"
+    ```javascript    title="extra.js"
+    // 监听页面可见性变化事件
+    document.addEventListener("DOMContentLoaded", function () {
+        const originalTitle = document.title; // 存储原始标题
+        const awayTitle = "跑哪去惹(*´･д･`)"; // 当用户离开页面时显示的标题
+
+        // 监听页面是否可见
+        document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            document.title = awayTitle; // 当页面失去焦点时更改标题
+        } else {
+            document.title = originalTitle; // 当用户回到页面时恢复原来的标题
+        }
+        });
+    });
+    ```
+---
+
+#### 页面恢复
+
+再次访问HOME页面时自动重定向上一次的最后退出位置
+
+!!! example ""
+    ![示例](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20241101161550.gif)
+
+??? example "js"
+    ```javascript    title="extra.js"
+    // 页面访问记录
+    document.addEventListener("DOMContentLoaded", function () {
+        // 获取当前页面的完整 URL
+        const currentUrl = document.location.href;
+        const currentPath = document.location.pathname;
+        // console.log("Current URL:", currentUrl, currentPath);
+
+        // 获取最后访问的页面 URL
+        const lastVisitedUrl = localStorage.getItem("lastVisitedUrl");
+
+        // 检查是否在主页
+        const isHomePage = currentPath === '/';
+
+        // 如果在主页、最后访问的 URL 存在且不等于当前 URL（规避死循环），跳转到最后访问的页面
+        if (isHomePage && lastVisitedUrl && lastVisitedUrl !== currentUrl) {
+            document.location.href = lastVisitedUrl;
+        }
+
+        // 每隔1秒检查当前 URL 并更新 lastVisitedUrl
+        setInterval(function () {
+            // 获取当前页面的完整 URL
+            const currentUrl = document.location.href;
+
+            // 获取最后访问的页面 URL
+            const lastVisitedUrl = localStorage.getItem("lastVisitedUrl");
+
+            // 如果当前 URL 与最后访问的 URL 不同，则更新 lastVisitedUrl
+            if (currentUrl !== lastVisitedUrl) {
+                localStorage.setItem("lastVisitedUrl", currentUrl);
+            }
+        }, 1000);
+    });
+    ```
+---
+
 
 > 至此，理论上博客就已竣工，剩下的就是无穷的软装了:toilet:

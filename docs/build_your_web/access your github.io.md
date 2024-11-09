@@ -143,7 +143,7 @@ project_name
 
 ```powershell title="powershell"
 cd project_name
-mkdocs server
+mkdocs serve
 ```
 
 可以看见
@@ -161,14 +161,14 @@ INFO    -  [15:58:19] Serving on http://127.0.0.1:8000/
 
 
 !!! tip "tip"
-    当出现问题想要查看 log 时可以用 `mkdocs server -- verbose` 启动本地服务器，并查看 powershell 窗口信息
+    当出现问题想要查看 log 时可以用 `mkdocs serve -- verbose` 启动本地服务器，并查看 powershell 窗口信息
 
 之后我们就可以优雅的用三行代码开启服务器啦
 
 ```powershell hl_lines="1-2" title="powershell" 
 cd D:\dixiLOG\demo\
 conda activate dixiLOG
-mkdocs server -- verbose
+mkdocs serve -- verbose
 ```
 
 记得把工程路径和环境名称改成自己的

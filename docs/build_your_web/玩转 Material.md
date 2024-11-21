@@ -1650,18 +1650,24 @@ button.md-top {
     ```javascript    title="extra.js"
     // 监听页面可见性变化事件
     document.addEventListener("DOMContentLoaded", function () {
-        const originalTitle = document.title; // 存储原始标题
+        let originalTitle = document.title; // 存储原始标题
         const awayTitle = "跑哪去惹(*´･д･`)"; // 当用户离开页面时显示的标题
-
         // 监听页面是否可见
         document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-            document.title = awayTitle; // 当页面失去焦点时更改标题
-        } else {
-            document.title = originalTitle; // 当用户回到页面时恢复原来的标题
-        }
+            if (document.hidden) {
+                document.title = awayTitle; // 当页面失去焦点时更改标题
+            } else {
+                // 当用户回到页面时恢复标题并开始每1秒更新一次
+                document.title = originalTitle; // 恢复标题
+            }
         });
+        setInterval(function () {
+            if (!document.hidden){
+                originalTitle = document.title;
+            } 
+        }, 1000);
     });
+
     ```
 ---
 

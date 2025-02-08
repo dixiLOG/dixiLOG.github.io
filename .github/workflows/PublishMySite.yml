@@ -11,12 +11,19 @@ jobs: # 工作流的具体内容
     runs-on: ubuntu-latest # 创建一个新的云端虚拟机 使用最新Ubuntu系统
     steps:
       - uses: actions/checkout@v2 # 先checkout到main分支
+        with:
+            fetch-depth: 0
       - uses: actions/setup-python@v2 # 再安装Python3和相关环境
         with:
           python-version: 3.x
+
+        # 使用 GitHub Actions 部署，需在配置文件中添加插件安装步骤：不加则github编译报错
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: pip install mkdocs-statistics-plugin
       - run: pip install mkdocs-rss-plugin # 附加rss插件
       - run: pip install mkdocs-print-site-plugin # 附加打印插件
-      - run: pip install mkdocs-glightbox # 附加图片放大插件，这句不加则github可能报错
+      - run: pip install mkdocs-glightbox # 附加图片放大插件
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+
+      # 编译网站，最后再run
       - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支

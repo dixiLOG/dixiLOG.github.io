@@ -110,7 +110,6 @@ theme:
     - content.code.copy # 复制代码按钮
     # - navigation.instant.prefetch # 预加载
     # - navigation.instant.progress # 进度条
-    - navigation.instant 
 
 # 插件配置
 plugins:
@@ -153,16 +152,17 @@ plugins:
     # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
     post_readtime: false   # 关闭阅读时间
     # post_readtime_words_per_minute: 300
-- print-site: # 打印功能插件
-
-
-
-# - git-revision-date-localized:
-#     enable_creation_date: true # 启用创建日期
-#     enable_last_updated_date: true # 启用最后更新日期
-#     fallback_to_build_date: false # 启用日期，如果没有git信息，则使用构建日期
-#     format: "%Y-%m-%d" # 日期格式化
-#     locale: zh_CN # 语言
+# - print-site: # 打印功能插件
+- git-revision-date-localized:  # 日期插件
+    enabled: true
+    fallback_to_build_date: true
+    enable_creation_date: true  # 显示创建时间
+    type: iso_datetime               # 日期显示格式（如 "2周前"）
+    # custom_format: "%Y-%m-%d"   # 自定义日期格式（如 "2023-10-01"）
+    locale: zh                  # 本地化语言（中文）
+    timezone: Asia/Shanghai     # 时区
+    exclude:                    # 排除某些文件
+    - index.md
 
 
 # mk扩展配置

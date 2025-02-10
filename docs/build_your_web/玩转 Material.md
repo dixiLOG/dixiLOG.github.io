@@ -137,7 +137,7 @@ docs
 
 ---
 
-#### 我们还能做些什么？
+### 我们还能做些什么？
 
 
 
@@ -1342,6 +1342,67 @@ button.md-top {
 
 ---
 
+### 创建/修改时间显示
+
+> 最终效果/参考：[插件官方文档](https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/)
+
+安装插件
+
+```powershell title="powershell"
+pip install mkdocs-git-revision-date-localized-plugin
+```
+
+添加插件
+
+```yaml title="mkdocs.yml"
+plugins:
+- git-revision-date-localized:  # 日期插件
+    enabled: true
+    fallback_to_build_date: true
+    enable_creation_date: true  # 显示创建时间
+    type: iso_datetime               # 日期显示格式（如 "2周前"）
+    # custom_format: "%Y-%m-%d"   # 自定义日期格式（如 "2023-10-01"）
+    locale: zh                  # 本地化语言（中文）
+    timezone: Asia/Shanghai     # 时区
+    exclude:                    # 排除某些文件
+    - index.md
+```
+
+上述配置可按需修改，具体见官方文档👆
+
+!!! note "关于`fallback_to_build_date`字段"
+    相当于`default_date`，但如果没有`git`信息，则显示`build_date`，否则则显示当前时间  
+    因为我的本地环境没有`git`信息，必须设为`true`，否则无法渲染  
+
+修改`GitHub Actions`配置文件
+```yaml hl_lines="6-7 18" title="PublishMySite.yml"
+jobs: # 工作流的具体内容
+  deploy:
+    runs-on: ubuntu-latest # 创建一个新的云端虚拟机 使用最新Ubuntu系统
+    steps:
+      - uses: actions/checkout@v2 # 先checkout到main分支
+        with:
+            fetch-depth: 0
+      - uses: actions/setup-python@v2 # 再安装Python3和相关环境
+        with:
+          python-version: 3.x
+
+        # 使用 GitHub Actions 部署，需在配置文件中添加插件安装步骤：不加则github编译报错
+      - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
+      - run: pip install mkdocs-statistics-plugin
+      - run: pip install mkdocs-rss-plugin # 附加rss插件
+      - run: pip install mkdocs-print-site-plugin # 附加打印插件
+      - run: pip install mkdocs-glightbox # 附加图片放大插件
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+
+      # 编译网站，最后再run
+      - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支         
+```
+
+推送到 GitHub 仓库，等待编译完成，即可在线浏览
+
+---
+
 ### 一些简单的功能
 
 #### 鼠标模拟烟花 + 样式
@@ -1657,7 +1718,7 @@ button.md-top {
             if (document.hidden) {
                 document.title = awayTitle; // 当页面失去焦点时更改标题
             } else {
-                // 当用户回到页面时恢复标题并开始每1秒更新一次
+                // 当用户回到页面时恢复标题并开始秒更新一次
                 document.title = originalTitle; // 恢复标题
             }
         });

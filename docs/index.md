@@ -11,9 +11,7 @@ title: DIXI的个人博客
 </div>
 
 
-
-
-这里是 dixi ，希望你能喜欢这里~~
+这里是 dixi ，希望你能喜欢这里 ¯\\\_(ツ)_/¯
 
 !!! note "Who am I?"
     - 青龙山外派光明顶发电厂首席技工，智商税拥趸  
@@ -25,10 +23,20 @@ title: DIXI的个人博客
 !!! tip "dixiLOG 览揆之辰"
     2024-07-08
 
-??? success "装修&上新流水"
+!!! success "最近の更新"
+    2025年2月8日-2月10日 | COMPLETE&UPDATE  
+
+    1.  增添[创建/修改时间显示](https://dixilog.github.io/build_your_web/玩转%20Material/#_8)功能
+    2.  增添 404 页面    
+    3.  调整博客`icon` | 修复图片显示问题 | 添加板块封面  
+    4.  [无聊可期](https://dixilog.github.io/随手记/boringBetter/) | [闲言碎语](http://dixilog.github.io/blog/) 上新    
+    5.  原 [Chronic Study]() 更名为 [长河集](https://dixilog.github.io/changheji/) ，开辟其第一个板块 [荒唐言](https://dixilog.github.io/changheji/bookReport/)  
+ 
+
+??? abstract "历史装修&上新流水"
     >2024年11月9日 | COMPLETE&UPDATE  
-    > 1.  增添 [个性化地址栏](https://dixilog.github.io/build_your_web/玩转%20Material/#_12)  
-    > 2.  增添“[上一次看到](https://dixilog.github.io/build_your_web/玩转%20Material/#_13)”跳转功能  
+    > 1.  增添 [个性化地址栏](https://dixilog.github.io/build_your_web/玩转%20Material/#_13)  
+    > 2.  增添“[上一次看到](https://dixilog.github.io/build_your_web/玩转%20Material/#_14)”跳转功能  
     > 3.  同步部分文章至[闲言碎语](http://dixilog.github.io/blog/)   
     > 4.  [十万个为什么](https://dixilog.github.io/随手记/whywhy/)上新  
     > 5.  开辟“随手记”第二个板块 [无聊可期](https://dixilog.github.io/随手记/boringBetter/)  
@@ -75,15 +83,14 @@ title: DIXI的个人博客
     >2024年7月8日 | 建站 
 
 !!! question "dixi有话说"
-    - 原来以前认为狄更斯的小说味如嚼蜡是由于找错翻译了🤣  
-    >路上的人把苍耳带到世界各地，可没有人会拥抱苍耳   
-    ---   
-    
-    没想到最能治愈自己内耗的竟然是曾经写的那些无病呻吟的杂文
+
+    逃过了《追忆似水流年》，没躲掉《喧哗与骚动》🥲
 
     ---
 
-    啊啊啊突然发现不挂图片加载好慢，不过能挖到这的应该没有这个烦恼吧🤔
+    兰生幽谷，不为莫服而不芳  
+    舟在江海，不为莫乘而不浮  
+    君子行义，不为莫知而止休 
 
 
 
@@ -94,6 +101,7 @@ title: DIXI的个人博客
 > 联系方式：
 > 
 > QQ:1444127184  
+> 
 
 > 转载请标明出处及作者呦~
 

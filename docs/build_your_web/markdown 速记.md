@@ -13,7 +13,7 @@
 
 ## markdown基本语法 {: #基本语法 }
 
->下面是一些常用的markdown操作记录。详细内容请点击 ***[这里](https://markdown.com.cn/basic-syntax/)***
+>下面是一些常用的markdown操作记录。详细内容请点击 ***[Markdown 基本语法](https://markdown.com.cn/basic-syntax/)***
 
 === "标题" 
 
@@ -106,10 +106,10 @@
 
     ```
     [![图片名称](图片地址 "悬停label")](超链接地址)
-    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){: .zoom}
+    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){style="zoom: 75%;"}
     
     ```
-    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){: .zoom}
+    ![封面](https://i.ibb.co/ZfyqjB0/image.webp "封面"){style="zoom: 75%;"}
 
 
 === "表格"

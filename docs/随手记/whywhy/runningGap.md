@@ -204,7 +204,17 @@ RPM 增加 5-15% 与减少膝盖病变、减少冲击负荷和减少肌肉损伤
     具体内容参见 [这里](https://marathonhandbook.com/5-harmful-stretching-exercises/)
 ---
 
+## 数个月后
 
+直接上图
+
+!!! success "也是能无伤十公里惹"
+    <center>![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/41789e89fabf7f298f293f04357160a.jpg){style="zoom: 75%;"} </center>
+
+另，发现了一本运动向科普书《无伤跑法》  
+可以选择直接在[微信读书](https://weread.qq.com/book-detail?type=1&senderVid=906068151&v=3f7321007167e8fa3f785e8&wtheme=white&wfrom=app&wvid=906068151&scene=bottomSheetShare)上阅读，或者百度网盘[下载PDF](https://pan.baidu.com/s/1alSa9kAT6QWpKXLk6JCyYQ?pwd=1369)至本地阅读
+
+---
 
 ##### reference
 

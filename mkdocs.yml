@@ -40,13 +40,23 @@ nav:
 
   - 随手记:
       - 随手记/index.md
-      - 随手记/boringBetter.md
+      - 无聊可期:
+        - 随手记/boringBetter/index.md
+        - 随手记/boringBetter/reallyStars.md
+        - 随手记/boringBetter/awesomeFinds.md
+        - 随手记/boringBetter/shoddyGoods.md
       - 十万个为什么:
         - 随手记/whywhy/index.md
         - 随手记/whywhy/huangli.md
         - 随手记/whywhy/runningGap.md
-  - Chronic Study[TODO]:
-      - Chronic Study/index.md
+  - 长河集:
+      - changheji/index.md
+      - 荒唐言:
+        - changheji/bookReport/index.md
+        - changheji/bookReport/《鄙视》阅读报告.md
+        - changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md
+        - changheji/bookReport/《文心雕龙》摘抄本.md
+        - changheji/bookReport/《远大前程》阅读报告.md
   - NBU_ROCOS:
       - ROCOS/index.md
       - ROCOS/info&ref.md
@@ -58,6 +68,7 @@ theme:
   name: material # 主题名称
   # custom_dir: material/overrides # 自定义文件夹，对于个别页面，如果你不想使用主题的默认样式，可以在这里进行修改，使用里面的文件覆盖主题的默认文件。具体可以参考material官方文档。
   # logo: static/images/logo.png # logo 图片  
+  logo: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png # logo 图片  
   favicon: img/favicon.ico  # 网站图标
   language: zh # 语言
   font: # 字体，大概率不需要换
@@ -235,6 +246,10 @@ extra:
           data: 0
           note: >- 
             嘿呀嘿呀，努力搬砖...
+
+# 额外的模板文件
+extra_templates:
+  - 404.html  # 404页面模板
 
 # 额外的js文件和css文件
 extra_javascript:

@@ -88,36 +88,72 @@ function randomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// 生成烟花效果
-function createFirework(x, y) {
-    const fireworkContainer = document.createElement('div');
-    fireworkContainer.classList.add('fireworks');
-    fireworkContainer.style.left = `${x}px`;
-    fireworkContainer.style.top = `${y}px`;
-    document.body.appendChild(fireworkContainer);
+// // 生成烟花效果
+// function createFirework(x, y) {
+//     const fireworkContainer = document.createElement('div');
+//     fireworkContainer.classList.add('fireworks');
+//     fireworkContainer.style.left = `${x}px`;
+//     fireworkContainer.style.top = `${y}px`;
+//     document.body.appendChild(fireworkContainer);
 
-    for (let i = 0; i < 25; i++) {
-        const firework = document.createElement('div');
-        firework.classList.add('firework');
-        firework.style.backgroundColor = randomColor();
-        firework.style.width = '5px';
-        firework.style.height = '5px';
-        firework.style.left = `${Math.random() * 80 - 50}px`;
-        firework.style.top = `${Math.random() * 80 - 50}px`;
-        firework.style.animation = `firework 1s ease-out forwards, fall 1s ${Math.random() * 0.5}s forwards`;
-        fireworkContainer.appendChild(firework);
-    }
+//     for (let i = 0; i < 25; i++) {
+//         const firework = document.createElement('div');
+//         firework.classList.add('firework');
+//         firework.style.backgroundColor = randomColor();
+//         firework.style.width = '5px';
+//         firework.style.height = '5px';
+//         firework.style.left = `${Math.random() * 80 - 50}px`;
+//         firework.style.top = `${Math.random() * 80 - 50}px`;
+//         firework.style.animation = `firework 1s ease-out forwards, fall 1s ${Math.random() * 0.5}s forwards`;
+//         fireworkContainer.appendChild(firework);
+//     }
 
+//     setTimeout(() => {
+//         fireworkContainer.remove();
+//     }, 300);
+// }
+// // 监听单击事件
+// document.addEventListener('click', (event) => {
+//     const x = event.clientX;
+//     const y = event.clientY + window.scrollY;
+//     createFirework(x, y);
+// });
+
+// 新的点击效果：水波扩散（大小随机）
+function createRipple(x, y) {
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    // 生成随机比例（2～5之间），保留两位小数
+    const randomScale = (Math.random() * 3 + 2).toFixed(2);
+    ripple.style.setProperty('--random-scale', randomScale);
+    document.body.appendChild(ripple);
+
+    // 动画完成后移除该元素（800ms 与 CSS 动画时间对应）
     setTimeout(() => {
-        fireworkContainer.remove();
-    }, 300);
+        ripple.remove();
+    }, 800);
 }
-// 监听单击事件
+
 document.addEventListener('click', (event) => {
     const x = event.clientX;
     const y = event.clientY + window.scrollY;
-    createFirework(x, y);
+    createRipple(x, y);
 });
+
+// 监听滚动事件，为鼠标添加更精致的滚动交互效果
+document.addEventListener('scroll', () => {
+    // 添加 scrolling 类，触发滚动时的样式效果
+    CURSOR.cursor.classList.add('scrolling');
+    // 清除之前可能存在的定时器，避免连续滚动导致提前移除
+    clearTimeout(CURSOR.scrollTimeout);
+    // 设置定时器，150毫秒后移除 scrolling 类
+    CURSOR.scrollTimeout = setTimeout(() => {
+        CURSOR.cursor.classList.remove('scrolling');
+    }, 150);
+});
+
 
 
 

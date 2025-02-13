@@ -49,6 +49,9 @@ nav:
         - 随手记/whywhy/index.md
         - 随手记/whywhy/huangli.md
         - 随手记/whywhy/runningGap.md
+        - 随手记/whywhy/personalTax.md
+
+        
   - 长河集:
       - changheji/index.md
       - 荒唐言:
@@ -57,6 +60,7 @@ nav:
         - changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md
         - changheji/bookReport/《文心雕龙》摘抄本.md
         - changheji/bookReport/《远大前程》阅读报告.md
+      - changheji/MLreport.md
   - NBU_ROCOS:
       - ROCOS/index.md
       - ROCOS/info&ref.md

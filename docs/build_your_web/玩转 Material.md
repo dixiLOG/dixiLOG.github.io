@@ -1608,6 +1608,84 @@ jobs: # 工作流的具体内容
     }
     ```
 
+> 增添单击水波效果与滚动强调效果
+
+
+??? example "js | css"
+    ```javascript title="extra.js"
+    // 新的点击效果：水波扩散（大小随机）
+    function createRipple(x, y) {
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        // 生成随机比例（2～5之间），保留两位小数
+        const randomScale = (Math.random() * 3 + 2).toFixed(2);
+        ripple.style.setProperty('--random-scale', randomScale);
+        document.body.appendChild(ripple);
+
+        // 动画完成后移除该元素（800ms 与 CSS 动画时间对应）
+        setTimeout(() => {
+            ripple.remove();
+        }, 800);
+    }
+
+    document.addEventListener('click', (event) => {
+        const x = event.clientX;
+        const y = event.clientY + window.scrollY;
+        createRipple(x, y);
+    });
+
+    // 监听滚动事件，为鼠标添加更精致的滚动交互效果
+    document.addEventListener('scroll', () => {
+        // 添加 scrolling 类，触发滚动时的样式效果
+        CURSOR.cursor.classList.add('scrolling');
+        // 清除之前可能存在的定时器，避免连续滚动导致提前移除
+        clearTimeout(CURSOR.scrollTimeout);
+        // 设置定时器，150毫秒后移除 scrolling 类
+        CURSOR.scrollTimeout = setTimeout(() => {
+            CURSOR.cursor.classList.remove('scrolling');
+        }, 150);
+    });
+
+    ```
+
+    ```css  title="extra.css"
+    /* 新的点击水波效果 */
+    .ripple {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid #ede1c7; /* 可调整边框颜色 */
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 9999;
+        animation: ripple-effect 0.8s ease-out forwards;
+    }
+
+    @keyframes ripple-effect {
+        0% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(var(--random-scale, 4));
+            opacity: 0;
+        }
+    }
+
+    /* 鼠标滚动时的精致交互样式 */
+    #cursor.scrolling {
+        transform: scale(1.3) rotate(5deg);  /* 稍微放大并轻微旋转 */
+        opacity: 0.85;                       /* 提升透明度，使效果更明显 */
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);/* 添加柔和阴影，增强层次感 */
+        transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                    box-shadow 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    ```
+
 ---
 
 #### 图片放大

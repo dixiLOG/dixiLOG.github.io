@@ -195,13 +195,13 @@ RPM 增加 5-15% 与减少膝盖病变、减少冲击负荷和减少肌肉损伤
 === "应该做的"
     - 充沛的精力。疲惫或病痛时，床才是你唯一的归宿  
     - 吃一些已经习惯的事物，比如能量棒，或者一根香蕉  
-    - 5min 轻度有氧 + 5min ^^动态拉伸^^，具体参见 [这里](https://marathonhandbook.com/what-to-do-before-a-run/)
+    - 5min 轻度有氧 + 5min ^^动态拉伸^^，具体参见 [马拉松手册：跑步之前应该做什么](https://marathonhandbook.com/what-to-do-before-a-run/)
 
 === "不应该做的"
     - 静态拉伸。这是跑后的事情，跑前不要做
     - 弹道式拉伸。由于它超出了自然运动范围，因此它是最有害的伸展运动之一
 
-    具体内容参见 [这里](https://marathonhandbook.com/5-harmful-stretching-exercises/)
+    具体内容参见 [马拉松手册：5个有害的伸展运动](https://marathonhandbook.com/5-harmful-stretching-exercises/)
 ---
 
 ## 数个月后

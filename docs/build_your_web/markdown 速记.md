@@ -203,8 +203,17 @@ dixi
 >可能是使用最多的部分
 
 ```text title="格式"
+标准高亮块
 !!! type "name"
     content
+
+高亮框
+!!! type ""
+    content
+
+高亮分割线
+!!! type ""
+
 ```
 !!! info "info"
     这里是info块

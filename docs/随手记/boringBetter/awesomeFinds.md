@@ -75,11 +75,9 @@ sudo ./v2rayN
 
 ## 本地测速
 
-> 也可以是 docker 练手项目
-
 访问官网：[MySpeed](https://myspeed.dev/)
 
-也可以是 [docker 练手项目](https://cloud.tencent.com/developer/article/2451399)
+也可以作为 [docker 练手项目](https://cloud.tencent.com/developer/article/2451399)
 
 ---
 
@@ -175,6 +173,16 @@ IDM 的平替，小而美
 - [Data Commons](https://datacommons.org/)：谷歌开源，问答式数据检索
 - [Our World in Data](https://ourworldindata.org/)：优雅可视化
 - [联合国数据](https://data.un.org/)：官方数据
+
+---
+## 素材库 Enough
+
+免费无版权的素材库
+
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
+- [Pixabay](https://pixabay.com/zh/)
+- [影视飓风](https://www.ysjf.com/material)
 
 ---
 

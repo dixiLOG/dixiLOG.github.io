@@ -24,6 +24,14 @@ title: DIXI的个人博客
     2024-07-08
 
 !!! success "最近の更新"
+    2025年2月11日-2月13日 | FEAT&DOCS  
+
+    1. 优化[鼠标单击与页面滚动样式](https://dixilog.github.io/build_your_web/玩转%20Material/#_9)
+    2. [十万个为什么](https://dixilog.github.io/随手记/whywhy/) 上新
+    3. [长河集](https://dixilog.github.io/changheji/) 上新
+
+    ---
+
     2025年2月8日-2月10日 | COMPLETE&UPDATE  
 
     1.  增添[创建/修改时间显示](https://dixilog.github.io/build_your_web/玩转%20Material/#_8)功能

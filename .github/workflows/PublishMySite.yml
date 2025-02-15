@@ -24,6 +24,7 @@ jobs: # 工作流的具体内容
       - run: pip install mkdocs-print-site-plugin # 附加打印插件
       - run: pip install mkdocs-glightbox # 附加图片放大插件
       - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install mkdocs-pdf
 
       # 编译网站，最后再run
       - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支

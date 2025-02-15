@@ -16,7 +16,7 @@ site_description: >- # 项目描述
 repo_name:  dixiLOG # 仓库名称
 repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
 # 版权信息
-copyright: Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+copyright: Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
 # 导航树配置
 nav:
   - Home: 
@@ -132,6 +132,7 @@ plugins:
     lang: 
       - en
       - zh  # 中文搜索支持
+    separator: '[\s\u200b\-]' # 分隔符
 - tags # 标签功能 插件
 - glightbox: # 图片灯箱
     skip_classes:
@@ -178,7 +179,7 @@ plugins:
     timezone: Asia/Shanghai     # 时区
     exclude:                    # 排除某些文件
     - index.md
-
+- mkdocs-pdf          # pdf嵌入插件
 
 # mk扩展配置
 markdown_extensions:

@@ -104,9 +104,25 @@ winget install JanDeDobbeleer.OhMyPosh -s winget -l D:\your\path\to\OhMyPosh
 
 ## 高质量摸鱼 | 学习库
 
+
+
 === "科技杂志"
     - [weekly](https://github.com/ruanyf/weekly?tab=readme-ov-file)：科技爱好者周刊，每周五发布
     - [HELLOGITHUB](https://hellogithub.com/)
+
+=== "基础学科"
+    - [线性代数：ZJU 图灵班版](https://github.com/yhwu-is/Linear-Algebra-Left-Undone)
+
+    !!! warning "仅作学习搬运，不可商用"
+
+    !!! example ""
+        ??? note "线性代数：未竟之美"
+
+            ![Alt text](LALU.pdf){ type=application/pdf style="min-height:125vh;width:100%" }
+
+        ??? abstract "线性代数：未竟之美|课后习题答案"
+
+            ![Alt text](LALU-answers.pdf){ type=application/pdf style="min-height:125vh;width:100%" }
 
 === "ML/语言/算法"
     - [《动手深度学习》](https://zh.d2l.ai/index.html)电子书

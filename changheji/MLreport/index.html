@@ -1155,32 +1155,32 @@
   
 
 
-<h1 id="fashionmnist">基于卷积神经网络的FashionMNIST分类<a class="headerlink" href="#fashionmnist" title="Permanent link">&para;</a></h1>
+<div><h1 id="fashionmnist">基于卷积神经网络的FashionMNIST分类<a class="headerlink" href="#fashionmnist" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p>&nbsp;</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 5883 个字  • <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 582 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 40 分钟</p>
-<hr />
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5883 个字  • <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 582 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 40 分钟</p>
+<hr>
 </div>
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
 
-<h2 id="_1">写在前面<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">写在前面<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <p>一直有再探ML的欲望，但一直没啥动力。正好以此次大作业为契机，基于项目督促自己学习</p>
 <p>全文分为两个部分：<a href="#what-is-cnn">CNN介绍</a>与<a href="#putting-cnn-to-work">Fashion MNIST分类实战</a></p>
 <p>前者除了CNN的一些基本概念说明，还尝试通过逐行代码分析解构基本的机器学习框架</p>
 <p>后者则是将理论运用于实践中，但较为粗糙</p>
-<hr />
-<h2 id="what-is-cnn">WHAT IS CNN？<a class="headerlink" href="#what-is-cnn" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="what-is-cnn">WHAT IS CNN？<a class="headerlink" href="#what-is-cnn" title="Permanent link">¶</a></h2>
 <p>本节对卷积神经网络（Convolutional Neural Network，CNN），在算法与代码两个层面进行介绍。</p>
-<h3 id="cnn">CNN 介绍<a class="headerlink" href="#cnn" title="Permanent link">&para;</a></h3>
+<h3 id="cnn">CNN 介绍<a class="headerlink" href="#cnn" title="Permanent link">¶</a></h3>
 <p>包括 CNN 基本概念与工作流程。</p>
-<hr />
+<hr>
 <p>卷积神经网络（CNN）是一种专门用于处理具有网格结构数据（如图像）的深度学习模型。</p>
 <p>CNN 的核心思想是通过卷积操作（Convolution Operation）提取图像的局部特征，并通过多层网络结构逐步组合这些特征，最终实现分类、检测等任务。CNN 在计算机视觉领域取得了巨大成功，广泛应用于图像分类（Image Classification）、目标检测（Object Detection）、语义分割（Semantic Segmentation）等任务。</p>
-<hr />
-<h4 id="cnn_1">CNN的一些基本概念<a class="headerlink" href="#cnn_1" title="Permanent link">&para;</a></h4>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>局部感受野（Local Receptive Field）</strong></label><label for="__tabbed_1_2"><strong>权值共享（Weight Sharing）</strong></label><label for="__tabbed_1_3"><strong>层次化特征提取（Hierarchical Feature Extraction）</strong></label><label for="__tabbed_1_4"><strong>非线性激活（Non-linear Activation）</strong></label></div>
+<hr>
+<h4 id="cnn_1">CNN的一些基本概念<a class="headerlink" href="#cnn_1" title="Permanent link">¶</a></h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>局部感受野（Local Receptive Field）</strong></label><label for="__tabbed_1_2"><strong>权值共享（Weight Sharing）</strong></label><label for="__tabbed_1_3"><strong>层次化特征提取（Hierarchical Feature Extraction）</strong></label><label for="__tabbed_1_4"><strong>非线性激活（Non-linear Activation）</strong></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>CNN 通过卷积核（Filter/Kernel）在输入图像上滑动，每次只关注图像的一个局部区域（称为感受野），而不是整个图像。</p>
@@ -1198,11 +1198,11 @@
 </div>
 </div>
 </div>
-<hr />
-<h4 id="_2">工作流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="_2">工作流程<a class="headerlink" href="#_2" title="Permanent link">¶</a></h4>
 <p>根据FashionMNIST数据集特点，介绍本实验使用的CNN模型工作流程，结构图<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>见图1。</p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250211cnn.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="CNN" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250211cnn.svg" /></a></p>
-<p><center style="font-size:14px;color:#C0C0C0;">图1 神经网络结构图</center></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250211cnn.svg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="CNN" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250211cnn.svg"></a></p>
+<p></p><center style="font-size:14px;color:#C0C0C0;">图1 神经网络结构图</center>
 <ol>
 <li><strong>输入图像（Input Image）</strong>  </li>
 </ol>
@@ -1291,13 +1291,13 @@
 <p><strong>输出</strong>：<code>1x10</code></p>
 </li>
 </ul>
-<hr />
-<h4 id="_3">还有什么？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="_3">还有什么？<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
 <blockquote>
 <p>CNN的历史副本是不可能通过一个作业全部洞悉的，故最终选择抛出两个具有代表性的模型</p>
 <p>在后续的模型对比中，你还会再看见他们~</p>
 </blockquote>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">ResNet</label><label for="__tabbed_2_2">VIT</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">ResNet</label><label for="__tabbed_2_2">VIT</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>ResNet 是一种基于卷积神经网络（CNN）的深度学习模型，其核心创新是引入了 <strong>残差连接（Residual Connection）</strong> ，使得网络可以构建非常深的网络（如 ResNet-152），并通过残差连接有效地训练这些深层网络，同时避免梯度消失问题。ResNet 在图像分类、目标检测等任务中表现优异，是计算机视觉领域的经典模型之一。</p>
@@ -1318,8 +1318,8 @@
 <p>ResNet 在<u>传统任务</u>中表现优异</p>
 <p>而 ViT 在处理<u>复杂图像和全局信息</u>时表现出色</p>
 </div>
-<hr />
-<h3 id="cnn_2">最简单的CNN分类模型：逐行解析<a class="headerlink" href="#cnn_2" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="cnn_2">最简单的CNN分类模型：逐行解析<a class="headerlink" href="#cnn_2" title="Permanent link">¶</a></h3>
 <p>旨在厘清ML模型基本架构。</p>
 <div class="admonition tip">
 <p class="admonition-title">人生苦短，我选python</p>
@@ -1404,12 +1404,12 @@
     linkStyle 15 stroke:#666,color;   
     linkStyle 16 stroke:#666,color; 
 </code></pre>
-<p><center style="font-size:14px;color:#C0C0C0;">图2 pytorch典型ML代码流程图</center></p>
+<p></p><center style="font-size:14px;color:#C0C0C0;">图2 pytorch典型ML代码流程图</center>
 <blockquote>
 <p>地图有了，就可以愉快的解构代码一一映射啦<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>🫡</p>
 </blockquote>
-<hr />
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">依赖库导入与基本配置</label><label for="__tabbed_3_2">数据集导入与处理</label><label for="__tabbed_3_3">模型创建与实例化</label><label for="__tabbed_3_4">模型训练与评估</label></div>
+<hr>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><input id="__tabbed_3_3" name="__tabbed_3" type="radio"><input id="__tabbed_3_4" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">依赖库导入与基本配置</label><label for="__tabbed_3_2">数据集导入与处理</label><label for="__tabbed_3_3">模型创建与实例化</label><label for="__tabbed_3_4">模型训练与评估</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <blockquote>
@@ -1445,19 +1445,19 @@
 <p><strong>设备配置</strong></p>
 <p>这一步是必要的，A卡就老老实实用CPU吧</p>
 <div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 获取设备（CPU 或 GPU）</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using </span><span class="si">{}</span><span class="s2"> device&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">device</span> <span class="o">=</span> <span class="s2">"cuda"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Using </span><span class="si">{}</span><span class="s2"> device"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>在介绍数据处理前，先简要说明一下大名鼎鼎的<code>Fashion MNIST</code>数据集。</p>
 <p>Fashion MNIST 数据集是 10 个时尚类别的灰度图像集合，每个图像大小为 <mark>28x28</mark> 像素。它用作经典 MNIST 数据集的替代品。由于服装项目相似，因此它的分类问题比常规 MNIST 数字数据集更具挑战性。</p>
-<p><center></p>
-<p><a class="glightbox" href="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png" alt="Fashion MNIST Sample" style="zoom: 50%;" /></a></p>
-<p></center>
-<center style="font-size:14px;color:#C0C0C0;">图3  数据集概览|图源网络</center></p>
+<p></p><center>
+<p><a class="glightbox" href="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png" alt="Fashion MNIST Sample" style="zoom: 50%;"></a></p>
+<p></p></center>
+<center style="font-size:14px;color:#C0C0C0;">图3  数据集概览|图源网络</center>
 <p>数据集中每幅图像对应一个0~9的标签，代表十个类别：</p>
-<p><center></p>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1508,8 +1508,8 @@
 </tr>
 </tbody>
 </table>
-<p></center>
-<center style="font-size:14px;color:#C0C0C0;">表1  Fashion MNIST数据集类别</center></p>
+<p></p></center>
+<center style="font-size:14px;color:#C0C0C0;">表1  Fashion MNIST数据集类别</center>
 <p><strong>数据预处理</strong></p>
 <ul>
 <li><code>ToTensor()</code>：将图像转换为 PyTorch 张量</li>
@@ -1528,13 +1528,13 @@
 <li><code>transform=transform</code>：应用定义的数据预处理</li>
 </ul>
 <div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">'./data'</span><span class="p">,</span> 
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">test_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span> 
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">'./data'</span><span class="p">,</span> 
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>
@@ -1570,10 +1570,10 @@
 <li>用于创建自定义数据集和数据加载器的实用程序</li>
 </ul>
 <p>我们主要用于<code>torchvision</code>访问 Fashion MNIST 数据集并对图像应用转换</p>
-<hr />
+<hr>
 <p><code>torch.utils</code>是 PyTorch 中的一个实用模块，它提供了多个子模块来协助完成各种任务。</p>
 <p>其最常用的子模块之一是<code>data</code>，它有助于处理数据集并提供工具来高效地加载和预处理数据。</p>
-<hr />
+<hr>
 <p><code>DataLoader</code> <code>torch.utils.data</code>是一个包装数据集并提供小批量数据的类。它提供：</p>
 <ul>
 <li>数据分批：为了更好地优化和更快地进行训练，我们经常对小批量数据进行训练，而不是对整个数据集进行训练</li>
@@ -1647,7 +1647,7 @@
 <li><strong>RMSProp</strong>：保持梯度平方的移动平均值，并将梯度除以该平均值的根。
 - 使用：<code>torch.optim.RMSprop(model.parameters(), lr=learning_rate)</code></li>
 </ol>
-<hr />
+<hr>
 <p><strong>损失函数</strong></p>
 <ol>
 <li><strong>交叉熵损失</strong>：用于多类分类。它量化了预测概率分布和实际分布之间的差异。
@@ -1702,7 +1702,7 @@
 <a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>        <span class="c1"># Print the loss every 100 batches</span>
 <a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>        <span class="k">if</span> <span class="n">batch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>            <span class="n">loss</span><span class="p">,</span> <span class="n">current</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">batch</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
-<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">&gt;7f</span><span class="si">}</span><span class="s2">  [</span><span class="si">{</span><span class="n">current</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"loss: </span><span class="si">{</span><span class="n">loss</span><span class="si">:</span><span class="s2">&gt;7f</span><span class="si">}</span><span class="s2">  [</span><span class="si">{</span><span class="n">current</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">size</span><span class="si">:</span><span class="s2">&gt;5d</span><span class="si">}</span><span class="s2">]"</span><span class="p">)</span>
 </code></pre></div>
 <p><strong>评估（测试）</strong></p>
 <p>一旦我们的模型训练完成，评估其在未知数据上的表现就至关重要。</p>
@@ -1734,7 +1734,7 @@
 </div>
 </div>
 </div>
-<h2 id="putting-cnn-to-work">Putting CNN to Work<a class="headerlink" href="#putting-cnn-to-work" title="Permanent link">&para;</a></h2>
+<h2 id="putting-cnn-to-work">Putting CNN to Work<a class="headerlink" href="#putting-cnn-to-work" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>多说无益，在电脑风扇呼啸之前，你永远无法真切感受到ML的魅力！</p>
 </blockquote>
@@ -1764,8 +1764,8 @@
 <li>非大项目，建议转战<code>Vscode</code>，ALL IN ONE它不香嘛😜</li>
 </ul>
 </div>
-<hr />
-<h3 id="running">RUNNING！<a class="headerlink" href="#running" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="running">RUNNING！<a class="headerlink" href="#running" title="Permanent link">¶</a></h3>
 <p>本节将从两个方面 <del>拷打</del> 测试CNN</p>
 <ul>
 <li>控制模型，改变超参（学习率lr、优化器、激活函数）</li>
@@ -1780,20 +1780,20 @@
 </ul>
 <div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># 定义模型列表</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="s1">&#39;CNN&#39;</span><span class="p">:</span> <span class="n">CNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="s1">&#39;ResNet&#39;</span><span class="p">:</span> <span class="n">ResNet</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="s1">&#39;ViT&#39;</span><span class="p">:</span> <span class="n">ViT</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="s1">'CNN'</span><span class="p">:</span> <span class="n">CNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="s1">'ResNet'</span><span class="p">:</span> <span class="n">ResNet</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="s1">'ViT'</span><span class="p">:</span> <span class="n">ViT</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">}</span>
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">The Impact of Hyperparameters on Model Performance</label><label for="__tabbed_4_2">Who Wears the Crown of FashionMNIST Classification</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">The Impact of Hyperparameters on Model Performance</label><label for="__tabbed_4_2">Who Wears the Crown of FashionMNIST Classification</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><strong>训练与测试结果</strong></p>
-<p><center></p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_25_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_25_1.png" style="zoom:60%;" /></a></p>
-<p></center></p>
-<p><center style="font-size:14px;color:#C0C0C0;">图4 不同超参下的模型性能结果对比</center></p>
-<p><center></p>
+<p></p><center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_25_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_25_1.png" style="zoom:60%;"></a></p>
+<p></p></center>
+<p></p><center style="font-size:14px;color:#C0C0C0;">图4 不同超参下的模型性能结果对比</center>
+<p></p><center>
 <table>
 <thead>
 <tr>
@@ -1943,8 +1943,8 @@
 </tr>
 </tbody>
 </table>
-<p></center></p>
-<p><center style="font-size:14px;color:#C0C0C0;">表2 不同超参下的模型测试结果与复杂度计算</center></p>
+<p></p></center>
+<p></p><center style="font-size:14px;color:#C0C0C0;">表2 不同超参下的模型测试结果与复杂度计算</center>
 <p><strong>不同学习率对Loss的影响</strong></p>
 <p><strong>低学习率（如0.001）</strong>：</p>
 <ul>
@@ -1961,7 +1961,7 @@
 <ul>
 <li>稳定下降且最终Loss最低，证明其兼顾了收敛速度和准确性。</li>
 </ul>
-<hr />
+<hr>
 <p><strong>不同优化器对Loss的影响</strong></p>
 <p><strong>Adam优化器</strong>：</p>
 <ul>
@@ -1974,7 +1974,7 @@
 <li>SGD采用固定学习率，优化过程依赖于梯度的全局方向。</li>
 <li>在实验中，SGD表现出收敛慢的特性，训练时间较长，但在高lr时表现出更稳定更优秀的特性。</li>
 </ul>
-<hr />
+<hr>
 <p><strong>不同激活函数对Loss的影响</strong></p>
 <p><strong>ReLU激活函数</strong>：</p>
 <ul>
@@ -1986,7 +1986,7 @@
 <li>Leaky ReLU在负值区域提供了微小的负斜率，避免了“神经元死亡”的问题</li>
 <li>实验中，Leaky ReLU的验证Loss在初期低于ReLU，但中后期波动较大，可能因较复杂的负值梯度学习带来不稳定</li>
 </ul>
-<hr />
+<hr>
 <p><strong>测试Loss和准确率（Test Accuracy）</strong>：</p>
 <ul>
 <li><code>lr=0.001, Adam, ReLU</code>的测试Accuracy最高（0.9134），表明其泛化能力最佳。</li>
@@ -1997,7 +1997,7 @@
 <li>Adam优化器需要更多计算量以动态调整学习率，因此训练时间略长。</li>
 <li>推理时间与模型大小无关，因此不同超参数配置下几乎相同。</li>
 </ul>
-<hr />
+<hr>
 <p><strong>一些结论</strong></p>
 <ol>
 <li><strong>学习率的平衡</strong>：0.001提供了最佳的稳定性与收敛效果</li>
@@ -2008,10 +2008,10 @@
 </div>
 <div class="tabbed-block">
 <p><strong>训练与测试结果</strong></p>
-<p><center></p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_28_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_28_1.png" style="zoom:100%;" /></a></p>
-<p></center></p>
-<p><center style="font-size:14px;color:#C0C0C0;">图5 不同模型的模型性能结果对比</center></p>
+<p></p><center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_28_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CNN_28_1.png" style="zoom:100%;"></a></p>
+<p></p></center>
+<p></p><center style="font-size:14px;color:#C0C0C0;">图5 不同模型的模型性能结果对比</center>
 <table>
 <thead>
 <tr>
@@ -2054,7 +2054,7 @@
 </tr>
 </tbody>
 </table>
-<p><center style="font-size:14px;color:#C0C0C0;">表3 不同模型下的性能结果对比</center></p>
+<p></p><center style="font-size:14px;color:#C0C0C0;">表3 不同模型下的性能结果对比</center>
 <p><strong>训练和验证损失分析</strong></p>
 <ul>
 <li><strong>CNN</strong> 和 <strong>ResNet</strong> 的训练和验证损失整体较低，且变化趋势较为稳定。随着 epoch 增加，损失逐渐减小，但 <strong>CNN</strong> 训练后期可能出现轻微的过拟合现象（如验证损失略有增加）。</li>
@@ -2102,12 +2102,12 @@
 </div>
 </div>
 </div>
-<hr />
-<h2 id="_4">最后<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_4">最后<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
 <p>这是笔者第一次从查阅资料到实验结果分析，系统地走了一遍。</p>
 <p>期末周匆匆忙忙赶出来的，也是漏洞百出。</p>
 <p>但总算是结束啦~</p>
-<h2 id="_5">附录<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_5">附录<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
 <div class="highlight"><span class="filename">python</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 导入必要的库</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>  <span class="c1"># PyTorch 核心库，用于张量操作和深度学习模型</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>  <span class="c1"># PyTorch 的神经网络模块，包含层和损失函数</span>
@@ -2123,8 +2123,8 @@
 <a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
 <a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
 <a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="c1"># 获取设备（CPU 或 GPU），优先使用 GPU</span>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using </span><span class="si">{}</span><span class="s2"> device&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>  <span class="c1"># 打印当前使用的设备</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">device</span> <span class="o">=</span> <span class="s2">"cuda"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Using </span><span class="si">{}</span><span class="s2"> device"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>  <span class="c1"># 打印当前使用的设备</span>
 <a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
 <a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="c1"># 数据预处理</span>
 <a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
@@ -2134,13 +2134,13 @@
 <a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>
 <a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="c1"># 加载 Fashion MNIST 数据集</span>
 <a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span>  <span class="c1"># 数据集存储路径</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">'./data'</span><span class="p">,</span>  <span class="c1"># 数据集存储路径</span>
 <a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>    <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># 加载训练集</span>
 <a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># 如果数据集不存在，则自动下载</span>
 <a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>  <span class="c1"># 应用定义的数据预处理</span>
 <a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="p">)</span>
 <a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="n">test_dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./data&#39;</span><span class="p">,</span>  <span class="c1"># 数据集存储路径</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>    <span class="n">root</span><span class="o">=</span><span class="s1">'./data'</span><span class="p">,</span>  <span class="c1"># 数据集存储路径</span>
 <a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>    <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># 加载测试集</span>
 <a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>    <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># 如果数据集不存在，则自动下载</span>
 <a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>    <span class="n">transform</span><span class="o">=</span><span class="n">transform</span>  <span class="c1"># 应用定义的数据预处理</span>
@@ -2246,7 +2246,7 @@
 <a id="__codelineno-16-136" name="__codelineno-16-136" href="#__codelineno-16-136"></a>
 <a id="__codelineno-16-137" name="__codelineno-16-137" href="#__codelineno-16-137"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 <a id="__codelineno-16-138" name="__codelineno-16-138" href="#__codelineno-16-138"></a>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proj</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 通过卷积层将图像分割为 patch</span>
-<a id="__codelineno-16-139" name="__codelineno-16-139" href="#__codelineno-16-139"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;b c h w -&gt; b (h w) c&#39;</span><span class="p">)</span>  <span class="c1"># 使用 rearrange 将 patch 重新排列为序列</span>
+<a id="__codelineno-16-139" name="__codelineno-16-139" href="#__codelineno-16-139"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">rearrange</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">'b c h w -&gt; b (h w) c'</span><span class="p">)</span>  <span class="c1"># 使用 rearrange 将 patch 重新排列为序列</span>
 <a id="__codelineno-16-140" name="__codelineno-16-140" href="#__codelineno-16-140"></a>        <span class="k">return</span> <span class="n">x</span>  <span class="c1"># 返回最终的输出</span>
 <a id="__codelineno-16-141" name="__codelineno-16-141" href="#__codelineno-16-141"></a>
 <a id="__codelineno-16-142" name="__codelineno-16-142" href="#__codelineno-16-142"></a><span class="k">class</span><span class="w"> </span><span class="nc">TransformerEncoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -2322,7 +2322,7 @@
 <a id="__codelineno-16-212" name="__codelineno-16-212" href="#__codelineno-16-212"></a>                <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>  <span class="c1"># 计算损失</span>
 <a id="__codelineno-16-213" name="__codelineno-16-213" href="#__codelineno-16-213"></a>                <span class="n">val_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>  <span class="c1"># 累计损失</span>
 <a id="__codelineno-16-214" name="__codelineno-16-214" href="#__codelineno-16-214"></a>        <span class="n">val_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_loader</span><span class="p">))</span>  <span class="c1"># 记录每个 epoch 的验证损失</span>
-<a id="__codelineno-16-215" name="__codelineno-16-215" href="#__codelineno-16-215"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">, Train Loss: </span><span class="si">{</span><span class="n">train_losses</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Val Loss: </span><span class="si">{</span><span class="n">val_losses</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 打印训练和验证损失</span>
+<a id="__codelineno-16-215" name="__codelineno-16-215" href="#__codelineno-16-215"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s2">, Train Loss: </span><span class="si">{</span><span class="n">train_losses</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Val Loss: </span><span class="si">{</span><span class="n">val_losses</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 打印训练和验证损失</span>
 <a id="__codelineno-16-216" name="__codelineno-16-216" href="#__codelineno-16-216"></a>    <span class="k">return</span> <span class="n">train_losses</span><span class="p">,</span> <span class="n">val_losses</span>  <span class="c1"># 返回训练和验证损失列表</span>
 <a id="__codelineno-16-217" name="__codelineno-16-217" href="#__codelineno-16-217"></a>
 <a id="__codelineno-16-218" name="__codelineno-16-218" href="#__codelineno-16-218"></a><span class="c1"># 计算参数量</span>
@@ -2381,7 +2381,7 @@
 <a id="__codelineno-16-271" name="__codelineno-16-271" href="#__codelineno-16-271"></a>            <span class="n">model</span> <span class="o">=</span> <span class="n">CNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># 初始化模型</span>
 <a id="__codelineno-16-272" name="__codelineno-16-272" href="#__codelineno-16-272"></a>            <span class="n">optimizer</span> <span class="o">=</span> <span class="n">opt</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>  <span class="c1"># 初始化优化器</span>
 <a id="__codelineno-16-273" name="__codelineno-16-273" href="#__codelineno-16-273"></a>            <span class="c1"># 打印当前参数组合</span>
-<a id="__codelineno-16-274" name="__codelineno-16-274" href="#__codelineno-16-274"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training with lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s2">, optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> 
+<a id="__codelineno-16-274" name="__codelineno-16-274" href="#__codelineno-16-274"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training with lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s2">, optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">, activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> 
 <a id="__codelineno-16-275" name="__codelineno-16-275" href="#__codelineno-16-275"></a>            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  <span class="c1"># 记录开始时间</span>
 <a id="__codelineno-16-276" name="__codelineno-16-276" href="#__codelineno-16-276"></a>            <span class="n">train_losses</span><span class="p">,</span> <span class="n">val_losses</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(),</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 训练模型</span>
 <a id="__codelineno-16-277" name="__codelineno-16-277" href="#__codelineno-16-277"></a>            <span class="n">training_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>  <span class="c1"># 计算训练时间</span>
@@ -2389,14 +2389,14 @@
 <a id="__codelineno-16-279" name="__codelineno-16-279" href="#__codelineno-16-279"></a>            <span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">evaluate_on_test_set</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">())</span> 
 <a id="__codelineno-16-280" name="__codelineno-16-280" href="#__codelineno-16-280"></a>            <span class="n">avg_inference_time</span> <span class="o">=</span> <span class="n">measure_inference_time</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">)</span>  <span class="c1"># 计算平均推理时间</span>
 <a id="__codelineno-16-281" name="__codelineno-16-281" href="#__codelineno-16-281"></a>            <span class="n">results</span><span class="p">[(</span><span class="n">lr</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)]</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># 存储结果</span>
-<a id="__codelineno-16-282" name="__codelineno-16-282" href="#__codelineno-16-282"></a>                <span class="s1">&#39;train_losses&#39;</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
-<a id="__codelineno-16-283" name="__codelineno-16-283" href="#__codelineno-16-283"></a>                <span class="s1">&#39;val_losses&#39;</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
-<a id="__codelineno-16-284" name="__codelineno-16-284" href="#__codelineno-16-284"></a>                <span class="s1">&#39;training_time&#39;</span><span class="p">:</span> <span class="n">training_time</span><span class="p">,</span>
-<a id="__codelineno-16-285" name="__codelineno-16-285" href="#__codelineno-16-285"></a>                <span class="s1">&#39;test_loss&#39;</span><span class="p">:</span> <span class="n">test_loss</span><span class="p">,</span>
-<a id="__codelineno-16-286" name="__codelineno-16-286" href="#__codelineno-16-286"></a>                <span class="s1">&#39;test_accuracy&#39;</span><span class="p">:</span> <span class="n">test_accuracy</span><span class="p">,</span>
-<a id="__codelineno-16-287" name="__codelineno-16-287" href="#__codelineno-16-287"></a>                <span class="s1">&#39;parameters&#39;</span><span class="p">:</span> <span class="n">count_parameters</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
-<a id="__codelineno-16-288" name="__codelineno-16-288" href="#__codelineno-16-288"></a>                <span class="s1">&#39;model_size&#39;</span><span class="p">:</span> <span class="n">get_model_size</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
-<a id="__codelineno-16-289" name="__codelineno-16-289" href="#__codelineno-16-289"></a>                <span class="s1">&#39;avg_inference_time&#39;</span><span class="p">:</span> <span class="n">avg_inference_time</span>
+<a id="__codelineno-16-282" name="__codelineno-16-282" href="#__codelineno-16-282"></a>                <span class="s1">'train_losses'</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
+<a id="__codelineno-16-283" name="__codelineno-16-283" href="#__codelineno-16-283"></a>                <span class="s1">'val_losses'</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
+<a id="__codelineno-16-284" name="__codelineno-16-284" href="#__codelineno-16-284"></a>                <span class="s1">'training_time'</span><span class="p">:</span> <span class="n">training_time</span><span class="p">,</span>
+<a id="__codelineno-16-285" name="__codelineno-16-285" href="#__codelineno-16-285"></a>                <span class="s1">'test_loss'</span><span class="p">:</span> <span class="n">test_loss</span><span class="p">,</span>
+<a id="__codelineno-16-286" name="__codelineno-16-286" href="#__codelineno-16-286"></a>                <span class="s1">'test_accuracy'</span><span class="p">:</span> <span class="n">test_accuracy</span><span class="p">,</span>
+<a id="__codelineno-16-287" name="__codelineno-16-287" href="#__codelineno-16-287"></a>                <span class="s1">'parameters'</span><span class="p">:</span> <span class="n">count_parameters</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
+<a id="__codelineno-16-288" name="__codelineno-16-288" href="#__codelineno-16-288"></a>                <span class="s1">'model_size'</span><span class="p">:</span> <span class="n">get_model_size</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
+<a id="__codelineno-16-289" name="__codelineno-16-289" href="#__codelineno-16-289"></a>                <span class="s1">'avg_inference_time'</span><span class="p">:</span> <span class="n">avg_inference_time</span>
 <a id="__codelineno-16-290" name="__codelineno-16-290" href="#__codelineno-16-290"></a>            <span class="p">}</span>
 <a id="__codelineno-16-291" name="__codelineno-16-291" href="#__codelineno-16-291"></a>
 <a id="__codelineno-16-292" name="__codelineno-16-292" href="#__codelineno-16-292"></a><span class="c1"># 绘制所有 Loss 曲线</span>
@@ -2405,43 +2405,43 @@
 <a id="__codelineno-16-295" name="__codelineno-16-295" href="#__codelineno-16-295"></a>
 <a id="__codelineno-16-296" name="__codelineno-16-296" href="#__codelineno-16-296"></a>    <span class="c1"># 绘制不同学习率的 Loss 曲线</span>
 <a id="__codelineno-16-297" name="__codelineno-16-297" href="#__codelineno-16-297"></a>    <span class="k">for</span> <span class="n">lr</span> <span class="ow">in</span> <span class="n">learning_rates</span><span class="p">:</span>
-<a id="__codelineno-16-298" name="__codelineno-16-298" href="#__codelineno-16-298"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="s1">&#39;relu&#39;</span><span class="p">)</span>
+<a id="__codelineno-16-298" name="__codelineno-16-298" href="#__codelineno-16-298"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="s1">'Adam'</span><span class="p">,</span> <span class="s1">'relu'</span><span class="p">)</span>
 <a id="__codelineno-16-299" name="__codelineno-16-299" href="#__codelineno-16-299"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-<a id="__codelineno-16-300" name="__codelineno-16-300" href="#__codelineno-16-300"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;train_losses&#39;</span><span class="p">]</span>
-<a id="__codelineno-16-301" name="__codelineno-16-301" href="#__codelineno-16-301"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;val_losses&#39;</span><span class="p">]</span>
-<a id="__codelineno-16-302" name="__codelineno-16-302" href="#__codelineno-16-302"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Train Loss (lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
-<a id="__codelineno-16-303" name="__codelineno-16-303" href="#__codelineno-16-303"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Val Loss (lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
-<a id="__codelineno-16-304" name="__codelineno-16-304" href="#__codelineno-16-304"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loss Curves for Different Learning Rates (Adam, ReLU)&#39;</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
-<a id="__codelineno-16-305" name="__codelineno-16-305" href="#__codelineno-16-305"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
-<a id="__codelineno-16-306" name="__codelineno-16-306" href="#__codelineno-16-306"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
+<a id="__codelineno-16-300" name="__codelineno-16-300" href="#__codelineno-16-300"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'train_losses'</span><span class="p">]</span>
+<a id="__codelineno-16-301" name="__codelineno-16-301" href="#__codelineno-16-301"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'val_losses'</span><span class="p">]</span>
+<a id="__codelineno-16-302" name="__codelineno-16-302" href="#__codelineno-16-302"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Train Loss (lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
+<a id="__codelineno-16-303" name="__codelineno-16-303" href="#__codelineno-16-303"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Val Loss (lr=</span><span class="si">{</span><span class="n">lr</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
+<a id="__codelineno-16-304" name="__codelineno-16-304" href="#__codelineno-16-304"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Loss Curves for Different Learning Rates (Adam, ReLU)'</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
+<a id="__codelineno-16-305" name="__codelineno-16-305" href="#__codelineno-16-305"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
+<a id="__codelineno-16-306" name="__codelineno-16-306" href="#__codelineno-16-306"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Loss'</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
 <a id="__codelineno-16-307" name="__codelineno-16-307" href="#__codelineno-16-307"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示图例</span>
 <a id="__codelineno-16-308" name="__codelineno-16-308" href="#__codelineno-16-308"></a>
 <a id="__codelineno-16-309" name="__codelineno-16-309" href="#__codelineno-16-309"></a>    <span class="c1"># 绘制不同优化器的 Loss 曲线</span>
 <a id="__codelineno-16-310" name="__codelineno-16-310" href="#__codelineno-16-310"></a>    <span class="k">for</span> <span class="n">opt</span> <span class="ow">in</span> <span class="n">optimizers</span><span class="p">:</span>
-<a id="__codelineno-16-311" name="__codelineno-16-311" href="#__codelineno-16-311"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">&#39;relu&#39;</span><span class="p">)</span>
+<a id="__codelineno-16-311" name="__codelineno-16-311" href="#__codelineno-16-311"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s1">'relu'</span><span class="p">)</span>
 <a id="__codelineno-16-312" name="__codelineno-16-312" href="#__codelineno-16-312"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-<a id="__codelineno-16-313" name="__codelineno-16-313" href="#__codelineno-16-313"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;train_losses&#39;</span><span class="p">]</span>
-<a id="__codelineno-16-314" name="__codelineno-16-314" href="#__codelineno-16-314"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;val_losses&#39;</span><span class="p">]</span>
-<a id="__codelineno-16-315" name="__codelineno-16-315" href="#__codelineno-16-315"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Train Loss (optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
-<a id="__codelineno-16-316" name="__codelineno-16-316" href="#__codelineno-16-316"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Val Loss (optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
-<a id="__codelineno-16-317" name="__codelineno-16-317" href="#__codelineno-16-317"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loss Curves for Different Optimizers (lr=0.001, ReLU)&#39;</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
-<a id="__codelineno-16-318" name="__codelineno-16-318" href="#__codelineno-16-318"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
-<a id="__codelineno-16-319" name="__codelineno-16-319" href="#__codelineno-16-319"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
+<a id="__codelineno-16-313" name="__codelineno-16-313" href="#__codelineno-16-313"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'train_losses'</span><span class="p">]</span>
+<a id="__codelineno-16-314" name="__codelineno-16-314" href="#__codelineno-16-314"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'val_losses'</span><span class="p">]</span>
+<a id="__codelineno-16-315" name="__codelineno-16-315" href="#__codelineno-16-315"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Train Loss (optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
+<a id="__codelineno-16-316" name="__codelineno-16-316" href="#__codelineno-16-316"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Val Loss (optimizer=</span><span class="si">{</span><span class="n">opt</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
+<a id="__codelineno-16-317" name="__codelineno-16-317" href="#__codelineno-16-317"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Loss Curves for Different Optimizers (lr=0.001, ReLU)'</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
+<a id="__codelineno-16-318" name="__codelineno-16-318" href="#__codelineno-16-318"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
+<a id="__codelineno-16-319" name="__codelineno-16-319" href="#__codelineno-16-319"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Loss'</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
 <a id="__codelineno-16-320" name="__codelineno-16-320" href="#__codelineno-16-320"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示图例</span>
 <a id="__codelineno-16-321" name="__codelineno-16-321" href="#__codelineno-16-321"></a>
 <a id="__codelineno-16-322" name="__codelineno-16-322" href="#__codelineno-16-322"></a>    <span class="c1"># 绘制不同激活函数的 Loss 曲线</span>
 <a id="__codelineno-16-323" name="__codelineno-16-323" href="#__codelineno-16-323"></a>    <span class="k">for</span> <span class="n">activation</span> <span class="ow">in</span> <span class="n">activation_functions</span><span class="p">:</span>
-<a id="__codelineno-16-324" name="__codelineno-16-324" href="#__codelineno-16-324"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<a id="__codelineno-16-324" name="__codelineno-16-324" href="#__codelineno-16-324"></a>        <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="s1">'Adam'</span><span class="p">,</span> <span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
 <a id="__codelineno-16-325" name="__codelineno-16-325" href="#__codelineno-16-325"></a>        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-<a id="__codelineno-16-326" name="__codelineno-16-326" href="#__codelineno-16-326"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;train_losses&#39;</span><span class="p">]</span>
-<a id="__codelineno-16-327" name="__codelineno-16-327" href="#__codelineno-16-327"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">&#39;val_losses&#39;</span><span class="p">]</span>
+<a id="__codelineno-16-326" name="__codelineno-16-326" href="#__codelineno-16-326"></a>            <span class="n">train_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'train_losses'</span><span class="p">]</span>
+<a id="__codelineno-16-327" name="__codelineno-16-327" href="#__codelineno-16-327"></a>            <span class="n">val_losses</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="s1">'val_losses'</span><span class="p">]</span>
 <a id="__codelineno-16-328" name="__codelineno-16-328" href="#__codelineno-16-328"></a>            <span class="c1"># 绘制训练损失曲线</span>
-<a id="__codelineno-16-329" name="__codelineno-16-329" href="#__codelineno-16-329"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Train Loss (activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  
+<a id="__codelineno-16-329" name="__codelineno-16-329" href="#__codelineno-16-329"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Train Loss (activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  
 <a id="__codelineno-16-330" name="__codelineno-16-330" href="#__codelineno-16-330"></a>            <span class="c1"># 绘制验证损失曲线</span>
-<a id="__codelineno-16-331" name="__codelineno-16-331" href="#__codelineno-16-331"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Val Loss (activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>  
-<a id="__codelineno-16-332" name="__codelineno-16-332" href="#__codelineno-16-332"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loss Curves for Different Activation Functions (lr=0.001, Adam)&#39;</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
-<a id="__codelineno-16-333" name="__codelineno-16-333" href="#__codelineno-16-333"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
-<a id="__codelineno-16-334" name="__codelineno-16-334" href="#__codelineno-16-334"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
+<a id="__codelineno-16-331" name="__codelineno-16-331" href="#__codelineno-16-331"></a>            <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_losses</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Val Loss (activation=</span><span class="si">{</span><span class="n">activation</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1">)'</span><span class="p">)</span>  
+<a id="__codelineno-16-332" name="__codelineno-16-332" href="#__codelineno-16-332"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'Loss Curves for Different Activation Functions (lr=0.001, Adam)'</span><span class="p">)</span>  <span class="c1"># 设置标题</span>
+<a id="__codelineno-16-333" name="__codelineno-16-333" href="#__codelineno-16-333"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
+<a id="__codelineno-16-334" name="__codelineno-16-334" href="#__codelineno-16-334"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Loss'</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
 <a id="__codelineno-16-335" name="__codelineno-16-335" href="#__codelineno-16-335"></a>    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示图例</span>
 <a id="__codelineno-16-336" name="__codelineno-16-336" href="#__codelineno-16-336"></a>
 <a id="__codelineno-16-337" name="__codelineno-16-337" href="#__codelineno-16-337"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>  <span class="c1"># 调整布局，避免重叠</span>
@@ -2452,68 +2452,68 @@
 <a id="__codelineno-16-342" name="__codelineno-16-342" href="#__codelineno-16-342"></a>
 <a id="__codelineno-16-343" name="__codelineno-16-343" href="#__codelineno-16-343"></a><span class="c1"># 计算复杂度分析</span>
 <a id="__codelineno-16-344" name="__codelineno-16-344" href="#__codelineno-16-344"></a><span class="k">for</span> <span class="n">params</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-16-345" name="__codelineno-16-345" href="#__codelineno-16-345"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Params: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 打印当前参数组合</span>
-<a id="__codelineno-16-346" name="__codelineno-16-346" href="#__codelineno-16-346"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Training Time: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;training_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>  <span class="c1"># 打印训练时间</span>
-<a id="__codelineno-16-347" name="__codelineno-16-347" href="#__codelineno-16-347"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Parameters: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 打印参数量</span>
-<a id="__codelineno-16-348" name="__codelineno-16-348" href="#__codelineno-16-348"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Model Size: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;model_size&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>  <span class="c1"># 打印模型大小</span>
+<a id="__codelineno-16-345" name="__codelineno-16-345" href="#__codelineno-16-345"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Params: </span><span class="si">{</span><span class="n">params</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 打印当前参数组合</span>
+<a id="__codelineno-16-346" name="__codelineno-16-346" href="#__codelineno-16-346"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Training Time: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'training_time'</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span>  <span class="c1"># 打印训练时间</span>
+<a id="__codelineno-16-347" name="__codelineno-16-347" href="#__codelineno-16-347"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Parameters: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'parameters'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 打印参数量</span>
+<a id="__codelineno-16-348" name="__codelineno-16-348" href="#__codelineno-16-348"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Model Size: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'model_size'</span><span class="p">]</span><span class="si">}</span><span class="s2"> bytes"</span><span class="p">)</span>  <span class="c1"># 打印模型大小</span>
 <a id="__codelineno-16-349" name="__codelineno-16-349" href="#__codelineno-16-349"></a>    <span class="c1"># 打印平均推理时间</span>
-<a id="__codelineno-16-350" name="__codelineno-16-350" href="#__codelineno-16-350"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Average Inference Time per Sample: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;avg_inference_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span> 
+<a id="__codelineno-16-350" name="__codelineno-16-350" href="#__codelineno-16-350"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Average Inference Time per Sample: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'avg_inference_time'</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> seconds"</span><span class="p">)</span> 
 <a id="__codelineno-16-351" name="__codelineno-16-351" href="#__codelineno-16-351"></a>    <span class="c1"># 打印测试损失和准确率</span>
-<a id="__codelineno-16-352" name="__codelineno-16-352" href="#__codelineno-16-352"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Test Loss: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;test_loss&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Test Accuracy: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+<a id="__codelineno-16-352" name="__codelineno-16-352" href="#__codelineno-16-352"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"  Test Loss: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'test_loss'</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Test Accuracy: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'test_accuracy'</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  
 <a id="__codelineno-16-353" name="__codelineno-16-353" href="#__codelineno-16-353"></a>    <span class="nb">print</span><span class="p">()</span>
 <a id="__codelineno-16-354" name="__codelineno-16-354" href="#__codelineno-16-354"></a>
 <a id="__codelineno-16-355" name="__codelineno-16-355" href="#__codelineno-16-355"></a><span class="c1"># 定义模型列表</span>
 <a id="__codelineno-16-356" name="__codelineno-16-356" href="#__codelineno-16-356"></a><span class="n">models</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-16-357" name="__codelineno-16-357" href="#__codelineno-16-357"></a>    <span class="s1">&#39;CNN&#39;</span><span class="p">:</span> <span class="n">CNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>  <span class="c1"># CNN 模型</span>
-<a id="__codelineno-16-358" name="__codelineno-16-358" href="#__codelineno-16-358"></a>    <span class="s1">&#39;ResNet&#39;</span><span class="p">:</span> <span class="n">ResNet</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>  <span class="c1"># ResNet 模型</span>
-<a id="__codelineno-16-359" name="__codelineno-16-359" href="#__codelineno-16-359"></a>    <span class="s1">&#39;ViT&#39;</span><span class="p">:</span> <span class="n">ViT</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># ViT 模型</span>
+<a id="__codelineno-16-357" name="__codelineno-16-357" href="#__codelineno-16-357"></a>    <span class="s1">'CNN'</span><span class="p">:</span> <span class="n">CNN</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>  <span class="c1"># CNN 模型</span>
+<a id="__codelineno-16-358" name="__codelineno-16-358" href="#__codelineno-16-358"></a>    <span class="s1">'ResNet'</span><span class="p">:</span> <span class="n">ResNet</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span>  <span class="c1"># ResNet 模型</span>
+<a id="__codelineno-16-359" name="__codelineno-16-359" href="#__codelineno-16-359"></a>    <span class="s1">'ViT'</span><span class="p">:</span> <span class="n">ViT</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># ViT 模型</span>
 <a id="__codelineno-16-360" name="__codelineno-16-360" href="#__codelineno-16-360"></a><span class="p">}</span>
 <a id="__codelineno-16-361" name="__codelineno-16-361" href="#__codelineno-16-361"></a>
 <a id="__codelineno-16-362" name="__codelineno-16-362" href="#__codelineno-16-362"></a><span class="c1"># 训练和评估每个模型</span>
 <a id="__codelineno-16-363" name="__codelineno-16-363" href="#__codelineno-16-363"></a><span class="n">model_results</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># 存储每个模型的结果</span>
 <a id="__codelineno-16-364" name="__codelineno-16-364" href="#__codelineno-16-364"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <a id="__codelineno-16-365" name="__codelineno-16-365" href="#__codelineno-16-365"></a>    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># 初始化优化器</span>
-<a id="__codelineno-16-366" name="__codelineno-16-366" href="#__codelineno-16-366"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Training </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> model&quot;</span><span class="p">)</span>  <span class="c1"># 打印当前模型名称</span>
+<a id="__codelineno-16-366" name="__codelineno-16-366" href="#__codelineno-16-366"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Training </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> model"</span><span class="p">)</span>  <span class="c1"># 打印当前模型名称</span>
 <a id="__codelineno-16-367" name="__codelineno-16-367" href="#__codelineno-16-367"></a>    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>  <span class="c1"># 记录开始时间</span>
 <a id="__codelineno-16-368" name="__codelineno-16-368" href="#__codelineno-16-368"></a>    <span class="n">train_losses</span><span class="p">,</span> <span class="n">val_losses</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(),</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 训练模型</span>
 <a id="__codelineno-16-369" name="__codelineno-16-369" href="#__codelineno-16-369"></a>    <span class="n">training_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>  <span class="c1"># 计算训练时间</span>
 <a id="__codelineno-16-370" name="__codelineno-16-370" href="#__codelineno-16-370"></a>    <span class="n">test_loss</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">evaluate_on_test_set</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">())</span>  <span class="c1"># 评估测试集性能</span>
 <a id="__codelineno-16-371" name="__codelineno-16-371" href="#__codelineno-16-371"></a>    <span class="n">avg_inference_time</span> <span class="o">=</span> <span class="n">measure_inference_time</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">)</span>  <span class="c1"># 计算平均推理时间</span>
 <a id="__codelineno-16-372" name="__codelineno-16-372" href="#__codelineno-16-372"></a>    <span class="n">model_results</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>  <span class="c1"># 存储结果</span>
-<a id="__codelineno-16-373" name="__codelineno-16-373" href="#__codelineno-16-373"></a>        <span class="s1">&#39;train_losses&#39;</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
-<a id="__codelineno-16-374" name="__codelineno-16-374" href="#__codelineno-16-374"></a>        <span class="s1">&#39;val_losses&#39;</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
-<a id="__codelineno-16-375" name="__codelineno-16-375" href="#__codelineno-16-375"></a>        <span class="s1">&#39;training_time&#39;</span><span class="p">:</span> <span class="n">training_time</span><span class="p">,</span>
-<a id="__codelineno-16-376" name="__codelineno-16-376" href="#__codelineno-16-376"></a>        <span class="s1">&#39;test_loss&#39;</span><span class="p">:</span> <span class="n">test_loss</span><span class="p">,</span>
-<a id="__codelineno-16-377" name="__codelineno-16-377" href="#__codelineno-16-377"></a>        <span class="s1">&#39;test_accuracy&#39;</span><span class="p">:</span> <span class="n">test_accuracy</span><span class="p">,</span>
-<a id="__codelineno-16-378" name="__codelineno-16-378" href="#__codelineno-16-378"></a>        <span class="s1">&#39;parameters&#39;</span><span class="p">:</span> <span class="n">count_parameters</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
-<a id="__codelineno-16-379" name="__codelineno-16-379" href="#__codelineno-16-379"></a>        <span class="s1">&#39;model_size&#39;</span><span class="p">:</span> <span class="n">get_model_size</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
-<a id="__codelineno-16-380" name="__codelineno-16-380" href="#__codelineno-16-380"></a>        <span class="s1">&#39;avg_inference_time&#39;</span><span class="p">:</span> <span class="n">avg_inference_time</span>
+<a id="__codelineno-16-373" name="__codelineno-16-373" href="#__codelineno-16-373"></a>        <span class="s1">'train_losses'</span><span class="p">:</span> <span class="n">train_losses</span><span class="p">,</span>
+<a id="__codelineno-16-374" name="__codelineno-16-374" href="#__codelineno-16-374"></a>        <span class="s1">'val_losses'</span><span class="p">:</span> <span class="n">val_losses</span><span class="p">,</span>
+<a id="__codelineno-16-375" name="__codelineno-16-375" href="#__codelineno-16-375"></a>        <span class="s1">'training_time'</span><span class="p">:</span> <span class="n">training_time</span><span class="p">,</span>
+<a id="__codelineno-16-376" name="__codelineno-16-376" href="#__codelineno-16-376"></a>        <span class="s1">'test_loss'</span><span class="p">:</span> <span class="n">test_loss</span><span class="p">,</span>
+<a id="__codelineno-16-377" name="__codelineno-16-377" href="#__codelineno-16-377"></a>        <span class="s1">'test_accuracy'</span><span class="p">:</span> <span class="n">test_accuracy</span><span class="p">,</span>
+<a id="__codelineno-16-378" name="__codelineno-16-378" href="#__codelineno-16-378"></a>        <span class="s1">'parameters'</span><span class="p">:</span> <span class="n">count_parameters</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
+<a id="__codelineno-16-379" name="__codelineno-16-379" href="#__codelineno-16-379"></a>        <span class="s1">'model_size'</span><span class="p">:</span> <span class="n">get_model_size</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
+<a id="__codelineno-16-380" name="__codelineno-16-380" href="#__codelineno-16-380"></a>        <span class="s1">'avg_inference_time'</span><span class="p">:</span> <span class="n">avg_inference_time</span>
 <a id="__codelineno-16-381" name="__codelineno-16-381" href="#__codelineno-16-381"></a>    <span class="p">}</span>
 <a id="__codelineno-16-382" name="__codelineno-16-382" href="#__codelineno-16-382"></a>
 <a id="__codelineno-16-383" name="__codelineno-16-383" href="#__codelineno-16-383"></a><span class="c1"># 绘制对比图</span>
 <a id="__codelineno-16-384" name="__codelineno-16-384" href="#__codelineno-16-384"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">model_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-16-385" name="__codelineno-16-385" href="#__codelineno-16-385"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;train_losses&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Training Loss&#39;</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
-<a id="__codelineno-16-386" name="__codelineno-16-386" href="#__codelineno-16-386"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;val_losses&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Validation Loss&#39;</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
-<a id="__codelineno-16-387" name="__codelineno-16-387" href="#__codelineno-16-387"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
-<a id="__codelineno-16-388" name="__codelineno-16-388" href="#__codelineno-16-388"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
+<a id="__codelineno-16-385" name="__codelineno-16-385" href="#__codelineno-16-385"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">'train_losses'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Training Loss'</span><span class="p">)</span>  <span class="c1"># 绘制训练损失曲线</span>
+<a id="__codelineno-16-386" name="__codelineno-16-386" href="#__codelineno-16-386"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s1">'val_losses'</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> Validation Loss'</span><span class="p">)</span>  <span class="c1"># 绘制验证损失曲线</span>
+<a id="__codelineno-16-387" name="__codelineno-16-387" href="#__codelineno-16-387"></a><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Epoch'</span><span class="p">)</span>  <span class="c1"># 设置 x 轴标签</span>
+<a id="__codelineno-16-388" name="__codelineno-16-388" href="#__codelineno-16-388"></a><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Loss'</span><span class="p">)</span>  <span class="c1"># 设置 y 轴标签</span>
 <a id="__codelineno-16-389" name="__codelineno-16-389" href="#__codelineno-16-389"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>  <span class="c1"># 显示图例</span>
 <a id="__codelineno-16-390" name="__codelineno-16-390" href="#__codelineno-16-390"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># 显示绘制的图表</span>
 <a id="__codelineno-16-391" name="__codelineno-16-391" href="#__codelineno-16-391"></a>
 <a id="__codelineno-16-392" name="__codelineno-16-392" href="#__codelineno-16-392"></a><span class="c1"># 计算复杂度分析</span>
 <a id="__codelineno-16-393" name="__codelineno-16-393" href="#__codelineno-16-393"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">model_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-<a id="__codelineno-16-394" name="__codelineno-16-394" href="#__codelineno-16-394"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> - Parameters: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, Model Size: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;model_size&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> bytes, Training Time: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;training_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds, Average Inference Time per Sample: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;avg_inference_time&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> seconds, Test Loss: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;test_loss&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Test Accuracy: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 打印复杂度分析结果</span>
+<a id="__codelineno-16-394" name="__codelineno-16-394" href="#__codelineno-16-394"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> - Parameters: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'parameters'</span><span class="p">]</span><span class="si">}</span><span class="s2">, Model Size: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'model_size'</span><span class="p">]</span><span class="si">}</span><span class="s2"> bytes, Training Time: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'training_time'</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds, Average Inference Time per Sample: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'avg_inference_time'</span><span class="p">]</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> seconds, Test Loss: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'test_loss'</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, Test Accuracy: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">'test_accuracy'</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># 打印复杂度分析结果</span>
 </code></pre></div>
 <div class="footnote">
-<hr />
+<hr>
 <ol>
 <li id="fn:1">
-<p>结构图绘制工具：<a href="http://alexlenail.me/NN-SVG/LeNet.html">http://alexlenail.me/NN-SVG/LeNet.html</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>结构图绘制工具：<a href="http://alexlenail.me/NN-SVG/LeNet.html">http://alexlenail.me/NN-SVG/LeNet.html</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://github.com/junaidaliop/pytorch-fashionMNIST-tutorial">https://github.com/junaidaliop/pytorch-fashionMNIST-tutorial</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://github.com/junaidaliop/pytorch-fashionMNIST-tutorial">https://github.com/junaidaliop/pytorch-fashionMNIST-tutorial</a> <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
-</div>
+</div></div>
 
 
 
@@ -2663,7 +2663,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
     </div>
   
   

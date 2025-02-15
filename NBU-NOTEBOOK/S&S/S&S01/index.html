@@ -1190,37 +1190,37 @@
   
 
 
-<h1 id="1-ss">1. S&amp;S 基本概念<a class="headerlink" href="#1-ss" title="Permanent link">&para;</a></h1>
+<div><h1 id="1-ss">1. S&amp;S 基本概念<a class="headerlink" href="#1-ss" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p>&nbsp;</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 830 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
-<hr />
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 830 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 5 分钟</p>
+<hr>
 </div>
 <div id="progress-container">
   <div id="progress-bar"></div>
 </div>
 
-<h2 id="_1">基础概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">基础概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <dl>
-<dd>信息：能让我看清世界的 <strong>咒语（状态描述）——mantra</strong><br />
-信息量：与承载发生可能性成负相关   $  =-\log_{2}\left[p(x)\right]$<br />
-信号（signal）：承载咒语的媒介（光、电、声音）<br />
+<dd>信息：能让我看清世界的 <strong>咒语（状态描述）——mantra</strong><br>
+信息量：与承载发生可能性成负相关   $  =-\log_{2}\left[p(x)\right]$<br>
+信号（signal）：承载咒语的媒介（光、电、声音）<br>
 系统（system）：input&amp;output  </dd>
 </dl>
 <div class="admonition info">
 <p class="admonition-title">分类</p>
-<p>维度：一维（声音）、二维（rgb 图像）、三维（视频）<br />
-  性质：确定性信号/随机信号<br />
-  自变量范围：时域/频域有限信号<br />
+<p>维度：一维（声音）、二维（rgb 图像）、三维（视频）<br>
+  性质：确定性信号/随机信号<br>
+  自变量范围：时域/频域有限信号<br>
   一维信号：连续 x(t){模拟、量化}、离散 x[n]{抽样、数字}  </p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UMovbnnAJo8vj7x5Uj9c6xFFnHc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UMovbnnAJo8vj7x5Uj9c6xFFnHc.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UMovbnnAJo8vj7x5Uj9c6xFFnHc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UMovbnnAJo8vj7x5Uj9c6xFFnHc.png"></a></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">信号可以有的特点</p>
-<p>周期性：<span class="arithmatex">\(x(t)=x(t+mT)\)</span>、<span class="arithmatex">\(x[n]=x[n+mN]\)</span><br />
-<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KFxqbkMBzoAW8axqyiucfWexn2f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KFxqbkMBzoAW8axqyiucfWexn2f.png" /></a><br />
-对称性：奇信号/偶信号/奇谐信号/偶谐信号<br />
-<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMfYbgVuXoOF1yxUeVQcMhOjnGc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMfYbgVuXoOF1yxUeVQcMhOjnGc.png" /></a>  </p>
+<p>周期性：<span class="arithmatex">\(x(t)=x(t+mT)\)</span>、<span class="arithmatex">\(x[n]=x[n+mN]\)</span><br>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KFxqbkMBzoAW8axqyiucfWexn2f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KFxqbkMBzoAW8axqyiucfWexn2f.png"></a><br>
+对称性：奇信号/偶信号/奇谐信号/偶谐信号<br>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMfYbgVuXoOF1yxUeVQcMhOjnGc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMfYbgVuXoOF1yxUeVQcMhOjnGc.png"></a>  </p>
 <div class="admonition tip">
 <p class="admonition-title">一个信号可被唯一地拆分为一奇一偶两个子信号</p>
 <p>$$ x(t)=[\frac{x(t)+x(-t)}{2}]+[\frac{x(t)-x(-t)}{2}]=x_e(t)+x_o(t) $$</p>
@@ -1230,7 +1230,7 @@
 <p class="admonition-title">E&amp;P / 能量与功率</p>
 <dl>
 <dt>在一定范围内：</dt>
-<dd><span class="arithmatex">\(\begin{aligned}E&amp;=\sum_{n=n_1}^{n_2}x^2[n],P = \frac{1}{n_2-n_1+1}\sum_{n=n_1}^{n_2}x^2[n]\end{aligned}\)</span><br />
+<dd><span class="arithmatex">\(\begin{aligned}E&amp;=\sum_{n=n_1}^{n_2}x^2[n],P = \frac{1}{n_2-n_1+1}\sum_{n=n_1}^{n_2}x^2[n]\end{aligned}\)</span><br>
 <span class="arithmatex">\(\begin{aligned}E&amp;=\int_{t_{0}}^{t_{1}}|x(t)|^{2}dt,P&amp;=\frac{1}{t_{1}-t_{0}}\int_{t_{0}}^{t_{1}}|x(t_{1})|^{2}dt\end{aligned}\)</span>  </dd>
 <dt><mark>能量信号</mark> ：时域有界信号</dt>
 <dd>即 <span class="arithmatex">\(\int_{-\infty}^{+\infty}x^2\left(t\right)\mathrm{d}t&lt;+\infty\)</span>,能量有界  </dd>
@@ -1238,7 +1238,7 @@
 <dd>即 $\lim_{T\to+\infty}\frac1T\int_{-T/2}^{T/2}\mid x(t)\mid^2\mathrm{d}t&lt;+\infty $，功率有界  </dd>
 </dl>
 </div>
-<h2 id="_2">复指数信号<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">复指数信号<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <blockquote>
 <p><span class="arithmatex">\(x(t)=A\mathrm{e}^{(\sigma+\mathrm{j}\omega_0)t}=A\mathrm{e}^{st}\)</span>  </p>
 </blockquote>
@@ -1249,16 +1249,16 @@
 <dt>正弦指数信号： <span class="arithmatex">\(\sigma=0,\omega_0\neq0\)</span></dt>
 <dd>此时根据欧拉公式，有：<span class="arithmatex">\(\begin{cases}\sin(\omega_0t)=\frac{1}{2j}(\mathrm{e}^{\mathrm{i}\omega_0t}-\mathrm{e}^{-\mathrm{j}\omega_0t})\\\\\cos(\omega_0t)=\frac{1}{2}(\mathrm{e}^{\mathrm{j}\omega_0t}+\mathrm{e}^{-\mathrm{j}\omega_0t})\end{cases}\)</span></dd>
 </dl>
-<h2 id="_3">典型信号<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">连续信号<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">阶跃信号</label><label for="__tabbed_1_2">冲激函数--无线窄的方波</label><label for="__tabbed_1_3">抽样函数</label></div>
+<h2 id="_3">典型信号<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="_4">连续信号<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">阶跃信号</label><label for="__tabbed_1_2">冲激函数--无线窄的方波</label><label for="__tabbed_1_3">抽样函数</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="arithmatex">\[
 u(t)=\begin{cases}0&amp;t&lt;0\\[2ex]1&amp;t&gt;0\end{cases}
 \]</div>
 <p>0 处的值不影响（有限个断点不影响函数积分，即两函数仍然相等【勒贝格定义】）
-<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XAtXbFWaEo14M0xstklcgnjAncf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XAtXbFWaEo14M0xstklcgnjAncf.png" /></a></p>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XAtXbFWaEo14M0xstklcgnjAncf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XAtXbFWaEo14M0xstklcgnjAncf.png"></a></p>
 </div>
 <div class="tabbed-block">
 <div class="arithmatex">\[
@@ -1281,19 +1281,19 @@ u(t)=\begin{cases}0&amp;t&lt;0\\[2ex]1&amp;t&gt;0\end{cases}
 </div>
 <div class="tabbed-block">
 <blockquote>
-<p>傅里叶变换后为矩形，用于抽样<br />
+<p>傅里叶变换后为矩形，用于抽样<br>
 <span class="arithmatex">\(Sa(t)={\frac{\sin t}{t}} \quad sinc(t）={\frac{sin(\pi t)}{\pi t}}\)</span>  </p>
 </blockquote>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMIsbZVFroQlgdxA4wScd9oEnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMIsbZVFroQlgdxA4wScd9oEnDe.png" /></a>  </p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMIsbZVFroQlgdxA4wScd9oEnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMIsbZVFroQlgdxA4wScd9oEnDe.png"></a>  </p>
 <div class="arithmatex">\[
 特别的，有\int_0^\infty\frac{\sin t}t\operatorname{d}t=\frac\pi2,\quad\int_{-\infty}^\infty\frac{\sin t}t\operatorname{d}t=\pi ,\quad  \int_{-\infty}^{+\infty}\frac{\sin\left(wt\right)}{t}dt=\pi\left(w&gt;0\right)
 \]</div>
 </div>
 </div>
 </div>
-<hr />
-<h3 id="_5">离散信号<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">单位脉冲信号（类比冲激信号）</label><label for="__tabbed_2_2">单位阶跃信号（类比阶跃信号）</label><label for="__tabbed_2_3">矩形序列</label><label for="__tabbed_2_4">单边指数序列</label><label for="__tabbed_2_5">三角序列</label><label for="__tabbed_2_6">复指数序列</label><label for="__tabbed_2_7">周期序列</label></div>
+<hr>
+<h3 id="_5">离散信号<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><input id="__tabbed_2_5" name="__tabbed_2" type="radio"><input id="__tabbed_2_6" name="__tabbed_2" type="radio"><input id="__tabbed_2_7" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">单位脉冲信号（类比冲激信号）</label><label for="__tabbed_2_2">单位阶跃信号（类比阶跃信号）</label><label for="__tabbed_2_3">矩形序列</label><label for="__tabbed_2_4">单边指数序列</label><label for="__tabbed_2_5">三角序列</label><label for="__tabbed_2_6">复指数序列</label><label for="__tabbed_2_7">周期序列</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="arithmatex">\[
@@ -1316,7 +1316,7 @@ R_N[n]=\begin{cases}1,&amp;0\leqslant n\leqslant N-1\\\\0,&amp;\text{else }\end{
 <div class="arithmatex">\[
 x[n]=a^nu[n]
 \]</div>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KX2AbulQVofxewxN2MBcjX8Dn79.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KX2AbulQVofxewxN2MBcjX8Dn79.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KX2AbulQVofxewxN2MBcjX8Dn79.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KX2AbulQVofxewxN2MBcjX8Dn79.png"></a></p>
 </div>
 <div class="tabbed-block">
 <div class="arithmatex">\[
@@ -1336,8 +1336,8 @@ x[n]=\mathrm{e}^{\mathrm{i}\boldsymbol{\Omega}_0n}=\cos(\boldsymbol{\Omega}_0n)+
 </div>
 </div>
 </div>
-<hr />
-<h2 id="_6">信号基础变换<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_6">信号基础变换<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <ul>
 <li>有平移、反褶、比例变换  </li>
 <li>左加右减.配合信号性质灵活应用  </li>
@@ -1347,7 +1347,7 @@ x[n]=\mathrm{e}^{\mathrm{i}\boldsymbol{\Omega}_0n}=\cos(\boldsymbol{\Omega}_0n)+
 <p class="admonition-title">Remember</p>
 <p>对于离散信号，放大要补零【上采样】，缩小即失真【下采样】</p>
 </div>
-<h2 id="_7">系统<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_7">系统<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
 <ol>
 <li>连续系统与离散系统</li>
 </ol>
@@ -1361,18 +1361,18 @@ x[n]=\mathrm{e}^{\mathrm{i}\boldsymbol{\Omega}_0n}=\cos(\boldsymbol{\Omega}_0n)+
 <dd>具有 <mark>频率保持性</mark></dd>
 </dl>
 <blockquote>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M6Lgb52gLo9JdYxjpXbcZ8jBnJg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M6Lgb52gLo9JdYxjpXbcZ8jBnJg.png" /></a>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M6Lgb52gLo9JdYxjpXbcZ8jBnJg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M6Lgb52gLo9JdYxjpXbcZ8jBnJg.png"></a>
 微分器、积分器 如$tx(t)、\frac{dx\left(t\right)}{dt}、\int_{-\infty}^{t}x\left(t\right)d\tau $,满足每一项都是一次项 <code>a·x(t)</code>（常系数（微积分）方程</p>
 </blockquote>
 <ol start="3">
 <li>因果系统：输出只由现在和过去的输出决定，系统响应 迟于 激励信号变化</li>
 </ol>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BW9YbKq23o5sJTxJIY8cIra4nqd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BW9YbKq23o5sJTxJIY8cIra4nqd.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BW9YbKq23o5sJTxJIY8cIra4nqd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BW9YbKq23o5sJTxJIY8cIra4nqd.png"></a></p>
 <ol start="4">
 <li>即时(无记忆)系统/动态系统</li>
 </ol>
 <dl>
-<dd>y(t)的值仅仅取决于 x(t) ，即式子仅为  <code>x(t)/x[n] =</code><br />
+<dd>y(t)的值仅仅取决于 x(t) ，即式子仅为  <code>x(t)/x[n] =</code><br>
 因果系统 <ins>包含</ins> 无记忆系统</dd>
 </dl>
 <ol start="5">
@@ -1387,9 +1387,9 @@ x[n]=\mathrm{e}^{\mathrm{i}\boldsymbol{\Omega}_0n}=\cos(\boldsymbol{\Omega}_0n)+
 </li>
 </ol>
 <div class="admonition example">
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M9R6bIiE0oi3ugxoGI5chpxVndd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M9R6bIiE0oi3ugxoGI5chpxVndd.png" /></a><br />
-<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FGu2bgvysoC9MzxNosScfVPYnah.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FGu2bgvysoC9MzxNosScfVPYnah.png" /></a></p>
-</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M9R6bIiE0oi3ugxoGI5chpxVndd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/M9R6bIiE0oi3ugxoGI5chpxVndd.png"></a><br>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FGu2bgvysoC9MzxNosScfVPYnah.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FGu2bgvysoC9MzxNosScfVPYnah.png"></a></p>
+</div></div>
 
 
 
@@ -1539,7 +1539,7 @@ x[n]=\mathrm{e}^{\mathrm{i}\boldsymbol{\Omega}_0n}=\cos(\boldsymbol{\Omega}_0n)+
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
     </div>
   
   

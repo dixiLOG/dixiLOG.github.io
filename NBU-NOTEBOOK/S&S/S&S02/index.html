@@ -1304,11 +1304,11 @@
   
 
 
-<h1 id="2-lti">2. LTI 的时域分析<a class="headerlink" href="#2-lti" title="Permanent link">&para;</a></h1>
+<div><h1 id="2-lti">2. LTI 的时域分析<a class="headerlink" href="#2-lti" title="Permanent link">¶</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p>&nbsp;</p>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1618 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
-<hr />
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 1618 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 9 分钟</p>
+<hr>
 </div>
 <div id="progress-container">
   <div id="progress-bar"></div>
@@ -1316,23 +1316,23 @@
 
 <div class="admonition info">
 <p class="admonition-title">写在前面</p>
-<p>实际上，时域分析法因其约束和计算复杂度，在工程上并不常用，而被我们后面学习的 LT 和 ZT 变换取代<br />
+<p>实际上，时域分析法因其约束和计算复杂度，在工程上并不常用，而被我们后面学习的 LT 和 ZT 变换取代<br>
 因此，本章更应注重概念与定义的理解</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">LTI 不存在？</p>
 <ul>
-<li>线性系统意味着系统满足齐次与叠加，即在现实下随着放大因子变大而无损耗、无边际，而不可能；同时叠加性意味着系统随输入数量增加而满足分配率，即无信息丢失，而不可能，故不存在绝对的线性系统<br />
+<li>线性系统意味着系统满足齐次与叠加，即在现实下随着放大因子变大而无损耗、无边际，而不可能；同时叠加性意味着系统随输入数量增加而满足分配率，即无信息丢失，而不可能，故不存在绝对的线性系统<br>
 <ins>线性系统是对现实的近似简单估计</ins></li>
-<li>时不变系统意味着延迟的同步性，即随时间变化无磨损无丢失，而不可能<br />
+<li>时不变系统意味着延迟的同步性，即随时间变化无磨损无丢失，而不可能<br>
 <ins>无法研究不可控的时间，故选择简单的时不变系统，并最大近似</ins></li>
 </ul>
 </div>
 <blockquote>
-<p>如果将输入信号用一组基本信号的线性组合来表示<br />
+<p>如果将输入信号用一组基本信号的线性组合来表示<br>
 那么输出信号就是将这些 <mark>基本信号的响应加权叠加</mark> 后的信号  </p>
 </blockquote>
-<h2 id="_1">一些概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">一些概念<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -1399,11 +1399,11 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="_2">各种概念的求解<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_2">各种概念的求解<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <details class="tip">
 <summary>基于 <ins>待定系数法</ins> 求解 冲击函数 零状态 0+(初始条件)</summary>
-<p><a href="https://blog.csdn.net/HollyRan/article/details/104882403">参考文档</a><br />
+<p><a href="https://blog.csdn.net/HollyRan/article/details/104882403">参考文档</a><br>
 面向冲击函数作为激励时的初始条件求解。得出结果后,右边的冲激信号就可以滚蛋啦  </p>
 <p><strong>方法如下：</strong></p>
 <ol>
@@ -1450,76 +1450,76 @@
 \end{gathered}
 \]</div>
 </details>
-<h3 id="_3">零状态响应与零输入响应<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_3">零状态响应与零输入响应<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
 <details class="example">
 <summary>通过两道例题来理解</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png" /></a></p>
-<hr />
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjqsbmBFxoxMNIxmgw3clCiDn1M.png"></a></p>
+<hr>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NVqcbfUk8ocvH5xEuypcSueNn8c.png"></a></p>
 </details>
 <p>`---</p>
-<h3 id="_4">冲击响应与阶跃响应<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">冲击响应与阶跃响应<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
 <blockquote>
 <p><strong>积分与微分的关系</strong></p>
 </blockquote>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png" /></a></p>
-<hr />
-<h4 id="ht">冲激响应 h(t) 求解方法<a class="headerlink" href="#ht" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DgD9bjJvOoBX1MxQMrbcDNi5nse.png"></a></p>
+<hr>
+<h4 id="ht">冲激响应 h(t) 求解方法<a class="headerlink" href="#ht" title="Permanent link">¶</a></h4>
 <details class="冲激函数匹配法">
 <summary>冲激函数匹配法</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ORTXbqpGZo62G9xmPh3cTWOcnDe.png"></a></p>
 </details>
 <details class="example">
 <summary>例题</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png" /></a></p>
-<hr />
-<p>看两边阶数<br />
-左边阶数若 &lt;= 右边，则必然出现冲激信号<br />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TtmkbtgBPoWTnfxD7lvcvz4FnYc.png"></a></p>
+<hr>
+<p>看两边阶数<br>
+左边阶数若 &lt;= 右边，则必然出现冲激信号<br>
 利用<span class="arithmatex">\(\delta(t)=\frac{du(t)}{dt}\quad\delta^{^{\prime}}(t)=\frac{d\delta(t)}{dt}\)</span>解决</p>
 <p><mark>也可以用拉氏变换求零状态响应解决</mark></p>
 </details>
-<hr />
-<h4 id="gt">阶跃响应 g(t) 求解方法<a class="headerlink" href="#gt" title="Permanent link">&para;</a></h4>
+<hr>
+<h4 id="gt">阶跃响应 g(t) 求解方法<a class="headerlink" href="#gt" title="Permanent link">¶</a></h4>
 <details class="example">
 <summary>例题</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png" /></a></p>
-<hr />
-<p>方法同冲激信号求解方法，但因为右边有值，多了一个**特解**<br />
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/UiPzbIoeMomIsZxgHm9cdmu2nzc.png"></a></p>
+<hr>
+<p>方法同冲激信号求解方法，但因为右边有值，多了一个**特解**<br>
 同理，可用拉式变换求解</p>
 </details>
-<hr />
-<h3 id="_5">妙妙总结<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="_5">妙妙总结<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
 <blockquote>
-<p>记得最后加上 u(t)!!u(t)!!u(t)!!<br />
-冲激信号卷积所求为零状态响应<br />
+<p>记得最后加上 u(t)!!u(t)!!u(t)!!<br>
+冲激信号卷积所求为零状态响应<br>
 起始状态和初始条件求零输入  </p>
 </blockquote>
 <details class="abstract">
 <summary>各种响应的总结</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VdnRbEdoKoXvPDxfHcPctML8nQc.png"></a></p>
 </details>
 <details class="example" open="open">
 <summary>妙妙例题</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg" /></a></p>
-<hr />
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg" /></a>  </p>
-<hr />
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BTpwbma9BobIOyx5OUycVDcHnGh.jpg"></a></p>
+<hr>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AOfrbldfUoVNgEx8rCOc4yotnQc.jpg"></a>  </p>
+<hr>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OSFDblhHOoPRZExGvTxcuhU4nmg.png"></a></p>
 </details>
-<hr />
-<h3 id="lti">离散 LTI 系统的单位样值响应<a class="headerlink" href="#lti" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="lti">离散 LTI 系统的单位样值响应<a class="headerlink" href="#lti" title="Permanent link">¶</a></h3>
 <details class="example">
 <summary>例题</summary>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Uff3bUp8VoPPvmx84jjc3YZknae.png"></a></p>
 <p>离散下的 h[t]只考虑齐次解（求零输入响应）  </p>
 <p>高次下 用 Z 变换比较困难，建议老老实实算  </p>
-<hr />
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png" /></a></p>
-<p><mark>叠加性 齐次性</mark><br />
+<hr>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/D1Qsbo1w8ozLwoxYyBLcT1fdnxf.png"></a></p>
+<p><mark>叠加性 齐次性</mark><br>
 利用 LTI 特性计算，先看成 x[n]</p>
 </details>
-<hr />
-<h2 id="_6">卷积<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<hr>
+<h2 id="_6">卷积<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>卷积，一种类似于加减乘除的定义的计算方法，是一种叠加相乘再求和的过程,也是拉氏变换域下的乘积</p>
 <p>理解卷积：<a href="http://www.bilibili.com/video/BV1Di4y1o7vX">火车进隧道</a></p>
@@ -1550,40 +1550,40 @@
 <p class="admonition-title">小技巧</p>
 <p>微积分性质可用于计算，使卷积两边一个积分一个微分： 
 <span class="arithmatex">\(y(t)=x(t)*h(t)=\frac{\mathrm{d}x(t)}{\mathrm{d}t}*\int_{-\infty}^th(\lambda)\mathrm{d}\lambda=\left[\int_{-\infty}^tx(\lambda)\mathrm{d}\lambda\right]*\frac{\mathrm{d}h(t)}{\mathrm{d}t}\)</span></p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4af8b462-1c29-4767-927f-08289c52d64b.png"></a></p>
 </div>
 <ol start="5">
 <li><span class="arithmatex">\(\text{冲激偶函数}\delta^{\prime}\left(t\right)=\frac{d\delta\left(t\right)}{dt}\quad0^-为+\infty,0^+为-\infty. \quad \int_{-\infty}^{+\infty}x\left(t\right)\delta^{\prime}\left(t\right)dt=-x^{\prime}\left(0\right)\)</span>  </li>
 <li><span class="arithmatex">\(左右分别平移t_0对卷积计算没有影响，即\quad x(t+t_{0})*h(t-t_{0})=x(t)*h(t)\)</span></li>
 </ol>
 <p><ins>卷积和性质：</ins></p>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png" /></a></p>
-<hr />
-<h2 id="lti_1">LTI 系统的框图表示<a class="headerlink" href="#lti_1" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4f0be779-8fd8-4452-8dd9-750a8248bd2b.png"></a></p>
+<hr>
+<h2 id="lti_1">LTI 系统的框图表示<a class="headerlink" href="#lti_1" title="Permanent link">¶</a></h2>
 <blockquote>
 <p>倍乘、加法、积分（连续的）、延时（离散的）
-<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png" /></a><br />
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FnagbnRp3osOgPxEL3IcFMuunef.png"></a><br>
 <strong>注意要把微分转化为积分</strong></p>
 </blockquote>
-<h3 id="_7">差分方程框图<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_7">差分方程框图<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
 <div class="arithmatex">\[
 \text{y}[n]+a_1\text{y}[n-1]+a_0\text{y}[n-2]=b_2x[n]+b_1x[n-1]+b_0x[n-2]
 \]</div>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png" /></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KT1pbjP01oGT0sxw7NLchAtwnUc.png"></a></p>
 <blockquote>
 <dl>
 <dt>直接 I 和直接 II 型</dt>
 <dd>注意箭头方向，← 为输入，→ 为输出</dd>
 </dl>
 </blockquote>
-<h3 id="_8">微分方程框图<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_8">微分方程框图<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>移项，转化为积分</p>
 </blockquote>
-<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png" /></a>  </p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T9uAbCRz5ohKgfxkVT9cxeEtnlb.png"></a>  </p>
 <blockquote>
 <p>I 型左侧为 x，II 型右侧为 x</p>
-</blockquote>
+</blockquote></div>
 
 
 
@@ -1733,7 +1733,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 | powered by dixiLOG | All rights reserved.
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
     </div>
   
   

@@ -339,6 +339,10 @@ Icon 和 Emojis :point_up_tone1:
 
 ### 图 diagrams
 
+基于 mermaid 库，支持流程图、时序图、状态机、类图等
+
+> 详细语法参见[开发文档](https://mermaid.nodejs.cn/)
+
 ```text title="流程图 Flow chart"
     ``` mermaid
     graph LR

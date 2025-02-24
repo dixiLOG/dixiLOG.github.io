@@ -214,3 +214,9 @@ dddd
 
 你需要一个专业的[特色翻译库](http://210.72.20.108/index/index.jsp)
 
+
+---
+
+## 古典诗词典籍
+
+需要一个典雅蕴藉的古诗词网站？去看看[唐韵](https://www.chinesepoems.org/)

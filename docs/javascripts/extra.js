@@ -151,6 +151,9 @@ document.addEventListener('scroll', () => {
     // 设置定时器，150毫秒后移除 scrolling 类
     CURSOR.scrollTimeout = setTimeout(() => {
         CURSOR.cursor.classList.remove('scrolling');
+        CURSOR.cursor.style.transform = '';
+        CURSOR.cursor.style.opacity = '';
+        CURSOR.cursor.style.boxShadow = '';
     }, 150);
 });
 

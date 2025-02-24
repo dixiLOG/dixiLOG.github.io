@@ -17,55 +17,6 @@ repo_name:  dixiLOG # 仓库名称
 repo_url: https://github.com/dixiLOG/dixiLOG.github.io.git # 仓库地址
 # 版权信息
 copyright: Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
-# 导航树配置
-nav:
-  - Home: 
-    - index.md
-    - Build Your Own Blog: 
-      - build_your_web/index.md
-      - build_your_web/access your github.io.md
-      - build_your_web/玩转 Material.md
-      - build_your_web/feishu2githubPages.md
-    - build_your_web/markdown 速记.md
-  - NBU-NOTEBOOK: 
-      - NBU-NOTEBOOK/index.md
-      - 信号与系统笔记 :
-        - NBU-NOTEBOOK/S&S/index.md
-        - NBU-NOTEBOOK/S&S/S&S01.md
-        - NBU-NOTEBOOK/S&S/S&S02.md
-        - NBU-NOTEBOOK/S&S/S&S03.md
-        - NBU-NOTEBOOK/S&S/S&S04.md
-        - NBU-NOTEBOOK/S&S/S&S05.md
-        - NBU-NOTEBOOK/S&S/S&S06.md
-
-  - 随手记:
-      - 随手记/index.md
-      - 无聊可期:
-        - 随手记/boringBetter/index.md
-        - 随手记/boringBetter/reallyStars.md
-        - 随手记/boringBetter/awesomeFinds.md
-        - 随手记/boringBetter/shoddyGoods.md
-      - 十万个为什么:
-        - 随手记/whywhy/index.md
-        - 随手记/whywhy/huangli.md
-        - 随手记/whywhy/runningGap.md
-        - 随手记/whywhy/personalTax.md
-
-        
-  - 长河集:
-      - changheji/index.md
-      - 荒唐言:
-        - changheji/bookReport/index.md
-        - changheji/bookReport/《鄙视》阅读报告.md
-        - changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md
-        - changheji/bookReport/《文心雕龙》摘抄本.md
-        - changheji/bookReport/《远大前程》阅读报告.md
-      - changheji/MLreport.md
-  - NBU_ROCOS:
-      - ROCOS/index.md
-      - ROCOS/info&ref.md
-  - 闲言碎语:
-      - blog/index.md
 
 # 主题配置
 theme:
@@ -149,13 +100,6 @@ plugins:
     words_per_minute: 180
 - blog: # 博客功能插件
     blog_dir: blog
-    # blog_toc: true
-    post_date_format: full
-    archive_toc: true
-    categories_toc: true
-    archive_name: DIXI的碎碎念流水
-    # archive_date_format: MMMM
-    category_name: DIXI的碎碎念分类
     # categories_allowed:      # 允许的分类
       # - 口水鸡  #书 电影
       # - 豆腐脑  #输出观点
@@ -274,3 +218,71 @@ extra_css:
   - stylesheets/extra.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - https://unpkg.com/katex@0/dist/katex.min.css
+
+
+# 导航树配置
+nav:
+  - Home: 
+    - index.md
+    - Build Your Own Blog: 
+      - build_your_web/index.md
+      - build_your_web/access your github.io.md
+      - build_your_web/玩转 Material.md
+      - build_your_web/feishu2githubPages.md
+    - build_your_web/markdown 速记.md
+  - NBU-NOTEBOOK: 
+      - NBU-NOTEBOOK/index.md
+      - 计算机网络笔记:
+        - NBU-NOTEBOOK/computerNetwork/index.md
+        - NBU-NOTEBOOK/computerNetwork/CN01.md
+        - NBU-NOTEBOOK/computerNetwork/CN02.md
+      - 概率论笔记:
+        - NBU-NOTEBOOK/probabilityTheory/index.md
+        - NBU-NOTEBOOK/probabilityTheory/PT01.md
+        - NBU-NOTEBOOK/probabilityTheory/PT02.md
+        - NBU-NOTEBOOK/probabilityTheory/PT03.md
+        - NBU-NOTEBOOK/probabilityTheory/PT04.md
+        - NBU-NOTEBOOK/probabilityTheory/PT05.md
+      - 信号与系统笔记:
+        - NBU-NOTEBOOK/S&S/index.md
+        - NBU-NOTEBOOK/S&S/S&S01.md
+        - NBU-NOTEBOOK/S&S/S&S02.md
+        - NBU-NOTEBOOK/S&S/S&S03.md
+        - NBU-NOTEBOOK/S&S/S&S04.md
+        - NBU-NOTEBOOK/S&S/S&S05.md
+        - NBU-NOTEBOOK/S&S/S&S06.md
+      - 随机信号分析笔记:
+        - NBU-NOTEBOOK/RanSigAnalysis/index.md
+        - NBU-NOTEBOOK/RanSigAnalysis/RSA01.md
+        - NBU-NOTEBOOK/RanSigAnalysis/RSA02.md
+        - NBU-NOTEBOOK/RanSigAnalysis/RSA03.md
+        - NBU-NOTEBOOK/RanSigAnalysis/RSA04.md
+        - NBU-NOTEBOOK/RanSigAnalysis/RSA05.md
+  - 随手记:
+      - 随手记/index.md
+      - 无聊可期:
+        - 随手记/boringBetter/index.md
+        - 随手记/boringBetter/reallyStars.md
+        - 随手记/boringBetter/awesomeFinds.md
+        - 随手记/boringBetter/shoddyGoods.md
+      - 十万个为什么:
+        - 随手记/whywhy/index.md
+        - 随手记/whywhy/huangli.md
+        - 随手记/whywhy/runningGap.md
+        - 随手记/whywhy/personalTax.md
+
+        
+  - 长河集:
+      - changheji/index.md
+      - 荒唐言:
+        - changheji/bookReport/index.md
+        - changheji/bookReport/《鄙视》阅读报告.md
+        - changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md
+        - changheji/bookReport/《文心雕龙》摘抄本.md
+        - changheji/bookReport/《远大前程》阅读报告.md
+      - changheji/MLreport.md
+  - NBU_ROCOS:
+      - ROCOS/index.md
+      - ROCOS/info&ref.md
+  - 闲言碎语:
+      - blog/index.md

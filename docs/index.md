@@ -24,6 +24,15 @@ title: DIXI的个人博客
     2024-07-08
 
 !!! success "最近の更新"
+
+    2025年2月22日-2月25日 | DOCS  
+
+    1. 添加 [计算机网络笔记](https://dixilog.github.io/NBU-NOTEBOOK/computerNetwork/)
+    2. 添加 [概率论笔记](https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/)
+    3. 添加 [随机信号分析笔记](https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/)
+
+    ---
+
     2025年2月11日-2月13日 | FEAT&DOCS  
 
     1. 优化[鼠标单击与页面滚动样式](https://dixilog.github.io/build_your_web/玩转%20Material/#_9)

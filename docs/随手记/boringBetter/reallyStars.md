@@ -106,9 +106,10 @@ winget install JanDeDobbeleer.OhMyPosh -s winget -l D:\your\path\to\OhMyPosh
 
 
 
-=== "科技杂志"
+=== "摸鱼杂志"
     - [weekly](https://github.com/ruanyf/weekly?tab=readme-ov-file)：科技爱好者周刊，每周五发布
-    - [HELLOGITHUB](https://hellogithub.com/)
+    - [HELLOGITHUB](https://hellogithub.com/)：值得动手的 GitHub 项目推荐
+    - [News Digest](https://news-digest-nine.vercel.app/)：国外新闻速递
 
 === "基础学科"
     - [线性代数：ZJU 图灵班版](https://github.com/yhwu-is/Linear-Algebra-Left-Undone)

@@ -1,0 +1,2379 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/computerNetwork/CN01/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../CN02/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>计网综述 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计网综述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机网络笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    计网综述
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    计网综述
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP协议演进
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtppop3" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP/POP3 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2P协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="传输层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcpudp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP&amp;&amp;UDP—端到端服务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gbnsr" class="md-nav__link">
+    <span class="md-ellipsis">
+      GBN/SR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP协议传输过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      端到端传输
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由器--找路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子网划分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据链路层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据链路层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethnet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      网桥（低配版交换机）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CN02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    网工综述
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../randomSignalAnalysis/index.md" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      应用层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="应用层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP 协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP 协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP协议演进
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FTP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smtppop3" class="md-nav__link">
+    <span class="md-ellipsis">
+      SMTP/POP3 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imap" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMAP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p2p" class="md-nav__link">
+    <span class="md-ellipsis">
+      P2P协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      传输层协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="传输层协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcpudp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP&amp;&amp;UDP—端到端服务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gbnsr" class="md-nav__link">
+    <span class="md-ellipsis">
+      GBN/SR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP协议传输过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      端到端传输
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      路由器--找路径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子网划分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据链路层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据链路层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      通信协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP 协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ethnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ethnet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      网桥（低配版交换机）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">计网综述<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4388 个字  • <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 26 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 25 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<div class="admonition tip">
+<p class="admonition-title">重要的事情</p>
+<p>如此概念性的课程，竟然没有在开头整理出学习路径，这让我很不解 <del>自己骂自己</del><br>
+如果需要的话，可以参考一下<a href="https://zhuanlan.zhihu.com/p/347995226">计算机网络模型（TCP五层模型）</a>，其中的TCP/IP五层协议簇就是这门课程的重点</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">思维导图</p>
+<p><a href="https://baike.baidu.com/item/%E7%8E%8B%E6%99%93%E4%B8%9C/3698813">王晓东老师</a>整理的<a href="https://pan.baidu.com/s/1lATjczE6lm5mk33QL2xPVQ?pwd=1369">思维导图</a>，也许对你有所帮助</p>
+</div>
+<div class="admonition quote"></div>
+<div class="admonition quote">
+<p class="admonition-title">protocols define</p>
+<p>format, order of messages sent and received among networkentities,<br>
+and actions taken on message transmission, receipt.</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title"><a href="http://www.computer-timeline.com/timeline/vint-cerf-and-bob-kahn/">Cerf and Kahn</a> 架构的理论特点</p>
+<ol>
+<li>minimalism，autonomy</li>
+<li>best effort service model</li>
+<li>stateless routers</li>
+<li>decentralized control</li>
+</ol>
+</div>
+<h2 id="_2">应用层协议<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>笔记中涉及应用层协议</p>
+<ul>
+<li>HTTP</li>
+<li>DNS</li>
+<li>FTP</li>
+<li>SMTP/POP3</li>
+<li>IMAP</li>
+<li>P2P</li>
+<li>DHCP  </li>
+</ul>
+<p>共8个  </p>
+<p>下面是一些基础的知识点</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">作用</label><label for="__tabbed_1_2">架构</label><label for="__tabbed_1_3">常用定义</label><label for="__tabbed_1_4">需要考虑的问题</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>应用层协议规定：  </p>
+<ul>
+<li>类型（请求/应答报文）</li>
+<li>语法（格式）</li>
+<li>语义（每位的 0/1 分别代表什么）</li>
+<li>规则</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p>CS(Client-Server)<br>
+    server一直开机，静态IP，并要求可伸缩的服务器农场<br>
+    client只与server通信，动态IP</p>
+</li>
+<li>
+<p>P2P(Pear to Pear)<br>
+    伸缩性强，but hard to manage  </p>
+</li>
+<li>
+<p>Hybrid of CS and P2P</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>IPC    interprocess connection（进程间通信）</li>
+<li>socket    端口大门，使应用层与传输层想通</li>
+<li>L/R(传输一组多少秒)=1/传输率</li>
+<li>带宽-传播时延积=链路上的最大比特数</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>data loss</li>
+<li>timing</li>
+<li>bandwidth</li>
+<li>security</li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+<h3 id="http">HTTP 协议<a class="headerlink" href="#http" title="Permanent link">¶</a></h3>
+<p>超文本传输协议（Hypertext Transfer Protocol,HTTP）是Web的基础，也是互联网的基础<br>
+HTTP协议是基于TCP/IP协议的，它属于应用层协议</p>
+<h4 id="_3">特点<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<ol>
+<li>无状态性（Stateless）</li>
+</ol>
+<p>HTTP 协议是无状态的，这意味着每个请求从客户端到服务器都是独立的，服务器不会保存关于客户端的任何状态信息。服务器无法通过 HTTP 协议本身记住客户端之前发送的请求内容或状态</p>
+<ul>
+<li>
+<p>优点：极大地简化了服务器的设计，使得服务器能够更高效地处理大量的请求，因为不需要为每个客户端维护复杂的状态信息。这也有利于服务器的扩展，可以方便地通过增加服务器数量来应对更多的客户端请求，而不用担心状态同步的问题</p>
+</li>
+<li>
+<p>缺点：在一些需要记录用户会话或状态的应用场景中，如用户登录后的操作记录、购物车中的商品信息等，由于 HTTP 本身无状态，就需要通过其他方式来实现状态的保持。例如，使用 cookies 或者在请求中携带特定的会话标识符（如 Session ID），让服务器能够根据这些信息识别出是同一个客户端的请求，从而在服务器端或者其他地方查找并恢复相应的状态</p>
+</li>
+</ul>
+<hr>
+<ol start="2">
+<li>缓存机制（Cache）</li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">条件 GET</label><label for="__tabbed_2_2">服务器缓存与代理缓存</label><label for="__tabbed_2_3">CDN（内容分发网络）</label><label for="__tabbed_2_4">Cookies</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>客户端在发送 GET 请求时，会携带一些条件信息，如 If-Modified-Since 头部字段，用于告诉服务器只有当资源自指定时间后被修改过时才返回新的资源内容  </p>
+<ul>
+<li>如果服务器判断资源没有被修改过，就会返回 304 Not Modified 状态码，客户端收到这个响应后，会直接使用本地缓存的资源，而不需要再从服务器获取完整的资源内容，这样可以减少网络传输的数据量，提高访问速度  </li>
+<li>如果资源被修改过，服务器则会返回新的资源内容和 200 OK 状态码，客户端会更新本地缓存并显示新的资源</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>服务器本身可以对一些经常被请求的资源进行缓存<br>
+当客户端请求这些资源时，服务器可以直接从本地缓存中获取并返回，而不需要每次都从存储设备（如磁盘）中读取，这样可以加快响应速度，减轻服务器的 I/O 负担  </p>
+<p>在客户端和服务器之间可能存在代理服务器<br>
+代理服务器也可以对经过它的请求和响应进行缓存。当多个客户端请求相同的资源时，代理服务器可以直接将缓存的资源返回给客户端，而不需要每次都向源服务器请求，这可以有效减少网络带宽的占用和源服务器的负载  </p>
+<p>例如，在一个公司内部网络中，代理服务器可以缓存经常访问的外部网站资源，如公司员工经常访问的新闻网站的首页内容，当其他员工再次访问该新闻网站首页时，代理服务器就可以直接提供缓存的内容，提高访问效率</p>
+</div>
+<div class="tabbed-block">
+<p>CDN 是一种分布式的内容缓存服务器网络，它将网站的内容（如图片、视频、静态网页等）缓存到离用户较近的多个节点服务器上。<br>
+当用户请求这些内容时，CDN 会根据用户的地理位置等因素，将请求路由到离用户最近的节点服务器，该节点服务器直接从本地缓存中返回内容给用户，从而大大减少了内容传输的延迟，提高了用户访问速度和体验  </p>
+<p>例如，一个大型的视频网站可能会在全球部署多个 CDN 节点，当用户在不同地区访问该网站的视频时，CDN 会将视频内容从离用户最近的节点提供，而不是从网站的源服务器获取，这样可以有效应对大量用户的访问请求，保证视频的流畅播放</p>
+</div>
+<div class="tabbed-block">
+<p>虽然 HTTP 本身是无状态的，但通过 cookies 可以在一定程度上实现状态的保持<br>
+服务器可以在响应中设置 cookies，客户端会将 cookies 保存在本地<br>
+在后续的请求中，客户端会自动将相关的 cookies 一起发送给服务器，服务器可以根据 cookies 中的信息识别出客户端的身份和一些状态信息，如用户的登录状态、个性化设置等  </p>
+<p>cookies 可以用于快速认证用户身份，避免用户在每次访问需要认证的页面时都重新输入用户名和密码（在一定时间范围内）。同时，它也可以用于优化用户体验，例如根据用户的偏好设置来展示不同的页面内容或功能  </p>
+<p>例如，一个电商网站可以根据用户的 cookies 中保存的购物偏好，在首页推荐用户可能感兴趣的商品</p>
+</div>
+</div>
+</div>
+<hr>
+<ol start="3">
+<li>持续连接与非持续连接</li>
+</ol>
+<ul>
+<li><strong>非持续连接</strong> ：在 HTTP/1.0 中默认使用非持续连接。当客户端向服务器发送一个请求后，服务器在处理完请求并返回响应后，就会关闭 TCP 连接。如果客户端需要再次请求其他资源，就必须重新建立一个新的 TCP 连接<br>
+  这种方式的优点是实现简单，但缺点是每次建立和关闭连接都需要消耗一定的时间和系统资源，尤其是在需要请求多个资源（如一个网页中的多个图片、CSS 文件、JavaScript 文件等）时，会频繁地建立和关闭连接，导致网络延迟增加，影响网页的加载速度。</li>
+<li><strong>持续连接</strong> ：从 HTTP/1.1 开始，默认使用持续连接。在持续连接的情况下，客户端和服务器在建立连接后，可以在这个连接上发送多个请求和响应，而不会立即关闭连接。这样可以减少建立和关闭连接的开销，提高传输效率。例如，当客户端请求一个包含多个资源的网页时，可以在同一个 TCP 连接中依次请求这些资源，服务器依次返回响应，直到客户端完成所有资源的请求或者主动关闭连接</li>
+</ul>
+<hr>
+<ol start="4">
+<li>RTT（Round - Trip Time，往返时间）</li>
+</ol>
+<p>RTT 是指从客户端发送一个请求开始，到客户端接收到服务器的响应所经过的时间。它包括请求从客户端传输到服务器的时间，以及服务器处理请求并返回响应的时间，还有响应从服务器传输回客户端的时间</p>
+<p>RTT 是衡量网络性能的一个重要指标。在 HTTP 通信中，较小的 RTT 意味着客户端可以更快地获取到服务器的响应，从而提高用户体验。优化 RTT 可以通过多种方式实现，如使用更快的网络连接、优化服务器性能、采用内容分发网络（CDN）等</p>
+<hr>
+<ol start="5">
+<li>流水线模式（Pipelining）</li>
+</ol>
+<p>在 HTTP 的流水线模式下，客户端可以在一个 TCP 连接中同时发送多个请求，而不需要等待服务器对前一个请求的响应。这些请求会按照发送的顺序被服务器接收和处理，服务器也会按照顺序返回响应</p>
+<p>流水线模式可以提高 HTTP 的传输效率，尤其是在请求多个小资源（如多个小图标、小图片等）时。因为不需要等待每个请求的响应再发送下一个请求，可以减少等待时间，提高资源获取的速度。例如，在一个网页中有多个小图标需要加载，使用流水线模式可以更快地获取这些图标，加快网页的渲染速度。</p>
+<blockquote>
+<p>也存在一些问题</p>
+<ul>
+<li>
+<p>Socket 传输的是字节流，它本身并不区分不同的 HTTP 请求和响应。在流水线模式下，客户端发送的多个请求和服务器返回的多个响应都是以字节流的形式在 Socket 中传输的。这就需要客户端和服务器能够正确地识别和区分不同的请求和响应，通常通过 HTTP 的头部信息（如 Content - Length、Connection 等头部字段）来实现</p>
+</li>
+<li>
+<p>如果服务器对前面的请求处理时间较长，可能会导致后面的请求在管道中被阻塞，影响整体的传输效率。例如，如果第一个请求是一个需要复杂计算的请求，服务器处理时间较长，那么在同一个管道中的后续请求就会等待前面的请求处理完成才能得到响应</p>
+</li>
+<li>
+<p>在流水线模式下，如果某个请求出现错误，可能会对后续的请求和响应产生影响，因为请求和响应的顺序可能会被打乱，或者需要额外的机制来处理错误情况，这增加了实现的复杂性。</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="http_1">HTTP协议演进<a class="headerlink" href="#http_1" title="Permanent link">¶</a></h4>
+<div class="admonition abstract">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FpivbZbZqokjOHxaYXicnnrznXb.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FpivbZbZqokjOHxaYXicnnrznXb.jpg"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">HTTP2—多路复用、HOL、流、压缩头</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZTtEbcrDNogZklxPjhFclgcrnNe.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZTtEbcrDNogZklxPjhFclgcrnNe.jpg"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">QUIC——让 UDP 变得安全</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SiupbyjZQobvJaxifIDcmAVQn9e.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SiupbyjZQobvJaxifIDcmAVQn9e.jpg"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">HTTP3</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KXRjbjWT5oYxzzx3p6Zc1XPwnzZ.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KXRjbjWT5oYxzzx3p6Zc1XPwnzZ.jpg"></a></p>
+</div>
+<hr>
+<h3 id="dns">DNS 协议<a class="headerlink" href="#dns" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">所有知识点の总结</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/202502231416.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/202502231416.png"></a> </p>
+<ul>
+<li>
+<p>问答以 UDP 传递</p>
+</li>
+<li>
+<p>53 端口</p>
+</li>
+<li>
+<p><strong>迭代</strong> 问答具体格式--资源记录 RR--包括（name value type ttl）</p>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="ftp">FTP 协议<a class="headerlink" href="#ftp" title="Permanent link">¶</a></h3>
+<details class="abstract">
+<summary>你应该知道的</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AQYDbfZZZoPmeOx7zojc05d8npd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AQYDbfZZZoPmeOx7zojc05d8npd.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XoSMbtTtbo20fMxo157cJqIXnxg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/XoSMbtTtbo20fMxo157cJqIXnxg.png"></a></p>
+<ul>
+<li>21/20 端口</li>
+<li>以 TCP 建立连接</li>
+<li>双信道，一道指令（21），一道文件传输（20）</li>
+<li>有 active（PORT）/passive（PASV）两种，前者 server 会主动建立文件信道给 client，passive 则需要 client 自己主动再连</li>
+</ul>
+</details>
+<hr>
+<h3 id="smtppop3">SMTP/POP3 协议<a class="headerlink" href="#smtppop3" title="Permanent link">¶</a></h3>
+<details class="abstract">
+<summary>你应该知道的</summary>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/P97nbDEDgoDLU2xQejhcLySznld.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/P97nbDEDgoDLU2xQejhcLySznld.jpg" title="注意：7 比特"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Zto2b6xh7oNptKx1ZRIcUS3In8l.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Zto2b6xh7oNptKx1ZRIcUS3In8l.png"></a></p>
+<ul>
+<li>MIME用于发送图片，中文等，用Base64等编码方式编码为ASCII</li>
+<li>Base64（取6补2，三片变四片，结尾不够加=，直到凑4片）/QP编码</li>
+<li>使用<code>.</code>结束邮件</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OtmsbJ210oFJyQx2FZGcCcgfnKd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OtmsbJ210oFJyQx2FZGcCcgfnKd.png" title="MIME type"></a></p>
+<div class="admonition quote"></div>
+<ul>
+<li>主要接收协议：POP3/IMAP（常见于移动端）/HTTP（网页端）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q4JibnhTroOrUMxwkmscUt8GnCe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q4JibnhTroOrUMxwkmscUt8GnCe.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GvJEbxLVpowoebxVcBach4QlnMb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GvJEbxLVpowoebxVcBach4QlnMb.png" title="基本收发过程"></a></p>
+</details>
+<hr>
+<h3 id="imap">IMAP 协议<a class="headerlink" href="#imap" title="Permanent link">¶</a></h3>
+<p>¯\_(ツ)_/¯： <a href="https://zhuanlan.zhihu.com/p/446369720">IMAP 协议解析</a></p>
+<hr>
+<h3 id="p2p">P2P协议<a class="headerlink" href="#p2p" title="Permanent link">¶</a></h3>
+<p>有 centralized dictionary | query blooding | KaZaA 三种形式</p>
+<ul>
+<li>
+<p>centralized dictionary<br>
+  资源分布在各个pear里面而非集中在服务器，每个Client向server提供愿意分享的资源<br>
+  服务器只需要提供目录，pear通过目录就近寻找最近的节点pear下载<br>
+  但是存在单点失效问题，版权问题</p>
+</li>
+<li>
+<p>query blooding  <br>
+  几乎去中心化，通过熟人一个个问<br>
+  人人有责，人人无责（no leader）<br>
+  但是占用较多带宽</p>
+</li>
+<li>
+<p>KaZaA<br>
+  综合前两者，存在组长<br>
+  但协议复杂</p>
+</li>
+</ul>
+<hr>
+<h3 id="dhcp">DHCP协议<a class="headerlink" href="#dhcp" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>基于 UDP | 67 server 端口 | 68 client 端口</p>
+</li>
+<li>
+<p>动态主机配置协议（Dynamic Host Configuration Protocol，DHCP）是TCP/IP协议族中的一员，用于动态配置IP地址，主要有以下几个用途</p>
+<ul>
+<li>网络地址自动配置（Network Address Auto Configuration，NAA）：当一台计算机加入到网络时，DHCP服务器会自动为其分配IP地址、子网掩码、网关地址等网络参数</li>
+<li>网络参数自动分配（Dynamic Host Configuration Protocol for IPv6，DHCPv6）：IPv6的DHCP协议与IPv4的DHCP协议不同，它使用更复杂的算法来分配IPv6地址</li>
+<li>远程网络访问（Remote Access）：DHCP可以让用户远程连接到网络，而无需手动配置IP地址、子网掩码、网关地址等网络参数</li>
+<li>域名系统（Domain Name System，DNS）：DHCP可以提供域名解析服务，使得用户可以访问网络上的计算机</li>
+</ul>
+</li>
+<li>
+<p>DHCP协议工作过程  </p>
+<ol>
+<li>客户机发送DHCPDiscovery广播包发现DHCP服务器，请求IP地址（包里面有MAC地址）</li>
+<li>服务器发送DHCPOffer广播包（返回MAC和IP）(这里可能有多个服务器响应）</li>
+<li>客户机发送DHCPRequest广播包告知筛选结果</li>
+<li>筛选出的服务器发送DHCPACK（acknowledge）广播包（仓库数据打包一份送给客户机），更新租约表</li>
+<li>租期过50%，跳转至<code>c</code></li>
+<li>若<code>e</code>无反应，租期过<code>87.5%</code>，跳转至<code>c</code></li>
+<li>租约到期，则跳转至<code>a</code></li>
+<li>若请求无响应，则自行分配169.245.X.X/16无效 IPnetmask 255.255.0.0</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="_4">传输层协议<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>不妨直接看<a href="https://josonle.github.io/blog/2018-10-21-%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E6%96%B9%E6%B3%95%E3%80%8B%E4%B9%8B%E4%BC%A0%E8%BE%93%E5%B1%82%E6%80%BB%E7%BB%93.html/">人家的笔记</a>🤪</p>
+</blockquote>
+<h3 id="tcpudp">TCP&amp;&amp;UDP—端到端服务<a class="headerlink" href="#tcpudp" title="Permanent link">¶</a></h3>
+<ul>
+<li>UDP： 无连接（没有持续连接）</li>
+<li>TCP： 无状态</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">他们的悲欢并不相通</p>
+<ul>
+<li>TCP会平分链路。user速度先快，后慢下来，最后平衡  </li>
+<li>UDP会直接截断TCP传输</li>
+</ul>
+</div>
+<ul>
+<li><strong>rdt</strong>：<a href="https://blog.csdn.net/m0_63657524/article/details/121916128">RDT 协议 (可靠数据传输协议)_rdt 实现</a><br>
+  1. 用ACK/NAK处理差错--2.0<br>
+  2. 用seq num处理乱序--2.1<br>
+  3. 重复ACK代替NAK--2.2<br>
+  4. 超时重发--3.0<br>
+  5. 用流水线提高速度，规避FSM下的停等协议  </li>
+</ul>
+<hr>
+<h3 id="gbnsr">GBN/SR<a class="headerlink" href="#gbnsr" title="Permanent link">¶</a></h3>
+<p>流水线下的丢包解决方案</p>
+<div class="admonition tip">
+<p class="admonition-title">需要注意的</p>
+<ol>
+<li>SR会直接输出乱序的seq并缓存</li>
+<li>GBN会输出已经按顺序接收包中的最大顺序</li>
+<li>GBN有累计确认，SR一个一个确认</li>
+</ol>
+</div>
+<hr>
+<h3 id="tcp">TCP协议传输过程<a class="headerlink" href="#tcp" title="Permanent link">¶</a></h3>
+<ul>
+<li>面向对象的连接</li>
+<li>设定初始序列号与缓存（buffers）、流量控制  </li>
+<li>客户端创建socket，服务器准备接收socket</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">三次握手建立连接</p>
+<ol>
+<li>发送SYN（给seq#，每次开始32字节绝对序号随机，no data）  </li>
+<li>回SYN ACK（回seq）  </li>
+<li>发送 ACK（确认seq）    <blockquote>
+<p>回包的ack由发包的seq+len决定，包的下一个seq_i=seq_(i-1)+len;     </p>
+</blockquote>
+</li>
+</ol>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Server
+
+    Client-&gt;&gt;Server: SYN (seq=x)
+    Note left of Client: Client → SYN_SENT
+    Server-&gt;&gt;Client: SYN-ACK (seq=y, ack=x+1)
+    Note right of Server: Server → SYN_RCVD
+    Client-&gt;&gt;Server: ACK (ack=y+1)
+    Note left of Client: Client → ESTABLISHED
+    Note right of Server: Server → ESTABLISHED
+</code></pre>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">四次挥手断开连接</p>
+<p>1.发送FIN <br>
+2.回ACK<br>
+3.回FIN<br>
+4.发送ACK<br>
+5.等待定时器结束</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Server
+
+    Client-&gt;&gt;Server: FIN (seq=u)
+    Note left of Client: Client → FIN_WAIT_1
+    Server-&gt;&gt;Client: ACK (ack=u+1)
+    Note right of Server: Server → CLOSE_WAIT
+    Server-&gt;&gt;Client: FIN (seq=v, ack=u+1)
+    Note right of Server: Server → LAST_ACK
+    Client-&gt;&gt;Server: ACK (ack=v+1)
+    Note left of Client: Client → TIME_WAIT 
+    Note right of Server: Server → CLOSED
+</code></pre>
+</div>
+<h3 id="_5">端到端传输<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>流量控制：为发送端和接收点应用层提取数据的速度进行匹配<br>
+  speed match（速度匹配）/滑动窗口</p>
+</li>
+<li>
+<p>QoS：传输层质量服务（Quality of Service）  <br>
+    通过采样评估速度，确定timeout时间  </p>
+<ol>
+<li>指数平移法  <span class="arithmatex">\(estimated_{rtt}=0.875*前n-1次estimated_{rtt}+0.125*第n次sample_{rtt}\)</span>  </li>
+<li>加上安全余量 <span class="arithmatex">\(devrtt=0.75*devrtt+0.25*|estimated_{rtt}-sample_{rtt}(计算差值)|\)</span>    </li>
+<li>timeout时间= <span class="arithmatex">\(estimated_{rtt}+4*devrtt\)</span>  </li>
+</ol>
+</li>
+<li>
+<p>快速重传：连续三次收到重复ack。一次正常两个乱序</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">拥塞控制</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AzFTbKRhnoTPb2x4ayPcECjSn5c.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AzFTbKRhnoTPb2x4ayPcECjSn5c.jpg"></a></p>
+<ol>
+<li>缓存够，带宽有限：输入饱和但不会丢包。延时很大，一直 <strong>排队</strong>  </li>
+<li>缓存有限，带宽有限：在<code>1</code>的基础上出现 <strong>丢包重发</strong> ，再次占用带宽，输入大于输出， <strong>斜率&lt;1</strong> ，效率降低  </li>
+<li>多个路由器： <strong>输出随输入先增大后减少。节点变多，多重传占用，最后死锁</strong></li>
+</ol>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">拥塞控制方法</p>
+<ul>
+<li>Network-assisted congestion control 网络协助拥塞控制， <strong>路由器分析</strong> 并feedback  </li>
+<li>End-end congestion control <strong>端到端拥塞控制</strong>，通过对收发两端的 <strong>丢包与延时</strong> 进行观察  </li>
+</ul>
+<p><u>sender方</u>  </p>
+<ul>
+<li>LastByteSent - LastByteAcked &lt;= CongWin(发送速度窗口)  </li>
+<li>rate(发送速率) = CongWin/RTT<br>
+超时或三次重传（丢包事件）时，rate减速</li>
+</ul>
+<hr>
+<p>减速逻辑</p>
+<ol>
+<li>AIMD—additive increase &amp;&amp; multiplicative decrease—加增乘减  </li>
+<li>slow start  </li>
+<li>Conservative after timeout events(保守)  </li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">解释</p>
+<ul>
+<li>连续ack，则下次CongWin指数变大。开始增长得慢，后面快。(拥塞避免)超过阈值后线性变大  </li>
+<li>丢包后阈值变为最大值的一半  </li>
+<li>快速重传，则CongWin从阈值开始；timeout，则CongWin重新slow start  </li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">快速重传的 拥塞窗口=阈值 +3，此图不够严谨</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LPUobiuQFoyzYBxxNHBcIzLhnXW.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LPUobiuQFoyzYBxxNHBcIzLhnXW.png"></a></p>
+</div>
+</div>
+<hr>
+<h2 id="_6">网络层<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<h3 id="ip">IP协议<a class="headerlink" href="#ip" title="Permanent link">¶</a></h3>
+<p>具体见我飞书笔记之<a href="https://o2ywbvn10e.feishu.cn/docx/KYY2dSm3joBWPfxBNLXcxsIincf#share-UbVedNefmoOQgKxnd9QccZpInVA">网络安全笔记</a></p>
+<div class="admonition quote">
+<p class="admonition-title">突然发现这一份写得比计网笔记好多了🤣</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/I0YqbK8OWotTZjxBr7eccGSxnDd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/I0YqbK8OWotTZjxBr7eccGSxnDd.png"></a></p>
+</div>
+<h3 id="-">路由器--找路径<a class="headerlink" href="#-" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">路由选择算法</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Pvy4bfBCko5mIaxGwDZc6a4Onqe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Pvy4bfBCko5mIaxGwDZc6a4Onqe.png"></a></p>
+<p>后划分网络，每一个内网为一个 AS，用一种寻路算法</p>
+</div>
+<ul>
+<li>AS：<strong>自治系统</strong></li>
+<li>Stub(桩) AS：单点出口</li>
+<li>Multihomed() AS：多点出口</li>
+<li>Transit AS：运营商连接</li>
+<li>Inter-AS：BGP 协议——连接 Intra-AS
+    &gt; 参考：<a href="https://blog.csdn.net/keith6785753/article/details/107088632">BGP协议总结</a>  </li>
+<li>Intra-AS（自制系统内的路由协议）<ul>
+<li>IGP(内部网关协议)：RIP、OSPF、IGRP  </li>
+<li>RIP--基于距离向量算法  </li>
+<li>OSPF（open shortest path first）：最短路径优先  </li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="_7">子网划分<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p><strong>CIDR</strong></p>
+<ul>
+<li>通过掩码来确定子网划分后的网段位数：逐位&amp;运算</li>
+<li>表达方式：<code>10.22.155.25 255.255.255.0</code>或<code>10.22.155.25/24</code></li>
+<li>255.255.192.0 === /18 === 16+2位网段</li>
+</ul>
+<hr>
+<ul>
+<li>某子网主机数：256-192-2</li>
+<li>分割子网数量：见下图</li>
+<li>子网数看前面占了几位1，主机数看后面剩几位0  </li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">子网划分</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/bac0f281-73e0-44f9-9843-4b5beb2f07ee.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/bac0f281-73e0-44f9-9843-4b5beb2f07ee.jpg"></a></p>
+</div>
+<hr>
+<h2 id="_8">数据链路层<a class="headerlink" href="#_8" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>负责内网相邻节点的通信</p>
+</blockquote>
+<p>需要保证节点传输数据的可靠性，Add 流量控制/错误检测与纠错/全双工通信</p>
+<p>通信方式：PPP | 以太网-&gt; 多路访问协议</p>
+<h3 id="_9">通信协议<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p><strong>Slotted Aloha</strong></p>
+<ul>
+<li>以帧为单位同一 CLK（synchronization）在基带上，出现碰撞则放弃，效率为 0.37</li>
+</ul>
+<p><strong>Pure Aloha</strong></p>
+<ul>
+<li>异步 CLK ，no synchronization,simpler | 效率为 0.18</li>
+</ul>
+<div class="admonition abstract">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/A4xxbp420oNmSlxfrIYcklwRnfb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/A4xxbp420oNmSlxfrIYcklwRnfb.png"></a></p>
+</div>
+<p><strong>CSMA</strong> （carrier sense multiple access）载波监听多路访问</p>
+<div class="admonition abstract">
+<p class="admonition-title">listen before transmit</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/353c23f8-0888-47c2-aebf-9f149684a3e3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/353c23f8-0888-47c2-aebf-9f149684a3e3.png"></a></p>
+</div>
+<p><strong>CSMA/CD</strong> （collusion detection）冲突监测</p>
+<div class="admonition abstract">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4c5ab4bf-8411-40f9-bf67-1a43704e7528.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/4c5ab4bf-8411-40f9-bf67-1a43704e7528.png"></a></p>
+<ul>
+<li>帧有最小单位。过小则在冲突信号回传前就结束了  </li>
+<li>存在隐藏终端问题，无限隔离下space无限远</li>
+</ul>
+</div>
+<p><strong>CSMA/CA</strong> （collusion avoidance）：回避冲突</p>
+<div class="admonition abstract">
+<p class="admonition-title">采用数据链路层的ACK</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/62119a8c-02e7-44d1-9383-dcbd11f3b910.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/62119a8c-02e7-44d1-9383-dcbd11f3b910.png"></a></p>
+</div>
+<p><strong>RTS-CTS</strong></p>
+<div class="admonition abstract">
+<p class="admonition-title">发送前预约</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/a1756494-b8f6-4ba6-8451-d5cb3806b620.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/a1756494-b8f6-4ba6-8451-d5cb3806b620.png"></a></p>
+</div>
+<hr>
+<h3 id="arp">ARP 协议<a class="headerlink" href="#arp" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p class="admonition-title">我是偷懒大师</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MzV2bHPLionWqexZlzOcgJxtnwc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MzV2bHPLionWqexZlzOcgJxtnwc.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/McS0b6v6AoFP3YxMSJqchxzKnYb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/McS0b6v6AoFP3YxMSJqchxzKnYb.png"></a></p>
+</div>
+<hr>
+<h3 id="ethnet">Ethnet<a class="headerlink" href="#ethnet" title="Permanent link">¶</a></h3>
+<ul>
+<li>无连接</li>
+<li>使用 CSMA/CD</li>
+<li>监测到电平异常，提前放弃（exponential backoff 指数回退），并全网发布冲突信号 <strong>JAM</strong>——48bits。</li>
+<li>exponential backoff：<span class="arithmatex">\(K*51.2 微秒,K=Random\#\{0,1,2,...,2^{m-1}\},m=冲突次数\)</span></li>
+</ul>
+<hr>
+<h3 id="_10">网桥（低配版交换机）<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">对 CSMA/CD 进行分割</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qk0zbsObgoxyHyxZpGpclqhdnph.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qk0zbsObgoxyHyxZpGpclqhdnph.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MBg4bqdMKogil2xbWZ3czfKdnmh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MBg4bqdMKogil2xbWZ3czfKdnmh.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VxHQbs6YCooY8hxYy5mcfO8VncS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VxHQbs6YCooY8hxYy5mcfO8VncS.png"></a></p>
+</div></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 计算机网络笔记">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                计算机网络笔记
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../CN02/" class="md-footer__link md-footer__link--next" aria-label="下一页: 网工综述">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                网工综述
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

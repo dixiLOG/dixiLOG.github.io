@@ -1,0 +1,2110 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/RSA01/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>随机信号的时域分析 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              随机信号的时域分析
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程 de 分类
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程 de 概率分布
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程 de 性质
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程 de 数字特征
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程 de 特征函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      平稳随机过程及其统计特征
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="平稳随机过程及其统计特征">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      严平稳过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      宽平稳随机过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      自相关函数性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      俩个随机过程的联合统计特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="俩个随机过程的联合统计特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些同理的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      正交与互相关
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      联合平稳
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些其他过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      复随机过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="复随机过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      复随机变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      复随机过程与其数字特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      联合复随机平稳过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程的微分&amp;积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="随机过程的微分&积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机序列的收敛
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程的连续性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      随机过程的微分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="高斯过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      一些性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      各态历经性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="各态历经性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      宽各态历经过程的定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">随机信号的时域分析<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5529 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 31 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<div class="admonition quote">
+<p class="admonition-title">让随机变量的所有概念随<u>时间动起来</u></p>
+</div>
+<h2 id="_2">基本概念<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><strong>随机过程</strong></p>
+<p>是 <span class="arithmatex">\(\mathrm{X}(\mathrm{t},\ \zeta)\ (\mathrm{t}\in\mathrm{T},\ \zeta\in\Omega)\)</span> 在时间进程中处于<u>不同时刻</u>的<u>随机变量</u>的<u>集合</u></p>
+<p>是时间和样本点（样本函数）的 <strong>二元函数</strong></p>
+<ul>
+<li>固定时间，为随机变量</li>
+<li>固定样本点，为样本函数</li>
+</ul>
+<p><strong>样本</strong></p>
+<p>两者都固定下的样本点</p>
+<p><strong>样本空间</strong></p>
+<p>样本的集合</p>
+<p><strong>样本函数</strong></p>
+<p>一个样本函数=一条轨迹</p>
+<p><strong>样本函数空间</strong></p>
+<p>样本函数的集合</p>
+<p><strong>状态空间</strong></p>
+<p>样本函数<u>值域</u></p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Y909bsbCooiZ1UxEUrgcDLmrnMe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Y909bsbCooiZ1UxEUrgcDLmrnMe.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AevxbexNfopLLQxqkfvcUre2nZO.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AevxbexNfopLLQxqkfvcUre2nZO.png"></a></p>
+</div>
+<hr>
+<h2 id="de">随机过程 de 分类<a class="headerlink" href="#de" title="Permanent link">¶</a></h2>
+<ol>
+<li>按时间和状态的离散/连续，排列组合得四种可能</li>
+</ol>
+<ul>
+<li>时间区分【过程 or 序列】</li>
+<li>状态区分【连续 or 离散】</li>
+</ul>
+<ol start="2">
+<li>按概率分布或性质</li>
+</ol>
+<ul>
+<li>按随机过程的概率分布分类有：高斯(正态)过程、瑞利过程、马尔可夫过程、泊松过程、维纳过程等</li>
+<li>按随机过程统计特性有无平稳性分为：平稳随机过程和非平稳随机过程</li>
+<li>按随机过程在频域的带宽分为：宽带随机过程和窄带随机过程、白噪声随机过程和色噪声随机过程等</li>
+</ul>
+<hr>
+<h2 id="de_1">随机过程 de 概率分布<a class="headerlink" href="#de_1" title="Permanent link">¶</a></h2>
+<ul>
+<li>随机过程的一维分布</li>
+</ul>
+<blockquote>
+<p>反映任一孤立时刻的概率分布情况</p>
+</blockquote>
+<p>分布函数： <span class="arithmatex">\(F_{X}\left(x,t\right)=P\{X(t)\leq x\}\left(t\in T\right)\)</span></p>
+<p>概率密度：<span class="arithmatex">\(f_{X}(x;t)={\frac{\partial F_{X}(x;t)}{\partial x}}\)</span></p>
+<p>离散下：<span class="arithmatex">\(f_{Y}(y;t)=\sum_{i=1}^{m}\,p_{i}(t)\delta(y-y_{i})\;\;\;{\mathrm{i}}\in\mathrm{I}=\left\{1,\dots,\mathrm{m}\right\},\;\;p_{i}(t)=P\{Y(t)=y_{i}\}\)</span></p>
+<ul>
+<li>二维分布</li>
+</ul>
+<blockquote>
+<p>反映任意俩个时刻的联合概率分布情况</p>
+</blockquote>
+<p>联合分布函数：<span class="arithmatex">\(F_{X}(x_{1},x_{2};t_{1},t_{2})=P\{X(t_{1})\leq x_{1};X(t_{2})\leq x_{2}\}\quad t_{1},t_{2}\in T\)</span></p>
+<p>联合概率密度： <span class="arithmatex">\(f_{X}(x_{1},x_{2};t_{1},t_{2})={\frac{\partial^{2}F_{X}(x_{1},x_{2};t_{1},t_{2})}{\partial x_{1}\partial x_{2}}}\)</span></p>
+<hr>
+<h2 id="de_2">随机过程 de 性质<a class="headerlink" href="#de_2" title="Permanent link">¶</a></h2>
+<p>同<u>多维随机变量</u>一样，随机过程 X(t)的 n 维概率分布具有下列主要性质：</p>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{F_{X}(x_{1},x_{2},...,-\infty,...,x_{n};t_{1},t_{2},...,t_{i},...,t_{n})=0}\\ &amp;{F_{X}(\infty,\infty,...,\infty;t_{1},t_{2},...,t_{n})=1}\\ &amp;{f_{X}(x_{1},x_{2},...,x_{n};t_{1},t_{2},...,t_{n})\geq0}\end{array}
+\]</div>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{\displaystyle\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}f_{X}(x_{1},x_{2},...,x_{n};t_{1},t_{2},...,t_{n})d x_{1}d x_{2}...d x_{n}=1}\\ &amp;{\displaystyle\int_{-\infty}^{\infty}\cdots\int_{-\infty}^{\infty}f_{X}(x_{1},x_{2},...,x_{n};t_{1},t_{2},...,t_{n})d x_{m+1}d x_{m+2}...d x_{n}}\\ &amp;{=f_{X}(x_{1},x_{2},...,x_{m};t_{1},t_{2},...,t_{m})}\end{array}
+\]</div>
+<p>如果 X(ti),X(t2),...X(tn)统计独立，则有</p>
+<div class="arithmatex">\[
+f_{X}(x_{1},x_{2},...,x_{m};t_{1},t_{2},...,t_{m})\!=f_{ X}(x_{1};t_{1})f_{X}(x_{2};t_{2})...f_{X}(x_{n};t_{n})
+\]</div>
+<hr>
+<h2 id="de_3">随机过程 de 数字特征<a class="headerlink" href="#de_3" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">抓随机变量！！</p>
+</div>
+<blockquote>
+<p>注意，一般积分内的 x 都是 EX ，根据<u>随机变量函数</u>的性质求解</p>
+</blockquote>
+<ol>
+<li>期望—各个时刻的摆动中心</li>
+</ol>
+<div class="arithmatex">\[
+E[X(t)]=\int_{-\infty}^{\infty}x\cdot f_{X}(x,t)dx=m_{X}(t)
+\]</div>
+<div class="admonition info">
+<ul>
+<li><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KUN2b7y2go70GgxdQwpci65AnIe.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KUN2b7y2go70GgxdQwpci65AnIe.jpg"></a></li>
+</ul>
+</div>
+<ol start="2">
+<li>均方值、方差与均方差</li>
+</ol>
+<p><strong>均方值</strong></p>
+<div class="arithmatex">\[
+E[X^{2}(t)]=\int_{-\infty}^{\infty}x^{2}f_{X}(x,t)d x
+\]</div>
+<p><strong>方差</strong></p>
+<div class="arithmatex">\[
+D[X(t)]=E\{[X(t)-m_{X}(t)]^{2}\}=\int_{-\infty}^{\infty}[x-m_{X}(t)]^{2}\cdot f_{X}(x,t)d x=\sigma_{X}^{2}(t)
+\]</div>
+<p><strong>均方差</strong></p>
+<div class="arithmatex">\[
+\sqrt{D[X(t)]}=\sqrt{\sigma_{X}{}^{2}(t)}=\sigma_{X}\left(t\right)
+\]</div>
+<ol start="3">
+<li>离散下</li>
+</ol>
+<p>均值： <span class="arithmatex">\(m_{Y}(t)=\sum_{i=1}^{m}y_{i}p_{i}(t)\)</span></p>
+<p>均方值： <span class="arithmatex">\(\varphi{_Y}^{2}(t)=E[Y^{2}(t)]=\sum_{i=1}^{m}{y_{i}}^{2}\,p_{i}(t)\)</span></p>
+<p>方差： <span class="arithmatex">\({\sigma_{X}}^{2}(t)=D[Y(t)]=\sum_{i=1}^{m}[y_{i}-m_{Y}(t)]^{2}\;p_{i}(t)\)</span></p>
+<ol start="4">
+<li>自相关函数、自协方差函数与自相关</li>
+</ol>
+<blockquote>
+<p>任意俩个状态之间的<u>相关性</u>，反映过程内部快慢</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ViwLboRI9o2BrpxSXHfcujAWnqg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ViwLboRI9o2BrpxSXHfcujAWnqg.png"></a></p>
+</div>
+<p><strong>自相关函数定义</strong></p>
+<div class="arithmatex">\[
+R_{X}(t_{1},t_{2})=E[X(t_{1})X(t_{2})]=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_{1}\cdot x_{2}\cdot f_{X}(x_{1},x_{2};t_{1},t_{2})d x_{1}x_{2}
+\]</div>
+<blockquote>
+<p><strong>离散下</strong></p>
+<div class="arithmatex">\[
+R_{X}(t_{1},t_{2})=\sum_{k_{1}\in\varepsilon_{y}}\sum_{k_{2}\in\varepsilon_{y}}k_{1}k_{2}\cdot P\{Y(t_{1})=k_{1},Y(t_{2})=k_{2}\}
+\]</div>
+</blockquote>
+<p><strong>自协方差函数</strong></p>
+<p><span class="arithmatex">\(C_{X}\left(t_{1},t_{2}\right)=R_{X}(t_{1},t_{2})-m_{X}(t_{1})\cdot m_{X}(t_{2})\)</span></p>
+<p><span class="arithmatex">\(t_{1}=t_{2}=t\)</span> 时， <span class="arithmatex">\(R_{X}(t,t)=E[X^{2}(t)]\Leftarrow\)</span> 过程的均方值</p>
+<p><span class="arithmatex">\(C_{X}\left(t,t\right)=D[X(t)]=\sigma_{X}^{2}\left(t\right)\Leftarrow\)</span> 过程的方差</p>
+<p><strong>相关系数</strong></p>
+<div class="arithmatex">\[
+\rho_X(t_1,t_2)=\frac{C_X(t_1,t_2)}{\sigma_X(t_1)\sigma_X(t_2)}...........................\begin{cases}\sigma_X(t_1)\neq0\\\sigma_X(t_2)\neq0&amp;\end{cases}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T3OJbOICmorC6yxJqdKcvHsSnWh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T3OJbOICmorC6yxJqdKcvHsSnWh.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Gzqab9ckpo2TTyxfBvkcFsHhnTf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Gzqab9ckpo2TTyxfBvkcFsHhnTf.png"></a></p>
+<ul>
+<li>修改题目条件，改为每隔 0.5s 抛一次</li>
+</ul>
+<p>则二维分布列与相关函数发生变化，从俩种可能 <span class="arithmatex">\(\rightarrow\)</span> 四种</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Kn45bnkYqoGYtyxfgLicpktJnWA.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Kn45bnkYqoGYtyxfgLicpktJnWA.png"></a></p>
+</div>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;\text{ 设随机过程}\{X(t)=\mathrm{e}^{-tt},t&gt;0\},\text{ 其中,随机变量 }\xi\sim U(0,1),\text{ 试求:}\\&amp;(1)该过程的均值函数m(t);\\&amp;(2)该过程的自相关函数R(s,t);\\&amp;(3)该过程的一维概率密度f_{t}(x).\end{aligned}
+\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IuyTbzCN7ojz38xxeEecOXE3nsh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IuyTbzCN7ojz38xxeEecOXE3nsh.png"></a></p>
+<blockquote>
+<p>求随机过程的概率密度函数,就是已知 <code>X</code> 的 <code>f(x)</code>,求 <code>Y</code>
+只不过是换个符号,例如已知 U,求 X</p>
+</blockquote>
+</div>
+<hr>
+<h2 id="de_4">随机过程 de 特征函数<a class="headerlink" href="#de_4" title="Permanent link">¶</a></h2>
+<p><strong>一维特征函数</strong></p>
+<p>同样的，加个 <code>t</code></p>
+<div class="arithmatex">\[
+Q_X(\mu,t)=E[e^{juX(t)}]=\int_{-\infty}^\infty e^{jux}f_X(x\mathrm{~;}t)dx
+\]</div>
+<p>有逆变换</p>
+<div class="arithmatex">\[
+f_X(x,t)=\frac{1}{2\pi}\int_{-\infty}^\infty Q_X(u,t)\cdot e^{-j\mu x}d\mu
+\]</div>
+<p>n 阶原点矩</p>
+<div class="arithmatex">\[
+E[X^n(t)]=(-j)^n\cdot\frac{\partial^nQ_X(\mu,t)}{\partial\mu^n}|_{\mu=0}
+\]</div>
+<hr>
+<p><strong>二维特征函数</strong></p>
+<div class="arithmatex">\[
+\begin{gathered}Q_X(u_1,u_2;t_1,t_2)=E\left[\exp[ju_1X(t_1)+ju_2X(t_2)]\right]\\=\int_{-\infty}^\infty\int_{-\infty}^\infty e^{ju_1x_1+ju_2x_2}\cdot f_X(x_1,x_2;t_1,t_2)dx_1dx_2\end{gathered}
+\]</div>
+<p>逆变换</p>
+<div class="arithmatex">\[
+f_X(x_1,x_2;t_1,t_2)=\frac{1}{\left(2\pi\right)^2}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}Q_X(u_1,u_2;t_1,t_2)\cdot e^{-j(u_1x_1+u_2x_2)}du_1du_2
+\]</div>
+<p>求偏导，可得其<u>相关函数</u>，即</p>
+<div class="arithmatex">\[
+R_X\left.(t_1,t_2)=-\frac{\partial^2Q_X\left(u_1,u_2;t_1,t_2\right)}{\partial u_1\partial u_2}\right|_{u_1=u_2=0}
+\]</div>
+<hr>
+<p><strong>n 维特征函数</strong></p>
+<p>正逆变换</p>
+<div class="arithmatex">\[
+Q_X(u_1,...,u_n;t_1,...,t_n)=E\left[\exp[ju_1X(t_1)+...+ju_nX(t_n)]\right]=\int_{-\infty}^\infty...\int_{-\infty}^\infty e^{ju_1x_1+...+ju_nx_n}f_X(x_1,...,x_n;t_1,...,t_n)dx_1...dx_n
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}&amp;f_X(x_1,\cdots,x_n;t_1,\cdots,t_n)\\&amp;=\frac{1}{\left(2\pi\right)^n}\int_{-\infty}^\infty\cdots\int_{-\infty}^\infty Q_X(u_1,\cdots,u_n;t_1,\cdots,t_n)e^{-j(u_1x_1+\cdots+u_nx_n)}du_1\cdots du_n\end{aligned}
+\]</div>
+<hr>
+<p><strong>离散</strong></p>
+<div class="arithmatex">\[
+Q(u;t)=\sum_ie^{jux_i}P\{X(t)=x_i\}
+\]</div>
+<div class="arithmatex">\[
+Q(u_1,u_2;t_1,t_2)=\sum_j\sum_ie^{ju_1x_i+ju_2x_j}P\{X(t_1)=x_i;X(t_2)=x_j\}\quad(t_1,t_2)\in T
+\]</div>
+<hr>
+<h2 id="_3">平稳随机过程及其统计特征<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><strong>不随时间的推移而变化，时不变的</strong></p>
+</blockquote>
+<h3 id="_4">严平稳过程<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>设有随机过程{ X(t) , t ∈T}，若对于任意 n 和任意 t1&lt;t2&lt;…&lt;tn， <span class="arithmatex">\(t_i\in\mathsf{T}\)</span> 时刻的 n 个状态的 n 维概率密度，<u>其不随时间平移 </u><span class="arithmatex">\(\Delta\)</span><u> 而变化</u></p>
+<ol>
+<li><strong>一维概率密度函数</strong> 与时间无关</li>
+<li><strong>二维概率密度函数</strong> 只与 t1、t2 的时间间隔，时间差<span class="arithmatex">\(\tau\)</span>有关， 而与“时间起点”无关</li>
+</ol>
+<hr>
+<h3 id="_5">宽平稳随机过程<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>满足均方收敛</strong></li>
+<li><strong>均值<span class="arithmatex">\(E[X(t)]\)</span>为常数，与 t 无关</strong></li>
+<li><strong>自相关系数 <span class="arithmatex">\(R_{X}(t_{1},t_{2})\)</span> 只与时间间隔 <span class="arithmatex">\(\tau\)</span> 有关</strong></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例 | 会推 | 一定记住答案</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VZtpbAcceoowp8x2z87cKLdYn5g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VZtpbAcceoowp8x2z87cKLdYn5g.png"></a></p>
+</div>
+<hr>
+<h3 id="_6">自相关函数性质<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<div class="admonition success">
+<p class="admonition-title">自相关函数的性质</p>
+<ul>
+<li><strong>零点非负，实偶函数</strong></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PVWbbiWnpoKPYdx4FNycyk7gnpe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PVWbbiWnpoKPYdx4FNycyk7gnpe.png"></a></p>
+</div>
+<p>同理可得</p>
+<p><span class="arithmatex">\(C_{X}\left(\tau\right)=C_{X}\left(-\tau\right)\)</span></p>
+<p><u>自协方差函数</u>在 <span class="arithmatex">\(\tau=0\)</span> 上也具有最大值</p>
+<p>此外，还有</p>
+<ul>
+<li>周期平稳过程的 <code>R</code> 也为周期函数，且周期一致，即<span class="arithmatex">\(R_{X}(\tau+T)=R_{X}(\tau)\)</span></li>
+<li>若平稳过程 X(t) 含有一个周期分量，那么 <span class="arithmatex">\(\mathsf{R}_\mathsf{X}(\mathsf{t})\)</span> 也可能含有一个同周期的周期分量</li>
+<li>若平稳过程不含有任何周期分量，则  <span class="arithmatex">\(\lim_{|\tau|\to\infty}R_{_X}(\tau)=R_{_X}(\infty)=m_{_X}^2\quad\text{(直流分量平方)}\)</span></li>
+<li>若非周期平稳过程含有均值，则自相关有 <span class="arithmatex">\(R_{x}\left(\tau\right)=C_{x}\left(\tau\right)+{m_{x}}^{2}\)</span></li>
+<li>平稳过程自相关函数中不会含有<u>阶跃因子</u></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TfolbW8FEoKZdbxZLqccUrFknIf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TfolbW8FEoKZdbxZLqccUrFknIf.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/U7Yyb9dGooBSQbx0vP5cEKRXn4c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/U7Yyb9dGooBSQbx0vP5cEKRXn4c.png"></a></p>
+</div>
+</div>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ml0wbdOBDoiVRmxpPPycFPBvnlc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ml0wbdOBDoiVRmxpPPycFPBvnlc.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HmR1bridXovPoTx1VAacEEnhnKg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HmR1bridXovPoTx1VAacEEnhnKg.png"></a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例 | 通信原理中 DSBのPSD 推导</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RQPfbvAbKoOPDxxZ9OGcASXCnwh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RQPfbvAbKoOPDxxZ9OGcASXCnwh.png"></a></p>
+</div>
+<hr>
+<h2 id="_7">俩个随机过程的联合统计特性<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="_8">一些同理的概念<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<ul>
+<li><span class="arithmatex">\(\mathsf{n}+\mathsf{m}\)</span> 维联合分布函数</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{F_{X T}\left(x_{1},...,x_{n};y_{1},...,y_{m};t_{1},...,t_{n},t_{1}^{\prime},...,t_{m}^{\prime}\right)}\\ &amp;{\ =P\{X(t_{1})\leq x_{1},...,X(t_{n})\leq x_{n},Y(t_{1}^{\prime})\leq y_{1},...,Y(t_{m}^{\prime})\leq y_{m}\}}\end{array}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathsf{n}+\mathsf{m}\)</span> 维联合概率密度</li>
+</ul>
+<div class="arithmatex">\[
+{\begin{array}{r l}&amp;{f_{X Y}(x_{1},...,x_{n};y_{1},...,y_{m};t_{1},...,t_{n},t_{1}^{\prime},...,t_{m}^{\prime})}\\ &amp;{={\frac{\partial^{n+m}F_{X T}\left(x_{1},...,x_{n};y_{1},...,y_{m};t_{1},...,t_{n},t_{1}^{\prime},...,t_{m}^{\prime}\right)}{\partial x_{1}...\partial x_{n}\partial y_{1}...\partial y_{m}}}}\end{array}}
+\]</div>
+<ul>
+<li>独立</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{f_{X Y}\!\left(x_{1},...,x_{n};y_{1},...,y_{m};t_{1},...,t_{n},t_{1}^{\prime},...,t_{m}^{\prime}\right)}\\ &amp;{\,={\bigl.}f_{X}\!\left(x_{1},...,x_{n};t_{1},...,t_{n}\right)\cdot{\bigl.}f_{Y}\!\left(y_{1},...,y_{m};t_{1}^{\prime},...,t_{m}^{\prime}\right)}\end{array}
+\]</div>
+<ul>
+<li>联合严平稳</li>
+</ul>
+<blockquote>
+<p>即不随时间变化</p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{f_{X Y}\left(x_{1},...,x_{n};y_{1},...,y_{m};t_{1},...,t_{n},t_{1}^{\prime},...,t_{m}^{\prime}\right)}\\ &amp;{\,=\,f_{X Y}\left(x_{1},...,x_{n};y_{1},...,y_{m};t_{1}+\Delta t,...,t_{n}+\Delta t,t_{1}^{\prime}+\Delta t,...,t_{m}^{\prime}+\Delta t\right)}\end{array}
+\]</div>
+<hr>
+<h3 id="_9">正交与互相关<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<p><strong>正交</strong></p>
+<div class="arithmatex">\[
+R_{X Y}(t_{1},t_{2})=0
+\]</div>
+<p><strong>互不相关</strong></p>
+<div class="arithmatex">\[
+C_{X Y}\left(t_{1},t_{2}\right)=0
+\]</div>
+<blockquote>
+<p>若仅在同一时刻 t 存在 <span class="arithmatex">\(C_{X Y}\left(t,t\right)=0\)</span>
+则称两个过程在同一时刻的状态互不相关</p>
+</blockquote>
+<h3 id="_10">联合平稳<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p><strong>两个平稳随机过程</strong> 的<u>互相关函数</u>是仅与 <span class="arithmatex">\(\tau\)</span> 有关的函数，即</p>
+<div class="arithmatex">\[
+R_{X Y}\left(t_{1},t_{2}\right)=E[X(t_{1})Y(t_{2})]=R_{X Y}(\tau),\tau=t_{2}-t_{1}
+\]</div>
+<p>则称之为<u>联合宽平稳</u></p>
+<blockquote>
+<p>若两个过程中存在不是平稳的，则一定不是<br>
+若是联合宽平稳，则两者一定为平稳随机过程</p>
+</blockquote>
+<ul>
+<li>互相关系数</li>
+</ul>
+<div class="arithmatex">\[
+\rho_{X Y}(\tau)=\frac{C_{X Y}(\tau)}{\sigma_{X}\sigma_{Y}}=\frac{R_{X Y}(\tau)-m_{X}m_{Y}}{\sigma_{X}\sigma_{Y}}
+\]</div>
+<div class="admonition success">
+<p class="admonition-title">联合平稳随机过程的性质</p>
+<ul>
+<li>互相关函数 <code>R</code> 与互协方差函数 <code>C</code><u>不再是偶函数</u></li>
+<li><span class="arithmatex">\(R_{X Y}(\tau)=0\)</span> , <span class="arithmatex">\(\forall\,\tau\)</span> 表示两个平稳过程正交</li>
+<li><span class="arithmatex">\(R_{X Y}\left(0\right)=0\)</span> 两个平稳过程所有同一时刻的状态正交</li>
+<li><span class="arithmatex">\(C_{{X Y}}(\tau)=0\)</span> , <span class="arithmatex">\(\forall\,\tau\)</span> 表示两个平稳过程互不相关</li>
+<li><span class="arithmatex">\(C_{X Y}\left(0\right)=0\)</span> 两个平稳过程所有同一时刻的状态互不相关</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[
+\begin{gathered}\text{已知随机过程 }X(t)\text{ 和 }Y(t)\text{ 独立且各自平稳,自相关函数为 }R_X(\tau)=2e^{-|\tau|}\cos\omega_0\tau\text{ 与}\\R_Y(\tau)=9+\exp(-3\tau^2)\text{ 。令随机过程 }Z(t)=AX(t)Y(t)\text{,其中 }A\text{ 是均值为 2,方差为9 的}\\\text{随机变量,且与}X(t)\text{和}Y(t)\text{相互独立。求过程}Z(t)\text{的均值、方差和自相关函数。}\end{gathered}
+\]</div>
+<p><strong>均值：</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}E\left[Z(t)\right]=E\left[AX(t)Y(t)\right]=E\left[A\right]E\left[X(t)\right]E\left[Y(t)\right]=2E\left[X(t)\right]E\left[Y(t)\right]\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+m_{X}^{2}=R_{X}(\infty)=\lim_{\tau\to\infty}2e^{-|\tau|}\cos\omega_{0}\tau=0\text{,即}m_{X}=0\text{,所以有:}E[Z(t)]=0
+\]</div>
+<div class="arithmatex">\[
+E\left[A^2\right]=D\left[A\right]+E^2\left[A\right]=9+4=13
+\]</div>
+<p><strong>自相关函数：</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}R_z(t+\tau,t)&amp;=E\left[A^{2}X(t+\tau)Y(t+\tau)X(t)Y(t)\right]\\&amp;=E\left[A^{2}\right]E\left[X(t+\tau)Y(t+\tau)X(t)Y(t)\right]\\&amp;=13E\left[X(t+\tau)X(t)\right]E\left[Y(t+\tau)Y(t)\right]\\&amp;=13R_X(\tau)R_Y(\tau)=26e^{-|\tau|}(9+e^{-3\tau^2})\cos\omega_0\tau\end{aligned}
+\]</div>
+<p><strong>方差：</strong></p>
+<div class="arithmatex">\[
+D\left[Z(t)\right]=R_z(0)=260
+\]</div>
+</div>
+<hr>
+<h2 id="_11">一些其他过程<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<ul>
+<li>独立过程</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MPh5bXx9zojbvvxODlTcRrQFnse.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MPh5bXx9zojbvvxODlTcRrQFnse.png"></a></p>
+</div>
+<ul>
+<li>二阶矩过程</li>
+</ul>
+<blockquote>
+<p>平稳随机过程一定是二阶矩过程</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Moh1bsB8LoAsOexVVuJcyIVengD.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Moh1bsB8LoAsOexVVuJcyIVengD.png"></a></p>
+</div>
+<ul>
+<li><strong>平稳过程</strong></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AQHLbfaFCoPm2yxgAIRc8UuUnuh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AQHLbfaFCoPm2yxgAIRc8UuUnuh.png"></a></p>
+</div>
+<ul>
+<li><strong>独立增量过程</strong></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WRW4b6nD0o7azWxxGPocJPwPnwd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WRW4b6nD0o7azWxxGPocJPwPnwd.png"></a></p>
+</div>
+<ul>
+<li>平稳独立增量过程</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LYUgb3hhMoz81dxm3cRcSk38nOb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LYUgb3hhMoz81dxm3cRcSk38nOb.png"></a></p>
+</div>
+<ul>
+<li>正交增量过程</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TWlnb2rtooYN9yx4Vkpcc2bunhe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TWlnb2rtooYN9yx4Vkpcc2bunhe.png"></a></p>
+</div>
+<ul>
+<li><strong>马尔可夫过程</strong></li>
+</ul>
+<blockquote>
+<p>后无效性，未来只与现在有关，而与过去无关</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/U0L1b1m7loE2BFxzciecUQhXneg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/U0L1b1m7loE2BFxzciecUQhXneg.png"></a></p>
+</div>
+<ul>
+<li><strong>高斯过程</strong></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G8tib6cmRoq8v9xJlDscMaYHnUh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G8tib6cmRoq8v9xJlDscMaYHnUh.png"></a></p>
+</div>
+<ul>
+<li>维纳过程</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JAFIb8LHoo9i2RxVvs1cLKvRnJc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JAFIb8LHoo9i2RxVvs1cLKvRnJc.png"></a></p>
+</div>
+<hr>
+<h2 id="_12">复随机过程<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>主要区别：共轭</p>
+<div class="arithmatex">\[
+{\dot{Z}}(t)=Z(t)-m_{Z}(t)
+\]</div>
+</blockquote>
+<h3 id="_13"><strong>复随机变量</strong><a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+Z=X+j Y
+\]</div>
+<ul>
+<li>期望</li>
+</ul>
+<div class="arithmatex">\[
+m_{Z}=E[Z]=E[X]+j\cdot E[Y]=m_{X}+j\cdot m_{Y}
+\]</div>
+<ul>
+<li>方差</li>
+</ul>
+<div class="arithmatex">\[
+D[Z]=E[(X-m_{X})^{2}]+E[(Y-m_{Y})^{2}]=E[\mid\dot{Z}\mid^{2}]=D[X]+D[Y]
+\]</div>
+<ul>
+<li>协方差</li>
+</ul>
+<div class="arithmatex">\[
+C_{Z_1Z_2}=E[\left(Z_1-m_{Z_1}\right)^*\cdot\left(Z_2-m_{Z_2}\right)]=E[\dot{Z_1}\cdot\dot{Z_2}]=C_{X1X2}+C_{Y1Y2}+j(C_{X1Y2}-C_{Y1X2})
+\]</div>
+<ul>
+<li>独立</li>
+</ul>
+<div class="arithmatex">\[
+f_{X_{1}Y_{1}X_{2}Y_{2}}(x_{1},y_{1},x_{2},y_{2})=f_{X_{1}Y_{1}}(x_{1},y_{1})\cdot f_{X_{2}Y_{2}}(x_{2},y_{2})
+\]</div>
+<ul>
+<li>互不相关</li>
+</ul>
+<div class="arithmatex">\[
+C_{Z_{1}Z_{2}}=E[(Z_{1}-m_{Z_{1}})^{*}(Z_{2}-m_{Z_{2}})]=0
+\]</div>
+<ul>
+<li>正交</li>
+</ul>
+<div class="arithmatex">\[
+R_{z_{1}z_{2}}=E[Z_{1}^{*}\cdot Z_{2}]=0
+\]</div>
+<hr>
+<h3 id="_14">复随机过程与其数字特征<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<p>同理，有</p>
+<div class="arithmatex">\[
+\mathbf{Z(t)}=\mathbf{X(t)}+\mathbf{j}\mathbf{Y(t)}
+\]</div>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/H3YAb8Zw2omQ1oxTZz3cIflsnQe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/H3YAb8Zw2omQ1oxTZz3cIflsnQe.png"></a></p>
+</div>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">复随机平稳条件</p>
+<p><span class="arithmatex">\(\begin{array}{l}{{m_{Z}(t)=m_{X}+j\cdot m_{Y}=m_{Z}}}\\ {{R_{Z}(t,t+\tau)=R_{Z}(\tau)}}\end{array}\)</span></p>
+</div>
+<hr>
+<h3 id="_15">联合复随机平稳过程<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<div class="admonition success">
+<p class="admonition-title">联合复随机平稳<u>充要</u>条件</p>
+<p>俩复随机过程平稳，且 <span class="arithmatex">\(R_{Z_{1}Z_{2}}(t,t+\tau)=R_{Z_{1}Z_{2}}(\tau)\)</span></p>
+</div>
+<ul>
+<li>互相关函数</li>
+</ul>
+<div class="arithmatex">\[
+R_{Z_{1}Z_{2}}(t,t+\tau)=E[Z_{1}^{*}(t)\cdot Z_{2}(t+\tau)]
+\]</div>
+<ul>
+<li>互协方差函数</li>
+</ul>
+<div class="arithmatex">\[
+C_{Z}\left(t,t+\tau\right)=E\{\left[Z\left(t\right)-m_{Z}\left(t\right)\right]^{*}\cdot\left[Z\left(t+\tau\right)-m_{Z}\left(t+\tau\right)\right]\}
+\]</div>
+<ul>
+<li>互不相关</li>
+</ul>
+<div class="arithmatex">\[
+C_{z_{1}z_{2}}(t,t+\tau)=0
+\]</div>
+<ul>
+<li>正交</li>
+</ul>
+<div class="arithmatex">\[
+R_{Z_{1}Z_{2}}(t,t+\tau)=0
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZLyhbcPVdolM2JxqpRKcUrFCnoO.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZLyhbcPVdolM2JxqpRKcUrFCnoO.png"></a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[
+\begin{gathered}\text{设有复随机过程 }\xi(t)=\sum_{k=1}^N\eta_ke^{i\omega_kt}\text{,其中}\eta_k\left(1|\leq k\leq N\right)\text{是相互独立的}\\\text{随机变量,且服从正态分布 }N(0,\sigma_k^2)\mathrm{,}\omega_k\text{ 为常数。试求 }\xi(t)\text{ 的均值函数和相关函数。}\end{gathered}
+\]</div>
+<p>注意，利用独立可拆，均值为 0 求解</p>
+<div class="arithmatex">\[
+\begin{aligned}E[\xi(t)]&amp;=E[\sum\eta_k\cdot e^{jw_kt}]\\&amp;=\sum E[\eta_k]\cdot e^{jw_kt}\\&amp;=0\end{aligned}
+\]</div>
+<p>关于相关函数，n 维矩阵，除了对角线为方差，其余相乘后因为独立 + 均值为 0→ 都为 0</p>
+<div class="arithmatex">\[
+\begin{aligned}R_\xi(t,t+\tau)&amp;=E[\sum\eta_ke^{\mathrm{j}w_kt}\cdot\sum\eta_l\cdot e^{\mathrm{j}w_l(t+\tau)}]\\&amp;=E[\sum[\eta_k^2]e^{\mathrm{j}w_kt}+0]\\&amp;=\sum E[\eta_k^2]\cdot e^{\mathrm{j}w_kt}\\&amp;=\sum\sigma_k^2e^{\mathrm{j}w_kt}\end{aligned}
+\]</div>
+</div>
+<hr>
+<h2 id="_16">随机过程的微分&amp;积分<a class="headerlink" href="#_16" title="Permanent link">¶</a></h2>
+<h3 id="_17">随机序列的收敛<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>处处收敛（every where）</strong></li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}&amp;\zeta_1:x_1(1),x_1(2),\cdots,x_1(n)\to x_1\\&amp;\zeta_2:x_2(1),x_2(2),\cdots,x_2(n)\to x_2,\quad(x_1,x_2,x_3)\in X\\&amp;\zeta_3:x_3(1),x_3(2),\cdots,x_3(n)\to x_3\end{aligned}
+\]</div>
+<p>记作</p>
+<div class="arithmatex">\[
+\operatorname*{lim}_{n\to\infty}X(n)=X
+\]</div>
+<p>或者</p>
+<div class="arithmatex">\[
+\{X(n)\}\xrightarrow{e}X
+\]</div>
+<ol start="2">
+<li><strong>以概率 1 收敛（almost every where）</strong></li>
+</ol>
+<blockquote>
+<p>几乎处处收敛</p>
+</blockquote>
+<div class="arithmatex">\[
+P\{\operatorname*{lim}_{n\to\infty}X(n)=X\}=1
+\]</div>
+<p>简记</p>
+<div class="arithmatex">\[
+\{X(n)\}\xrightarrow{a.e}X
+\]</div>
+<ol start="3">
+<li><strong>依概率收敛</strong></li>
+</ol>
+<div class="arithmatex">\[
+\operatorname*{lim}_{n\rightarrow\infty}P\{|X(n)-X|\geq\varepsilon\}=0
+\]</div>
+<p>简记</p>
+<div class="arithmatex">\[
+\{X(n)\}\xrightarrow{P}X
+\]</div>
+<ol start="4">
+<li><strong>依分布收敛</strong></li>
+</ol>
+<blockquote>
+<p>分布函数收敛</p>
+</blockquote>
+<div class="arithmatex">\[
+\operatorname*{lim}_{n\rightarrow\infty}F_{n}(x)=F(x)
+\]</div>
+<p>简记</p>
+<div class="arithmatex">\[
+\{X(n)\}\xrightarrow{d}X
+\]</div>
+<ol start="5">
+<li>均方收敛</li>
+</ol>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AJwIb2yDVo5jSbx8tGXctztnnym.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AJwIb2yDVo5jSbx8tGXctztnnym.png"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">5 种收敛模式之间的关系</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SXdgbnZ06oDkCBxk2OAcNRBDnRf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SXdgbnZ06oDkCBxk2OAcNRBDnRf.png"></a></p>
+</div>
+<hr>
+<h3 id="_18">随机过程的连续性<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>可导必连续</p>
+</blockquote>
+<p><strong>随机过程处处连续</strong></p>
+<div class="arithmatex">\[
+\lim_{\Delta t\to0}x_\zeta(t+\Delta t)=x_\zeta(t),.................\forall\zeta\in\Omega
+\]</div>
+<p><strong>均方连续</strong></p>
+<div class="arithmatex">\[
+\operatorname*{lim}_{\Delta t\to0}E\{[X(t+\Delta t)-X(t)]^{2}\}=0
+\]</div>
+<p>则称该二阶矩过程具有均方连续性简称过程 m.s 连续，表示为</p>
+<div class="arithmatex">\[
+l\cdot i\cdot m X(t+\Delta t)=X(t)\quad t\in T
+\]</div>
+<p><strong>充要条件</strong></p>
+<ul>
+<li>当且仅当其自相关函数 <span class="arithmatex">\(R_{X}(t_{1},t_{2})\quad t_{1}=t_{2}=t\)</span> 在 <code>T</code> 上连续，则 <code>X</code> 均方连续</li>
+</ul>
+<p>∵ <span class="arithmatex">\(\mathrm{\Delta}\cdot\mathrm{\Delta}t_{1}=t_{2}=t\)</span></p>
+<p>∴ 上面的充要条件也可表示为: <span class="arithmatex">\(\operatorname{Rx}(\tau)\)</span> 在 <span class="arithmatex">\(\tau=0\)</span> 点连续是均方连续的充要</p>
+<blockquote>
+<p>证明略，看都看不懂 🤪</p>
+</blockquote>
+<hr>
+<p><strong>性质</strong></p>
+<ul>
+<li>若平稳过程 X(t) 的<span class="arithmatex">\(R_{X}(\tau)\)</span>在 <code>0</code> 处连续，则<span class="arithmatex">\(R_{X}(\tau)\)</span>在所有 <code>T</code> 上也连续</li>
+<li>均方连续的随机过程的期望也连续，<u>极限与期望可互换</u></li>
+</ul>
+<div class="arithmatex">\[
+l\cdot i\cdot m\;X(t+\Delta t)=X(t)\Longrightarrow\operatorname*{lim}_{\Delta t\rightarrow0}E[X(t+\Delta t)]=E[X(t)]
+\]</div>
+<div class="admonition success">
+<p class="admonition-title">平稳随机过程的均方连续准则</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/L3tbbasqFoUhNdxjVpyc9FkZnTe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/L3tbbasqFoUhNdxjVpyc9FkZnTe.png"></a></p>
+<p>即：宽平稳过程 <span class="arithmatex">\(\{X(t);t\in(-\infty,+\infty)\}\)</span> 均方连续的充分必要条件为：自相关函数<span class="arithmatex">\(R_{X X}(\tau)\)</span> 在点 <span class="arithmatex">\(\tau=0\)</span> 处连续</p>
+</div>
+<hr>
+<h3 id="_19">随机过程的微分<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
+<p><strong>均方导数</strong></p>
+<p>满足</p>
+<div class="arithmatex">\[
+\operatorname*{lim}_{\Delta t\rightarrow0}E\left\{\left[\frac{X(t+\Delta t)-X(t)}{\Delta t}-X^{\prime}(t)\right]^{2}\right\}=0
+\]</div>
+<p>或者</p>
+<div class="arithmatex">\[
+l\cdot i\cdot m{\frac{X(t+\Delta t)-X(t)}{\Delta t}}=X^{\prime}(t)
+\]</div>
+<p>则有过程 X 的均方导数</p>
+<div class="arithmatex">\[
+X^{\prime}(t)={\frac{d X(t)}{d t}}
+\]</div>
+<hr>
+<p><strong>均方可微的充要条件</strong></p>
+<p>在 <code>T</code> 上存在二阶偏导</p>
+<div class="arithmatex">\[
+\left.\frac{\partial^{2}R_{X}\left(t_{1},t_{2}\right)}{\partial t_{1}\partial t_{2}}\right|_{t_{1}=t_{2}=t}
+\]</div>
+<p><strong>求导与期望</strong></p>
+<p>求导与求期望可以交换顺序，即</p>
+<div class="arithmatex">\[
+E[\frac{d X(t)}{d t}]=\frac{d E[X(t)]}{d t}
+\]</div>
+<p><strong>求导与自相关函数</strong></p>
+<p>导数的自相关=自相关函数的二阶偏导，即</p>
+<div class="arithmatex">\[
+R_{Y}(t_{1},t_{2})=R_{X^{\prime}}(t_{1},t_{2})={\frac{\partial^{2}R_{X}(t_{1},t_{2})}{\partial t_{1}\partial t_{2}}}
+\]</div>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">对平稳随机过程来说</p>
+<blockquote>
+<p>期望为常数，自相关系数只与<span class="arithmatex">\(\tau\)</span>有关</p>
+</blockquote>
+<ol>
+<li><strong>期望</strong></li>
+</ol>
+<div class="arithmatex">\[
+E[X^{\prime}(t)]=E[\frac{d X(t)}{d t}]=\frac{d E[X(t)]}{d t}=\frac{d (常数)}{d t}=0
+\]</div>
+<ol start="2">
+<li><strong>自相关函数</strong></li>
+</ol>
+<div class="arithmatex">\[
+R_{X^{\prime}}(t_{1},t_{2})=\frac{\partial^{2}R_{X}(t_{1},t_{2})}{\partial t_{1}\partial t_{2}}=-\frac{d^{2}R_{X}(\tau)}{d\tau^{2}}
+\]</div>
+<p><strong>得到<u>平稳随机过程均方可导</u>的条件</strong></p>
+<div class="arithmatex">\[
+R^{\prime\prime}(\tau)\text{在}\tau=0\text{处存在}\\R^{\prime}(\tau)\text{在}\tau=0\text{处连续}
+\]</div>
+<p>特别对于实平稳过程，</p>
+<p>若实平稳过程过程 <span class="arithmatex">\(X(t)\)</span> 在 <span class="arithmatex">\(t\in T\)</span> 上均方可导, 则有 : <span class="arithmatex">\(R^{\prime}(0)=0\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GvB5btHDQoL1MexTNEOcc2SZnzc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GvB5btHDQoL1MexTNEOcc2SZnzc.png"></a></p>
+</div>
+</div>
+<hr>
+<blockquote>
+<p>积分略</p>
+</blockquote>
+<hr>
+<h2 id="_20">高斯过程<a class="headerlink" href="#_20" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>高斯过程的一些定义，了解一下了解一下</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/B2pEbbaYWof2VrxED9kcN3IenRg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/B2pEbbaYWof2VrxED9kcN3IenRg.png"></a></p>
+</div>
+<hr>
+<h3 id="_21">一些性质<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EDvpbds6KobfBhx0Y0OciXYinhS.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EDvpbds6KobfBhx0Y0OciXYinhS.png"></a></p>
+</div>
+<hr>
+<h2 id="_22">各态历经性<a class="headerlink" href="#_22" title="Permanent link">¶</a></h2>
+<p>基于<u>各态历经性（遍历性）</u>用【时间平均值】代替【统计平均值】 ，以减少计算量</p>
+<p>这必须在【平稳】的前提下进行</p>
+<div class="admonition success">
+<p class="admonition-title">宽各态历经过程的定义计算与物理意义</p>
+<h3 id="_23">宽各态历经过程的定义<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<p>若一个特征的【时间平均】，以概率 1 收敛其【统计平均】</p>
+<p>则称此特征具有【各态历经性】</p>
+<blockquote>
+<p>对于一个平稳随机过程 X，满足【均值与自相关】都具有<u>各态历经性</u></p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{array}{r c l}{{a}}&amp;{{=}}&amp;{{\overline{{{a}}}}}\\ {{R\left(\tau\right)}}&amp;{{=}}&amp;{{\overline{{{R\left(\tau\right)}}}}}\end{array}
+\]</div>
+<p>具体有</p>
+<div class="arithmatex">\[
+\begin{array}{l}{\overline{{a}}=\overline{{x(t)}}=\displaystyle\operatorname*{lim}_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}x(t)d t=m_{X}}\\ {\overline{{R(\tau)}}=\displaystyle\operatorname*{lim}_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}x(t)x(t+\tau)d t}\end{array}
+\]</div>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DCdhbo0CpojCE9xX6sIcIV6qnyf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DCdhbo0CpojCE9xX6sIcIV6qnyf.png" title="物理意义"></a></p>
+</div>
+</div>
+<hr>
+<p><strong>性质</strong></p>
+<blockquote>
+<p>了解一下</p>
+</blockquote>
+<ul>
+<li>各态历经性一定是平稳随机过程，反之不一定</li>
+<li>平稳随机过程 <strong>均值</strong> 具有各态历经性的<u>充要条件</u></li>
+</ul>
+<div class="arithmatex">\[
+\lim_{\tau\to\infty}\frac{1}{T}\int_0^{2\tau}(1-\frac{\tau}{2T})\cdot[R_X(\tau)-m_X^2]d\tau=0
+\]</div>
+<ul>
+<li>平稳随机过程 <strong>自相关函数</strong> 具有各态历经性的<u>充要条件</u></li>
+</ul>
+<div class="arithmatex">\[
+\lim_{T\to\infty}\frac{1}{T}\int_0^{2T}(1-\frac{\tau_1}{2T})\cdot[B(\tau_1)-{R_X}^2(\tau)]d\tau_1=0\\\text{式中}B(\tau_1)=E[X(t+\tau+\tau_1)X(t+\tau_1)X(t+\tau)X(t)]R_X(\tau)=E[X(t+\tau)X(t)]
+\]</div>
+<ul>
+<li>高斯平稳随机过程具有各态历经性的充分条件</li>
+</ul>
+<div class="arithmatex">\[
+\int_{0}^{\infty}\left|R_{x}\left(\tau\right)\right|d\tau&lt;\infty
+\]</div>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">第一道大题 の 真题</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T4Emb3yCEoyorMxVZnDczrMonTJ.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/T4Emb3yCEoyorMxVZnDczrMonTJ.png" title="原题"></a></p>
+<hr>
+<p>【扩 1】</p>
+<p>修改题目，除了 <span class="arithmatex">\(\phi\)</span> 为匀分布之外，增添条件： <span class="arithmatex">\(\alpha\)</span> 服从标准高斯分布<span class="arithmatex">\(N(0,1)\)</span>，且互相独立</p>
+<p>证明：</p>
+<ul>
+<li><code>X(t)</code> 平稳</li>
+<li><code>X(t)</code> 不具有各态历经性</li>
+</ul>
+<ol>
+<li>容易推得</li>
+</ol>
+<div class="arithmatex">\[
+m_x(t)=E[X(t)]=E[\alpha\cos(\omega_0t+\Phi)]=E[\alpha]\cdot E[\cos(\omega_0t+\Phi)]=0\cdot\cos(\omega_0t)=0
+\]</div>
+<div class="arithmatex">\[
+R_X(t,t+\tau)=E[\alpha^2]\cdot E[\cos(\omega_0t+\Phi)\cos(\omega_0(t+\tau)+\Phi)]=1\cdot\frac{1}{2}\cdot cos\omega_0\tau
+\]</div>
+<div class="arithmatex">\[
+R_X(0)=0.5&lt;\infty
+\]</div>
+<p>故平稳</p>
+<ol start="2">
+<li>容易推得</li>
+</ol>
+<div class="arithmatex">\[
+\overline{x(t)}=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}\alpha cos(\omega_0t+\phi)dt=\lim_{T\to\infty}\frac{\alpha}{\omega_0T}sin(\omega_0t+\phi)|_{-T/2}^{T/2}\xlongequal{w_0=2\pi/T}0
+\]</div>
+<blockquote>
+<p>而关于自相关函数的时间平均，易观察到有 <span class="arithmatex">\(\alpha^{2}\)</span> 没有消去，故与 <strong>统计平均不相等</strong></p>
+</blockquote>
+<p>则不具有各态历经性</p>
+<hr>
+<p>【扩 2】</p>
+<p>修改题目，<span class="arithmatex">\(a,\omega_{0}\)</span> 为常数，问</p>
+<ul>
+<li><span class="arithmatex">\(\phi\)</span> 在什么条件下，随机变量 <code>X</code> 是平稳的</li>
+</ul>
+<ol>
+<li>均值为常数</li>
+</ol>
+<div class="arithmatex">\[
+E[X(t)]=A\cdot E[cos(wt+\phi)]=A\cdot E[coswtcos\phi-sinwtsin\phi]=A\cdot\{coswtE[cos\phi]-sinwtE[sin\phi]\}
+\]</div>
+<p>要求为常数，与 <code>t</code> 无关，故</p>
+<div class="arithmatex">\[
+E[c o s\phi]=E[s i n\phi]=0
+\]</div>
+<div class="arithmatex">\[
+m_{X}=0
+\]</div>
+<ol start="2">
+<li>自相关函数</li>
+</ol>
+<div class="arithmatex">\[
+R_{X}(\tau)=R_{X}(t,t+\tau)=\frac{A^{2}}{2}E[c o s w\tau+c o s(2w t+w\tau+2\phi)]
+\]</div>
+<p>同理可得</p>
+<div class="arithmatex">\[
+E[c o s2\phi]=E[s i n2\phi]=0
+\]</div>
+<div class="arithmatex">\[
+R_{X}(t)=\frac{A^{2}}{2}c o s w\tau
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\phi\)</span> 在什么条件下，<code>X</code> 具有各态历经性</li>
+</ul>
+<p>求均值的时间平均值</p>
+<div class="arithmatex">\[
+\overline{{x(t)}}=\operatorname*{lim}_{T\rightarrow\infty}\frac{1}{T}\int_{-T/2}^{T/2}A c o s(w t+\phi)d t=0=m_{X}
+\]</div>
+<p>求自相关的时间平均值</p>
+<div class="arithmatex">\[
+R_{X}(\tau)=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}A^2cos(wt+\phi)cos(wt+w\tau+\phi)dt=\frac{A^2}{2}cosw\tau+\frac{A^2}{2T}\lim\int cos(2wt+w\tau+2\phi)dt
+\]</div>
+<p>好巧，后面积分项为 0</p>
+<p>故满足平稳，即具有各态历经</p>
+<blockquote>
+<p>写成明确的表达式</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YysEbSw1bo4lgxxEx0scHTXQnCc.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YysEbSw1bo4lgxxEx0scHTXQnCc.jpg"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JWAtb2AA3oa1W4x42XJcdML4nYc.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JWAtb2AA3oa1W4x42XJcdML4nYc.jpg"></a></p>
+</div>
+</div>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">综合例</p>
+<p><span class="arithmatex">\(\begin{aligned}&amp;\text{随机过程}X\left(t\right)=Acos(t)+Bsin(t),\text{ 其中}A\text{和}B\text{独立同标准高斯分布,}\\&amp;\text{且}X(t)\text{的均方导数为}Y(t)=X^{^{\prime}}(t),\text{ 求:}\end{aligned}\)</span></p>
+<p><span class="arithmatex">\(X(t)\text{的期望,方差和自相关函数}\)</span></p>
+<p><span class="arithmatex">\(X(t)\text{是否各态历经?给出理由}\)</span></p>
+<p><span class="arithmatex">\(Y(t)\text{的自相关系数}\)</span></p>
+<p><span class="arithmatex">\(Y(t)\text{的一维概率密度}\)</span></p>
+<p><span class="arithmatex">\(X(t)\text{和}Y(t)\text{是否联合平稳?给出理由}\)</span></p>
+<ol>
+<li>因独立，易得</li>
+</ol>
+<p><span class="arithmatex">\({E[X(t)]=E[A\cos(t)+B\sin(t)]=E[A]\cos(t)+E[B]\sin(t)=0}\)</span></p>
+<p><span class="arithmatex">\(\mathrm{Var}(X(t))=E[X(t)^2]-(E[X(t)])^2=E[X(t)^2]=E[(A\cos(t)+B\sin(t))^2]=cos^2(t)+sin^2(t)=1\)</span></p>
+<p><span class="arithmatex">\(R_{X}(t_{1},t_{2})=E[X(t_{1})X(t_{2})]=\cos(t_{1})\cos(t_{2})+\sin(t_{1})\sin(t_{2})=\cos(t_{1}-t_{2})\)</span></p>
+<ol start="2">
+<li>均值相等，但自相关函数多了 A 和 B，故不具有各态历经性</li>
+<li><span class="arithmatex">\(R_{Y}(\tau)=-\frac{d^{2}R_{X}\left(\tau\right)}{d\tau^{2}}=-\frac{d^{2}\cos\tau}{d\tau^{2}}=\cos\tau\)</span></li>
+<li>线性相加后，Y 仍为标准高斯过程 <span class="arithmatex">\(f_{Y}\left(y\right)=\frac{1}{\sqrt{2\pi}}\exp\left(-\frac{y^{2}}{2}\right)\)</span></li>
+<li>显然联合平稳（当然你也可以代入计算）</li>
+</ol>
+</div></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

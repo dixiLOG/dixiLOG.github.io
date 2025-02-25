@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+li.packet {
+  position: absolute;
+  min-width: 50px;
+  min-height: 50px;
+  border: 1px solid gray;
+  text-align: center;
+  line-height: 50px;
+  list-style: none;
+  margin: 5px; /*添加间距*/
+ border-radius: 10px; /* 设置圆角 */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 设置阴影 */
+  padding: 10px; /* 设置内边距 */
+  font-size: 16px; /* 设置字体尺寸 */
+  font-weight: bold; /* 设置字体加粗 */
+  color: #333333; /* 设置字体颜色 */
+}
+
+
+
+    ul#sender {
+      margin-top: 100px;
+    }
+
+    ul#receiver {
+      margin-top: 200px;
+    }
+
+    .sending {
+      background-color: yellow;
+    }
+
+    .received {
+      background-color: green;
+    }
+
+    .failed {
+      background-color: red;
+    }
+
+    .resending {
+      background-color: orange;
+    }
+    .lost {
+      background-color: black;
+    }
+
+    #chat-window { /* 调整聊天窗口的高度和位置 */
+      width: 500px;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px solid #333333;
+      border-radius: 10px;
+      background-color: #ffffff;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      overflow-y: scroll; /* 添加滚动条 */}
+
+#chat-history {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  border-radius: 5px;
+  overflow-y: scroll;
+  height: 600px; /* 调整高度 */
+
+
+}
+
+
+#input-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+#input-message {
+  width: 300px;
+  padding: 5px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+#start-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 10px; /* 调整左边距 */
+  cursor: pointer;
+  border-radius: 26px;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+}
+body {
+  background-color: #d9e8f6; /* 设置背景颜色 */
+}
+
+
+#start-button:hover {
+  background-color: #00ff99;
+}
+ .welcome-container {
+      width: 500px; /* 调整宽度 */
+      margin: 0 auto;
+      margin-top: 50px;
+      padding: 20px;
+      border: 2px solid #333333;
+      border-radius: 10px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* 新增的样式 */
+    .animated-text {
+      display: inline-block;
+      opacity: 0;
+      animation: appear 2s forwards;
+      animation-delay: 1s;
+    }
+
+    @keyframes appear {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+  <title>GBN by hzl</title>
+</head>
+
+<body>
+    <div class="welcome-container">
+    <p><strong>WELCOME！</strong></p>
+    <p class="animated-text">本组尝试用web前端简单模拟GBN协议传输过程</p>
+    <p class="animated-text">点击下方的start按钮即可发包，发送10个包后重置游戏</p>
+    <p class="animated-text">当然，你也可以通过往左下角的输入栏中键入“reset”来重置游戏</p>
+    <p class="animated-text">可以看见正中央有一个聊天框用于显示目前的游戏进程，而包的不同颜色则能更直观的显示其状态</p>
+    <p class="animated-text">其中，黄色代表sending，橙色代表resending，黑色代表lost，绿色代表received</p>
+    <p class="animated-text">因为技术力有限，本次演示只站在sender视角，并设定当出现lost包时，将不能再发送新的包，希望将来解决这个bug。另外，天干物燥，请不要过快点击按钮，以免引出另一个bug</p>
+    <p class="animated-text">对了，单击正在传输的数据包即可模拟丢包</p>
+    <p class="animated-text">下拉开始游戏吧</p>
+  </div>
+
+  <ul id="sender"></ul>
+  <ul id="receiver"></ul>
+
+<div id="chat-window">
+  <div id="chat-history"></div>
+</div>
+<form id="input-form">
+  <input type="text" id="input-message" placeholder="Type your message here" autocomplete="off">
+  <button type="button" id="start-button" onclick="send()">Start</button>
+</form>
+
+
+  <script>
+
+const container = document.querySelector('.welcome-container');
+const container_2 = document.querySelector('#chat-window');
+window.addEventListener('scroll', function () {
+  const scrollPosition = window.scrollY; // 获取滚动距离
+  const windowHeight = window.innerHeight; // 获取窗口高度
+
+  // 计算滚动条所在位置的比例
+  const opacity = 1 - (scrollPosition / (windowHeight * 0.5));
+  const opacity_2 = 1 - (scrollPosition / (windowHeight * 0.95));
+  // 将计算得到的不透明度值设置给container
+  container.style.opacity = opacity;
+  container_2.style.opacity = 1-opacity_2;
+});
+
+
+
+const PACKET_WIDTH = 50;
+const WINDOW_SIZE = 5;
+
+const sender = document.getElementById('sender');
+const receiver = document.getElementById('receiver');
+const packets = [];
+let sequenceNumber = 0;
+let base = 0;
+let timerId;
+
+function send() {
+const blackPackets = packets.filter(packet => packet.style.backgroundColor === "black");
+  if (blackPackets.length > 0) {
+    log("Cannot send new packets while there are black packets waiting for retransmission.");
+    return;
+  }
+  if (sequenceNumber < base + WINDOW_SIZE) {
+    const packet = document.createElement('li');
+    packet.classList.add('packet', 'sending');
+
+    
+    const packetNumber = sequenceNumber;
+    packet.innerText = `Packet#${packetNumber}`;
+    const offset = packets.length * (PACKET_WIDTH + 50);
+    packet.style.left = `${offset}px`;
+    sender.appendChild(packet);
+    packets.push(packet);
+    log(`Sent: Packet#${packetNumber}`);
+    if (base === sequenceNumber) {
+      timerId = setInterval(() => {
+        log(`Timer timed out or wrong ack, resending packets ${base} to ${sequenceNumber-1}`);
+        for (let i = base; i < sequenceNumber; i++) {
+          if (i - base == 0 || packets[i - 1].style.backgroundColor == "green") {
+            packets[i].classList.add('resending');
+            setTimeout(() => receive(i), 2000); // 将 receive(i) 包装在匿名函数中
+            packets[i].style.backgroundColor = 'orange';
+          } else {
+            log(`Packet#${i} is waiting to be resent.`);
+          }
+        }
+      }, 5000);
+    }
+    setTimeout(() => {
+      if (packet.style.backgroundColor !== "black") {
+        receive(packetNumber);
+      } else {
+        log(`Packet#${packetNumber} is lost. Waiting for retransmission.`);
+      }
+    }, 2000);
+	packet.onclick = () => {
+  if (packet.style.backgroundColor !== "green") {
+    packet.style.backgroundColor = "black";
+    packet.classList.remove('sending', 'resending', 'received');
+    packet.classList.add('lost');
+  }
+
+  if (packet.classList.contains('lost')) {
+    const index = packets.indexOf(packet);
+    for (let i = index + 1; i < packets.length; i++) {
+      const nextPacket = packets[i];
+      nextPacket.style.backgroundColor = "black";
+      nextPacket.classList.remove('sending', 'resending', 'received');
+      nextPacket.classList.add('lost');
+    }
+
+  }
+}
+
+    sequenceNumber++;
+  } else {
+    log(`Window is full, cannot send more packets`);
+  }
+if (packets[sequenceNumber - 1].style.backgroundColor === "black") {
+  packet.style.backgroundColor = "black";
+  packet.classList.remove("sending", "resending", "received");
+  packet.classList.add("lost");
+}
+
+}
+
+function receive(ack) {
+  log(`Received: Acknowledgement#${ack}`);
+  if (ack >= base && ack < sequenceNumber) {
+    for (let i = base; i <= ack; i++) {
+      packets[i - base].classList.remove('sending', 'resending', 'failed');
+      packets[i - base].classList.add('received');
+    }
+  	for (let i = ack; i <= ack; i++) {
+		packets[i].style.backgroundColor = 'green';  
+  	}
+    base = ack + 1;
+    clearInterval(timerId);
+    if (base !== sequenceNumber ) {
+      timerId = setInterval(() => {
+        log(`Timer timed out or wrong ack, resending packets ${base} to ${sequenceNumber-1}`);
+        packets[ack+1].classList.add('resending');
+        setTimeout(() => receive(base), 2000);
+        packets[ack+1].style.backgroundColor = 'orange';
+      }, 5000);
+    }
+if (ack === 9) {
+      reset();
+      alarm('FINISH!!');
+    }
+  } else {
+    log(`Invalid acknowledgement`);
+    packets[ack+1].classList.add('failed');
+    packets[ack+1].style.backgroundColor = 'red';
+    base++;
+    clearInterval(timerId);
+    if (base !== sequenceNumber) {
+      timerId = setInterval(() => {
+        log(`Timer timed out or wrong ack, resending packets ${base}`);
+        packets[ack+1].classList.add('resending');
+        setTimeout(() => receive(base - 1), 2000);
+        packets[ack+1].style.backgroundColor = 'orange';
+      }, 5000);
+    }
+  }
+}
+
+function log(message) {
+  const chatHistory = document.getElementById('chat-history');
+  const messageElement = document.createElement('div');
+  messageElement.textContent = message;
+  chatHistory.appendChild(messageElement);
+  chatHistory.scrollTop = chatHistory.scrollHeight;
+}
+
+function sendMessage() {
+  const messageInput = document.getElementById('input-message');
+  const message = messageInput.value.trim();
+  if (message !== '') {
+    if (message === 'reset') {
+      // 清除所有已经发送的数据包
+ 	reset();
+      for (let i = base; i < sequenceNumber; i++) {
+        packets[i - base].remove();
+      }
+      packets.length = 0;
+      // 清空聊天窗口的信息
+      const chatHistory = document.getElementById('chat-history');
+      chatHistory.innerHTML = '';
+
+      // 重置窗口基序号和当前序号
+      sequenceNumber = 0;
+      base = 0;
+
+      // 停止计时器
+      clearInterval(timerId);
+
+      // 发送一条消息来表示已执行命令
+      log(`Reset`);
+      log(`Done.`);
+    } else {
+      log(`Sent: "${message}"`);
+    }
+    messageInput.value = '';
+    messageInput.focus();
+  }
+}
+
+document.getElementById('input-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  sendMessage();
+});
+
+function reset() {
+  location.reload(); // 刷新页面
+}
+
+document.getElementById('input-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  sendMessage();
+});
+
+  </script>
+
+</body>
+
+</html>

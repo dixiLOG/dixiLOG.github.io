@@ -1,0 +1,1676 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/RSA05/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>马尔可夫过程与泊松过程 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              马尔可夫过程与泊松过程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      马尔可夫过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      马尔可夫序列
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      马尔可夫链
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="马尔可夫链">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      一步转移概率矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de" class="md-nav__link">
+    <span class="md-ellipsis">
+      一步转移概率矩阵 de 性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      n 步转移概率矩阵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-de" class="md-nav__link">
+    <span class="md-ellipsis">
+      n 步转移概率矩阵 de 性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      初始概率与绝对概率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      独立增量过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="独立增量过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      计数过程的定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="泊松过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      统计特征
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      泊松过程的应用
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">马尔可夫过程与泊松过程<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5388 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 30 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<blockquote>
+<p>区别于【<u>平稳</u>随机过程】<br>
+在概率论的<a href="https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/PT01/#_7">乘法公式</a>中有所提及</p>
+</blockquote>
+<ul>
+<li><u>马尔可夫过程</u>是发展很快、应用很广的一种重要的随机过程，它在信息处理、自动控制、数字计算方法、近代物理、生物（生灭过程）以及公用事业等方面皆有重要的应用</li>
+<li><u>独立增量过程</u>是一种特殊的马尔可夫过程，泊松（Poisson）过程和维纳（Wiener）过程是两个最重要的独立增量过程。电子系统中，它们是研究热噪声和散粒噪声的数学基础，具有重要的实用价值。</li>
+<li>独立随机过程是一种很特殊的随机过程，它的重要应用就是<u>高斯白噪声</u>。连续时间参数的独立随机过程是一种理想化的随机过程，它在数学处理上具有简单、方便的优点。</li>
+</ul>
+<table>
+<tr>
+<td rowspan="2">时间参数集<br></td><td colspan="2">状态空间<br></td></tr>
+<tr>
+<td>离散<br></td><td>连续<br></td></tr>
+<tr>
+<td>离散<br></td><td>马尔可夫链<br></td><td>马尔可夫序列<br></td></tr>
+<tr>
+<td>连续<br></td><td>可列马尔可夫过程<br></td><td>马尔可夫过程<br></td></tr>
+</table>
+
+<hr>
+<h2 id="_2">马尔可夫过程<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>后无效性</p>
+</blockquote>
+<hr>
+<h2 id="_3">马尔可夫序列<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<p>若对于任意的 n，随机序列 <span class="arithmatex">\(\{{\rm X}({\rm n})\}\)</span> 的条件分布函数满足</p>
+<div class="arithmatex">\[
+F_{X}\left(x_{n}\mid x_{n-1},x_{n-2},\cdot\cdot\cdot{},x_{1}\right)=F_{X}\left(x_{n}\mid x_{n-1}\right)
+\]</div>
+<p>则此随机序列为<u>马尔可夫序列</u></p>
+<p>对于连续型随机变量，则有概率密度函数</p>
+<div class="arithmatex">\[
+f_{X}\left(x_{n}\mid x_{n-1},x_{n-2},\cdot\cdot\cdot{},x_{1}\right)=f_{X}\left(x_{n}\mid x_{n-1}\right)
+\]</div>
+<hr>
+<p><strong>性质</strong></p>
+<blockquote>
+<p>了解一下</p>
+</blockquote>
+<ol>
+<li>其<u>子序列</u>仍为马尔可夫序列</li>
+<li>序列的<u>反方向序列</u>仍为马尔可夫序列</li>
+</ol>
+<details class="quote">
+<summary>这里插个证明，不是说是要记住，单纯留点印象</summary>
+<div class="arithmatex">\[
+\begin{aligned}f_X\left(x_n\mid x_{n+1},x_{n+2},\cdots,x_{n+k}\right)&amp;=\frac{f_X\left(x_n,x_{n+1},x_{n+2},\cdots,x_{n+k}\right)}{f_X\left(x_{n+1},x_{n+2},\cdots,x_{n+k}\right)}\\&amp;=\frac{f_X\left(x_{n+k}\mid x_{n+k-1}\right)f_X\left(x_{n+k-1}\mid x_{n+k-2}\right)\cdots f_X\left(x_{n+1}\mid x_n\right)f_X\left(x_n\right)}{f_X\left(x_{n+k}\mid x_{n+k-1}\right)f_X\left(x_{n+k-1}\mid x_{n+k-2}\right)\cdots f_X\left(x_{n+2}\mid x_{n+1}\right)f_X\left(x_{n+}\right.}\\&amp;=\frac{f_X\left(x_{n+1}\mid x_n\right)f_X\left(x_n\right)}{f_X\left(x_{n+1}\right)}=\frac{f_X\left(x_{n+1},x_n\right)}{f_X\left(x_{n+1}\right)}=f_X\left(x_n\mid x_{n+1}\right)\end{aligned}
+\]</div>
+</details>
+<ol start="3">
+<li>此序列的条件数学期望满足</li>
+</ol>
+<div class="arithmatex">\[
+E[X_{n}\mid x_{n-1},\cdots,x_{1}]=E[X_{n}\mid x_{n-1}]
+\]</div>
+<p>此外，若还满足</p>
+<div class="arithmatex">\[
+E[X_{n}\mid X_{n-1},\cdot\cdot\cdot\,,X_{1}]=X_{n-1}
+\]</div>
+<p>则称此序列为【鞅】（公平游戏，应用于金融工程之中，但与马序列无显然关联）</p>
+<ol start="4">
+<li>后无效性（若现在已知，则未来与过去无关）</li>
+<li>多重马尔可夫序列</li>
+</ol>
+<p>即多阶序列，如</p>
+<div class="arithmatex">\[
+F_{X}\left(x_{n}\mid x_{n-1},x_{n-2},\cdot\cdot\cdot{},x_{1}\right)=F_{X}\left(x_{n}\mid x_{n-1},x_{n-2}\right)
+\]</div>
+<p>为 2 重马尔可夫序列</p>
+<ol start="6">
+<li>齐次马尔可夫序列</li>
+</ol>
+<blockquote>
+<p>与 n 无关的马尔可夫序列</p>
+</blockquote>
+<div class="arithmatex">\[
+f_{X}\left(x_{n}\mid X_{n-1}=x_{0}\right)=f_{X}\left(x\mid x_{0}\right)
+\]</div>
+<ol start="7">
+<li>平稳马尔可夫序列</li>
+</ol>
+<p>如果一个马尔可夫序列是齐次的，并且所有的随机变量 <span class="arithmatex">\(\rm{X_{n}}\)</span> 具有相同的概率密度，则称马尔可夫序列为平稳的</p>
+<ol start="8">
+<li>切普曼一柯尔莫哥洛夫（Chapman-KoJMoropoB）方程</li>
+</ol>
+<p>若一个马尔可夫序列的转移概率密度满足</p>
+<div class="arithmatex">\[
+f_{\chi}\left(x_{n}\mid x_{s}\right)=\int_{-\infty}^{\infty}f_{X}\left(x_{n}\mid x_{r}\right)f_{X}\left(x_{r}\mid x_{s}\right)d x_{r}\,
+\]</div>
+<p>其中 <span class="arithmatex">\(n&gt;r&gt;s\)</span> 为任意整数，则称该方程为切普曼一柯尔莫哥洛夫方程</p>
+<ol start="9">
+<li>如果一个<span class="arithmatex">\(\rm n\)</span>维矢量随机序列 <span class="arithmatex">\(\rm\{X(n)\}\)</span> ，既是高斯序列，又是马尔可夫序列，则称它为高斯一马尔可夫序列</li>
+</ol>
+<hr>
+<h2 id="_4">马尔可夫链<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">一步、N 步转移概率矩阵和绝对概率概念及其性质</p>
+</div>
+<blockquote>
+<p>可浅浅参考的博文：<a href="https://blog.csdn.net/qq_27825451/article/details/100117715">马尔可夫模型</a></p>
+</blockquote>
+<p>时间和状态都是 <strong>离散</strong> 的马尔可夫过程称为马尔可夫链，记为</p>
+<div class="arithmatex">\[
+P\left\{X_{m+k}=a_{j}\mid X_{m}=a_{i},X_{m-1}=a_{p},\cdot\cdot\cdot{},X_{1}=a_{q}\right\}=P\left\{X_{m+k}=a_{j}\mid X_{m-1}=a_{i}\mid\cdot\cdot\mid X_{m-1}=0\right\}
+\]</div>
+<p><strong>转移概率</strong></p>
+<div class="arithmatex">\[
+p_{i j}\left(m,m+k\right)=P\left\{X_{m+k}=a_{j}\mid X_{m}=a_{i}\right\}
+\]</div>
+<blockquote>
+<p>表现为【<code>m</code> 时刻下为 <code>ai</code> 事件，而 <code>m+k</code> 时刻下转移到 <code>aj</code> 事件的概率】  </p>
+<p>下面统统的都是<u>齐次马链</u>，即与 m 无关</p>
+</blockquote>
+<hr>
+<h3 id="_5">一步转移概率矩阵<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>即只跳一次，表达式为</p>
+</blockquote>
+<div class="arithmatex">\[
+\mathbf{P}={\left[\begin{array}{l l r r}{p_{11}}&amp;{p_{12}}&amp;{\cdots}&amp;{p_{1N}}\\ {p_{21}}&amp;{p_{22}}&amp;{\cdots}&amp;{p_{2N}}\\ {\vdots}&amp;{\vdots}&amp;{\vdots}&amp;{\vdots}\\ {p_{N1}}&amp;{p_{N2}}&amp;{\cdots}&amp;{p_{N N}}\end{array}\right]}
+\]</div>
+<p>很好理解叭</p>
+<h3 id="de">一步转移概率矩阵 de 性质<a class="headerlink" href="#de" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>似曾相识？</p>
+</blockquote>
+<ul>
+<li><span class="arithmatex">\(0\leqslant p_{i j}\leqslant1\)</span>  </li>
+<li><span class="arithmatex">\(\sum_{j=1}^{N}p_{i j}=1\)</span> ，即每一行求和为 1</li>
+</ul>
+<hr>
+<h3 id="n">n 步转移概率矩阵<a class="headerlink" href="#n" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>与一步相比，是走了 <code>n</code> 步转移到 <code>aj</code></p>
+</blockquote>
+<div class="arithmatex">\[
+p_{i j}\left(n\right)=p_{i j}\left(m,m+n\right)=p\left(X_{m+n}=a_{j}\mid X_{m}=a_{i}\right)\quad,\quad n\geq1
+\]</div>
+<p>转移概率矩阵为</p>
+<div class="arithmatex">\[
+\mathbf{P}\left(n\right)=\left[\begin{array}{c c c c}{p_{11}\left(n\right)}&amp;{p_{12}\left(n\right)}&amp;{\cdots\cdot}&amp;{p_{1N}\left(n\right)}\\ {p_{21}\left(n\right)}&amp;{p_{22}\left(n\right)}&amp;{\cdots}&amp;{p_{2N}\left(n\right)}\\ {\vdots}&amp;{\vdots}&amp;{\vdots}&amp;{\vdots}\\ {p_{N1}\left(n\right)}&amp;{p_{N2}\left(n\right)}&amp;{\cdots}&amp;{p_{N N}\left(n\right)}\end{array}\right]
+\]</div>
+<p>当<span class="arithmatex">\(\ n\!=\!1\)</span>时退化回一步转移概率矩阵，另规定</p>
+<div class="arithmatex">\[
+p_{ij}\left(0\right)=p_{ij}\left(m,m\right)=\delta_{ij}=\begin{cases}1,&amp;i=j\\0,&amp;i\neq j&amp;&amp;\end{cases}
+\]</div>
+<h3 id="n-de">n 步转移概率矩阵 de 性质<a class="headerlink" href="#n-de" title="Permanent link">¶</a></h3>
+<ul>
+<li><span class="arithmatex">\(0\leqslant p_{i j}(n)\leqslant1\;,\;\sum_{j=1}^{N}p_{i j}\;(n)=1\)</span></li>
+<li><span class="arithmatex">\(p_{i j}\left(n\right)=p_{i j}\left(l+k\right)=\sum_{r=1}^{N}p_{i r}\left(l\right)p_{r j}\left(k\right),\quad n=l+k\)</span></li>
+</ul>
+<p>此乃大名鼎鼎的 <code>C-K方程</code>，下面是推导过程</p>
+<blockquote>
+<p>咳，这个系重点嘞</p>
+</blockquote>
+<details class="question" open="open">
+<summary>推导过程</summary>
+<blockquote>
+<p>MVP： 【全概公式】
+等式左边：</p>
+</blockquote>
+<div class="arithmatex">\[
+p_{ij}\left(n\right)=p_{ij}\left(l+k\right)=P\left\{X_{m+l+k}=a_j\mid X_m=a_i\right\}=\frac{\color{red}P\left\{X_m=a_i,X_{m+l+k}=a_j\right\}}{P\left\{X_m=a_i\right\}}
+\]</div>
+<p>等式右边：</p>
+<div class="arithmatex">\[
+{\displaystyle\sum_{r=1}^{N}p_{r j}\left(k\right)p_{i r}\left(l\right)=\sum_{r=1}^{N}P\Big\{X_{m+l+k}=a_{j}\ \big|\ X_{m}=a_{i},X_{m+l}=a_{r}\Big\}\cdot P\Big\{X_{m+l}=a_{r}\ \big| \ X_{m}=a_{i}\Big\}}
+\]</div>
+<p>进一步展开条件概率</p>
+<div class="arithmatex">\[
+=\sum_{r=1}^{N}{\frac{P\left\{X_{m}=a_{i},X_{m+l+k}=a_{j},X_{m+l}=a_{r}\right\}}{P\left\{X_{m}=a_{i},X_{m+l}=a_{r}\right\}}}\cdot{\frac{P\left\{X_{m}=a_{i},X_{m+l}=a_{r}\right\}}{P\left\{X_{m}=a_{i}\right\}}}
+\]</div>
+<p>化简一下</p>
+<div class="arithmatex">\[
+={\frac{\color{red}\sum_{r=1}^{N}P\{X_{m}=a_{i},X_{m+l}=a_{r},X_{m+l+k}=a_{j}\}}{P\{X_{m}=a_{i}\}}}
+\]</div>
+<p>那么左右相等的关键就是，证明</p>
+<div class="arithmatex">\[
+P\left\{X_{m}=a_{i},X_{m+l+k}=a_{j}\right\}=\sum_{r=1}^{N}P\{X_{m}=a_{i},X_{m+l}=a_{r},X_{m+l+k}=a_{j}\}
+\]</div>
+<p>巧了，这就是<u>全概公式</u>（把所有可能的 <code>r</code> 都求了一遍）
+故左右相等，证毕</p>
+<blockquote>
+<p>而它的可迭代性又将揭开另一个重要滴性质</p>
+</blockquote>
+</details>
+<ul>
+<li><span class="arithmatex">\(p_{i j}(n)=\sum_{r=1}^{N}p_{i r}(1)p_{r j}(n-1)=\sum_{r=1}^{N}p_{i r}p_{r j}(n-1)\)</span></li>
+<li>从矩阵角度，有 <span class="arithmatex">\(\mathbf{P}(n)=\mathbf{P}(1)\mathbf{P}(n-1)=\cdots=\mathbf{P}^{n}\)</span></li>
+</ul>
+<blockquote>
+<p><u>n 步转移概率矩阵</u>等于一步转移概率矩阵的 <code>n</code> 次方</p>
+</blockquote>
+<hr>
+<h3 id="_6">初始概率与绝对概率<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<p>在马尔可夫链中，<strong>初始概率用于定义链的起始分布</strong>，而绝对概率用于描述长期链中任意时刻的事件概率</p>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RMS7bPYMioLOhxxR0jvcPEFinYc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RMS7bPYMioLOhxxR0jvcPEFinYc.png"></a></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">马氏链的任意有限维分布完全可以由<u>初始分布</u>和<u>一步转移概率矩阵</u>所确定</p>
+</div>
+<hr>
+<div class="admonition exaple">
+<p class="admonition-title">例 | 概念题</p>
+<blockquote>
+<p>含有 <strong>反射壁</strong> 的转移概率矩阵</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ogsabtt0foBWORxSRimcbnaNnKb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ogsabtt0foBWORxSRimcbnaNnKb.png"></a></p>
+<p>质点 S 游动的转移概率矩阵为</p>
+<div class="arithmatex">\[
+P={\left[\begin{array}{l l l l l l l}{0}&amp;{1}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0^{7}}\\ {q}&amp;{0}&amp;{p}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0}\\ {0}&amp;{q}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0}\\ {\vdots}&amp;{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}&amp;{\vdots}&amp;{\vdots}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{p}&amp;{0}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{q}&amp;{0}&amp;{p}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{1}&amp;{0}\end{array}\right]}
+\]</div>
+<blockquote>
+<p>除了反射壁，还存在吸收壁，其概率转移矩阵为</p>
+<div class="arithmatex">\[
+\begin{array}{r}{P=\left[\begin{array}{l l l l l l l}{1}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0^{-}}\\ {q}&amp;{0}&amp;{p}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0}\\ {0}&amp;{q}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{0}\\ {\vdots}&amp;{\vdots}&amp;{\vdots}&amp;{\ddots}&amp;{\vdots}&amp;{\vdots}&amp;{\vdots}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{p}&amp;{0}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{q}&amp;{0}&amp;{p}\\ {0}&amp;{0}&amp;{0}&amp;{\cdots}&amp;{0}&amp;{0}&amp;{1}\end{array}\right]}\end{array}
+\]</div>
+</blockquote>
+</div>
+<hr>
+<div class="admonition exaple">
+<p class="admonition-title">例 | 选填</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MaeJbxHepoWzYvxK8iocM9I6nxc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MaeJbxHepoWzYvxK8iocM9I6nxc.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZyABbaMXHo0Kr1xdUefcRCoenxd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZyABbaMXHo0Kr1xdUefcRCoenxd.png"></a></p>
+</div>
+<hr>
+<blockquote>
+<p>俩个不考的重要知识点</p>
+</blockquote>
+<ul>
+<li>马氏链的平稳分布</li>
+</ul>
+<p>若一个马氏链的概率分布 <span class="arithmatex">\(P\{X=a_{j}\}=p_{j}\)</span> 满足</p>
+<div class="arithmatex">\[
+p_{j}=\sum_{i\in I}p_{i}p_{i j}\quad,\quad j\in I
+\]</div>
+<p><span class="arithmatex">\(\text{其中 }p_j\geq0,\sum_{j\in I}p_j=1\text{成立。则称}\{p_j\}=\{p_1,p_2,\cdots,p_N\}\text{为该马氏链的平稳分布}\)</span></p>
+<ul>
+<li>马氏链的便利性</li>
+</ul>
+<p>如果一个齐次马氏链对于一切状态 <code>i</code> 和 <code>j</code>,存在不依赖于 <code>i</code> 的极限，即</p>
+<div class="arithmatex">\[
+\operatorname*{lim}_{n\to\infty}p_{i j}\left(n\right)=p_{j}
+\]</div>
+<p>则称此马氏链具有遍历性。这里的 <span class="arithmatex">\(p_{i j}(n)\)</span> 为此链的 <code>n</code> 步转移概率。</p>
+<hr>
+<div class="admonition exaple">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qu2NbZrnToEWDJxGsevc1296nrb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qu2NbZrnToEWDJxGsevc1296nrb.png"></a></p>
+</div>
+<hr>
+<div class="admonition exaple">
+<p class="admonition-title">例 | 具有吸收壁和反射壁的随机游动</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LPzZbK0iPo6TfbxyCHmcAO4bn3g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LPzZbK0iPo6TfbxyCHmcAO4bn3g.png"></a></p>
+<div class="arithmatex">\[
+\pmb{{P}}=\left[\begin{array}{c c c c}{1}&amp;{0}&amp;{0}&amp;{0}\\ {1/3}&amp;{1/3}&amp;{1/3}&amp;{0}\\ {0}&amp;{1/3}&amp;{1/3}&amp;{1/3}\\ {0}&amp;{0}&amp;{1}&amp;{0}\end{array}\right]
+\]</div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">除了转移概率矩阵的其他表达方式</p>
+</div>
+<ul>
+<li><strong>状态转换图</strong></li>
+<li><strong>函数表达式</strong></li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PVm1bo3AfoGatNx8TKic9BUHnpd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PVm1bo3AfoGatNx8TKic9BUHnpd.png"></a></p>
+</div>
+<div class="admonition exaple">
+<p class="admonition-title">例 | 比较重要的一题，特别改编</p>
+<p><span class="arithmatex">\(\begin{aligned}&amp;\text{设}\{X_n,n{\in}T\}\text{是一个马尔可夫链,其状态空}\text{间 }I=\{a,b,c\}\text{,转移矩阵为}\end{aligned}\)</span></p>
+<p><span class="arithmatex">\(P=\begin{bmatrix}1/2&amp;1/4&amp;1/4\\2/3&amp;0&amp;1/3\\3/5&amp;2/5&amp;0\end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\begin{aligned}&amp;(1)P\{X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c|X_{0}=c\}\\&amp;(2)P\{X_{n+2}=c|X_{n}=b\}\end{aligned}\)</span></p>
+<ol>
+<li>根据马氏链，根据<u>初始状态与一步转移矩阵</u>可得</li>
+</ol>
+<div class="arithmatex">\[
+\begin{array}{r l}&amp;{P\{X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c|X_{0}=c\}}\\ &amp;{~=P\{X_{0}=c,X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c\}/P\{X_{0}=c\}}\\ &amp;{~=P\{X_{4}=c\Big|X_{3}=a\}\cdot P\{X_{3}=a\Big|X_{2}=c\}\cdot P\{X_{2}=c\Big|X_{1}=b\}}\\ &amp;{~\cdot~P\{X_{1}=b|X_{0}=c\}\cdot P\{X_{0}=c\}/P\{X_{0}=c\}}\\ &amp;{~=P_{a c}\cdot P_{c a}\cdot P_{b c}\cdot P_{c b}}\end{array}
+\]</div>
+<blockquote>
+<p>即从初始到终点，每次走一步
+这里的初始状态已定，所以不需要全概（见下一个例题）</p>
+<hr>
+<p>若把 X3 删除，就要把最后改为<span class="arithmatex">\(P_{c c}^{(2)}\cdot P_{b c} \cdot P_{c b}\)</span></p>
+</blockquote>
+<ol start="2">
+<li>2 步转移矩阵</li>
+</ol>
+<div class="arithmatex">\[
+\begin{gathered}P^{(2)}=P^2=\begin{bmatrix}\frac{17}{30}&amp;\frac{9}{40}&amp;\frac{5}{24}\\\frac{8}{15}&amp;\frac{3}{10}&amp;\frac{1}{6}\\\frac{17}{30}&amp;\frac{3}{20}&amp;\frac{17}{90}\end{bmatrix}\\P\{X_{n+2}=c|X_n=b\}\\=P_{bc}^{(2)}=\frac{1}{6}\end{gathered}
+\]</div>
+<hr>
+<p>【改】</p>
+<p>规定初始分布</p>
+<p></p><table>
+<tr>
+<td>X0<br></td><td>a<br></td><td>b<br></td><td>c<br></td></tr>
+<tr>
+<td>P(x)<br></td><td>Pa<br></td><td>Pb<br></td><td>PC<br></td></tr>
+</table>
+<p>求 <span class="arithmatex">\(P\{X_{2}=c,X_{4}=c\}\)</span></p>
+<p>利用全概公式</p>
+<p>即分别求从{a b c}开始经过两步到 b，再经过两步到 c 的三种情况概率之和</p>
+<p><span class="arithmatex">\(=P(a)\cdot P_{a b}^{(2)}\cdot P_{b c}^{(2)}+P(b)\cdot P_{b b}^{(2)}\cdot P_{b c}^{(2)}+P(c)\cdot P_{c b}^{(2)}\cdot P_{b c}^{(2)}\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例 | 求概率分布、期望</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HnkabYzmuoTggRxkRcicGiOdnIe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HnkabYzmuoTggRxkRcicGiOdnIe.png"></a></p>
+<p>已知初始分布矩阵，求两步转移矩阵再相乘</p>
+<div class="arithmatex">\[
+\begin{aligned}P^{2}&amp;=P\cdot P\\&amp;=\begin{bmatrix}0.5&amp;0.5&amp;0\\0&amp;0.5&amp;0.5\\0.5&amp;0&amp;0.5\end{bmatrix}\cdot\begin{bmatrix}0.5&amp;0.5&amp;0\\0&amp;0.5&amp;0.5\\0.5&amp;0&amp;0.5\end{bmatrix}\\&amp;=\begin{bmatrix}0.25&amp;0.5&amp;0.25\\0.25&amp;0.25&amp;0.5\\0.5&amp;0.25&amp;0.25\end{bmatrix}\end{aligned}
+\]</div>
+<p>即得 X(2)的概率分布</p>
+<div class="arithmatex">\[
+\begin{aligned}[p\{x(2)\}]&amp;=[p\{x(0)\}]\cdot P^2\\&amp;=[1,0,0]\cdot\begin{bmatrix}0.25&amp;0.5&amp;0.25\\0.25&amp;0.25&amp;0.5\\0.5&amp;0.25&amp;0.25\end{bmatrix}\\&amp;=\begin{bmatrix}0.25&amp;,&amp;0.5&amp;,&amp;0.25\end{bmatrix}\end{aligned}
+\]</div>
+<p>【改—求期望】</p>
+<div class="arithmatex">\[
+E[X(2)]=0*0.25+1*0.5+0.25*2=1
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OZ9rbBoU6orq4WxtBj1cUKJ2n2V.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OZ9rbBoU6orq4WxtBj1cUKJ2n2V.png"></a></p>
+</div>
+<hr>
+<h2 id="_7">独立增量过程<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<p>设有一个随机过程 <span class="arithmatex">\(X(t),t\in T\)</span>,如果对任意的时刻 <span class="arithmatex">\(0\leqslant t_0&lt;t_1&lt;t_2&lt;\cdots&lt;t_n&lt;b\)</span></p>
+<p>过程的增量<span class="arithmatex">\(X(t_1)-X(t_0)、X(t_2)-X(t_1)、\cdots、X(t_n)-X(t_{n-1})\)</span>是相互独立的随机变量</p>
+<p>则称<span class="arithmatex">\(X(t)\)</span>为<u>独立增量过程，又称为可加过程</u></p>
+<blockquote>
+<p>是一种特殊的马尔科夫过程</p>
+</blockquote>
+<p>其中，以<u>泊松过程与维纳过程</u>(布朗运动过程)最为典型，广泛应用于计数问题，故又称为计数过程</p>
+<blockquote>
+<p>[0-1 分布][二项分布][泊松分布]是用于描述绘独立增量过程的三种常见分布</p>
+</blockquote>
+<h3 id="_8">计数过程的定义<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p>某事件<span class="arithmatex">\(A\)</span>在<span class="arithmatex">\([t_{0},t)\)</span>内出现的总次数所组成的过程<span class="arithmatex">\(\{X(t),t\geqslant t_{0}\geqslant0\}\)</span>称为计数过程</p>
+<p>计数过程满足：</p>
+<ol>
+<li><span class="arithmatex">\(X(t)&gt;0\)</span></li>
+<li>若存在 <span class="arithmatex">\(\boldsymbol{t}_{1},\boldsymbol{t}_{2}\)</span> 且 <span class="arithmatex">\(t_{2}&gt;t_{1}\)</span> , 则 <span class="arithmatex">\(X\left(t_{2}\right)\geq X\left(t_{1}\right)\)</span></li>
+<li>当 <span class="arithmatex">\(t_{2}&gt;t_{1}\)</span> 时, <span class="arithmatex">\(X\left(t_{2}\right)-X\left(t_{1}\right)\)</span> 代表在时间间隔<span class="arithmatex">\((t_{2},t_{1})\)</span>内事件<span class="arithmatex">\(A\)</span>出现的次数</li>
+</ol>
+<hr>
+<h2 id="_9">泊松过程<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">泊松过程分布表达式</p>
+</div>
+<p>满足下列条件:</p>
+<ol>
+<li><span class="arithmatex">\(X(0)=0\)</span></li>
+<li>独立增量过程，不同时刻之间独立</li>
+<li>(平稳性)在任一长度为 <code>t</code> 的区间中，事件 <code>A</code> 发生的次数服从参数<span class="arithmatex">\(\lambda&gt;0\)</span>的泊松分布
+   即对任意<span class="arithmatex">\(s,t\geq0\)</span>,有</li>
+</ol>
+<div class="arithmatex">\[
+P\{X(t+\tau)-X(\tau)=n\}=\frac{(\lambda t)^{n}}{n!}e^{-\lambda t},\quad n=0,1,\cdots
+\]</div>
+<p>进一步得</p>
+<div class="arithmatex">\[
+P\{X(t)=n\}=\frac{(\lambda t)^{n}}{n!}e^{-\lambda t},\quad n=0,1,2,\cdots
+\]</div>
+<blockquote>
+<p>与泊松分布相比，多了 <code>t</code></p>
+</blockquote>
+<hr>
+<div class="arithmatex">\[
+\text{对于充分小的 }\Delta t,\text{在}[t,t+\Delta t)\text{ 内出现事件一次的概率为}\\P_{1}\left(t,t+\Delta t\right)=P\left\{X\left(t,t+\Delta t\right)=1\right\}=\lambda\Delta t+0\left(\Delta t\right)
+\]</div>
+<blockquote>
+<p>即发生两次及以上的概率为无穷小（计数过程）<br>
+注意，<code>t</code> 是连续的（可以有 0.5），而 n 是离散的</p>
+</blockquote>
+<div class="admonition quote">
+<p class="admonition-title">说人话</p>
+<p>泊松分布描述的是单位时间或单位区域内随机事件的计数, 假设以下条件满足 :</p>
+<ol>
+<li><strong>独立性</strong>：事件的发生在不同时段内相互独立</li>
+<li><strong>均匀性</strong>：事件发生的概率在相同时间段内保持恒定</li>
+<li><strong>不可分性</strong>：事件在极短的时间间隔内至多发生一次</li>
+</ol>
+</div>
+<hr>
+<h3 id="_10">统计特征<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>记住均值、方差和相关函数的结果<br>
+做到【应推尽推】🤌</p>
+<p>核心是利用 <strong>泰勒级数</strong></p>
+</blockquote>
+<p><strong>期望</strong></p>
+<details class="question" open="open">
+<summary>求泊松过程的期望</summary>
+<p>由离散随机变量期望定义与概率分布函数得</p>
+<div class="arithmatex">\[
+E\left[X\left(t\right)\right]=\sum_{k=0}^{\infty}{k\cdot P\left\{X\left(t\right)=k\right\}}=\sum_{k=0}^{\infty}{k\frac{\left(\lambda t\right)^{k}}{k!}e^{-\lambda t}}=e^{-\lambda t}\sum_{k=0}^{\infty}{k\frac{\left(\lambda t\right)^{k}}{k!}\left(\lambda e^{-\lambda t}\right)}.
+\]</div>
+<p>已知 <code>e</code> 的麦克劳林级数为</p>
+<div class="arithmatex">\[
+e^{x}=\sum_{n=0}^{\infty}{\frac{x^{n}}{n!}}=1+x+{\frac{x^{2}}{2!}}+{\frac{x^{3}}{3!}}+\cdots+{\frac{x^{n}}{n!}}+\cdots
+\]</div>
+<p>故需将求和项转化。不难观察到原式在 <code>k=0</code> 下为 <code>0</code>，可从第一项开始求和，即</p>
+<div class="arithmatex">\[
+e^{-\lambda t}\sum_{k=0}^{\infty}k{\frac{\left(\lambda t\right)^{k}}{k!}}=e^{-\lambda t}\sum_{\color{red}k=1}^{\infty}k{\frac{\left(\lambda t\right)^{k}}{k!}}
+\]</div>
+<p>为保证与 e 级数形式一致，令<span class="arithmatex">\(j=k-1\)</span>，有</p>
+<div class="arithmatex">\[
+e^{-{\lambda t}}\sum_{k=1}^{\infty}k{\frac{({\lambda t})^{k}}{k!}}\,{\frac{k=j+1}{\cdots}}\,e^{-{\lambda t}}\sum_{j=0}^{\infty}(j+1){\frac{({\lambda t})^{j+1}}{(j+1)!}}={\lambda t}e^{-{\lambda t}}\sum_{j=0}^{\infty}{\frac{({\lambda t})^{j}}{j!}}={\lambda t}e^{-{\lambda t}}
+\]</div>
+</details>
+<p>故最后得泊松过程期望为</p>
+<div class="arithmatex">\[
+\lambda t
+\]</div>
+<p>进一步，过程增量 <span class="arithmatex">\([X(t_{2})-X(t_{1})]\)</span> 期望为</p>
+<div class="arithmatex">\[
+E{\Big[}X{\big(}t_{2}{\big)}-X{\big(}t_{1}{\big)}{\Big]}=\sum_{k=0}^{\infty}k P{\Big\{}X{\big(}t_{1},t_{2}{\big)}=k{\Big\}}=\lambda{\big(}t_{2}-t_{1}{\big)}
+\]</div>
+<p><strong>均方值与方差</strong></p>
+<blockquote>
+<p>同样的，往往先算均方值</p>
+</blockquote>
+<details class="question" open="open">
+<summary>求泊松过程的均方值与方差</summary>
+<p>根据定义有</p>
+<div class="arithmatex">\[
+E\left[X^{2}\left(t\right)\right]=\sum_{k=0}^{\infty}k^{2}\cdot P\left\{X^{2}\left(t\right)=k^{2}\right\}=\sum_{k=0}^{\infty}k^{2}\cdot{\frac{\left(\lambda t\right)^{k}}{k!}}e^{-\lambda t}
+\]</div>
+<p><span class="arithmatex">\(k^{2}\)</span> 为二阶，为与阶乘相消，考虑转为 <span class="arithmatex">\(k^{2}\to k(k-1)\)</span> 。则可对原式加一项减一项</p>
+<blockquote>
+<p>结合期望的推导逻辑，此处不再赘述</p>
+</blockquote>
+<div class="arithmatex">\[
+\begin{array}{c}{{\displaystyle\sum_{k=0}^{\infty}k^{2}\cdot\frac{\left(\lambda t\right)^{k}}{k!}e^{-\lambda t}=e^{-\lambda t}\left[\displaystyle\sum_{k=0}^{\infty}k\left(k-1\right)\frac{\left(\lambda t\right)^{k}}{k!}+\displaystyle\sum_{k=0}^{\infty}k\cdot\frac{\left(\lambda t\right)^{k}}{k!}\right]}}\\ {{=e^{-\lambda t}\left[\left(\lambda t\right)^{2}\displaystyle\sum_{k=2}^{\infty}\frac{\left(\lambda t\right)^{k-2}}{\left(k-2\right)!}+\lambda t\displaystyle\sum_{k=1}^{\infty}\frac{\left(\lambda t\right)^{k-1}}{\left(k-1\right)!}\right]}}\end{array}
+\]</div>
+</details>
+<p>最后有</p>
+<div class="arithmatex">\[
+\lambda^{2}t^{2}+\lambda t
+\]</div>
+<p>则方差为</p>
+<div class="arithmatex">\[
+D\Big[X\left(t\right)\Big]=E\Big[X\left(t\right)^{2}\Big]-E^{2}\Big[X\left(t\right)\Big]=\lambda^{2}t^{2}+\lambda t-\Big(\lambda t\Big)^{2}=\lambda t
+\]</div>
+<p>同理得到过程增量的均方值与方差(就是 <span class="arithmatex">\(t\rightarrow t_{2}-t_{1}\)</span> )</p>
+<div class="arithmatex">\[
+\begin{array}{c}{E\left\{\left[X\left(t_{2}\right)-X\left(t_{1}\right)\right]^{2}\right\}=\lambda^{2}\left(t_{2}-t_{1}\right)^{2}+\lambda\left(t_{2}-t_{1}\right)}\\ {D\left[X\left(t_{2}\right)-X\left(t_{1}\right)\right]=\lambda\left(t_{2}-t_{1}\right)}\end{array}
+\]</div>
+<p><strong>相关函数与协方差</strong></p>
+<details class="question" open="open">
+<summary>求泊松过程的相关函数与协方差</summary>
+<p>根据定义，有</p>
+<div class="arithmatex">\[
+R_{X}(s,t)=E[X(s)X(t)]
+\]</div>
+<p><strong>令<code>s&lt;t</code>,则加一项减一项<code>X(s)</code></strong></p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;{=E[X(s)(X(t)-X(s)+X(s))]}\\ &amp;{=E[X(s)(X(t)-X(s))]+E[(X(s))^{2}]}\end{aligned}
+\]</div>
+<p>独立增量过程，可拆，得</p>
+<div class="arithmatex">\[
+\begin{array}{c}{{=E[X(s)]E[(X(t)-X(s))]+E[(X(s))^{2}]=\lambda s\lambda(t-s)+\lambda s+(\lambda s)^{2}=\lambda s}}\\ {{=\lambda^{2}s t+\lambda s}}\end{array}
+\]</div>
+<p>若 <code>s&gt;t</code> 则第二项换为 <span class="arithmatex">\(\lambda t\)</span></p>
+</details>
+<p>故得出结论</p>
+<div class="arithmatex">\[
+\boxed{R_{X}(s,t)=\lambda^{2}s t+\lambda\operatorname*{min}(s,t)}
+\]</div>
+<p>得到协方差 <code>C</code> 为</p>
+<div class="arithmatex">\[
+C_{X}(s,t)=\lambda\operatorname*{min}(s,t)
+\]</div>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QVUTbXZMko7tNRxdmNgccVion1f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QVUTbXZMko7tNRxdmNgccVion1f.png"></a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例 | 曾经考过</p>
+<div class="admonition success">
+<p class="admonition-title">记住结论就好</p>
+</div>
+<p>设 <span class="arithmatex">\(X_{1}(t)\)</span> 和 <span class="arithmatex">\(X_{2}(t)\)</span> 是分别具有参数 <span class="arithmatex">\(\lambda_{1}\)</span> 和 <span class="arithmatex">\(\lambda_{2}\)</span> 的相互独立的泊松过程, 证明：</p>
+<p><span class="arithmatex">\(Z(t)=X_{1}(t)-X_{2}(t)\)</span> 不是泊松过程</p>
+<p><span class="arithmatex">\(Y(t)=X_{1}(t)+X_{2}(t)\)</span> 是具有参数 <span class="arithmatex">\(\lambda_{1}+\lambda_{2}\)</span> 的泊松过程</p>
+<p><strong>第一问</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;{E[Z\left(t\right)]=E\left(X_{1}\left(t\right)-X_{2}\left(t\right)\right)=E X_{1}\left(t\right)-E X_{2}\left(t\right)=(\lambda_{1}-\lambda_{2})t}\\ &amp;{D[Z\left(t\right)]=D X_{1}(t)+D X_{2}(t)=(\lambda_{1}+\lambda_{2})t}\end{aligned}
+\]</div>
+<p>由于<span class="arithmatex">\(E Z(t)\neq D Z(t)\)</span>，故<span class="arithmatex">\(Z(t)\)</span>不是泊松过程</p>
+<p><strong>第二问</strong></p>
+<blockquote>
+<p>完全的面向定义</p>
+<ul>
+<li><span class="arithmatex">\(x(0){=}0\)</span>  </li>
+<li>独立增量过程  </li>
+<li>满足泊松分布（利用 <span class="arithmatex">\((1+x)^{n}\)</span> 展开式）  </li>
+</ul>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HQKibol0OohtgdxVRNScBEsun3b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HQKibol0OohtgdxVRNScBEsun3b.png"></a></p>
+</div>
+</div>
+<hr>
+<h2 id="_11">泊松过程的应用<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<div class="admonition example">
+<p class="admonition-title">例 | 泊松过程的定义</p>
+<p>令 <code>X(t)</code> 表示<span class="arithmatex">\([0,t]\)</span>时间段内迁入某地区的<u>居民户数</u>,每户居民的人口数分布如下:</p>
+<div class="arithmatex">\[
+\begin{array}{cccc}\text{每户人口数}&amp;2&amp;3&amp;4\\\text{分布概率}&amp;1/4&amp;1/2&amp;1/4\end{array}
+\]</div>
+<div class="arithmatex">\[
+\text{令Y(t)表示}[0,t]\text{ 时间段内迁入某地区的居民人口数}\\ \text{试判断}\{\mathrm{X}(\mathbf{t}),\mathbf{t}&gt;\mathbf{0}\},\{\mathrm{Y}(\mathbf{t}),\mathbf{t}&gt;\mathbf{0}\}\text{ 是否是泊松过程}
+\]</div>
+<blockquote>
+<p>对于车站人流量、排队、人口迁移，都是【不可分】的(因为极短时间内多户同时迁入的概率趋于零)</p>
+</blockquote>
+<p>故显然,<code>X(t)</code> 满足泊松过程的定义要求</p>
+<p>但是,对于 <span class="arithmatex">\(\bf Y(t)\)</span> ,在时间段内 <span class="arithmatex">\([\mathbf{t},\mathbf{t}+\mathbf{h}],h\rightarrow0\)</span></p>
+<p>若 <span class="arithmatex">\(p\{X(t+h)-X(t)=1\}=\lambda h\)</span></p>
+<blockquote>
+<p>我 <del>猜猜看</del> 推断是极短时间内，只可能迁入一户，故短时间迁入一户的概率就是均值</p>
+</blockquote>
+<p>那么计算其【不可分性】，即在很短时间内，同时迁入俩人以上的概率为<u>高阶无穷小</u></p>
+<p>而实际上有</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;{p\{Y(t+h)-Y(t)=2\}=\frac{1}{4}\lambda h}\\&amp; {p\{Y(t+h)-Y(t)=3\}=\frac{1}{2}\lambda h}\\ &amp;{p\{Y(t+h)-Y(t)=4\}=\frac{1}{4}\lambda h}\end{aligned}
+\]</div>
+<p>故 <span class="arithmatex">\(\{\mathbf{Y}(\mathbf{t}),\mathbf{t}&gt;=\mathbf{0}\}\)</span> 不是泊松过程</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>设电话总机每分钟接到电话呼叫数 <span class="arithmatex">\(X(t)\)</span> 是具有强度为 λ 的泊松过程，求</p>
+<p>(1)求两分钟内接到 3 次呼叫的概率</p>
+<p>(2)求第二分钟内收到第 3 次呼叫的概率(一共就 3 次)</p>
+<p>(3)两分钟内收到呼叫的平均数</p>
+<blockquote>
+<p>回顾一下</p>
+<p><span class="arithmatex">\(P\{X(t+\tau)-X(\tau)=n\}=\frac{(\lambda t)^{n}}{n!}e^{-\lambda t},\quad n=0,1,\cdots\)</span></p>
+<p><span class="arithmatex">\(P\{X(t)=n\}=\frac{(\lambda t)^{n}}{n!}e^{-\lambda t},\quad n=0,1,2,\cdots\)</span></p>
+</blockquote>
+<div class="admonition success">
+<p class="admonition-title">填空题</p>
+</div>
+<blockquote>
+<p>抓住泊松过程不同增量内是独立的</p>
+</blockquote>
+<p>(1) <span class="arithmatex">\(P\left(X\left(t+2\right)-X\left(t\right)=3\right)=\frac{\left(2\lambda\right)^{3}}{3!}\mathrm{e}^{-2\lambda}=\frac{4}{3}\lambda^{3}\mathrm{e}^{-2\lambda}\)</span></p>
+<p>(2)<span class="arithmatex">\(P=\sum_{k=0}^2P(X(1)-X(0)=k,X(2)-X(1)=3-k)=\sum_{k=0}^2P\left(X\left(1\right)-X\left(0\right)=k\right)P\left(X\left(2\right)-X\left(1\right)=3-k\right)\)</span></p>
+<p>(3) 平均次数, 即求均值 : <span class="arithmatex">\(E[X(2)]=2\lambda\)</span></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>顾客到达某商店服从参数 <span class="arithmatex">\(\lambda=4\)</span> 人/小时的泊松过程,</p>
+<p>已知商店上午 <span class="arithmatex">\(9:00\)</span>开门, 试求到<span class="arithmatex">\({9:30}\)</span> 时</p>
+<p>仅到 <code>1</code> 位顾客，而 <span class="arithmatex">\(11:30\)</span> 时总计已到达 <code>5</code> 位顾客的概率</p>
+<blockquote>
+<p>注意如何基于独立性质拆分</p>
+</blockquote>
+<p>设<span class="arithmatex">\(X\left(t\right)\)</span>表示在时间<span class="arithmatex">\(t\)</span>时到达的顾客数</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;P\left(X\left(0.5\right)=1,X\left(2.5\right)=5\right)\\&amp;=P\left(X\left(0.5\right)=1,X\left(2.5\right)-X\left(0.5\right)=4\right)\\&amp;=P\left(X\left(0.5\right)=1\right)P\left(X\left(2\right)=4\right)\\&amp;=\frac{\left(4\times0.5\right)^1}{1!}e^{-4\times0.5}\cdot\frac{\left(4\times2\right)^4}{4!}e^{-4\times2}\\&amp;\approx0.0155\end{aligned}
+\]</div>
+<p>【改】</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;\text{求11:30到达人数&gt;9:30到达人数的概率}\\&amp;\text{等效为【9:30-11:30内无人到达的概率】}\end{aligned}
+\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>已知寻呼台在时间区间<span class="arithmatex">\((0,t)\)</span>内收到的呼唤次数<span class="arithmatex">\(\{\mathrm{N}\left(t\right),t\geq0\}\)</span>是 <code>poisson过程</code>,平均每分钟收到 <code>2</code> 次呼唤</p>
+<p>(1) 求 2 分钟内收到 3 次呼唤的概率</p>
+<p>(2) 已知时间区间[0,3)内收到 5 次呼唤,求时间区间[0,2)内收到 3 次呼唤的概率</p>
+<p>拆成独立的时间间隔</p>
+<p><span class="arithmatex">\((1)P\{N(t+2)-N(t)=3\}=P\{N(2)=3\}={\frac{4^{3}}{3!}}e^{-4}={\frac{32}{3}}e^{-4}\)</span></p>
+<p><span class="arithmatex">\((2)P\{N(2)-N(0)=3|N(3)-N(0)=5\}=P\{N(2)=3|N(3)=5\}\)</span></p>
+<p><span class="arithmatex">\(\begin{gathered}=\frac{P\{N\left(2\right)=3,N\left(3\right)=5\}}{P\{N\left(3\right)=5\}}=\frac{P\{N\left(2\right)=3,N\left(3\right)-N\left(2\right)=2\}}{P\{N\left(3\right)=5\}}\\=\frac{P\left\{N\left(2\right)=3\right\}\bullet P\left\{N\left(3\right)-N\left(2\right)=2\right\}}{P\left\{N\left(3\right)=5\right\}}=\frac{4^{3}e^{-4}\bullet\frac{2^{2}}{2!}e^{-2}}{\frac{6^{5}}{\pi!}e^{-6}}=\frac{80}{243}\end{gathered}\)</span></p>
+</div></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2025-02-24 16:25:22</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -179,6 +179,15 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/dixiLOG
       name: 我滴GitHub
+    - icon: simple/gmail
+      link: mailto:<huang1444127184@gmail.com> #联系方式
+      name: 我滴邮箱 | huang1444127184@gmail.com
+    - icon: fontawesome/brands/qq
+      link: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png
+      name: 我滴QQ
+    - icon: simple/wechat
+      link: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png
+      name: 我滴微信
   analytics:
     provider: google
     property: G-WNP42HF8NE
@@ -258,6 +267,18 @@ nav:
         - NBU-NOTEBOOK/RanSigAnalysis/RSA03.md
         - NBU-NOTEBOOK/RanSigAnalysis/RSA04.md
         - NBU-NOTEBOOK/RanSigAnalysis/RSA05.md
+      - 通信原理笔记:
+        - NBU-NOTEBOOK/commuPrinc/index.md
+        - NBU-NOTEBOOK/commuPrinc/cp01.md
+        - NBU-NOTEBOOK/commuPrinc/cp02.md
+        - NBU-NOTEBOOK/commuPrinc/cp03.md
+        - NBU-NOTEBOOK/commuPrinc/cp04.md
+        - NBU-NOTEBOOK/commuPrinc/cp05.md
+        - NBU-NOTEBOOK/commuPrinc/cp06.md
+        - NBU-NOTEBOOK/commuPrinc/cp07.md
+        - NBU-NOTEBOOK/commuPrinc/cp08.md
+        - NBU-NOTEBOOK/commuPrinc/cp09.md
+        - NBU-NOTEBOOK/commuPrinc/cp10.md
   - 随手记:
       - 随手记/index.md
       - 无聊可期:

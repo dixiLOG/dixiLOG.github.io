@@ -175,3 +175,9 @@ winget install JanDeDobbeleer.OhMyPosh -s winget -l D:\your\path\to\OhMyPosh
 
 
 ---
+
+## LaTex on Vscode
+
+厌倦了`Texstudio`？让`Vscode`试试吧！
+
+访问[博文](https://blog.csdn.net/qq_44089921/article/details/107719981)查看配置教程

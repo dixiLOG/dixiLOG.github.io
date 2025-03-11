@@ -81,11 +81,180 @@ sudo ./v2rayN
 
 ---
 
-## MoffeeForMDPPT
+## Markdown2PPT
 
 将 markdown 文档转换成干净、专业的幻灯片
 
 > 访问 [Moffee 项目主页](https://github.com/BMPixel/moffee)了解更多
+
+??? example "示例文档"
+    ```markdown title="moffeeのdemo.md"
+        # moffeeのdemo
+
+        @(layout=centered)
+
+        ## 知晓关于 moffee 的一切
+
+        ~~只挑我会的~~
+
+        ===
+        <->
+
+        by **dixi**   
+        2025-03-02
+
+        ## 如何食用？
+
+
+        1. 所见即所得，打开你的编译器对照🫡
+        2. 近乎直觉，如果你习惯 `md` 语法的话[^1]
+        3. 比较质朴。需要花哨的出门左转 [Slidev](https://cn.sli.dev/guide/)
+        4. 可以通过高超的 `CSS` 技巧弥补，  
+        但使用 `moffee` 的初衷不就是<u>简单</u>吗？
+
+
+
+
+        [^1]:https://moffee.readthedocs.io/en/latest/syntax/
+
+        @(layout=centered)
+
+
+        ## 先说问题
+
+        - 无法修改主题
+        - 无法修改字体大小
+        - 图片必须使用图床链接
+        - 使用`<->`修改布局后，脚注无法正常显示
+        - 其布局逻辑决定你的内容不得留白太多，  
+        否则富文本巨丑
+        - 高亮块内不能放置图片
+        - 代码块不换行
+
+        ## 可选配置
+
+        可在文档开头以
+        ```
+        ---
+        layout: centered|content
+        background-image: url("https://placehold.co/600x400")
+        color: white
+        ---
+        ```
+        的形式设置全局配置
+
+
+
+        或者用
+
+        `@(layout=content,color=#FFFFFF, background-image='url("https://placehold.co/600x400")')`
+
+        对某一页设置局部配置
+
+        - 二级及以下文字颜色、背景与文字居中是唯三能动手的地方了😂
+
+
+
+        ## 比如说
+
+        这个`600x400`就是背景图片，你的图片也应该是这一比例。
+
+        @(theme=robo, layout=centered, background-image='url("https://placehold.co/600x400")')
+
+        ## 常见句法(Syntax)
+
+        > 这一张PPT是为了告诉你具体有些啥，毕竟年轻人眼睛/脑子都不是很利索🤣👇
+
+
+
+        ===
+
+        **格式语法**
+
+        - `# titleName`+`@(layout=centered)`：首页/章节封面
+        - `##` 节标题
+        - `###` 子节标题（以此类推）
+        - 粗体、斜体、高亮
+        - 有序、无序列表、引用
+        - 链接、图片、表格
+        - 代码块、公式、脚注
+        - 高亮块（支持`note|danger|warning|tip`）
+
+
+        <->
+
+        **布局语法**
+
+        - `---`：强制分页
+        - `<->`：水平布局
+        - `===`：堆叠布局（优先级更高）
+
+
+
+        ### 示例
+
+        ==Markdown== is all you need! Elements like $tex$ and `code` are rendered with elegant style.
+
+        ===
+        !!! note "note"
+
+            1.  **粗体**|`代码块` |*斜体* | ==高亮== 与脚注[^1]
+            2. > 我是引用
+        
+            - 
+            ```python
+            print("Hello, world!")
+            ```
+            - $\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}$
+
+
+            | Feature | Benefit |
+            |---------|---------|
+            | Easy    | Saves time |
+            | Flexible| Adaptable  |
+
+        <->
+        !!! danger "danger"
+
+            moffee automatically breaks pages and chooses titles based on context.
+
+        !!! warning "warning"
+
+            moffee automatically breaks pages and chooses titles based on context.
+
+        !!! tip "tip"
+            
+            moffee automatically breaks pages and chooses titles based on context.
+
+        !!! 随意
+
+            moffee automatically breaks pages and chooses titles based on context.
+        <->
+
+        ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/202502092115.svg)
+            
+        ===
+
+
+        [^1]:生存还是死亡🤔
+
+
+
+
+
+        # 结语
+
+        勉强能用，期待更新
+
+        @(layout=centered)
+    ```
+
+??? success "效果"
+    ![Alt text](moffeeのdemo.pdf){ type=application/pdf style="min-height:75vh;width:100%" }
+
+
+
+觉得过于单调？试试 [Slidev：专为开发者的演示工具](https://cn.sli.dev/)！
 
 ---
 
@@ -220,3 +389,13 @@ dddd
 ## 古典诗词典籍
 
 需要一个典雅蕴藉的古诗词网站？去看看[唐韵](https://www.chinesepoems.org/)
+
+---
+
+## Linux终端下的天气预报
+
+这是[wego项目主页](https://github.com/schachmat/wego?tab=readme-ov-file)
+
+不会配置？看看这篇：[通过 Wego 获取航站楼天气预报](https://cn.linux-terminal.com/?p=3666)
+
+> 关于API，[OpenWeatherMap](https://openweathermap.org/)也不失为一种选择

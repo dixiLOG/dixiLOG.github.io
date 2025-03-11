@@ -24,33 +24,39 @@ title: DIXI的个人博客
     2024-07-08
 
 !!! success "最近の更新"
+    
+    2025年3月11日 | DOCS&FEAT
 
-    2025年2月22日-2月25日 | DOCS  
-
-    1. 添加 [计算机网络笔记](https://dixilog.github.io/NBU-NOTEBOOK/computerNetwork/)
-    2. 添加 [概率论笔记](https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/)
-    3. 添加 [随机信号分析笔记](https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/)
-
-    ---
-
-    2025年2月11日-2月13日 | FEAT&DOCS  
-
-    1. 优化[鼠标单击与页面滚动样式](https://dixilog.github.io/build_your_web/玩转%20Material/#_9)
-    2. [十万个为什么](https://dixilog.github.io/随手记/whywhy/) 上新
-    3. [长河集](https://dixilog.github.io/changheji/) 上新
-
-    ---
-
-    2025年2月8日-2月10日 | COMPLETE&UPDATE  
-
-    1.  增添[创建/修改时间显示](https://dixilog.github.io/build_your_web/玩转%20Material/#_8)功能
-    2.  增添 404 页面    
-    3.  调整博客`icon` | 修复图片显示问题 | 添加板块封面  
-    4.  [无聊可期](https://dixilog.github.io/随手记/boringBetter/) | [闲言碎语](http://dixilog.github.io/blog/) 上新    
-    5.  原 [Chronic Study]() 更名为 [长河集](https://dixilog.github.io/changheji/) ，开辟其第一个板块 [荒唐言](https://dixilog.github.io/changheji/bookReport/)  
+    1. [无聊可期](https://dixilog.github.io/随手记/boringBetter/) 上新  
+    2. [十万个为什么](https://dixilog.github.io/随手记/whywhy/) 上新  
+    3. 添加 [通信原理笔记](https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/)  
+    4. 增加页尾社交链接
  
 
 ??? abstract "历史装修&上新流水"
+    > 2025年2月22日-2月25日 | DOCS  
+    > 1. 添加 [计算机网络笔记](https://dixilog.github.io/NBU-NOTEBOOK/computerNetwork/)  
+    > 2. 添加 [概率论笔记](https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/)  
+    > 3. 添加 [随机信号分析笔记](https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/)  
+
+    ---
+
+    >2025年2月11日-2月13日 | FEAT&DOCS  
+    > 1. 优化[鼠标单击与页面滚动样式](https://dixilog.github.io/build_your_web/玩转%20Material/#_9)  
+    > 2. [十万个为什么](https://dixilog.github.io/随手记/whywhy/) 上新  
+    > 3. [长河集](https://dixilog.github.io/changheji/) 上新
+
+    ---
+
+    > 2025年2月8日-2月10日 | COMPLETE&UPDATE  
+    > 1.  增添[创建/修改时间显示](https://dixilog.github.io/build_your_web/玩转%20Material/#_8)功能  
+    > 2.  增添 404 页面      
+    > 3.  调整博客`icon` | 修复图片显示问题 | 添加板块封面    
+    > 4.  [无聊可期](https://dixilog.github.io/随手记/boringBetter/) | [闲言碎语](http://dixilog.github.io/blog/) 上新      
+    > 5.  原 [Chronic Study]() 更名为 [长河集](https://dixilog.github.io/changheji/) ，开辟其第一个板块 [荒唐言](https://dixilog.github.io/changheji/bookReport/)    
+
+    ---
+
     >2024年11月9日 | COMPLETE&UPDATE  
     > 1.  增添 [个性化地址栏](https://dixilog.github.io/build_your_web/玩转%20Material/#_13)  
     > 2.  增添“[上一次看到](https://dixilog.github.io/build_your_web/玩转%20Material/#_14)”跳转功能  

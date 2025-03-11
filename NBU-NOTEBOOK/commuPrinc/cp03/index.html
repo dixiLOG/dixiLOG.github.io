@@ -1,0 +1,2610 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp03/">
+      
+      
+        <link rel="prev" href="../cp02/">
+      
+      
+        <link rel="next" href="../cp04/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>信源编码 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              信源编码
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            通信原理笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    随机过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    信源编码
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    信源编码
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽样
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="抽样">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      低通抽样
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      带通抽样
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      模拟脉冲调制之 PAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟脉冲调制之 PAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PAM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      自然抽样过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      平顶抽样过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      量化编码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量化编码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀量化的缺点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      非均匀量化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非均匀量化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      A 压缩律 13 折线近似法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      脉冲编码调制—PCM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脉冲编码调制—PCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcm-pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCM 与 PAM 的关联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 A 律十三折线的 PCM 编码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译码器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译码器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      译码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCM 比特率与带宽
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出噪声与指标
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出噪声与指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      【抗加性噪声性能】
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      【抗量化噪声性能】
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      差分脉冲编码调制 DPCM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      增量调制 ΔM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用 TDM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信道
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    幅度调制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    角度调制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字基带传输
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字带通传输—数字调制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    差错控制编码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cp10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数字信号的最佳接收
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      抽样
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="抽样">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      低通抽样
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      带通抽样
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      模拟脉冲调制之 PAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟脉冲调制之 PAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PAM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      自然抽样过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      平顶抽样过程
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      量化编码
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量化编码">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念定义
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      均匀量化的缺点
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      非均匀量化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非均匀量化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      A 压缩律 13 折线近似法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      脉冲编码调制—PCM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脉冲编码调制—PCM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pcm-pam" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCM 与 PAM 的关联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-pcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于 A 律十三折线的 PCM 编码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译码器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译码器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      译码
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCM 比特率与带宽
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出噪声与指标
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出噪声与指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      【抗加性噪声性能】
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      【抗量化噪声性能】
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dpcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      差分脉冲编码调制 DPCM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      增量调制 ΔM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      时分复用 TDM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">信源编码<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 2482 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 14 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<blockquote>
+<p>作用：压缩 | ADC</p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">知识点</p>
+<p>波形编码 | 抽样、量化、编码<br>
+模拟脉冲调制 PAM PDM PPM | PCM、DPCM、ΔM<br>
+时分复用【TDM】</p>
+</div>
+<h2 id="_2">抽样<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">题外话</p>
+<p>在 <code>w与f</code> 的转化时，发现有些会乘 <span class="arithmatex">\(\frac{1}{2\pi}\)</span> 有的却没有变换，只是把 w 变成 f
+一般信号变换时，有两种</p>
+<ol>
+<li>一般变换，遵守 FT 性质
+如对冲击信号，有</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}&amp;{\displaystyle\delta(\omega-\omega_{\mathrm{c}})=\delta(2\pi f-2\pi f_{\mathrm{c}})=\frac{1}{2\pi}\delta(f-f_{\mathrm{c}})}\\ &amp;{\displaystyle\delta(\omega+\omega_{\mathrm{c}})=\delta(2\pi f+2\pi f_{\mathrm{c}})=\frac{1}{2\pi}\delta(f+f_{\mathrm{c}})}\end{aligned}
+\]</div>
+<ol start="2">
+<li>带移操作，对信号（函数）位移
+即对于以 w 和 f 两种变量，有</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}{{\displaystyle{\mathcal F}\{m(t)\cos(\omega_{c}t)\}=\frac{1}{2}\left[M(\omega-\omega_{c})+M(\omega+\omega_{c})\right]}}\\ {{\displaystyle{\mathcal F}\{m(t)\cos(\omega_{c}t)\}=\frac{1}{2}\left[M(\omega-\omega_{c})+M(\omega+\omega_{c})\right]}}\end{aligned}
+\]</div>
+<hr>
+<p>举个例子</p>
+<p>将</p>
+<div class="arithmatex">\[
+S_{\mathrm{AM}}(\omega)=\pi A_{0}\left[\delta(\omega+\omega_{c})+\delta(\omega-\omega_{c})\right]+\frac{1}{2}\left[M(\omega+\omega_{c})+M(\omega-\omega_{c})\right]
+\]</div>
+<p>转化为 f，有</p>
+<div class="arithmatex">\[
+S_{\mathrm{AM}}(f)=\pi A_{0}\left[\frac{1}{2\pi}\delta(f+f_{\mathrm{c}})+\frac{1}{2\pi}\delta(f-f_{\mathrm{c}})\right]+\frac{1}{2}\left[M(f+f_{\mathrm{c}})+M(f-f_{\mathrm{c}})\right]\,.
+\]</div>
+</div>
+<h3 id="_3">低通抽样<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p><strong>理想抽样信号</strong> = 输入信号 · 周期序列冲激信号，即</p>
+<div class="arithmatex">\[
+x_s(t)=x(t)p(t)
+\]</div>
+<p>其中</p>
+<div class="arithmatex">\[
+p(t)=\sum_{n=-\infty}^{+\infty}\delta(t-nT_s)
+\]</div>
+<p>对于理想 P(jw) 有</p>
+<div class="arithmatex">\[
+P(\mathrm{j}\omega)\:=\:\frac{2\pi}{T_s}\sum_{k=-\infty}^{+\infty}\delta(\omega-n\omega_s)
+\]</div>
+<p>利用卷积的性质，则有</p>
+<div class="arithmatex">\[
+x_{s}(t)=x(t)\bullet\sum_{n=-\infty}^{+\infty}\delta(t-nT_{s})=\sum_{n=-\infty}^{+\infty}x(nT_{s})\delta(t-nT_{s})
+\]</div>
+<p>另外，在 FT 变换域中表现为卷积，即</p>
+<div class="arithmatex">\[
+X_s(\text{j}\omega)=\frac{1}{2\pi}X(\text{j}\omega)*P(\text{j}\omega)
+\]</div>
+<p>得</p>
+<div class="arithmatex">\[
+X_{s}(j\omega)=\frac{1}{T_{s}}\sum_{n=-\infty}^{\infty}X(j(\omega-n\omega_{s}))
+\]</div>
+<p>由于信号 x(t) 只占一定的频率范围，可写为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+X_{\mathrm{s}}\left(\mathrm{j}\omega\right)&amp; =\frac{1}{2\pi}X(\mathrm{j}\omega)*P(\mathrm{j}\omega)=\frac{1}{T_{s}}X(\mathrm{j}\omega)*\sum_{n=-\infty}^{+\infty}\delta(\omega-n\omega_{s})  \\
+&amp;=\frac{1}{T_{s}}\sum_{n=-\infty}^{+\infty}X\left(\mathrm{j}(\omega-n\omega_{s})\right)\left[u\left(\omega-n\omega_{s}+\omega_{\mathrm{m}}\right)-u\left(\omega-n\omega_{s}-\omega_{\mathrm{m}}\right)\right]
+\end{aligned}
+\]</div>
+<p>用频率 f 表示，有</p>
+<div class="arithmatex">\[
+M_s(f)=\frac{1}{T_s}\sum_{n=-\infty}^\infty M(f-nf_s)=\frac{1}{T_s}M(f)+\frac{1}{T_s}\sum_{n\neq0}M(f-nf_s)
+\]</div>
+<p>其中，最低 <strong>抽样</strong> 频率为<span class="arithmatex">\(f_s=\frac{\omega_s}{2\pi}=\frac{\omega_\mathrm{m}}{\pi}=2f_\mathrm{m}\)</span>，<span class="arithmatex">\(f_m\)</span>为 <strong>信号</strong> 最高频率</p>
+<hr>
+<h3 id="_4">带通抽样<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<p>带通判定：信号最低频 fL <span class="arithmatex">\(&gt;\)</span> 带宽 B</p>
+<p><strong>抽样速率</strong></p>
+<blockquote>
+<p>实际带宽的两倍多一些</p>
+</blockquote>
+<p>频谱的周期延拓是否会发生混叠</p>
+<div class="arithmatex">\[
+f_{s}=2B(1+\frac{k}{n})
+\]</div>
+<div class="arithmatex">\[
+\text{式中,}B=f_H-f_L
+\]</div>
+<div class="arithmatex">\[
+n\text{为}(f_H/B)\text{的【整数部分】};k\text{为}(f_H/B)\text{ 的【小数部分,如 }0.5\mathrm{】}
+\]</div>
+<p>其中</p>
+<p></p><center>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MkVtbCabhoKBj1xi3H9cTjqPnXg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MkVtbCabhoKBj1xi3H9cTjqPnXg.png"></a></p>
+</div>
+<p></p></center>
+<hr>
+<h2 id="pam">模拟脉冲调制之 PAM<a class="headerlink" href="#pam" title="Permanent link">¶</a></h2>
+<h3 id="pam_1">PAM<a class="headerlink" href="#pam_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>脉冲幅度调制，即抽样的结果</li>
+<li>实际上用一定宽度的矩形脉冲序列采样</li>
+</ul>
+<h2 id="_5">自然抽样过程<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<p>与理想抽样结果相比，多了矩形信号 FT 后的 Sa 信号</p>
+<div class="arithmatex">\[
+M_{s}(f)=\frac{E\tau}{T_{s}}\sum_{n=-\infty}^{\infty}S a(\pi\tau n f_{s})M(f-n f_{s})
+\]</div>
+<blockquote>
+<p>相较于平顶抽样，顶部随模拟信号变化</p>
+</blockquote>
+<p>满足采样定理即可用 LPF 恢复信号</p>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TvuibtilJoo0e5x64KScBOejn8g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TvuibtilJoo0e5x64KScBOejn8g.png"></a></p>
+</div>
+<hr>
+<h2 id="_6">平顶抽样过程<a class="headerlink" href="#_6" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>抽样 + 保持</p>
+</blockquote>
+<p>时域上为采样信号与保持信号 <span class="arithmatex">\({h}({t})\)</span> 卷积，即最后有</p>
+<div class="arithmatex">\[
+M_{\mathrm{H}}(f)={\frac{1}{T_{s}}}H(f)\sum_{n=-\infty}^{\infty}M(f-n f_{s})
+\]</div>
+<p>对于信号恢复，也需要先通过【修正滤波器】 <span class="arithmatex">\(\frac{1}{H(f)}\)</span> ，即</p>
+<div class="arithmatex">\[
+\begin{array}{l}{\displaystyle M_{\mathrm{H}}(f)=\frac{1}{T_{s}}\sum_{n=-\infty}^{\infty}H(f)M(f-n f_{s})}\\ {\displaystyle=\frac{1}{T_{s}}H(f)M(f)+\frac{1}{T_{s}}\sum_{n\neq0}H(f)M(f-n f_{s})}\end{array}
+\]</div>
+<p>针对 <code>n=0</code></p>
+<div class="arithmatex">\[
+\hat{M}(f)=M_{\mathrm{H}}(f)\frac{1}{H(f)}H_{\mathrm{L}}(f)=\frac{1}{T_{s}}M(f)
+\]</div>
+<hr>
+<h2 id="_7">量化编码<a class="headerlink" href="#_7" title="Permanent link">¶</a></h2>
+<h3 id="_8">概念定义<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<ul>
+<li>分层电平 <span class="arithmatex">\(m_{i}\)</span></li>
+<li>量化间隔 <span class="arithmatex">\(\Delta v_{i}\)</span></li>
+<li>量化电平<span class="arithmatex">\(q_{i}\)</span>，为间隔中点</li>
+</ul>
+<div class="arithmatex">\[
+m_{q}(k T_{s})=q_{i}\qquad m_{i-1}\leq m(k T_{s})\leq m_{i}
+\]</div>
+<ul>
+<li>将抽样值表示为 <span class="arithmatex">\(m_{k}\)</span> ，量化值为 <span class="arithmatex">\(m_{q}\)</span></li>
+<li>均匀量化</li>
+</ul>
+<div class="arithmatex">\[
+\Delta\nu=\frac{b-a}{M}\ [\mathsf{a},\mathsf{b}]
+\]</div>
+<blockquote>
+<p>主要应用于<u>均匀分布大信号</u></p>
+</blockquote>
+<ul>
+<li>量化噪声</li>
+</ul>
+<div class="arithmatex">\[
+e_{q}=|m_{k}-m_{q}|
+\]</div>
+<ul>
+<li><u>信号量噪比 S/Nq</u></li>
+</ul>
+<p>量化噪声功率 <span class="arithmatex">\(N_{q}\)</span> 为量化噪声的均方值</p>
+<div class="arithmatex">\[
+\boxed{N_{\mathrm{q}}=E\Big[(m_{k}-m_{\mathrm{q}})^{2}\Big]=\int_{a}^{b}(x-m_{\mathrm{q}})^{2}f(x)\mathrm{d}x}
+\]</div>
+<p>抽样值平均功率 S</p>
+<div class="arithmatex">\[
+\boxed{S=E\left[(m_{k})^{2}\right]=\int_{a}^{b}x^{2}f(x)d x}
+\]</div>
+<p>得信号量噪比表达式</p>
+<div class="arithmatex">\[
+\boxed{\frac{S}{N_q}=\frac{E\left[m_k^2\right]}{E\left[\left(m_k-m_q\right)^2\right]}}
+\]</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MU1SbgTU9oVSkMxJDUUcOy9xnVh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MU1SbgTU9oVSkMxJDUUcOy9xnVh.png"></a></p>
+<div class="admonition success">
+<p class="admonition-title">即<span class="arithmatex">\(M^2\)</span> or <span class="arithmatex">\(6N\)</span> ,N 为所占编码位数</p>
+</div>
+</div>
+<hr>
+<h2 id="_9">均匀量化的缺点<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<ul>
+<li>小信号下受限于最小分辨率，M 较小，S/Nq 小</li>
+<li>需要编码位数大，占用带宽</li>
+</ul>
+<hr>
+<h2 id="_10">非均匀量化<a class="headerlink" href="#_10" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>采用对数压缩 + 均匀量化</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Dsnwb6YR2or7IsxKumGckzm6nWh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Dsnwb6YR2or7IsxKumGckzm6nWh.png"></a></p>
+</div>
+<h3 id="a-13">A 压缩律 13 折线近似法<a class="headerlink" href="#a-13" title="Permanent link">¶</a></h3>
+<ul>
+<li>电压电流归一化</li>
+</ul>
+<div class="arithmatex">\[
+y=\begin{cases}\frac{Ax}{1+\ln A},&amp;0&lt;x\leq\frac{1}{A}\\\frac{1+\ln Ax}{1+\ln A},&amp;\frac{1}{A}\leq x\leq1&amp;\end{cases}
+\]</div>
+<p>然而非线性电路上不易实现，故用折线近似</p>
+<p>取经验值<u>87.6</u>，使得第一段斜率为 16，共八段，满足 2 的幂次</p>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DZm9bR5NCopvEdxmkUncR0u6nvf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DZm9bR5NCopvEdxmkUncR0u6nvf.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WLcFbMW6noVaBXxPBqpcQedsnfb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WLcFbMW6noVaBXxPBqpcQedsnfb.png"></a></p>
+<blockquote>
+<p>加上负极性的 8 段，结合靠近原点两段斜率相等，共 <span class="arithmatex">\(8\!+\!8\!-\!4\!+\!1\!=\!13\)</span> 段，故称之 13 折线</p>
+</blockquote>
+</div>
+<hr>
+<h2 id="pcm">脉冲编码调制—PCM<a class="headerlink" href="#pcm" title="Permanent link">¶</a></h2>
+<h3 id="pcm-pam">PCM 与 PAM 的关联<a class="headerlink" href="#pcm-pam" title="Permanent link">¶</a></h3>
+<p><strong>发送端</strong></p>
+<div class="arithmatex">\[
+\text{模拟信号}\to\boxed{\text{抽样保持}}\to\text{时间离散}PAM\text{信号}\to\boxed{\text{量化编码}}\to PCM\text{二进制信号}
+\]</div>
+<p><strong>接收端</strong></p>
+<div class="arithmatex">\[
+PCM\text{信号}\to\boxed{\text{译码}}\to\text{时间离散}PAM\text{信号}\to\boxed{LPF}\to\text{模拟信号}
+\]</div>
+<h3 id="a-pcm">基于 A 律十三折线的 PCM 编码<a class="headerlink" href="#a-pcm" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>码型选择</strong>：折叠码</li>
+</ul>
+<blockquote>
+<p>以四位为例，注意感受对称</p>
+</blockquote>
+<p></p><center>
+<table>
+<tr>
+<td>正负极性<br></td><td>序号<br></td><td>折叠二进制码<br></td></tr>
+<tr>
+<td rowspan="4">正极性<br></td><td>15<br></td><td>1111<br></td></tr>
+<tr>
+<td>14<br></td><td>1110<br></td></tr>
+<tr>
+<td>...<br></td><td>...<br></td></tr>
+<tr>
+<td>8<br></td><td>1000<br></td></tr>
+<tr>
+<td rowspan="4">负极性<br></td><td>7<br></td><td>0000<br></td></tr>
+<tr>
+<td>...<br></td><td>....<br></td></tr>
+<tr>
+<td>1<br></td><td>0110<br></td></tr>
+<tr>
+<td>0<br></td><td>0111<br></td></tr>
+</table>
+<p></p></center>
+<ul>
+<li><strong>码位选择</strong></li>
+</ul>
+<blockquote>
+<p>16 段折线，每一段量化为 16 份，故需要 256 个，即 8 位</p>
+</blockquote>
+<p>编号分别规定为【极性码】 【段落码】 【段内码】</p>
+<ul>
+<li>【段内码】为自然二进制编码而非折叠码</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OzIXb2w2toB8Vkx0VTOcnXWMnog.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OzIXb2w2toB8Vkx0VTOcnXWMnog.png"></a></p>
+</div>
+<ul>
+<li><strong>起始电平和量化间隔</strong></li>
+</ul>
+<blockquote>
+<p>基于 A 律</p>
+</blockquote>
+<p><strong>量化单位</strong>
+<span class="arithmatex">\(\Delta={\frac{1}{128}}*{\frac{1}{16}}={\frac{1}{2048}}\)</span> （看一半[0~a]）</p>
+<p>1/128 指的是横坐标（这里的最大值为 <code>1</code>），1/16 指的是一段分为 16 份</p>
+<p><strong>量化间隔</strong></p>
+<blockquote>
+<p>x 轴每一段的电平差（范围）/16</p>
+</blockquote>
+<p>如此，能得到 <span class="arithmatex">\(\Delta\)</span> 为单位的段落码、段内码与起始电平情况</p>
+<ol>
+<li>量化间隔从 1 开始，为｛1 1 2 4 8 16 32 64｝</li>
+<li>起始电平分别为｛0 16 32 64 128 256 512 1024｝，确定段落码</li>
+<li>段落确定量化间隔，确定权值 <span class="arithmatex">\(\rightarrow\)</span> 段内码</li>
+</ol>
+<p></p><center>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMCdbeZGeodRLqxaiwactp8Pn8d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QMCdbeZGeodRLqxaiwactp8Pn8d.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OsIHbBWRBosUnNxSwbdcpC83nit.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OsIHbBWRBosUnNxSwbdcpC83nit.png"></a></p>
+</div>
+<p></p></center>
+<hr>
+<h2 id="_11">编译码器<a class="headerlink" href="#_11" title="Permanent link">¶</a></h2>
+<p>类比数电最后一章</p>
+<h3 id="_12">编码<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SUFIb1ujhooxY1xmyTick4n7n3g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SUFIb1ujhooxY1xmyTick4n7n3g.png"></a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CETOb0khio8WXExFmcMcTZhenMG.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CETOb0khio8WXExFmcMcTZhenMG.png"></a></p>
+</div>
+<h3 id="_13">译码<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MUnhb7VLSorujTxFcAkcE8B9nYf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MUnhb7VLSorujTxFcAkcE8B9nYf.png"></a></p>
+</div>
+<p></p><center>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Sw4EbQzIuoMoswx4nONcDq8QnLd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Sw4EbQzIuoMoswx4nONcDq8QnLd.png"></a></p>
+</div>
+<p></p></center>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><span class="arithmatex">\(若4律13折成编码路的过载电平是5V,即编码范围[-5V,+5V]\\输入抽样脉冲幅度是-0.95V\\1. 求编码器输出码组,并计算量化误差\\2. 写出该7位码所对应的11位线性码\\3. 计算译码器输出的量化电平\)</span></p>
+<p><strong>注意归一化</strong></p>
+<p><span class="arithmatex">\(\Delta=5\cdot\frac{1}{2048}\)</span></p>
+<p>答案：</p>
+<ol>
+<li><span class="arithmatex">\(0\text{ 101 1000 ; 误差:5 }\Delta=0.012V\)</span></li>
+<li><span class="arithmatex">\(\text{0011000000}\)</span></li>
+<li><span class="arithmatex">\(-392\Delta=-0.957V\)</span></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">区别【编码电平】【均匀量化码】【译码电平】</p>
+<ol>
+<li>编码是身份证号，有对应的规则，有单位</li>
+<li>均匀量化码是编码电平值的<u>二进制表达</u>（7 位 →11 位，因为编码最大为 2048）</li>
+<li>译码电平是编码电平 + 一半量化间隔，是译码器的<u>输出</u></li>
+</ol>
+<blockquote>
+<p>7-12 位中最低位从 <span class="arithmatex">\(2^{-1}\)</span> 开始</p>
+</blockquote>
+</div>
+<hr>
+<h2 id="pcm_1">PCM 比特率与带宽<a class="headerlink" href="#pcm_1" title="Permanent link">¶</a></h2>
+<p>比特率计算公式 | N 为二进制编码位数</p>
+<div class="arithmatex">\[
+R_{b}=f_{s}\cdot N=2f_{H}\cdot N
+\]</div>
+<p>传输带宽计算公式（非归零矩形脉冲传输）(占空比 =1 )</p>
+<div class="arithmatex">\[
+B=R_{s}=R_{b}=f_{s}\cdot N
+\]</div>
+<p>PCM 最小带宽 <span class="arithmatex">\(B=N\cdot f_{H}\)</span> ，规避码间串扰</p>
+<blockquote>
+<p>故<span class="arithmatex">\(R_b\)</span>不得超过 <span class="arithmatex">\(2B\)</span>，本质上是受限于采样定理</p>
+</blockquote>
+<hr>
+<h2 id="_14">输出噪声与指标<a class="headerlink" href="#_14" title="Permanent link">¶</a></h2>
+<p>输出信号 = 信号成分 + 量化噪声 + 加性噪声（热噪声）</p>
+<p><strong>指标</strong></p>
+<ol>
+<li>抗加性噪声性能 <span class="arithmatex">\(\frac{S_{o}}{N_{\mathrm{a}}}=\frac{E[m^{2}(t)]}{E[n_{\mathrm{a}}^{2}(t)]}\)</span></li>
+<li>抗量化噪声性能 <span class="arithmatex">\(\frac{S_{o}}{N_{q}}=\frac{E[m^{2}(t)]}{E[n_{q}^{2}(t)]}\)</span></li>
+<li>总输出 SNR <span class="arithmatex">\(\frac{S_{o}}{N_{o}}=\frac{E[m^{2}(t)]}{E[n_{q}^{2}(t)]+E[n_{o}^{2}(t)]}\)</span></li>
+</ol>
+<p>当存在自然码编码、均匀量化、输入信号均匀分布前置条件时</p>
+<h3 id="_15">【抗加性噪声性能】<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+\frac{S_{o}}{N_{\mathrm{a}}}=\frac{E[m^{2}(t)]}{E[n_{\mathrm{a}}^{2}(t)]}=M^{2}\mathrm{~/~}2^{2(N+1)}\;P_{e}=\frac{1}{4P_{e}}
+\]</div>
+<p><span class="arithmatex">\(P_{e}\)</span> 为误码率</p>
+<h3 id="_16">【抗量化噪声性能】<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[
+{\frac{S_{0}}{N_{q}}}={\frac{E[m^{2}(t)]}{E[n_{q}^{2}(t)]}}=M^{2}=2^{2\color{red}N}=2^{2\color{red}{B/f_{\mathrm{H}}}}
+\]</div>
+<div class="arithmatex">\[
+{\frac{S_{0}}{N_{q}}}(d B)=20\log M
+\]</div>
+<p>【总输出】</p>
+<div class="arithmatex">\[
+\frac{S_{\mathrm{o}}}{N_{\mathrm{o}}}=\frac{E[m^{2}(t)]}{E[n_{\mathrm{a}}^{2}(t)]+E[n_{\mathrm{q}}^{2}(t)]}=\frac{S_{\mathrm{o}}/N_{q}}{1+N_{\mathrm{a}}/N_{\mathrm{q}}}=\frac{2^{2N}}{1+4P_{\mathrm{e}}2^{2N}}
+\]</div>
+<hr>
+<h2 id="dpcm">差分脉冲编码调制 DPCM<a class="headerlink" href="#dpcm" title="Permanent link">¶</a></h2>
+<p>利用相邻抽样值之间的相关性，降低编码信号比特率，压缩信号带宽</p>
+<p>方法之一为<u>预测编码</u></p>
+<div class="admonition note">
+<p class="admonition-title">预测编码</p>
+<p>基于上一个值预测现值，并对实际预测误差进行编码<br>
+利用差值较小 | 编码译码预测算法一致的特性<br>
+使能够只传输差值（抓取小数值特征值传输）来通信  </p>
+</div>
+<blockquote>
+<p>了解一下</p>
+</blockquote>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WR3Tb66sVobXEoxZfBsciPzCnte.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WR3Tb66sVobXEoxZfBsciPzCnte.png"></a></p>
+</div>
+<hr>
+<h2 id="m">增量调制 ΔM<a class="headerlink" href="#m" title="Permanent link">¶</a></h2>
+<p>与 PCM 相比，编译码简单，低比特率时的量化信噪比高，抗误码特性好等优点</p>
+<p>广泛用在军事和工业部门的专用通信网和卫星通信中</p>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nkp1bhdt7ox484xOp9IcSY7Knrc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nkp1bhdt7ox484xOp9IcSY7Knrc.png"></a></p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">编码范围</label><label for="__tabbed_1_2">最大 SNR</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>了解一下</p>
+</blockquote>
+<ol>
+<li>起始电平要求</li>
+</ol>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WVOZbQaaLooGHPx8nhic61b1nMh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WVOZbQaaLooGHPx8nhic61b1nMh.png"></a></p>
+</div>
+<ol start="2">
+<li>最大电平要求</li>
+</ol>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EsrZbUJa9oEMPDxB2EQcPdv8nLx.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EsrZbUJa9oEMPDxB2EQcPdv8nLx.png"></a></p>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FA2GbJLP8on7UUxgimoceptpnhc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/FA2GbJLP8on7UUxgimoceptpnhc.png"></a></p>
+</div>
+<blockquote>
+<p>改进方案：“增量总和”调制、压扩式自适应增量调制等</p>
+</blockquote>
+</div>
+</div>
+</div>
+<hr>
+<h2 id="tdm">时分复用 TDM<a class="headerlink" href="#tdm" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>类比计网时分复用传输</p>
+</blockquote>
+<p>注意信道选通同步</p>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CP6Gb3m6kob8D4xkSkRcVVFJnqf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CP6Gb3m6kob8D4xkSkRcVVFJnqf.png"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">会出计算题</p>
+<p>已知 N 路电话求 PCM 最小带宽</p>
+</div>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年3月11日 09:02:05">2025-03-11 09:02:05</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime" title="2025年3月11日 09:02:05">2025-03-11 09:02:05</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../cp02/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 随机过程">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                随机过程
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cp04/" class="md-footer__link md-footer__link--next" aria-label="下一页: 信道">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                信道
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

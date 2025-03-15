@@ -6,7 +6,10 @@
   <div id="progress-bar"></div>
 </div>
 
-!!! note "这是一个从飞书到博客的漫长过程..."
+!!! quote ""
+    <center>
+    <div class="xszt">这是一个从飞书到博客的漫长过程...</div>
+    </center>
 
 ## 写在前面  
   此栏目用于存放我的 NBU 学习笔记（2022~2026），包含部分电子类课程的知识点与当年考点  

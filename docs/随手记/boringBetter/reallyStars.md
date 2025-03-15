@@ -131,7 +131,8 @@ winget install JanDeDobbeleer.OhMyPosh -s winget -l D:\your\path\to\OhMyPosh
     - [Learn PyTorch for Deep Learning](https://www.learnpytorch.io/)
     - [算法入门宝书](https://www.hello-algo.com/) | [算法代码步进可视化](https://staying.fun/zh)
     - [Go 语言入门](https://play-with-go.dev/)
-    - [docker 入门](https://dockerlabs.collabnix.com/)
+    - [docker 入门](https://dockerlabs.collabnix.com/)  
+    - 很好玩的开发者tutorials平台：[freeCodeCamp](https://www.freecodecamp.org/chinese/learn/)
 
 === "系统架构"
     - [X86/ARM 架构逆向](https://0xinfection.github.io/reversing/)

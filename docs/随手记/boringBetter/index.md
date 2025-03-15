@@ -5,8 +5,13 @@
 </div>
 
 
-!!! tip "记录一些很无聊的想法，收藏一些很给力的干货 ，take easy~"
-    吃灰仓库，毫无格式可言 :fontawesome-solid-plane:
+!!! quote ""
+    <center>
+        <div class="xszt">记录一些很无聊的想法，收藏一些很给力的干货</div>
+    </center>  
+
+    
+> 吃灰仓库，毫无格式可言 :fontawesome-solid-plane:
 
 考虑到后期维护与观赏性，把板块分为三部分：
 

@@ -5,7 +5,9 @@
 </div>
 
 !!! quote "[蒋刚毅](https://baike.baidu.com/item/%E8%92%8B%E5%88%9A%E6%AF%85/6093200)说:"
-      信号变换的本质是拉普拉斯变换  
+    <center>
+        <div class="xszt">信号变换的本质是拉普拉斯变换</div>
+    </center>  
       
 <center>^^用拉氏变换解决微分方程，Z 变换解决差分方程^^</center>
 

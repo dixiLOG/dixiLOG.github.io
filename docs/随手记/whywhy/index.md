@@ -4,7 +4,11 @@
   <div id="progress-bar"></div>
 </div>
 
-收录七零八落但杂乱无章的问题，动心起念，随搜随写~~
+!!! quote ""
+    <center>
+        <div class="xszt">收录七零八落但杂乱无章的问题，动心起念，随搜随写~~</div>
+    </center>  
+
 
 !!! info "有幸收录的问题"
     - 手机黄历怎么看？  

@@ -225,6 +225,7 @@ extra_javascript:
   # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/custom.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 

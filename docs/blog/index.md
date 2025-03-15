@@ -6,12 +6,13 @@
   <div id="progress-bar"></div>
 </div>
 
-!!! bug "写在前面"
-    最愉快的板块！  
-    同步个人公众号推文，偶尔叨逼叨
-
-!!! info "搬运ing..."
-
+!!! quote ""
+    <center>
+        <div class="xszt">最愉快的板块！</div>
+    </center>  
+    <center>
+        <div class="xszt"> 同步个人公众号推文，偶尔叨逼叨</div>
+    </center>  
  <center>[-----------------------------------------我是华丽的分割线-----------------------------------------]()</center>
 
 ---

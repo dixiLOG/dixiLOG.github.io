@@ -1,0 +1,13 @@
+@import url('https://fonts.loli.net/css2?family=Zhi+Mang+Xing&display=swap');  /* 导入字体,国内源 */
+@import url('https://fonts.loli.net/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet');  
+
+
+.xszt {
+    font-family: 'Zhi Mang Xing', sans-serif !important;
+    font-size: 36px;  /* 设置字体大小 */
+  }
+
+.yyzt {
+  font-family: 'Zen Maru Gothic', sans-serif !important;
+  font-size: 36px;  /* 设置字体大小 */
+}

@@ -399,3 +399,14 @@ dddd
 不会配置？看看这篇：[通过 Wego 获取航站楼天气预报](https://cn.linux-terminal.com/?p=3666)
 
 > 关于API，[OpenWeatherMap](https://openweathermap.org/)也不失为一种选择
+
+---
+
+## AI-Engineering-Hub
+
+各种各样的 AI 工程项目，值得一看
+
+> 访问[项目主页](https://github.com/patchy631/ai-engineering-hub/tree/main)了解详情
+
+!!! tip "此外，它还提供数据科学的 tutorial PDF"
+    ![](https://raw.githubusercontent.com/patchy631/ai-engineering-hub/main/resources/join_ddods.png)

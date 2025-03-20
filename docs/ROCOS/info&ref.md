@@ -10,7 +10,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
 
 <script>
-    // 确保 Firebase 只初始化一次
+    // 确保 Firebase 只初始化一次 
     if (!firebase.apps.length) {
         const firebaseConfig = {
             apiKey: "AIzaSyAa66EUv9NGTgQ2MmRrSUzvmWQIh7DAH0w",
@@ -24,16 +24,30 @@
         firebase.initializeApp(firebaseConfig);
     }
 
-    // 监听用户登录状态
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            // 输出调试信息
-            console.log('User already logged in, redirecting...');
-            // alert('您已登录，为您自动跳转~');
-        } else {
-            // 输出调试信息
-            console.log('User not logged in, redirecting to login.html');
-            window.location.href = '../login.html'; // 未登录用户跳转到登录页
+    // 强制状态刷新机制 
+    const forceAuthCheck = () => {
+        firebase.auth().currentUser?.getIdTokenResult()
+            .then(result => {
+                if (!result?.claims?.user_id) throw new Error("无效凭证");
+            })
+            .catch(() => {
+                console.log('检测到无效凭证，强制跳转...');
+                window.location.href = '../login.html';
+            });
+    };
+
+    // 组合监听方案
+    document.addEventListener('DOMContentLoaded', forceAuthCheck); // 初始检查
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') forceAuthCheck(); // 可见时检查
+    });
+    setInterval(forceAuthCheck, 5000); // 保底5秒检查 [[谨慎使用]]
+
+    // 原始监听保持 
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+            console.log('未登录状态，跳转中...');
+            window.location.href = '../login.html';
         }
     });
 </script>

@@ -174,6 +174,8 @@ winget install JanDeDobbeleer.OhMyPosh -s winget -l D:\your\path\to\OhMyPosh
 
 访问[官网](https://roadmap.sh/roadmaps)查看详情 | 注意内含收费
 
+!!! success "如果是开发运维者——Dev&Ops"
+    这一份 [DevOps-Roadmap](https://github.com/milanm/DevOps-Roadmap/tree/master?tab=readme-ov-file) 也许能帮到你
 
 ---
 

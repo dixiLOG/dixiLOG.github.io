@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://squidfunk.github.io/mkdocs-material/schema.json": [
+            "mkdocs.yml",
+            "file:///d%3A/dixiLOG/dixiLOG.github.io/mkdocs.yml"
+        ]
+    }
+}

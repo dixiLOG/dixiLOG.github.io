@@ -266,11 +266,14 @@ IDM 的平替，小而美
 
 ---
 
-## CLUT—TAB 快速切换网页标签
+## ~~CLUT—TAB~~ 快速切换网页标签
 
-进一步解放鼠标/触摸板 🤪 但键位资源也是日趋紧张
+!!! danger "已失效"
+    ~~进一步解放鼠标/触摸板 🤪 但键位资源也是日趋紧张~~
 
-> 访问 [Cycle Last Used Tabs 插件主页](https://chrome.google.com/webstore/detail/clut-cycle-last-used-tabs/cobieddmkhhnbeldhncnfcgcaccmehgn?hl=zh-cn)了解更多
+    > ~~访问 [Cycle Last Used Tabs 插件主页](https://chrome.google.com/webstore/detail/clut-cycle-last-used-tabs/cobieddmkhhnbeldhncnfcgcaccmehgn?hl=zh-cn)了解更多~~
+
+目前改用[QuickKey](https://fwextensions.github.io/QuicKey/)作为平替，其 ++alt+z++ 切换最近打开的两个Tab与我之前的设置不谋而合~
 
 ---
 
@@ -383,7 +386,6 @@ dddd
 
 你需要一个专业的[特色翻译库](http://210.72.20.108/index/index.jsp)
 
-
 ---
 
 ## 古典诗词典籍
@@ -421,3 +423,46 @@ dddd
 想想都令人心潮澎湃啊~
 
 > 火柴 + pixpin + simpleTex + ETool，钱就要花在刀把上🤣
+
+---
+
+## 全球TV
+
+前往[TVGarden](https://tv.garden/)，你甚至能听见格林兰岛的摇滚乐   
+> 当然南极还不行
+
+---
+
+## 真のCookbook
+
+如何煮出一个perfect egg？  
+访问[How To Cook](https://cook.aiursoft.cn/)，获得纯粹的程序式Cookbook
+
+> 妈妈再也不用担心我看不懂菜谱了🤣
+
+---
+
+## ML-Visuals
+
+常见的ML解释框图，发布在[Google](https://docs.google.com/presentation/d/11mR1nkIR9fbHegFkcFq8z9oDQ5sjv8E3JJp1LfLGKuk/edit?slide=id.p#slide=id.p)上
+
+> 或者访问项目的[github主页](https://github.com/dair-ai/ml-visuals)
+
+---
+
+## 小手一抖，Cursor就有
+
+!!! bug "消失的标题，这是替身攻击"
+
+无痛 cursor 续杯
+
+快去给 [free-vip](https://github.com/yeongpin/cursor-free-vip) 点星星叭~
+
+---
+
+## 为repo生成tutorial
+
+当你迷失在开源项目的第一个`.py`中时，不妨试试[PocketFlow](https://github.com/The-Pocket/PocketFlow-Tutorial-Codebase-Knowledge)吧~
+
+> 默认为gemini API，是免费的，如果你有Google账号的话  
+

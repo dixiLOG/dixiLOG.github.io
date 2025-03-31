@@ -410,3 +410,14 @@ dddd
 
 !!! tip "此外，它还提供数据科学的 tutorial PDF"
     ![](https://raw.githubusercontent.com/patchy631/ai-engineering-hub/main/resources/join_ddods.png)
+
+---
+
+## ETool
+
+快捷键不够用了？试试[ETool](https://www.etool.site/)
+
+当知识库话术、不常用命令、繁琐的启动配置都可以优雅的通过拼音缩写而不是"WEB→CSDN"的时候  
+想想都令人心潮澎湃啊~
+
+> 火柴 + pixpin + simpleTex + ETool，钱就要花在刀把上🤣

@@ -420,7 +420,7 @@ docs
                 custom_checkbox: true
         ```
 
-    -   [公式](https://squidfunk.github.io/mkdocs-material/reference/math/)
+    -   [公式](https://squidfunk.github.io/mkdocs-material/reference/math/)(`MathJax|KaTeX`二选一即可,我选择了后者)
 
         ---
         ```js title="docs/javascripts/mathjax.js"

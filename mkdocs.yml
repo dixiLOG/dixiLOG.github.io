@@ -216,11 +216,13 @@ extra_javascript:
   # - https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js
   - javascripts/extra.js
   - https://imgbb.com/upload.js
+  # 公式二选一
+  # - javascripts/mathjax.js
+  # - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/katex.js
   - https://unpkg.com/katex@0/dist/katex.min.js
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - javascripts/mathjax.js
-  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
 
   # - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
 extra_css:

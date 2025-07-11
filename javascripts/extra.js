@@ -24,7 +24,7 @@
 
 //     move(left, top) {
 //         this.cursor.style["left"] = `${left}px`;
-//         this.cursor.style["top"] = `${top}px`;
+//         this.cursor.style.top = `${top}px`;
 //     }
 
 //     create() {

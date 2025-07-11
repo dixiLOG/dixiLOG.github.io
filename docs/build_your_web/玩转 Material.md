@@ -1401,6 +1401,33 @@ jobs: # 工作流的具体内容
 
 推送到 GitHub 仓库，等待编译完成，即可在线浏览
 
+??? bug "关于`git commit --amend`引发的修改时间不更新问题及解决方案"
+
+    `git commit --amend`默认不会更新`AuthorDate`，只更新`CommitDate`，但此插件默认查找前者
+    
+    我们可以尝试在命令行中查找某一文件来验证：
+    
+    ```git title="powershell"
+    > git log -1 --pretty=fuller -- docs/NBU-NOTEBOOK/DSP/index.md
+    commit f9fd57162f1125b31b4adefa48f799c666b69da9 (HEAD -> main, origin/main)
+    Author:     your_name <your_email>
+    AuthorDate: Mon Mar 31 16:56:41 2025 +0800
+    Commit:     your_name <your_email>
+    CommitDate: Fri Jul 11 18:44:12 2025 +0800
+    ```
+
+    而其中的`AuthorDate`正是鄙人学会用`--amend`的时间，自此之后修改日期便不再动弹了🤣
+
+    ---
+
+    **解决方案：**
+
+    灰常简单，添加时间即可：
+
+    ```git title="powershell"
+    git commit --amend --date "$(date)"
+    ```
+
 ---
 
 ### 一些简单的功能

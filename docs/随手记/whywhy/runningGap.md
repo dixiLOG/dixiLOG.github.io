@@ -148,7 +148,7 @@
 实际上，休闲跑者的步频大多为 155 RPM，而专业跑者即使在慢跑时也会保持在170 RPM。    
 RPM 增加 5-15% 与减少膝盖病变、减少冲击负荷和减少肌肉损伤有关。  
 增加步数的其他好处包括减少峰值冲击力、缩短步幅、减少髋部内收、以及更多的中足着地。  
-庸俗的说，良好健康的跑步方式能让你在别人下不了床时优雅地出门打卡，而增加步频就十分健康。
+庸俗地说，良好健康的跑步方式能让你在别人下不了床时优雅地出门打卡，而增加步频就十分健康。
 
 最后，关于步频的对手——步幅的问题，虽无此处重墨描绘，但显然也是一个重要的研究课题。 
 步幅是研究中记录最多的动作之一，而大多数研究都指出了与 ^^步幅过大^^ 相关的许多问题。
@@ -210,6 +210,12 @@ RPM 增加 5-15% 与减少膝盖病变、减少冲击负荷和减少肌肉损伤
 
 !!! success "也是能无伤十公里惹"
     <center>![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/41789e89fabf7f298f293f04357160a.jpg){style="zoom: 75%;"} </center>
+
+
+!!! success "25年三月的线上半马"
+    <center>![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E5%8D%8A%E9%A9%AC.jpg){style="zoom: 25%;"} </center>
+    
+    > 已经打回原型了😂
 
 另，发现了一本运动向科普书《无伤跑法》  
 可以选择直接在[微信读书](https://weread.qq.com/book-detail?type=1&senderVid=906068151&v=3f7321007167e8fa3f785e8&wtheme=white&wfrom=app&wvid=906068151&scene=bottomSheetShare)上阅读，或者百度网盘[下载PDF](https://pan.baidu.com/s/1alSa9kAT6QWpKXLk6JCyYQ?pwd=1369)至本地阅读

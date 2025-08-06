@@ -188,9 +188,6 @@ extra:
     - icon: simple/rss
       link: /feed_rss_created.xml
       name: RSS订阅
-    - icon: simple/rss
-      link: /feed_rss_created.xml
-      name: RSS订阅
     - icon: fontawesome/brands/github
       link: https://github.com/dixiLOG
       name: 我滴GitHub

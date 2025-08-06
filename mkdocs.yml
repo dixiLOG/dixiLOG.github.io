@@ -78,51 +78,60 @@ theme:
 
 # 插件配置
 plugins:
-- search: # 搜索
-    lang: 
-      - en
-      - zh  # 中文搜索支持
-    separator: '[\s\u200b\-]' # 分隔符
-- tags # 标签功能 插件
-- glightbox: # 图片灯箱
-    skip_classes:
-         - custom-skip-class-name
-# - meta-descriptions:
-#     export_csv: false
-#     quiet: false
-#     enable_checks: false
-#     min_length: 50
-#     max_length: 160
-#     trim: false # 元描述插件
-- statistics: # 统计功能插件
-    page_template: "page_template/page_statistics.html"
-    words_per_minute: 180
-- blog: # 博客功能插件
-    blog_dir: blog
-    # categories_allowed:      # 允许的分类
-      # - 口水鸡  #书 电影
-      # - 豆腐脑  #输出观点
-      # - 碎碎念  #随笔
-    pagination_per_page: 15 # 每页文章数
-    # post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句
-    post_excerpt_separator: <!-- more -->
-    pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   # 页码格式
-    # pagination_keep_content: true   # 保留分页内容
-    # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
-    post_readtime: false   # 关闭阅读时间
-    # post_readtime_words_per_minute: 300
-# - print-site: # 打印功能插件
-- git-revision-date-localized:  # 日期插件
-    enabled: true
-    fallback_to_build_date: true
-    enable_creation_date: true  # 显示创建时间
-    type: iso_datetime               # 日期显示格式（如 "2周前"）
-    # custom_format: "%Y-%m-%d"   # 自定义日期格式（如 "2023-10-01"）
-    locale: zh                  # 本地化语言（中文）
-    timezone: Asia/Shanghai     # 时区
-    exclude:                    # 排除某些文件
-    - index.md
-- mkdocs-pdf          # pdf嵌入插件
+  - search: # 搜索
+      lang: 
+        - en
+        - zh  # 中文搜索支持
+      separator: '[\s\u200b\-]' # 分隔符
+  - tags # 标签功能 插件
+  - glightbox: # 图片灯箱
+      skip_classes:
+          - custom-skip-class-name
+  # - meta-descriptions:
+  #     export_csv: false
+  #     quiet: false
+  #     enable_checks: false
+  #     min_length: 50
+  #     max_length: 160
+  #     trim: false # 元描述插件
+  - statistics: # 统计功能插件
+      page_template: "page_template/page_statistics.html"
+      words_per_minute: 180
+  - blog: # 博客功能插件
+      blog_dir: blog
+      # categories_allowed:      # 允许的分类
+        # - 口水鸡  #书 电影
+        # - 豆腐脑  #输出观点
+        # - 碎碎念  #随笔
+      pagination_per_page: 15 # 每页文章数
+      # post_excerpt: required # 文章摘要,和下面的配合食用，但不知道为什么我不能开启这一句
+      post_excerpt_separator: <!-- more -->
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"   # 页码格式
+      # pagination_keep_content: true   # 保留分页内容
+      # draft_if_future_date: true # 草稿发布日期大于当前日期则发布为草稿
+      post_readtime: false   # 关闭阅读时间
+      # post_readtime_words_per_minute: 300
+  # - print-site: # 打印功能插件
+  - git-revision-date-localized:  # 日期插件
+      enabled: true
+      fallback_to_build_date: true
+      enable_creation_date: true  # 显示创建时间
+      type: iso_datetime               # 日期显示格式（如 "2周前"）
+      # custom_format: "%Y-%m-%d"   # 自定义日期格式（如 "2023-10-01"）
+      locale: zh                  # 本地化语言（中文）
+      timezone: Asia/Shanghai     # 时区
+      exclude:                    # 排除某些文件
+      - index.md
+  - mkdocs-pdf          # pdf嵌入插件
+  - rss:                            # 新增
+      enabled: true
+      match_path: ".*"
+      length: 20
+      rss_feed_enabled: true
+      json_feed_enabled: true
+      abstract_chars_count: 160
+      use_git: true
+
 
 # mk扩展配置
 markdown_extensions:
@@ -175,6 +184,9 @@ markdown_extensions:
 # 其他配置
 extra:
   social:
+    - icon: simple/rss
+      link: /feed_rss_created.xml
+      name: RSS订阅
     - icon: fontawesome/brands/github
       link: https://github.com/dixiLOG
       name: 我滴GitHub
@@ -187,6 +199,8 @@ extra:
     - icon: simple/wechat
       link: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png
       name: 我滴微信
+
+
   analytics:
     provider: google
     property: G-WNP42HF8NE

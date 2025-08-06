@@ -125,11 +125,12 @@ plugins:
   - mkdocs-pdf          # pdf嵌入插件
   - rss:                            # 新增
       enabled: true
+      image: https://dixilog.github.io/docs/img/favicon.ico   # 整个频道的小图标
+      abstract_chars_count: -1                           # -1 代表输出全文，不截断
       match_path: ".*"
       length: 20
       rss_feed_enabled: true
       json_feed_enabled: true
-      abstract_chars_count: 160
       use_git: true
 
 
@@ -187,6 +188,9 @@ extra:
     - icon: simple/rss
       link: /feed_rss_created.xml
       name: RSS订阅
+    - icon: simple/rss
+      link: /feed_rss_created.xml
+      name: RSS订阅
     - icon: fontawesome/brands/github
       link: https://github.com/dixiLOG
       name: 我滴GitHub
@@ -199,6 +203,8 @@ extra:
     - icon: simple/wechat
       link: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png
       name: 我滴微信
+
+
 
 
   analytics:

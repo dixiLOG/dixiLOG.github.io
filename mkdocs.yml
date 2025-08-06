@@ -125,7 +125,7 @@ plugins:
   - mkdocs-pdf          # pdf嵌入插件
   - rss:                            # 新增
       enabled: true
-      image: https://dixilog.github.io/docs/img/favicon.ico   # 整个频道的小图标
+      image: https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F.png   # 整个频道的小图标
       abstract_chars_count: -1                           # -1 代表输出全文，不截断
       match_path: ".*"
       length: 20

@@ -14,7 +14,7 @@
 
 !!! question "随机信号的定义"
 
-    无法<u>确定</u>描述的<u>时变信号</u>，但能通过<u>大量统计实验</u>进行数理统计与特征估计
+    无法<span style="border-bottom: 1.5px dashed orange;">确定</span>描述的<span style="border-bottom: 1.5px dashed orange;">时变信号</span>，但能通过<span style="border-bottom: 1.5px dashed orange;">大量统计实验</span>进行数理统计与特征估计
 
 !!! success "能判断哪些信号是连续/离散随机信号与变量"
     

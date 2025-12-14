@@ -4,13 +4,13 @@
   <div id="progress-bar"></div>
 </div>
 
-!!! quote "让随机变量的所有概念随<u>时间动起来</u>"
+!!! quote "让随机变量的所有概念随<span style="border-bottom: 1.5px dashed orange;">时间动起来</span>"
 
 ## 基本概念
 
 **随机过程**
 
-是 $\mathrm{X}(\mathrm{t},\ \zeta)\ (\mathrm{t}\in\mathrm{T},\ \zeta\in\Omega)$ 在时间进程中处于<u>不同时刻</u>的<u>随机变量</u>的<u>集合</u>
+是 $\mathrm{X}(\mathrm{t},\ \zeta)\ (\mathrm{t}\in\mathrm{T},\ \zeta\in\Omega)$ 在时间进程中处于<span style="border-bottom: 1.5px dashed orange;">不同时刻</span>的<span style="border-bottom: 1.5px dashed orange;">随机变量</span>的<span style="border-bottom: 1.5px dashed orange;">集合</span>
 
 是时间和样本点（样本函数）的 **二元函数**
 
@@ -35,7 +35,7 @@
 
 **状态空间**
 
-样本函数<u>值域</u>
+样本函数<span style="border-bottom: 1.5px dashed orange;">值域</span>
 
 
 !!! example "例"
@@ -85,7 +85,7 @@
 
 ## 随机过程 de 性质
 
-同<u>多维随机变量</u>一样，随机过程 X(t)的 n 维概率分布具有下列主要性质：
+同<span style="border-bottom: 1.5px dashed orange;">多维随机变量</span>一样，随机过程 X(t)的 n 维概率分布具有下列主要性质：
 
 $$
 \begin{array}{r l}&{F_{X}(x_{1},x_{2},...,-\infty,...,x_{n};t_{1},t_{2},...,t_{i},...,t_{n})=0}\\ &{F_{X}(\infty,\infty,...,\infty;t_{1},t_{2},...,t_{n})=1}\\ &{f_{X}(x_{1},x_{2},...,x_{n};t_{1},t_{2},...,t_{n})\geq0}\end{array}
@@ -107,7 +107,7 @@ $$
 
 !!! success "抓随机变量！！"
 
-> 注意，一般积分内的 x 都是 EX ，根据<u>随机变量函数</u>的性质求解
+> 注意，一般积分内的 x 都是 EX ，根据<span style="border-bottom: 1.5px dashed orange;">随机变量函数</span>的性质求解
 
 1. 期望—各个时刻的摆动中心
 
@@ -153,7 +153,7 @@ $$
 
 4. 自相关函数、自协方差函数与自相关
 
-> 任意俩个状态之间的<u>相关性</u>，反映过程内部快慢
+> 任意俩个状态之间的<span style="border-bottom: 1.5px dashed orange;">相关性</span>，反映过程内部快慢
 
 !!! info ""
 
@@ -248,7 +248,7 @@ $$
 f_X(x_1,x_2;t_1,t_2)=\frac{1}{\left(2\pi\right)^2}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}Q_X(u_1,u_2;t_1,t_2)\cdot e^{-j(u_1x_1+u_2x_2)}du_1du_2
 $$
 
-求偏导，可得其<u>相关函数</u>，即
+求偏导，可得其<span style="border-bottom: 1.5px dashed orange;">相关函数</span>，即
 
 $$
 R_X\left.(t_1,t_2)=-\frac{\partial^2Q_X\left(u_1,u_2;t_1,t_2\right)}{\partial u_1\partial u_2}\right|_{u_1=u_2=0}
@@ -288,7 +288,7 @@ $$
 
 ### 严平稳过程
 
-设有随机过程{ X(t) , t ∈T}，若对于任意 n 和任意 t1<t2<…<tn， $t_i\in\mathsf{T}$ 时刻的 n 个状态的 n 维概率密度，<u>其不随时间平移 </u>$\Delta$<u> 而变化</u>
+设有随机过程{ X(t) , t ∈T}，若对于任意 n 和任意 t1<t2<…<tn， $t_i\in\mathsf{T}$ 时刻的 n 个状态的 n 维概率密度，<span style="border-bottom: 1.5px dashed orange;">其不随时间平移 </span>$\Delta$<span style="border-bottom: 1.5px dashed orange;"> 而变化</span>
 
 1. **一维概率密度函数** 与时间无关
 2. **二维概率密度函数** 只与 t1、t2 的时间间隔，时间差$\tau$有关， 而与“时间起点”无关
@@ -321,7 +321,7 @@ $$
 
     $C_{X}\left(\tau\right)=C_{X}\left(-\tau\right)$
 
-    <u>自协方差函数</u>在 $\tau=0$ 上也具有最大值
+    <span style="border-bottom: 1.5px dashed orange;">自协方差函数</span>在 $\tau=0$ 上也具有最大值
 
     此外，还有
 
@@ -329,7 +329,7 @@ $$
     - 若平稳过程 X(t) 含有一个周期分量，那么 $\mathsf{R}_\mathsf{X}(\mathsf{t})$ 也可能含有一个同周期的周期分量
     - 若平稳过程不含有任何周期分量，则  $\lim_{|\tau|\to\infty}R_{_X}(\tau)=R_{_X}(\infty)=m_{_X}^2\quad\text{(直流分量平方)}$
     - 若非周期平稳过程含有均值，则自相关有 $R_{x}\left(\tau\right)=C_{x}\left(\tau\right)+{m_{x}}^{2}$
-    - 平稳过程自相关函数中不会含有<u>阶跃因子</u>
+    - 平稳过程自相关函数中不会含有<span style="border-bottom: 1.5px dashed orange;">阶跃因子</span>
 
     !!! info ""
 
@@ -402,13 +402,13 @@ $$
 
 ### 联合平稳
 
-**两个平稳随机过程** 的<u>互相关函数</u>是仅与 $\tau$ 有关的函数，即
+**两个平稳随机过程** 的<span style="border-bottom: 1.5px dashed orange;">互相关函数</span>是仅与 $\tau$ 有关的函数，即
 
 $$
 R_{X Y}\left(t_{1},t_{2}\right)=E[X(t_{1})Y(t_{2})]=R_{X Y}(\tau),\tau=t_{2}-t_{1}
 $$
 
-则称之为<u>联合宽平稳</u>
+则称之为<span style="border-bottom: 1.5px dashed orange;">联合宽平稳</span>
 
 > 若两个过程中存在不是平稳的，则一定不是  
 > 若是联合宽平稳，则两者一定为平稳随机过程
@@ -421,7 +421,7 @@ $$
 
 !!! success "联合平稳随机过程的性质"
 
-    - 互相关函数 `R` 与互协方差函数 `C`<u>不再是偶函数</u>
+    - 互相关函数 `R` 与互协方差函数 `C`<span style="border-bottom: 1.5px dashed orange;">不再是偶函数</span>
     - $R_{X Y}(\tau)=0$ , $\forall\,\tau$ 表示两个平稳过程正交
     - $R_{X Y}\left(0\right)=0$ 两个平稳过程所有同一时刻的状态正交
     - $C_{{X Y}}(\tau)=0$ , $\forall\,\tau$ 表示两个平稳过程互不相关
@@ -597,7 +597,7 @@ $$
 
 ### 联合复随机平稳过程
 
-!!! success "联合复随机平稳<u>充要</u>条件"
+!!! success "联合复随机平稳<span style="border-bottom: 1.5px dashed orange;">充要</span>条件"
 
     俩复随机过程平稳，且 $R_{Z_{1}Z_{2}}(t,t+\tau)=R_{Z_{1}Z_{2}}(\tau)$
 
@@ -761,7 +761,7 @@ $$
 **性质**
 
 - 若平稳过程 X(t) 的$R_{X}(\tau)$在 `0` 处连续，则$R_{X}(\tau)$在所有 `T` 上也连续
-- 均方连续的随机过程的期望也连续，<u>极限与期望可互换</u>
+- 均方连续的随机过程的期望也连续，<span style="border-bottom: 1.5px dashed orange;">极限与期望可互换</span>
 
 $$
 l\cdot i\cdot m\;X(t+\Delta t)=X(t)\Longrightarrow\operatorname*{lim}_{\Delta t\rightarrow0}E[X(t+\Delta t)]=E[X(t)]
@@ -841,7 +841,7 @@ $$
     R_{X^{\prime}}(t_{1},t_{2})=\frac{\partial^{2}R_{X}(t_{1},t_{2})}{\partial t_{1}\partial t_{2}}=-\frac{d^{2}R_{X}(\tau)}{d\tau^{2}}
     $$
 
-    **得到<u>平稳随机过程均方可导</u>的条件**
+    **得到<span style="border-bottom: 1.5px dashed orange;">平稳随机过程均方可导</span>的条件**
 
     $$
     R^{\prime\prime}(\tau)\text{在}\tau=0\text{处存在}\\R^{\prime}(\tau)\text{在}\tau=0\text{处连续}
@@ -881,7 +881,7 @@ $$
 
 ## 各态历经性
 
-基于<u>各态历经性（遍历性）</u>用【时间平均值】代替【统计平均值】 ，以减少计算量
+基于<span style="border-bottom: 1.5px dashed orange;">各态历经性（遍历性）</span>用【时间平均值】代替【统计平均值】 ，以减少计算量
 
 这必须在【平稳】的前提下进行
 
@@ -893,7 +893,7 @@ $$
 
     则称此特征具有【各态历经性】
 
-    > 对于一个平稳随机过程 X，满足【均值与自相关】都具有<u>各态历经性</u>
+    > 对于一个平稳随机过程 X，满足【均值与自相关】都具有<span style="border-bottom: 1.5px dashed orange;">各态历经性</span>
 
     $$
     \begin{array}{r c l}{{a}}&{{=}}&{{\overline{{{a}}}}}\\ {{R\left(\tau\right)}}&{{=}}&{{\overline{{{R\left(\tau\right)}}}}}\end{array}
@@ -916,13 +916,13 @@ $$
 > 了解一下
 
 - 各态历经性一定是平稳随机过程，反之不一定
-- 平稳随机过程 **均值** 具有各态历经性的<u>充要条件</u>
+- 平稳随机过程 **均值** 具有各态历经性的<span style="border-bottom: 1.5px dashed orange;">充要条件</span>
 
 $$
 \lim_{\tau\to\infty}\frac{1}{T}\int_0^{2\tau}(1-\frac{\tau}{2T})\cdot[R_X(\tau)-m_X^2]d\tau=0
 $$
 
-- 平稳随机过程 **自相关函数** 具有各态历经性的<u>充要条件</u>
+- 平稳随机过程 **自相关函数** 具有各态历经性的<span style="border-bottom: 1.5px dashed orange;">充要条件</span>
 
 $$
 \lim_{T\to\infty}\frac{1}{T}\int_0^{2T}(1-\frac{\tau_1}{2T})\cdot[B(\tau_1)-{R_X}^2(\tau)]d\tau_1=0\\\text{式中}B(\tau_1)=E[X(t+\tau+\tau_1)X(t+\tau_1)X(t+\tau)X(t)]R_X(\tau)=E[X(t+\tau)X(t)]

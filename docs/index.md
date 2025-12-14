@@ -21,7 +21,7 @@ title: DIXI的个人博客
     - 青龙山外派光明顶发电厂首席技工，智商税拥趸  
     - NBU本科在读（自称 *NBUCETer* ）
     - 重度音乐依赖症，打电话会死星人
-    - “坦克动荡2” *<u>20:0</u>* 零封 Laika
+    - “坦克动荡2” *<span style="border-bottom: 1.5px dashed orange;">20:0</span>* 零封 Laika
     - 喜欢看书，喜欢折腾，喜欢开源
 
 !!! tip "dixiLOG 览揆之辰"

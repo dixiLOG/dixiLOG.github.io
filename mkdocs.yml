@@ -313,7 +313,7 @@ nav:
         - 随手记/whywhy/huangli.md
         - 随手记/whywhy/runningGap.md
         - 随手记/whywhy/personalTax.md
-        - 随手记/20250813.md
+      - 随手记/20250813.md
 
         
   - 长河集:
@@ -328,5 +328,19 @@ nav:
   - NBU_ROCOS:
       - ROCOS/index.md
       - ROCOS/info&ref.md
+  - 推免 Flysheet:
+      - Flysheet/index.md
+      - Flysheet/the1stLesson.md
+      - 面向对象:
+          - Flysheet/面向对象/01self_locate.md
+          - Flysheet/面向对象/02college_choose.md
+          - Flysheet/面向对象/03tutor_choose.md
+          - Flysheet/面向对象/04info_material_system.md
+          - Flysheet/面向对象/05review_exp.md
+      - Flysheet/timeline.md
+      - 经历与感悟:
+          - Flysheet/tourFeel/01hzl.md
+
+  
   - 闲言碎语:
       - blog/index.md

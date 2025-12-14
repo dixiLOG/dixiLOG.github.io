@@ -19,13 +19,15 @@ jobs: # 工作流的具体内容
           python-version: 3.x
 
       # 使用 GitHub Actions 部署，需在配置文件中添加插件安装步骤：不加则github编译报错
-      - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
-      - run: pip install mkdocs-statistics-plugin
-      - run: pip install mkdocs-rss-plugin # 附加rss插件
-      - run: pip install mkdocs-print-site-plugin # 附加打印插件
-      - run: pip install mkdocs-glightbox # 附加图片放大插件
-      - run: pip install mkdocs-git-revision-date-localized-plugin # 日期记录
-      - run: pip install mkdocs-pdf
+    #   - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
+    #   - run: pip install mkdocs-statistics-plugin
+    #   - run: pip install mkdocs-rss-plugin # 附加rss插件
+    #   - run: pip install mkdocs-print-site-plugin # 附加打印插件
+    #   - run: pip install mkdocs-glightbox # 附加图片放大插件
+    #   - run: pip install mkdocs-git-revision-date-localized-plugin # 日期记录
+    #   - run: pip install mkdocs-pdf
+        # 替换掉原本的一堆 pip install run
+      - run: pip install -r requirements.txt
 
       # 手动添加一个步骤来配置 Git 的用户信息
       - name: Configure Git

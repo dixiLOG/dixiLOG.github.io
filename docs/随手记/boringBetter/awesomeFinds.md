@@ -110,7 +110,7 @@ sudo ./v2rayN
         2. 近乎直觉，如果你习惯 `md` 语法的话[^1]
         3. 比较质朴。需要花哨的出门左转 [Slidev](https://cn.sli.dev/guide/)
         4. 可以通过高超的 `CSS` 技巧弥补，  
-        但使用 `moffee` 的初衷不就是<u>简单</u>吗？
+        但使用 `moffee` 的初衷不就是<span style="border-bottom: 1.5px dashed orange;">简单</span>吗？
 
 
 

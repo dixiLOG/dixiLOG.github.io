@@ -4,12 +4,12 @@
   <div id="progress-bar"></div>
 </div>
 
-> 区别于【<u>平稳</u>随机过程】  
+> 区别于【<span style="border-bottom: 1.5px dashed orange;">平稳</span>随机过程】  
 > 在概率论的[乘法公式](https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/PT01/#_7)中有所提及
 
-- <u>马尔可夫过程</u>是发展很快、应用很广的一种重要的随机过程，它在信息处理、自动控制、数字计算方法、近代物理、生物（生灭过程）以及公用事业等方面皆有重要的应用
-- <u>独立增量过程</u>是一种特殊的马尔可夫过程，泊松（Poisson）过程和维纳（Wiener）过程是两个最重要的独立增量过程。电子系统中，它们是研究热噪声和散粒噪声的数学基础，具有重要的实用价值。
-- 独立随机过程是一种很特殊的随机过程，它的重要应用就是<u>高斯白噪声</u>。连续时间参数的独立随机过程是一种理想化的随机过程，它在数学处理上具有简单、方便的优点。
+- <span style="border-bottom: 1.5px dashed orange;">马尔可夫过程</span>是发展很快、应用很广的一种重要的随机过程，它在信息处理、自动控制、数字计算方法、近代物理、生物（生灭过程）以及公用事业等方面皆有重要的应用
+- <span style="border-bottom: 1.5px dashed orange;">独立增量过程</span>是一种特殊的马尔可夫过程，泊松（Poisson）过程和维纳（Wiener）过程是两个最重要的独立增量过程。电子系统中，它们是研究热噪声和散粒噪声的数学基础，具有重要的实用价值。
+- 独立随机过程是一种很特殊的随机过程，它的重要应用就是<span style="border-bottom: 1.5px dashed orange;">高斯白噪声</span>。连续时间参数的独立随机过程是一种理想化的随机过程，它在数学处理上具有简单、方便的优点。
 
 <table>
 <tr>
@@ -38,7 +38,7 @@ $$
 F_{X}\left(x_{n}\mid x_{n-1},x_{n-2},\cdot\cdot\cdot{},x_{1}\right)=F_{X}\left(x_{n}\mid x_{n-1}\right)
 $$
 
-则此随机序列为<u>马尔可夫序列</u>
+则此随机序列为<span style="border-bottom: 1.5px dashed orange;">马尔可夫序列</span>
 
 对于连续型随机变量，则有概率密度函数
 
@@ -52,8 +52,8 @@ $$
 
 > 了解一下
 
-1. 其<u>子序列</u>仍为马尔可夫序列
-2. 序列的<u>反方向序列</u>仍为马尔可夫序列
+1. 其<span style="border-bottom: 1.5px dashed orange;">子序列</span>仍为马尔可夫序列
+2. 序列的<span style="border-bottom: 1.5px dashed orange;">反方向序列</span>仍为马尔可夫序列
 
 ??? quote "这里插个证明，不是说是要记住，单纯留点印象"
     $$
@@ -131,7 +131,7 @@ $$
 
 > 表现为【`m` 时刻下为 `ai` 事件，而 `m+k` 时刻下转移到 `aj` 事件的概率】  
 
-> 下面统统的都是<u>齐次马链</u>，即与 m 无关
+> 下面统统的都是<span style="border-bottom: 1.5px dashed orange;">齐次马链</span>，即与 m 无关
 
 ---
 
@@ -216,7 +216,7 @@ $$
     P\left\{X_{m}=a_{i},X_{m+l+k}=a_{j}\right\}=\sum_{r=1}^{N}P\{X_{m}=a_{i},X_{m+l}=a_{r},X_{m+l+k}=a_{j}\}
     $$
 
-    巧了，这就是<u>全概公式</u>（把所有可能的 `r` 都求了一遍）
+    巧了，这就是<span style="border-bottom: 1.5px dashed orange;">全概公式</span>（把所有可能的 `r` 都求了一遍）
     故左右相等，证毕
 
     > 而它的可迭代性又将揭开另一个重要滴性质
@@ -224,7 +224,7 @@ $$
 - $p_{i j}(n)=\sum_{r=1}^{N}p_{i r}(1)p_{r j}(n-1)=\sum_{r=1}^{N}p_{i r}p_{r j}(n-1)$
 - 从矩阵角度，有 $\mathbf{P}(n)=\mathbf{P}(1)\mathbf{P}(n-1)=\cdots=\mathbf{P}^{n}$
 
-> <u>n 步转移概率矩阵</u>等于一步转移概率矩阵的 `n` 次方
+> <span style="border-bottom: 1.5px dashed orange;">n 步转移概率矩阵</span>等于一步转移概率矩阵的 `n` 次方
 
 ---
 
@@ -236,7 +236,7 @@ $$
 
     ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RMS7bPYMioLOhxxR0jvcPEFinYc.png)
 
-!!! success "马氏链的任意有限维分布完全可以由<u>初始分布</u>和<u>一步转移概率矩阵</u>所确定"
+!!! success "马氏链的任意有限维分布完全可以由<span style="border-bottom: 1.5px dashed orange;">初始分布</span>和<span style="border-bottom: 1.5px dashed orange;">一步转移概率矩阵</span>所确定"
 
 ---
 
@@ -325,7 +325,7 @@ $$
 
     $\begin{aligned}&(1)P\{X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c|X_{0}=c\}\\&(2)P\{X_{n+2}=c|X_{n}=b\}\end{aligned}$
 
-    1. 根据马氏链，根据<u>初始状态与一步转移矩阵</u>可得
+    1. 根据马氏链，根据<span style="border-bottom: 1.5px dashed orange;">初始状态与一步转移矩阵</span>可得
 
     $$
     \begin{array}{r l}&{P\{X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c|X_{0}=c\}}\\ &{~=P\{X_{0}=c,X_{1}=b,X_{2}=c,X_{3}=a,X_{4}=c\}/P\{X_{0}=c\}}\\ &{~=P\{X_{4}=c\Big|X_{3}=a\}\cdot P\{X_{3}=a\Big|X_{2}=c\}\cdot P\{X_{2}=c\Big|X_{1}=b\}}\\ &{~\cdot~P\{X_{1}=b|X_{0}=c\}\cdot P\{X_{0}=c\}/P\{X_{0}=c\}}\\ &{~=P_{a c}\cdot P_{c a}\cdot P_{b c}\cdot P_{c b}}\end{array}
@@ -401,11 +401,11 @@ $$
 
 过程的增量$X(t_1)-X(t_0)、X(t_2)-X(t_1)、\cdots、X(t_n)-X(t_{n-1})$是相互独立的随机变量
 
-则称$X(t)$为<u>独立增量过程，又称为可加过程</u>
+则称$X(t)$为<span style="border-bottom: 1.5px dashed orange;">独立增量过程，又称为可加过程</span>
 
 > 是一种特殊的马尔科夫过程
 
-其中，以<u>泊松过程与维纳过程</u>(布朗运动过程)最为典型，广泛应用于计数问题，故又称为计数过程
+其中，以<span style="border-bottom: 1.5px dashed orange;">泊松过程与维纳过程</span>(布朗运动过程)最为典型，广泛应用于计数问题，故又称为计数过程
 
 > [0-1 分布][二项分布][泊松分布]是用于描述绘独立增量过程的三种常见分布
 
@@ -625,7 +625,7 @@ $$
 
 !!! example "例 | 泊松过程的定义"
 
-    令 `X(t)` 表示$[0,t]$时间段内迁入某地区的<u>居民户数</u>,每户居民的人口数分布如下:
+    令 `X(t)` 表示$[0,t]$时间段内迁入某地区的<span style="border-bottom: 1.5px dashed orange;">居民户数</span>,每户居民的人口数分布如下:
 
     $$
     \begin{array}{cccc}\text{每户人口数}&2&3&4\\\text{分布概率}&1/4&1/2&1/4\end{array}
@@ -645,7 +645,7 @@ $$
 
     > 我 ~~猜猜看~~ 推断是极短时间内，只可能迁入一户，故短时间迁入一户的概率就是均值
 
-    那么计算其【不可分性】，即在很短时间内，同时迁入俩人以上的概率为<u>高阶无穷小</u>
+    那么计算其【不可分性】，即在很短时间内，同时迁入俩人以上的概率为<span style="border-bottom: 1.5px dashed orange;">高阶无穷小</span>
 
     而实际上有
 

@@ -9,7 +9,11 @@
         <div class="xszt">信号变换的本质是拉普拉斯变换</div>
     </center>  
       
-<center>^^用拉氏变换解决微分方程，Z 变换解决差分方程^^</center>
+<center>
+
+^^用拉氏变换解决微分方程，Z 变换解决差分方程^^
+
+</center>
 
 
 > 参考文章[传送门](https://www.zhihu.com/question/21064916)

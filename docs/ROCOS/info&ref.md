@@ -58,8 +58,8 @@
 
 ## 学习路径
 
-> 以代码组为主线，分为 <u>比赛背景与基础知识</u> 、 <u>Client 环境搭建</u> 、 <u> rocos架构熟悉</u>、  
-> <u>rocos 实战 —— 以wht老师教学视频(以下称为“wht视频”)为引</u>
+> 以代码组为主线，分为 <span style="border-bottom: 1.5px dashed orange;">比赛背景与基础知识</span> 、 <span style="border-bottom: 1.5px dashed orange;">Client 环境搭建</span> 、 <span style="border-bottom: 1.5px dashed orange;"> rocos架构熟悉</span>、  
+> <span style="border-bottom: 1.5px dashed orange;">rocos 实战 —— 以wht老师教学视频(以下称为“wht视频”)为引</span>
 
 ### 1. 比赛背景与基础知识  
 

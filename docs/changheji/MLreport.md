@@ -156,13 +156,13 @@ CNN 的核心思想是通过卷积操作（Convolution Operation）提取图像�
 
 
 !!! note "模型对比"
-    两种模型，前者是现代CNN模型的<u>守门员</u>，另一者则为计算机视觉领域的<u>革新者</u>  
+    两种模型，前者是现代CNN模型的<span style="border-bottom: 1.5px dashed orange;">守门员</span>，另一者则为计算机视觉领域的<span style="border-bottom: 1.5px dashed orange;">革新者</span>  
 
     在计算机视觉领域各有优势
 
-    ResNet 在<u>传统任务</u>中表现优异
+    ResNet 在<span style="border-bottom: 1.5px dashed orange;">传统任务</span>中表现优异
 
-    而 ViT 在处理<u>复杂图像和全局信息</u>时表现出色
+    而 ViT 在处理<span style="border-bottom: 1.5px dashed orange;">复杂图像和全局信息</span>时表现出色
 
 
 ---

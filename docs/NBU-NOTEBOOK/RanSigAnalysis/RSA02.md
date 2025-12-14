@@ -25,7 +25,7 @@ $$
 \int_{-\infty}^{\infty}\Big[s(t)\Big]^{2}\mathrm{d}t=\frac{1}{2\pi}\int_{-\infty}^{\infty}\Big|S(\omega)\Big|^{2}\mathrm{d}\omega
 $$
 
-<u>帕萨瓦尔定理</u>得；$\left|S(\omega)\right|^{2}$ 称为 $s(t)$ 的能量谱密度
+<span style="border-bottom: 1.5px dashed orange;">帕萨瓦尔定理</span>得；$\left|S(\omega)\right|^{2}$ 称为 $s(t)$ 的能量谱密度
 
 !!! question "题外话—帕萨瓦尔定理推导"
 
@@ -59,7 +59,7 @@ $$
 \begin{array}{l}{\displaystyle\int_{-\infty}^{\infty}\mid x_{k}^{2}(t)\mid d t\rightarrow\infty}\\ {\displaystyle\operatorname*{lim}_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}\mid x_{k}^{2}(t)\mid d t<\infty}\end{array}
 $$
 
-> 故存在功率谱，称为<u>功率信号</u>
+> 故存在功率谱，称为<span style="border-bottom: 1.5px dashed orange;">功率信号</span>
 
 工程上使用【截尾函数】，取一段时间，则满足绝对可积条件，FT 存在
 
@@ -90,7 +90,7 @@ $$
 
 !!! success "平稳随机过程 PSD 的性质"
 
-    **非负实偶 + 绝对可积 + <u>实轴上</u>无极点**
+    **非负实偶 + 绝对可积 + <span style="border-bottom: 1.5px dashed orange;">实轴上</span>无极点**
 
 !!! example "例"
 
@@ -171,7 +171,7 @@ $$
 G_{X Y}(\omega)=\operatorname*{lim}_{\tau\to\infty}\frac{1}{2T}E[X_{\tau}^{*}(\omega)Y_{\tau}(\omega)]
 $$
 
-且<u>交换顺序下共轭相等</u>，即
+且<span style="border-bottom: 1.5px dashed orange;">交换顺序下共轭相等</span>，即
 
 $$
 G_{X Y}(\omega)=G_{Y X}^{}\mathrm{}^{*}(\omega)
@@ -209,7 +209,7 @@ $$
     ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PJvVbaSpCo9ozSxAXBMctvnXnve.png)
 
     > 注意复随机过程  
-    > 我想你应该是知道<u>自相关函数</u>里面的参数是怎么看的吧（把 t 去掉）
+    > 我想你应该是知道<span style="border-bottom: 1.5px dashed orange;">自相关函数</span>里面的参数是怎么看的吧（把 t 去掉）
 
 ---
 
@@ -271,7 +271,7 @@ $$
 
 ## 色噪声
 
-> 非<u>白噪声</u>，歪比巴卜
+> 非<span style="border-bottom: 1.5px dashed orange;">白噪声</span>，歪比巴卜
 
 ---
 
@@ -335,7 +335,7 @@ $$
     R_{XY}(t+\tau,t)=E\left\{X(t+\tau)[X(t)+Z(t)]\right\}=R_{X}(\tau)
     $$
 
-    满足条件，则<u>联合平稳</u>
+    满足条件，则<span style="border-bottom: 1.5px dashed orange;">联合平稳</span>
 
     容易得到 PSD 为
 

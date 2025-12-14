@@ -56,7 +56,7 @@ $$
 ### 平稳随机过程通过线性系统
 
 > 前提：输入 **双侧随机信号**  
-> 单边信号相当于在 `0` 处有一个阶跃信号，则输出必然<u>不平稳</u>
+> 单边信号相当于在 `0` 处有一个阶跃信号，则输出必然<span style="border-bottom: 1.5px dashed orange;">不平稳</span>
 
 
 !!! info "性质"
@@ -67,7 +67,7 @@ $$
 
     $\begin{array}{l}{{E[Y(t)]=m_{X}\cdot\int_{0}^{\infty}h(t)d t=m_{X}\cdot H(0)}}\\ {{\displaystyle R_{X Y}\left(\tau\right)=R_{X}\left(\tau\right)*h(\tau)\quad R_{Y X}\left(\tau\right)=R_{X}\left(\tau\right)*h(-\tau)}}\\ {{\displaystyle R_{Y}\left(\tau\right)=R_{X}\left(\tau\right)*h(\tau)*h(-\tau)}}\\ {{\displaystyle R_{Y}\left(\tau\right)=R_{X Y}\left(\tau\right)*h(-\tau)\quad R_{Y}\left(\tau\right)=R_{Y X}\left(\tau\right)*h(\tau)}}\end{array}$
 
-    - 当<u>输出噪声带宽远大于系统带宽</u>（10 倍），就可当作<u>白噪声</u>
+    - 当<span style="border-bottom: 1.5px dashed orange;">输出噪声带宽远大于系统带宽</span>（10 倍），就可当作<span style="border-bottom: 1.5px dashed orange;">白噪声</span>
     - 且能很好的测出系统的冲激响应与输入输出的互相关函数$R_{X Y}$
 
 ---
@@ -250,7 +250,7 @@ $$
     
     ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/H3uNbHkv3omqnzxyLYwcCPfOn2b.jpg)
 
-输出的<u>自相关函数</u>（在频域求）
+输出的<span style="border-bottom: 1.5px dashed orange;">自相关函数</span>（在频域求）
 
 $$
 R_{Y}(\tau)=\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{N_{0}}{2}\left|H(\omega)\right|^{2}e^{j\omega\tau}d\omega=\frac{1}{2\pi}\int_{0}^{\infty}N_{0}\left|H(\omega)\right|^{2}\cos\omega\tau d\omega
@@ -262,7 +262,7 @@ $$
 {\bf P}_{Y}=\frac{N_{0}}{2\pi}\int_{0}^{\infty}\left|H\left(\omega\right)\right|^{2}d\omega
 $$
 
-> 这里可用<u>帕萨瓦尔定理</u>求解积分
+> 这里可用<span style="border-bottom: 1.5px dashed orange;">帕萨瓦尔定理</span>求解积分
 
 ---
 
@@ -446,7 +446,7 @@ $$
 
 !!! example "必考大题"
 
-    仿<u>例 4.4</u>，改$X(t)=\alpha\cos(\omega_{0}t+\phi),\phi\sim U(0,2\pi)$
+    仿<span style="border-bottom: 1.5px dashed orange;">例 4.4</span>，改$X(t)=\alpha\cos(\omega_{0}t+\phi),\phi\sim U(0,2\pi)$
 
     冲激响应与频响函数：$h(t)=be^{-bt}\cdot U(t)\leftrightarrow H(\omega)=\frac{b}{b+j\omega}$
 

@@ -262,3 +262,22 @@ button.md-top {
 
 
 
+/* --- 自定义表格列分隔线 --- */
+
+/* 基础样式：定义线条的颜色和样式（橙色虚线） */
+.md-typeset .col-sep-1 table td:nth-child(1),
+.md-typeset .col-sep-1 table th:nth-child(1),
+.md-typeset .col-sep-2 table td:nth-child(2),
+.md-typeset .col-sep-2 table th:nth-child(2) {
+    border-right: 1.5px dashed #c8b2b24e;
+}
+
+/* 进阶：如果你想恢复全竖线表格 */
+.md-typeset .col-sep-all table td,
+.md-typeset .col-sep-all table th {
+    border-right: 1.5px dashed #c8b2b24e;
+}
+.md-typeset .col-sep-all table td:last-child,
+.md-typeset .col-sep-all table th:last-child {
+    border-right: none;
+}

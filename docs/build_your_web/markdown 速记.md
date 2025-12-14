@@ -98,7 +98,7 @@
     ***[链接名称](链接地址 "悬停label")***
     <直链>
     ```
-    ***<u>[博客地址](https://dixilog.github.io/ "my blog")</u>***
+    ***<span style="border-bottom: 1.5px dashed orange;">[博客地址](https://dixilog.github.io/ "my blog")</span>***
 
     <https://dixilog.github.io>
 

@@ -94,6 +94,7 @@ Flysheet 导航栏，可根据需要跳着看（总有一款适合你嘞 XD）
 几个月下来的一些心得，纯主观，姑妄言之姑听之：
 
 - 放宽心，双非的推免远比你想的 simple🤣(simple≠easy)  
+- paper 决定了你能否冲刺 top 高校，而英语水平在师生双选时往往是隐形优势项  
 - 定下计划后尽早执行，先拉坨大的再慢慢迭代；不存在完全的准备，不妨冲动一些  
 - 自我定位决定方向，最适合就是最好的。title 当然有用但别指望，人定胜天  
 - 多问，student help student；方向要问细，最好能到课题组  
@@ -131,6 +132,15 @@ Flysheet 导航栏，可根据需要跳着看（总有一款适合你嘞 XD）
                 </div>
                 <div class="flink-item-name heti-skip"> 22 通创_frederick</div>
                 <div class="flink-item-desc">。</div>
+            </a>
+        </div>
+        <div class="flink-list-item">
+            <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web&vd_source=19e88925ba133bc70484383287d3591f" title="肥肥鲨老祖" target="_blank">
+                <div class="flink-item-icon">
+                    ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/image-20251215090417910.png){ .off-glb }
+                </div>
+                <div class="flink-item-name heti-skip"> 20 自动化_eating </div>
+                <div class="flink-item-desc"> 并没有什么 </div>
             </a>
         </div>
     </div>

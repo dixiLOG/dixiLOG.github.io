@@ -183,7 +183,8 @@ Flysheet 导航栏，可根据需要跳着看（总有一款适合你嘞 XD）
 ???+ quote "导师选择&套瓷"
 
     - [导师选择方法论](https://www.zhihu.com/question/666456206)  
-    - [PI Review - 研究生导师点评网站](https://pi-review.com/)
+    - [PI Review - 研究生导师点评网站](https://pi-review.com/)  
+    - [研控 - 研究生导师点评网站](https://www.yankong.org/review)  
     - 师兄师姐、某书、直系学长学姐  
     - [和导师交流的经验和一些技巧](https://www.eeban.com/thread-225534-1-1.html)  
     - [套瓷信格式](https://mp.weixin.qq.com/s/ySzHPlgFF8NvcPFx7bx6Nw)  

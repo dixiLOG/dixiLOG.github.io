@@ -39,7 +39,7 @@
 - CV 里面的每个字、每个项目都得烂熟于心  
 - 排版美丽，充分利用一页纸的版面
 
-下面以我的简历为例
+下面以我的简历为例（并没有多好的意思，仅仅是我只有自己的简历）
 
 > PPT 原稿可戳 [这里](https://pan.baidu.com/s/1GxU_wDzAnttkeJz6vy7VFg?pwd=4y4m) 直接网盘下载
 
@@ -111,10 +111,9 @@
 PPT 就是你的简历，但它更像是一张画布，你可以在上面自由涂鸦，但一定要<span style="border-bottom: 1.5px dashed orange;">专注</span>，不要让你的思绪分散，否则会影响你的表达
 
 鉴于网络上的 PPT 模板要么不够学术，要么过于花哨，我自己调研了一番，  
-搓了一个 PPT 模板，这里也给出，按需取用：[百度网盘传送门](https://pan.baidu.com/s/1y_YIwMltSWUxRzMgMCbmSQ?pwd=i1s9)
+搓了一个 PPT 模板（仅参考，xhs上有更好的），这里也给出，按需取用：[百度网盘传送门](https://pan.baidu.com/s/1y_YIwMltSWUxRzMgMCbmSQ?pwd=i1s9)
 
-> 我还收集了部分高校的高清 logo ，可以拿去贴在PPT封面上：[百度网盘传送门](https://pan.baidu.com/s/1yCzxJwGcCih8T5sdn0kX1Q?pwd=7xpy)
- 
+> 我还收集了部分高校的高清 logo ，可以拿去贴在PPT封面上：[百度网盘传送门](https://pan.baidu.com/s/1yCzxJwGcCih8T5sdn0kX1Q?pwd=7xpy) 
 
 !!! example ""
 

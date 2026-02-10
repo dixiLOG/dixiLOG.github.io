@@ -1,0 +1,3688 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/%E9%9A%8F%E6%89%8B%E8%AE%B0/JHMath/JHMath02/">
+      
+      
+        <link rel="prev" href="../JHMath01/">
+      
+      
+        <link rel="next" href="../JHMath03/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>几何篇 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              几何篇
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            随手记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../boringBetter/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无聊可期
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../whywhy/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    十万个为什么
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20250813/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25年电赛小黑屋，再战VCO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    初中数学保命手册
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            初中数学保命手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代数篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    几何篇
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    几何篇
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、四边形性质与判定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、四边形性质与判定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）平行四边形的判定体系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）平行四边形的判定体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 判定方法库（五大金刚）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）特殊平行四边形的层级关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）特殊平行四边形的层级关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定体系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：面积公式的“降维打击”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、圆的几何性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、圆的几何性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）垂径定理与圆心角、圆周角
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）垂径定理与圆心角、圆周角">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：基本图形与辅助线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）点、直线与圆的位置关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）点、直线与圆的位置关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定依据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：切线的判定与辅助线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）圆中的计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）圆中的计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：不规则图形的“整形手术”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、图形的变化与相似
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、图形的变化与相似">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）相似三角形的判定与性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）相似三角形的判定与性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：经典模型库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）锐角三角函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）锐角三角函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与特殊角
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：关系与应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）几何变换与最值问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）几何变换与最值问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 经典模型：将军饮马
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、四边形性质与判定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、四边形性质与判定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）平行四边形的判定体系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）平行四边形的判定体系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 判定方法库（五大金刚）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）特殊平行四边形的层级关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）特殊平行四边形的层级关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定体系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：面积公式的“降维打击”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、圆的几何性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、圆的几何性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）垂径定理与圆心角、圆周角
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）垂径定理与圆心角、圆周角">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：基本图形与辅助线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）点、直线与圆的位置关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）点、直线与圆的位置关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定依据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：切线的判定与辅助线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）圆中的计算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）圆中的计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：不规则图形的“整形手术”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、图形的变化与相似
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、图形的变化与相似">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）相似三角形的判定与性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）相似三角形的判定与性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与判定
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：经典模型库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）锐角三角函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）锐角三角函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与特殊角
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：关系与应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）几何变换与最值问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）几何变换与最值问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 经典模型：将军饮马
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">几何篇<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 10511 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 58 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_2">一、四边形性质与判定<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="_3">（一）平行四边形的判定体系<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h4 id="1">1. 核心定义与性质<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
+<p>四边形是平面几何从“静态三角形”走向“动态多边形”的第一步。平行四边形（Parallelogram）作为四边形家族的“始祖”，其地位如同代数中的“方程”</p>
+<p>（1）定义</p>
+<p><span style="border-bottom: 1.5px dashed orange;">两组对边分别平行</span>的四边形叫做平行四边形</p>
+<ul>
+<li>
+<p>记作：<span class="arithmatex">\(\square ABCD\)</span></p>
+</li>
+<li>
+<p>几何语言：
+    <span class="arithmatex">\(\because AB \parallel CD, AD \parallel BC\)</span>
+    <span class="arithmatex">\(\therefore\)</span> 四边形 <span class="arithmatex">\(ABCD\)</span> 是平行四边形</p>
+</li>
+</ul>
+<p>（2）核心性质（知一推三）</p>
+<p>一旦确认是平行四边形，你可以立即获得以下所有“红利”：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">边</span>：对边平行且相等（<span class="arithmatex">\(AB=CD, AD=BC\)</span>）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">角</span>：对角相等（<span class="arithmatex">\(\angle A=\angle C\)</span>），邻角互补</li>
+<li><span style="border-bottom: 1.5px dashed orange;">对角线</span>：互相平分（<span class="arithmatex">\(OA=OC, OB=OD\)</span>）。这是解决<span style="border-bottom: 1.5px dashed orange;">中点问题</span>的核心模型</li>
+</ol>
+<hr>
+<h4 id="2">2. 判定方法库（五大金刚）<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
+<p>判定一个四边形是不是平行四边形，我们有5种武器。在解题时，应根据已知条件灵活选择</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">判定依据</th>
+<th style="text-align: left;">具体描述</th>
+<th style="text-align: left;">几何语言（简写）</th>
+<th style="text-align: left;">推荐场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">定义法</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">两组对边</span>分别平行</td>
+<td style="text-align: left;"><span class="arithmatex">\(AB \parallel CD, AD \parallel BC\)</span></td>
+<td style="text-align: left;">已知平行条件较多时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">边判定1</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">两组对边</span>分别相等</td>
+<td style="text-align: left;"><span class="arithmatex">\(AB=CD, AD=BC\)</span></td>
+<td style="text-align: left;">已知边长数据时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">边判定2</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">一组对边</span>平行且相等</td>
+<td style="text-align: left;"><span class="arithmatex">\(AB \parallel CD, AB=CD\)</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">最常用</span>！只需证明一组边的关系</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">对角线</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">对角线</span>互相平分</td>
+<td style="text-align: left;"><span class="arithmatex">\(OA=OC, OB=OD\)</span></td>
+<td style="text-align: left;">涉及中点、中线时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">角判定</span></td>
+<td style="text-align: left;"><span style="border-bottom: 1.5px dashed orange;">两组对角</span>分别相等</td>
+<td style="text-align: left;"><span class="arithmatex">\(\angle A=\angle C, \angle B=\angle D\)</span></td>
+<td style="text-align: left;">较少使用，仅在全角计算时用</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition bug">
+<p class="admonition-title">易错陷阱：等腰梯形的伪装</p>
+<p><span style="border-bottom: 1.5px dashed orange;">问</span>：若 <span class="arithmatex">\(AB \parallel CD, AD=BC\)</span>（一组对边平行，另一组对边相等），它是平行四边形吗？</p>
+<p><span style="border-bottom: 1.5px dashed orange;">答</span>：<span style="border-bottom: 1.5px dashed orange;">不一定</span>！它可能是<span style="border-bottom: 1.5px dashed orange;">等腰梯形</span></p>
+<blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">口诀</span>：平行且相等，必须是<span style="border-bottom: 1.5px dashed orange;">同一组</span>边！</p>
+</blockquote>
+</div>
+<hr>
+<h4 id="3">3. 典型例题<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
+<p>“一组对边平行且相等”的应用</p>
+<p><span style="border-bottom: 1.5px dashed orange;">如图</span>，在 <span class="arithmatex">\(\square ABCD\)</span> 中，点 <span class="arithmatex">\(E, F\)</span> 分别在 <span class="arithmatex">\(BC, AD\)</span> 上，且 <span class="arithmatex">\(BE=DF\)</span>。求证：四边形 <span class="arithmatex">\(AECF\)</span> 是平行四边形</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：
+这道题展示了如何从一个大的平行四边形中“孵化”出一个小的平行四边形</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">找平行</span>：
+    <span class="arithmatex">\(\because\)</span> 四边形 <span class="arithmatex">\(ABCD\)</span> 是平行四边形
+    <span class="arithmatex">\(\therefore AD \parallel BC\)</span> （大性质）
+    <span class="arithmatex">\(\therefore AF \parallel EC\)</span> （落在边上也平行）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">找相等</span>：
+    <span class="arithmatex">\(\because AD=BC\)</span> 且 <span class="arithmatex">\(DF=BE\)</span>
+    <span class="arithmatex">\(\therefore AD-DF = BC-BE \Rightarrow AF=EC\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">下结论</span>：
+    <span class="arithmatex">\(\because AF \parallel EC\)</span> 且 <span class="arithmatex">\(AF=EC\)</span>
+    <span class="arithmatex">\(\therefore\)</span> 四边形 <span class="arithmatex">\(AECF\)</span> 是平行四边形（<span style="border-bottom: 1.5px dashed orange;">一组对边平行且相等</span>）</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">解题心法</p>
+<p>看到四边形证明，优先找“平行且相等”这一对组合，通常比证明两组边都相等要快一倍</p>
+</div>
+<hr>
+<h4 id="4">4. 进阶思维与素养拓展<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
+<p><em>本节参考浙江省素养测试卷（复赛）的命题逻辑，重点讲解辅助线构造</em></p>
+<p>（1）倍长中线法（构造中心对称）</p>
+<p>当题目中出现“中点”或“中线”，但无法直接使用中位线时，<span style="border-bottom: 1.5px dashed orange;">构造平行四边形</span>是标准动作</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">模型</span>：<span class="arithmatex">\(\triangle ABC\)</span> 中，<span class="arithmatex">\(AD\)</span> 是 <span class="arithmatex">\(BC\)</span> 边上的中线</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">操作</span>：延长 <span class="arithmatex">\(AD\)</span> 到 <span class="arithmatex">\(E\)</span>，使 <span class="arithmatex">\(DE=AD\)</span>，连接 <span class="arithmatex">\(BE, CE\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">结果</span>：四边形 <span class="arithmatex">\(ABEC\)</span> 是平行四边形（对角线 <span class="arithmatex">\(AE, BC\)</span> 互相平分）</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">作用</span>：将分散的边 <span class="arithmatex">\(AB\)</span> 和 <span class="arithmatex">\(AC\)</span> 转移到同一个三角形 <span class="arithmatex">\(\triangle ACE\)</span> 中，便于利用三边关系 <span class="arithmatex">\(AC-AB &lt; 2AD &lt; AC+AB\)</span> 求解</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q4</span>：涉及直角三角形斜边中线，本质上也是利用了对角线互相平分的逆定理（矩形判定）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q2</span>：直接考查 <span class="arithmatex">\(\square ABCD\)</span> 中对角线交点 <span class="arithmatex">\(O\)</span> 的性质，结合 <span class="arithmatex">\(BD=10, AC=6\)</span> 求边长范围，这是典型的“对角线模型”应用</li>
+</ul>
+</div>
+<p>（2）坐标系中的平行四边形（存在性问题）</p>
+<p>这是中考和竞赛的压轴常客。给定三点 <span class="arithmatex">\(A, B, C\)</span>，找第四点 <span class="arithmatex">\(D\)</span> 构成平行四边形</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">核心算法</span>：利用“中点坐标公式”
+    平行四边形对角线互相平分 <span class="arithmatex">\(\Rightarrow\)</span> 对角线中点重合</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(AC\)</span> 为对角线：<span class="arithmatex">\(x_A + x_C = x_B + x_D, \quad y_A + y_C = y_B + y_D\)</span>
+    <span style="border-bottom: 1.5px dashed orange;"></span></p>
+</li>
+</ul>
+<blockquote>
+<p>注意：因为未指定哪条是对角线，通常需要分3种情况讨论（分别以 <span class="arithmatex">\(AB, AC, BC\)</span> 为对角线）</p>
+</blockquote>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">逻辑辨析</span>：下列条件能判定四边形是平行四边形的是（ ）</li>
+</ol>
+<p>A. 一组对边平行，另一组对边相等
+B. 一组对边平行，一组对角相等
+C. 一组对边相等，一组对角相等
+D. 对角线互相垂直</p>
+<blockquote>
+<p>（答案：B。A是等腰梯形；C可能是等腰梯形；D是垂线模型；B可以通过平行证角互补，进而证两组对角相等）*</p>
+</blockquote>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">作图思考</span>：给你两根长度不等的木条，如何只通过测量中点的方法，摆出一个平行四边形？</li>
+</ol>
+<blockquote>
+<p>（提示：将两根木条的中点重叠并固定，连结四个端点即可。原理：对角线互相平分）*</p>
+</blockquote>
+</div>
+<hr>
+<h3 id="_4">（二）特殊平行四边形的层级关系<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h4 id="1_1">1. 核心定义与判定体系<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
+<p>如果说平行四边形是“普通公民”，那么矩形、菱形和正方形就是拥有特权的“贵族”。它们之间的关系不是并列的，而是<span style="border-bottom: 1.5px dashed orange;">包含与进化</span>的关系</p>
+<p>（1）家族进化树</p>
+<p>所有的特殊四边形首先必须是<span style="border-bottom: 1.5px dashed orange;">平行四边形</span></p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">矩形（Rectangle）</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：有一个角是直角的平行四边形</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">判定核心</span>：<span class="arithmatex">\(\angle A = 90^\circ\)</span> 或 <span style="border-bottom: 1.5px dashed orange;">对角线相等</span> (<span class="arithmatex">\(AC=BD\)</span>)</p>
+</li>
+</ul>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">菱形（Rhombus）</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：有一组邻边相等的平行四边形</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">判定核心</span>：<span class="arithmatex">\(AB=AD\)</span> 或 <span style="border-bottom: 1.5px dashed orange;">对角线互相垂直</span> (<span class="arithmatex">\(AC \perp BD\)</span>)</p>
+</li>
+</ul>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">正方形（Square）</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：既是矩形又是菱形的四边形</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">判定核心</span>：矩形 + 邻边相等；或者 菱形 + 直角</p>
+</li>
+</ul>
+<p>（2）对角线的“DNA”密码</p>
+<p>对角线是区分它们的各种“基因”的关键：</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">平行四边形</span>：互相平分</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">矩形</span>：互相平分 + <span style="border-bottom: 1.5px dashed orange;">相等</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">菱形</span>：互相平分 + <span style="border-bottom: 1.5px dashed orange;">垂直</span>（且平分对角）</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">正方形</span>：互相平分 + <span style="border-bottom: 1.5px dashed orange;">相等</span> + <span style="border-bottom: 1.5px dashed orange;">垂直</span></p>
+</li>
+</ul>
+<hr>
+<h4 id="2_1">2. 深度解析：面积公式的“降维打击”<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
+<p>（1）菱形的特殊面积公式</p>
+<p>普通平行四边形面积 <span class="arithmatex">\(S = \text{底} \times \text{高}\)</span>
+但对于菱形（以及所有对角线互相垂直的四边形），有一个更爽的公式：</p>
+<div class="arithmatex">\[S_{\text{菱形}} = \frac{1}{2} \times \text{对角线}_1 \times \text{对角线}_2\]</div>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">原理</span>：对角线把菱形切成了4个全等的直角三角形</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">注意</span>：正方形也是菱形，所以正方形面积 <span class="arithmatex">\(S = a^2\)</span> 或 <span class="arithmatex">\(S = \frac{1}{2}d^2\)</span>（<span class="arithmatex">\(d\)</span>为对角线长）</p>
+</li>
+</ul>
+<p>（2）判定路径的选择</p>
+<p>在证明题中，不要试图一步登天证明正方形</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">路径 A</span>：先证它是矩形 <span class="arithmatex">\(\rightarrow\)</span> 再证邻边相等</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">路径 B</span>：先证它是菱形 <span class="arithmatex">\(\rightarrow\)</span> 再证有一个角是直角</p>
+</li>
+</ul>
+<blockquote>
+<p>选哪条？<br>
+看已知条件。如果有垂直关系，走菱形路线；如果有垂直平分线，走菱形路线；如果有直角三角形斜边中线，走矩形路线</p>
+</blockquote>
+<hr>
+<h4 id="3_1">3. 典型例题<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h4>
+<p>【例1】 折叠中的矩形判定</p>
+<p>如图，将矩形纸片 <span class="arithmatex">\(ABCD\)</span> 沿 <span class="arithmatex">\(AE\)</span> 折叠，使点 <span class="arithmatex">\(D\)</span> 落在 <span class="arithmatex">\(BC\)</span> 边上的点 <span class="arithmatex">\(F\)</span> 处。若 <span class="arithmatex">\(\angle BAF = 60^\circ\)</span>，求 <span class="arithmatex">\(\angle DAE\)</span> 的度数</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：
+这是一道经典的“折叠”题，核心是<span style="border-bottom: 1.5px dashed orange;">全等</span></p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">折叠性质</span>：<span class="arithmatex">\(\triangle ADE \cong \triangle AFE\)</span>
+    <span class="arithmatex">\(\therefore \angle D = \angle AFE = 90^\circ\)</span>，<span class="arithmatex">\(\angle DAE = \angle FAE\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">角度计算</span>：
+    矩形中 <span class="arithmatex">\(\angle DAB = 90^\circ\)</span>
+    <span class="arithmatex">\(\because \angle BAF = 60^\circ\)</span>
+    <span class="arithmatex">\(\therefore \angle DAF = 90^\circ - 60^\circ = 30^\circ\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">角平分线</span>：
+    <span class="arithmatex">\(\angle DAE = \frac{1}{2} \angle DAF = 15^\circ\)</span></p>
+</li>
+</ol>
+<p>【例2】 中点四边形</p>
+<p>顺次连接任意四边形各边中点，所得的四边形是什么形状？若是连接矩形各边中点呢？</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">任意四边形</span>：利用三角形中位线定理
+    连接对角线 <span class="arithmatex">\(AC, BD\)</span>。新四边形的边平行且等于对角线的一半
+    <span class="arithmatex">\(\therefore\)</span> 总是<span style="border-bottom: 1.5px dashed orange;">平行四边形</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">矩形的中点四边形</span>：
+    原四边形是矩形 <span class="arithmatex">\(\Rightarrow\)</span> 对角线 <span class="arithmatex">\(AC=BD\)</span>
+    <span class="arithmatex">\(\therefore\)</span> 新四边形的邻边相等
+    <span class="arithmatex">\(\therefore\)</span> 是<span style="border-bottom: 1.5px dashed orange;">菱形</span></p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">结论记忆</p>
+<p>中点四边形的形状取决于原四边形<span style="border-bottom: 1.5px dashed orange;">对角线</span>的关系（相等 <span class="arithmatex">\(\to\)</span> 菱形；垂直 <span class="arithmatex">\(\to\)</span> 矩形）</p>
+</div>
+<hr>
+<h4 id="4_1">4. 进阶思维与素养拓展<a class="headerlink" href="#4_1" title="Permanent link">¶</a></h4>
+<p><em>本节结合“赵爽弦图”模型与素养卷中的面积计算</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q15</span>：如图，大正方形 <span class="arithmatex">\(ABCD\)</span> 由四个全等的直角三角形和一个小正方形组成，设 <span class="arithmatex">\(AF=a, DF=ak \dots\)</span> 若 <span class="arithmatex">\(\triangle ADE\)</span> 与 <span class="arithmatex">\(\triangle BEH\)</span> 面积相等，求 <span class="arithmatex">\((k-3)(k+2)\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：这道题就是<span style="border-bottom: 1.5px dashed orange;">赵爽弦图</span>的直接应用。它考查了正方形的构造特征，需要学生利用勾股定理和面积法建立等量关系。题目求的是一个整式的值，暗示了不需要解出 <span class="arithmatex">\(k\)</span> 的具体值，而是进行整体代换</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q10</span>：在 <span class="arithmatex">\(\square ABCD\)</span> 中，对角线相交于 <span class="arithmatex">\(O\)</span>，<span class="arithmatex">\(AE \perp BC\)</span> 于 <span class="arithmatex">\(E\)</span>，<span class="arithmatex">\(BE=2, EC=3\)</span>，记 <span class="arithmatex">\(AB=x, BD=y\)</span>，则 <span class="arithmatex">\(x^2-y^2\)</span> 的值<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：虽然题目背景是平行四边形，但涉及垂线和平方差。这里隐含了<span style="border-bottom: 1.5px dashed orange;">勾股定理</span>在非矩形中的推广（射影定理的变形）。需要利用勾股定理在 Rt<span class="arithmatex">\(\triangle ABE\)</span> 和 Rt<span class="arithmatex">\(\triangle AEC\)</span> 之间架桥</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q4</span>：在 Rt<span class="arithmatex">\(\triangle ABC\)</span> 中，<span class="arithmatex">\(CD\)</span> 为 <span class="arithmatex">\(AB\)</span> 边上的中线，<span class="arithmatex">\(CH \perp DB\)</span> 等<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：直角三角形斜边中线定理，本质上是<span style="border-bottom: 1.5px dashed orange;">矩形对角线互相平分且相等</span>的一半。看到 Rt<span class="arithmatex">\(\triangle\)</span> 斜边中点，必须想到这个模型</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（1）正方形中的“弦图”模型</p>
+<p>在正方形内部嵌入直角三角形，是中考压轴题的常客。最经典的是“赵爽弦图”及其变式</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">核心</span>：利用“大正方形面积 = 小正方形 + 4个直角三角形”建立方程</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">技巧</span>：全等旋转。看到正方形中有 <span class="arithmatex">\(45^\circ\)</span> 或直角三角形，考虑绕中心旋转 <span class="arithmatex">\(90^\circ\)</span>，将分散的线段拼在一起</p>
+</li>
+</ul>
+<p>（2）动点与最值</p>
+<p>在矩形或正方形中，利用对称性解决“将军饮马”问题（线段和最小）是必考点</p>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">判定陷阱</span>：对角线互相垂直的四边形是菱形吗？
+    <em>（答案：错。必须先是平行四边形，或者是“对角线互相垂直平分”。单纯垂直可能是“风筝形”）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">面积计算</span>：一个菱形的两条对角线长分别为 6 和 8，则这个菱形的边长是多少？面积是多少？
+    <em>（答案：边长 5（勾股定理 <span class="arithmatex">\(\sqrt{3^2+4^2}\)</span>）；面积 24（<span class="arithmatex">\(0.5 \times 6 \times 8\)</span>））</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">逆向思维</span>：若顺次连接四边形 <span class="arithmatex">\(ABCD\)</span> 各边中点得到的是一个正方形，那么原四边形 <span class="arithmatex">\(ABCD\)</span> 需要满足什么条件？
+    <em>（答案：对角线互相垂直且相等）</em></li>
+</ol>
+</div>
+<hr>
+<h2 id="_5">二、圆的几何性质<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h3 id="_6">（一）垂径定理与圆心角、圆周角<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h4 id="1_2">1. 核心定义与定理<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
+<p>圆是几何中最完美的图形，它将我们从“直线世界”带入了“曲线世界”。圆的几何性质核心在于<span style="border-bottom: 1.5px dashed orange;">对称性</span>（轴对称与旋转对称）</p>
+<p>（1）垂径定理</p>
+<p>这是解决圆中计算问题的“核武器”，它构建了<span style="border-bottom: 1.5px dashed orange;">半径</span>、<span style="border-bottom: 1.5px dashed orange;">弦长</span>、<span style="border-bottom: 1.5px dashed orange;">弦心距</span>之间的直角三角形关系</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定理</span>：垂直于弦的直径平分这条弦，并且平分弦所对的两条弧</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">推论（知二推三）</span>：
+    在 ①过圆心 ②垂直于弦 ③平分弦 ④平分优弧 ⑤平分劣弧 这5个条件中，只要知道其中2个（需满足一定限制，如“非直径的弦”），就能推出其余3个</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">代数表达</span>：
+    若 <span class="arithmatex">\(CD\)</span> 是直径，<span class="arithmatex">\(CD \perp AB\)</span> 于 <span class="arithmatex">\(E\)</span>，则：
+    <span class="arithmatex">\(AE = EB = \frac{1}{2}AB\)</span>，<span class="arithmatex">\(\overset{\frown}{AC} = \overset{\frown}{BC}\)</span></p>
+</li>
+</ul>
+<p>（2）圆心角与圆周角</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">圆心角</span>：顶点在圆心的角</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">圆周角</span>：顶点在圆上，两边都与圆相交的角</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">三大定理</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">同弧所对的圆周角相等</span>（“同弧等角”）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">一条弧所对的圆周角等于它所对圆心角的一半</span>（这是圆中转角的关键，<span class="arithmatex">\(\angle \text{圆周} = \frac{1}{2} \angle \text{圆心}\)</span>）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">直径所对的圆周角是直角</span>（<span class="arithmatex">\(90^\circ\)</span> 推论）。反之，90°圆周角所对的弦是直径</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="2_2">2. 深度解析：基本图形与辅助线<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
+<p>（1）“垂径直角三角形”模型</p>
+<p>凡是涉及半径 <span class="arithmatex">\(r\)</span>、弦长 <span class="arithmatex">\(a\)</span>、弦心距 <span class="arithmatex">\(d\)</span> 的计算，必须构造直角三角形</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">勾股方程</span>：<span class="arithmatex">\(r^2 = d^2 + (\frac{a}{2})^2\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">辅助线口诀</span>：<span style="border-bottom: 1.5px dashed orange;">见弦作垂线，连结半径</span>。这一刀下去，立刻出现直角三角形</p>
+</li>
+</ul>
+<p>（2）“隐圆”模型</p>
+<p>有些题目表面没有圆，但充满了圆的灵魂</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定点定长</span>：到定点距离等于定长的点的轨迹是圆</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定弦定角</span>：若线段 <span class="arithmatex">\(AB\)</span> 固定，且 <span class="arithmatex">\(\angle APB\)</span> 大小恒定，则 <span class="arithmatex">\(P\)</span> 点在圆弧上运动</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">直角对直径</span>：若 <span class="arithmatex">\(\angle APB = 90^\circ\)</span>，则 <span class="arithmatex">\(P\)</span> 在以 <span class="arithmatex">\(AB\)</span> 为直径的圆上</p>
+</li>
+</ul>
+<hr>
+<h4 id="3_2">3. 典型例题<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h4>
+<p>【例1】 垂径定理的计算（“折叠圆”问题）</p>
+<p>如图，半径为 5 的 <span class="arithmatex">\(\odot O\)</span> 中，弦 <span class="arithmatex">\(AB\)</span> 被直径 <span class="arithmatex">\(CD\)</span> 垂直平分。若弦 <span class="arithmatex">\(AB=8\)</span>，求 <span class="arithmatex">\(CD\)</span> 上一点到 <span class="arithmatex">\(AB\)</span> 的距离（即弦心距）</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">辅助线</span>：连接半径 <span class="arithmatex">\(OA\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算半弦</span>：<span class="arithmatex">\(\because\)</span> 直径垂直弦 <span class="arithmatex">\(\therefore\)</span> <span class="arithmatex">\(AE = \frac{1}{2}AB = 4\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">勾股定理</span>：在 Rt<span class="arithmatex">\(\triangle OAE\)</span> 中，
+    <span class="arithmatex">\(OE = \sqrt{OA^2 - AE^2} = \sqrt{5^2 - 4^2} = 3\)</span>
+    <span style="border-bottom: 1.5px dashed orange;">答</span>：弦心距为 3</p>
+</li>
+</ol>
+<p>【例2】 圆周角定理的应用</p>
+<p>如图，四边形 <span class="arithmatex">\(ABCD\)</span> 内接于 <span class="arithmatex">\(\odot O\)</span>，若 <span class="arithmatex">\(\angle BOD = 100^\circ\)</span>，求 <span class="arithmatex">\(\angle BAD\)</span> 和 <span class="arithmatex">\(\angle BCD\)</span> 的度数</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">找关系</span>：<span class="arithmatex">\(\angle BAD\)</span> 和 <span class="arithmatex">\(\angle BOD\)</span> 对着同一条弧 <span class="arithmatex">\(\overset{\frown}{BCD}\)</span>（劣弧）
+    <span class="arithmatex">\(\therefore \angle BAD = \frac{1}{2} \angle BOD = 50^\circ\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">圆内接四边形</span>：<span class="arithmatex">\(\angle BAD + \angle BCD = 180^\circ\)</span>（圆内接四边形对角互补）
+    <span class="arithmatex">\(\therefore \angle BCD = 180^\circ - 50^\circ = 130^\circ\)</span></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>圆心角 <span class="arithmatex">\(\angle BOD\)</span> 通常指小于 180° 的那个角<br>
+求 <span class="arithmatex">\(\angle BCD\)</span> 时，也可以用优弧所对的圆心角 (<span class="arithmatex">\(360^\circ - 100^\circ = 260^\circ\)</span>) 除以 2 得到 <span class="arithmatex">\(130^\circ\)</span></p>
+</div>
+<hr>
+<h4 id="4_2">4. 进阶思维与素养拓展<a class="headerlink" href="#4_2" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江省素养测试卷中的“圆”的隐性考法。在八年级试卷中，圆往往以“距离”或“旋转”的面目出现</em></p>
+<p>（1）“直角三角形斜边中线”即“半径”</p>
+<p>在前面的章节（矩形）中我们提到过斜边中线。在圆的视角下，这其实是：<span style="border-bottom: 1.5px dashed orange;">直角三角形的外接圆圆心在斜边中点</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q4</span>：在 Rt<span class="arithmatex">\(\triangle ABC\)</span> 中，<span class="arithmatex">\(\angle ACB=90^\circ\)</span>，<span class="arithmatex">\(CD\)</span> 为 <span class="arithmatex">\(AB\)</span> 边上的中线...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：看到 <span class="arithmatex">\(CD\)</span> 是中线且 <span class="arithmatex">\(\triangle ABC\)</span> 是直角三角形，马上反应出 <span class="arithmatex">\(AD=BD=CD\)</span>。这三个点 <span class="arithmatex">\(A, B, C\)</span> 其实都在以 <span class="arithmatex">\(D\)</span> 为圆心、<span class="arithmatex">\(AB\)</span> 为直径的圆上。题目后续的计算（如 <span class="arithmatex">\(H\)</span> 点位置）可以借助圆的性质来理解</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）“定点定长”的圆定义应用</p>
+<p>当题目中出现“点到原点的距离为定值”时，这就是圆的代数定义</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q3</span>：在平面直角坐标系中，第四象限内点 <span class="arithmatex">\(P(2, y)\)</span> 到原点的距离为 <span class="arithmatex">\(\sqrt{10}\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：<span class="arithmatex">\(OP = \sqrt{10}\)</span>，即 <span class="arithmatex">\(x^2 + y^2 = 10\)</span>。代入 <span class="arithmatex">\(x=2\)</span>，得 <span class="arithmatex">\(4+y^2=10 \Rightarrow y^2=6\)</span>。因在第四象限，<span class="arithmatex">\(y=-\sqrt{6}\)</span>  <blockquote>
+<p>这虽然是代数题，但几何背景是点 <span class="arithmatex">\(P\)</span> 在以原点为圆心，半径为 <span class="arithmatex">\(\sqrt{10}\)</span> 的圆上</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q6</span>：在 <span class="arithmatex">\(\triangle ABC\)</span> 中... 以 <span class="arithmatex">\(A\)</span> 为圆心作弧交 <span class="arithmatex">\(BC\)</span> 于点 <span class="arithmatex">\(M, N\)</span>...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道明确的<span style="border-bottom: 1.5px dashed orange;">尺规作图与圆</span>结合题。以 <span class="arithmatex">\(A\)</span> 为圆心意味着 <span class="arithmatex">\(AM=AN\)</span>，构造了等腰三角形 <span class="arithmatex">\(\triangle AMN\)</span>。结合 <span class="arithmatex">\(BC\)</span> 上的垂线，利用垂径定理（或等腰三角形三线合一）求解线段长</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（3）构造辅助圆</p>
+<p>这是竞赛级的高阶技巧。当图形中出现“共端点的等线段”（如 <span class="arithmatex">\(AB=AC=AD\)</span>）时，这三点就在同一个圆上，圆心是 <span class="arithmatex">\(A\)</span></p>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">定理辨析</span>：平分弦的直径一定垂直于弦吗？</li>
+</ol>
+<p><em>(答案：不一定。如果弦本身就是直径，那么两条直径互相平分但不一定垂直。必须强调“平分<span style="border-bottom: 1.5px dashed orange;">不是直径</span>的弦”)</em></p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">度数陷阱</span>：圆周角是 <span class="arithmatex">\(30^\circ\)</span>，它所对的弧是多少度？弦所对的圆心角是多少度？</li>
+</ol>
+<p><em>(答案：弧是 <span class="arithmatex">\(60^\circ\)</span>；圆心角是 <span class="arithmatex">\(60^\circ\)</span>)</em></p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">直角模型</span>：如图，点 <span class="arithmatex">\(A, B, C\)</span> 在圆上，若 <span class="arithmatex">\(\angle C = 90^\circ\)</span>，则 <span class="arithmatex">\(AB\)</span> 是什么？</li>
+</ol>
+<p><em>(答案：<span class="arithmatex">\(AB\)</span> 是直径)</em></p>
+</div>
+<hr>
+<h3 id="_7">（二）点、直线与圆的位置关系<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h4 id="1_3">1. 核心定义与判定依据<a class="headerlink" href="#1_3" title="Permanent link">¶</a></h4>
+<p>判断“位置关系”的本质，就是比较“距离 <span class="arithmatex">\(d\)</span>”与“半径 <span class="arithmatex">\(r\)</span>”的大小。这是将几何直观转化为代数计算的关键一步</p>
+<p>（1）点与圆的位置关系</p>
+<p>设 <span class="arithmatex">\(\odot O\)</span> 的半径为 <span class="arithmatex">\(r\)</span>，点 <span class="arithmatex">\(P\)</span> 到圆心 <span class="arithmatex">\(O\)</span> 的距离为 <span class="arithmatex">\(d\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">点在圆外</span> <span class="arithmatex">\(\iff d &gt; r\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">点在圆上</span> <span class="arithmatex">\(\iff d = r\)</span> （圆的方程的核心定义）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">点在圆内</span> <span class="arithmatex">\(\iff d &lt; r\)</span></li>
+</ul>
+<blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">****</span></p>
+</blockquote>
+<p>（2）直线与圆的位置关系</p>
+<p>设 <span class="arithmatex">\(\odot O\)</span> 的半径为 <span class="arithmatex">\(r\)</span>，圆心 <span class="arithmatex">\(O\)</span> 到直线 <span class="arithmatex">\(l\)</span> 的垂线段长度（即圆心到直线的距离）为 <span class="arithmatex">\(d\)</span></p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">相离 (Separated)</span>：直线与圆没有公共点</li>
+</ol>
+<ul>
+<li>判定：<span class="arithmatex">\(d &gt; r\)</span></li>
+</ul>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">相切 (Tangent)</span>：直线与圆<span style="border-bottom: 1.5px dashed orange;">只有一个</span>公共点（切点）</li>
+</ol>
+<ul>
+<li>
+<p>判定：<span class="arithmatex">\(d = r\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">核心性质</span>：圆心到切点的半径<span style="border-bottom: 1.5px dashed orange;">垂直</span>于切线 (<span class="arithmatex">\(OA \perp l\)</span>)</p>
+</li>
+</ul>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">相交 (Secant)</span>：直线与圆有两个公共点</li>
+</ol>
+<ul>
+<li>判定：<span class="arithmatex">\(d &lt; r\)</span></li>
+</ul>
+<p>（3）切线长定理</p>
+<p>从圆外一点 <span class="arithmatex">\(P\)</span> 引圆的两条切线，切点分别为 <span class="arithmatex">\(A, B\)</span></p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">结论</span>：<span class="arithmatex">\(PA = PB\)</span>，且 <span class="arithmatex">\(PO\)</span> 平分 <span class="arithmatex">\(\angle APB\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">模型</span>：这也叫“冰激凌模型”或“风筝模型”，它是构造全等三角形 (Rt<span class="arithmatex">\(\triangle PAO \cong Rt\triangle PBO\)</span>) 的产物</p>
+</li>
+</ul>
+<hr>
+<h4 id="2_3">2. 深度解析：切线的判定与辅助线<a class="headerlink" href="#2_3" title="Permanent link">¶</a></h4>
+<p>（1）如何证明一条直线是切线？</p>
+<p>这是中考解答题的常见第一问，通常有两种路径：</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">路径 A（有点）</span>：如果直线 <span class="arithmatex">\(l\)</span> 经过圆上某点 <span class="arithmatex">\(A\)</span>，则<span style="border-bottom: 1.5px dashed orange;">连半径，证垂直</span></p>
+</li>
+<li>
+<p>即证明 <span class="arithmatex">\(OA \perp l\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">路径 B（无点）</span>：如果不知道直线与圆的交点，则<span style="border-bottom: 1.5px dashed orange;">作垂线，证半径</span></p>
+</li>
+<li>
+<p>即过圆心 <span class="arithmatex">\(O\)</span> 作 <span class="arithmatex">\(OD \perp l\)</span> 于 <span class="arithmatex">\(D\)</span>，证明 <span class="arithmatex">\(OD = r\)</span></p>
+</li>
+</ul>
+<p>（2）隐形圆的“警戒线”</p>
+<p>在动点问题中，如果点 <span class="arithmatex">\(P\)</span> 到定点 <span class="arithmatex">\(O\)</span> 的距离恒为定值，点 <span class="arithmatex">\(P\)</span> 的轨迹就是圆。此时直线与该轨迹的位置关系，往往决定了题目是否有解（例如：直线与圆相切时，往往对应着某个极值状态）</p>
+<hr>
+<h4 id="3_3">3. 典型例题<a class="headerlink" href="#3_3" title="Permanent link">¶</a></h4>
+<p>【例1】 坐标系中的点圆关系</p>
+<p>在平面直角坐标系中，<span class="arithmatex">\(\odot O\)</span> 的圆心在原点，半径为 2。判断点 <span class="arithmatex">\(P(1, -\sqrt{3})\)</span> 与 <span class="arithmatex">\(\odot O\)</span> 的位置关系</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算距离</span>：计算 <span class="arithmatex">\(P\)</span> 到原点 <span class="arithmatex">\(O(0,0)\)</span> 的距离 <span class="arithmatex">\(d\)</span>
+    <span class="arithmatex">\(d = \sqrt{1^2 + (-\sqrt{3})^2} = \sqrt{1+3} = \sqrt{4} = 2\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">比大小</span>：
+    <span class="arithmatex">\(\because d = 2\)</span>，<span class="arithmatex">\(r = 2\)</span>
+    <span class="arithmatex">\(\therefore d = r\)</span>
+    <span style="border-bottom: 1.5px dashed orange;">答</span>：点 <span class="arithmatex">\(P\)</span> 在 <span class="arithmatex">\(\odot O\)</span> 上</p>
+</li>
+</ol>
+<p>【例2】 切线性质的应用</p>
+<p>如图，<span class="arithmatex">\(PA\)</span> 为 <span class="arithmatex">\(\odot O\)</span> 的切线，<span class="arithmatex">\(A\)</span> 为切点，<span class="arithmatex">\(PO\)</span> 交 <span class="arithmatex">\(\odot O\)</span> 于点 <span class="arithmatex">\(B\)</span>。若 <span class="arithmatex">\(OA=3, PB=2\)</span>，求 <span class="arithmatex">\(\tan \angle APO\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">见切点，连半径</span>：连接 <span class="arithmatex">\(OA\)</span>
+    <span class="arithmatex">\(\because PA\)</span> 是切线，<span class="arithmatex">\(\therefore OA \perp PA\)</span>，即 <span class="arithmatex">\(\triangle PAO\)</span> 是直角三角形</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求边长</span>：
+    <span class="arithmatex">\(OB\)</span> 也是半径，<span class="arithmatex">\(\therefore OB = OA = 3\)</span>
+    <span class="arithmatex">\(PO = PB + OB = 2 + 3 = 5\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">勾股定理</span>：
+    在 Rt<span class="arithmatex">\(\triangle PAO\)</span> 中，<span class="arithmatex">\(PA = \sqrt{PO^2 - OA^2} = \sqrt{5^2 - 3^2} = 4\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求函数</span>：
+    <span class="arithmatex">\(\tan \angle APO = \frac{\text{对边}}{\text{邻边}} = \frac{OA}{PA} = \frac{3}{4}\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_3">4. 进阶思维与素养拓展<a class="headerlink" href="#4_3" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养卷，探讨“点到定点距离”的隐圆应用，以及直线位置关系的代数化</em></p>
+<p>（1）“点在圆上”的代数翻译</p>
+<p>当题目给出坐标满足 <span class="arithmatex">\(x^2 + y^2 = k\)</span> 时，这就是圆的方程</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q3</span>：在平面直角坐标系中，第四象限内点 <span class="arithmatex">\(P(2, y)\)</span> 到原点的距离为 <span class="arithmatex">\(\sqrt{10}\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这就是<span style="border-bottom: 1.5px dashed orange;">【例1】</span>的逆运算。题目本质是说点 <span class="arithmatex">\(P\)</span> 在以原点为圆心、半径为 <span class="arithmatex">\(\sqrt{10}\)</span> 的圆上。利用勾股定理（距离公式）<span class="arithmatex">\(2^2 + y^2 = (\sqrt{10})^2\)</span> 建立方程，瞬间解出 <span class="arithmatex">\(y^2=6\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）直线与圆相切的“临界状态”</p>
+<p>在高中数学中，直线与圆相切往往意味着判别式 <span class="arithmatex">\(\Delta = 0\)</span>。在初中竞赛中，这常用于求最值
+如果题目问“直线 <span class="arithmatex">\(y=kx+b\)</span> 与圆有公共点”，则隐含条件是 <span class="arithmatex">\(d \le r\)</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q21</span>：涉及直线 <span class="arithmatex">\(y=\frac{kx+2k-4}{k-1}\)</span> 经过定点 <span class="arithmatex">\(P\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：虽然此题主要考查定点，但直线的解析式中 <span class="arithmatex">\(k\)</span> 的变化其实是在绕定点旋转。如果题目进一步问“该直线与某个圆的位置关系”，就需要利用 <span class="arithmatex">\(d\)</span> 与 <span class="arithmatex">\(r\)</span> 的关系。例如，若直线与以原点为圆心的圆相切，则利用“点到直线的距离公式”（竞赛内容）等于半径来求解 <span class="arithmatex">\(k\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（3）隐圆中的最值</p>
+<p>当点在圆上运动时，它到直线的最远/最近距离是多少？</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">结论</span>：连接圆心作直线的垂线，延长交圆于两点</p>
+</li>
+<li>
+<p>最近距离 = <span class="arithmatex">\(d - r\)</span></p>
+</li>
+<li>
+<p>最远距离 = <span class="arithmatex">\(d + r\)</span></p>
+</li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">概念辨析</span>：直线 <span class="arithmatex">\(l\)</span> 上有一点 <span class="arithmatex">\(A\)</span> 到圆心距离等于半径，直线 <span class="arithmatex">\(l\)</span> 一定是切线吗？</li>
+</ol>
+<p><em>(答案：不一定。必须是圆心到直线的“垂直距离”等于半径。点 <span class="arithmatex">\(A\)</span> 必须是垂足。如果 <span class="arithmatex">\(OA\)</span> 不垂直于 <span class="arithmatex">\(l\)</span>，则 <span class="arithmatex">\(l\)</span> 是割线)</em></p>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">切线数量</span>：过圆内一点能做多少条切线？过圆上一点呢？过圆外一点呢？</li>
+</ol>
+<p><em>(答案：0条；1条；2条)</em></p>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">计算自检</span>：<span class="arithmatex">\(\odot O\)</span> 半径为 5，圆心到直线 <span class="arithmatex">\(l\)</span> 的距离为 3，则直线被圆截得的弦长是多少？</li>
+</ol>
+<p><em>(答案：8。利用垂径定理构造直角三角形，半弦长=<span class="arithmatex">\(\sqrt{5^2-3^2}=4\)</span>，全长=8)</em></p>
+</div>
+<hr>
+<h3 id="_8">（三）圆中的计算<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h4 id="1_4">1. 核心定义与公式<a class="headerlink" href="#1_4" title="Permanent link">¶</a></h4>
+<p>这一节是将几何“量化”的关键。圆的计算核心在于“比例”——无论是弧长还是扇形面积，本质上都是圆的一部分，这个“部分”的大小由圆心角 <span class="arithmatex">\(n^\circ\)</span> 决定</p>
+<p>（1）弧长公式</p>
+<p>设 <span class="arithmatex">\(\odot O\)</span> 半径为 <span class="arithmatex">\(R\)</span>，圆心角为 <span class="arithmatex">\(n^\circ\)</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：</li>
+</ul>
+<div class="arithmatex">\[l = \frac{n \pi R}{180}\]</div>
+<blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">记忆法</span>：周长是 <span class="arithmatex">\(2\pi R\)</span>。圆心角 <span class="arithmatex">\(n^\circ\)</span> 占 <span class="arithmatex">\(360^\circ\)</span> 的比例是 <span class="arithmatex">\(\frac{n}{360}\)</span>
+  <span class="arithmatex">\(\therefore l = 2\pi R \times \frac{n}{360} = \frac{n \pi R}{180}\)</span></p>
+</blockquote>
+<p>（2）扇形面积公式</p>
+<p>扇形是“弯曲的三角形”</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式 A（角度制）</span>：</li>
+</ul>
+<div class="arithmatex">\[S_{\text{扇}} = \frac{n \pi R^2}{360}\]</div>
+<blockquote>
+<p><em>记忆：面积 <span class="arithmatex">\(\pi R^2\)</span> 乘以比例 <span class="arithmatex">\(\frac{n}{360}\)</span></em></p>
+</blockquote>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式 B（弧长制 - 强烈推荐）</span>：</li>
+</ul>
+<div class="arithmatex">\[S_{\text{扇}} = \frac{1}{2} l R\]</div>
+<blockquote>
+<p><em>记忆：类比三角形面积公式 <span class="arithmatex">\(\frac{1}{2} \times \text{底} \times \text{高}\)</span>。这里弧长 <span class="arithmatex">\(l\)</span> 是“底”，半径 <span class="arithmatex">\(R\)</span> 是“高”。当已知弧长 <span class="arithmatex">\(l\)</span> 而不知道圆心角 <span class="arithmatex">\(n\)</span> 时，用这个公式秒杀</em></p>
+</blockquote>
+<p>（3）弓形面积 (Segment Area)</p>
+<p>弓形由弦和弧围成。没有直接公式，必须使用“割补法”</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">公式</span>：<span class="arithmatex">\(S_{\text{弓形}} = S_{\text{扇形}} \pm S_{\triangle}\)</span></p>
+</li>
+<li>
+<p>当圆心角小于 <span class="arithmatex">\(180^\circ\)</span> 时（劣弧），用减法</p>
+</li>
+<li>
+<p>当圆心角大于 <span class="arithmatex">\(180^\circ\)</span> 时（优弧），用加法</p>
+</li>
+</ul>
+<hr>
+<h4 id="2_4">2. 深度解析：不规则图形的“整形手术”<a class="headerlink" href="#2_4" title="Permanent link">¶</a></h4>
+<p>（1）“割补法”求阴影面积</p>
+<p>在考试中，阴影部分往往是不规则的（比如花瓣形、月牙形）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">策略</span>：<span style="border-bottom: 1.5px dashed orange;">和差法</span>
+  将不规则图形转化为：<span class="arithmatex">\(S_{\text{规则1}} - S_{\text{规则2}}\)</span> 或 <span class="arithmatex">\(S_{\text{规则1}} + S_{\text{规则2}}\)</span>
+  常见的“规则图形”包括：扇形、三角形、正方形、矩形</li>
+</ul>
+<p>（2）旋转中的面积不变性</p>
+<p>当一个图形旋转时，其扫过的区域往往也是扇形或环形</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">关键</span>：找到旋转中心和旋转角。所有对应点扫过的路径都是同心圆弧</li>
+</ul>
+<hr>
+<h4 id="3_4">3. 典型例题<a class="headerlink" href="#3_4" title="Permanent link">¶</a></h4>
+<p>【例1】 基础公式应用</p>
+<p>已知扇形的圆心角为 <span class="arithmatex">\(120^\circ\)</span>，半径为 3，求扇形的弧长和面积</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求弧长</span>：
+    <span class="arithmatex">\(l = \frac{120 \times \pi \times 3}{180} = \frac{360\pi}{180} = 2\pi\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求面积（方法一：角度公式）</span>：
+    <span class="arithmatex">\(S = \frac{120 \times \pi \times 3^2}{360} = \frac{1}{3} \times 9\pi = 3\pi\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求面积（方法二：弧长公式）</span>：
+    <span class="arithmatex">\(S = \frac{1}{2} l R = \frac{1}{2} \times 2\pi \times 3 = 3\pi\)</span>
+    <em>显然方法二更快！</em></p>
+</li>
+</ol>
+<p>【例2】 弓形面积（割补法）</p>
+<p>如图，在 <span class="arithmatex">\(\odot O\)</span> 中，半径 <span class="arithmatex">\(OA=2\)</span>，<span class="arithmatex">\(\angle AOB=90^\circ\)</span>，求弦 <span class="arithmatex">\(AB\)</span> 与弧 <span class="arithmatex">\(AB\)</span> 围成的弓形面积</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">分解</span>：<span class="arithmatex">\(S_{\text{弓}} = S_{\text{扇形OAB}} - S_{\triangle OAB}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算扇形</span>：
+    <span class="arithmatex">\(S_{\text{扇}} = \frac{90 \pi \times 2^2}{360} = \frac{1}{4} \times 4\pi = \pi\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算三角形</span>：
+    Rt<span class="arithmatex">\(\triangle OAB\)</span> 中，<span class="arithmatex">\(OA=OB=2\)</span>
+    <span class="arithmatex">\(S_{\triangle} = \frac{1}{2} \times OA \times OB = \frac{1}{2} \times 2 \times 2 = 2\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">做差</span>：
+    <span class="arithmatex">\(S_{\text{弓}} = \pi - 2\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_4">4. 进阶思维与素养拓展<a class="headerlink" href="#4_4" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷中的“面积变换”与“几何计算代数化”思想</em></p>
+<p>（1）几何构造中的面积比</p>
+<p>在复杂的几何构造中，面积计算往往不是直接套公式，而是利用<span style="border-bottom: 1.5px dashed orange;">相似比</span>或<span style="border-bottom: 1.5px dashed orange;">全等转化</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q6</span>：如图，在 <span class="arithmatex">\(\triangle ABC\)</span> 中... 以 <span class="arithmatex">\(A\)</span> 为圆心作弧交 <span class="arithmatex">\(BC\)</span> 于点 <span class="arithmatex">\(M, N\)</span>...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道尺规作图背景下的计算题。虽然最终可能考查线段长，但在作图过程中隐含了扇形的存在。如果题目进阶一步询问“作图痕迹（弧线）扫过的扇形面积”，你需要立刻识别出圆心角 <span class="arithmatex">\(\angle BAC\)</span> 和半径 <span class="arithmatex">\(AM\)</span>。此外，根据报告分析，此类题目常涉及<span style="border-bottom: 1.5px dashed orange;">面积比等于相似比的平方</span>这一核心结论，在处理与圆相关的相似图形面积时尤为重要</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）动态轨迹覆盖的面积</p>
+<p>当线段或图形运动时，扫过的面积通常需要通过积分思想（微元法）理解，但在初中阶段，我们将其转化为<span style="border-bottom: 1.5px dashed orange;">“大扇形 - 小扇形”</span>（环形）或<span style="border-bottom: 1.5px dashed orange;">“矩形 + 扇形”</span>（跑道形）</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q16</span>：涉及图形变换与阴影部分面积<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：对于此类阴影面积问题，素养测试卷倾向于考查<span style="border-bottom: 1.5px dashed orange;">几何变换的不变量</span> 。通常需要通过<span style="border-bottom: 1.5px dashed orange;">平移</span>或<span style="border-bottom: 1.5px dashed orange;">旋转</span>，将分散的阴影部分拼凑成一个完整的扇形或规则多边形。例如，将分散在三个角的小扇形通过旋转拼成一个半圆</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">公式混淆</span>：扇形面积公式中分母是 180 还是 360？</li>
+</ol>
+<p><em>(答案：360。弧长公式分母是 180，因为约分了 <span class="arithmatex">\(2\pi R\)</span> 中的 2)</em></p>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">单位换算</span>：计算时 <span class="arithmatex">\(\pi\)</span> 要取 3.14 吗？</li>
+</ol>
+<p><em>(答案：除非题目明确要求“精确到0.1”或“取<span class="arithmatex">\(\pi \approx 3.14\)</span>”，否则保留 <span class="arithmatex">\(\pi\)</span> 即可，这样既准确又省事)</em></p>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">圆锥侧面</span>：一个圆锥母线长为 5，底面半径为 3，它的侧面展开图（扇形）的圆心角是多少？</li>
+</ol>
+<p><em>(答案：利用“扇形弧长 = 底面周长”。<span class="arithmatex">\(l = 2\pi \times 3 = 6\pi\)</span>。<span class="arithmatex">\(6\pi = \frac{n \pi \times 5}{180} \Rightarrow n = 216^\circ\)</span>)</em></p>
+</div>
+<hr>
+<h2 id="_9">三、图形的变化与相似<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<h3 id="_10">（一）相似三角形的判定与性质<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h4 id="1_5">1. 核心定义与判定<a class="headerlink" href="#1_5" title="Permanent link">¶</a></h4>
+<p>如果说全等三角形是“复印”，那么相似三角形就是“缩放”。它们形状相同，但大小不一定相同</p>
+<p>（1）定义</p>
+<p>对应角相等、对应边成比例的两个三角形叫做相似三角形</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">相似比</span> (<span class="arithmatex">\(k\)</span>)：对应边的比值</p>
+</li>
+<li>
+<p>若 <span class="arithmatex">\(k=1\)</span>，则两个三角形全等</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">记法</span>：<span class="arithmatex">\(\triangle ABC \sim \triangle DEF\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">注意</span>：字母顺序必须对应（点 <span class="arithmatex">\(A\)</span> 对点 <span class="arithmatex">\(D\)</span>），否则比例式全错</p>
+</li>
+</ul>
+<p>（2）判定三招（简化版）</p>
+<p>在证明题中，我们极少用定义去证，而是用判定定理：
+1. <span style="border-bottom: 1.5px dashed orange;">两角判定（AA，最常用）</span>：
+    如果有两个角分别相等，那么这两个三角形相似</p>
+<ul>
+<li>
+<p><em>应用</em>：只要有平行线（同位角/内错角相等）或公共角，优先想这一条
+2. <span style="border-bottom: 1.5px dashed orange;">两边一角（SAS）</span>：
+    如果两组对应边的比相等，并且相应的夹角相等，那么这两个三角形相似</p>
+</li>
+<li>
+<p><em>注意</em>：必须是<span style="border-bottom: 1.5px dashed orange;">夹角</span>！如果是“两边及其中一边的对角”，则无法判定
+3. <span style="border-bottom: 1.5px dashed orange;">三边判定（SSS）</span>：
+    如果三组对应边的比相等，那么这两个三角形相似</p>
+</li>
+</ul>
+<hr>
+<h4 id="2_5">2. 深度解析：经典模型库<a class="headerlink" href="#2_5" title="Permanent link">¶</a></h4>
+<p>（1）“A”字型与“8”字型（X型）</p>
+<p>这是相似中最基础的骨架</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">A字型</span>：</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">平行A字</span>：<span class="arithmatex">\(DE \parallel BC \Rightarrow \triangle ADE \sim \triangle ABC\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">斜A字</span>（共角模型）：<span class="arithmatex">\(\angle ADE = \angle C\)</span>（而非 <span class="arithmatex">\(\angle B\)</span>）<span class="arithmatex">\(\Rightarrow \triangle ADE \sim \triangle ACB\)</span>（注意对应点反了）</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">8字型（X型）</span>：</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">平行8字</span>：<span class="arithmatex">\(AB \parallel CD \Rightarrow \triangle ABE \sim \triangle DCE\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">斜8字</span>（蝴蝶模型）：<span class="arithmatex">\(\angle A = \angle D \Rightarrow \triangle ABE \sim \triangle DCE\)</span></p>
+</li>
+</ul>
+<p>（2）母子相似（射影定理模型）</p>
+<p>在直角三角形中作斜边上的高，会产生三个相似三角形</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">模型</span>：Rt<span class="arithmatex">\(\triangle ABC\)</span> 中，<span class="arithmatex">\(\angle ACB=90^\circ, CD \perp AB\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">结论</span>：<span class="arithmatex">\(\triangle ADC \sim \triangle CDB \sim \triangle ACB\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">公式（射影定理）</span>：</p>
+<ol>
+<li><span class="arithmatex">\(CD^2 = AD \cdot BD\)</span> （高是两段投影的比例中项）</li>
+<li><span class="arithmatex">\(AC^2 = AD \cdot AB\)</span></li>
+<li><span class="arithmatex">\(BC^2 = BD \cdot AB\)</span></li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="3_5">3. 典型例题<a class="headerlink" href="#3_5" title="Permanent link">¶</a></h4>
+<p>【例1】 判定与计算</p>
+<p>如图，在 <span class="arithmatex">\(\triangle ABC\)</span> 中，<span class="arithmatex">\(D\)</span> 是 <span class="arithmatex">\(AB\)</span> 上一点，<span class="arithmatex">\(\angle ACD = \angle B\)</span>。若 <span class="arithmatex">\(AD=2, BD=3\)</span>，求 <span class="arithmatex">\(AC\)</span> 的长</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">找模型</span>：这是典型的“斜A字”共角模型</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">证相似</span>：
+    <span class="arithmatex">\(\because \angle A = \angle A\)</span> （公共角）
+    <span class="arithmatex">\(\angle ACD = \angle B\)</span> （已知）
+    <span class="arithmatex">\(\therefore \triangle ACD \sim \triangle ABC\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">列比例</span>：
+    <span class="arithmatex">\(\frac{AC}{AB} = \frac{AD}{AC}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算结果</span>：
+    <span class="arithmatex">\(AB = AD + BD = 2 + 3 = 5\)</span>
+    <span class="arithmatex">\(AC^2 = AD \cdot AB = 2 \times 5 = 10\)</span>
+    <span class="arithmatex">\(\therefore AC = \sqrt{10}\)</span></p>
+</li>
+</ol>
+<p>【例2】 面积比的应用</p>
+<p>两个相似三角形的相似比为 2:3，其中较小三角形的面积为 8，求较大三角形的面积</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">用性质</span>：<span style="border-bottom: 1.5px dashed orange;">相似三角形的面积比等于相似比的平方</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">列方程</span>：
+    设较大面积为 <span class="arithmatex">\(S\)</span>
+    <span class="arithmatex">\(\frac{8}{S} = (\frac{2}{3})^2 = \frac{4}{9}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">解</span>：
+    <span class="arithmatex">\(4S = 72 \Rightarrow S = 18\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_5">4. 进阶思维与素养拓展<a class="headerlink" href="#4_5" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷中的“旋转相似”与“面积比”的高阶应用</em></p>
+<p>（1）面积比的平方效应</p>
+<p>在复杂几何题中，直接求线段长可能很困难，但利用面积比倒推相似比往往有奇效</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q6</span>：在 <span class="arithmatex">\(\triangle ABC\)</span> 中... 作 <span class="arithmatex">\(AE\)</span> 交 <span class="arithmatex">\(BC\)</span> 于点 <span class="arithmatex">\(F\)</span>... 若 <span class="arithmatex">\(S_{\triangle ABF} : S_{\triangle AEC}\)</span>...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这道题的核心在于识别图形中的相似成分。如果涉及到面积比，第一时间反应出 <span class="arithmatex">\(S_1 : S_2 = k^2\)</span>。反之，如果知道了面积比是 1:4，那么对应边长比就是 1:2。这在处理被分割的几何图形时是解题的突破口</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q18</span>：涉及折叠与面积为 20 的三角形<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：折叠往往产生全等或相似。当题目给出“剪两个大小一样的三角形”时，暗示了全等；而剩余部分与原图的关系往往涉及相似。利用面积关系列方程时，记得平方比的性质</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）旋转相似（手拉手模型）</p>
+<p>当两个相似三角形共用一个顶点，且旋转一定角度时，会形成“手拉手”模型，这是竞赛常客</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q14</span>：如图，在等腰 Rt<span class="arithmatex">\(\triangle ABC\)</span> 中，直角顶点与 <span class="arithmatex">\(AB\)</span> 中点 <span class="arithmatex">\(D\)</span> 重合，<span class="arithmatex">\(\angle F = 30^\circ\)</span>... 延长 <span class="arithmatex">\(DC\)</span> 交 <span class="arithmatex">\(EF\)</span> 于点 <span class="arithmatex">\(G\)</span>...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道极具挑战性的<span style="border-bottom: 1.5px dashed orange;">旋转相似</span>题。虽然题目中有 <span class="arithmatex">\(30^\circ\)</span> 和 <span class="arithmatex">\(90^\circ\)</span> 等特殊角，但核心在于识别出 <span class="arithmatex">\(\triangle ADE\)</span> 与 <span class="arithmatex">\(\triangle BDC\)</span>（或类似结构）在旋转过程中的关系。此类题目通常需要证明 <span class="arithmatex">\(\triangle ADG \sim \triangle BDE\)</span> 之类的隐含相似，或者利用旋转前后线段夹角不变来求解</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">陷阱辨析</span>：<span class="arithmatex">\(\triangle ABC\)</span> 和 <span class="arithmatex">\(\triangle DEF\)</span> 中，<span class="arithmatex">\(\angle A = \angle D\)</span>，<span class="arithmatex">\(\frac{AB}{DE} = \frac{BC}{EF}\)</span>，它们相似吗？</li>
+</ol>
+<p><em>(答案：不一定。这是“两边及其中一边的对角”，不是SAS。除非角是直角或钝角，否则存在两种可能)</em></p>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">性质记忆</span>：若相似比 <span class="arithmatex">\(k=3\)</span>，则周长比是多少？面积比是多少？</li>
+</ol>
+<p><em>(答案：周长比是 3；面积比是 9)</em>
+3. <span style="border-bottom: 1.5px dashed orange;">模型识别</span>：如图，平行四边形 <span class="arithmatex">\(ABCD\)</span> 中，<span class="arithmatex">\(E\)</span> 是 <span class="arithmatex">\(BC\)</span> 延长线上一点，<span class="arithmatex">\(AE\)</span> 交 <span class="arithmatex">\(CD\)</span> 于 <span class="arithmatex">\(F\)</span>，图中有几对相似三角形？</p>
+<p><em>(答案：3对。<span class="arithmatex">\(\triangle ADF \sim \triangle ECF\)</span>（8字型）；<span class="arithmatex">\(\triangle ECF \sim \triangle EBA\)</span>（A字型）；<span class="arithmatex">\(\triangle ADF \sim \triangle EBA\)</span>（传递性）)</em></p>
+</div>
+<hr>
+<h3 id="_11">（二）锐角三角函数<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<h4 id="1_6">1. 核心定义与特殊角<a class="headerlink" href="#1_6" title="Permanent link">¶</a></h4>
+<p>三角函数是初中数学中唯一将“角度”与“线段比值”联系起来的工具。它告诉我们：<span style="border-bottom: 1.5px dashed orange;">只要角确定，边长的比值就确定</span>，与三角形的大小无关</p>
+<p>（1）定义（Rt△中的比值）</p>
+<p>在 Rt△ABC 中，<span class="arithmatex">\(\angle C = 90^\circ\)</span>，<span class="arithmatex">\(\angle A\)</span> 的对边为 <span class="arithmatex">\(a\)</span>，邻边为 <span class="arithmatex">\(b\)</span>，斜边为 <span class="arithmatex">\(c\)</span></p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">正弦 (sin)</span>：<span class="arithmatex">\(\sin A = \frac{\text{对边}}{\text{斜边}} = \frac{a}{c}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">余弦 (cos)</span>：<span class="arithmatex">\(\cos A = \frac{\text{邻边}}{\text{斜边}} = \frac{b}{c}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">正切 (tan)</span>：<span class="arithmatex">\(\tan A = \frac{\text{对边}}{\text{邻边}} = \frac{a}{b}\)</span></p>
+</li>
+</ol>
+<p>（2）特殊角的三角函数值（背诵必修）</p>
+<p>这是一张必须印在脑子里的表。考试时没时间推导</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><span class="arithmatex">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(30^\circ\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(45^\circ\)</span></th>
+<th style="text-align: left;"><span class="arithmatex">\(60^\circ\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\sin \alpha\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{2}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{\sqrt{2}}{2}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{\sqrt{3}}{2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\cos \alpha\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{\sqrt{3}}{2}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{\sqrt{2}}{2}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="arithmatex">\(\tan \alpha\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{\sqrt{3}}{3}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\sqrt{3}\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">规律记忆</span>：</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sin\)</span> 随角度增大而增大（分母都是2，分子是 <span class="arithmatex">\(\sqrt{1}, \sqrt{2}, \sqrt{3}\)</span>）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\cos\)</span> 随角度增大而减小（正好反过来）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\tan\)</span> 随角度增大而增大（特立独行）</p>
+</li>
+</ul>
+<hr>
+<h4 id="2_6">2. 深度解析：关系与应用<a class="headerlink" href="#2_6" title="Permanent link">¶</a></h4>
+<p>（1）同角三角函数的关系</p>
+<p>在同一个三角形中，同一个角的三个函数值不是独立的</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">平方关系</span>：<span class="arithmatex">\(\sin^2 A + \cos^2 A = 1\)</span></li>
+</ol>
+<ul>
+<li><em>原理</em>：勾股定理 <span class="arithmatex">\(a^2 + b^2 = c^2\)</span> 两边同除以 <span class="arithmatex">\(c^2\)</span></li>
+</ul>
+<ol start="2">
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">商数关系</span>：<span class="arithmatex">\(\tan A = \frac{\sin A}{\cos A}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">互余关系</span>：<span class="arithmatex">\(\sin A = \cos(90^\circ - A)\)</span></p>
+</li>
+</ol>
+<ul>
+<li><em>例子</em>：<span class="arithmatex">\(\sin 30^\circ = \cos 60^\circ\)</span></li>
+</ul>
+<p>（2）坡度与坡角</p>
+<p>在实际应用（如修路、筑坝）中，常用“坡度”来描述倾斜程度</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">坡度 (Slope, <span class="arithmatex">\(i\)</span>)</span>：垂直高度 <span class="arithmatex">\(h\)</span> 与水平宽度 <span class="arithmatex">\(l\)</span> 的比</p>
+<div class="arithmatex">\[i = \frac{h}{l} = \tan \alpha\]</div>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">坡角 (<span class="arithmatex">\(\alpha\)</span>)</span>：坡面与水平面的夹角</p>
+</li>
+</ul>
+<hr>
+<h4 id="3_6">3. 典型例题<a class="headerlink" href="#3_6" title="Permanent link">¶</a></h4>
+<p>【例1】 基础计算</p>
+<p>在 Rt△ABC 中，<span class="arithmatex">\(\angle C = 90^\circ\)</span>，<span class="arithmatex">\(AC=8\)</span>，<span class="arithmatex">\(AB=10\)</span>。求 <span class="arithmatex">\(\sin A, \cos B, \tan A\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">勾股定理求第三边</span>：
+    <span class="arithmatex">\(BC = \sqrt{AB^2 - AC^2} = \sqrt{10^2 - 8^2} = 6\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">套公式</span>：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><span class="arithmatex">\(\sin A = \frac{BC}{AB} = \frac{6}{10} = \frac{3}{5}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(\cos B = \frac{BC}{AB} = \frac{6}{10} = \frac{3}{5}\)</span> （验证了互余关系）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\tan A = \frac{BC}{AC} = \frac{6}{8} = \frac{3}{4}\)</span></p>
+</li>
+</ul>
+<p>【例2】 特殊角的混合运算</p>
+<p>计算：<span class="arithmatex">\(2\sin 30^\circ - \tan 45^\circ + \sqrt{(1-\tan 60^\circ)^2}\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">代入数值</span>：
+    原式 <span class="arithmatex">\(= 2 \times \frac{1}{2} - 1 + |1 - \sqrt{3}|\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">去绝对值</span>：
+    <span class="arithmatex">\(\because 1 &lt; \sqrt{3}\)</span>，<span class="arithmatex">\(\therefore 1 - \sqrt{3} &lt; 0\)</span>
+    <span class="arithmatex">\(\therefore |1 - \sqrt{3}| = \sqrt{3} - 1\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">合并</span>：
+    原式 <span class="arithmatex">\(= 1 - 1 + \sqrt{3} - 1 = \sqrt{3} - 1\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_6">4. 进阶思维与素养拓展<a class="headerlink" href="#4_6" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷中的“坡比”与“几何计算”思想</em></p>
+<p>（1）坡比的几何代数化</p>
+<p>在几何综合题中，给出“坡比”往往是为了暗示直角三角形的三边比例，从而设未知数 <span class="arithmatex">\(k\)</span> 进行计算</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q4</span>：在 Rt△ABC 中... 斜坡 CD 的坡比为 3:1，若 CH=3...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：看到“坡比 3:1”，立刻反应出 <span class="arithmatex">\(\tan \angle DCH = \frac{DH}{CH} = \frac{1}{3}\)</span>（注意坡比通常指垂直:水平，题目中若指 CD 的倾斜角需仔细审题，此处通常指 <span class="arithmatex">\(\tan\)</span> 值）。题目给出 <span class="arithmatex">\(CH=3\)</span>，则 <span class="arithmatex">\(DH=1\)</span>。这种“给比值=给线段长”的转化是解题关键</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）非特殊角的处理（构造法）</p>
+<p>如果遇到 <span class="arithmatex">\(15^\circ, 75^\circ, 105^\circ\)</span> 怎么办？</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">策略</span>：不要硬算，要<span style="border-bottom: 1.5px dashed orange;">构造</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">模型</span>：在 <span class="arithmatex">\(30^\circ\)</span> 的直角三角形旁边补一个等腰三角形</p>
+</li>
+<li>
+<p>例如：Rt△ABC 中 <span class="arithmatex">\(\angle B=30^\circ\)</span>，延长 <span class="arithmatex">\(CB\)</span> 到 <span class="arithmatex">\(D\)</span> 使 <span class="arithmatex">\(BD=AB\)</span>，连接 <span class="arithmatex">\(AD\)</span>。则 <span class="arithmatex">\(\angle D = 15^\circ\)</span></p>
+</li>
+<li>
+<p>这样可以将非特殊角转化为特殊角线段的和差计算</p>
+</li>
+</ul>
+<p>（3）直线斜率与正切</p>
+<p>在平面直角坐标系中，直线 <span class="arithmatex">\(y=kx+b\)</span> 的<span style="border-bottom: 1.5px dashed orange;">斜率 <span class="arithmatex">\(k\)</span></span> 本质上就是倾斜角 <span class="arithmatex">\(\alpha\)</span> 的正切值</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">结论</span>：<span class="arithmatex">\(k = \tan \alpha\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">应用</span>：若直线 <span class="arithmatex">\(y = \sqrt{3}x + 2\)</span>，则倾斜角为 <span class="arithmatex">\(60^\circ\)</span>（因为 <span class="arithmatex">\(\tan 60^\circ = \sqrt{3}\)</span>）</p>
+</li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">增减性</span>：<span class="arithmatex">\(\sin 20^\circ\)</span> 和 <span class="arithmatex">\(\sin 40^\circ\)</span> 哪个大？<span class="arithmatex">\(\cos 20^\circ\)</span> 和 <span class="arithmatex">\(\cos 40^\circ\)</span> 哪个大？</li>
+</ol>
+<p><em>(答案：<span class="arithmatex">\(\sin 40^\circ &gt; \sin 20^\circ\)</span>；<span class="arithmatex">\(\cos 20^\circ &gt; \cos 40^\circ\)</span>。正弦增，余弦减)</em></p>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">范围陷阱</span>：<span class="arithmatex">\(\tan \alpha\)</span> 的值可以是 100 吗？<span class="arithmatex">\(\sin \alpha\)</span> 呢？</li>
+</ol>
+<p><em>(答案：<span class="arithmatex">\(\tan \alpha\)</span> 可以是任意实数，所以 100 可以。<span class="arithmatex">\(\sin \alpha\)</span> 必须在 0 到 1 之间（锐角），所以不行)</em></p>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">逆运算</span>：已知 <span class="arithmatex">\(\tan A = 1\)</span>，求 <span class="arithmatex">\(\angle A\)</span>。已知 <span class="arithmatex">\(2\cos A = 1\)</span>，求 <span class="arithmatex">\(\angle A\)</span></li>
+</ol>
+<p><em>(答案：<span class="arithmatex">\(\angle A = 45^\circ\)</span>；<span class="arithmatex">\(\cos A = 0.5 \Rightarrow \angle A = 60^\circ\)</span>)</em></p>
+</div>
+<hr>
+<h3 id="_12">（三）几何变换与最值问题<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<h4 id="1_7">1. 核心定义与性质<a class="headerlink" href="#1_7" title="Permanent link">¶</a></h4>
+<p>几何变换是图形的“运动”。在初中阶段，我们主要研究<span style="border-bottom: 1.5px dashed orange;">全等变换</span>（刚体运动），即图形的形状和大小不发生改变，只改变位置</p>
+<p>（1）三大基本变换</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">平移 (Translation)</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：将图形沿某个方向移动一定的距离</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">性质</span>：对应点连线平行（或共线）且相等</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">应用</span>：将分散的条件（如两条不相邻的线段）“搬运”到一起，构成平行四边形或全等三角形</p>
+</li>
+</ul>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">旋转 (Rotation)</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：绕着一个定点转动一定角度</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">性质</span>：对应点到旋转中心的距离相等；对应点与旋转中心连线的夹角等于旋转角</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">模型</span>：“手拉手”模型（共顶点的等腰/等边三角形）</p>
+</li>
+</ul>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">轴对称 (Reflection)</span>：</li>
+</ol>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定义</span>：沿着一条直线折叠重合</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">性质</span>：对应点连线被对称轴垂直平分</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">应用</span>：解决“距离之和最小”问题的核心工具</p>
+</li>
+</ul>
+<hr>
+<h4 id="2_7">2. 经典模型：将军饮马<a class="headerlink" href="#2_7" title="Permanent link">¶</a></h4>
+<p>这是解决“线段和最小”问题的万能钥匙。核心思想是<span style="border-bottom: 1.5px dashed orange;">化折为直</span>——利用两点之间线段最短</p>
+<p>（1）基础模型（定直线+两定点）</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">问题</span>：在直线 <span class="arithmatex">\(l\)</span> 上找一点 <span class="arithmatex">\(P\)</span>，使 <span class="arithmatex">\(PA+PB\)</span> 最小</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">策略</span>：</p>
+<ol>
+<li>作点 <span class="arithmatex">\(A\)</span> 关于直线 <span class="arithmatex">\(l\)</span> 的对称点 <span class="arithmatex">\(A'\)</span></li>
+<li>连接 <span class="arithmatex">\(A'B\)</span> 交直线 <span class="arithmatex">\(l\)</span> 于点 <span class="arithmatex">\(P\)</span></li>
+<li>此时 <span class="arithmatex">\(PA+PB = A'P+PB = A'B\)</span>（最小值）</li>
+</ol>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">原理</span>：两点之间，线段最短</p>
+</li>
+</ul>
+<p>（2）进阶模型（平移+造桥）</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">问题</span>：如图，要在河岸 <span class="arithmatex">\(l_1, l_2\)</span> 之间架一座桥 <span class="arithmatex">\(MN\)</span>（<span class="arithmatex">\(MN \perp l\)</span>，长度固定为 <span class="arithmatex">\(d\)</span>），从 <span class="arithmatex">\(A\)</span> 到 <span class="arithmatex">\(B\)</span> 的路径 <span class="arithmatex">\(A \to M \to N \to B\)</span> 最短</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">策略</span>：</p>
+<ol>
+<li>既然桥长 <span class="arithmatex">\(MN\)</span> 固定，我们先忽略它</li>
+<li>将点 <span class="arithmatex">\(A\)</span> 向下平移距离 <span class="arithmatex">\(d\)</span> 到达 <span class="arithmatex">\(A'\)</span>（相当于把河岸抽干，两岸合拢）</li>
+<li>连接 <span class="arithmatex">\(A'B\)</span>，与岸边的交点即为桥的位置</li>
+<li>最短路径 <span class="arithmatex">\(= AB' + d\)</span></li>
+</ol>
+</li>
+</ul>
+<hr>
+<h4 id="3_7">3. 典型例题<a class="headerlink" href="#3_7" title="Permanent link">¶</a></h4>
+<p>【例1】 将军饮马基础应用</p>
+<p>在平面直角坐标系中，点 <span class="arithmatex">\(A(1, 2)\)</span>，点 <span class="arithmatex">\(B(3, 1)\)</span>。在 <span class="arithmatex">\(x\)</span> 轴上找一点 <span class="arithmatex">\(P\)</span>，使 <span class="arithmatex">\(PA+PB\)</span> 最小</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">作对称</span>：作点 <span class="arithmatex">\(A\)</span> 关于 <span class="arithmatex">\(x\)</span> 轴的对称点 <span class="arithmatex">\(A'(1, -2)\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">连直线</span>：连接 <span class="arithmatex">\(A'B\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">算距离</span>：
+    <span class="arithmatex">\(A'B = \sqrt{(3-1)^2 + (1-(-2))^2} = \sqrt{2^2 + 3^2} = \sqrt{13}\)</span>
+    <span class="arithmatex">\(\therefore\)</span> 最小值为 <span class="arithmatex">\(\sqrt{13}\)</span></p>
+</li>
+</ol>
+<p>【例2】 旋转构造全等</p>
+<p>如图，点 <span class="arithmatex">\(P\)</span> 是等边 <span class="arithmatex">\(\triangle ABC\)</span> 内一点，若 <span class="arithmatex">\(PA=3, PB=4, PC=5\)</span>，求 <span class="arithmatex">\(\angle APB\)</span> 的度数</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：
+这是著名的<span style="border-bottom: 1.5px dashed orange;">费马点</span>相关问题，需要通过旋转构造</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">旋转</span>：将 <span class="arithmatex">\(\triangle ABP\)</span> 绕点 <span class="arithmatex">\(B\)</span> 逆时针旋转 <span class="arithmatex">\(60^\circ\)</span> 得到 <span class="arithmatex">\(\triangle CBP'\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">构造</span>：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>连接 <span class="arithmatex">\(PP'\)</span>。<span class="arithmatex">\(\triangle BPP'\)</span> 是等边三角形（<span class="arithmatex">\(BP=BP'=4, \angle PBP'=60^\circ\)</span>）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\therefore PP' = 4\)</span></p>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">勾股逆定理</span>：
+    在 <span class="arithmatex">\(\triangle PCP'\)</span> 中，三边为 <span class="arithmatex">\(3, 4, 5\)</span>（<span class="arithmatex">\(P'C=AP=3, PP'=4, PC=5\)</span>）
+    <span class="arithmatex">\(\therefore \triangle PCP'\)</span> 是直角三角形，<span class="arithmatex">\(\angle PP'C = 90^\circ\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求角</span>：
+    <span class="arithmatex">\(\angle APB = \angle CP'B = \angle CP'P + \angle PP'B = 90^\circ + 60^\circ = 150^\circ\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_7">4. 进阶思维与素养拓展<a class="headerlink" href="#4_7" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷，重点讲解“多动点”与“变换组合”的高阶应用</em></p>
+<p>（1）平移中的最值（从静态到动态）</p>
+<p>当题目中涉及两个动点，且这两个动点之间的相对位置固定（如定长线段移动）时，利用平移将其中一个动点转化为定点</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q20</span>：在等边 <span class="arithmatex">\(\triangle ABC\)</span> 中... 当等边 <span class="arithmatex">\(\triangle ABC\)</span> 向左平移 1 个单位长度后，点 <span class="arithmatex">\(D, E, F\)</span> 的对应点分别为 <span class="arithmatex">\(G, H, M\)</span>。求 <span class="arithmatex">\(DH+DM\)</span> 的最小值<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这道题是<span style="border-bottom: 1.5px dashed orange;">将军饮马</span>与<span style="border-bottom: 1.5px dashed orange;">平移</span>的结合<blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">难点</span>：点 <span class="arithmatex">\(D\)</span> 和点 <span class="arithmatex">\(M\)</span> 分别属于两个不同的三角形（一个是原图，一个是平移后的图）
+<span style="border-bottom: 1.5px dashed orange;">破局</span>：利用平移向量。将线段 <span class="arithmatex">\(DM\)</span> 中的点 <span class="arithmatex">\(M\)</span> 反向平移回原三角形，或者将 <span class="arithmatex">\(D\)</span> 平移到新三角形中。本质上，就是利用平移将“异面”的线段转化到同一个平面几何模型中，最终转化为“点 <span class="arithmatex">\(D'\)</span> 到点 <span class="arithmatex">\(M\)</span> 的距离最小”，即线段长</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）旋转中的相似与全等</p>
+<p>旋转变换常用于解决“共顶点”问题</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q14</span>：在等腰 Rt<span class="arithmatex">\(\triangle ABC\)</span> 中，直角顶点与 <span class="arithmatex">\(AB\)</span> 边的中点 <span class="arithmatex">\(D\)</span> 重合，<span class="arithmatex">\(\angle F=30^\circ\)</span>，延长 <span class="arithmatex">\(DC\)</span> 交 <span class="arithmatex">\(EF\)</span> 于点 <span class="arithmatex">\(G\)</span>...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：此题虽然没有直接问最值，但涉及了复杂的图形重叠。核心在于识别<span style="border-bottom: 1.5px dashed orange;">旋转中心</span>（通常是共用顶点）。解题时，尝试将图形绕中心旋转，看哪些线段重合，哪些角相等。这种“手拉手”模型（两个相似三角形共顶点旋转）在竞赛中经常用于证明三点共线或求线段比例</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（3）坐标系中的折叠（轴对称）</p>
+<p>在代数背景下考查几何变换，通常涉及点的坐标关于直线 <span class="arithmatex">\(y=kx+b\)</span> 的对称</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q18</span>：在梯形纸片 <span class="arithmatex">\(ABCD\)</span> 中... 分别沿 <span class="arithmatex">\(AE, DE\)</span> 方向剪两个大小一样的三角形纸片...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：剪纸问题本质是<span style="border-bottom: 1.5px dashed orange;">轴对称</span>。题目中“大小一样”暗示全等。通过折叠（轴对称），可以将不规则的剩余部分转化为规则图形，或者利用对称性找到线段的数量关系</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">作图思考</span>：如何在三角形内找一点，使它到三个顶点的距离之和最小？（费马点）</li>
+</ol>
+<p><em>(提示：利用【例2】的旋转法，将距离和转化为一条折线，拉直即为最短)</em></p>
+<ol start="2">
+<li><span style="border-bottom: 1.5px dashed orange;">模型辨析</span>：将军饮马问题中，如果点 <span class="arithmatex">\(A, B\)</span> 在直线 <span class="arithmatex">\(l\)</span> 的异侧，还需要作对称吗？</li>
+</ol>
+<p><em>(答案：不需要。直接连接 <span class="arithmatex">\(AB\)</span> 即可。作对称是为了把同侧的点“变”到异侧去)</em></p>
+<ol start="3">
+<li><span style="border-bottom: 1.5px dashed orange;">变换性质</span>：将点 <span class="arithmatex">\(A(2, 3)\)</span> 向左平移 1 个单位，再关于 <span class="arithmatex">\(x\)</span> 轴对称，最终坐标是多少？</li>
+</ol>
+<p><em>(答案：平移后 <span class="arithmatex">\((1, 3)\)</span>，对称后 <span class="arithmatex">\((1, -3)\)</span>)</em></p>
+</div>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../JHMath01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 代数篇">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                代数篇
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../JHMath03/" class="md-footer__link md-footer__link--next" aria-label="下一页: 函数篇">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                函数篇
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

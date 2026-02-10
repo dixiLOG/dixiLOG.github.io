@@ -1,0 +1,2689 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/%E9%9A%8F%E6%89%8B%E8%AE%B0/JHMath/JHMath03/">
+      
+      
+        <link rel="prev" href="../JHMath02/">
+      
+      
+        <link rel="next" href="../../../changheji/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>函数篇 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              函数篇
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            随手记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../boringBetter/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无聊可期
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../whywhy/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    十万个为什么
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20250813/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25年电赛小黑屋，再战VCO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    初中数学保命手册
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            初中数学保命手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代数篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    几何篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    函数篇
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    函数篇
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、一次函数与反比例函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、一次函数与反比例函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）k, b 的几何意义与图象性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）k, b 的几何意义与图象性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：几何意义的量化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）反比例函数 k 的几何意义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）反比例函数 k 的几何意义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：k 的几何灵魂（面积不变性）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、二次函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、二次函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）二次函数的图象与性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）二次函数的图象与性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：顶点的秘密
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）二次函数表达式的求法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）二次函数表达式的求法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心方法：待定系数法的三副面孔
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：如何选择最优解法？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）二次函数与几何综合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）二次函数与几何综合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心方法：坐标几何化的翻译
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：特殊图形的存在性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、一次函数与反比例函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、一次函数与反比例函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）k, b 的几何意义与图象性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）k, b 的几何意义与图象性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：几何意义的量化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）反比例函数 k 的几何意义
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）反比例函数 k 的几何意义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：k 的几何灵魂（面积不变性）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、二次函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、二次函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）二次函数的图象与性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）二次函数的图象与性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与图象特征
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：顶点的秘密
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）二次函数表达式的求法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）二次函数表达式的求法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心方法：待定系数法的三副面孔
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：如何选择最优解法？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）二次函数与几何综合
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）二次函数与几何综合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心方法：坐标几何化的翻译
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：特殊图形的存在性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">函数篇<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5963 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 33 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_2">一、一次函数与反比例函数<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="k-b">（一）k, b 的几何意义与图象性质<a class="headerlink" href="#k-b" title="Permanent link">¶</a></h3>
+<h4 id="1">1. 核心定义与图象特征<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
+<p>一次函数是描述“匀速变化”最简单的数学模型。它的图象是一条直线，正如我们在物理中学的“匀速直线运动”</p>
+<p>（1）定义</p>
+<p>形如 <span class="arithmatex">\(y = kx + b\)</span> (<span class="arithmatex">\(k, b\)</span> 为常数，<span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(k \neq 0\)</span></span>) 的函数叫做一次函数
+* 当 <span class="arithmatex">\(b=0\)</span> 时，<span class="arithmatex">\(y=kx\)</span> 叫<span style="border-bottom: 1.5px dashed orange;">正比例函数</span>（图象必过原点）</p>
+<p>（2）k与b的“遥控器”功能</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">k (斜率 Slope)</span>：决定直线的<span style="border-bottom: 1.5px dashed orange;">倾斜程度</span>和<span style="border-bottom: 1.5px dashed orange;">升降趋势</span><ul>
+<li><span class="arithmatex">\(k &gt; 0\)</span>：<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 增大而增大（图象从左下到右上，<span style="border-bottom: 1.5px dashed orange;">上坡</span>）</li>
+<li><span class="arithmatex">\(k &lt; 0\)</span>：<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 增大而减小（图象从左上到右下，<span style="border-bottom: 1.5px dashed orange;">下坡</span>）</li>
+<li><span class="arithmatex">\(|k|\)</span> 越大：直线越陡峭</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">b (截距 Intercept)</span>：决定直线与 <span style="border-bottom: 1.5px dashed orange;">y轴</span> 的交点位置<ul>
+<li><span class="arithmatex">\(b &gt; 0\)</span>：交于 y 轴正半轴（<span class="arithmatex">\((0, b)\)</span> 在原点上方）</li>
+<li><span class="arithmatex">\(b = 0\)</span>：经过原点</li>
+<li><span class="arithmatex">\(b &lt; 0\)</span>：交于 y 轴负半轴（<span class="arithmatex">\((0, b)\)</span> 在原点下方）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="2">2. 深度解析：几何意义的量化<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
+<p>（1）坐标轴围成的面积</p>
+<p>直线 <span class="arithmatex">\(y = kx + b\)</span> 与两坐标轴围成的三角形面积是必考点</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">y轴交点</span>：<span class="arithmatex">\(A(0, b)\)</span>，距离原点 <span class="arithmatex">\(|b|\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">x轴交点</span>：令 <span class="arithmatex">\(y=0\)</span>，解得 <span class="arithmatex">\(x = -\frac{b}{k}\)</span>，点 <span class="arithmatex">\(B(-\frac{b}{k}, 0)\)</span>，距离原点 <span class="arithmatex">\(|\frac{b}{k}|\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">面积公式</span>：</li>
+</ul>
+<div class="arithmatex">\[S = \frac{1}{2} \times |OA| \times |OB| = \frac{1}{2} |b| \cdot |\frac{b}{k}| = \frac{b^2}{2|k|}\]</div>
+<p>（2）图象的平移规律</p>
+<p>函数图象的平移本质是点的坐标变换</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">口诀</span>：“上加下减（常数项），左加右减（自变量）”</li>
+<li><span style="border-bottom: 1.5px dashed orange;">操作</span>：<ul>
+<li>将 <span class="arithmatex">\(y = kx\)</span> 向上平移 <span class="arithmatex">\(b\)</span> 个单位 <span class="arithmatex">\(\rightarrow y = kx + b\)</span></li>
+<li>将 <span class="arithmatex">\(y = kx\)</span> 向右平移 <span class="arithmatex">\(m\)</span> 个单位 <span class="arithmatex">\(\rightarrow y = k(x-m)\)</span>（注意是对 <span class="arithmatex">\(x\)</span> 进行操作，要把 <span class="arithmatex">\(k\)</span> 提出来）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3">3. 典型例题<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
+<p>【例1】 读图与计算</p>
+<p>已知一次函数 <span class="arithmatex">\(y = -2x + 4\)</span>
+(1) 判断图象经过哪些象限？
+(2) 求图象与坐标轴围成的三角形面积</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">判象限</span>：
+    <span class="arithmatex">\(\because k = -2 &lt; 0\)</span>，图象是“下坡”趋势（经过二、四象限趋势）
+    <span class="arithmatex">\(\because b = 4 &gt; 0\)</span>，与 y 轴交于正半轴（经过第一、二象限）
+    <span class="arithmatex">\(\therefore\)</span> 图象经过第一、二、四象限</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求面积</span>：
+    令 <span class="arithmatex">\(x=0, y=4 \Rightarrow\)</span> y轴交点 <span class="arithmatex">\((0, 4)\)</span>
+    令 <span class="arithmatex">\(y=0, -2x+4=0 \Rightarrow x=2 \Rightarrow\)</span> x轴交点 <span class="arithmatex">\((2, 0)\)</span>
+    <span class="arithmatex">\(S = \frac{1}{2} \times 4 \times 2 = 4\)</span></p>
+</li>
+</ol>
+<p>【例2】 增减性与大小比较</p>
+<p>已知点 <span class="arithmatex">\(A(x_1, y_1)\)</span> 和 <span class="arithmatex">\(B(x_2, y_2)\)</span> 都在直线 <span class="arithmatex">\(y = -\frac{1}{3}x + 2\)</span> 上，且 <span class="arithmatex">\(x_1 &lt; x_2\)</span>，试比较 <span class="arithmatex">\(y_1\)</span> 与 <span class="arithmatex">\(y_2\)</span> 的大小</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">看 k 值</span>：<span class="arithmatex">\(k = -\frac{1}{3} &lt; 0\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">定性质</span>：函数值 <span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 的增大而<span style="border-bottom: 1.5px dashed orange;">减小</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">下结论</span>：
+    <span class="arithmatex">\(\because x_1 &lt; x_2\)</span>
+    <span class="arithmatex">\(\therefore y_1 &gt; y_2\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4">4. 进阶思维与素养拓展<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷，探讨含参直线中的“定点”与“整点”问题</em></p>
+<p>（1）含参直线的“定点” (Fixed Point)</p>
+<p>当直线的解析式中含有参数 <span class="arithmatex">\(k\)</span> 时，它往往不是一条固定的线，而是一簇绕着某点旋转的线</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q21</span>：涉及直线 <span class="arithmatex">\(y = \frac{kx + 2k - 4}{k - 1}\)</span> 经过定点 <span class="arithmatex">\(P\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是高中“直线系”方程的下放  <blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">去分母</span>：<span class="arithmatex">\(y(k-1) = kx + 2k - 4\)</span><br>
+<span style="border-bottom: 1.5px dashed orange;">分离参数 k</span>：<span class="arithmatex">\(ky - y = kx + 2k - 4 \Rightarrow k(y - x - 2) - (y - 4) = 0\)</span><br>
+<span style="border-bottom: 1.5px dashed orange;">令系数为0</span>：要使等式对任意 <span class="arithmatex">\(k\)</span> 成立，必须 <span class="arithmatex">\(\begin{cases} y - x - 2 = 0 \\ y - 4 = 0   \end{cases}\)</span>
+<span style="border-bottom: 1.5px dashed orange;">解得</span>：<span class="arithmatex">\(y=4, x=2\)</span>。所以直线恒过定点 <span class="arithmatex">\((2, 4)\)</span>。这种“分离参数法”是解决动态直线问题的核心技巧</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）直线上的整点与象限分布</p>
+<p>通过函数值的符号来判断点的位置，是代数与几何结合的考点</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q5</span>：已知 <span class="arithmatex">\(I(x_1, y_1), (x_2, y_2)\)</span> 为一次函数 <span class="arithmatex">\(y=x-2\)</span> 上的点... 判断 <span class="arithmatex">\(x_1 x_2 &gt; 0\)</span> 时...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这道题考查对图象分布的细腻理解。<span class="arithmatex">\(y=x-2\)</span> 过 <span class="arithmatex">\((2,0)\)</span> 和 <span class="arithmatex">\((0,-2)\)</span>。<span class="arithmatex">\(x_1 x_2 &gt; 0\)</span> 意味着两点横坐标同号（同正或同负）  <blockquote>
+<p>若都为负，则两点都在第三象限，<span class="arithmatex">\(y\)</span> 都为负<br>
+若都为正，可能在第一象限（<span class="arithmatex">\(x&gt;2\)</span>）或第四象限（<span class="arithmatex">\(0&lt;x&lt;2\)</span>）。需要结合 <span class="arithmatex">\(y\)</span> 的表达式进行严密的分类讨论  </p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q7</span>：将长方形钢架 <span class="arithmatex">\(ABCD\)</span> 按如图放置... 点 <span class="arithmatex">\(C\)</span> 在直线 <span class="arithmatex">\(y=mx+n\)</span> 上...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道典型的“代数几何综合”。直线的参数 <span class="arithmatex">\(m, n\)</span> 不再是抽象数字，而是受到几何图形（钢架总长为16，即周长约束）限制的变量。解题时需将 <span class="arithmatex">\(C\)</span> 点坐标设出，代入直线方程，利用周长公式建立方程组求解</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">平移陷阱</span>：将直线 <span class="arithmatex">\(y=2x\)</span> 向右平移 3 个单位，解析式是 <span class="arithmatex">\(y=2x-3\)</span> 还是 <span class="arithmatex">\(y=2(x-3)\)</span>？
+    <em>（答案：<span class="arithmatex">\(y=2(x-3) = 2x-6\)</span>。“左加右减”是针对 <span class="arithmatex">\(x\)</span> 本身的）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">符号判断</span>：若直线 <span class="arithmatex">\(y=kx+b\)</span> 经过一、二、四象限，则 <span class="arithmatex">\(k, b\)</span> 的符号是？
+    <em>（答案：经过二、四 <span class="arithmatex">\(\Rightarrow k&lt;0\)</span>；经过一、二 <span class="arithmatex">\(\Rightarrow\)</span> 交 y 轴正半轴 <span class="arithmatex">\(\Rightarrow b&gt;0\)</span>）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">面积计算</span>：直线 <span class="arithmatex">\(y=x-1\)</span> 与坐标轴围成的面积是多少？
+    <em>（答案：<span class="arithmatex">\(0.5\)</span>。交点 <span class="arithmatex">\((1,0)\)</span> 和 <span class="arithmatex">\((0,-1)\)</span>，距离都是 1）</em></li>
+</ol>
+</div>
+<hr>
+<h3 id="k">（二）反比例函数 k 的几何意义<a class="headerlink" href="#k" title="Permanent link">¶</a></h3>
+<h4 id="1_1">1. 核心定义与图象特征<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
+<p>反比例函数是初中阶段唯一一个“非线性”的函数模型（直到二次函数出现前），它的图象是由两支曲线组成的<span style="border-bottom: 1.5px dashed orange;">双曲线</span></p>
+<p>（1）定义</p>
+<p>形如 <span class="arithmatex">\(y = \frac{k}{x}\)</span> (<span class="arithmatex">\(k\)</span> 为常数，<span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(k \neq 0\)</span></span>) 的函数叫做反比例函数
+* <span style="border-bottom: 1.5px dashed orange;">变式</span>：<span class="arithmatex">\(xy = k\)</span> 或 <span class="arithmatex">\(y = kx^{-1}\)</span>
+* <span style="border-bottom: 1.5px dashed orange;">定义域</span>：<span class="arithmatex">\(x \neq 0\)</span>（分母不能为0），所以图象永远不会与坐标轴相交</p>
+<p>（2）图象分布（象限法则）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(k &gt; 0\)</span></span>：图象位于<span style="border-bottom: 1.5px dashed orange;">第一、三象限</span>。在每个象限内，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 的增大而<span style="border-bottom: 1.5px dashed orange;">减小</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(k &lt; 0\)</span></span>：图象位于<span style="border-bottom: 1.5px dashed orange;">第二、四象限</span>。在每个象限内，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 的增大而<span style="border-bottom: 1.5px dashed orange;">增大</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">对称性</span>：图象关于原点 <span class="arithmatex">\((0,0)\)</span> 中心对称，也关于直线 <span class="arithmatex">\(y=x\)</span> 和 <span class="arithmatex">\(y=-x\)</span> 轴对称</li>
+</ul>
+<hr>
+<h4 id="2-k">2. 深度解析：k 的几何灵魂（面积不变性）<a class="headerlink" href="#2-k" title="Permanent link">¶</a></h4>
+<p>反比例函数的核心不在于计算，而在于<span style="border-bottom: 1.5px dashed orange;">积</span>为定值。这一性质在几何上直接对应“矩形面积”</p>
+<p>（1）矩形面积模型</p>
+<p>设 <span class="arithmatex">\(P(x, y)\)</span> 是反比例函数 <span class="arithmatex">\(y = \frac{k}{x}\)</span> 图象上任意一点
+* 过点 <span class="arithmatex">\(P\)</span> 分别作 x轴、y轴的垂线，垂足为 <span class="arithmatex">\(A, B\)</span>
+* <span style="border-bottom: 1.5px dashed orange;">结论</span>：矩形 <span class="arithmatex">\(PAOB\)</span> 的面积为定值 <span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(|k|\)</span></span></p>
+<div class="arithmatex">\[S_{\text{矩形}} = |x| \cdot |y| = |xy| = |k|\]</div>
+<p>（2）三角形面积模型</p>
+<p>连接 <span class="arithmatex">\(PO\)</span>
+* <span style="border-bottom: 1.5px dashed orange;">结论</span>：<span class="arithmatex">\(\triangle PAO\)</span> 或 <span class="arithmatex">\(\triangle PBO\)</span> 的面积为定值 <span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(\frac{1}{2}|k|\)</span></span></p>
+<div class="arithmatex">\[S_{\triangle} = \frac{1}{2} \cdot |x| \cdot |y| = \frac{1}{2}|k|\]</div>
+<div class="admonition note">
+<p class="admonition-title">直观理解</p>
+<p>无论点 <span class="arithmatex">\(P\)</span> 在双曲线上怎么滑动，以此点为顶点的矩形面积永远锁死为 <span class="arithmatex">\(|k|\)</span>。这是反比例函数最核心的“不变量”</p>
+</div>
+<hr>
+<h4 id="3_1">3. 典型例题<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h4>
+<p>【例1】 基础求值</p>
+<p>已知反比例函数 <span class="arithmatex">\(y = \frac{k}{x}\)</span> 的图象经过点 <span class="arithmatex">\(A(-2, 3)\)</span>
+(1) 求这个函数的解析式
+(2) 若点 <span class="arithmatex">\(B(1, m)\)</span> 也在图象上，求 <span class="arithmatex">\(m\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求 k</span>：
+    <span class="arithmatex">\(\because\)</span> 图象过点 <span class="arithmatex">\(A(-2, 3)\)</span>
+    <span class="arithmatex">\(\therefore k = x \cdot y = -2 \times 3 = -6\)</span>
+    解析式为 <span class="arithmatex">\(y = -\frac{6}{x}\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求 m</span>：
+    <span class="arithmatex">\(\because B(1, m)\)</span> 在图象上
+    <span class="arithmatex">\(\therefore 1 \cdot m = -6 \Rightarrow m = -6\)</span></p>
+</li>
+</ol>
+<p>【例2】 几何意义的应用</p>
+<p>如图，点 <span class="arithmatex">\(A\)</span> 是反比例函数 <span class="arithmatex">\(y = \frac{4}{x}\)</span> (<span class="arithmatex">\(x&gt;0\)</span>) 图象上一点，过点 <span class="arithmatex">\(A\)</span> 作 <span class="arithmatex">\(AB \perp x\)</span> 轴于点 <span class="arithmatex">\(B\)</span>，连接 <span class="arithmatex">\(OA\)</span>。求 <span class="arithmatex">\(\triangle OAB\)</span> 的面积</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">识别模型</span>：这是标准的“反比例函数三角形面积”模型</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">套公式</span>：
+    <span class="arithmatex">\(S_{\triangle OAB} = \frac{1}{2} |k|\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">计算</span>：
+    <span class="arithmatex">\(\because k = 4\)</span>
+    <span class="arithmatex">\(\therefore S = \frac{1}{2} \times 4 = 2\)</span></p>
+</li>
+</ol>
+<hr>
+<h4 id="4_1">4. 进阶思维与素养拓展<a class="headerlink" href="#4_1" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷中“面积变换”与“函数交点”的思想</em></p>
+<p>（1）“双反”模型与面积差</p>
+<p>当一个图中出现两个反比例函数 <span class="arithmatex">\(y = \frac{k_1}{x}\)</span> 和 <span class="arithmatex">\(y = \frac{k_2}{x}\)</span> 时，利用面积的不变性可以解决复杂的几何比值问题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">结论</span>：若点 <span class="arithmatex">\(A\)</span> 在 <span class="arithmatex">\(y = \frac{k_1}{x}\)</span> 上，点 <span class="arithmatex">\(B\)</span> 在 <span class="arithmatex">\(y = \frac{k_2}{x}\)</span> 上，且 <span class="arithmatex">\(A, B\)</span> 横坐标相同（或纵坐标相同），则它们构成的图形面积往往与 <span class="arithmatex">\(|k_1 - k_2|\)</span> 有关</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q21</span>：涉及直线与坐标轴围成的面积及动点问题<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：虽然此题考察一次函数，但其核心思想——<span style="border-bottom: 1.5px dashed orange;">动点运动但面积受约束</span>与反比例函数的 <span class="arithmatex">\(k\)</span> 值几何意义如出一辙。在处理此类问题时，如果遇到“乘积形式”的变量关系（如 <span class="arithmatex">\(xy=定值\)</span>），即使题目未明确给出反比例函数解析式，也要敏锐地意识到点在双曲线上运动，从而利用反比例函数的性质来辅助定性分析</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）一次函数与反比例函数的“联立”</p>
+<p>当直线 <span class="arithmatex">\(y = ax + b\)</span> 与双曲线 <span class="arithmatex">\(y = \frac{k}{x}\)</span> 相交时，交点通常成对出现</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">对称性</span>：若直线经过原点（即正比例函数 <span class="arithmatex">\(y=ax\)</span>），则两个交点 <span class="arithmatex">\(A(x_1, y_1)\)</span> 和 <span class="arithmatex">\(B(x_2, y_2)\)</span> 关于原点中心对称<ul>
+<li>推论：<span class="arithmatex">\(x_1 = -x_2, y_1 = -y_2\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">不等式解集</span>：通过观察图象的上下位置关系，直接写出不等式 <span class="arithmatex">\(ax+b &gt; \frac{k}{x}\)</span> 的解集，而不需要代数硬解</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q13</span>：在平面直角坐标系 <span class="arithmatex">\(xOy\)</span> 中，点 <span class="arithmatex">\(B\)</span> 的坐标为 <span class="arithmatex">\((8, 6)\)</span>，过点 <span class="arithmatex">\(B\)</span> 分别作 x轴、y轴的垂线... 点 <span class="arithmatex">\(P\)</span> 在直线 <span class="arithmatex">\(l\)</span> 上...<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：此题虽然是垂线与坐标几何，但若将 <span class="arithmatex">\(B\)</span> 点视为反比例函数 <span class="arithmatex">\(y=\frac{48}{x}\)</span> 上的一点，其围成的矩形面积即为 48。竞赛题常考“过双曲线上一点作切线”或“与直线围成面积”，其本质都是对 <span class="arithmatex">\(|k|\)</span> 的几何分割与重组</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">增减性陷阱</span>：反比例函数 <span class="arithmatex">\(y = -\frac{2}{x}\)</span>，当 <span class="arithmatex">\(x_1 &lt; x_2\)</span> 时，一定有 <span class="arithmatex">\(y_1 &lt; y_2\)</span> 吗？
+    <em>（答案：不一定。必须强调“在同一象限内”。如果一个在第二象限（正），一个在第四象限（负），结论就反了）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">面积无关性</span>：在 <span class="arithmatex">\(y = \frac{6}{x}\)</span> 图象上任取一点作矩形，周长是定值吗？面积是定值吗？
+    <em>（答案：面积是定值（6）；周长不是定值（<span class="arithmatex">\(2(x+\frac{6}{x})\)</span> 随 <span class="arithmatex">\(x\)</span> 变化）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">象限判断</span>：若 <span class="arithmatex">\(A(1, y_1), B(-2, y_2)\)</span> 在 <span class="arithmatex">\(y = \frac{k}{x}\)</span> (<span class="arithmatex">\(k&lt;0\)</span>) 上，谁大？
+    <em>（答案：<span class="arithmatex">\(k&lt;0\)</span> 图象在二、四。<span class="arithmatex">\(A\)</span> 在第四象限（负），<span class="arithmatex">\(B\)</span> 在第二象限（正）。所以 <span class="arithmatex">\(y_2 &gt; y_1\)</span>）</em></li>
+</ol>
+</div>
+<hr>
+<h2 id="_3">二、二次函数<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="_4">（一）二次函数的图象与性质<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h4 id="1_2">1. 核心定义与图象特征<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
+<p>二次函数是初中数学函数学习的“天花板”，它描述了生活中常见的抛物线运动（如投篮、喷泉）。其图象具有完美的对称性</p>
+<p>（1）定义</p>
+<p>形如 <span class="arithmatex">\(y = ax^2 + bx + c\)</span> （<span class="arithmatex">\(a, b, c\)</span> 为常数，<span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(a \neq 0\)</span></span>）的函数叫做二次函数</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">图象</span>：抛物线（Parabola）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">三要素</span>：开口方向、对称轴、顶点</li>
+</ul>
+<p>（2）系数的“遥控”法则</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(a\)</span>（开口与胖瘦）</span>：</p>
+<ul>
+<li><span class="arithmatex">\(a &gt; 0\)</span>：开口<span style="border-bottom: 1.5px dashed orange;">向上</span>，有最<span style="border-bottom: 1.5px dashed orange;">小</span>值（低谷）</li>
+<li><span class="arithmatex">\(a &lt; 0\)</span>：开口<span style="border-bottom: 1.5px dashed orange;">向下</span>，有最<span style="border-bottom: 1.5px dashed orange;">大</span>值（山峰）</li>
+<li><span class="arithmatex">\(|a|\)</span> 越大，开口越小（越陡峭）</li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(b\)</span>（配合 <span class="arithmatex">\(a\)</span> 控制对称轴）</span>：</p>
+<ul>
+<li>对称轴公式：<span class="arithmatex">\(x = -\frac{b}{2a}\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">口诀</span>：“左同右异”<ul>
+<li>若 <span class="arithmatex">\(a, b\)</span> 同号，对称轴在 <span class="arithmatex">\(y\)</span> 轴左侧</li>
+<li>若 <span class="arithmatex">\(a, b\)</span> 异号，对称轴在 <span class="arithmatex">\(y\)</span> 轴右侧</li>
+<li>若 <span class="arithmatex">\(b = 0\)</span>，对称轴就是 <span class="arithmatex">\(y\)</span> 轴</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(c\)</span>（<span class="arithmatex">\(y\)</span> 轴交点）</span>：</p>
+<ul>
+<li>图象与 <span class="arithmatex">\(y\)</span> 轴交于点 <span class="arithmatex">\((0, c)\)</span></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="2_1">2. 深度解析：顶点的秘密<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
+<p>（1）顶点坐标公式</p>
+<p>虽然配方法可以推导，但考场上建议直接背诵公式：</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">顶点坐标</span>：<span class="arithmatex">\(\left(-\frac{b}{2a}, \frac{4ac - b^2}{4a}\right)\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">最值</span>：当 <span class="arithmatex">\(x = -\frac{b}{2a}\)</span> 时，<span class="arithmatex">\(y_{\text{最值}} = \frac{4ac - b^2}{4a}\)</span></li>
+</ul>
+<p>（2）增减性的分界线</p>
+<p>对称轴 <span class="arithmatex">\(x = -\frac{b}{2a}\)</span> 是增减性的分水岭</p>
+<ul>
+<li>以 <span class="arithmatex">\(a &gt; 0\)</span>（开口向上）为例：<ul>
+<li>在对称轴<span style="border-bottom: 1.5px dashed orange;">左侧</span>，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 增大而<span style="border-bottom: 1.5px dashed orange;">减小</span>（下坡）</li>
+<li>在对称轴<span style="border-bottom: 1.5px dashed orange;">右侧</span>，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 增大而<span style="border-bottom: 1.5px dashed orange;">增大</span>（上坡）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3_2">3. 典型例题<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h4>
+<p>【例1】 识图与性质</p>
+<p>已知二次函数 <span class="arithmatex">\(y = -x^2 + 2x + 3\)</span>
+(1) 求其图象的开口方向、对称轴和顶点坐标
+(2) 当 <span class="arithmatex">\(x\)</span> 取何值时，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 的增大而增大？</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">基本属性</span>：</p>
+<ul>
+<li><span class="arithmatex">\(a = -1 &lt; 0\)</span>，<span style="border-bottom: 1.5px dashed orange;">开口向下</span></li>
+<li>对称轴：<span class="arithmatex">\(x = -\frac{2}{2 \times (-1)} = 1\)</span></li>
+<li>顶点：把 <span class="arithmatex">\(x=1\)</span> 代入解析式，<span class="arithmatex">\(y = -1 + 2 + 3 = 4\)</span>。顶点为 <span class="arithmatex">\((1, 4)\)</span></li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">增减性</span>：
+    因为开口向下，对称轴左侧是“上坡”
+    <span class="arithmatex">\(\therefore\)</span> 当 <span class="arithmatex">\(x &lt; 1\)</span> 时，<span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 的增大而增大</p>
+</li>
+</ol>
+<p>【例2】 系数符号判断</p>
+<p>如图，抛物线 <span class="arithmatex">\(y = ax^2 + bx + c\)</span> 开口向上，对称轴在 <span class="arithmatex">\(y\)</span> 轴右侧，且经过原点。判断 <span class="arithmatex">\(a, b, c\)</span> 的符号</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(a\)</span></span>：开口向上 <span class="arithmatex">\(\Rightarrow a &gt; 0\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(c\)</span></span>：经过原点 <span class="arithmatex">\((0,0) \Rightarrow c = 0\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(b\)</span></span>：对称轴在右侧（<span class="arithmatex">\(x &gt; 0\)</span>），即 <span class="arithmatex">\(-\frac{b}{2a} &gt; 0\)</span>。因为 <span class="arithmatex">\(a &gt; 0\)</span>，所以 <span class="arithmatex">\(-b &gt; 0 \Rightarrow b &lt; 0\)</span>（验证“左同右异”）</p>
+</li>
+</ol>
+<hr>
+<h4 id="4_2">4. 进阶思维与素养拓展<a class="headerlink" href="#4_2" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷，重点讲解“二次模型最值”与“特殊点求值”</em></p>
+<p>（1）实际问题中的“最值模型”</p>
+<p>这是中考压轴题的常客。将几何图形（如围栏面积、利润问题）转化为二次函数，利用顶点求最大/最小值</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q17</span>：老李想用长为 68m 的栅栏，借助房屋外墙围成一个长方形羊圈... 求面积最大值（思维拓展）<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道经典的<span style="border-bottom: 1.5px dashed orange;">建模题</span>  <blockquote>
+<p>设垂直墙的边长为 <span class="arithmatex">\(x\)</span>，则平行墙的边长为 <span class="arithmatex">\(70-2x\)</span>（考虑到门宽）<br>
+面积模型：<span class="arithmatex">\(S = x(70-2x) = -2x^2 + 70x\)</span><br>
+这是一个开口向下的二次函数。求最大值即求顶点坐标：<span class="arithmatex">\(x = -\frac{70}{2(-2)} = 17.5\)</span> 时，面积最大。解题关键在于<span style="border-bottom: 1.5px dashed orange;">建立函数关系式</span>并利用<span style="border-bottom: 1.5px dashed orange;">配方法或公式</span>求极值</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）动点问题的函数图象</p>
+<p>当几何图形中的点运动时，生成的面积或线段长往往是分段函数，其中可能包含二次函数片段</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届/九届复赛 Q20</span>：涉及矩形中动点 <span class="arithmatex">\(P\)</span> 沿边运动，生成的 <span class="arithmatex">\(y=PA-PE\)</span> 或面积图象<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：此类题目考查<span style="border-bottom: 1.5px dashed orange;">读图能力</span>。图象的拐点（转折点）通常对应几何图形的特殊位置（如顶点、垂足）。如果图象是曲线，通常意味着函数关系是二次的（例如面积 <span class="arithmatex">\(S = \frac{1}{2} \cdot \text{底} \cdot \text{高}\)</span>，底和高都含 <span class="arithmatex">\(x\)</span>）；如果图象是直线，则是一次函数</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（3）特殊赋值法</p>
+<p>在判断 <span class="arithmatex">\(2a+b\)</span> 或 <span class="arithmatex">\(a+b+c\)</span> 的符号时，不要死算系数，要学会“代数”
+* 令 <span class="arithmatex">\(x=1\)</span>，得 <span class="arithmatex">\(y = a+b+c\)</span>。看图象在 <span class="arithmatex">\(x=1\)</span> 时的点是在 <span class="arithmatex">\(x\)</span> 轴上方还是下方
+* 令 <span class="arithmatex">\(x=-1\)</span>，得 <span class="arithmatex">\(y = a-b+c\)</span></p>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">最值判断</span>：函数 <span class="arithmatex">\(y = 2(x-3)^2 + 5\)</span> 的最小值是多少？
+    <em>(答案：<span class="arithmatex">\(a=2&gt;0\)</span>，开口向上有最小值。当 <span class="arithmatex">\(x=3\)</span> 时，最小值是 <span class="arithmatex">\(y=5\)</span>)</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">增减性</span>：对于 <span class="arithmatex">\(y = -x^2\)</span>，当 <span class="arithmatex">\(x = -2\)</span> 到 <span class="arithmatex">\(x = -1\)</span> 变化时，<span class="arithmatex">\(y\)</span> 是增大还是减小？
+    <em>(答案：对称轴是 <span class="arithmatex">\(y\)</span> 轴 (<span class="arithmatex">\(x=0\)</span>)，开口向下。在左侧 (<span class="arithmatex">\(x&lt;0\)</span>) 是增函数，所以 <span class="arithmatex">\(y\)</span> 增大)</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">对称性</span>：若抛物线经过 <span class="arithmatex">\((1, 5)\)</span> 和 <span class="arithmatex">\((3, 5)\)</span>，对称轴是哪条直线？
+    <em>(答案：两点纵坐标相同，关于对称轴对称。对称轴 <span class="arithmatex">\(x = \frac{1+3}{2} = 2\)</span>)</em></li>
+</ol>
+</div>
+<hr>
+<h3 id="_5">（二）二次函数表达式的求法<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h4 id="1_3">1. 核心方法：待定系数法的三副面孔<a class="headerlink" href="#1_3" title="Permanent link">¶</a></h4>
+<p>求二次函数表达式（解析式），本质上就是求出 <span class="arithmatex">\(a, b, c\)</span> 等未知系数。为了避免陷入繁琐的方程组计算，我们必须根据题目给出的条件，灵活选择以下三种形式中的一种</p>
+<p>（1）一般式</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：<span class="arithmatex">\(y = ax^2 + bx + c\)</span> (<span class="arithmatex">\(a \neq 0\)</span>)</li>
+<li><span style="border-bottom: 1.5px dashed orange;">适用场景</span>：已知图象上<span style="border-bottom: 1.5px dashed orange;">任意三个点</span>的坐标</li>
+<li><span style="border-bottom: 1.5px dashed orange;">策略</span>：将三个点的坐标代入，解三元一次方程组（计算量最大，非必要不推荐）</li>
+</ul>
+<p>（2）顶点式（核心推荐）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：<span class="arithmatex">\(y = a(x - h)^2 + k\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">适用场景</span>：已知<span style="border-bottom: 1.5px dashed orange;">顶点坐标</span> <span class="arithmatex">\((h, k)\)</span> 或<span style="border-bottom: 1.5px dashed orange;">对称轴</span> <span class="arithmatex">\(x=h\)</span>、<span style="border-bottom: 1.5px dashed orange;">最值</span> <span class="arithmatex">\(y=k\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">策略</span>：直接代入 <span class="arithmatex">\(h, k\)</span>，只剩下一个未知数 <span class="arithmatex">\(a\)</span>，再找任意一个点代入求 <span class="arithmatex">\(a\)</span> 即可</li>
+</ul>
+<p>（3）交点式（两根式）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：<span class="arithmatex">\(y = a(x - x_1)(x - x_2)\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">适用场景</span>：已知图象与 <span style="border-bottom: 1.5px dashed orange;">x轴</span> 的两个交点坐标 <span class="arithmatex">\((x_1, 0)\)</span> 和 <span class="arithmatex">\((x_2, 0)\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">策略</span>：代入 <span class="arithmatex">\(x_1, x_2\)</span>，再找任意一个点代入求 <span class="arithmatex">\(a\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">注</span>：这是韦达定理在函数中的变体，计算效率极高</li>
+</ul>
+<hr>
+<h4 id="2_2">2. 深度解析：如何选择最优解法？<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
+<p>在考场上，<span style="border-bottom: 1.5px dashed orange;">选对公式</span>比“算得快”更重要</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">看到“顶点”、“最高点”、“最低点”、“对称轴”</span> <span class="arithmatex">\(\rightarrow\)</span> <span style="border-bottom: 1.5px dashed orange;">秒选顶点式</span><ul>
+<li>比如：抛物线顶点是 <span class="arithmatex">\((1, 3)\)</span>，设 <span class="arithmatex">\(y = a(x-1)^2 + 3\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">看到“与x轴交于...”</span> <span class="arithmatex">\(\rightarrow\)</span> <span style="border-bottom: 1.5px dashed orange;">秒选交点式</span><ul>
+<li>比如：经过 <span class="arithmatex">\((1, 0)\)</span> 和 <span class="arithmatex">\((3, 0)\)</span>，设 <span class="arithmatex">\(y = a(x-1)(x-3)\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">什么特殊特征都没有，只给三个普通点</span> <span class="arithmatex">\(\rightarrow\)</span> <span style="border-bottom: 1.5px dashed orange;">含泪选一般式</span></li>
+</ul>
+<hr>
+<h4 id="3_3">3. 典型例题<a class="headerlink" href="#3_3" title="Permanent link">¶</a></h4>
+<p>【例1】 已知顶点求解析式</p>
+<p>已知抛物线的顶点坐标为 <span class="arithmatex">\((1, -4)\)</span>，且经过点 <span class="arithmatex">\((2, -3)\)</span>。求该二次函数的表达式</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">设</span>：因为知道顶点，设顶点式 <span class="arithmatex">\(y = a(x-1)^2 - 4\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">代</span>：将点 <span class="arithmatex">\((2, -3)\)</span> 代入
+    <span class="arithmatex">\(-3 = a(2-1)^2 - 4\)</span>
+    <span class="arithmatex">\(-3 = a - 4\)</span>
+    <span class="arithmatex">\(a = 1\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">答</span>：表达式为 <span class="arithmatex">\(y = (x-1)^2 - 4\)</span>（即 <span class="arithmatex">\(y = x^2 - 2x - 3\)</span>）</p>
+</li>
+</ol>
+<p>【例2】 几何建模求表达式</p>
+<p>用长为 12米的铝合金条制成一个矩形窗框，求窗框面积 <span class="arithmatex">\(S\)</span> 与宽度 <span class="arithmatex">\(x\)</span> 之间的函数关系式</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">找关系</span>：周长 <span class="arithmatex">\(= 2(\text{长} + \text{宽}) = 12 \Rightarrow \text{长} + \text{宽} = 6\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">表述长</span>：<span class="arithmatex">\(\text{长} = 6 - x\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">列式</span>：
+    <span class="arithmatex">\(S = \text{长} \times \text{宽} = x(6-x) = -x^2 + 6x\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">确定范围</span>：边长必须为正，即 <span class="arithmatex">\(x&gt;0\)</span> 且 <span class="arithmatex">\(6-x&gt;0\)</span>，得 <span class="arithmatex">\(0 &lt; x &lt; 6\)</span>
+    <span style="border-bottom: 1.5px dashed orange;">答</span>：<span class="arithmatex">\(S = -x^2 + 6x\)</span> (<span class="arithmatex">\(0 &lt; x &lt; 6\)</span>)</p>
+</li>
+</ol>
+<hr>
+<h4 id="4_3">4. 进阶思维与素养拓展<a class="headerlink" href="#4_3" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷，探讨从“几何图形”中抽象出函数表达式的能力</em></p>
+<p>（1）几何最值问题的建模</p>
+<p>在压轴题中，函数表达式往往不是直接给出的，而是需要你自己“造”出来</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q17</span>：老李用 68m 栅栏借助外墙围羊圈，留 2m 门，求面积最大值<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这道题的核心第一步就是<span style="border-bottom: 1.5px dashed orange;">求表达式</span>  <blockquote>
+<p>设垂直墙边长为 <span class="arithmatex">\(x\)</span><br>
+篱笆总长约束：<span class="arithmatex">\(L_{\text{平行}} + 2x = 68 + 2\)</span>（门宽省下的篱笆相当于总长增加了）<br>
+得到 <span class="arithmatex">\(L_{\text{平行}} = 70 - 2x\)</span><br>
+构造函数：<span class="arithmatex">\(S = x(70 - 2x)\)</span><br>
+这本质上就是利用<span style="border-bottom: 1.5px dashed orange;">一般式</span>（展开后）或<span style="border-bottom: 1.5px dashed orange;">交点式</span>（直接利用零点 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(35\)</span>）来建立模型</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）图形变换后的表达式</p>
+<p>平移抛物线是中考的高频考点，核心在于<span style="border-bottom: 1.5px dashed orange;">顶点移动</span></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q20</span>：涉及 <span class="arithmatex">\(\triangle ABC\)</span> 向左平移<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：虽然此题是三角形平移，但原理相通。若将问题改为“将抛物线 <span class="arithmatex">\(y=ax^2\)</span> 向左平移 1 个单位”，我们只需关注顶点从 <span class="arithmatex">\((0,0)\)</span> 移到了 <span class="arithmatex">\((-1,0)\)</span>  <blockquote>
+<p>新表达式直接写为 <span class="arithmatex">\(y = a(x+1)^2\)</span><br>
+<span style="border-bottom: 1.5px dashed orange;">口诀</span>：<span style="border-bottom: 1.5px dashed orange;">左加右减，上加下减</span>。注意左右是加减在 <span class="arithmatex">\(x\)</span> 的括号里（<span class="arithmatex">\((x+m)\)</span>），上下是加减在常数项 <span class="arithmatex">\(k\)</span></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">方法选择</span>：已知抛物线经过 <span class="arithmatex">\((0,0), (2,0), (3,5)\)</span>，设成什么形式最快？
+    <em>（答案：交点式。因为 <span class="arithmatex">\((0,0)\)</span> 和 <span class="arithmatex">\((2,0)\)</span> 都是与 x轴的交点。设 <span class="arithmatex">\(y = ax(x-2)\)</span>）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">平移规律</span>：把 <span class="arithmatex">\(y = 2x^2\)</span> 向右平移 3 个单位，再向下平移 5 个单位，解析式是什么？
+    <em>（答案：<span class="arithmatex">\(y = 2(x-3)^2 - 5\)</span>）</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">常数项含义</span>：已知二次函数经过点 <span class="arithmatex">\((0, -3)\)</span>，那么 <span class="arithmatex">\(c\)</span> 是多少？
+    <em>（答案：<span class="arithmatex">\(c = -3\)</span>。图象与 y轴交点即为 <span class="arithmatex">\((0, c)\)</span>）</em></li>
+</ol>
+</div>
+<hr>
+<h3 id="_6">（三）二次函数与几何综合<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h4 id="1_4">1. 核心方法：坐标几何化的翻译<a class="headerlink" href="#1_4" title="Permanent link">¶</a></h4>
+<p>这是初中数学的“压轴题”高发区。核心在于打破代数与几何的壁垒，把“图形的形状”翻译成“坐标的方程”</p>
+<p>（1）线段长的坐标表示</p>
+<p>在平面直角坐标系中，计算几何图形的边长或高，通常转化为坐标差</p>
+<p>设 <span class="arithmatex">\(A(x_1, y_1)\)</span>，<span class="arithmatex">\(B(x_2, y_2)\)</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">铅垂距离（竖直）</span>：若 <span class="arithmatex">\(x_1 = x_2\)</span>，则 <span class="arithmatex">\(AB = |y_1 - y_2|\)</span>（上减下）<ul>
+<li><em>应用</em>：求三角形的高、铅垂线段长</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">水平距离（横向）</span>：若 <span class="arithmatex">\(y_1 = y_2\)</span>，则 <span class="arithmatex">\(AB = |x_1 - x_2|\)</span>（右减左）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">任意距离</span>：<span class="arithmatex">\(AB = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}\)</span>（勾股定理）</li>
+</ul>
+<p>（2）面积的最大值模型（铅垂高法）</p>
+<p>对于斜放在坐标系中的三角形 <span class="arithmatex">\(\triangle ABC\)</span>，直接求底和高很困难</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">割补策略</span>：过中间点作 <span class="arithmatex">\(x\)</span> 轴的垂线（铅垂高 <span class="arithmatex">\(h\)</span>），将三角形切割成左右两部分</li>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：</li>
+</ul>
+<p>$<span class="arithmatex">\(S = \frac{1}{2} \cdot h \cdot |x_B - x_C|\)</span>$</p>
+<p>（<span class="arithmatex">\(h\)</span> 为铅垂线段长，即上方抛物线点纵坐标减去下方直线点纵坐标）
+* <span style="border-bottom: 1.5px dashed orange;">最值原理</span>：因为 <span class="arithmatex">\(h\)</span> 通常是关于 <span class="arithmatex">\(x\)</span> 的二次函数（<span class="arithmatex">\(y_{\text{抛}} - y_{\text{直}}\)</span>），所以利用二次函数顶点公式可求 <span class="arithmatex">\(S\)</span> 的最大值</p>
+<hr>
+<h4 id="2_3">2. 深度解析：特殊图形的存在性<a class="headerlink" href="#2_3" title="Permanent link">¶</a></h4>
+<p>“是否存在一点 <span class="arithmatex">\(P\)</span>，使得...” 这类问题，本质上是解方程</p>
+<p>（1）等腰三角形的存在性</p>
+<p>若 <span class="arithmatex">\(\triangle ABC\)</span> 为等腰三角形，需分三种情况讨论（“三圆法”）：</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(AB = AC\)</span>（以 <span class="arithmatex">\(A\)</span> 为圆心，<span class="arithmatex">\(AB\)</span> 为半径画圆）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(BA = BC\)</span>（以 <span class="arithmatex">\(B\)</span> 为圆心，<span class="arithmatex">\(BA\)</span> 为半径画圆）</p>
+</li>
+<li>
+<p><span class="arithmatex">\(CA = CB\)</span>（<span class="arithmatex">\(AB\)</span> 的垂直平分线）</p>
+</li>
+</ol>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">操作</span>：列出距离平方相等的方程，解 <span class="arithmatex">\(x\)</span></li>
+</ul>
+<p>（2）平行四边形的存在性</p>
+<p>若 <span class="arithmatex">\(A, B, C, D\)</span> 四点构成平行四边形，利用<span style="border-bottom: 1.5px dashed orange;">对角线中点重合</span>最快</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">公式</span>：<span class="arithmatex">\(x_A + x_C = x_B + x_D\)</span>，且 <span class="arithmatex">\(y_A + y_C = y_B + y_D\)</span>（假设 <span class="arithmatex">\(AC, BD\)</span> 为对角线）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">注意</span>：如果不确定谁是对角线，通常有 3 种可能的坐标</li>
+</ul>
+<hr>
+<h4 id="3_4">3. 典型例题<a class="headerlink" href="#3_4" title="Permanent link">¶</a></h4>
+<p>【例1】 面积最大值（铅垂法）</p>
+<p>如图，抛物线 <span class="arithmatex">\(y = -x^2 + 4x\)</span> 与 <span class="arithmatex">\(x\)</span> 轴交于 <span class="arithmatex">\(O, A\)</span> 两点。<span class="arithmatex">\(P\)</span> 是抛物线在第一象限上的动点。求 <span class="arithmatex">\(\triangle OPA\)</span> 面积的最大值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求坐标</span>：令 <span class="arithmatex">\(y=0\)</span>，解得 <span class="arithmatex">\(x_1=0, x_2=4\)</span>，即 <span class="arithmatex">\(A(4, 0)\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">设动点</span>：设 <span class="arithmatex">\(P(t, -t^2+4t)\)</span>，其中 <span class="arithmatex">\(0 &lt; t &lt; 4\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">找底高</span>：</p>
+<ul>
+<li>底边 <span class="arithmatex">\(OA = 4\)</span>（在 <span class="arithmatex">\(x\)</span> 轴上）</li>
+<li>高 <span class="arithmatex">\(h = P\)</span> 点的纵坐标 <span class="arithmatex">\(= -t^2+4t\)</span></li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">列函数</span>：
+    <span class="arithmatex">\(S = \frac{1}{2} \times \text{底} \times \text{高} = \frac{1}{2} \times 4 \times (-t^2+4t) = -2t^2 + 8t\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">求最值</span>：
+    配方得 <span class="arithmatex">\(S = -2(t-2)^2 + 8\)</span>
+    <span class="arithmatex">\(\therefore\)</span> 当 <span class="arithmatex">\(t=2\)</span> 时，面积最大值为 8</p>
+</li>
+</ol>
+<p>【例2】 等腰三角形的存在性</p>
+<p>在抛物线 <span class="arithmatex">\(y = x^2\)</span> 上是否存在点 <span class="arithmatex">\(P\)</span>，使得 <span class="arithmatex">\(\triangle PAB\)</span> 是以 <span class="arithmatex">\(AB\)</span> 为腰的等腰三角形？已知 <span class="arithmatex">\(A(-1, 1), B(1, 1)\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">分析边长</span>：<span class="arithmatex">\(A, B\)</span> 关于 <span class="arithmatex">\(y\)</span> 轴对称，<span class="arithmatex">\(AB\)</span> 平行于 <span class="arithmatex">\(x\)</span> 轴，长度为 2</p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">分类讨论</span>：</p>
+<ul>
+<li>情况一：<span class="arithmatex">\(PA = AB = 2\)</span>
+  即 <span class="arithmatex">\(P\)</span> 到 <span class="arithmatex">\(A(-1, 1)\)</span> 的距离为 2
+  列方程：<span class="arithmatex">\((x+1)^2 + (x^2-1)^2 = 2^2\)</span></li>
+<li>情况二：<span class="arithmatex">\(PB = AB = 2\)</span>
+  同理列方程</li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">解方程</span>：解出符合题意的 <span class="arithmatex">\(x\)</span> 值即为 <span class="arithmatex">\(P\)</span> 点横坐标</p>
+</li>
+</ol>
+<hr>
+<h4 id="4_4">4. 进阶思维与素养拓展<a class="headerlink" href="#4_4" title="Permanent link">¶</a></h4>
+<p><em>本节结合浙江素养测试卷，探讨几何约束下的最值与动点问题</em></p>
+<p>（1）几何约束下的二次优化</p>
+<p>有些几何最值问题，表面看是几何题，列出式子后发现是二次函数最值</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q17</span>：用 68m 栅栏围羊圈，面积 <span class="arithmatex">\(S = x(70-2x)\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：这是一道教科书级的<span style="border-bottom: 1.5px dashed orange;">几何建模</span>题。几何图形的“面积”天然就是一个二次函数（长<span class="arithmatex">\(\times\)</span>宽）。解题的关键在于准确找出自变量的取值范围（如边长 <span class="arithmatex">\(&gt;0\)</span>），并在范围内求顶点的纵坐标。如果顶点在范围外，则需根据增减性取端点值</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（2）动点函数图象（分段二次函数）</p>
+<p>动点在多边形边上运动时，不同阶段的面积表达式不同，构成了“分段函数”</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q20</span>：点 <span class="arithmatex">\(P\)</span> 沿折线运动，图象显示 <span class="arithmatex">\(y\)</span> 随 <span class="arithmatex">\(x\)</span> 变化的趋势（有直线也有曲线）<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：<blockquote>
+<p>如果图象是<span style="border-bottom: 1.5px dashed orange;">抛物线的一部分</span>，说明几何量之间是二次关系（如 <span class="arithmatex">\(\triangle\)</span> 面积随底边变化，高也随底边变化）<br>
+如果图象是<span style="border-bottom: 1.5px dashed orange;">直线</span>，说明是一次关系（如矩形一边固定，另一边变化）<br>
+<span style="border-bottom: 1.5px dashed orange;">破题点</span>：观察图象的“最高点”或“拐点”。这些点往往对应几何图形中的特殊位置（如 <span class="arithmatex">\(P\)</span> 点到达顶点，或 <span class="arithmatex">\(P\)</span> 点经过垂足）。利用特殊点的几何特征算出具体的数值，反求解析式</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（3）坐标系中的直角三角形</p>
+<p>存在性问题中，直角三角形的处理技巧</p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q21</span>：涉及坐标系中的垂线构造<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养点拨</span>：若在抛物线上找点 <span class="arithmatex">\(P\)</span> 使 <span class="arithmatex">\(\angle APB = 90^\circ\)</span><blockquote>
+<p><span style="border-bottom: 1.5px dashed orange;">法一（勾股）</span>：<span class="arithmatex">\(PA^2 + PB^2 = AB^2\)</span>（计算量大）
+<span style="border-bottom: 1.5px dashed orange;">法二（相似/斜率）</span>：构造“一线三等角”模型（K字型相似），或者利用 <span class="arithmatex">\(k_{PA} \cdot k_{PB} = -1\)</span>（高中知识下放，若填空题可用）</p>
+</blockquote>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">法三（几何法）</span>：点 <span class="arithmatex">\(P\)</span> 在以 <span class="arithmatex">\(AB\)</span> 为直径的圆与抛物线的交点上</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">距离误区</span>：点 <span class="arithmatex">\(A(1, 5)\)</span> 和 <span class="arithmatex">\(B(1, -2)\)</span> 的距离是多少？是 <span class="arithmatex">\(5-2=3\)</span> 吗？
+    <em>(答案：错。是 <span class="arithmatex">\(5 - (-2) = 7\)</span>。坐标差要取绝对值或上减下)</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">铅垂高</span>：直线 <span class="arithmatex">\(y=x\)</span> 上方有一个点 <span class="arithmatex">\(P(2, 4)\)</span>，求 <span class="arithmatex">\(P\)</span> 点到直线的铅垂距离
+    <em>(答案：<span class="arithmatex">\(P\)</span> 点纵坐标为 4，直线上对应横坐标 <span class="arithmatex">\(x=2\)</span> 时的纵坐标为 2。铅垂距离 <span class="arithmatex">\(= 4 - 2 = 2\)</span>)</em></li>
+<li><span style="border-bottom: 1.5px dashed orange;">形状判断</span>：若 <span class="arithmatex">\(A, B, C\)</span> 三点满足 <span class="arithmatex">\(AB^2 + BC^2 = AC^2\)</span>，则 <span class="arithmatex">\(\triangle ABC\)</span> 是什么形状？
+    <em>(答案：直角三角形，且 <span class="arithmatex">\(\angle B = 90^\circ\)</span>)</em></li>
+</ol>
+</div></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../JHMath02/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 几何篇">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                几何篇
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../changheji/" class="md-footer__link md-footer__link--next" aria-label="下一页: 长河集">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                长河集
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

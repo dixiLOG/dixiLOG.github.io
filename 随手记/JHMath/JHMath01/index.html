@@ -1,0 +1,2714 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/%E9%9A%8F%E6%89%8B%E8%AE%B0/JHMath/JHMath01/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../JHMath02/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>代数篇 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              代数篇
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            随手记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../boringBetter/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无聊可期
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../whywhy/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    十万个为什么
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../20250813/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    25年电赛小黑屋，再战VCO
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    初中数学保命手册
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            初中数学保命手册
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    代数篇
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    代数篇
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、实数与代数式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、实数与代数式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）二次根式的性质与运算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）二次根式的性质与运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 核心性质（“去根号”的三大法宝）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 核心运算规则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）整式与分式的高阶变形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）整式与分式的高阶变形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、方程与不等式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、方程与不等式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）一元二次方程的解法与判别式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）一元二次方程的解法与判别式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）韦达定理与根系关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）韦达定理与根系关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）方程与不等式的实际应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）方程与不等式的实际应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与建模思想
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：核心模型库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    几何篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JHMath03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数篇
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、实数与代数式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、实数与代数式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）二次根式的性质与运算
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）二次根式的性质与运算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 核心性质（“去根号”的三大法宝）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 核心运算规则
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）整式与分式的高阶变形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）整式与分式的高阶变形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、方程与不等式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、方程与不等式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      （一）一元二次方程的解法与判别式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（一）一元二次方程的解法与判别式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      （二）韦达定理与根系关系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（二）韦达定理与根系关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      （三）方程与不等式的实际应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="（三）方程与不等式的实际应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 核心定义与建模思想
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 深度解析：核心模型库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 典型例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 进阶思维与素养拓展
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">代数篇<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 5750 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 32 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_2">一、实数与代数式<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="_3">（一）二次根式的性质与运算<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<h4 id="1">1. 核心定义与性质<a class="headerlink" href="#1" title="Permanent link">¶</a></h4>
+<p>二次根式是初中代数“分水岭”级别的知识点。它不仅是运算工具，更是考察严密逻辑（非负性）的试金石</p>
+<h4 id="2">2. 定义<a class="headerlink" href="#2" title="Permanent link">¶</a></h4>
+<p>一般地，形如 <span class="arithmatex">\(\sqrt{a}\)</span> (<span class="arithmatex">\(a \ge 0\)</span>) 的式子叫做<span style="border-bottom: 1.5px dashed orange;">二次根式</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">双重非负性</span>：<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">被开方数非负</span>：<span class="arithmatex">\(a \ge 0\)</span>（如果不满足，在实数范围内无意义）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">值非负</span>：<span class="arithmatex">\(\sqrt{a} \ge 0\)</span>（即算术平方根是非负数）</li>
+</ol>
+</li>
+</ul>
+<div class="admonition info">
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PixPin_2026-02-09_18-05-32.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="基础函数" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PixPin_2026-02-09_18-05-32.png" style="zoom: 75%;"></a></p>
+</div>
+<h4 id="3">3. 核心性质（“去根号”的三大法宝）<a class="headerlink" href="#3" title="Permanent link">¶</a></h4>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">平方性质</span>：<span class="arithmatex">\((\sqrt{a})^2 = a\)</span> (<span class="arithmatex">\(a \ge 0\)</span>)<ul>
+<li><em>解读</em>：根号和平方是“死对头”，碰面就抵消</li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">化简性质（绝对值陷阱）</span>：<span class="arithmatex">\(\sqrt{a^2} = |a|\)</span></p>
+<ul>
+<li>
+<p><em>展开写</em>：</p>
+<div class="arithmatex">\[\sqrt{a^2} = \begin{cases} a &amp; (a &gt; 0) \\ 0 &amp; (a = 0) \\ -a &amp; (a &lt; 0) \end{cases}\]</div>
+</li>
+<li>
+<p><em>高频易错</em>：<span class="arithmatex">\(\sqrt{(-3)^2} \neq -3\)</span>，而是 <span class="arithmatex">\(|-3| = 3\)</span>。一定要先判断 <span class="arithmatex">\(a\)</span> 的正负！
+3. <span style="border-bottom: 1.5px dashed orange;">积商法则</span>：</p>
+</li>
+<li>积：<span class="arithmatex">\(\sqrt{ab} = \sqrt{a} \cdot \sqrt{b}\)</span> (<span class="arithmatex">\(a \ge 0, b \ge 0\)</span>)</li>
+<li>商：<span class="arithmatex">\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\)</span> (<span class="arithmatex">\(a \ge 0, b &gt; 0\)</span>)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="4">4. 核心运算规则<a class="headerlink" href="#4" title="Permanent link">¶</a></h4>
+<p>（1）加减法：合并同类项</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">原则</span>：只有<span style="border-bottom: 1.5px dashed orange;">最简二次根式</span>的被开方数相同时，才能合并</li>
+<li><span style="border-bottom: 1.5px dashed orange;">步骤</span>：<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">化简</span>：将所有二次根式化为最简形式</li>
+<li><span style="border-bottom: 1.5px dashed orange;">合并</span>：系数相加减，根号部分保持不变
+<em>例</em>：<span class="arithmatex">\(\sqrt{8} + \sqrt{18} = 2\sqrt{2} + 3\sqrt{2} = 5\sqrt{2}\)</span></li>
+</ol>
+</li>
+</ul>
+<p>（2）分母有理化</p>
+<p>这是代数运算中的“整容术”，目的是消除分母中的根号</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">基础型</span>（单项式）：</p>
+<p>利用 <span class="arithmatex">\(\sqrt{a} \cdot \sqrt{a} = a\)</span></p>
+<div class="arithmatex">\[\frac{1}{\sqrt{a}} = \frac{1 \cdot \sqrt{a}}{\sqrt{a} \cdot \sqrt{a}} = \frac{\sqrt{a}}{a}\]</div>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">进阶型</span>（多项式 - <span style="border-bottom: 1.5px dashed orange;">素养卷常考</span>）：
+    利用平方差公式 <span class="arithmatex">\((x+y)(x-y)=x^2-y^2\)</span> 构造<span style="border-bottom: 1.5px dashed orange;">共轭</span>形式</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{a} + \sqrt{b}} = \frac{1 \cdot (\sqrt{a} - \sqrt{b})}{(\sqrt{a} + \sqrt{b})(\sqrt{a} - \sqrt{b})} = \frac{\sqrt{a} - \sqrt{b}}{a - b}\]</div>
+</li>
+</ul>
+<hr>
+<h4 id="5">5. 典型例题<a class="headerlink" href="#5" title="Permanent link">¶</a></h4>
+<p>【例1】 基础化简与取值范围</p>
+<p>(1) 若 <span class="arithmatex">\(\sqrt{x-3}\)</span> 有意义，求 <span class="arithmatex">\(x\)</span> 的取值范围<br>
+(2) 计算：<span class="arithmatex">\(\sqrt{12} - \sqrt{3} \times \sqrt{6}\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<p>(1) 根据非负性，<span class="arithmatex">\(x-3 \ge 0 \Rightarrow x \ge 3\)</span><br>
+(2) 原式 <span class="arithmatex">\(= 2\sqrt{3} - \sqrt{18} = 2\sqrt{3} - 3\sqrt{2}\)</span></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p><span class="arithmatex">\(\sqrt{3}\)</span> 和 <span class="arithmatex">\(\sqrt{2}\)</span> 不是同类项，不能继续合并</p>
+</div>
+<p>【例2】 陷阱题：符号的艺术</p>
+<p>已知 <span class="arithmatex">\(a &lt; 2\)</span>，化简 <span class="arithmatex">\(\sqrt{(a-2)^2} + |a-3|\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li>先处理根号：<span class="arithmatex">\(\sqrt{(a-2)^2} = |a-2|\)</span></li>
+<li>去绝对值符号（这是核心难点）：<ul>
+<li>因为 <span class="arithmatex">\(a &lt; 2\)</span>，所以 <span class="arithmatex">\(a-2 &lt; 0\)</span>，去绝对值要变号，得 <span class="arithmatex">\(-(a-2) = 2-a\)</span></li>
+<li>因为 <span class="arithmatex">\(a &lt; 2\)</span>，所以 <span class="arithmatex">\(a-3 &lt; 0\)</span>，去绝对值要变号，得 <span class="arithmatex">\(-(a-3) = 3-a\)</span></li>
+</ul>
+</li>
+<li>原式 <span class="arithmatex">\(= (2-a) + (3-a) = 5 - 2a\)</span></li>
+</ol>
+<hr>
+<h4 id="6">6. 进阶思维与素养拓展<a class="headerlink" href="#6" title="Permanent link">¶</a></h4>
+<p><em>本节内容源自浙江省素养测试卷分析，旨在提升对代数结构的认知</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q1</span>：考查 <span class="arithmatex">\((1-2\sqrt{3})(3+\sqrt{3}) \dots\)</span> 的混合运算。这道题提醒我们，即使是最基础的乘法分配律，在根号介入后也容易出现符号错误，是检验计算基本功的试金石</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q12</span>：考查分式 <span class="arithmatex">\(\frac{5-5\sqrt{3}+\sqrt{2}-\sqrt{6}}{\sqrt{6}-\sqrt{2}}\)</span> 的化简。这道题不能死算，分子中的 <span class="arithmatex">\(5(1-\sqrt{3})\)</span> 与 <span class="arithmatex">\(\sqrt{2}(1-\sqrt{3})\)</span> 暗示了“分组分解”的思想，分母有理化时需要灵活运用平方差公式</li>
+</ul>
+</div>
+<p>（1）巧用“共轭”构造</p>
+<p>在处理复杂分式时，简单的通分往往计算量巨大，而利用共轭结构可以“降维打击”</p>
+<p><span style="border-bottom: 1.5px dashed orange;">挑战题</span>：计算 <span class="arithmatex">\(\frac{1}{\sqrt{2}+1} + \frac{1}{\sqrt{3}+\sqrt{2}} + \dots + \frac{1}{\sqrt{100}+\sqrt{99}}\)</span></p>
+<div class="admonition tip">
+<p class="admonition-title">思路点拨</p>
+<p>不要直接通分！观察每一项 <span class="arithmatex">\(\frac{1}{\sqrt{n+1}+\sqrt{n}}\)</span><br>
+利用分母有理化：</p>
+<div class="arithmatex">\[\frac{1}{\sqrt{n+1}+\sqrt{n}} = \frac{\sqrt{n+1}-\sqrt{n}}{(\sqrt{n+1}+\sqrt{n})(\sqrt{n+1}-\sqrt{n})} = \sqrt{n+1}-\sqrt{n}\]</div>
+<p>原式变为裂项相消的形式：</p>
+<div class="arithmatex">\[(\sqrt{2}-1) + (\sqrt{3}-\sqrt{2}) + \dots + (\sqrt{100}-\sqrt{99})\]</div>
+<p>中间项全部抵消，只剩头尾：<span class="arithmatex">\(\sqrt{100} - 1 = 10 - 1 = 9\)</span></p>
+</div>
+<p>（2）复合二次根式（双重根号）</p>
+<p>虽然教材不要求，但竞赛和自招中常出现 <span class="arithmatex">\(\sqrt{A \pm 2\sqrt{B}}\)</span> 的形式<br>
+<span style="border-bottom: 1.5px dashed orange;">核心思想</span>：将其配成完全平方式 <span class="arithmatex">\(\sqrt{(\sqrt{x} \pm \sqrt{y})^2}\)</span></p>
+<ul>
+<li>公式：若 <span class="arithmatex">\(x+y=A, xy=B\)</span>，则 <span class="arithmatex">\(\sqrt{A \pm 2\sqrt{B}} = |\sqrt{x} \pm \sqrt{y}|\)</span></li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span class="arithmatex">\(\sqrt{(-5)^2}\)</span> 的值是多少？是 <span class="arithmatex">\(\pm 5\)</span> 吗？</li>
+<li><span class="arithmatex">\(\sqrt{x^2+1}\)</span> 一定有意义吗？为什么？</li>
+<li>试图化简：<span class="arithmatex">\(\frac{2}{\sqrt{5}-\sqrt{3}}\)</span>（提示：分子分母同时乘 <span class="arithmatex">\(\sqrt{5}+\sqrt{3}\)</span>）</li>
+</ol>
+</div>
+<hr>
+<h3 id="_4">（二）整式与分式的高阶变形<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h4 id="1_1">1. 核心定义与公式<a class="headerlink" href="#1_1" title="Permanent link">¶</a></h4>
+<p>整式乘除与因式分解是代数运算的“逆过程”，如同“拼乐高”与“拆乐高”。而分式则是代数中的“除法”，核心在于“结构的统一”</p>
+<p>（1）乘法公式（三大金刚）</p>
+<p>熟练掌握以下公式的正向与逆向使用（因式分解）：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">平方差公式</span>：<span class="arithmatex">\((a+b)(a-b) = a^2 - b^2\)</span><ul>
+<li><em>逆用</em>：<span class="arithmatex">\(a^2 - b^2 = (a+b)(a-b)\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">完全平方公式</span>：<span class="arithmatex">\((a \pm b)^2 = a^2 \pm 2ab + b^2\)</span><ul>
+<li><em>逆用</em>：<span class="arithmatex">\(a^2 \pm 2ab + b^2 = (a \pm b)^2\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">十字相乘法（Cross-Multiplication）</span>：
+    虽然教材可能标为选学，但这<span style="border-bottom: 1.5px dashed orange;">是解一元二次方程的灵魂</span>，必须掌握！<ul>
+<li>形式：<span class="arithmatex">\(x^2 + (p+q)x + pq = (x+p)(x+q)\)</span></li>
+<li><em>口诀</em>：首尾分解，交叉相乘，和为中间</li>
+</ul>
+</li>
+</ol>
+<div class="arithmatex">\[_{a_2}^{a_1}\times_{b_2}^{b_1}\to a_1b_2+a_2b_1.\]</div>
+<p>（2）分式的基本性质</p>
+<div class="arithmatex">\[\frac{A}{B} = \frac{A \cdot M}{B \cdot M} \quad (M \neq 0)\]</div>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">通分</span>：异分母加减 <span class="arithmatex">\(\to\)</span> 找最简公分母 <span class="arithmatex">\(\to\)</span> 同分母</li>
+<li><span style="border-bottom: 1.5px dashed orange;">约分</span>：分子分母因式分解 <span class="arithmatex">\(\to\)</span> 约去公因式 <span class="arithmatex">\(\to\)</span> 最简分式</li>
+</ul>
+<hr>
+<h4 id="2_1">2. 深度解析<a class="headerlink" href="#2_1" title="Permanent link">¶</a></h4>
+<p>（1）“整体”的艺术</p>
+<p>在代数变形中，不要总是盯着单一的 <span class="arithmatex">\(x\)</span> 或 <span class="arithmatex">\(y\)</span>，而要将 <span class="arithmatex">\(x+y\)</span>、<span class="arithmatex">\(xy\)</span> 甚至 <span class="arithmatex">\(x^2-3x\)</span> 看作一个整体字母 <span class="arithmatex">\(A\)</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">降次打击</span>：如果你知道 <span class="arithmatex">\(x^2 - 3x + 1 = 0\)</span>，求 <span class="arithmatex">\(2x^2 - 6x + 5\)</span> 的值<ul>
+<li>观察：<span class="arithmatex">\(2x^2 - 6x = 2(x^2 - 3x)\)</span></li>
+<li>移项得 <span class="arithmatex">\(x^2 - 3x = -1\)</span></li>
+<li>代入：<span class="arithmatex">\(2(-1) + 5 = 3\)</span>。不需要解出 <span class="arithmatex">\(x\)</span> 的具体值！</li>
+</ul>
+</li>
+</ul>
+<p>（2）分式裂项</p>
+<p>这是处理长串分式相加的绝技（俗称“连锁反应消消乐”）</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">核心模型</span>：<span class="arithmatex">\(\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}\)</span></li>
+<li><em>原理</em>：通分的逆运算。<span class="arithmatex">\(\frac{1}{n} - \frac{1}{n+1} = \frac{n+1 - n}{n(n+1)} = \frac{1}{n(n+1)}\)</span></li>
+</ul>
+<hr>
+<h4 id="3_1">3. 典型例题<a class="headerlink" href="#3_1" title="Permanent link">¶</a></h4>
+<p>【例1】 提公因式与公式法的混合使用</p>
+<p>分解因式：<span class="arithmatex">\(ax^3 - 9axy^2\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">第一步：提</span>（公因式）
+    观察各项都有 <span class="arithmatex">\(ax\)</span>，提出得 <span class="arithmatex">\(ax(x^2 - 9y^2)\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">第二步：套</span>（公式）
+    括号内 <span class="arithmatex">\(x^2 - (3y)^2\)</span> 符合平方差公式</li>
+<li><span style="border-bottom: 1.5px dashed orange;">结果</span>：<span class="arithmatex">\(ax(x+3y)(x-3y)\)</span></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">避坑</p>
+<p>分解要彻底！分解到不能再分为止</p>
+</div>
+<p>【例2】 分式的化简求值</p>
+<p>先化简，再求值：<span class="arithmatex">\((\frac{3}{x-1} + 1) \cdot \frac{x+2}{x^2-1}\)</span>，其中 <span class="arithmatex">\(x=2\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">括号内通分</span>：
+    <span class="arithmatex">\(\frac{3}{x-1} + \frac{x-1}{x-1} = \frac{3+x-1}{x-1} = \frac{x+2}{x-1}\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">除法变乘法</span>（分子分母颠倒，同时因式分解）：
+    原式 <span class="arithmatex">\(= \frac{x+2}{x-1} \cdot \frac{(x+1)(x-1)}{x+2}\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">约分</span>：
+    消去 <span class="arithmatex">\((x+2)\)</span> 和 <span class="arithmatex">\((x-1)\)</span>
+    结果 <span class="arithmatex">\(= x+1\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">代入</span>：
+    当 <span class="arithmatex">\(x=2\)</span> 时，原式 <span class="arithmatex">\(= 2+1=3\)</span></li>
+</ol>
+<hr>
+<h4 id="4_1">4. 进阶思维与素养拓展<a class="headerlink" href="#4_1" title="Permanent link">¶</a></h4>
+<p><em>本节融合了“素养测试卷”中对代数结构的高阶考查要求</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q16</span>：已知 <span class="arithmatex">\((x+\sqrt{x^2+2025})(y+\sqrt{y^2+2025})=2025\)</span>，求 <span class="arithmatex">\(x+y\)</span>。这是典型的<span style="border-bottom: 1.5px dashed orange;">共轭构造</span>题型。解题关键在于构造 <span class="arithmatex">\((x-\sqrt{x^2+2025})\)</span>，利用平方差公式将复杂的根式方程转化为简单的对称关系</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q8</span>：给定递归公式 <span class="arithmatex">\(y_k = \frac{1}{1-y_{k-1}}\)</span>，求 <span class="arithmatex">\(y_{2024}\)</span>。这道题考查的是分式变形中的<span style="border-bottom: 1.5px dashed orange;">周期性规律</span>。学生需要通过前几项的计算（<span class="arithmatex">\(y_1, y_2, y_3, y_1 \dots\)</span>）发现循环节，而非盲目计算</li>
+</ul>
+</div>
+<p>（1）对称式与倒数模型</p>
+<p>在九年级代数题中，经常出现 <span class="arithmatex">\(x + \frac{1}{x}\)</span> 这种结构。它是连接一次方与高次方的桥梁</p>
+<ul>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">基本变形</span>：</p>
+<div class="arithmatex">\[(x + \frac{1}{x})^2 = x^2 + 2 \cdot x \cdot \frac{1}{x} + \frac{1}{x^2} = x^2 + \frac{1}{x^2} + 2\]</div>
+<p>即：<span class="arithmatex">\(x^2 + \frac{1}{x^2} = (x + \frac{1}{x})^2 - 2\)</span></p>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">挑战题</span>：已知 <span class="arithmatex">\(x + \frac{1}{x} = 3\)</span>，求 <span class="arithmatex">\(\frac{x^4 + 1}{x^2}\)</span> 的值
+    <span style="border-bottom: 1.5px dashed orange;">思路</span>：</p>
+<ol>
+<li>观察分子分母次数，利用除法将分式拆开：
+    <span class="arithmatex">\(\frac{x^4}{x^2} + \frac{1}{x^2} = x^2 + \frac{1}{x^2}\)</span></li>
+<li>利用倒数模型公式：
+    <span class="arithmatex">\(x^2 + \frac{1}{x^2} = 3^2 - 2 = 7\)</span></li>
+</ol>
+</li>
+</ul>
+<p>（2）为韦达定理铺路</p>
+<p>在之后的“一元二次方程”章节中，你会遇到 <span class="arithmatex">\(x_1, x_2\)</span> 为方程两根的情况。现在就要熟练掌握以下分式变形：</p>
+<div class="arithmatex">\[\frac{1}{a} + \frac{1}{b} = \frac{a+b}{ab}\]</div>
+<div class="arithmatex">\[\frac{b}{a} + \frac{a}{b} = \frac{b^2 + a^2}{ab} = \frac{(a+b)^2 - 2ab}{ab}\]</div>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">意义</span>：将复杂的式子转化为只有“和 <span class="arithmatex">\((a+b)\)</span>”与“积 <span class="arithmatex">\((ab)\)</span>”的形式。这是未来解决压轴题的关键基本功</li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">变号陷阱</span>：化简 <span class="arithmatex">\(\frac{a}{a-b} - \frac{b}{b-a}\)</span><ul>
+<li><em>提示</em>：分母 <span class="arithmatex">\(b-a = -(a-b)\)</span>，负负得正，中间符号变加号</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">完全平方</span>：已知 <span class="arithmatex">\(a+b=5, ab=3\)</span>，求 <span class="arithmatex">\(a^2+b^2\)</span><ul>
+<li><em>提示</em>：<span class="arithmatex">\((a+b)^2 - 2ab\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">定义域</span>：若分式 <span class="arithmatex">\(\frac{|x|-1}{x+1}\)</span> 的值为0，则 <span class="arithmatex">\(x\)</span> 的值是多少？<ul>
+<li><em>提示</em>：分子为0且分母<span style="border-bottom: 1.5px dashed orange;">不为</span>0。<span class="arithmatex">\(|x|=1 \Rightarrow x=\pm 1\)</span>，但 <span class="arithmatex">\(x \neq -1\)</span>，所以只能是 <span class="arithmatex">\(x=1\)</span></li>
+</ul>
+</li>
+</ol>
+</div>
+<hr>
+<h2 id="_5">二、方程与不等式<a class="headerlink" href="#_5" title="Permanent link">¶</a></h2>
+<h3 id="_6">（一）一元二次方程的解法与判别式<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h4 id="1_2">1. 核心定义与公式<a class="headerlink" href="#1_2" title="Permanent link">¶</a></h4>
+<p>一元二次方程是初中代数的核心枢纽，向上承接整式运算，向下开启二次函数的大门。其标准形式与解的结构具有高度的对称美</p>
+<p>（1）定义</p>
+<p>等号两边都是整式，只含有一个未知数（一元），并且未知数的最高次数是2（二次）的方程，叫做<span style="border-bottom: 1.5px dashed orange;">一元二次方程</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">一般形式</span>：<span class="arithmatex">\(ax^2 + bx + c = 0\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">严格约束</span>：<span style="border-bottom: 1.5px dashed orange;"><span class="arithmatex">\(a \neq 0\)</span></span>。这是该定义的“生命线”，若 <span class="arithmatex">\(a=0\)</span>，方程即退化为一元一次方程</li>
+</ul>
+<p>（2）解法体系</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">直接开平方法</span>：
+    适用于 <span class="arithmatex">\((x+m)^2 = n\)</span> (<span class="arithmatex">\(n \ge 0\)</span>) 的形式<ul>
+<li>解：<span class="arithmatex">\(x+m = \pm\sqrt{n}\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">因式分解法（首选）</span>：
+    适用于方程左边易于分解，右边为0的情形<ul>
+<li>原理：若 <span class="arithmatex">\(A \cdot B = 0\)</span>，则 <span class="arithmatex">\(A=0\)</span> 或 <span class="arithmatex">\(B=0\)</span></li>
+<li>工具：提公因式、平方差、完全平方、<span style="border-bottom: 1.5px dashed orange;">十字相乘</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">配方法</span>：
+    这是推导求根公式的源头，也是二次函数化简的核心<ul>
+<li>步骤：移常数项 <span class="arithmatex">\(\to\)</span> 二次项系数化1 <span class="arithmatex">\(\to\)</span> 两边同加一次项系数一半的平方 <span class="arithmatex">\(\to\)</span> 以此配成完全平方式</li>
+</ul>
+</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">公式法（万能钥匙）</span>：
+    当无法轻易因式分解时使用</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">求根公式</span>：</li>
+</ul>
+<p>$<span class="arithmatex">\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</span>$</p>
+<p>（前提：<span class="arithmatex">\(b^2 - 4ac \ge 0\)</span>）</p>
+</li>
+</ol>
+<p>（3）根的判别式</p>
+<p>我们将 <span class="arithmatex">\(\Delta = b^2 - 4ac\)</span> 称为一元二次方程的根的判别式。它在不解方程的情况下判定根的性质：</p>
+<ul>
+<li><span class="arithmatex">\(\Delta &gt; 0 \iff\)</span> 方程有两个<span style="border-bottom: 1.5px dashed orange;">不相等</span>的实数根</li>
+<li><span class="arithmatex">\(\Delta = 0 \iff\)</span> 方程有两个<span style="border-bottom: 1.5px dashed orange;">相等</span>的实数根</li>
+<li><span class="arithmatex">\(\Delta &lt; 0 \iff\)</span> 方程<span style="border-bottom: 1.5px dashed orange;">没有</span>实数根</li>
+</ul>
+<hr>
+<h4 id="2_2">2. 深度解析<a class="headerlink" href="#2_2" title="Permanent link">¶</a></h4>
+<p>（1）配方法的几何意义</p>
+<p>配方法本质上是“拼图”。将 <span class="arithmatex">\(x^2 + px\)</span> 补上 <span class="arithmatex">\((\frac{p}{2})^2\)</span>，在几何上相当于把一个缺角的矩形拼成一个正方形</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">代数核心</span>：它将“分散”的 <span class="arithmatex">\(x\)</span>（二次项和一次项）收敛到一个完全平方式 <span class="arithmatex">\((x+\frac{p}{2})^2\)</span> 中，从而利用开方运算降次</li>
+</ul>
+<p>（2）判别式 <span class="arithmatex">\(\Delta\)</span> 的“法官”角色</p>
+<p>为什么是 <span class="arithmatex">\(b^2-4ac\)</span>？</p>
+<p>在求根公式 <span class="arithmatex">\(x = \frac{-b \pm \sqrt{\Delta}}{2a}\)</span> 中，<span class="arithmatex">\(\Delta\)</span> 位于根号内部</p>
+<ul>
+<li>实数范围内，负数不能开平方，所以 <span class="arithmatex">\(\Delta &lt; 0\)</span> 无解</li>
+<li>0的平方根只有一个（0本身），所以 <span class="arithmatex">\(\pm\sqrt{0}\)</span> 导致两个根重合，即 <span class="arithmatex">\(x_1=x_2=-\frac{b}{2a}\)</span></li>
+</ul>
+<hr>
+<h4 id="3_2">3. 典型例题<a class="headerlink" href="#3_2" title="Permanent link">¶</a></h4>
+<p>【例1】 灵活选择解法</p>
+<p>解方程：<br>
+(1) <span class="arithmatex">\(x(x-2) + x - 2 = 0\)</span><br>
+(2) <span class="arithmatex">\(x^2 - 4x + 1 = 0\)</span></p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<p>(1) <span style="border-bottom: 1.5px dashed orange;">因式分解法</span>（观察公因式）：</p>
+<ul>
+<li>变形：<span class="arithmatex">\(x(x-2) + 1 \cdot (x-2) = 0\)</span></li>
+<li>提公因式：<span class="arithmatex">\((x-2)(x+1) = 0\)</span></li>
+<li>解得：<span class="arithmatex">\(x_1 = 2, x_2 = -1\)</span></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">避坑</p>
+<p>千万不要展开去括号！那是在绕远路</p>
+</div>
+<p>(2) <span style="border-bottom: 1.5px dashed orange;">公式法/配方法</span>（十字相乘无效）：</p>
+<ul>
+<li>识别系数：<span class="arithmatex">\(a=1, b=-4, c=1\)</span></li>
+<li>判别式：<span class="arithmatex">\(\Delta = (-4)^2 - 4 \times 1 \times 1 = 12 &gt; 0\)</span></li>
+<li>代入公式：<span class="arithmatex">\(x = \frac{-(-4) \pm \sqrt{12}}{2 \times 1} = \frac{4 \pm 2\sqrt{3}}{2} = 2 \pm \sqrt{3}\)</span></li>
+<li>结果：<span class="arithmatex">\(x_1 = 2+\sqrt{3}, x_2 = 2-\sqrt{3}\)</span></li>
+</ul>
+<p>【例2】 含参方程的判别式</p>
+<p>已知关于 <span class="arithmatex">\(x\)</span> 的方程 <span class="arithmatex">\(kx^2 - 2x + 1 = 0\)</span> 有实数根，求 <span class="arithmatex">\(k\)</span> 的取值范围</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<p>这是一道经典的<span style="border-bottom: 1.5px dashed orange;">易错题</span></p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">分类讨论</span>：<ul>
+<li>当 <span class="arithmatex">\(k=0\)</span> 时，方程变为 <span class="arithmatex">\(-2x+1=0\)</span>，解得 <span class="arithmatex">\(x=0.5\)</span>，有实根。符合题意</li>
+<li>当 <span class="arithmatex">\(k \neq 0\)</span> 时，这是二次方程。有实根意味着 <span class="arithmatex">\(\Delta \ge 0\)</span>
+  <span class="arithmatex">\(\Delta = (-2)^2 - 4(k)(1) = 4 - 4k \ge 0 \Rightarrow k \le 1\)</span>
+  此时范围是 <span class="arithmatex">\(k \le 1\)</span> 且 <span class="arithmatex">\(k \neq 0\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">综上所述</span>：
+    <span class="arithmatex">\(k\)</span> 的取值范围是 <span class="arithmatex">\(k \le 1\)</span></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>题目只说了“方程”，没说“一元二次方程”，所以必须考虑 <span class="arithmatex">\(k=0\)</span> 的退化情况（一次方程）。若题目明确指出是“一元二次方程”，则 <span class="arithmatex">\(k \neq 0\)</span> 必须写进答案</p>
+</div>
+<hr>
+<h4 id="4_2">4. 进阶思维与素养拓展<a class="headerlink" href="#4_2" title="Permanent link">¶</a></h4>
+<p><em>本节针对浙江省素养测试中常见的“隐性约束”与“整数根”问题</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q12</span>：关于 <span class="arithmatex">\(x\)</span> 的方程 <span class="arithmatex">\((k+1)x^2-2kx+k-5=0\)</span> 有两个实数根，求 <span class="arithmatex">\(k\)</span> 的范围<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：这道题完美诠释了<span style="border-bottom: 1.5px dashed orange;">隐性约束</span>。除了判别式 <span class="arithmatex">\(\Delta \ge 0\)</span> 之外，必须保证二次项系数 <span class="arithmatex">\(k+1 \neq 0\)</span>。漏掉这个条件是这类题失分的头号原因</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q19</span>：关于 <span class="arithmatex">\(x\)</span> 的一元二次方程 <span class="arithmatex">\(kx^2-(2k+4)x+k-6=0\)</span> 有两个不相等的实数根<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：同样考查含参方程。解题时需注意“两个不相等实数根”对应 <span class="arithmatex">\(\Delta &gt; 0\)</span>，同时结合 <span class="arithmatex">\(k \neq 0\)</span> 进行综合判断</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（1）隐性约束：<span class="arithmatex">\(a \neq 0\)</span> 的陷阱</p>
+<p>在处理含参二次方程 <span class="arithmatex">\((m-1)x^2 + \dots = 0\)</span> 时，永远把 <span class="arithmatex">\(m-1 \neq 0\)</span> 作为第一行代码写在草稿纸上</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">真题警示</span>：若方程有<span style="border-bottom: 1.5px dashed orange;">两个</span>实数根，则不仅要求 <span class="arithmatex">\(\Delta &gt; 0\)</span>，还隐含了“二次项系数不为0”</li>
+</ul>
+<p>（2）整数根问题</p>
+<p>竞赛或压轴题常考：若关于 <span class="arithmatex">\(x\)</span> 的方程 <span class="arithmatex">\(x^2 + mx + n = 0\)</span> 的根都是整数，求 <span class="arithmatex">\(m, n\)</span> 的关系</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">思路</span>：<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">判别式 <span class="arithmatex">\(\Delta\)</span> 必须是完全平方数</span>。因为 <span class="arithmatex">\(x = \frac{-m \pm \sqrt{\Delta}}{2}\)</span>，若 <span class="arithmatex">\(\sqrt{\Delta}\)</span> 不是整数，<span class="arithmatex">\(x\)</span> 就不可能是整数（除非 <span class="arithmatex">\(m\)</span> 也是同类无理数，但初中通常假设 <span class="arithmatex">\(m,n\)</span> 为整数）</li>
+<li>利用十字相乘法的逆运算：<span class="arithmatex">\(x^2 + (p+q)x + pq = 0\)</span>，则 <span class="arithmatex">\(m=p+q, n=pq\)</span></li>
+</ol>
+</li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">概念辨析</span>：方程 <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> 一定有两个根吗？（答案：不一定，看 <span class="arithmatex">\(\Delta\)</span> 和 <span class="arithmatex">\(a\)</span>）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">解法选择</span>：方程 <span class="arithmatex">\((x-3)^2 = 4(x-3)\)</span> 最快的解法是什么？（答案：移项提公因式，千万别两边同除以 <span class="arithmatex">\(x-3\)</span>，会丢根）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">逆向思维</span>：若 <span class="arithmatex">\(x=1\)</span> 是方程 <span class="arithmatex">\(x^2 + mx + 2 = 0\)</span> 的一个根，试求 <span class="arithmatex">\(m\)</span> 和另一个根。（答案：代入求 <span class="arithmatex">\(m=-3\)</span>，另一个根为2）</li>
+</ol>
+</div>
+<hr>
+<h3 id="_7">（二）韦达定理与根系关系<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h4 id="1_3">1. 核心定义与定理<a class="headerlink" href="#1_3" title="Permanent link">¶</a></h4>
+<p>韦达定理（Vieta's Formulas）被誉为“代数桥梁”，它在不解方程的情况下，直接建立了<span style="border-bottom: 1.5px dashed orange;">根</span>与<span style="border-bottom: 1.5px dashed orange;">系数</span>之间的数量关系</p>
+<p>（1）韦达定理</p>
+<p>如果一元二次方程 <span class="arithmatex">\(ax^2 + bx + c = 0\)</span> (<span class="arithmatex">\(a \neq 0\)</span>) 的两个实数根分别是 <span class="arithmatex">\(x_1, x_2\)</span>，那么：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">两根之和</span>：<span class="arithmatex">\(x_1 + x_2 = -\frac{b}{a}\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">两根之积</span>：<span class="arithmatex">\(x_1 \cdot x_2 = \frac{c}{a}\)</span></li>
+</ol>
+<p>（2）逆定理（构造方程）</p>
+<p>如果你知道两个数 <span class="arithmatex">\(m, n\)</span> 的和是 <span class="arithmatex">\(S\)</span> (<span class="arithmatex">\(S=m+n\)</span>)，积是 <span class="arithmatex">\(P\)</span> (<span class="arithmatex">\(P=mn\)</span>)，那么这两个数 <span class="arithmatex">\(m, n\)</span> 是方程 <span class="arithmatex">\(x^2 - Sx + P = 0\)</span> 的两个根</p>
+<ul>
+<li><em>口诀</em>：<span class="arithmatex">\(x^2 -\)</span> (和)<span class="arithmatex">\(x +\)</span> (积) <span class="arithmatex">\(= 0\)</span></li>
+</ul>
+<hr>
+<h4 id="2_3">2. 深度解析<a class="headerlink" href="#2_3" title="Permanent link">¶</a></h4>
+<p>（1）为什么要先看判别式？</p>
+<p>韦达定理生效的前提是<span style="border-bottom: 1.5px dashed orange;">方程必须有实数根</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">陷阱</span>：题目问“若 <span class="arithmatex">\(x_1, x_2\)</span> 是方程的两根...”，你必须先检查 <span class="arithmatex">\(\Delta = b^2 - 4ac \ge 0\)</span>。如果 <span class="arithmatex">\(\Delta &lt; 0\)</span>，根都不存在，谈何之和、之积？</li>
+</ul>
+<p>（2）对称美的暴力美学</p>
+<p>韦达定理最擅长处理<span style="border-bottom: 1.5px dashed orange;">关于根的对称代数式</span></p>
+<ul>
+<li>常见变形模具（必须背诵）：<ul>
+<li><span class="arithmatex">\(x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2\)</span></li>
+<li><span class="arithmatex">\(\frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1 + x_2}{x_1x_2}\)</span></li>
+<li><span class="arithmatex">\((x_1 - x_2)^2 = (x_1 + x_2)^2 - 4x_1x_2\)</span> （差的平方）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="3_3">3. 典型例题<a class="headerlink" href="#3_3" title="Permanent link">¶</a></h4>
+<p>【例1】 基础求值（不解方程）</p>
+<p>已知 <span class="arithmatex">\(x_1, x_2\)</span> 是方程 <span class="arithmatex">\(2x^2 + 3x - 4 = 0\)</span> 的两个根，求 <span class="arithmatex">\(x_1^2 + x_2^2\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">提取系数</span>：<span class="arithmatex">\(a=2, b=3, c=-4\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">检查判别式</span>（虽非必须但推荐养成习惯）：<span class="arithmatex">\(\Delta = 3^2 - 4(2)(-4) = 25 &gt; 0\)</span>，根存在</li>
+<li><span style="border-bottom: 1.5px dashed orange;">韦达定理</span>：
+    <span class="arithmatex">\(x_1 + x_2 = -\frac{3}{2}\)</span><br>
+<span class="arithmatex">\(x_1 x_2 = \frac{-4}{2} = -2\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">代数变形</span>：
+    <span class="arithmatex">\(x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2x_1x_2\)</span><br>
+<span class="arithmatex">\(= (-\frac{3}{2})^2 - 2(-2)\)</span><br>
+<span class="arithmatex">\(= \frac{9}{4} + 4 = \frac{25}{4}\)</span></li>
+</ol>
+<p>【例2】 逆向应用与参数求解</p>
+<p>已知关于 <span class="arithmatex">\(x\)</span> 的方程 <span class="arithmatex">\(x^2 - (k+1)x + k + 2 = 0\)</span> 的两根平方和为 6，求 <span class="arithmatex">\(k\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">列式</span>：
+    <span class="arithmatex">\(x_1 + x_2 = k+1\)</span><br>
+<span class="arithmatex">\(x_1 x_2 = k+2\)</span><br>
+<span class="arithmatex">\(x_1^2 + x_2^2 = (x_1+x_2)^2 - 2x_1x_2 = (k+1)^2 - 2(k+2) = 6\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">解关于 <span class="arithmatex">\(k\)</span> 的方程</span>：
+    <span class="arithmatex">\(k^2 + 2k + 1 - 2k - 4 = 6\)</span><br>
+<span class="arithmatex">\(k^2 - 3 = 6 \Rightarrow k^2 = 9 \Rightarrow k = \pm 3\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">生死判决</span>（检查 <span class="arithmatex">\(\Delta\)</span>）：<ul>
+<li>当 <span class="arithmatex">\(k=3\)</span> 时，方程为 <span class="arithmatex">\(x^2 - 4x + 5 = 0\)</span>，<span class="arithmatex">\(\Delta = 16 - 20 = -4 &lt; 0\)</span>（舍去！）</li>
+<li>当 <span class="arithmatex">\(k=-3\)</span> 时，方程为 <span class="arithmatex">\(x^2 + 2x - 1 = 0\)</span>，<span class="arithmatex">\(\Delta = 4 - (-4) = 8 &gt; 0\)</span>（保留）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">答案</span>：<span class="arithmatex">\(k = -3\)</span></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="4_3">4. 进阶思维与素养拓展<a class="headerlink" href="#4_3" title="Permanent link">¶</a></h4>
+<p><em>本节直击浙江素养卷的核心考法：<span style="border-bottom: 1.5px dashed orange;">非对称式</span>与<span style="border-bottom: 1.5px dashed orange;">降次打击</span></em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q11</span>：已知 <span class="arithmatex">\(x_1, x_2\)</span> 是方程 <span class="arithmatex">\(x^2+mx-3=0\)</span> 的两根，且 <span class="arithmatex">\(\frac{1}{x_1}+\frac{1}{x_2}=-7\)</span><ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：考查韦达定理的<span style="border-bottom: 1.5px dashed orange;">通分变形</span>。将 <span class="arithmatex">\(\frac{1}{x_1}+\frac{1}{x_2}\)</span> 转化为 <span class="arithmatex">\(\frac{x_1+x_2}{x_1x_2}\)</span>，直接代入系数求解，避免了解方程的繁琐</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q11</span>：若 <span class="arithmatex">\(x_1, x_2\)</span> 是方程 <span class="arithmatex">\(3x^2-x-1=0\)</span> 的两根，求 <span class="arithmatex">\((3x_1^2+x_2)(\frac{2}{x_1}+\frac{2}{x_2})\)</span> 的值<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：这道题是<span style="border-bottom: 1.5px dashed orange;">降次打击</span>的经典案例。直接求根是无理数，代入计算极其困难。利用 <span class="arithmatex">\(3x_1^2 = x_1+1\)</span> 将高次项降为一次项，瞬间化繁为简</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">第八届复赛 Q19</span>：已知 <span class="arithmatex">\(p, q\)</span> 为实数且 <span class="arithmatex">\(q&gt;7\)</span>，方程 <span class="arithmatex">\(x^2-13x+m=0\)</span> 的两根为 <span class="arithmatex">\(p, q\)</span>，求 <span class="arithmatex">\(\frac{p}{q}+\frac{q}{p}\)</span> 的值<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：考查对称式变形 <span class="arithmatex">\(\frac{p^2+q^2}{pq} = \frac{(p+q)^2-2pq}{pq}\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（1）“降次”思想</p>
+<p>当题目要求的值包含高次项（如 <span class="arithmatex">\(x_1^3\)</span> 或 <span class="arithmatex">\(x_1^2\)</span>），且式子不对称（例如 <span class="arithmatex">\(2x_1^2 + 3x_2\)</span>）时，单纯用韦达定理会非常繁琐<br>
+<span style="border-bottom: 1.5px dashed orange;">必杀技</span>：因为 <span class="arithmatex">\(x_1\)</span> 是根，所以 <span class="arithmatex">\(ax_1^2 + bx_1 + c = 0\)</span>，即 <span class="arithmatex">\(ax_1^2 = -bx_1 - c\)</span></p>
+<p>【竞赛级例题】</p>
+<p>已知 <span class="arithmatex">\(x_1, x_2\)</span> 是方程 <span class="arithmatex">\(x^2 - 4x + 1 = 0\)</span> 的两个根，求代数式 <span class="arithmatex">\(x_1^2 - 3x_1 + x_2\)</span> 的值</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">观察</span>：式子中 <span class="arithmatex">\(x_1\)</span> 是平方，且系数不匹配（<span class="arithmatex">\(x_1^2\)</span> 和 <span class="arithmatex">\(-3x_1\)</span>），<span class="arithmatex">\(x_2\)</span> 是单独的。这既不对称，也不是完全平方式</li>
+<li><span style="border-bottom: 1.5px dashed orange;">降次（关键步骤）</span>：
+    因为 <span class="arithmatex">\(x_1\)</span> 是根，代入方程得：<span class="arithmatex">\(x_1^2 - 4x_1 + 1 = 0\)</span><br>
+    移项得：<span class="arithmatex">\(x_1^2 = 4x_1 - 1\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">代换</span>：
+    将求值式中的 <span class="arithmatex">\(x_1^2\)</span> 换掉：<br>
+    原式 <span class="arithmatex">\(= (4x_1 - 1) - 3x_1 + x_2\)</span><br>
+<span class="arithmatex">\(= x_1 - 1 + x_2\)</span><br>
+<span class="arithmatex">\(= (x_1 + x_2) - 1\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">收尾</span>：
+    由韦达定理 <span class="arithmatex">\(x_1 + x_2 = 4\)</span><br>
+    原式 <span class="arithmatex">\(= 4 - 1 = 3\)</span></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">素养点拨</p>
+<p>这种“把根代回方程”的操作，是解决一切“不对称、高次数”问题的金钥匙</p>
+</div>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">符号陷阱</span>：方程 <span class="arithmatex">\(x^2 - 5x - 6 = 0\)</span> 的两根之和是 <span class="arithmatex">\(-5\)</span> 还是 <span class="arithmatex">\(5\)</span>？（答案：<span class="arithmatex">\(5\)</span>。公式是 <span class="arithmatex">\(-b/a\)</span>）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">存在性</span>：若 <span class="arithmatex">\(x_1, x_2\)</span> 满足 <span class="arithmatex">\(x_1+x_2=2, x_1x_2=3\)</span>，这样的实数 <span class="arithmatex">\(x_1, x_2\)</span> 存在吗？（答案：不存在。<span class="arithmatex">\(\Delta = 2^2 - 4 \times 3 &lt; 0\)</span>）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">倒数和</span>：如果不解方程，你能口算出 <span class="arithmatex">\(x^2 - 3x + 1 = 0\)</span> 的 <span class="arithmatex">\(\frac{1}{x_1} + \frac{1}{x_2}\)</span> 吗？（答案：<span class="arithmatex">\(3\)</span>）</li>
+</ol>
+</div>
+<hr>
+<h3 id="_8">（三）方程与不等式的实际应用<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h4 id="1_4">1. 核心定义与建模思想<a class="headerlink" href="#1_4" title="Permanent link">¶</a></h4>
+<p>应用题是许多同学的噩梦，但本质上它只是<span style="border-bottom: 1.5px dashed orange;">翻译</span>工作：将现实世界的中文描述翻译成数学符号语言</p>
+<p>（1）数学建模四步曲</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">设</span>：选好主角。通常问什么设什么（直接设元），有时也设中间量（间接设元）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">列</span>：这是最难的一步。寻找<span style="border-bottom: 1.5px dashed orange;">等量关系</span>（用于列方程）或<span style="border-bottom: 1.5px dashed orange;">不等关系</span>（用于列不等式）<ul>
+<li><em>关键词捕捉</em>：“共”、“是”、“比...多”、“超过”、“不低于”</li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">解</span>：利用之前的计算技能求解</li>
+<li><span style="border-bottom: 1.5px dashed orange;">验</span>（关键！）：双重检验<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">数学检验</span>：是否是分式方程的增根？</li>
+<li><span style="border-bottom: 1.5px dashed orange;">实际检验</span>：<span style="border-bottom: 1.5px dashed orange;">是否符合常理</span>？（人数不能是小数，线段长不能是负数，车速不能超光速）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="2_4">2. 深度解析：核心模型库<a class="headerlink" href="#2_4" title="Permanent link">¶</a></h4>
+<p>初中阶段主要涉及以下三类<span style="border-bottom: 1.5px dashed orange;">黄金模型</span>：</p>
+<p>（1）传播与增长模型</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">场景</span>：细胞分裂、流感传播、经济增长</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">公式</span>：</p>
+<div class="arithmatex">\[a(1+x)^n = b\]</div>
+<ul>
+<li><span class="arithmatex">\(a\)</span>：初始量</li>
+<li><span class="arithmatex">\(x\)</span>：平均增长率</li>
+<li><span class="arithmatex">\(n\)</span>：增长次数（通常考2次，对应一元二次方程）</li>
+<li><span class="arithmatex">\(b\)</span>：终止量</li>
+</ul>
+</li>
+</ul>
+<p>（2）销售利润模型</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">场景</span>：商场打折、涨价</li>
+<li><span style="border-bottom: 1.5px dashed orange;">核心逻辑</span>：<span style="border-bottom: 1.5px dashed orange;">单价变动影响销量</span>。通常是“一升一降”</li>
+<li>
+<p><span style="border-bottom: 1.5px dashed orange;">公式</span>：</p>
+<div class="arithmatex">\[\text{总利润} = (\text{单件售价} - \text{进价}) \times \text{销售数量}\]</div>
+<ul>
+<li><em>难点</em>：设涨价 <span class="arithmatex">\(x\)</span> 元，销量通常减少 <span class="arithmatex">\(kx\)</span> 件。此时总利润方程为：<span class="arithmatex">\((Profit + x)(Volume - kx) = Target\)</span></li>
+</ul>
+</li>
+</ul>
+<p>（3）几何图形模型</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">场景</span>：修建花园、裁剪纸盒、围栏问题</li>
+<li><span style="border-bottom: 1.5px dashed orange;">核心逻辑</span>：利用面积公式建立等量关系</li>
+</ul>
+<hr>
+<h4 id="3_4">3. 典型例题<a class="headerlink" href="#3_4" title="Permanent link">¶</a></h4>
+<p>【例1】 增长率问题</p>
+<p>某市房价两年前为 10000 元/平，现在涨到了 12100 元/平。求这两年的年平均增长率</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">设</span>：年平均增长率为 <span class="arithmatex">\(x\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">列</span>：<ul>
+<li>第一年：<span class="arithmatex">\(10000(1+x)\)</span></li>
+<li>第二年：<span class="arithmatex">\(10000(1+x)^2\)</span></li>
+<li>方程：<span class="arithmatex">\(10000(1+x)^2 = 12100\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">解</span>：
+    <span class="arithmatex">\((1+x)^2 = 1.21\)</span><br>
+<span class="arithmatex">\(1+x = \pm 1.1\)</span><br>
+<span class="arithmatex">\(x_1 = 0.1 = 10\%, \quad x_2 = -2.1\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">验</span>：增长率不能为负数（题目背景是“涨”），舍去 <span class="arithmatex">\(x_2\)</span><br>
+    <span style="border-bottom: 1.5px dashed orange;">答</span>：年平均增长率为 10%</li>
+</ol>
+<p>【例2】 围栏与墙（面积问题）</p>
+<p>如图，利用一面墙（墙长 25米），用 50米 长的篱笆围成一个矩形场地，面积为 300 平方米。求矩形的长和宽</p>
+<p><span style="border-bottom: 1.5px dashed orange;">解析</span>：</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">设</span>：垂直于墙的边长为 <span class="arithmatex">\(x\)</span> 米</li>
+<li><span style="border-bottom: 1.5px dashed orange;">列</span>：<ul>
+<li>平行于墙的边长 = 总篱笆 - 2 <span class="arithmatex">\(\times\)</span> 垂直边 = <span class="arithmatex">\(50 - 2x\)</span></li>
+<li>面积方程：<span class="arithmatex">\(x(50 - 2x) = 300\)</span></li>
+</ul>
+</li>
+<li><span style="border-bottom: 1.5px dashed orange;">解</span>：
+    <span class="arithmatex">\(50x - 2x^2 = 300\)</span><br>
+<span class="arithmatex">\(x^2 - 25x + 150 = 0\)</span><br>
+<span class="arithmatex">\((x-10)(x-15) = 0\)</span><br>
+    解得 <span class="arithmatex">\(x_1 = 10, x_2 = 15\)</span></li>
+<li><span style="border-bottom: 1.5px dashed orange;">验</span>（易错点）：<ul>
+<li>当 <span class="arithmatex">\(x=10\)</span> 时，平行墙的边长 <span class="arithmatex">\(= 50 - 20 = 30\)</span> 米。<span style="border-bottom: 1.5px dashed orange;">30 &gt; 25（墙长），墙不够长</span>！舍去</li>
+<li>当 <span class="arithmatex">\(x=15\)</span> 时，平行墙的边长 <span class="arithmatex">\(= 50 - 30 = 20\)</span> 米。<span class="arithmatex">\(20 &lt; 25\)</span>，符合题意<br>
+<span style="border-bottom: 1.5px dashed orange;">答</span>：垂直边长 15米，平行边长 20米</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="4_4">4. 进阶思维与素养拓展<a class="headerlink" href="#4_4" title="Permanent link">¶</a></h4>
+<p><em>本节引用浙江素养测试卷 Q17 命题思路，探讨“实际约束”与“最值”的结合</em></p>
+<div class="admonition abstract">
+<p class="admonition-title">参考试题</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">第九届复赛 Q17</span>：老李想用长为 <span class="arithmatex">\(68m\)</span> 的栅栏，再借助房屋的外墙围成一个长方形羊圈，面积为 <span class="arithmatex">\(600m^2\)</span>，且在边 <span class="arithmatex">\(BC\)</span> 上留一个 <span class="arithmatex">\(2m\)</span> 宽的门<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养考点</span>：这是标准的<span style="border-bottom: 1.5px dashed orange;">几何面积建模</span>。难点在于“留门”对边长的影响（相当于栅栏变长了），以及解出方程后需要根据“外墙足够长”或题目隐含的几何限制（如边长必须为正）进行<span style="border-bottom: 1.5px dashed orange;">验根</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>（1）隐性边界</p>
+<p>在【例2】中，你已经看到了“墙长”这个隐形杀手。在素养测试中，这种约束会更隐蔽</p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">素养卷真题 Q17 变式</span>：如果围栏还要留一个门（宽 2m），怎么列方程？<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">思路</span>：留门意味着“省下了篱笆”</li>
+<li>平行墙边长 = (篱笆总长 + 门宽) - 2 <span class="arithmatex">\(\times\)</span> 垂直边</li>
+<li>方程：<span class="arithmatex">\(x(L_{total} + 2 - 2x) = S\)</span></li>
+</ul>
+</li>
+</ul>
+<p>（2）方案决策：不等式的力量</p>
+<p>当题目问“哪种方案更合算”或“至少需要多少”时，方程无能为力，必须请出<span style="border-bottom: 1.5px dashed orange;">不等式</span></p>
+<ul>
+<li><span style="border-bottom: 1.5px dashed orange;">模型</span>：<ul>
+<li>方案 A 费用：<span class="arithmatex">\(y_A = k_1x + b_1\)</span></li>
+<li>方案 B 费用：<span class="arithmatex">\(y_B = k_2x + b_2\)</span></li>
+<li>若选 A 合算，则列 <span class="arithmatex">\(y_A &lt; y_B\)</span>，解出 <span class="arithmatex">\(x\)</span> 的范围</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="admonition question">
+<p class="admonition-title">自学自测</p>
+<ol>
+<li><span style="border-bottom: 1.5px dashed orange;">常识检验</span>：解关于人数的方程，得 <span class="arithmatex">\(x=12.5\)</span>，这个解对吗？（不对，人数必须是正整数）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">单位陷阱</span>：题目中一边是“万元”，一边是“元”，列方程时需要做什么？（统一单位，比如都化为元）</li>
+<li><span style="border-bottom: 1.5px dashed orange;">双根取舍</span>：在抛物线飞行物体落地问题中（高度 <span class="arithmatex">\(h=0\)</span>），解出 <span class="arithmatex">\(t_1=0, t_2=5\)</span>，两个根的物理意义分别是什么？（<span class="arithmatex">\(t_1\)</span>是起飞前，<span class="arithmatex">\(t_2\)</span>是落地时）</li>
+</ol>
+</div></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-02-10 11:13:26</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: JHMath - 初中数学保命手册">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                JHMath - 初中数学保命手册
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../JHMath02/" class="md-footer__link md-footer__link--next" aria-label="下一页: 几何篇">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                几何篇
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

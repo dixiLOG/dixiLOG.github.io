@@ -161,7 +161,9 @@ $$S = \frac{1}{2} \times |OA| \times |OB| = \frac{1}{2} |b| \cdot |\frac{b}{k}| 
 （1）矩形面积模型
 
 设 $P(x, y)$ 是反比例函数 $y = \frac{k}{x}$ 图象上任意一点
+
 * 过点 $P$ 分别作 x轴、y轴的垂线，垂足为 $A, B$
+
 * <span style="border-bottom: 1.5px dashed orange;">结论</span>：矩形 $PAOB$ 的面积为定值 <span style="border-bottom: 1.5px dashed orange;">$|k|$</span>
 
 $$S_{\text{矩形}} = |x| \cdot |y| = |xy| = |k|$$
@@ -169,6 +171,7 @@ $$S_{\text{矩形}} = |x| \cdot |y| = |xy| = |k|$$
 （2）三角形面积模型
 
 连接 $PO$
+
 * <span style="border-bottom: 1.5px dashed orange;">结论</span>：$\triangle PAO$ 或 $\triangle PBO$ 的面积为定值 <span style="border-bottom: 1.5px dashed orange;">$\frac{1}{2}|k|$</span>
 
 $$S_{\triangle} = \frac{1}{2} \cdot |x| \cdot |y| = \frac{1}{2}|k|$$
@@ -523,11 +526,13 @@ $$S_{\triangle} = \frac{1}{2} \cdot |x| \cdot |y| = \frac{1}{2}|k|$$
 对于斜放在坐标系中的三角形 $\triangle ABC$，直接求底和高很困难
 
 * <span style="border-bottom: 1.5px dashed orange;">割补策略</span>：过中间点作 $x$ 轴的垂线（铅垂高 $h$），将三角形切割成左右两部分
+
 * <span style="border-bottom: 1.5px dashed orange;">公式</span>：
 
-  $$S = \frac{1}{2} \cdot h \cdot |x_B - x_C|$$
+$$S = \frac{1}{2} \cdot h \cdot |x_B - x_C|$$
 
-  （$h$ 为铅垂线段长，即上方抛物线点纵坐标减去下方直线点纵坐标）
+> $h$ 为铅垂线段长，即上方抛物线点纵坐标减去下方直线点纵坐标
+
 * <span style="border-bottom: 1.5px dashed orange;">最值原理</span>：因为 $h$ 通常是关于 $x$ 的二次函数（$y_{\text{抛}} - y_{\text{直}}$），所以利用二次函数顶点公式可求 $S$ 的最大值
 
 ---
@@ -553,6 +558,7 @@ $$S_{\triangle} = \frac{1}{2} \cdot |x| \cdot |y| = \frac{1}{2}|k|$$
 若 $A, B, C, D$ 四点构成平行四边形，利用<span style="border-bottom: 1.5px dashed orange;">对角线中点重合</span>最快
 
 * <span style="border-bottom: 1.5px dashed orange;">公式</span>：$x_A + x_C = x_B + x_D$，且 $y_A + y_C = y_B + y_D$（假设 $AC, BD$ 为对角线）
+
 * <span style="border-bottom: 1.5px dashed orange;">注意</span>：如果不确定谁是对角线，通常有 3 种可能的坐标
 
 ---

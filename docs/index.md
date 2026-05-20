@@ -757,7 +757,7 @@ title: DIXI的个人博客
           <span class="dixihome-date">2026<br>05.20</span>
           <span class="dixihome-update-body">
             <strong>首页改版，随手记与博客同步上新 <span class="dixihome-badge">SITE&amp;DOCS</span></strong>
-            <span>基于最新提交整理首页样式，并补入 <a href="https://dixilog.github.io/随手记/learnDriving/">学车记</a>、<a href="https://dixilog.github.io/随手记/whywhy/electionTips/">选举办法</a>、<a href="https://dixilog.github.io/随手记/whywhy/offerTerms/">就业黑话</a> 等新内容。</span>
+            <span>基于最新提交整理首页样式，并补入 <a href="https://dixilog.github.io/随手记/learnDriving/">学车记</a>、<a href="https://dixilog.github.io/随手记/whywhy/electionTips/">选举办法</a> 等新内容。</span>
           </span>
         </li>
         <li class="dixihome-update">
@@ -771,7 +771,7 @@ title: DIXI的个人博客
           <span class="dixihome-date">2026<br>02.26</span>
           <span class="dixihome-update-body">
             <strong>长河集与随手记继续扩容 <span class="dixihome-badge">DOCS</span></strong>
-            <span>新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a> 与 <a href="https://dixilog.github.io/随手记/boringBetter/shoddyGoods/">垃圾商品合集</a>。</span>
+            <span>新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a>。</span>
           </span>
         </li>
         <li class="dixihome-update">

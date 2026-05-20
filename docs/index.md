@@ -754,38 +754,38 @@ title: DIXI的个人博客
       <h3>上新</h3>
       <ol class="dixihome-updates">
         <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>03.11</span>
+          <span class="dixihome-date">2026<br>05.20</span>
           <span class="dixihome-update-body">
-            <strong>随手记继续上新 <span class="dixihome-badge">DOCS&amp;FEAT</span></strong>
-            <span><a href="https://dixilog.github.io/随手记/boringBetter/">无聊可期</a> 与 <a href="https://dixilog.github.io/随手记/whywhy/">十万个为什么</a> 更新，补进更多日常问题和碎片记录。</span>
+            <strong>首页改版，随手记与博客同步上新 <span class="dixihome-badge">SITE&amp;DOCS</span></strong>
+            <span>基于最新提交整理首页样式，并补入 <a href="https://dixilog.github.io/随手记/learnDriving/">学车记</a>、<a href="https://dixilog.github.io/随手记/whywhy/electionTips/">选举办法</a>、<a href="https://dixilog.github.io/随手记/whywhy/offerTerms/">就业黑话</a> 等新内容。</span>
           </span>
         </li>
         <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>03.11</span>
+          <span class="dixihome-date">2026<br>03.11</span>
           <span class="dixihome-update-body">
-            <strong>通信原理笔记加入 NBU-NOTEBOOK <span class="dixihome-badge">NOTEBOOK</span></strong>
-            <span>新增 <a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/">通信原理笔记</a>，课程笔记区继续扩容。</span>
+            <strong>十万个为什么补进“就业黑话” <span class="dixihome-badge">DOCS</span></strong>
+            <span><a href="https://dixilog.github.io/随手记/whywhy/offerTerms/">就业黑话</a> 单独成篇，继续整理求职场景里常见但不直说的表达。</span>
           </span>
         </li>
         <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>03.11</span>
+          <span class="dixihome-date">2026<br>02.26</span>
           <span class="dixihome-update-body">
-            <strong>页尾社交链接整理 <span class="dixihome-badge">SITE</span></strong>
-            <span>补充 RSS、GitHub、邮箱、QQ、微信等入口，让站点联系方式更完整。</span>
+            <strong>长河集与随手记继续扩容 <span class="dixihome-badge">DOCS</span></strong>
+            <span>新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a> 与 <a href="https://dixilog.github.io/随手记/boringBetter/shoddyGoods/">垃圾商品合集</a>。</span>
           </span>
         </li>
         <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>02.22</span>
+          <span class="dixihome-date">2025<br>12.23</span>
           <span class="dixihome-update-body">
-            <strong>课程笔记集中补档 <span class="dixihome-badge">DOCS</span></strong>
-            <span>添加计算机网络、概率论、随机信号分析等笔记入口，NBU-NOTEBOOK 的骨架更完整。</span>
+            <strong>推免 Flysheet 持续补写 <span class="dixihome-badge">FLYSHEET</span></strong>
+            <span>围绕院校选择、复盘经验与朋辈感受继续补档，推免线内容从时间线扩展到更细的经验层。</span>
           </span>
         </li>
         <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>02.10</span>
+          <span class="dixihome-date">2025<br>12.14</span>
           <span class="dixihome-update-body">
-            <strong>长河集与博客板块调整 <span class="dixihome-badge">UPDATE</span></strong>
-            <span>开辟长河集下的荒唐言，闲言碎语同步文章，站点内容从课程笔记扩展到长期文字。</span>
+            <strong>推免 Flysheet V0.1 上线 <span class="dixihome-badge">NEW</span></strong>
+            <span>首次集中整理推免路径，补入时间线、经验感悟、信息搜集与导师选择等一整套入口。</span>
           </span>
         </li>
       </ol>
@@ -796,6 +796,13 @@ title: DIXI的个人博客
             <span>展开查看更多历史装修</span>
           </summary>
           <div class="dixihome-archive-list">
+            <div class="dixihome-archive-item">
+              <span class="dixihome-archive-date">2025<br>02.10-03.11</span>
+              <ul>
+                <li><a href="https://dixilog.github.io/随手记/boringBetter/">无聊可期</a>、<a href="https://dixilog.github.io/随手记/whywhy/">十万个为什么</a> 与 <a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/">通信原理笔记</a> 先后补入。</li>
+                <li>页尾社交链接、课程笔记入口与站点骨架在这一阶段逐步补齐。</li>
+              </ul>
+            </div>
             <div class="dixihome-archive-item">
               <span class="dixihome-archive-date">2025<br>02.11-02.13</span>
               <ul>

@@ -97,6 +97,8 @@
 
 ## 五险一金
 
+!!! success "现在多了一个 [长期护理险](https://www.gov.cn/yaowen/liebiao/202603/content_7063789.htm) ，即 <span style="border-bottom: 1.5px dashed orange;">六险一金</span>"
+
 五险一金是用人单位必须履行的强制性法定义务，等效于<span style="border-bottom: 1.5px dashed orange;">社保+住房公积金</span>
 
 具体而言，其指代<span style="border-bottom: 1.5px dashed orange;">基本养老保险、基本医疗保险、失业保险、工伤保险、生育保险以及住房公积金</span>

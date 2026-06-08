@@ -1,0 +1,3067 @@
+{
+  "version": "1.0.0",
+  "kind": "codebase",
+  "project": {
+    "name": "dixiLOG.github.io",
+    "languages": [
+      "css",
+      "html",
+      "javascript",
+      "markdown",
+      "yaml"
+    ],
+    "frameworks": [
+      "MkDocs",
+      "Material for MkDocs",
+      "GitHub Actions"
+    ],
+    "description": "一个基于 MkDocs + Material for MkDocs 构建的个人站点仓库，主体是课程笔记、随手记录、推免经验、博客文章与专题资料。",
+    "analyzedAt": "2026-05-24T16:10:28.597Z",
+    "gitCommitHash": "50d913fd4ea5a5ce38d6418f6c9e60e3398b8c00"
+  },
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/PublishMySite.yml",
+      "type": "pipeline",
+      "name": "PublishMySite.yml",
+      "filePath": ".github/workflows/PublishMySite.yml",
+      "summary": "GitHub Actions 发布流水线，用于构建并发布 MkDocs 站点。",
+      "tags": [
+        "pipeline",
+        ".github",
+        "workflows"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.vscode/settings.json",
+      "type": "file",
+      "name": "settings.json",
+      "filePath": ".vscode/settings.json",
+      "summary": "仓库文件，共 8 行。",
+      "tags": [
+        "file",
+        ".vscode",
+        "settings.json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:LICENSE",
+      "type": "document",
+      "name": "LICENSE",
+      "filePath": "LICENSE",
+      "summary": "仓库文件，共 22 行。",
+      "tags": [
+        "document",
+        "LICENSE"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "仓库总览页，介绍 DIXILOG 站点定位、内容分区与本地预览方式。",
+      "tags": [
+        "document",
+        "README.md",
+        "overview"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/404.html",
+      "type": "resource",
+      "name": "404.html",
+      "filePath": "docs/404.html",
+      "summary": "静态资源文件，服务于站点展示或交互。",
+      "tags": [
+        "resource",
+        "docs",
+        "404.html"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/Flysheet/index.md",
+      "summary": "Flysheet 页面《NBU 通创 er 推免保命指北》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet",
+        "index"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/the1stLesson.md",
+      "type": "document",
+      "name": "the1stLesson.md",
+      "filePath": "docs/Flysheet/the1stLesson.md",
+      "summary": "Flysheet 页面《推免之前—扫盲》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/timeline.md",
+      "type": "document",
+      "name": "timeline.md",
+      "filePath": "docs/Flysheet/timeline.md",
+      "summary": "Flysheet 页面《面向过程的时间线》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/Flysheet/tourFeel/01hzl.md",
+      "type": "document",
+      "name": "01hzl.md",
+      "filePath": "docs/Flysheet/tourFeel/01hzl.md",
+      "summary": "Flysheet 页面《22通创 HZL》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/tourFeel/02yxg.md",
+      "type": "document",
+      "name": "02yxg.md",
+      "filePath": "docs/Flysheet/tourFeel/02yxg.md",
+      "summary": "Flysheet 页面《22通创 YXG》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/面向对象/01self_locate.md",
+      "type": "document",
+      "name": "01self_locate.md",
+      "filePath": "docs/Flysheet/面向对象/01self_locate.md",
+      "summary": "Flysheet 页面《自我定位》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/面向对象/02college_choose.md",
+      "type": "document",
+      "name": "02college_choose.md",
+      "filePath": "docs/Flysheet/面向对象/02college_choose.md",
+      "summary": "Flysheet 页面《院校选择》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/面向对象/03tutor_choose.md",
+      "type": "document",
+      "name": "03tutor_choose.md",
+      "filePath": "docs/Flysheet/面向对象/03tutor_choose.md",
+      "summary": "Flysheet 页面《导师选择》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/面向对象/04info_material_system.md",
+      "type": "document",
+      "name": "04info_material_system.md",
+      "filePath": "docs/Flysheet/面向对象/04info_material_system.md",
+      "summary": "Flysheet 页面《信息收纳、材料准备与系统填报》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/Flysheet/面向对象/05review_exp.md",
+      "type": "document",
+      "name": "05review_exp.md",
+      "filePath": "docs/Flysheet/面向对象/05review_exp.md",
+      "summary": "Flysheet 页面《文书与面试准备》，聚焦推免经验与成长记录。",
+      "tags": [
+        "document",
+        "docs",
+        "Flysheet",
+        "flysheet"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/DSP/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/DSP/index.md",
+      "summary": "课程笔记页面《DSP笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md",
+      "type": "document",
+      "name": "RSA01.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md",
+      "summary": "课程笔记页面《随机信号的时域分析》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md",
+      "type": "document",
+      "name": "RSA02.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md",
+      "summary": "课程笔记页面《随机信号的频域分析》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md",
+      "type": "document",
+      "name": "RSA03.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md",
+      "summary": "课程笔记页面《通过线性系统》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md",
+      "type": "document",
+      "name": "RSA04.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md",
+      "summary": "课程笔记页面《窄带随机过程》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md",
+      "type": "document",
+      "name": "RSA05.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md",
+      "summary": "课程笔记页面《马尔可夫过程与泊松过程》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "summary": "课程笔记页面《随机信号分析笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S01.md",
+      "type": "document",
+      "name": "S&S01.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S01.md",
+      "summary": "课程笔记页面《S&S 基本概念》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S02.md",
+      "type": "document",
+      "name": "S&S02.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S02.md",
+      "summary": "课程笔记页面《LTI 的时域分析》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S03.md",
+      "type": "document",
+      "name": "S&S03.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S03.md",
+      "summary": "课程笔记页面《FS/FT》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S04.md",
+      "type": "document",
+      "name": "S&S04.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S04.md",
+      "summary": "课程笔记页面《抽样、调制与解调》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S05.md",
+      "type": "document",
+      "name": "S&S05.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S05.md",
+      "summary": "课程笔记页面《LT》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/S&S06.md",
+      "type": "document",
+      "name": "S&S06.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S06.md",
+      "summary": "课程笔记页面《ZT》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/S&S/index.md",
+      "summary": "课程笔记页面《信号与系统》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp01.md",
+      "type": "document",
+      "name": "cp01.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp01.md",
+      "summary": "课程笔记页面《绪论》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp02.md",
+      "type": "document",
+      "name": "cp02.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp02.md",
+      "summary": "课程笔记页面《随机过程》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp03.md",
+      "type": "document",
+      "name": "cp03.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp03.md",
+      "summary": "课程笔记页面《信源编码》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp04.md",
+      "type": "document",
+      "name": "cp04.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp04.md",
+      "summary": "课程笔记页面《信道》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp05.md",
+      "type": "document",
+      "name": "cp05.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp05.md",
+      "summary": "课程笔记页面《幅度调制》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp06.md",
+      "type": "document",
+      "name": "cp06.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp06.md",
+      "summary": "课程笔记页面《角度调制》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp07.md",
+      "type": "document",
+      "name": "cp07.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp07.md",
+      "summary": "课程笔记页面《数字基带传输》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp08.md",
+      "type": "document",
+      "name": "cp08.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp08.md",
+      "summary": "课程笔记页面《数字带通传输—数字调制》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp09.md",
+      "type": "document",
+      "name": "cp09.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp09.md",
+      "summary": "课程笔记页面《差错控制编码》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/cp10.md",
+      "type": "document",
+      "name": "cp10.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp10.md",
+      "summary": "课程笔记页面《数字信号的最佳接收》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "summary": "课程笔记页面《通信原理笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf",
+      "type": "document",
+      "name": "BaiduND.pdf",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf",
+      "summary": "课程笔记页面《u���i�[��O�>�A�qhm�\\�í[�P/]ch,E\u0017t�s�P\u0012A�\u0011Iwww{�》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/computerNetwork/CN01.md",
+      "type": "document",
+      "name": "CN01.md",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/CN01.md",
+      "summary": "课程笔记页面《计网综述》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "mermaid"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/computerNetwork/CN02.md",
+      "type": "document",
+      "name": "CN02.md",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/CN02.md",
+      "summary": "课程笔记页面《网工综述》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "resource:docs/NBU-NOTEBOOK/computerNetwork/GBN.html",
+      "type": "resource",
+      "name": "GBN.html",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/GBN.html",
+      "summary": "课程笔记页面《chat-window { /* 调整聊天窗口的高度和位置 */》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "resource",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf",
+      "type": "document",
+      "name": "TLS.pdf",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf",
+      "summary": "课程笔记页面《1\\�\u0016U���h\u0007�\u0003a0��\u000e�!�#\u0013\u0011�PT��\u0016h\u001c\fFaޮ��U\u0015f��\u000f6�\u0002@/УCg\u0004��SE[��&$?��գ2c��Z�y(�X��X�Wۼ���i�L》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "summary": "课程笔记页面《计算机网络笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/index.md",
+      "summary": "课程笔记页面《DIXI的NBU学习笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT01.md",
+      "type": "document",
+      "name": "PT01.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT01.md",
+      "summary": "课程笔记页面《基本概念与运算》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT02.md",
+      "type": "document",
+      "name": "PT02.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT02.md",
+      "summary": "课程笔记页面《随机变量 r.v. 及其分布》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT03.md",
+      "type": "document",
+      "name": "PT03.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT03.md",
+      "summary": "课程笔记页面《统计特征》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT04.md",
+      "type": "document",
+      "name": "PT04.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT04.md",
+      "summary": "课程笔记页面《特征函数》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT05.md",
+      "type": "document",
+      "name": "PT05.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT05.md",
+      "summary": "课程笔记页面《高斯分布》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "summary": "课程笔记页面《概率论笔记》，属于 NBU-NOTEBOOK 内容区。",
+      "tags": [
+        "document",
+        "docs",
+        "NBU-NOTEBOOK",
+        "course-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/ROCOS/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/ROCOS/index.md",
+      "summary": "ROCOS 页面《rocos 菜鸟入门》，聚焦机器人队资料与相关记录。",
+      "tags": [
+        "document",
+        "docs",
+        "ROCOS",
+        "rocos",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/ROCOS/info&ref.md",
+      "type": "document",
+      "name": "info&ref.md",
+      "filePath": "docs/ROCOS/info&ref.md",
+      "summary": "ROCOS 页面《学习路径一览与相关参考》，聚焦机器人队资料与相关记录。",
+      "tags": [
+        "document",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:docs/ROCOS/login.html",
+      "type": "resource",
+      "name": "login.html",
+      "filePath": "docs/ROCOS/login.html",
+      "summary": "ROCOS 页面《login-form {》，聚焦机器人队资料与相关记录。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/Vue.png",
+      "type": "resource",
+      "name": "Vue.png",
+      "filePath": "docs/ROCOS/rocos_img/Vue.png",
+      "summary": "ROCOS 分区页面。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/baidu.png",
+      "type": "resource",
+      "name": "baidu.png",
+      "filePath": "docs/ROCOS/rocos_img/baidu.png",
+      "summary": "ROCOS 分区页面。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/bilibili.png",
+      "type": "resource",
+      "name": "bilibili.png",
+      "filePath": "docs/ROCOS/rocos_img/bilibili.png",
+      "summary": "ROCOS 页面《\u0002,�B)�F\"��y0�߰�0\u000e~(\u0003\u000e�\u001c\u00071�\u000f\u0004�\u0001\u0000j��W\u001f��✽�\u0018�Ɓ5\f�Xϔ��s�E�MUo��\"��u���\\_��>\u001f9�!r\u0014\u0018�\f\u0007�\f\u0003\u000e\u000b��B�p`5\u0003\u0011��ȑ{!>0i%[��]B�U�@\u0010P\u0004\u0010\b��l�2U�\u001d\u001b9\u0011<{\u0002\u0007;�\u0001�\u0016Y$_�g�r\u000e�\u001c,���\u001d�?��$���》，聚焦机器人队资料与相关记录。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/feishu.png",
+      "type": "resource",
+      "name": "feishu.png",
+      "filePath": "docs/ROCOS/rocos_img/feishu.png",
+      "summary": "ROCOS 分区页面。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/githubwiki.png",
+      "type": "resource",
+      "name": "githubwiki.png",
+      "filePath": "docs/ROCOS/rocos_img/githubwiki.png",
+      "summary": "ROCOS 分区页面。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/turing.avif",
+      "type": "resource",
+      "name": "turing.avif",
+      "filePath": "docs/ROCOS/rocos_img/turing.avif",
+      "summary": "ROCOS 分区页面。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/ROCOS/rocos_img/zmbz.png",
+      "type": "resource",
+      "name": "zmbz.png",
+      "filePath": "docs/ROCOS/rocos_img/zmbz.png",
+      "summary": "ROCOS 页面《B��》，聚焦机器人队资料与相关记录。",
+      "tags": [
+        "resource",
+        "docs",
+        "ROCOS",
+        "rocos"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:docs/blog/.authors.yml",
+      "type": "config",
+      "name": ".authors.yml",
+      "filePath": "docs/blog/.authors.yml",
+      "summary": "博客分区相关页面。",
+      "tags": [
+        "config",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/blog/index.md",
+      "summary": "博客分区页面《DIXI的碎碎念》，用于组织个人文章。",
+      "tags": [
+        "document",
+        "docs",
+        "blog",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/Lone Dacing.md",
+      "type": "document",
+      "name": "Lone Dacing.md",
+      "filePath": "docs/blog/posts/Lone Dacing.md",
+      "summary": "博客文章《Lone Dacing》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/blog/posts/Why,Why.md",
+      "type": "document",
+      "name": "Why,Why.md",
+      "filePath": "docs/blog/posts/Why,Why.md",
+      "summary": "博客文章《Why,Why?》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/hahahi.md",
+      "type": "document",
+      "name": "hahahi.md",
+      "filePath": "docs/blog/posts/hahahi.md",
+      "summary": "博客文章《haha,hi~》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/blog/posts/soitgoes.md",
+      "type": "document",
+      "name": "soitgoes.md",
+      "filePath": "docs/blog/posts/soitgoes.md",
+      "summary": "博客文章《So it goes》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/下自成蹊.md",
+      "type": "document",
+      "name": "下自成蹊.md",
+      "filePath": "docs/blog/posts/下自成蹊.md",
+      "summary": "博客文章《下自成蹊》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/伸冤在我，我必报应.md",
+      "type": "document",
+      "name": "伸冤在我，我必报应.md",
+      "filePath": "docs/blog/posts/伸冤在我，我必报应.md",
+      "summary": "博客文章《伸冤在我，我必报应》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/blog/posts/兄弟.md",
+      "type": "document",
+      "name": "兄弟.md",
+      "filePath": "docs/blog/posts/兄弟.md",
+      "summary": "博客文章《兄弟》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/划上分号.md",
+      "type": "document",
+      "name": "划上分号.md",
+      "filePath": "docs/blog/posts/划上分号.md",
+      "summary": "博客文章《划上分号》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/blog/posts/外儒内法.skill.md",
+      "type": "document",
+      "name": "外儒内法.skill.md",
+      "filePath": "docs/blog/posts/外儒内法.skill.md",
+      "summary": "博客文章正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/外部激励.md",
+      "type": "document",
+      "name": "外部激励.md",
+      "filePath": "docs/blog/posts/外部激励.md",
+      "summary": "博客文章《外部激励》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/小故事.md",
+      "type": "document",
+      "name": "小故事.md",
+      "filePath": "docs/blog/posts/小故事.md",
+      "summary": "博客文章《小故事》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/德米安.md",
+      "type": "document",
+      "name": "德米安.md",
+      "filePath": "docs/blog/posts/德米安.md",
+      "summary": "博客文章《德米安》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/我可能会在路上释怀.md",
+      "type": "document",
+      "name": "我可能会在路上释怀.md",
+      "filePath": "docs/blog/posts/我可能会在路上释怀.md",
+      "summary": "博客文章《我可能会在路上释怀》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/我将心比心，我自以为是.md",
+      "type": "document",
+      "name": "我将心比心，我自以为是.md",
+      "filePath": "docs/blog/posts/我将心比心，我自以为是.md",
+      "summary": "博客文章《我将心比心，我自以为是》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/梦到什么说什么.md",
+      "type": "document",
+      "name": "梦到什么说什么.md",
+      "filePath": "docs/blog/posts/梦到什么说什么.md",
+      "summary": "博客文章《梦到什么说什么》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/热血.md",
+      "type": "document",
+      "name": "热血.md",
+      "filePath": "docs/blog/posts/热血.md",
+      "summary": "博客文章《热血》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/窗外鸟儿飞过.md",
+      "type": "document",
+      "name": "窗外鸟儿飞过.md",
+      "filePath": "docs/blog/posts/窗外鸟儿飞过.md",
+      "summary": "博客文章《窗外鸟儿飞过》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/第一次，又一次.md",
+      "type": "document",
+      "name": "第一次，又一次.md",
+      "filePath": "docs/blog/posts/第一次，又一次.md",
+      "summary": "博客文章《第一次，又一次》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/走进这个良夜.md",
+      "type": "document",
+      "name": "走进这个良夜.md",
+      "filePath": "docs/blog/posts/走进这个良夜.md",
+      "summary": "博客文章《走进这个良夜》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/远大前程&鄙视.md",
+      "type": "document",
+      "name": "远大前程&鄙视.md",
+      "filePath": "docs/blog/posts/远大前程&鄙视.md",
+      "summary": "博客文章《远大前程&鄙视》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/那一天治好了我的精神内耗.md",
+      "type": "document",
+      "name": "那一天治好了我的精神内耗.md",
+      "filePath": "docs/blog/posts/那一天治好了我的精神内耗.md",
+      "summary": "博客文章《那一天治好了我的精神内耗》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/blog/posts/门？我让你开开开！.md",
+      "type": "document",
+      "name": "门？我让你开开开！.md",
+      "filePath": "docs/blog/posts/门？我让你开开开！.md",
+      "summary": "博客文章《门？我让你开！开！开！》的正文页面。",
+      "tags": [
+        "document",
+        "docs",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/build_your_web/access your github.io.md",
+      "type": "document",
+      "name": "access your github.io.md",
+      "filePath": "docs/build_your_web/access your github.io.md",
+      "summary": "建站记录页面《网站搭建与发布》，记录 MkDocs 与站点搭建实践。",
+      "tags": [
+        "document",
+        "docs",
+        "build_your_web",
+        "site-building"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/build_your_web/feishu2githubPages.md",
+      "type": "document",
+      "name": "feishu2githubPages.md",
+      "filePath": "docs/build_your_web/feishu2githubPages.md",
+      "summary": "建站记录页面《Feishu2GithubPages》，记录 MkDocs 与站点搭建实践。",
+      "tags": [
+        "document",
+        "docs",
+        "build_your_web",
+        "site-building"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/build_your_web/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/build_your_web/index.md",
+      "summary": "建站记录页面《记录从零开始的网站搭建》，记录 MkDocs 与站点搭建实践。",
+      "tags": [
+        "document",
+        "docs",
+        "build_your_web",
+        "site-building",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/build_your_web/markdown 速记.md",
+      "type": "document",
+      "name": "markdown 速记.md",
+      "filePath": "docs/build_your_web/markdown 速记.md",
+      "summary": "建站记录页面《pyMarkdown 速记》，记录 MkDocs 与站点搭建实践。",
+      "tags": [
+        "document",
+        "docs",
+        "build_your_web",
+        "site-building",
+        "mermaid"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/build_your_web/玩转 Material.md",
+      "type": "document",
+      "name": "玩转 Material.md",
+      "filePath": "docs/build_your_web/玩转 Material.md",
+      "summary": "建站记录页面《玩转 Material》，记录 MkDocs 与站点搭建实践。",
+      "tags": [
+        "document",
+        "docs",
+        "build_your_web",
+        "site-building",
+        "mermaid"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/changheji/GeminiCLI.md",
+      "type": "document",
+      "name": "GeminiCLI.md",
+      "filePath": "docs/changheji/GeminiCLI.md",
+      "summary": "长河集页面《Gemini CLI 摸索笔记》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/changheji/MLreport.md",
+      "type": "document",
+      "name": "MLreport.md",
+      "filePath": "docs/changheji/MLreport.md",
+      "summary": "长河集页面《基于卷积神经网络的FashionMNIST分类》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform",
+        "mermaid"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/changheji/bookReport/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/changheji/bookReport/index.md",
+      "summary": "长河集页面《荒唐言》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md",
+      "type": "document",
+      "name": "《华尔街日报是如何讲故事的》阅读报告.md",
+      "filePath": "docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md",
+      "summary": "长河集页面《《<华尔街日报>是如何讲故事的》阅读报告》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/changheji/bookReport/《文心雕龙》摘抄本.md",
+      "type": "document",
+      "name": "《文心雕龙》摘抄本.md",
+      "filePath": "docs/changheji/bookReport/《文心雕龙》摘抄本.md",
+      "summary": "长河集页面《《文心雕龙》摘抄本》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/changheji/bookReport/《远大前程》阅读报告.md",
+      "type": "document",
+      "name": "《远大前程》阅读报告.md",
+      "filePath": "docs/changheji/bookReport/《远大前程》阅读报告.md",
+      "summary": "长河集页面《《远大前程》阅读报告》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/changheji/bookReport/《鄙视》阅读报告.md",
+      "type": "document",
+      "name": "《鄙视》阅读报告.md",
+      "filePath": "docs/changheji/bookReport/《鄙视》阅读报告.md",
+      "summary": "长河集页面《《鄙视》阅读报告》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/changheji/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/changheji/index.md",
+      "summary": "长河集页面《长河集》，偏向长期文字与读写沉淀。",
+      "tags": [
+        "document",
+        "docs",
+        "changheji",
+        "longform",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/img/favicon.ico",
+      "type": "resource",
+      "name": "favicon.ico",
+      "filePath": "docs/img/favicon.ico",
+      "summary": "静态资源文件，服务于站点展示或交互。",
+      "tags": [
+        "resource",
+        "docs",
+        "img"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/img/zmbz.png",
+      "type": "resource",
+      "name": "zmbz.png",
+      "filePath": "docs/img/zmbz.png",
+      "summary": "页面《B��》的内容文件。",
+      "tags": [
+        "resource",
+        "docs",
+        "img"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/index.md",
+      "summary": "站点首页，承载内容导览、最近更新与全站入口。",
+      "tags": [
+        "document",
+        "docs",
+        "index.md",
+        "index"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "resource:docs/javascripts/extra.js",
+      "type": "resource",
+      "name": "extra.js",
+      "filePath": "docs/javascripts/extra.js",
+      "summary": "站点前端增强脚本，用于补充主题默认交互。",
+      "tags": [
+        "resource",
+        "docs",
+        "javascripts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:docs/javascripts/katex.js",
+      "type": "resource",
+      "name": "katex.js",
+      "filePath": "docs/javascripts/katex.js",
+      "summary": "站点前端增强脚本，用于补充主题默认交互。",
+      "tags": [
+        "resource",
+        "docs",
+        "javascripts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/javascripts/mathjax.js",
+      "type": "resource",
+      "name": "mathjax.js",
+      "filePath": "docs/javascripts/mathjax.js",
+      "summary": "站点前端增强脚本，用于补充主题默认交互。",
+      "tags": [
+        "resource",
+        "docs",
+        "javascripts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/page_template/page_statistics.html",
+      "type": "resource",
+      "name": "page_statistics.html",
+      "filePath": "docs/page_template/page_statistics.html",
+      "summary": "站点统计或模板相关页面资源。",
+      "tags": [
+        "resource",
+        "docs",
+        "page_template"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/stylesheets/color.css",
+      "type": "resource",
+      "name": "color.css",
+      "filePath": "docs/stylesheets/color.css",
+      "summary": "站点样式扩展文件，用于覆盖或补充主题默认视觉。",
+      "tags": [
+        "resource",
+        "docs",
+        "stylesheets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/stylesheets/custom.css",
+      "type": "resource",
+      "name": "custom.css",
+      "filePath": "docs/stylesheets/custom.css",
+      "summary": "站点样式扩展文件，用于覆盖或补充主题默认视觉。",
+      "tags": [
+        "resource",
+        "docs",
+        "stylesheets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "resource:docs/stylesheets/extra.css",
+      "type": "resource",
+      "name": "extra.css",
+      "filePath": "docs/stylesheets/extra.css",
+      "summary": "站点样式扩展文件，用于覆盖或补充主题默认视觉。",
+      "tags": [
+        "resource",
+        "docs",
+        "stylesheets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/20250813.md",
+      "type": "document",
+      "name": "20250813.md",
+      "filePath": "docs/随手记/20250813.md",
+      "summary": "随手记页面《25年电赛小黑屋，再战VCO》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/JHMath/JHMath01.md",
+      "type": "document",
+      "name": "JHMath01.md",
+      "filePath": "docs/随手记/JHMath/JHMath01.md",
+      "summary": "随手记页面《代数篇》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/JHMath/JHMath02.md",
+      "type": "document",
+      "name": "JHMath02.md",
+      "filePath": "docs/随手记/JHMath/JHMath02.md",
+      "summary": "随手记页面《几何篇》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/JHMath/JHMath03.md",
+      "type": "document",
+      "name": "JHMath03.md",
+      "filePath": "docs/随手记/JHMath/JHMath03.md",
+      "summary": "随手记页面《函数篇》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/JHMath/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/随手记/JHMath/index.md",
+      "summary": "随手记页面《JHMath - 初中数学保命手册》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes",
+        "index"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/LALU-answers.pdf",
+      "type": "document",
+      "name": "LALU-answers.pdf",
+      "filePath": "docs/随手记/boringBetter/LALU-answers.pdf",
+      "summary": "随手记页面《ݡ��Ok_\u0018�����W�/�u\u00123�q\u0010�I\u0014$+\u0016~5e�W3\u0016�R˥`]I�����>�V\t��9삾�(��,#��\u001e��\u0005��\u0006O��T�j��d�$�\u001e\u0017����,WՀ�\u0014v�̨\u0018#?囃��a\u000f�J\u0012�K�Ag�》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/LALU.pdf",
+      "type": "document",
+      "name": "LALU.pdf",
+      "filePath": "docs/随手记/boringBetter/LALU.pdf",
+      "summary": "随手记页面《���\u000e�RV��\u001dn��\u000b�\u001exМ@T\u0002\u0004�<\u000fJvn��ߪ�\u000bQ.�\u00143u�\u0010}��}�#�4�����!v28�\u0015��/�6�9:y�Zsت��53��m�;���[Y����?�\u0007��b+)*�迂��߿�2�Y���%�I�O��\u0015�z�~1U\u001a��\u0001��Z@k��)_�Wxhϕ�Q�C�ƪՅIŞj��\u001cʇ��:l<�*��6�o���u���\u001dG\u000f\\��unv\tUc��?Q�5\u001c\t��� ߃\u0011���|\u0007�=��������x1t�r����y1��h��2BX��g�n��Nr\"D`IC�!C�&���3&m�q�)��\u0012�b��g��6\u000f�P��\u0001|����A�L�w�cu�\u0018{v�.*(�]�y�\u001a�\u0014�-���!-�{�Xv��\f[��EF�Ӕ���/_t����;�p��j�\u0014j�B�*�A��\t�j$�L����!-OZ֤��\u0000�\u00126{A^ɲ�\u0007}Z��Os0@����>��_�M|x'�1��&�\u0007\u001e4+\u0010�\u001a�{\u001e�sE�ޙ\u001e�2�\u0012���\u0010�DV4���<u����V&\u0006'\\�\u0011�+0�e([mlB��\u0010hb\u0011�-\u001b�\\���D���h�o�7c��\u000f\u0014S\u001f��Z���\\9�r��X����\u0001j��^<M\u0019>t\u0001{��?����+��Q�C{N�@Ϗ\u0003����~@\u001eIaA�ۉK\u0017\u001c��1&���\u001aYNT���'\b�\"�\u000e�'e��Qe\fhm��eb�ȅk�\u001fz� �0���̂�1��K�》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/awesomeFinds.md",
+      "type": "document",
+      "name": "awesomeFinds.md",
+      "filePath": "docs/随手记/boringBetter/awesomeFinds.md",
+      "summary": "随手记页面《Awesome Finds》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/随手记/boringBetter/index.md",
+      "summary": "随手记页面《无聊可期》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/moffeeのdemo.pdf",
+      "type": "document",
+      "name": "moffeeのdemo.pdf",
+      "filePath": "docs/随手记/boringBetter/moffeeのdemo.pdf",
+      "summary": "随手记页面《FԘŊ)����8�S!M#be��$\u0010G<������\u0011�̞_�\u0002�IW\u001d�\u0011�2���,e����*����Gt��>����袍��%�\b+�O&���#��\u001fQ~zx�U�U��\u0003~�9�(���y~\u0007K\"\r�47k\u001cD�����I�\\�N�\u0005i8�\u00138�_A�tm��+��'�͌�,\u0007��y\u000eQ��<.�\u0004JT^\u0013Ƌ!J�\u0012'�\u0016�\u0011�������1���\u0002�@$���\u001eu�\u0015�$x\u000e�}���F[xܒ놶���4���Tj�{������l�Msi��yʜ\u00194�fvZ�2��&\u001d�X�SSiv��2�L���\u001e��4]��Q\u001d\u0011��D��\f��:z�\u001e���n:��^�Z�ѥ�Dci,\u0011q�7BD�ī�P$\t���ƒ�4\u0014Jfʠlr��f�\u0005f}67�Ʀ��qF�\u0019\rg�\u001b��o&K�r��2�h�e3\r�\fM���E���$�����\u000e^�zū+<��\\��\u001c,��7�,/�w�'�9v��g�Գ\u0010>�m+8Y�׮��H\\SU�xyE^�U\u0015��+*\u0012/��H\\\\U���\"/qaE^✪��檊Ħ����\u0015\u0015��\\��܄I\t��T_U�8��\"qZE^�Ԋ�ĺ���k\u001d�L����I���IZ�8Id��IU\u0015�\u0013�*\u0012'TU$���K\u001cW��X�?�p�O�0~���'-����\u001d�\u000f��k�TU$VU�%VV�%���K��0M��0N2��IzGؤ�a��m》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/reallyStars.md",
+      "type": "document",
+      "name": "reallyStars.md",
+      "filePath": "docs/随手记/boringBetter/reallyStars.md",
+      "summary": "随手记页面《Really Stars》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/boringBetter/shoddyGoods.md",
+      "type": "document",
+      "name": "shoddyGoods.md",
+      "filePath": "docs/随手记/boringBetter/shoddyGoods.md",
+      "summary": "随手记页面《Shoddy Goods》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/随手记/index.md",
+      "summary": "随手记页面《DIXI的随手记》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/随手记/learnDriving.md",
+      "type": "document",
+      "name": "learnDriving.md",
+      "filePath": "docs/随手记/learnDriving.md",
+      "summary": "随手记页面《学车记》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/electionTips.md",
+      "type": "document",
+      "name": "electionTips.md",
+      "filePath": "docs/随手记/whywhy/electionTips.md",
+      "summary": "随手记页面《组织选举工作全流程实务与规则详解》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/huangli.md",
+      "type": "document",
+      "name": "huangli.md",
+      "filePath": "docs/随手记/whywhy/huangli.md",
+      "summary": "随手记页面《看手机黄历，品赛博人生》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "docs/随手记/whywhy/index.md",
+      "summary": "随手记页面《十万个为什么》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/offerTerms.md",
+      "type": "document",
+      "name": "offerTerms.md",
+      "filePath": "docs/随手记/whywhy/offerTerms.md",
+      "summary": "随手记页面《就业黑话》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/personalTax.md",
+      "type": "document",
+      "name": "personalTax.md",
+      "filePath": "docs/随手记/whywhy/personalTax.md",
+      "summary": "随手记页面《3月是个税的谎言》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/随手记/whywhy/runningGap.md",
+      "type": "document",
+      "name": "runningGap.md",
+      "filePath": "docs/随手记/whywhy/runningGap.md",
+      "summary": "随手记页面《Running Gap》，收录碎片化记录与个人整理。",
+      "tags": [
+        "document",
+        "docs",
+        "随手记",
+        "casual-notes",
+        "mermaid"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:mkdocs.yml",
+      "type": "config",
+      "name": "mkdocs.yml",
+      "filePath": "mkdocs.yml",
+      "summary": "MkDocs 主配置，定义站点主题、插件、导航结构与静态资源挂载。",
+      "tags": [
+        "config",
+        "mkdocs.yml",
+        "mkdocs",
+        "mermaid"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:requirements.txt",
+      "type": "config",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "本地构建与预览站点所需的 Python 依赖列表。",
+      "tags": [
+        "config",
+        "requirements.txt"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "config:mkdocs.yml",
+      "type": "documents",
+      "direction": "forward",
+      "description": "README 说明站点配置与使用方式。",
+      "weight": 0.9
+    },
+    {
+      "source": "document:README.md",
+      "target": "document:docs/index.md",
+      "type": "documents",
+      "direction": "forward",
+      "description": "README 指向站点首页与内容结构。",
+      "weight": 0.8
+    },
+    {
+      "source": "pipeline:.github/workflows/PublishMySite.yml",
+      "target": "config:mkdocs.yml",
+      "type": "deploys",
+      "direction": "forward",
+      "description": "发布流水线依据 MkDocs 配置构建站点。",
+      "weight": 0.9
+    },
+    {
+      "source": "pipeline:.github/workflows/PublishMySite.yml",
+      "target": "config:requirements.txt",
+      "type": "depends_on",
+      "direction": "forward",
+      "description": "发布流程依赖 Python 构建依赖。",
+      "weight": 0.7
+    },
+    {
+      "source": "config:mkdocs.yml",
+      "target": "resource:docs/javascripts/extra.js",
+      "type": "configures",
+      "direction": "forward",
+      "description": "MkDocs 配置文件直接引用该页面或静态资源。",
+      "weight": 0.8
+    },
+    {
+      "source": "config:mkdocs.yml",
+      "target": "resource:docs/javascripts/mathjax.js",
+      "type": "configures",
+      "direction": "forward",
+      "description": "MkDocs 配置文件直接引用该页面或静态资源。",
+      "weight": 0.8
+    },
+    {
+      "source": "config:mkdocs.yml",
+      "target": "resource:docs/javascripts/katex.js",
+      "type": "configures",
+      "direction": "forward",
+      "description": "MkDocs 配置文件直接引用该页面或静态资源。",
+      "weight": 0.8
+    },
+    {
+      "source": "config:mkdocs.yml",
+      "target": "resource:docs/stylesheets/extra.css",
+      "type": "configures",
+      "direction": "forward",
+      "description": "MkDocs 配置文件直接引用该页面或静态资源。",
+      "weight": 0.8
+    },
+    {
+      "source": "config:mkdocs.yml",
+      "target": "resource:docs/stylesheets/custom.css",
+      "type": "configures",
+      "direction": "forward",
+      "description": "MkDocs 配置文件直接引用该页面或静态资源。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "resource:docs/404.html",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/Flysheet/index.md",
+      "target": "document:docs/Flysheet/the1stLesson.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/Flysheet/index.md",
+      "target": "document:docs/Flysheet/timeline.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S03.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S04.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S05.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/S&S/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/S&S/S&S06.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp03.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp04.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp05.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp06.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp07.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp08.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp09.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/commuPrinc/cp10.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/computerNetwork/CN01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/computerNetwork/CN02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "target": "resource:docs/NBU-NOTEBOOK/computerNetwork/GBN.html",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT03.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT04.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/probabilityTheory/PT05.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/ROCOS/index.md",
+      "target": "document:docs/ROCOS/info&ref.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/ROCOS/index.md",
+      "target": "resource:docs/ROCOS/login.html",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "config:docs/blog/.authors.yml",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/build_your_web/index.md",
+      "target": "document:docs/build_your_web/access your github.io.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/build_your_web/index.md",
+      "target": "document:docs/build_your_web/feishu2githubPages.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/build_your_web/index.md",
+      "target": "document:docs/build_your_web/markdown 速记.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/build_your_web/index.md",
+      "target": "document:docs/build_your_web/玩转 Material.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/index.md",
+      "target": "document:docs/changheji/GeminiCLI.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/index.md",
+      "target": "document:docs/changheji/MLreport.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/bookReport/index.md",
+      "target": "document:docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/bookReport/index.md",
+      "target": "document:docs/changheji/bookReport/《文心雕龙》摘抄本.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/bookReport/index.md",
+      "target": "document:docs/changheji/bookReport/《远大前程》阅读报告.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/changheji/bookReport/index.md",
+      "target": "document:docs/changheji/bookReport/《鄙视》阅读报告.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/index.md",
+      "target": "document:docs/随手记/20250813.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/index.md",
+      "target": "document:docs/随手记/learnDriving.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/JHMath/index.md",
+      "target": "document:docs/随手记/JHMath/JHMath01.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/JHMath/index.md",
+      "target": "document:docs/随手记/JHMath/JHMath02.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/JHMath/index.md",
+      "target": "document:docs/随手记/JHMath/JHMath03.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/LALU-answers.pdf",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/LALU.pdf",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/awesomeFinds.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/moffeeのdemo.pdf",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/reallyStars.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/boringBetter/index.md",
+      "target": "document:docs/随手记/boringBetter/shoddyGoods.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/whywhy/index.md",
+      "target": "document:docs/随手记/whywhy/electionTips.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/whywhy/index.md",
+      "target": "document:docs/随手记/whywhy/huangli.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/whywhy/index.md",
+      "target": "document:docs/随手记/whywhy/offerTerms.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/whywhy/index.md",
+      "target": "document:docs/随手记/whywhy/personalTax.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/随手记/whywhy/index.md",
+      "target": "document:docs/随手记/whywhy/runningGap.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "目录索引页组织同目录下的内容。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/Flysheet/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/NBU-NOTEBOOK/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/ROCOS/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/blog/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/build_your_web/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/changheji/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/index.md",
+      "target": "document:docs/随手记/index.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "站点首页作为内容主入口，链接各一级分区索引。",
+      "weight": 0.8
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/Lone Dacing.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/Why,Why.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/hahahi.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/soitgoes.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/下自成蹊.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/伸冤在我，我必报应.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/兄弟.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/划上分号.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/外儒内法.skill.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/外部激励.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/小故事.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/德米安.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/我可能会在路上释怀.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/我将心比心，我自以为是.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/梦到什么说什么.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/热血.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/窗外鸟儿飞过.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/第一次，又一次.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/走进这个良夜.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/远大前程&鄙视.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/那一天治好了我的精神内耗.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "document:docs/blog/index.md",
+      "target": "document:docs/blog/posts/门？我让你开开开！.md",
+      "type": "contains",
+      "direction": "forward",
+      "description": "博客分区页组织文章列表。",
+      "weight": 0.75
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/Lone Dacing.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/Why,Why.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/hahahi.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/soitgoes.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/下自成蹊.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/伸冤在我，我必报应.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/兄弟.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/划上分号.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/外儒内法.skill.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/外部激励.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/小故事.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/德米安.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/我可能会在路上释怀.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/我将心比心，我自以为是.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/梦到什么说什么.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/热血.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/窗外鸟儿飞过.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/第一次，又一次.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/走进这个良夜.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/远大前程&鄙视.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/那一天治好了我的精神内耗.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/blog/.authors.yml",
+      "target": "document:docs/blog/posts/门？我让你开开开！.md",
+      "type": "configures",
+      "direction": "forward",
+      "description": "作者配置为博客文章提供作者元数据。",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:site-infrastructure",
+      "name": "站点基础设施",
+      "description": "站点构建、发布、主题挂载与静态资源支撑层。",
+      "nodeIds": [
+        "pipeline:.github/workflows/PublishMySite.yml",
+        "resource:docs/404.html",
+        "resource:docs/img/favicon.ico",
+        "resource:docs/img/zmbz.png",
+        "resource:docs/javascripts/extra.js",
+        "resource:docs/javascripts/katex.js",
+        "resource:docs/javascripts/mathjax.js",
+        "resource:docs/page_template/page_statistics.html",
+        "resource:docs/stylesheets/color.css",
+        "resource:docs/stylesheets/custom.css",
+        "resource:docs/stylesheets/extra.css",
+        "config:mkdocs.yml",
+        "config:requirements.txt"
+      ]
+    },
+    {
+      "id": "layer:home-and-navigation",
+      "name": "首页与导航",
+      "description": "仓库总览、首页入口与各内容分区索引层。",
+      "nodeIds": [
+        "document:LICENSE",
+        "document:README.md",
+        "document:docs/Flysheet/index.md",
+        "document:docs/NBU-NOTEBOOK/index.md",
+        "document:docs/ROCOS/index.md",
+        "document:docs/blog/index.md",
+        "document:docs/build_your_web/index.md",
+        "document:docs/changheji/index.md",
+        "document:docs/index.md",
+        "document:docs/随手记/index.md"
+      ]
+    },
+    {
+      "id": "layer:course-notes",
+      "name": "课程笔记",
+      "description": "课程笔记与学习资料主体内容层。",
+      "nodeIds": [
+        "document:docs/NBU-NOTEBOOK/DSP/index.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md",
+        "document:docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S01.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S02.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S03.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S04.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S05.md",
+        "document:docs/NBU-NOTEBOOK/S&S/S&S06.md",
+        "document:docs/NBU-NOTEBOOK/S&S/index.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp01.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp02.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp03.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp04.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp05.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp06.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp07.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp08.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp09.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/cp10.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/CN01.md",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/CN02.md",
+        "resource:docs/NBU-NOTEBOOK/computerNetwork/GBN.html",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/PT01.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/PT02.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/PT03.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/PT04.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/PT05.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md"
+      ]
+    },
+    {
+      "id": "layer:personal-writing",
+      "name": "个人写作",
+      "description": "博客、长文与随手记等个人写作内容层。",
+      "nodeIds": [
+        "config:docs/blog/.authors.yml",
+        "document:docs/blog/posts/Lone Dacing.md",
+        "document:docs/blog/posts/Why,Why.md",
+        "document:docs/blog/posts/hahahi.md",
+        "document:docs/blog/posts/soitgoes.md",
+        "document:docs/blog/posts/下自成蹊.md",
+        "document:docs/blog/posts/伸冤在我，我必报应.md",
+        "document:docs/blog/posts/兄弟.md",
+        "document:docs/blog/posts/划上分号.md",
+        "document:docs/blog/posts/外儒内法.skill.md",
+        "document:docs/blog/posts/外部激励.md",
+        "document:docs/blog/posts/小故事.md",
+        "document:docs/blog/posts/德米安.md",
+        "document:docs/blog/posts/我可能会在路上释怀.md",
+        "document:docs/blog/posts/我将心比心，我自以为是.md",
+        "document:docs/blog/posts/梦到什么说什么.md",
+        "document:docs/blog/posts/热血.md",
+        "document:docs/blog/posts/窗外鸟儿飞过.md",
+        "document:docs/blog/posts/第一次，又一次.md",
+        "document:docs/blog/posts/走进这个良夜.md",
+        "document:docs/blog/posts/远大前程&鄙视.md",
+        "document:docs/blog/posts/那一天治好了我的精神内耗.md",
+        "document:docs/blog/posts/门？我让你开开开！.md",
+        "document:docs/changheji/GeminiCLI.md",
+        "document:docs/changheji/MLreport.md",
+        "document:docs/changheji/bookReport/index.md",
+        "document:docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md",
+        "document:docs/changheji/bookReport/《文心雕龙》摘抄本.md",
+        "document:docs/changheji/bookReport/《远大前程》阅读报告.md",
+        "document:docs/changheji/bookReport/《鄙视》阅读报告.md",
+        "document:docs/随手记/20250813.md",
+        "document:docs/随手记/JHMath/JHMath01.md",
+        "document:docs/随手记/JHMath/JHMath02.md",
+        "document:docs/随手记/JHMath/JHMath03.md",
+        "document:docs/随手记/JHMath/index.md",
+        "document:docs/随手记/boringBetter/LALU-answers.pdf",
+        "document:docs/随手记/boringBetter/LALU.pdf",
+        "document:docs/随手记/boringBetter/awesomeFinds.md",
+        "document:docs/随手记/boringBetter/index.md",
+        "document:docs/随手记/boringBetter/moffeeのdemo.pdf",
+        "document:docs/随手记/boringBetter/reallyStars.md",
+        "document:docs/随手记/boringBetter/shoddyGoods.md",
+        "document:docs/随手记/learnDriving.md",
+        "document:docs/随手记/whywhy/electionTips.md",
+        "document:docs/随手记/whywhy/huangli.md",
+        "document:docs/随手记/whywhy/index.md",
+        "document:docs/随手记/whywhy/offerTerms.md",
+        "document:docs/随手记/whywhy/personalTax.md",
+        "document:docs/随手记/whywhy/runningGap.md"
+      ]
+    },
+    {
+      "id": "layer:growth-and-projects",
+      "name": "成长与专题",
+      "description": "推免经验、机器人资料与建站实践等专题内容层。",
+      "nodeIds": [
+        "file:.vscode/settings.json",
+        "document:docs/Flysheet/the1stLesson.md",
+        "document:docs/Flysheet/timeline.md",
+        "document:docs/Flysheet/tourFeel/01hzl.md",
+        "document:docs/Flysheet/tourFeel/02yxg.md",
+        "document:docs/Flysheet/面向对象/01self_locate.md",
+        "document:docs/Flysheet/面向对象/02college_choose.md",
+        "document:docs/Flysheet/面向对象/03tutor_choose.md",
+        "document:docs/Flysheet/面向对象/04info_material_system.md",
+        "document:docs/Flysheet/面向对象/05review_exp.md",
+        "document:docs/ROCOS/info&ref.md",
+        "resource:docs/ROCOS/login.html",
+        "resource:docs/ROCOS/rocos_img/Vue.png",
+        "resource:docs/ROCOS/rocos_img/baidu.png",
+        "resource:docs/ROCOS/rocos_img/bilibili.png",
+        "resource:docs/ROCOS/rocos_img/feishu.png",
+        "resource:docs/ROCOS/rocos_img/githubwiki.png",
+        "resource:docs/ROCOS/rocos_img/turing.avif",
+        "resource:docs/ROCOS/rocos_img/zmbz.png",
+        "document:docs/build_your_web/access your github.io.md",
+        "document:docs/build_your_web/feishu2githubPages.md",
+        "document:docs/build_your_web/markdown 速记.md",
+        "document:docs/build_your_web/玩转 Material.md"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "从仓库入口开始",
+      "description": "先看 README 和 MkDocs 主配置，理解这个仓库不是传统应用，而是一个以内容组织和站点发布为核心的文档站。",
+      "nodeIds": [
+        "document:README.md",
+        "config:mkdocs.yml",
+        "pipeline:.github/workflows/PublishMySite.yml"
+      ],
+      "languageLesson": "MkDocs 仓库的关键入口通常不是代码 main，而是 README、配置文件和发布流水线。"
+    },
+    {
+      "order": 2,
+      "title": "理解首页与导航骨架",
+      "description": "随后查看 docs/index.md 以及各一级 index 页面，理解站点如何把不同主题内容组织成统一入口。",
+      "nodeIds": [
+        "document:docs/index.md",
+        "document:docs/blog/index.md",
+        "document:docs/NBU-NOTEBOOK/index.md",
+        "document:docs/Flysheet/index.md",
+        "document:docs/changheji/index.md"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "课程笔记主干",
+      "description": "NBU-NOTEBOOK 是站点中体量最大的学习内容区，覆盖多门课程笔记，并通过各子目录 index 维持层次。",
+      "nodeIds": [
+        "document:docs/NBU-NOTEBOOK/index.md",
+        "document:docs/NBU-NOTEBOOK/computerNetwork/index.md",
+        "document:docs/NBU-NOTEBOOK/commuPrinc/index.md",
+        "document:docs/NBU-NOTEBOOK/probabilityTheory/index.md"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "个人写作与长期沉淀",
+      "description": "博客、长河集和随手记共同构成了站点的个人表达层，既有短篇文章，也有更系统的长期记录。",
+      "nodeIds": [
+        "document:docs/blog/index.md",
+        "document:docs/changheji/index.md",
+        "document:docs/随手记/index.md",
+        "document:docs/blog/posts/Why,Why.md"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "专题分区与展示资源",
+      "description": "最后看 Flysheet、ROCOS 和 build_your_web，以及前端脚本和样式资源，理解这个站点如何承载专题材料并强化展示效果。",
+      "nodeIds": [
+        "document:docs/Flysheet/index.md",
+        "document:docs/ROCOS/index.md",
+        "document:docs/build_your_web/index.md",
+        "resource:docs/javascripts/extra.js",
+        "resource:docs/stylesheets/custom.css"
+      ]
+    }
+  ]
+}

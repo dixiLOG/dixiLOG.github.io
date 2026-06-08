@@ -1,0 +1,1327 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "50d913fd4ea5a5ce38d6418f6c9e60e3398b8c00",
+  "generatedAt": "2026-05-24T16:11:15.052Z",
+  "files": {
+    ".github/workflows/PublishMySite.yml": {
+      "filePath": ".github/workflows/PublishMySite.yml",
+      "contentHash": "fef3504266fbe8b9f6322a3459e3b06fe7c1c702220b98c576b19ec43a2805bc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    ".vscode/settings.json": {
+      "filePath": ".vscode/settings.json",
+      "contentHash": "67fe7ab4f805d7d9a9ecc2ee743a3c549e9e750b05a42e7f4fa2104d7f1cbf66",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "LICENSE": {
+      "filePath": "LICENSE",
+      "contentHash": "1b228170205aacafb0bb8195207f53ca499f764ec9ed4b1c408edf2baedf1713",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "f9872eb76c1356cd47b9ccfcfe56bf1727606e8945a13955599e8e1e9cbfcffa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "docs/404.html": {
+      "filePath": "docs/404.html",
+      "contentHash": "d013ce7bfa626c393988b40610f6b3011fc4361ab59aede7bde7e4aa11623c39",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 201,
+      "hasStructuralAnalysis": false
+    },
+    "docs/Flysheet/index.md": {
+      "filePath": "docs/Flysheet/index.md",
+      "contentHash": "d50f3ae8b5e56a67ad243755afd82cc7d481181929aa21de6cd520a7c796770f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 210,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/the1stLesson.md": {
+      "filePath": "docs/Flysheet/the1stLesson.md",
+      "contentHash": "43002125d2954cd5472256d80e3a45a3c5c79a2f3fce8ac2f83f9706c1ef62ae",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 281,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/timeline.md": {
+      "filePath": "docs/Flysheet/timeline.md",
+      "contentHash": "5aa19156e4cfd22fef0109f68aa3fccf03bd00e1c009b7ff08aa1c20729a99f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 92,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/tourFeel/01hzl.md": {
+      "filePath": "docs/Flysheet/tourFeel/01hzl.md",
+      "contentHash": "d6bc03d361a48827b85b0824a569060ef666335afb56280e401611f9946fea85",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 284,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/tourFeel/02yxg.md": {
+      "filePath": "docs/Flysheet/tourFeel/02yxg.md",
+      "contentHash": "589f85d3d2d968419492d09f8648119712b90068169aef4f789f30408784ba06",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 287,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/面向对象/01self_locate.md": {
+      "filePath": "docs/Flysheet/面向对象/01self_locate.md",
+      "contentHash": "a54d44372a99a89e0c94cacfa471fc57baeafebdd6d689f36883b48e7d91aefe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 252,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/面向对象/02college_choose.md": {
+      "filePath": "docs/Flysheet/面向对象/02college_choose.md",
+      "contentHash": "8dc432f13681cddf5a97d1b0f0db7e4ffc44d2e98226fafe06f9ca1d16dd1487",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 269,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/面向对象/03tutor_choose.md": {
+      "filePath": "docs/Flysheet/面向对象/03tutor_choose.md",
+      "contentHash": "6b0440c02f98c7ee4710ef82940cb6d9c088fcbcb18ff5b379fc458c60a2cd3a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/面向对象/04info_material_system.md": {
+      "filePath": "docs/Flysheet/面向对象/04info_material_system.md",
+      "contentHash": "2d5b23bcfffbd6feefc003c5c47a7600f0d09b515136bccdca0986ad2e71f856",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 269,
+      "hasStructuralAnalysis": true
+    },
+    "docs/Flysheet/面向对象/05review_exp.md": {
+      "filePath": "docs/Flysheet/面向对象/05review_exp.md",
+      "contentHash": "51b444d087cc2f82f2e331dd915b3bebf04a52e663defb69ad7c83439fe60489",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 257,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/DSP/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/DSP/index.md",
+      "contentHash": "ab04ee56d4a13f9f47f85b20bfbb0682f0b0d5aaa8b546dae1e91617c9a369d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA01.md",
+      "contentHash": "08e35d5caad48db4ecb33515eaa13d22bfb99f52086ac514663488433d55f23d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1075,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA02.md",
+      "contentHash": "d7107aaf3bd6f967ab70142e39b72e45c6331df00582f14555a9c790f697bcf1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 350,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA03.md",
+      "contentHash": "2928fcf23380a762ae42616f8f861d23d7d6a4318dc5f03197f2e169fc3fb7c9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 511,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA04.md",
+      "contentHash": "03bbcf8486d6d8fce39d80f508f6d7830b7ab5f059b82a765eca858fb49cf86b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 253,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/RSA05.md",
+      "contentHash": "b566cb1e41df6672960337e61e2ff63649f86ddad4d67ac42c7b3471f36aec75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 725,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/RanSigAnalysis/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/RanSigAnalysis/index.md",
+      "contentHash": "f38cf95a7abfed91bc33833252417966abb34f195166c8a5fb3dd018ff936bdc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S01.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S01.md",
+      "contentHash": "6ee14b237c3e9c98405479680b111354d020b2b9d8a75315e6bdcd73831285e8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 191,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S02.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S02.md",
+      "contentHash": "2d3a6f9a0f63fe1faed34864a31970d175006fd7802dba7d203353e0063d8190",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 265,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S03.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S03.md",
+      "contentHash": "dbe9fe944de785caaa58262b5d3ab4750659a8020da000072c05787a7b63e136",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 577,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S04.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S04.md",
+      "contentHash": "e83d835eb8fcf6927a1b4faaebea045223108b26cb5433443972339924ee38d4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 433,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S05.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S05.md",
+      "contentHash": "656d2998e398a8dbdf2680d61bf8c33612e0abb86c28aec1863143b763a2ac62",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 488,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/S&S06.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/S&S06.md",
+      "contentHash": "a06dd4d92a429e631d601245c762eb6cd18aecfd917c7f10ba7d015e23e69ec2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 480,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/S&S/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/S&S/index.md",
+      "contentHash": "166f09d9c4c09b04eeee3b69acb315b2ac988d7c036aaa30613a733f2e658c80",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 68,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp01.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp01.md",
+      "contentHash": "c6f95ad124b47bff291e64bb7804b47d1b3d96134be85c15cc23f45469690982",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 181,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp02.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp02.md",
+      "contentHash": "331fbf7ede9631601bf7097d853cb6b2647f82e1d74e3d9e1ecc88606455779f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 415,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp03.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp03.md",
+      "contentHash": "a56808b28b4065ce30a53720d7e896e4625d3b4aff664495987950da135510ec",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 551,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp04.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp04.md",
+      "contentHash": "05ab1a78cc5b52ab44804e78945a1ac979b942cba1e5901da0cb53c7ab5488b1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 362,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp05.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp05.md",
+      "contentHash": "e787f49ba0d239cdfb8839025960b0dd78f31959f576782ef616a50c199316d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 567,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp06.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp06.md",
+      "contentHash": "16b8dbf90c374b89876ce8a622e164e80c7ed04e98ceeb4418584a3d6b88cc7c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 183,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp07.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp07.md",
+      "contentHash": "f123ab5befaa4f89ca84c620a8ffbc7f3b3cb055a44458467cadaf69c302820f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 736,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp08.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp08.md",
+      "contentHash": "cffc983952f88e65b9a6fc2a6bd7ffc5aefd555983f31c59de06530f49bbaf44",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 920,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp09.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp09.md",
+      "contentHash": "9d39f554bc183dbb6b4c0d317cd4ebabb3754f02ae5d38b1bf2ce6aa3bed8b91",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 691,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/cp10.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/cp10.md",
+      "contentHash": "6b023e58d300e5cebd0b437ac7cc24dda563a266f4bcb5b86c5e1ca755f0790f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 554,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/commuPrinc/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/commuPrinc/index.md",
+      "contentHash": "8a320d59d5fa88d8697bd90ed588eff78b521ad6ad6874e863a1ecfc0a18e070",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/BaiduND.pdf",
+      "contentHash": "2e983e478ed5ea72299b0ada30f1724fc534892f9de2000c2a6071238b3d1583",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10729,
+      "hasStructuralAnalysis": false
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/CN01.md": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/CN01.md",
+      "contentHash": "a6bd65f22e97e226da566e495f613f53b6b2c7bf9202921e48bb27aa6aa1f663",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 576,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/CN02.md": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/CN02.md",
+      "contentHash": "738fe6aeb8fda827b0713792fde1447e5e51c0118351e0d164a4203d87bddb5a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1621,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/GBN.html": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/GBN.html",
+      "contentHash": "15a5a7ff66b1df565833b43f3596b8554c855334e64634c37c9211397f680eed",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 374,
+      "hasStructuralAnalysis": false
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/TLS.pdf",
+      "contentHash": "10a4a2ebf3fcc1a35f7e08da126a10192bfab4fba47435cc52eb33a052fbee73",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4490,
+      "hasStructuralAnalysis": false
+    },
+    "docs/NBU-NOTEBOOK/computerNetwork/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/computerNetwork/index.md",
+      "contentHash": "6e6391533c3defc26472dbb7ac447397869e0df5ff324673f6817488e36b80a4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 54,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/index.md",
+      "contentHash": "5caf290b906c5089e32a118eb66805c5d6302c1a2d319baf59d2d45a964c8e26",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/PT01.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT01.md",
+      "contentHash": "6892c270f57c78af8e1ec9ba09cd610108cc51b6b09ae4485bb4bb75e6e9cb56",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 152,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/PT02.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT02.md",
+      "contentHash": "0a2eebec24d1389ba0adf1891e6d388cb15d821e3119b73ac444326655674501",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 379,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/PT03.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT03.md",
+      "contentHash": "5ee9493bba47b79f314f6a002b859076c531b8e600ca3c36bce329e62c8fd6c7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 177,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/PT04.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT04.md",
+      "contentHash": "0407f1f82c76ba7bc493cdf1a0bf4e05c8a1718ec06294e7bbe7c11bcf25ef4b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 215,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/PT05.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/PT05.md",
+      "contentHash": "f85c6056949ff94dddb2addd0ae8f0fde81b05d7bac1892d0c32544ca388101a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 143,
+      "hasStructuralAnalysis": true
+    },
+    "docs/NBU-NOTEBOOK/probabilityTheory/index.md": {
+      "filePath": "docs/NBU-NOTEBOOK/probabilityTheory/index.md",
+      "contentHash": "6816031919fb3f2b92797d091f7cf3b71e398e45fba1a6586c3085c7e8f4ef72",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "docs/ROCOS/index.md": {
+      "filePath": "docs/ROCOS/index.md",
+      "contentHash": "a01dea0b9ff37cf5931afa89e0d4cb2549fac659dc80d7067f6fc133a7137e47",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "docs/ROCOS/info&ref.md": {
+      "filePath": "docs/ROCOS/info&ref.md",
+      "contentHash": "ce36a8801cae1cefeda165a5135b1fb686d17a6c902a0ca80b2a788366c70fd9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 166,
+      "hasStructuralAnalysis": true
+    },
+    "docs/ROCOS/login.html": {
+      "filePath": "docs/ROCOS/login.html",
+      "contentHash": "7bde9ea6ec2fe4eec254052b31afd2ad2798d692a614913452abe2a24e9ec852",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 271,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/Vue.png": {
+      "filePath": "docs/ROCOS/rocos_img/Vue.png",
+      "contentHash": "940561e05ca05ca5cddd6d0632c81d96552b3a3eb65775cdb78eb377539c4a93",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/baidu.png": {
+      "filePath": "docs/ROCOS/rocos_img/baidu.png",
+      "contentHash": "c9d731192b9afe9233205d2c110574a7f24e1c705c52b596fff257a85ad8d997",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 31,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/bilibili.png": {
+      "filePath": "docs/ROCOS/rocos_img/bilibili.png",
+      "contentHash": "3d47788d580b2ae353599391e3dcdc1003075e8af252cbbde8fee0423a87981b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/feishu.png": {
+      "filePath": "docs/ROCOS/rocos_img/feishu.png",
+      "contentHash": "f9b1a25ac8a4a30d9a13da4d57ce8f3e0b4a7f66dd4c293b960f3fc9d2ccb900",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/githubwiki.png": {
+      "filePath": "docs/ROCOS/rocos_img/githubwiki.png",
+      "contentHash": "4cc0283cb9d9c9af8e39416d0237eda8c60539af58f93671cf244fc0656a096d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/turing.avif": {
+      "filePath": "docs/ROCOS/rocos_img/turing.avif",
+      "contentHash": "7ee526185e79f891067dc2c2a2369546f090afd980a489dee1917c9064449c30",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": false
+    },
+    "docs/ROCOS/rocos_img/zmbz.png": {
+      "filePath": "docs/ROCOS/rocos_img/zmbz.png",
+      "contentHash": "6b0e1f579c891915bd00a564802930b0c1840371ff16f4d41ad6549d6763041b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 193,
+      "hasStructuralAnalysis": false
+    },
+    "docs/blog/.authors.yml": {
+      "filePath": "docs/blog/.authors.yml",
+      "contentHash": "535c013cffaa206ebd37ef84717aabeb4843895254a988ba5706f320f83d47c2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/index.md": {
+      "filePath": "docs/blog/index.md",
+      "contentHash": "3a45e7e07299e71507630d061e75439cbc81e20b841230585a49f5e7dc262903",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/Lone Dacing.md": {
+      "filePath": "docs/blog/posts/Lone Dacing.md",
+      "contentHash": "4904c068e3921b8796ae355dc52450987dce1be63ada4e0006187f85780322b4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 189,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/Why,Why.md": {
+      "filePath": "docs/blog/posts/Why,Why.md",
+      "contentHash": "35643d2de5546782c3252aad86f554cb9a3ec112a12dc8ffce5cabd489a179f2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/hahahi.md": {
+      "filePath": "docs/blog/posts/hahahi.md",
+      "contentHash": "1775d08241622c420e179404599e4012b4c522f38e9ae8e7e276a343a6fa6238",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 170,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/soitgoes.md": {
+      "filePath": "docs/blog/posts/soitgoes.md",
+      "contentHash": "4a5f92455ad6b8bbc1cb273242e10f37107b609de1be1e0feead7f572a7b3cac",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 90,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/下自成蹊.md": {
+      "filePath": "docs/blog/posts/下自成蹊.md",
+      "contentHash": "a36eac3a29871d0a117b7019e5b203fd0a809d76b83f2b0ebe31ff0e67faf5ee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 110,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/伸冤在我，我必报应.md": {
+      "filePath": "docs/blog/posts/伸冤在我，我必报应.md",
+      "contentHash": "0ee8b5749346ffd62ca418117ca75a5dd9ff14e2350b2941cee622fa4749f832",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 135,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/兄弟.md": {
+      "filePath": "docs/blog/posts/兄弟.md",
+      "contentHash": "34f0fa08a1bebbdb100907a52f0e4ad3e32a54ae4555ce0b5fe86cfd1219b20d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/划上分号.md": {
+      "filePath": "docs/blog/posts/划上分号.md",
+      "contentHash": "24a49e7a3fa9fa45625c7bd82481b99926cc347a4ae3bb5aba145e6a6385c1d6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 160,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/外儒内法.skill.md": {
+      "filePath": "docs/blog/posts/外儒内法.skill.md",
+      "contentHash": "82f4b73fef90a644962ec89693f74adfaa6642288a04d620f6950dc759ad266c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 69,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/外部激励.md": {
+      "filePath": "docs/blog/posts/外部激励.md",
+      "contentHash": "e5b640f1e9da39c9b3351a36c0bdd11a424734a57cb49349daf73940176b0e0e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 89,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/小故事.md": {
+      "filePath": "docs/blog/posts/小故事.md",
+      "contentHash": "c5d32c797adeaac74acea1ed58118eaba29332e78e1ec2b7dac2c10a1759d229",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/德米安.md": {
+      "filePath": "docs/blog/posts/德米安.md",
+      "contentHash": "e46f10023b619d392b5ee2eb5b9998c94a4be9d1a755750289c6d6e78dfbccb9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/我可能会在路上释怀.md": {
+      "filePath": "docs/blog/posts/我可能会在路上释怀.md",
+      "contentHash": "9fe005dd9b83ac7711083294c0b546e10ba480726b8d6a19c512109a84c35dd7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/我将心比心，我自以为是.md": {
+      "filePath": "docs/blog/posts/我将心比心，我自以为是.md",
+      "contentHash": "47ddc7fad635ec6da3d8da3e677ea239402d4abf0aa75965a3c0828915905143",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/梦到什么说什么.md": {
+      "filePath": "docs/blog/posts/梦到什么说什么.md",
+      "contentHash": "f63dea748f0d62f81f5d9dd3a6b75e80519c9134f8cf4ecc52331fd7b78c7ef5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/热血.md": {
+      "filePath": "docs/blog/posts/热血.md",
+      "contentHash": "5ca4963779ac60fbfdda993cff65ba4152ba95cdcc64675966aed991b1cb7ec8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/窗外鸟儿飞过.md": {
+      "filePath": "docs/blog/posts/窗外鸟儿飞过.md",
+      "contentHash": "d52cc3593a1945d45782c552817d01c899de9f4eb9bd3ccbcb07073dbb839958",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/第一次，又一次.md": {
+      "filePath": "docs/blog/posts/第一次，又一次.md",
+      "contentHash": "065182fc63d584f799aabc410e5effcc7a0516487b708fee7fdb1dcff1941240",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/走进这个良夜.md": {
+      "filePath": "docs/blog/posts/走进这个良夜.md",
+      "contentHash": "497f837609531e9a3580a73b68ad22c9d52b28a353ea02c14ca96303bc3b2843",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 101,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/远大前程&鄙视.md": {
+      "filePath": "docs/blog/posts/远大前程&鄙视.md",
+      "contentHash": "45fb37eef59e057ff2b88eaa7edc680222ba335821633156317582b10159dbdd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 75,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/那一天治好了我的精神内耗.md": {
+      "filePath": "docs/blog/posts/那一天治好了我的精神内耗.md",
+      "contentHash": "c2df2dc8ffee47c5c37fac9e188926ee21f25680337743f2d6731d526a487ba4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "docs/blog/posts/门？我让你开开开！.md": {
+      "filePath": "docs/blog/posts/门？我让你开开开！.md",
+      "contentHash": "29fcc2c0711b6452ecbd1a3082b8db0e102e23cc3f1c2f7962b3c0c10a0ed574",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "docs/build_your_web/access your github.io.md": {
+      "filePath": "docs/build_your_web/access your github.io.md",
+      "contentHash": "69322d63a3e3a1df661dd8d3beabebbfc06b845847c891c9150b21b6c59ce81f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 292,
+      "hasStructuralAnalysis": true
+    },
+    "docs/build_your_web/feishu2githubPages.md": {
+      "filePath": "docs/build_your_web/feishu2githubPages.md",
+      "contentHash": "e8a6e82771c8b363b526e0f2404cfd8c03332ad95a6f9c38ecdd1d23d223e44c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "docs/build_your_web/index.md": {
+      "filePath": "docs/build_your_web/index.md",
+      "contentHash": "b3fc6caf79c9f9d2dd4bd90d124b6eb1e3d40670efb31f28307bba6bd810e46a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    "docs/build_your_web/markdown 速记.md": {
+      "filePath": "docs/build_your_web/markdown 速记.md",
+      "contentHash": "aaa213eb6aae1bf19d1594b748dc2b568a712994e24a48c7254071f2ffd316dc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 574,
+      "hasStructuralAnalysis": true
+    },
+    "docs/build_your_web/玩转 Material.md": {
+      "filePath": "docs/build_your_web/玩转 Material.md",
+      "contentHash": "a70574233a0b51bb228e93898742c983c7a05d3d541a8f7f33476bedfc8b3cea",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1885,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/GeminiCLI.md": {
+      "filePath": "docs/changheji/GeminiCLI.md",
+      "contentHash": "60a9fe5f922480da5eb399d68ec1f6d0531ef49f2ee665684f9765bdaa950836",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 171,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/MLreport.md": {
+      "filePath": "docs/changheji/MLreport.md",
+      "contentHash": "283119c87f34c06c5d5dd577c0f93c0ea1e031eebc671ea38150cf7257b78007",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1236,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/bookReport/index.md": {
+      "filePath": "docs/changheji/bookReport/index.md",
+      "contentHash": "33bc04d4615e6cb8457693767b622e8e5b2d3a98512617629b5efc74b7c7da4a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md": {
+      "filePath": "docs/changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md",
+      "contentHash": "909013a110331441044e145f399ea769365216da81184efdffa1a687d846ba93",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 345,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/bookReport/《文心雕龙》摘抄本.md": {
+      "filePath": "docs/changheji/bookReport/《文心雕龙》摘抄本.md",
+      "contentHash": "71aec73b606280f9c27fbc7fa0ffe6fdae4b59f0e43fcfb1ea10056c24209ab7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 396,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/bookReport/《远大前程》阅读报告.md": {
+      "filePath": "docs/changheji/bookReport/《远大前程》阅读报告.md",
+      "contentHash": "0c69a587d5e8afedded34bdfa6b98bf08c485932db6b7533bf30ac5d4733ccbc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 321,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/bookReport/《鄙视》阅读报告.md": {
+      "filePath": "docs/changheji/bookReport/《鄙视》阅读报告.md",
+      "contentHash": "9addacc199a77755f26ac9034a0f56f5f8c9a4d7e2277409953be0adeb284fda",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 376,
+      "hasStructuralAnalysis": true
+    },
+    "docs/changheji/index.md": {
+      "filePath": "docs/changheji/index.md",
+      "contentHash": "cb0e2874d95af2ffd9df25421971fe5d6da2fa44aadd51cdd874dd9fdcb6e711",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "docs/img/favicon.ico": {
+      "filePath": "docs/img/favicon.ico",
+      "contentHash": "fb39b3d3c6dcdb1d49be05a46d784336ebb4fbdf62fcd0b7d19cb40fd362b3f8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "docs/img/zmbz.png": {
+      "filePath": "docs/img/zmbz.png",
+      "contentHash": "6b0e1f579c891915bd00a564802930b0c1840371ff16f4d41ad6549d6763041b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 193,
+      "hasStructuralAnalysis": false
+    },
+    "docs/index.md": {
+      "filePath": "docs/index.md",
+      "contentHash": "d0600ecb2bcc1948914dceb2b6a83f285d56630914b38ce000403f8f7ac8d695",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1012,
+      "hasStructuralAnalysis": true
+    },
+    "docs/javascripts/extra.js": {
+      "filePath": "docs/javascripts/extra.js",
+      "contentHash": "5159b43b8eae9cddf148e76f0a47b8606dc2ebff28d94cb53d52c15f67adfca6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 236,
+      "hasStructuralAnalysis": true
+    },
+    "docs/javascripts/katex.js": {
+      "filePath": "docs/javascripts/katex.js",
+      "contentHash": "aec47edcea5778c62ae8677210dc83daa51fd0b920ae7c330b4a61191f740a44",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "docs/javascripts/mathjax.js": {
+      "filePath": "docs/javascripts/mathjax.js",
+      "contentHash": "bcd0b31f67e1752d6c06f5b36079e1529db44148d13b46d495c94c6cb3875182",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "docs/page_template/page_statistics.html": {
+      "filePath": "docs/page_template/page_statistics.html",
+      "contentHash": "b0fbb0318d85bd78fdfbf4799247df798d74653900bf869f843371819cee0c05",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "docs/stylesheets/color.css": {
+      "filePath": "docs/stylesheets/color.css",
+      "contentHash": "8d161bd243a07356c9115c3198d8a489237eb2035ceac9d16135b19681b3ea04",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": false
+    },
+    "docs/stylesheets/custom.css": {
+      "filePath": "docs/stylesheets/custom.css",
+      "contentHash": "c2b63c5f69de0e6d9913d22b20a7fdc15fbe8c6cf2b5c9b93677f3825b039126",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "docs/stylesheets/extra.css": {
+      "filePath": "docs/stylesheets/extra.css",
+      "contentHash": "32db29341be7cdfcd29a77cad9dad8ca71955d743fa0d887d9b5dc000796c02d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 283,
+      "hasStructuralAnalysis": false
+    },
+    "docs/随手记/20250813.md": {
+      "filePath": "docs/随手记/20250813.md",
+      "contentHash": "0d2169a56ea290dc0065aa6830faa88b677c582d688ded467eb5d659cca07a98",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 303,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/JHMath/JHMath01.md": {
+      "filePath": "docs/随手记/JHMath/JHMath01.md",
+      "contentHash": "75487967bf0af02575c413fbd08867c712dd6a00bc2d8fc67bc2349f25bf8126",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 680,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/JHMath/JHMath02.md": {
+      "filePath": "docs/随手记/JHMath/JHMath02.md",
+      "contentHash": "fa9a649e1ef1eaae77f7680471698a05e0baa5eb0cdeabcc0db8e509c0150714",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1190,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/JHMath/JHMath03.md": {
+      "filePath": "docs/随手记/JHMath/JHMath03.md",
+      "contentHash": "c4581fb191d279cfae44de64b80c961fb3b7a480b95ca6e68d0b342d756c2a5e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 656,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/JHMath/index.md": {
+      "filePath": "docs/随手记/JHMath/index.md",
+      "contentHash": "1b62c74cbb7f48ed0cc50dd1ca4e621254eba7debef625693cebc9cc54d2abd6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 164,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/boringBetter/LALU-answers.pdf": {
+      "filePath": "docs/随手记/boringBetter/LALU-answers.pdf",
+      "contentHash": "f2b9af30657b47bed365bc770d5134fb9f401aa1b0591c6b2ab069008e028682",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4697,
+      "hasStructuralAnalysis": false
+    },
+    "docs/随手记/boringBetter/LALU.pdf": {
+      "filePath": "docs/随手记/boringBetter/LALU.pdf",
+      "contentHash": "e65edffa5bd52995ba0b7aed076009616ca91d2b4d19b20023d65c0ac790a895",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 27435,
+      "hasStructuralAnalysis": false
+    },
+    "docs/随手记/boringBetter/awesomeFinds.md": {
+      "filePath": "docs/随手记/boringBetter/awesomeFinds.md",
+      "contentHash": "70b5ca7f2a9989aff0e2fc5421d406ffc403e3b7cf5052435b21993882708c67",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 469,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/boringBetter/index.md": {
+      "filePath": "docs/随手记/boringBetter/index.md",
+      "contentHash": "e6ee929b1ee3035e821951c776a45ee675e8d5a7f7d810137eb7497a567b8ade",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/boringBetter/moffeeのdemo.pdf": {
+      "filePath": "docs/随手记/boringBetter/moffeeのdemo.pdf",
+      "contentHash": "fe00e93fceded1fe2c4f911e67218ffade83762ac10102ece37dd762e63e76a4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6127,
+      "hasStructuralAnalysis": false
+    },
+    "docs/随手记/boringBetter/reallyStars.md": {
+      "filePath": "docs/随手记/boringBetter/reallyStars.md",
+      "contentHash": "9743e1ca40d546aba79234668976012109e61a7ce944cd021fed57190760e791",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 186,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/boringBetter/shoddyGoods.md": {
+      "filePath": "docs/随手记/boringBetter/shoddyGoods.md",
+      "contentHash": "f89bac9d5a3c1a3cac1b81c7f7a58f81fe5965ac6c1252e0d0b1d734fe0f4367",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 240,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/index.md": {
+      "filePath": "docs/随手记/index.md",
+      "contentHash": "95cb498c0b3b5c8cf55017322ee6e707951ae56c51aadf41e198a337cae55b32",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/learnDriving.md": {
+      "filePath": "docs/随手记/learnDriving.md",
+      "contentHash": "3360d57c224fefe1b104e84e9b999b89cbd3818a86282288c23122db61f03cdf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 828,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/electionTips.md": {
+      "filePath": "docs/随手记/whywhy/electionTips.md",
+      "contentHash": "b568bc8e9276a0422fea27bbc33f35779c83f41805a615e5439a9f996249ec96",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 322,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/huangli.md": {
+      "filePath": "docs/随手记/whywhy/huangli.md",
+      "contentHash": "3d20784a269c2ae781bb673c15d3ce20df40915eb687a1d263e2506d848e05da",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 543,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/index.md": {
+      "filePath": "docs/随手记/whywhy/index.md",
+      "contentHash": "039b4ed65e36e0a097108ce2d32511cabaf24577d4ae28b1000e64e7ed3481eb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/offerTerms.md": {
+      "filePath": "docs/随手记/whywhy/offerTerms.md",
+      "contentHash": "d20a285357a309114965bc40599811564cf7597090915d746bead67b0badf54e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 220,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/personalTax.md": {
+      "filePath": "docs/随手记/whywhy/personalTax.md",
+      "contentHash": "7e00765a54889318c9e50ef45552f3cbfc60635650e66904e0b1ebb9486fab55",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 251,
+      "hasStructuralAnalysis": true
+    },
+    "docs/随手记/whywhy/runningGap.md": {
+      "filePath": "docs/随手记/whywhy/runningGap.md",
+      "contentHash": "d9d613b13138e4ac7672b9aa8bc13b2f2fdb359695ea001a088d1cec9a54ca2f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 227,
+      "hasStructuralAnalysis": true
+    },
+    "mkdocs.yml": {
+      "filePath": "mkdocs.yml",
+      "contentHash": "2647538c59ddc228d4ca5d3ffc244818232556db59b69951add0ffffa7c14e1a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 356,
+      "hasStructuralAnalysis": true
+    },
+    "requirements.txt": {
+      "filePath": "requirements.txt",
+      "contentHash": "ae42133502c25155b7e37efea9069c9fe62571eba862556f20faca94d6d33b9c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": false
+    }
+  }
+}

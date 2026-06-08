@@ -3,6 +3,222 @@
   max-width: 1440px; 
 }
 
+.md-header__source {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.4rem;
+}
+
+.md-header__source .md-source {
+  flex-shrink: 0;
+  max-width: none;
+}
+
+.md-header__source .md-source__repository {
+  max-width: none;
+}
+
+.md-header__source .md-source__repository .md-ellipsis,
+.md-header__source .md-source .md-ellipsis {
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.md-source__github-star {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  flex: 0 0 auto;
+}
+
+.md-source__github-star-shell {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  border-radius: 999px;
+  color: inherit;
+  overflow: hidden;
+  font-size: 0.65rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.md-source__github-star:hover .md-source__github-star-shell {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.md-source__github-star-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.22rem;
+  min-width: 3.4rem;
+  padding: 0.34rem 0.72rem 0.34rem 0.8rem;
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.md-source__github-star-icon {
+  color: currentColor;
+  font-size: 0.72rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.md-source__github-star-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.md-source__github-star-count {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34rem 0.64rem 0.34rem 0.52rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: inherit;
+  opacity: 0.62;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.md-source__github-star-count:hover {
+  opacity: 0.9;
+}
+
+.md-source__github-star-tooltip {
+  position: absolute;
+  top: calc(100% + 2rem);
+  left: -4.8rem;
+  right: auto;
+  width: min(13.5rem, calc(100vw - 1rem));
+  padding: 0.7rem 0.78rem;
+  border-radius: 0.82rem;
+  background: rgba(255, 252, 244, 0.97);
+  border: 1px solid rgba(55, 65, 72, 0.12);
+  box-shadow: 0 14px 30px rgba(31, 42, 53, 0.14);
+  color: #36414a;
+  opacity: 0;
+  transform: translateY(-0.2rem);
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 4;
+}
+
+.md-source__github-star:hover .md-source__github-star-tooltip,
+.md-source__github-star:focus-within .md-source__github-star-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.md-source__github-star-tooltip::before {
+  content: "";
+  position: absolute;
+  top: -0.4rem;
+  left: 5.35rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  background: inherit;
+  border-left: 1px solid rgba(55, 65, 72, 0.12);
+  border-top: 1px solid rgba(55, 65, 72, 0.12);
+  transform: rotate(45deg);
+}
+
+.md-source__github-star-tooltip-title {
+  display: block;
+  margin-bottom: 0.16rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.md-source__github-star-tooltip-text {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.58rem;
+  line-height: 1.45;
+  opacity: 0.68;
+}
+
+.md-source__github-star-tooltip-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.55rem;
+  border: 1px solid rgba(55, 65, 72, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.md-source__github-star-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.8rem;
+  height: 100%;
+  border: 0;
+  opacity: 0.01;
+  z-index: 2;
+  cursor: pointer;
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-shell {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-action {
+  color: inherit;
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-icon {
+  color: currentColor;
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-count {
+  border-left-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-tooltip {
+  background: rgba(29, 33, 40, 0.96);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  color: #edf1f5;
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-tooltip::before {
+  border-left-color: rgba(255, 255, 255, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-source__github-star-tooltip-image {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="default"] .md-source__github-star-shell {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(55, 65, 72, 0.12);
+}
+
+[data-md-color-scheme="default"] .md-source__github-star:hover .md-source__github-star-shell {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(55, 65, 72, 0.18);
+}
+
+[data-md-color-scheme="default"] .md-source__github-star-count {
+  border-left-color: rgba(55, 65, 72, 0.1);
+}
+
+@media screen and (max-width: 76.2344em) {
+  .md-source__github-star {
+    display: none;
+  }
+}
+
 
 /* 自定义字体 */
 body {

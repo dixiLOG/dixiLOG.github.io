@@ -179,6 +179,11 @@ title: DIXI的个人博客
     --tag-y: 69%;
   }
 
+  .dixihome-tags li:nth-child(8) {
+    --tag-x: 61%;
+    --tag-y: 19%;
+  }
+
   .dixihome-tags li.is-lit {
     border-color: color-mix(in srgb, var(--dixi-orange) 55%, transparent);
     background: color-mix(in srgb, var(--md-default-bg-color) 70%, var(--dixi-orange) 10%);
@@ -625,7 +630,8 @@ title: DIXI的个人博客
 
     .dixihome-tags li:nth-child(2),
     .dixihome-tags li:nth-child(4),
-    .dixihome-tags li:nth-child(7) {
+    .dixihome-tags li:nth-child(7),
+    .dixihome-tags li:nth-child(8) {
       --tag-x: 36%;
     }
 
@@ -677,6 +683,7 @@ title: DIXI的个人博客
         <li>坦克动荡2 20:0 零封 Laika</li>
         <li>喜欢看书</li>
         <li>喜欢折腾和开源</li>
+        <li>公众号单篇推文阅读量 14k+</li>
       </ul>
     </div>
 
@@ -868,94 +875,6 @@ title: DIXI的个人博客
     </section>
   </div>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var home = document.querySelector(".dixihome");
-    var progress = document.querySelector(".dixihome-progress span");
-
-    function updateProgress() {
-      if (!home || !progress) {
-        return;
-      }
-
-      var rect = home.getBoundingClientRect();
-      var total = rect.height - window.innerHeight;
-      var read = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
-      progress.style.setProperty("--dixi-progress", (read / Math.max(total, 1) * 100).toFixed(1) + "%");
-    }
-
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
-
-    if (!home || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    var profile = document.querySelector(".dixihome-profile");
-    if (!profile) {
-      return;
-    }
-
-    profile.addEventListener("pointermove", function(event) {
-      var rect = profile.getBoundingClientRect();
-      var x = ((event.clientX - rect.left) / rect.width) * 100;
-      var y = ((event.clientY - rect.top) / rect.height) * 100;
-      profile.style.setProperty("--dixi-spot-x", x.toFixed(2) + "%");
-      profile.style.setProperty("--dixi-spot-y", y.toFixed(2) + "%");
-    });
-
-    profile.addEventListener("pointerleave", function() {
-      profile.style.setProperty("--dixi-spot-x", "78%");
-      profile.style.setProperty("--dixi-spot-y", "8%");
-    });
-
-    var tags = Array.prototype.slice.call(profile.querySelectorAll(".dixihome-tags li"));
-    var pointer = { x: -9999, y: -9999, active: false };
-
-    profile.addEventListener("pointermove", function(event) {
-      var rect = profile.getBoundingClientRect();
-      pointer.x = event.clientX - rect.left;
-      pointer.y = event.clientY - rect.top;
-      pointer.active = true;
-    });
-
-    profile.addEventListener("pointerleave", function() {
-      pointer.active = false;
-    });
-
-    function moveTags(time) {
-      tags.forEach(function(tag, index) {
-        var profileRect = profile.getBoundingClientRect();
-        var tagRect = tag.getBoundingClientRect();
-        var centerX = tagRect.left - profileRect.left + tagRect.width / 2;
-        var centerY = tagRect.top - profileRect.top + tagRect.height / 2;
-        var dx = centerX - pointer.x;
-        var dy = centerY - pointer.y;
-        var distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
-        var force = pointer.active ? Math.max(0, (150 - distance) / 150) : 0;
-        var scatterX = (dx / distance) * force * (34 + index * 3);
-        var scatterY = (dy / distance) * force * (22 + index * 2);
-        var swimX = Math.sin(time / (950 + index * 110) + index) * (4 + index % 3);
-        var swimY = Math.cos(time / (1100 + index * 90) + index * 0.7) * (3 + index % 2);
-
-        tag.classList.toggle("is-lit", force > 0.1);
-        tag.style.setProperty("--scatter-x", scatterX.toFixed(2) + "px");
-        tag.style.setProperty("--scatter-y", scatterY.toFixed(2) + "px");
-        tag.style.setProperty("--swim-x", swimX.toFixed(2) + "px");
-        tag.style.setProperty("--swim-y", swimY.toFixed(2) + "px");
-        tag.style.setProperty("--tag-rot", (Math.sin(time / 1300 + index) * 1.8 + scatterX * 0.03).toFixed(2) + "deg");
-      });
-
-      window.requestAnimationFrame(moveTags);
-    }
-
-    if (tags.length) {
-      window.requestAnimationFrame(moveTags);
-    }
-  });
-</script>
 
 <!-- Giscus 评论功能 -->
 <div id="giscus-container"></div>

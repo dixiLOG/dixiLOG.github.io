@@ -198,6 +198,286 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 });
 
+function injectGithubStarButton() {
+    const sourceLinks = document.querySelectorAll('[data-md-component="source"]');
+    const countCacheKey = 'dixi-github-star-count-cache-v1';
+    const countCacheTtl = 1000 * 60 * 30;
+
+    sourceLinks.forEach((sourceLink) => {
+        const host = sourceLink.closest('.md-header__source') || sourceLink.parentElement;
+        const existingStar = host && host.querySelector('.md-source__github-star');
+        if (!host || existingStar) {
+            return;
+        }
+
+        const repoUrl = sourceLink.getAttribute('href');
+        if (!repoUrl) {
+            return;
+        }
+
+        let normalizedUrl;
+        try {
+            normalizedUrl = new URL(repoUrl);
+        } catch (_) {
+            return;
+        }
+
+        const segments = normalizedUrl.pathname
+            .replace(/\.git$/, '')
+            .split('/')
+            .filter(Boolean);
+
+        if (segments.length < 2) {
+            return;
+        }
+
+        const [user, repo] = segments;
+        const repoPageUrl = normalizedUrl.toString().replace(/\.git$/, '');
+        const stargazersUrl = `${repoPageUrl}/stargazers`;
+        const starGuideImageUrl = new URL('/img/github-star-guide-placeholder.png', window.location.origin).toString();
+        const starWrapper = document.createElement('span');
+        starWrapper.className = 'md-source__github-star';
+        starWrapper.dataset.repo = `${user}/${repo}`;
+        starWrapper.innerHTML = `
+            <span class="md-source__github-star-shell">
+                <span class="md-source__github-star-action" aria-hidden="true">
+                    <span class="md-source__github-star-icon">★</span>
+                    <span class="md-source__github-star-label">Star</span>
+                </span>
+                <a
+                    class="md-source__github-star-count"
+                    href="${stargazersUrl}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Stars</a>
+            </span>
+            <span class="md-source__github-star-tooltip" role="tooltip">
+                <span class="md-source__github-star-tooltip-title">如何在 GitHub 上点亮 Star</span>
+                <span class="md-source__github-star-tooltip-text">登录 GitHub 后，直接点左侧 Star 按钮即可。</span>
+                <img
+                    class="md-source__github-star-tooltip-image"
+                    src="${starGuideImageUrl}"
+                    alt="GitHub Star 操作截图"
+                    loading="lazy"
+                >
+            </span>
+            <iframe
+                class="md-source__github-star-frame"
+                src="https://ghbtns.com/github-btn.html?user=${encodeURIComponent(user)}&repo=${encodeURIComponent(repo)}&type=star&count=false&size=large"
+                title="GitHub Star"
+                loading="lazy"
+                width="56"
+                height="30"
+            ></iframe>
+        `;
+
+        sourceLink.insertAdjacentElement('afterend', starWrapper);
+
+        const countNode = starWrapper.querySelector('.md-source__github-star-count');
+        const apiUrl = `https://api.github.com/repos/${encodeURIComponent(user)}/${encodeURIComponent(repo)}`;
+        let cachedStars = null;
+
+        try {
+            const cached = window.localStorage.getItem(countCacheKey);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (
+                    parsed &&
+                    parsed.repo === `${user}/${repo}` &&
+                    Number.isFinite(parsed.stars) &&
+                    Number.isFinite(parsed.updatedAt) &&
+                    Date.now() - parsed.updatedAt < countCacheTtl
+                ) {
+                    cachedStars = parsed.stars;
+                }
+            }
+        } catch (_) {}
+
+        const renderStars = (stars) => {
+            const formatted = new Intl.NumberFormat('zh-CN').format(stars);
+            countNode.textContent = formatted;
+            countNode.setAttribute('aria-label', `${formatted} 人已 Star`);
+            starWrapper.dataset.ready = 'true';
+        };
+
+        if (Number.isFinite(cachedStars)) {
+            renderStars(cachedStars);
+        }
+
+        fetch(apiUrl, {
+            headers: {
+                Accept: 'application/vnd.github+json'
+            }
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`GitHub API ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                const stars = Number(data.stargazers_count);
+                if (!Number.isFinite(stars)) {
+                    throw new Error('Invalid stargazers_count');
+                }
+
+                renderStars(stars);
+                try {
+                    window.localStorage.setItem(countCacheKey, JSON.stringify({
+                        repo: `${user}/${repo}`,
+                        stars,
+                        updatedAt: Date.now()
+                    }));
+                } catch (_) {}
+            })
+            .catch(() => {
+                if (!Number.isFinite(cachedStars)) {
+                    countNode.textContent = 'Star';
+                    countNode.setAttribute('aria-label', '查看 GitHub Star 列表');
+                }
+            });
+    });
+}
+
+if (typeof document$ !== 'undefined' && document$.subscribe) {
+    document$.subscribe(injectGithubStarButton);
+} else {
+    document.addEventListener("DOMContentLoaded", injectGithubStarButton);
+}
+
+
+(function () {
+    if (window.__dixiHomeInitRegistered) {
+        return;
+    }
+
+    window.__dixiHomeInitRegistered = true;
+
+    function cleanupDixiHome() {
+        if (typeof window.__dixiHomeCleanup === "function") {
+            window.__dixiHomeCleanup();
+        }
+        window.__dixiHomeCleanup = null;
+    }
+
+    function initDixiHome() {
+        cleanupDixiHome();
+
+        const home = document.querySelector(".dixihome");
+        const progress = document.querySelector(".dixihome-progress span");
+        const profile = document.querySelector(".dixihome-profile");
+
+        if (!home || !progress) {
+            return;
+        }
+
+        const cleanups = [];
+        let animationId = 0;
+        let resizeObserver = null;
+
+        const updateProgress = () => {
+            const rect = home.getBoundingClientRect();
+            const total = rect.height - window.innerHeight;
+            const read = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
+            progress.style.setProperty("--dixi-progress", (read / Math.max(total, 1) * 100).toFixed(1) + "%");
+        };
+
+        updateProgress();
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        cleanups.push(() => window.removeEventListener("scroll", updateProgress));
+        cleanups.push(() => window.removeEventListener("resize", updateProgress));
+
+        if (typeof ResizeObserver !== "undefined") {
+            resizeObserver = new ResizeObserver(updateProgress);
+            resizeObserver.observe(home);
+            cleanups.push(() => resizeObserver && resizeObserver.disconnect());
+        }
+
+        if (!profile || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            window.__dixiHomeCleanup = () => {
+                cleanups.forEach((cleanup) => cleanup());
+            };
+            return;
+        }
+
+        const tags = Array.from(profile.querySelectorAll(".dixihome-tags li"));
+        const pointer = { x: -9999, y: -9999, active: false };
+
+        const handlePointerMove = (event) => {
+            const rect = profile.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+            profile.style.setProperty("--dixi-spot-x", x.toFixed(2) + "%");
+            profile.style.setProperty("--dixi-spot-y", y.toFixed(2) + "%");
+            pointer.x = event.clientX - rect.left;
+            pointer.y = event.clientY - rect.top;
+            pointer.active = true;
+        };
+
+        const handlePointerLeave = () => {
+            profile.style.setProperty("--dixi-spot-x", "78%");
+            profile.style.setProperty("--dixi-spot-y", "8%");
+            pointer.active = false;
+        };
+
+        profile.addEventListener("pointermove", handlePointerMove);
+        profile.addEventListener("pointerleave", handlePointerLeave);
+        cleanups.push(() => profile.removeEventListener("pointermove", handlePointerMove));
+        cleanups.push(() => profile.removeEventListener("pointerleave", handlePointerLeave));
+
+        const moveTags = (time) => {
+            const profileRect = profile.getBoundingClientRect();
+
+            tags.forEach((tag, index) => {
+                const tagRect = tag.getBoundingClientRect();
+                const centerX = tagRect.left - profileRect.left + tagRect.width / 2;
+                const centerY = tagRect.top - profileRect.top + tagRect.height / 2;
+                const dx = centerX - pointer.x;
+                const dy = centerY - pointer.y;
+                const distance = Math.max(Math.sqrt(dx * dx + dy * dy), 1);
+                const force = pointer.active ? Math.max(0, (150 - distance) / 150) : 0;
+                const scatterX = (dx / distance) * force * (34 + index * 3);
+                const scatterY = (dy / distance) * force * (22 + index * 2);
+                const swimX = Math.sin(time / (950 + index * 110) + index) * (4 + index % 3);
+                const swimY = Math.cos(time / (1100 + index * 90) + index * 0.7) * (3 + index % 2);
+
+                tag.classList.toggle("is-lit", force > 0.1);
+                tag.style.setProperty("--scatter-x", scatterX.toFixed(2) + "px");
+                tag.style.setProperty("--scatter-y", scatterY.toFixed(2) + "px");
+                tag.style.setProperty("--swim-x", swimX.toFixed(2) + "px");
+                tag.style.setProperty("--swim-y", swimY.toFixed(2) + "px");
+                tag.style.setProperty("--tag-rot", (Math.sin(time / 1300 + index) * 1.8 + scatterX * 0.03).toFixed(2) + "deg");
+            });
+
+            animationId = window.requestAnimationFrame(moveTags);
+        };
+
+        if (tags.length) {
+            animationId = window.requestAnimationFrame(moveTags);
+            cleanups.push(() => window.cancelAnimationFrame(animationId));
+        }
+
+        window.__dixiHomeCleanup = () => {
+            cleanups.forEach((cleanup) => cleanup());
+            tags.forEach((tag) => {
+                tag.classList.remove("is-lit");
+            });
+        };
+    }
+
+    const scheduleDixiHomeInit = () => {
+        window.requestAnimationFrame(initDixiHome);
+    };
+
+    if (typeof document$ !== "undefined" && document$.subscribe) {
+        document$.subscribe(scheduleDixiHomeInit);
+    } else {
+        document.addEventListener("DOMContentLoaded", scheduleDixiHomeInit);
+    }
+})();
+
 
 
 // 页面访问记录
@@ -232,4 +512,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }, 1000);
 });
-

@@ -1,0 +1,3928 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/changheji/ml-intro/ML02/">
+      
+      
+        <link rel="prev" href="../ML01/">
+      
+      
+        <link rel="next" href="../../MLreport/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>02 从卷积到大模型 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              02 从卷积到大模型
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            长河集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../bookReport/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    荒唐言
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    机器学习导论
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习导论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ML01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 从函数到模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    02 从卷积到大模型
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    02 从卷积到大模型
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      写在前面
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="写在前面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      前瞻内容—基础概念复习
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN基本概念与典型结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CNN基本概念与典型结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景与基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积网络范式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="卷积网络范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积结构类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他部分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      经典CNN网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典CNN网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenet-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      LeNet-5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      AlexNet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      VGG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      NiN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlenet2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      GoogLeNet（2014）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resnet2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResNet（2015）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#densenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      DenseNet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN结构总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN网络设计思路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnn-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN &amp; LSTM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RNN & LSTM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN特点与诞生意义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度消失、爆炸与解决方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LSTM结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LSTM结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnnrnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNN与RNN梯度问题差异
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      门控装置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个运算示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      自注意力机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自注意力机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入信息处理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入信息处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      语音
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      标签
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      维度与输入相同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      也是序列
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      自注意力运作原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      多头注意力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      位置编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      截断自注意力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-attention-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      self-attention &amp; CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-attention-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      self-attention &amp; RNN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标：序列到序列场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer 结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      解码器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程与常用技巧
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练过程与常用技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      复制机制（Copy Mechanism）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer-networks-attention-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      引导注意力（Pointer Networks / Attention Guidance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索策略（贪心搜索与束搜索）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      噪声加入（Adding Noise）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-for-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用强化学习训练（RL for Training）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      计划采样（Scheduled Sampling）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成对抗网络是啥
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成对抗网络是啥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成器与辨别器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      GAN 理论介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wgan" class="md-nav__link">
+    <span class="md-ellipsis">
+      WGAN 算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      挠头的评价体系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩散模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩散模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      迁移学习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="迁移学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      领域自适应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      领域泛化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      强化学习
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      大模型发展总结图
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../MLreport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基于卷积神经网络的FashionMNIST分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GeminiCLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gemini CLI 摸索笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      写在前面
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="写在前面">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习路径
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      前瞻内容—基础概念复习
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN基本概念与典型结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CNN基本概念与典型结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景与基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积网络范式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="卷积网络范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      卷积结构类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他部分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      经典CNN网络
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典CNN网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenet-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      LeNet-5
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alexnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      AlexNet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vgg" class="md-nav__link">
+    <span class="md-ellipsis">
+      VGG
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nin" class="md-nav__link">
+    <span class="md-ellipsis">
+      NiN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlenet2014" class="md-nav__link">
+    <span class="md-ellipsis">
+      GoogLeNet（2014）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resnet2015" class="md-nav__link">
+    <span class="md-ellipsis">
+      ResNet（2015）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#densenet" class="md-nav__link">
+    <span class="md-ellipsis">
+      DenseNet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN结构总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cnn_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN网络设计思路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnn-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN &amp; LSTM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RNN & LSTM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN特点与诞生意义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      梯度消失、爆炸与解决方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      LSTM结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LSTM结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dnnrnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNN与RNN梯度问题差异
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      门控装置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个运算示例
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      自注意力机制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自注意力机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入信息处理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输入信息处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      文字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      语音
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      输出类型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="输出类型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      标签
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      维度与输入相同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      也是序列
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      自注意力运作原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      多头注意力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      位置编码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      截断自注意力
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-attention-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      self-attention &amp; CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-attention-rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      self-attention &amp; RNN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      目标：序列到序列场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer 结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformer 结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      编码器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      解码器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程与常用技巧
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="训练过程与常用技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-mechanism" class="md-nav__link">
+    <span class="md-ellipsis">
+      复制机制（Copy Mechanism）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pointer-networks-attention-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      引导注意力（Pointer Networks / Attention Guidance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索策略（贪心搜索与束搜索）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      噪声加入（Adding Noise）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-for-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用强化学习训练（RL for Training）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      计划采样（Scheduled Sampling）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成对抗网络是啥
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="生成对抗网络是啥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成器与辨别器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gan" class="md-nav__link">
+    <span class="md-ellipsis">
+      GAN 理论介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wgan" class="md-nav__link">
+    <span class="md-ellipsis">
+      WGAN 算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      挠头的评价体系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩散模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩散模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      训练过程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      迁移学习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="迁移学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      领域自适应
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      领域泛化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      强化学习
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      大模型发展总结图
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">从卷积到大模型：现代机器学习结构速览<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 10485 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 58 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_2">写在前面<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>粗略地过一遍ML基础，延伸到对CNN、RNN、transformer、GAN、扩散模型的学习，接着一窥迁移学习与强化学习的大门，最后止于大模型概述</p>
+<h3 id="_3">学习路径<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<ul class="task-list">
+<li>
+<p><a href="https://zh.d2l.ai/index.html">教材：动手学深度学习</a></p>
+</li>
+<li>
+<p><a href="https://nn.labml.ai/">常见的ML Model</a></p>
+</li>
+<li>
+<p><a href="https://www.learnpytorch.io/">Learn PyTorch for Deep Learning</a></p>
+</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox" disabled><span class="task-list-indicator"></span></label> <a href="https://github.com/lucidrains/imagen-pytorch">项目学习</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ZJU-LLMs/Foundations-of-LLMs/tree/main">大模型基础</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="_4">前瞻内容—基础概念复习<a class="headerlink" href="#_4" title="Permanent link">¶</a></h2>
+<p>从感知机开始，带你机器学习基础概念一把梭</p>
+<ul>
+<li><a href="https://dixilog.github.io/changheji/ml-intro/ML01/">ML基础概念</a></li>
+</ul>
+<hr>
+<blockquote>
+<p>学习范式与网络结构互相独立，CNN可以在有监督/无监督/自监督/RL环境下发挥不同的作用</p>
+</blockquote>
+<h2 id="cnn">CNN基本概念与典型结构<a class="headerlink" href="#cnn" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>参考文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/561991816">【综述】一文读懂卷积神经网络<span class="arithmatex">\(CNN\)</span></a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/268179286?ivk_sa=1024320u">原来卷积是这么计算的</a></p>
+</blockquote>
+<h3 id="_5">背景与基本概念<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>多层感知机（MLP）的变种</p>
+</li>
+<li>
+<p>局部感受野、权值共享、pooling池化：减少param数量，降低复杂度 → 便于优化，规避过拟合</p>
+</li>
+<li>
+<p>对于输入层来说，宽度和高度指的是输入图像的宽度和高度，深度代表输入图像的通道数
+对于中间层来说，宽度和高度指的是特征图的宽和高，通常由卷积运算和池化操作的相关参数（卷积核大小、步幅、填充方式、池化窗口大小）决定；深度指的是特征图的通道数，通常由卷积核的个数决定</p>
+</li>
+<li>
+<p>注意多通道下卷积核数量的定义；原始输入有多少个通道，其对应的一个卷积核就必须要有多少个通道；用<code>k</code>个卷积核对输入进行卷积处理，那么最后得到的特征图一定就会包含有<code>k</code>个通道</p>
+</li>
+</ul>
+<blockquote>
+<p>下面的图片代表着一个卷积核</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RvrWbigclouvuQxHQnHcXLPMnT0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RvrWbigclouvuQxHQnHcXLPMnT0.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjZ5bdcPFoO8oOxpVi2ciK7BnDb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/DjZ5bdcPFoO8oOxpVi2ciK7BnDb.png"></a></center>
+</div>
+<ul>
+<li>
+<p>在相邻空间位置上具有依赖关系的数据（宽平稳随机过程）均可以通过卷积操作来进行特征提取</p>
+</li>
+<li>
+<p>感受野（Receptive Field）指的是卷积神经网络每一层输出的特征图上每个像素点映射回输入图像上的区域大小
+故网络越深，神经元的感受野越大</p>
+</li>
+<li>
+<p>下采样层有两个作用</p>
+<ul>
+<li>
+<p>减少计算量，防止过拟合</p>
+</li>
+<li>
+<p>增大感受野，使得后面的卷积核能够学到更加全局的信息</p>
+</li>
+</ul>
+</li>
+<li>
+<p>下采样的设计有两种：</p>
+<ul>
+<li>
+<p>采用步长（stride）为2的<code>池化层</code>，目前通常使用Max-pooling，因为它计算简单且最大响应能更好保留纹理特征</p>
+</li>
+<li>
+<p>采用步长（stride）为2的<code>卷积层</code>，下采样的过程是一个信息损失的过程，而池化层是不可学习的，用可学习卷积层来代替pooling可以得到更好的效果，当然同时也增加了一定的计算量</p>
+</li>
+</ul>
+</li>
+<li>
+<p>有时需要将图像恢复到原来的尺寸以便进行进一步的计算（如图像的语义分割），这个使图像由小分辨率映射到大分辨率的操作，叫做上采样，一般有三种实现方式：</p>
+<ul>
+<li>
+<p>双线性差值</p>
+</li>
+<li>
+<p>零填充</p>
+</li>
+<li>
+<p>Max Unpooling</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PlsQbDa5Io8MBtx3BLmcJCThnmy.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PlsQbDa5Io8MBtx3BLmcJCThnmy.png"></a></center>
+</div>
+<ul>
+<li>
+<p>参数量的大小是轻量化网络设计的一个重要评价指标</p>
+</li>
+<li>
+<p>神经网络的前向推理过程基本上都是乘累加计算，所以它的计算量也是指的前向推理过程中乘加运算的次数，通常用<code>FLOPs</code>（即“每秒浮点运算次数”）来表示</p>
+</li>
+</ul>
+<hr>
+<h3 id="_6">卷积网络范式<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<h4 id="_7">卷积结构类型<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<ul>
+<li>标准卷积</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Px5EbnuEAoeqAcxsJRmc6lu3nbb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Px5EbnuEAoeqAcxsJRmc6lu3nbb.png"></a></center>
+</div>
+<ul>
+<li>深度可分离卷积 <span class="arithmatex">\(Depthwise Separable Convolution\)</span>：区别于标准卷积，是沿着通道维度做卷积的一种特殊操作方式；每个通道单独卷积再融合，使得计算量和参数量大大减小</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WUQSbUPpmoEv55x7oU7cYrzUn8f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WUQSbUPpmoEv55x7oU7cYrzUn8f.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PTyWbrfgBoFfFZxa8lIc7URfnoc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PTyWbrfgBoFfFZxa8lIc7URfnoc.png"></a></center>
+</div>
+<ul>
+<li>
+<p>深层卷积（deep convolutional network）：卷积之后再卷积</p>
+</li>
+<li>
+<p>分组卷积（Group Convolution）：最早在<code>AlexNet</code>中出现，当时作者在训练模型时为了减少显存占用而将feature map分组然后给多个GPU进行处理，最后把多个输出进行融合</p>
+</li>
+<li>
+<p>空洞卷积（Dilated Convolution）：标准卷积的扩张率（dilation rate）为<code>1</code>，通过下采样扩大感受野</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RAPmbVtaIo9WpdxH6sWcFHyNnTh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RAPmbVtaIo9WpdxH6sWcFHyNnTh.png"></a></center>
+</div>
+<ul>
+<li>转置卷积（Transposed Convolutions）：和空洞卷积的思路正好相反，为上采样而生</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TxNNbhMxSos04MxP9T3cgPXPnMe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TxNNbhMxSos04MxP9T3cgPXPnMe.png"></a></center>
+</div>
+<ul>
+<li>
+<p>可变形卷积（Deformable Convolution）：类似于注意力机制，卷积核的采样点应该能根据输入特征自适应地偏移到更有信息的区域，从而拥有更精准的语义分割结果</p>
+<ul>
+<li>偏移由额外的卷积层学习（通过梯度下降，使最终卷积输出对任务（分类、检测、分割）更有利）</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Oh7ibE0CVoASfBx5Resclqc1nMe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Oh7ibE0CVoASfBx5Resclqc1nMe.png"></a></center>
+</div>
+<ul>
+<li>点态卷积（Pointwise Convolution）：大小<code>1*1</code>的卷积核，通过全连接加宽加深网络层次，使其更加复杂（引入激活函数）</li>
+</ul>
+<hr>
+<h4 id="_8">其他部分<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>现在看起来，未来的卷积网络结构中，可能会很少使用甚至不使用汇聚层</p>
+</li>
+<li>
+<p>Channel shuffle用于保持分组卷积中的信息交互</p>
+</li>
+<li>
+<p>leaky ReLU的负向部分的0.1权重，可用<code>13&gt;&gt;7</code>去简化</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KhazbklsaoxFzoxHntJcjMGhnIf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KhazbklsaoxFzoxHntJcjMGhnIf.png"></a></center>
+</div>
+<ul>
+<li>
+<p>sigmod在反向传播求导时容易出现梯度消失的问题</p>
+</li>
+<li>
+<p>全局平均池化（GAP）再加全连接层可以达到与原有（拉平成C×H×W的向量）操作相似的效果，且计算量降低到了原来的1/HW</p>
+</li>
+<li>
+<p>正则化（Regularization）分为岭回归（L2，均方，保留所有的特征，但削弱它们各自的影响力）和 Lasso回归（L1，绝对值的和，降维，产生 Sparse Model，自动帮你做特征选择）</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+Loss=(y-W^Tx)^2+\alpha||W||^2
+\]</div>
+<hr>
+<h3 id="cnn_1">经典CNN网络<a class="headerlink" href="#cnn_1" title="Permanent link">¶</a></h3>
+<h4 id="lenet-5">LeNet-5<a class="headerlink" href="#lenet-5" title="Permanent link">¶</a></h4>
+<ul>
+<li>经典应用，由两个卷积层组成和三个全连接层组成，组合使用卷积层、非线性激活函数和汇聚层</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NL8NbfGz7o4PzlxPzjLcqZrgnsh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NL8NbfGz7o4PzlxPzjLcqZrgnsh.png"></a></center>
+</div>
+<h4 id="alexnet">AlexNet<a class="headerlink" href="#alexnet" title="Permanent link">¶</a></h4>
+<p>是第一个在大规模视觉竞赛中击败传统计算机视觉模型的大型神经网络，它使得卷积神经网络在计算机视觉领域中备受欢迎。</p>
+<ul>
+<li>
+<p>更深</p>
+</li>
+<li>
+<p>使用ReLU作为激活函数</p>
+</li>
+<li>
+<p>全连接层<code>Dropout</code></p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZZi7bRWMFoCybWx9eJlcsOxHnqc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZZi7bRWMFoCybWx9eJlcsOxHnqc.png"></a></center>
+</div>
+<h4 id="vgg">VGG<a class="headerlink" href="#vgg" title="Permanent link">¶</a></h4>
+<p>使用可复用的卷积块构造网络，块的使用导致网络定义的非常简洁，从而使复杂网络的设计成为可能</p>
+<p>不同的VGG模型可通过每个块中卷积层数量和输出通道数量的差异来定义</p>
+<ul>
+<li>采用连续的几个<code>3x3</code>的卷积核代替<code>AlexNet</code>中的较大卷积核。对于给定的感受野，采用堆积的小卷积核是优于采用大的卷积核，因为多层非线性层可以增加网络深度来保证学习更复杂的模式，而且代价还比较小（参数更少）</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ncc2b5xvAo25lNxXi6FcJcwrnnc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ncc2b5xvAo25lNxXi6FcJcwrnnc.png"></a></center>
+</div>
+<h4 id="nin">NiN<a class="headerlink" href="#nin" title="Permanent link">¶</a></h4>
+<ul>
+<li>首创了点态卷积和全局平均池化，去除了全连接层</li>
+</ul>
+<h4 id="googlenet2014">GoogLeNet（2014）<a class="headerlink" href="#googlenet2014" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>提出观点：使用不同大小的卷积核组合是有利的</p>
+</li>
+<li>
+<p>设计了一种称为 Inception 的基本卷积模块。Inception块由四条并行路径组成。前三条路径使用窗口大小为 1X1、3X3 和5X5 的卷积层，从不同空间大小中提取信息。中间的两条路径在输入上执行 1X1卷积，先减少通道数，从而降低模型的复杂性。然后使用3X3<span class="arithmatex">\(5×5\)</span>卷积增加通道数。这四条路径都使用合适的填充来使输入与输出的高和宽一致，最后将每条线路的输出在通道维度上连结，并构成Inception块的输出。在Inception块中，通常调整的超参数是每层输出通道的数量。每条路径的通道数不尽相同</p>
+</li>
+</ul>
+<blockquote>
+<p>简要介绍：<a href="https://gemini.google.com/share/67645c553fc6">来自gemini的介绍</a></p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ceg1bH7YQoE39zxUFlWcwk0fn8e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ceg1bH7YQoE39zxUFlWcwk0fn8e.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AUvxbwbfHoMbb7xZNEDcmzPhnw5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AUvxbwbfHoMbb7xZNEDcmzPhnw5.png"></a></center>
+</div>
+<h4 id="resnet2015">ResNet（2015）<a class="headerlink" href="#resnet2015" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>解决梯度消失问题，使得更深的网络成为可能。因为梯度是从后向前传播的，增加网络深度后，比较靠前的层梯度会很小，导致着这些层的学习基本停滞；二是网络更深时意味着参数空间更大，优化问题变得更难，因此简单地去增加网络深度反而出现更高的训练误差</p>
+</li>
+<li>
+<p>残差网络的核心思想是：每个附加层都应该更容易地包含原始函数作为其元素之一</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QFe0be3F0omnt0xzBWbcN0bln9b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QFe0be3F0omnt0xzBWbcN0bln9b.png"></a></center>
+</div>
+<ul>
+<li>
+<p>ResNet 沿用了 VGG 完整的3×3卷积层设计。 残差块里首先有 2 个有相同输出通道数的3×3卷积层。 每个卷积层后接一个批量归一化层和 ReLU 激活函数。 然后我们通过跨层数据通路，跳过这 2 个卷积运算，将输入直接加在最后的 ReLU 激活函数前</p>
+</li>
+<li>
+<p>为了满足直接相加而改变通道数的话，就需要引入一个额外的1×1卷积层来将输入变换成需要的形状后再做相加运算</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LBnrbu5Kzoju8lxIoygcJZm6n7g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LBnrbu5Kzoju8lxIoygcJZm6n7g.png"></a></center>
+</div>
+<h4 id="densenet">DenseNet<a class="headerlink" href="#densenet" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>稠密连接网络在某种程度上是<code>ResNet</code>的逻辑扩展，但输出是连接（用图中的[,]表示）而不是如 ResNet 的简单相加</p>
+</li>
+<li>
+<p>稠密网络主要由 2 部分构成：稠密块（dense block）和过渡层（transition layer）。 前者定义如何连接输入和输出，而后者则控制通道数量，使其不会太复杂</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Zw8sbwxwyoGWutxbx6OcVOM5n9v.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Zw8sbwxwyoGWutxbx6OcVOM5n9v.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AvwsbEaV5oXm8qxBCdPca4ofnSc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AvwsbEaV5oXm8qxBCdPca4ofnSc.png"></a></center>
+</div>
+<h4 id="cnn_2">CNN结构总结<a class="headerlink" href="#cnn_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>AlexNet：力大砖飞，它是第一个在大规模视觉竞赛中击败传统计算机视觉模型的大型神经网络</p>
+</li>
+<li>
+<p>VGG：它利用许多重复的神经网络块和小卷积核的有效性</p>
+</li>
+<li>
+<p>NiN：它重复使用由卷积层和1×1卷积层来构建深层网络；同时使用全局平均池化层替代全连接层</p>
+</li>
+<li>
+<p>GoogLeNet：它使用并行连接的网络，通过不同窗口大小的卷积层和最大汇聚层来并行抽取信息</p>
+</li>
+<li>
+<p>残差网络（ResNet）：它通过残差块构建跨层的数据通道，是计算机视觉中最流行的体系结构</p>
+</li>
+<li>
+<p>稠密连接网络（DenseNet）：它的计算成本很高，但给我们带来了更好的效果</p>
+</li>
+</ul>
+<hr>
+<h3 id="cnn_3">CNN网络设计思路<a class="headerlink" href="#cnn_3" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>套用 + 微调</p>
+</blockquote>
+<ul>
+<li>常见的结构</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PMxZbDQTyoqxeMxqr9jcD6jongg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PMxZbDQTyoqxeMxqr9jcD6jongg.png"></a></center>
+</div>
+<ul>
+<li>
+<p>输入层 ，应该是2的倍数</p>
+</li>
+<li>
+<p>几个小滤波器卷积层的组合比一个大滤波器卷积层好</p>
+</li>
+<li>
+<p>可用大步长小卷积核代替pooling</p>
+</li>
+<li>
+<p>使用零填充保护边缘信息</p>
+</li>
+<li>
+<p>第一个卷积层可稍做内存上的妥协，采用7*7 stride = 2的卷积核</p>
+</li>
+</ul>
+<hr>
+<h2 id="rnn-lstm">RNN &amp; LSTM<a class="headerlink" href="#rnn-lstm" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>参考文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/123211148">https://zhuanlan.zhihu.com/p/123211148</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/76772734">https://zhuanlan.zhihu.com/p/76772734</a></p>
+</blockquote>
+<h3 id="rnn">RNN特点与诞生意义<a class="headerlink" href="#rnn" title="Permanent link">¶</a></h3>
+<p>循环神经网络（Rerrent Neural Network, RNN）对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息，使深度学习模型在解决语音识别、语言模型、机器翻译以及时序分析等NLP（自然语言处理）领域的问题时有所突破</p>
+<blockquote>
+<p>回忆一下信道传输，或者说几乎所有的通信传输接收，都是时序信号，前后具有一定的相关性</p>
+<p>看见循环的概念，再联想到反馈，进一步到IIR滤波器的抽头概念，相比便不难理解这里的循环概念了</p>
+</blockquote>
+<p>对于命名实体识别（苹果和苹果公司），单纯堆量是没有意义的</p>
+<p>换言之，模型需要结合上下文去联想学习，而非独立去训练，于是RNN诞生了</p>
+<hr>
+<h3 id="rnn_1">RNN结构<a class="headerlink" href="#rnn_1" title="Permanent link">¶</a></h3>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BCaVbtM5yoQ9TaxGlUqciNEMnxg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/BCaVbtM5yoQ9TaxGlUqciNEMnxg.png"></a></center>
+</div>
+<p>摒弃W的部分，<span class="arithmatex">\(X\xrightarrow{U}S\xrightarrow{V}O\)</span>就是经典的多层感知机（MLP），其中的<code>U、V</code>为权重矩阵</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PjhVbmg4ZomJRMxbRiYcH9A3ncg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PjhVbmg4ZomJRMxbRiYcH9A3ncg.png"></a></center>
+</div>
+<p>再加入反馈抽头W（权重保持一致）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ddg9bPXs2oZcuixNckVcvnQqn0g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ddg9bPXs2oZcuixNckVcvnQqn0g.png"></a></center>
+</div>
+<p>用公式表示，有</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;O_{t}=g(V\cdot S_{t})\\&amp;S_{t}=f(U\cdot X_{t}+W\cdot S_{t-1})\end{aligned}
+\]</div>
+<p>从DSP里面随便截张图，懂了不</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OpHkbdB6ooOubCxEHUocNufSnPd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OpHkbdB6ooOubCxEHUocNufSnPd.png"></a></center>
+</div>
+<p>当然，输入也可能是多维的（从信息论的角度，即符号序列），比如</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NSkXblRgToNgX4xKXC2cVsaonFR.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NSkXblRgToNgX4xKXC2cVsaonFR.png"></a></center>
+</div>
+<hr>
+<h3 id="_9">梯度消失、爆炸与解决方案<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>参考文章：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/76772734">https://zhuanlan.zhihu.com/p/76772734</a></p>
+</blockquote>
+<p>本质上是因为神经网络的更新方法，梯度消失是因为反向传播过程中对梯度的求解会产生sigmoid导数和参数的连乘，sigmoid导数的最大值为0.25，权重一般为[0,1]之间，则深层下多个小于1的值连乘，导致靠近输入层的梯度几乎为0，得不到更新。梯度爆炸是也是同样的原因，如果多个大于1的值连乘，将会很大或溢出，导致梯度更新过大，模型无法收敛</p>
+<p><strong>解决方案如下：</strong></p>
+<ul>
+<li>
+<p>预训练 + 微调</p>
+</li>
+<li>
+<p>Loss funtion 正则化</p>
+</li>
+<li>
+<p>Leak ReLU解决求导问题</p>
+</li>
+<li>
+<p>BN</p>
+</li>
+<li>
+<p>残差结构</p>
+</li>
+<li>
+<p>LSTM方案（见下一节）</p>
+</li>
+</ul>
+<hr>
+<h3 id="lstm">LSTM结构<a class="headerlink" href="#lstm" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>参考书籍：
+李宏毅深度学习教程</p>
+</blockquote>
+<p>长短期记忆网络（Long Short-Term Memory network,LSTM）可视为RNN plus版，通过<code>Gate</code>解决了其梯度爆炸的问题</p>
+<h4 id="dnnrnn">DNN与RNN梯度问题差异<a class="headerlink" href="#dnnrnn" title="Permanent link">¶</a></h4>
+<p>一言以蔽之： <span style="border-bottom: 1.5px dashed orange;"><strong><code>DNN</code></strong> 的梯度消失导致 <strong>深层不学习</strong> ，而 <strong><code>RNN</code></strong> 的梯度消失导致 <strong>远处不记得</strong></span></p>
+<p><code>DNN</code> 中权重梯度可表示为链式求导的连乘</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial W^{(1)}}=\left(\prod_{l=2}^L\frac{\partial h^{(l)}}{\partial h^{(l-1)}}\right)\frac{\partial L}{\partial h^{(L)}}
+\]</div>
+<p>就<code>sigmod</code>而言，导数最大为0.25，因此靠近输入层的梯度将直接衰减到 0，于是这些权重不再更新，模型无法学习早期层特征。<code>DNN</code> 的梯度消失意味着某些权重真正失去梯度，停止学习</p>
+<p>对于 <code>RNN</code>，隐藏状态递推如下：</p>
+<div class="arithmatex">\[
+h_t=\sigma(W_xx_t+W_sh_{t-1})
+\]</div>
+<p>其中连乘部分为：</p>
+<div class="arithmatex">\[
+\prod_{k=1}^t\frac{\partial h_k}{\partial h_{k-1}}=\prod_{k=1}^t\sigma^{\prime}(a_k)
+\]</div>
+<p>当时间 <code>t</code> 很大时，因此，远处时刻的梯度贡献趋近于 0，而最近时刻的梯度仍能保留（此时梯度仍存在）</p>
+<p>此时表现为 RNN 存在上下文丢失的现象</p>
+<h4 id="_10">门控装置<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<p>这是RNN的结构框图</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/McLlbjBnzoeSbwx1kAncunrWnVc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/McLlbjBnzoeSbwx1kAncunrWnVc.png"></a></center>
+</div>
+<p>改造一下</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PKIObZt5yoomStxdiWYcwAdwnsd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PKIObZt5yoomStxdiWYcwAdwnsd.png"></a></center>
+</div>
+<ol>
+<li>
+<p>Input Gate：输入门，在每一时刻从输入层输入的信息会首先经过输入门，输入门的开关会决定这一时刻是否会有信息输入到<code>Memory Cell</code>（记忆元）</p>
+</li>
+<li>
+<p>Output Gate：输出门，每一时刻是否有信息从<code>Memory Cell</code>输出取决于这一道门</p>
+</li>
+<li>
+<p>Forget Gate：遗忘门，每一时刻<code>Memory Cell</code>里的值都会经历一个是否被遗忘的过程，就是由该门控制的，如果打卡，那么将会把<code>Memory Cell</code>里的值清除，也就是遗忘掉</p>
+</li>
+</ol>
+<p>让我们比较阅读一下</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q3pJbBdjboSl4lxNeMJcHqpvnUT.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q3pJbBdjboSl4lxNeMJcHqpvnUT.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NMaebr7pso3f91xSThbcb4I1nJd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/NMaebr7pso3f91xSThbcb4I1nJd.png"></a></center>
+</div>
+<p><code>Memory Cell</code>的迭代公式为</p>
+<div class="arithmatex">\[
+c^{\prime}=g(z)f\left(z_i\right)+cf\left(z_f\right)
+\]</div>
+<p>假设要被存到单元的输入叫做<code>z</code>,操控输入门的信号为<code>zi</code>,操控遗忘门的信号为<code>zf</code> ,操控输出门为<code>zo</code>,综合这些东西会得到一个输出记为<code>a</code>，且里面已经存了值<code>c</code></p>
+<p>激活函数通常会选择 sigmoid 函数，因为其值介在 0 到 1 之间，代表了这个门被打开的程度</p>
+<blockquote>
+<p>输入输出遗忘门都是以<code>1</code>代表允许通过/记住</p>
+</blockquote>
+<p>三个门的启停也是通过网络训练涌现的，下面通过一个demo说明四个输入的由来</p>
+<h4 id="_11">一个运算示例<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JGJ2bTTrNoInAxxxSXpc2q7gnJh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JGJ2bTTrNoInAxxxSXpc2q7gnJh.png"></a></center>
+</div>
+<p>让我们暂时人为规定一下输入的三维向量跟输出还有记忆元的关系</p>
+<ul>
+<li>
+<p><code>x2</code> 的值是 <code>1</code> 时,，<code>x1</code> 的值就会被写到记忆元里</p>
+</li>
+<li>
+<p><code>x2</code> 的值是 <code>-1</code> 时，就会重置这个记忆元</p>
+</li>
+<li>
+<p><code>x3</code>的值为 <code>1</code> 时输出</p>
+</li>
+</ul>
+<p>于是可得到图中的输出结果</p>
+<blockquote>
+<p>可以把四个输入的诞生过程理解成卷积的过程——加权求和</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/N4Dgbbrwvo7XuUxBt7NcNWpDnDb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/N4Dgbbrwvo7XuUxBt7NcNWpDnDb.png"></a></center>
+</div>
+<p>所以为什么<code>LSTM</code>一定程度可以解决RNN的梯度消失问题呢？</p>
+<p>再此回顾其传递公式，你会发现与RNN的连乘不同，加法使得梯度回传时类似于直通，即</p>
+<div class="arithmatex">\[
+\frac{\partial c_t}{\partial c_{t-1}}=f_t
+\]</div>
+<p>如果遗忘门输出为1，则</p>
+<div class="arithmatex">\[
+c_t\approx c_{t-1}\quad\Rightarrow\quad\frac{\partial L}{\partial c_{t-k}}\approx\frac{\partial L}{\partial c_t}
+\]</div>
+<p>从而使得梯度几乎无痛反向传递，于是拥有了更长的上下文记忆</p>
+<hr>
+<h2 id="_12">自注意力机制<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<p>从<code>RNN</code>过来，我们知道输入还有可能是一坨向量，即向量序列，且序列长度并不确定（语句长度/语音时间）</p>
+<p>让我们先看看常见NLP类信息的向量化方式与输出类型，再回过头看看自注意力模型（self-attention model）</p>
+<h3 id="_13">输入信息处理<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<h4 id="_14">文字<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<p>语言通常可以通过独热码（one-hot encoding）和词嵌入<span class="arithmatex">\(word embedding\)</span>，但前者编码不包含任何语义信息</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/X3UlbMyjsoPdw4xjyLYcaq5EnRc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/X3UlbMyjsoPdw4xjyLYcaq5EnRc.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Al1Gb1GrjonNx3xItWKcBh6enlg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Al1Gb1GrjonNx3xItWKcBh6enlg.png"></a></center>
+</div>
+<h4 id="_15">语音<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
+<p>声音通常设置25ms的窗口（一帧），而每次窗口挪动10ms（别问，先辈的智慧），即一秒存在100帧（帧间存在重合）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IeEgb2WajoWOP2xfRW5cf15OnHh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IeEgb2WajoWOP2xfRW5cf15OnHh.png"></a></center>
+</div>
+<h4 id="_16">图<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
+<p>图（Graph）也可视为向量，每个人都看作一个类，根据其中的<code>key-value</code>就可搓出一个特征向量</p>
+<hr>
+<h3 id="_17">输出类型<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<h4 id="_18">标签<a class="headerlink" href="#_18" title="Permanent link">¶</a></h4>
+<p>用于对输入整体打上定性标签</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Yo3VbENYBoZGJCxMlDVcqdNsnhc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Yo3VbENYBoZGJCxMlDVcqdNsnhc.png"></a></center>
+</div>
+<p>比如情感分析、说话人识别、分子亲水性分析</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/A6YXbE5qFoJPptx4fZFcPpQInjb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/A6YXbE5qFoJPptx4fZFcPpQInjb.png"></a></center>
+</div>
+<h4 id="_19">维度与输入相同<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
+<p>需要对每个输入向量打标签，即序列标注</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nt2zbRCTToTBMOxw3Byc6uInnLM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nt2zbRCTToTBMOxw3Byc6uInnLM.png"></a></center>
+</div>
+<p>比如词性标注（Part-Of-Speech tagging,POS tagging）、音标识别、用户画像分析</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OO9Sbaac4ovC9zxo5r5cVYURnze.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OO9Sbaac4ovC9zxo5r5cVYURnze.png"></a></center>
+</div>
+<h4 id="_20">也是序列<a class="headerlink" href="#_20" title="Permanent link">¶</a></h4>
+<p>输出的序列不确定，比如翻译</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/J9m9b3RWjofiWFxFqc4cuxCsnUb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/J9m9b3RWjofiWFxFqc4cuxCsnUb.png"></a></center>
+</div>
+<hr>
+<h3 id="_21">自注意力运作原理<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<p>序列的每个符号（向量）间必然存在相关性信息，而单纯的全连接网络是无法做出区别的</p>
+<p>以文本序列标注为例子，FC网络不可能区分<code>I saw a saw</code>的俩<code>saw</code></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JASRbXRSIowV3hxRvXwcpT7Vnpe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JASRbXRSIowV3hxRvXwcpT7Vnpe.png"></a></center>
+</div>
+<p>像<code>RNN</code>家族一样添加记忆抽头循环是可行的，但其上下文记忆并不给力</p>
+<p>此外，串行逻辑限制了其运算速度，可以理解为一个一个字蹦出来，即使是LSTM也不能逃脱</p>
+<p>那对每一个FC，一次多输出几个，即包含上下文的序列输入的呢？</p>
+<p>似乎有效，但窗口的大小是个问题，我们需要一个自适应大小的窗口🥲，而且参数量陡增并不优雅</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qgz9bKi5soqNP7xwnBrckItInpb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Qgz9bKi5soqNP7xwnBrckItInpb.png"></a></center>
+</div>
+<p>还有没有法子呢？比如一目十行地理解？于是自注意力模块应运而生，天涯若比邻</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EMBDbE30GoAcDxxvO6Kc52YSnmd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EMBDbE30GoAcDxxvO6Kc52YSnmd.png"></a></center>
+</div>
+<p>实际上，有关自注意力最知名的相关的论文是 “Attention  Is All You Need”。在这篇论文里面,谷歌提出了 Transformer 网络架构。其中最重要的模块就是自注意力，就像变形金刚的火种源</p>
+<p><strong>就核心点而言，自注意力机制着眼于利用</strong> <strong>查询-键-值</strong> <strong>（Query-Key-Value,QKV）模式找寻相关性，用空间（巨大的内存开销）和算力（平方级的计算量）去换取时间（并行的速度）和效果（强大的上下文理解力）</strong></p>
+<p>假设某一层的输入为<code>a</code>，输出为<code>b</code>，我们的核心就是知道<code>b</code>是咋来滴</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OHmqbTGAvovkWlxOsTIc5UFQnfh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OHmqbTGAvovkWlxOsTIc5UFQnfh.png"></a></center>
+</div>
+<ul>
+<li>首先需要计算注意力（即相关性矩阵）</li>
+</ul>
+<p>最常见的方法便是，点积</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MXpfb743EoHDMKxynSqc2Jwbnxe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MXpfb743EoHDMKxynSqc2Jwbnxe.png"></a></center>
+</div>
+<p>其中，<span class="arithmatex">\(\bf q\)</span>称为查询，而<span class="arithmatex">\(\bf k\)</span>称为键</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ech1b2ogTo03Zdx4Lxnc1151nLe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ech1b2ogTo03Zdx4Lxnc1151nLe.png"></a></center>
+</div>
+<p>再做一个归一化（normalize），这里用<code>softmax</code>，即得到相关性</p>
+<div class="arithmatex">\[
+\alpha_{1,i}^{\prime}=\exp\left(\alpha_{1,i}\right)/\sum_{j}\exp\left(\alpha_{1,j}\right)
+\]</div>
+<p>归一化相关性与值（Value）逐一点乘求和，便是这个<code>input</code>的输出结果</p>
+<div class="arithmatex">\[
+b^1=\sum_i\alpha_{1,i}^{\prime}v^i
+\]</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VapVbStncouSHwxph7Acoi9SnCb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/VapVbStncouSHwxph7Acoi9SnCb.png"></a></center>
+</div>
+<p>所以谁的注意力的分数最大,谁的<code>Value</code>就会主导（dominant） 抽出来的结果</p>
+<p>事实上，所有的结果是并行同时计算的，所以运算速度快得一比，我们从矩阵的角度再考量会更加直观</p>
+<p><strong>一图以以蔽之</strong></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TmhnbwAsdoa9goxRYfbcJoxJnXe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TmhnbwAsdoa9goxRYfbcJoxJnXe.png"></a></center>
+</div>
+<h3 id="_22">多头注意力<a class="headerlink" href="#_22" title="Permanent link">¶</a></h3>
+<p>相关性可以从不同的角度去考量，所以需要多头自注意力（multi-head self-attention），它的数量也是一个超参</p>
+<p>具体而言，就是分为多个<span class="arithmatex">\(\bf q\)</span>，几个头之间的运算是独立的</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Gj11bIv4wo2uhXxugtVcTPxWn4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Gj11bIv4wo2uhXxugtVcTPxWn4b.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YULmbPl8kopU5OxPt1ecUOlhnzd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/YULmbPl8kopU5OxPt1ecUOlhnzd.png"></a></center>
+</div>
+<p>得到多头结果后拼接为新矩阵，变换后输出结果</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IXtWbIDLkon2rYxCfLBcWq7fnYg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IXtWbIDLkon2rYxCfLBcWq7fnYg.png"></a></center>
+</div>
+<hr>
+<h3 id="_23">位置编码<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<p>上述关于注意力矩阵的计算，并没有考虑位置这一重要维度，它往往包含着关键语义信息</p>
+<p>解决方案就是加上一个<span class="arithmatex">\(\bf e\)</span></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AuLtbTmShoMe9hxcnRQcjCX3nac.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/AuLtbTmShoMe9hxcnRQcjCX3nac.png"></a></center>
+</div>
+<p>这相当于告诉自注意力位置信息，让它知道现在输入向量在<code>i</code>这个位置</p>
+<blockquote>
+<p>就位置编码产生算法，目前没有最优的定论</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IveIbRpjKoFYvRxpg1scNiBenTM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IveIbRpjKoFYvRxpg1scNiBenTM.png"></a></center>
+</div>
+<hr>
+<h3 id="_24">截断自注意力<a class="headerlink" href="#_24" title="Permanent link">¶</a></h3>
+<p>旨在缓解内存爆炸，截断自注意力（truncated self-attention）可以处理向量序列长度过大的问题</p>
+<p>截断自注意力在做自注意力的时候不要看一整句话，就只看一个小的范围就好（这个范围是人设定的）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KOoWbA57foKyc4xjuqUcLN7KnQe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KOoWbA57foKyc4xjuqUcLN7KnQe.png"></a></center>
+</div>
+<hr>
+<h3 id="self-attention-cnn">self-attention &amp; CNN<a class="headerlink" href="#self-attention-cnn" title="Permanent link">¶</a></h3>
+<p><code>On the Relationship between Self-attention and Convolutional Layers</code>这篇论文用数学的方式严谨地告诉我们，卷积神经网络就是自注意力的特例</p>
+<ul>
+<li>
+<p>即使自注意力通常用于NLP领域，也可以将图片视为<code>Word</code></p>
+</li>
+<li>
+<p>CNN被认为是人为框定感受野的<code>self-attention</code></p>
+</li>
+<li>
+<p><code>self-attention</code>是自学习感受野的<code>CNN</code></p>
+</li>
+<li>
+<p><code>self-attention</code>具有高弹性的特点，这也意味着需要更多的训练数据量</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MPe5bL8c0owZWbxl2oYcFaJ1neb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MPe5bL8c0owZWbxl2oYcFaJ1neb.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QxyAbDWlYop34Gx1EosckJBVneH.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QxyAbDWlYop34Gx1EosckJBVneH.png"></a></center>
+</div>
+<hr>
+<h3 id="self-attention-rnn">self-attention &amp; RNN<a class="headerlink" href="#self-attention-rnn" title="Permanent link">¶</a></h3>
+<p>相较于与<code>CNN</code>的包含关系，与<code>RNN</code>更像友商关系</p>
+<p>循环神经网络跟自注意力一样，都是要处理输入是一个序列的状况</p>
+<p>目前,循环神经网络的角色很大一部分都可以用自注意力来取代了</p>
+<p>还是那俩痛点：上下文记忆与运行速度</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/V9zbbHPY5olZEnx5fyPcBY89nPc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/V9zbbHPY5olZEnx5fyPcBY89nPc.png"></a></center>
+</div>
+<hr>
+<h2 id="transformer">Transformer<a class="headerlink" href="#transformer" title="Permanent link">¶</a></h2>
+<h3 id="_25">目标：序列到序列场景<a class="headerlink" href="#_25" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p>语音识别、机器翻译和语音翻译</p>
+</li>
+<li>
+<p>语音合成（Text-To-Speech，TTS）</p>
+</li>
+<li>
+<p>聊天（问答）机器人，大语言模型</p>
+</li>
+<li>
+<p>句法分析（syntactic parsing）</p>
+</li>
+<li>
+<p>多标签分类问题（区别于多分类问题）</p>
+</li>
+</ul>
+<hr>
+<h3 id="transformer_1">Transformer 结构<a class="headerlink" href="#transformer_1" title="Permanent link">¶</a></h3>
+<p>总体框图可如下图表示</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/I1Hdbs08tozOBtxLgp3cJI2jnie.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/I1Hdbs08tozOBtxLgp3cJI2jnie.png"></a></center>
+</div>
+<p>其中，编码器负责输入理解，解码器负责输出生成</p>
+<ul>
+<li>
+<p>编码器凭借自注意力，彻底理解长句中复杂的上下文关系</p>
+</li>
+<li>
+<p>解码器凭借交叉注意力（Cross-Attention）和掩码自注意力确保输出的每一步都精准依赖于输入的精髓</p>
+</li>
+</ul>
+<p>展开内部框图，有</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WqEBbgruVo4xgNxoGRHcw10pnFe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WqEBbgruVo4xgNxoGRHcw10pnFe.png"></a></center>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">题外话 | BN与LN</p>
+<p>这里放弃了BN（批归一化），而创新性的使用LN（层归一化，会计算输入向量的平均值和标准差）</p>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZOzfbRuupobSmDxELqLcIPo3nNc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ZOzfbRuupobSmDxELqLcIPo3nNc.png"></a></center>
+</div>
+<blockquote>
+<p>看着像六阶魔方</p>
+</blockquote>
+<p><code>Batch Normalization</code> 对一个 <code>batch</code> 中所有样本在各通道维度上分别计算均值和方差并进行标准化，其统计可靠性依赖于 batch 中样本数量。如果 <code>batch</code> 太小，则均值和方差估计会不稳定，从而影响归一化效果</p>
+<p>与图像任务中常见的大批量训练不同，NLP 模型的输入序列通常较短且 <code>batch size</code> 较小，导致 <code>BN</code> 估计的批统计（均值、方差）不稳定，因此 BN 在 NLP 中往往表现不佳。为避免依赖 batch 的统计量，可以改为对单个样本内部的特征维度进行归一化，即采用 <code>Layer Normalization</code></p>
+<p>总结一下，批量归一化是对不同样本不同特征的同一个维度去计算均值跟标准差，但层归一化是对同一个特征、同一个样本里面不同的维度去计算均值跟标准差，接着做个归一化</p>
+<h4 id="_26">编码器<a class="headerlink" href="#_26" title="Permanent link">¶</a></h4>
+<p>Transformer 的编码器使用的是自注意力，输入一排向量，输出另外一个同样长度的向量</p>
+<p>编码器由<code>N</code>个块（block）组成，最基础的，包含了上一节所说的多头注意力模块和全连接网络</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EFxabJdk1ok3FfxFSoLciHrAnte.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/EFxabJdk1ok3FfxFSoLciHrAnte.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/R5ambajfboyloex9nmYch9qDnLc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/R5ambajfboyloex9nmYch9qDnLc.png"></a></center>
+</div>
+<p><code>Transformer</code>在此基础上加入残差连接与<code>LN</code></p>
+<p>即注意力后加<code>Res + LN</code>，全连接后加<code>Res + LN</code></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TdS7bvCyLoFrsXxfW5rcfvkCnuq.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/TdS7bvCyLoFrsXxfW5rcfvkCnuq.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JqDHbV2LhoYOOExGgs3cya7znXc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JqDHbV2LhoYOOExGgs3cya7znXc.png"></a></center>
+</div>
+<p>事实上这并不是最优的架构，但<code>transformer</code>提出了突破性的架构</p>
+<hr>
+<h4 id="_27">解码器<a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<p>通常指的是自回归（autoregressive）的解码器</p>
+<p>解码器可分为俩部分——交叉注意力（编码器-解码器注意力）下的输出和掩码注意力下的自我克制</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QDMDbWgf3oL3PjxvpAKc2Fzhn2g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QDMDbWgf3oL3PjxvpAKc2Fzhn2g.png"></a></center>
+</div>
+<ul>
+<li>
+<p>要让解码器产生输出，首先要先给它一个代表开始的特殊符号<code>&lt;BOS&gt;</code>，即 Begin Of Sequence，这是一个特殊的词元（token）。在词表（vocabulary）里面，在本来解码器可能产生的文字里面多加一个特殊的符号<code>&lt;BOS&gt;</code></p>
+</li>
+<li>
+<p>当然，也会有<code>&lt;EOS&gt;</code>，用于输出的终止</p>
+</li>
+<li>
+<p>输出的结果会被解码器作为新的输入，如此反复</p>
+</li>
+</ul>
+<p>解码器内部结构</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QCyBbhdyYoYul1xCVrKcVxVLnXe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/QCyBbhdyYoYul1xCVrKcVxVLnXe.png"></a></center>
+</div>
+<p>下图为交叉注意力（编码器-解码器注意力）的示意图，加权和<span class="arithmatex">\(\bf v\)</span>经过<code>Res + LN</code>进入前馈网络（注意区分这里的v和注意力中的Value）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/E3IPbJm3Jo2CZAxJfhgcFb8bndg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/E3IPbJm3Jo2CZAxJfhgcFb8bndg.png"></a></center>
+</div>
+<div class="arithmatex">\[
+v=\alpha_1^{\prime}\times v^1+\alpha_2^{\prime}\times v^2+\alpha_3^{\prime}\times v^3
+\]</div>
+<p>另外，掩码多头注意力的设置契合了我们人的输出逻辑——稳定系统，即不超前</p>
+<blockquote>
+<p>解码器的输出是一个一个产生的,所以只能考虑其左边的东西,  没有办法考虑其右边的东西</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/P9gQbGgrooqcRDxMdOQcpUcbnhh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/P9gQbGgrooqcRDxMdOQcpUcbnhh.png"></a></center>
+</div>
+<p>最后，编码器和解码器都有很多层。原始论文中解码器是拿编码器最后一层的输出，但实际上并不一定</p>
+<hr>
+<p>其他细节，见表</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KodQbtCuJolAhixyiTccPzh8nfe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/KodQbtCuJolAhixyiTccPzh8nfe.png"></a></center>
+</div>
+<hr>
+<h3 id="_28">训练过程与常用技巧<a class="headerlink" href="#_28" title="Permanent link">¶</a></h3>
+<h4 id="_29">训练过程<a class="headerlink" href="#_29" title="Permanent link">¶</a></h4>
+<p>以语音识别<code>机器学习</code>为例，编码器输入带位置编码的语音帧向量，并经过多头自注意力和前馈全连接理解了这句的信息含义；解码器输入\&lt;BOS&gt;，初始化（位置编码）后经过掩码自注意模块（此时没东东），再和编码器的输出经过交叉自注意模块，再经过前馈全连接和<code>softmax</code>得到各个字词的概率。理想状态下，应该“机”的概率最大</p>
+<p>训练时，我们会去计算标准答案和分布概率之间的交叉熵，并尽可能减小交叉熵</p>
+<p>这种学习方式称为教师强制（teacher forcing）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/S5WwbHuAPoSIesxVNPGcUhFunlf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/S5WwbHuAPoSIesxVNPGcUhFunlf.png"></a></center>
+</div>
+<blockquote>
+<p>为什么不叫<code>cramming</code></p>
+</blockquote>
+<h4 id="copy-mechanism"><strong>复制机制（Copy Mechanism）</strong><a class="headerlink" href="#copy-mechanism" title="Permanent link">¶</a></h4>
+<p>在机器翻译或文本生成中，像人名、地名、专业术语这些很少见的词，模型往往在词表里找不到，或者训练数据中出现太少，导致它“编不出来”。复制机制就是给模型多一条路：当它不知道该生成什么词时，可以直接从输入句子里“抄”一个词出来。模型会有一个“开关”判断当前该正常生成词，还是直接复制输入中的词。借助这个机制，模型能更准确地处理罕见词和专有名词</p>
+<h4 id="pointer-networks-attention-guidance"><strong>引导注意力（Pointer Networks / Attention Guidance）</strong><a class="headerlink" href="#pointer-networks-attention-guidance" title="Permanent link">¶</a></h4>
+<p>在一些任务中，比如摘要或代码生成，输出中的某些词其实本来就在输入中，这时候不是“想一个词”，而是“指向输入中的某个位置”。指针网络让注意力关注的不仅是输入内容，还关注输入中哪个位置更重要。这样模型的输出不是一个词，而是“选择输入中的某个词”。简单理解：普通注意力是“看内容”，而指针网络是“选位置”，强迫模型学会精准找输入中的关键元素</p>
+<h4 id="_30"><strong>搜索策略（贪心搜索与束搜索）</strong><a class="headerlink" href="#_30" title="Permanent link">¶</a></h4>
+<p>在模型逐字生成句子时，每一步都要从很多可能的词里选下一个。贪心搜索的策略很简单：每一步都挑当前概率最高的词。但它只顾眼前，不考虑未来可能更好的句子结构，因此常常走向“歪路”。束搜索更聪明：每一步同时保留多个候选路径（通常 5–10 个），继续往下生成，最后从这些路径里选最好的。它就像一个有备选方案的人，不会被一时失误锁死。缺点是计算会变多</p>
+<h4 id="adding-noise"><strong>噪声加入（Adding Noise）</strong><a class="headerlink" href="#adding-noise" title="Permanent link">¶</a></h4>
+<p>训练时，模型输入永远是正确答案，但测试时它依赖自己的预测，而这些预测未必正确。训练和测试环境不一致，会导致模型测试时容易“崩”。加入噪声就是让模型在训练阶段就提前适应“不完美的输入”，比如加入环境噪声、随机替换一些输入等。这样它在测试时遇到自己的错误预测，也能继续稳定输出，提高鲁棒性和泛化能力</p>
+<h4 id="rl-for-training"><strong>使用强化学习训练（RL for Training）</strong><a class="headerlink" href="#rl-for-training" title="Permanent link">¶</a></h4>
+<p>传统训练优化的是每一个字对不对（交叉熵损失），但评价机器翻译时，我们更关心整句话质量（如 BLEU 分数）。这两者是脱节的。强化学习把整个句子作为一次动作，把 BLEU 分数作为奖励，让模型学会生成“整体更好”的句子，而不是只追求“每步都看起来正确”。就像学生做题，重点不是每个步骤都照答案写，而是期末考试能拿高分</p>
+<h4 id="scheduled-sampling"><strong>计划采样（Scheduled Sampling）</strong><a class="headerlink" href="#scheduled-sampling" title="Permanent link">¶</a></h4>
+<p>暴露偏差问题在于：训练时模型总是依赖正确答案，但测试时却只能依赖自己的预测。一旦某一步出错，错误会不断传递。计划采样的做法是：训练时有时用正确输出做下一步输入，有时（按一定概率）用模型自己的输出，随着训练逐渐让“用自己预测结果”的比例升高。这样模型在训练阶段就学会处理自己犯的错，测试时更不容易“越走越偏”</p>
+<hr>
+<h2 id="_31">生成模型<a class="headerlink" href="#_31" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">摘记 | 图像分布</p>
+<p>关于图像的概率分布函数（右图），横坐标是所有可能的图像（由<code>Pixel</code>随机roll），纵坐标表示猫的概率
+ 用平滑的曲线连接，即为实际的分布，可以理解成先验</p>
+<ul>
+<li>生成器要干的就是不断学习，直到完美拟合出这条曲线</li>
+</ul>
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G5KrbgW4VoHi87xmYuPc0EfrnbN.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G5KrbgW4VoHi87xmYuPc0EfrnbN.png"></a></center>
+</div>
+<div class="admonition tips">
+<p class="admonition-title">一图以蔽之</p>
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/C2z0bah5Fopm5axxjKwcTLI4nvd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/C2z0bah5Fopm5axxjKwcTLI4nvd.png"></a></center>
+</div>
+<h3 id="_32">生成对抗网络是啥<a class="headerlink" href="#_32" title="Permanent link">¶</a></h3>
+<p>生成对抗网络（Generative Adversarial Network，GAN），是一种区别于先前网络的架构，以难以训练而著名🤪</p>
+<ul>
+<li>网络由生成器（G）和辨别器（D）构成</li>
+</ul>
+<h4 id="_33">生成器与辨别器<a class="headerlink" href="#_33" title="Permanent link">¶</a></h4>
+<p>从上面的摘记中可以知道，当存在输入<code>x</code>时，会从<code>学习到的分布中</code>采样一个<code>z</code>，从而决定输出的<code>y</code>是啥</p>
+<p>如果跳过采样而直接输出呢？网络在训练时存在<code>既要又要</code>的特性（比如训练数据中既有向左转，也有向右转，输出就是一坨残影）</p>
+<p>此时我们就需要生成一个图像分布，即把所有的可能输出来，再去采样其中的一个点</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ewkbbihilo6n4RxfSNYcARAZnjb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Ewkbbihilo6n4RxfSNYcARAZnjb.png"></a></center>
+</div>
+<p>对于需要<code>x</code>输入（这里可以用RNN或者transformer把文字转向量）的网络称为条件型生成（conditional generation）；若仅需要<code>z</code>的，称为无条件生成（unconditional generation）</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IDjSb3oAIowtoOxgqQlcauv2nHc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/IDjSb3oAIowtoOxgqQlcauv2nHc.png"></a></center>
+</div>
+<p>当然，这里生成器已经训练好了，最开始的输出只是随机的像素点；而训练的过程离不开辨别器的监督</p>
+<p>辨别器可以用任何常见的模型构成，对于图像来说主要是<code>CNN</code>；其功能就是尽可能分辨出<code>fake image</code></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RS9lbZbMjoMVHGxUxINcy5YAn2f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RS9lbZbMjoMVHGxUxINcy5YAn2f.png"></a></center>
+</div>
+<p>而从宏观上，可以把<code>GAN</code>的生成过程定义为<code>辨别器—生成器—辨别器</code>的交替训练过程</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CvjzbqDTfoZC4exHzICcwCsKnje.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/CvjzbqDTfoZC4exHzICcwCsKnje.png"></a></center>
+</div>
+<ol>
+<li>
+<p>固定G，训练D，使得生成图片得分尽可能低（慧眼识猪）</p>
+</li>
+<li>
+<p>固定D，训练G，使得生成图片得分尽可能高（瞒天过海）</p>
+</li>
+<li>
+<p>反反复复无穷匮也，直到再高明的辨别器也无法区分生成图片和真实图片（这就是巴巴博弈）</p>
+</li>
+</ol>
+<hr>
+<h3 id="gan">GAN 理论介绍<a class="headerlink" href="#gan" title="Permanent link">¶</a></h3>
+<p>可归纳为<code>MinMax</code>操作</p>
+<ul>
+<li>生成器的训练目的是是希望生成图像分布和原始数据分布尽可能的相似</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q9V2bm1DTogp4HxPBy2cxF8bnMb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Q9V2bm1DTogp4HxPBy2cxF8bnMb.png"></a></center>
+</div>
+<p>其中满足下面式子的生成器称为最优生成器</p>
+<div class="arithmatex">\[
+G^{*}=arg\min_{G}Div(P_{G},P_{data})
+\]</div>
+<blockquote>
+<p>事实上，生成器的损失函数</p>
+<p><span class="arithmatex">\(p(z\mid\boldsymbol{x})=\frac{p(z,\boldsymbol{x})}{p(\boldsymbol{x})}=\frac{p(\boldsymbol{x}\mid z)p(z)}{\int p(\boldsymbol{x}\mid z)p(z)dz}\)</span></p>
+<p>中的积分项很难办，辨别器目标函数的KL散度也很难办</p>
+</blockquote>
+<p>具体过程看PDF或者VAE视频，我现在不想动脑子了🤪</p>
+<p>总的来说，这是一种<code>MinMax</code>操作</p>
+<hr>
+<h3 id="wgan">WGAN 算法<a class="headerlink" href="#wgan" title="Permanent link">¶</a></h3>
+<p>在理论上，当采样数据和真数据在高维空间中没有交集时（这在深度学习初期几乎是常态），JS散度会直接给出一个恒定的值，导致GAN的训练变得十分困难（总不能用人眼吧）</p>
+<p>办法总比困难多，与<code>VAE</code>的ELBO类似，先辈巧妙地的用一种新的距离来衡量两个分布的相似程度，
+即Wasserstein 距离（推土机距离，Earth Mover’s Distance，EMD）</p>
+<blockquote>
+<p>可以理解成搬山法的最优解——最小代价路径</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GGjQb67vTof5rExxmPhccPVqn9c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GGjQb67vTof5rExxmPhccPVqn9c.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Fm2tbm4M5oLwHmxXaTccSe4YnZf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Fm2tbm4M5oLwHmxXaTccSe4YnZf.png"></a></center>
+</div>
+<div class="arithmatex">\[
+\max_{D\in\underline{1-Lipschitz}}\{E_{X\sim P_{data}}[D(x)]-E_{X\sim P_{G}}[D(x)]\}
+\]</div>
+<p>辨别器 D 需要做到让上式的第一项尽可能大，后者尽可能小</p>
+<p>此外，为了让 D 能够正确地近似这个 Wasserstein 距离，这个函数必须是一个<code>1-Lipschitz</code>函数（斜率有限制）以规避梯度爆炸</p>
+<p>轨到轨限制、梯度惩罚、谱归一化，等等方法可以通过引入新的超参让搬山的过程变得平滑（控制梯度在1附近）</p>
+<h3 id="_34">挠头的评价体系<a class="headerlink" href="#_34" title="Permanent link">¶</a></h3>
+<p>判断图片质量时有两个老大难</p>
+<ul>
+<li>
+<p>模式崩塌：当生成器用并不完美的一张照片踩中了辨别器的盲点，就不再更新了</p>
+</li>
+<li>
+<p>模式丢失：缺乏想象力（多样性），需要的是无中生有，而非直接从数据库CV</p>
+</li>
+</ul>
+<p>流行的，可以使用FID去评价</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MnzpbmQ9Ooiqfnx4XzBcqkE1nog.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/MnzpbmQ9Ooiqfnx4XzBcqkE1nog.png"></a></center>
+</div>
+<hr>
+<h2 id="_35">扩散模型<a class="headerlink" href="#_35" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>塑像就在石头里，我只是把不需要的部分去掉</p>
+</blockquote>
+<p>加噪并找到一个去噪模型，使得从杂乱无章的照片中提取出想要的照片，即预测噪声</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OKdPb5JxjowN8sx5ZbHcIg9lnFH.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OKdPb5JxjowN8sx5ZbHcIg9lnFH.png"></a></center>
+</div>
+<p>加噪过程可表述为</p>
+<div class="arithmatex">\[
+q(\boldsymbol{x}_t|\boldsymbol{x}_{t-1})=\mathcal{N}\left(\boldsymbol{x}_t;\sqrt{\alpha_t}\boldsymbol{x}_{t-1},(1-\alpha_t)\mathbf{I}\right)
+\]</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JQrmbgbSdoBamWxQ6Wtctfnnnye.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JQrmbgbSdoBamWxQ6Wtctfnnnye.png"></a></center>
+</div>
+<p>这是一个递归式，最后证明：可从初始状态一步跃到<code>T</code>步</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WU7hbuxo0obnf7xrgpBcaXOunUh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WU7hbuxo0obnf7xrgpBcaXOunUh.png"></a></center>
+</div>
+<blockquote>
+<p>这里的上划线表示连乘，即<span class="arithmatex">\(\sqrt{\alpha_t\alpha_{t-1}\cdots\alpha_1}\boldsymbol{x}_0+\sqrt{1-\alpha_t\alpha_{t-1}\cdots\alpha_1}\boldsymbol{\varepsilon}\)</span></p>
+</blockquote>
+<p><strong>像极了马尔科夫过程：可由初始状态和一步状态转移矩阵唯一确定</strong></p>
+<p>但是逆向（reverse process）一定不是<code>close-form</code>的，所以需要借助神经网络</p>
+<blockquote>
+<p>具体过程见PDF，这里直接给结论，就不班门弄斧了</p>
+</blockquote>
+<p>我们希望回退，知道上一步加噪过程的噪声分布到底怎样，如此就能逆向的去噪</p>
+<p>假设都用标准高斯分布，则有</p>
+<div class="arithmatex">\[
+q(x_{t-1}|x_t)=\mathcal{N}(x_{t-1};\mu_t(x_t),\Sigma_t(x_t))
+\]</div>
+<p>结论是，impossible</p>
+<p>于是借助最大似然估计和KL散度，我们得到了下面的表达式</p>
+<div class="arithmatex">\[
+{\bf min}-\mathrm{log}p_{a}(x_{0})\leq\mathrm{E}_{q(x_{1:T}|x_{0})}[D_{KL}\left(q(x_{T}|x_{0})||p_{\theta}(x_{T})\right)]+\boxed{\sum_{t=2}^{T}D_{KL}\left(q(x_{t-1}|x_{t},x_{0})||p_{\theta}(x_{t-1}|x_{t})\right)}-\mathrm{log}p_{\theta}\left(x_{0}|x_{1}\right)
+\]</div>
+<p>局势逆转了，因为看见了<span class="arithmatex">\(q(x_{t-1}|x_{t},x_{0})\)</span>；现在条件变成——知晓结果的情况下，对图像执行一步去噪</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nv7sbS62wobQJzxBwVIcETydnjd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/Nv7sbS62wobQJzxBwVIcETydnjd.png"></a></center>
+</div>
+<p>利用条件分布等概率论工具展开表达并代入，得到</p>
+<div class="arithmatex">\[
+q(\boldsymbol{x}_{i-1}|\boldsymbol{x}_{i},\boldsymbol{x}_{0})=\mathcal{N}\left(\boldsymbol{x}_{i-1}\frac{\sqrt{\alpha_{i}}\left(1-\bar{\alpha}_{i-1}\right)\boldsymbol{x}_{i}+\sqrt{\alpha_{i-1}}\left(1-\alpha_{i}\right)\boxed{\boldsymbol{x}_{0}}}{1-\bar{\alpha}_{i}},\frac{\left(1-\alpha_{i}\right)\left(1-\bar{\alpha}_{i-1}\right)}{1-\bar{\alpha}_{i}}\boldsymbol{I}\right)
+\]</div>
+<p>方差是一个常数，初始状态又可以由下式表示</p>
+<div class="arithmatex">\[
+x_{0}=\frac{x_{t}-\sqrt{1-\alpha_t}\varepsilon_{t}}{\sqrt{\overline{\alpha}_{t}}}
+\]</div>
+<p>故说到底扩散模型就是在训练噪声</p>
+<p>进一步，可以得到训练和采样表达式</p>
+<div class="arithmatex">\[
+\underset{\theta}{\operatorname*{\operatorname*{argmin}}}\frac{1}{2\sigma_{q}^{2}(t)}\frac{(1-\alpha_{t})^{2}}{(1-\overline{\alpha}_{t})\alpha_{t}}[\|\boldsymbol{\varepsilon}_{t}-\hat{\boldsymbol{\varepsilon}}_{\theta}(\boldsymbol{x}_{t},t)\|_{2}^{2}]
+\]</div>
+<blockquote>
+<p>这里不管系数就是L2损失函数。事实上paper中就是忽略了系数</p>
+</blockquote>
+<div class="arithmatex">\[
+\boldsymbol{x}_{t-1}=\frac{1}{\sqrt{\alpha_t}}\left(\boldsymbol{x}_t-\frac{1-\alpha_t}{\sqrt{1-\overline{\alpha}_t}}\boldsymbol{\varepsilon}_\theta(\boldsymbol{x}_t,t)\right)+\sigma_t\boldsymbol{z}
+\]</div>
+<hr>
+<h3 id="_36">训练过程<a class="headerlink" href="#_36" title="Permanent link">¶</a></h3>
+<p>看图看图，一图胜千言</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LCSDbErBLouAC3x0TO9ch2MVnQv.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/LCSDbErBLouAC3x0TO9ch2MVnQv.png"></a></center>
+</div>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PAplbsLqqo0RxOxf7UScoi9wnOh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PAplbsLqqo0RxOxf7UScoi9wnOh.png"></a></center>
+</div>
+<hr>
+<h2 id="_37">迁移学习<a class="headerlink" href="#_37" title="Permanent link">¶</a></h2>
+<blockquote>
+<ul>
+<li>
+<p><a href="https://juejin.cn/post/7317697939915784230">深入理解模型迁移学习：从基础到实践</a></p>
+</li>
+<li>
+<p><a href="https://19z.github.io/pytorch-deep-learning/06_pytorch_transfer_learning/">PyTorch迁移学习</a></p>
+</li>
+</ul>
+</blockquote>
+<p>实际应用中很多任务的数据的标注成本很高，无法获得充足的训练数据，这种情况可以使用迁移学习（transfer learning），比如领域自适应（domain adaptation）和领域泛化（domain generalization）</p>
+<h3 id="_38">领域自适应<a class="headerlink" href="#_38" title="Permanent link">¶</a></h3>
+<p>自适应的核心目标是通过算法调整，将已学到的知识从源领域有效迁移至目标领域</p>
+<p>训练数据和测试数据分别属于不同领域（如不同环境或数据集），但它们的特征维度（如数据属性结构）和类别标签（如分类体系）保持一致，仅特征的数据分布（如数值规律或统计特性）存在差异</p>
+<blockquote>
+<p>就比如黑白的数字和彩色的数字</p>
+</blockquote>
+<p>直觉下的，考虑训练一个特征提取器（向量生成器），使得源领域/目标领域提取出的特征一致，则再把这个特征给分类器，就能正确分类</p>
+<blockquote>
+<p>相当于多一个抽象层</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JLOobkEqIok8EJxh7yocGVvpn1f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/JLOobkEqIok8EJxh7yocGVvpn1f.png"></a></center>
+</div>
+<p>至于训练方法，几乎与GAN同一时期的领域对抗训练应运而生，我想应该能大致理解其原理了</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HF9qbFoRgoy0qvxcUnbcz3TwnUN.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/HF9qbFoRgoy0qvxcUnbcz3TwnUN.png"></a></center>
+</div>
+<p>对于分类问题，因为边界是确定的，我们自然希望输出的特征尽可能远离边界，即降低其熵</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WxMXbsDGBotVNXxyWg0cmJ2Mn4b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WxMXbsDGBotVNXxyWg0cmJ2Mn4b.png"></a></center>
+</div>
+<hr>
+<h3 id="_39">领域泛化<a class="headerlink" href="#_39" title="Permanent link">¶</a></h3>
+<p>跨特征的学习，需要基于架构的学习</p>
+<ul>
+<li>
+<p>若训练数据丰富多样，则问题不大</p>
+</li>
+<li>
+<p>反之，需要通过数据增强的方式去产生多个领域的数据</p>
+</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PHccbEwuDor4JsxlyBMc0st7nEd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/PHccbEwuDor4JsxlyBMc0st7nEd.png"></a></center>
+</div>
+<hr>
+<h2 id="_40">强化学习<a class="headerlink" href="#_40" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>视频：</p>
+<ul>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1rooaYVEk8/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清强化学习RL基本原理 | 原理图解+公式推导</a></p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV15cZYYvEhz/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清强化学习PPO和GRPO算法流程 | 原理图解</a></p>
+</li>
+</ul>
+</blockquote>
+<p>我把强化学习（Reinforcement Learning，RL）视为不断迭代策略的启发式算法，或者说启发式闭包 🤪</p>
+<ul>
+<li>
+<p>很大一部分的任务可以归结为马尔科夫过程，只与过于的有限步有关
+监督学习下必须需要数据标注，但现实是骨感的，无穷匮的数据对应着极大的人工成本（无监督也仍然逃不开标签的范畴）</p>
+</li>
+<li>
+<p>启发式算法（Heuristic Algorithm）基于直观或经验构造的算法，旨在通过较少的计算量在可接受的时间内寻找问题的近似最优解
+就像有限状态机，设定规则和初始状态后，系统不断执行当下条件的动作，并进入新的状态。如果说这个规则足够<code>marvellous</code>，那也没ML啥事情了</p>
+</li>
+</ul>
+<p>为了不断迭代出更好的策略，强化学习应运而生</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/S5GubiD64o6NWLx4JmzclbLInCh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/S5GubiD64o6NWLx4JmzclbLInCh.png"></a></center>
+</div>
+<p><code>RL</code>规定以下概念：状态（state）、动作（action）、奖励（reward）、智能体（agent）、环境（environment）、策略（policy）</p>
+<blockquote>
+<p>just like playing a game</p>
+</blockquote>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ANQwbVPckoFCXbxyAYSchLaWned.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/ANQwbVPckoFCXbxyAYSchLaWned.png"></a></center>
+</div>
+<p>把奖励累加（级数是部分和），加上折扣因子，得到了（折扣回报）<code>Return</code>（不难观察这也是一个递归式）</p>
+<p>我们应如何衡量每一步的价值呢？答案是：求期望</p>
+<p>不难观察，上图中出现</p>
+<div class="arithmatex">\[
+\begin{aligned}&amp;U_t=\sum_{k=t}^n\gamma^{k-t}R_k\\&amp;V(s_{2})&gt;V(s_{1})\\&amp;Q(s_{2},up)&gt;Q(s_{2},down)\end{aligned}
+\]</div>
+<p>其中，</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(U_t\)</span>是随机变量 ，可理解为一个实际的随机变量轨迹</p>
+</li>
+<li>
+<p><span class="arithmatex">\(Q_\pi(s,a)\)</span>是固定动作a后，对所有U的求期望结果（在状态 s 强制执行动作 a，然后之后都按策略 π，未来累计回报的期望）</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+Q_\pi(s,a)=\mathbb{E}_\pi[U_t\mid S_t=s,A_t=a]
+\]</div>
+<ul>
+<li><span class="arithmatex">\(V_{\pi}(s)\)</span>是按策略对所有动作的求期望结果</li>
+</ul>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMyWbBDsFoBiDHxBHvjcaP8anbe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/OMyWbBDsFoBiDHxBHvjcaP8anbe.png"></a></center>
+</div>
+<p>约定策略概率分布为<span class="arithmatex">\(\pi(a|s)\)</span>，状态转移为<span class="arithmatex">\(p(s^{\prime}|s,a)\)</span>，经过一顿小鸡炖蘑菇（Bellman等式），可得到</p>
+<div class="arithmatex">\[
+V_\pi(s)=\sum_{a\in A}\pi(a|s)Q_\pi(s,a)
+\]</div>
+<p>即当前状态价值<span class="arithmatex">\(V_{\pi}(s)\)</span>等于对每一个 action 价值<span class="arithmatex">\(Q_\pi(s,a)\)</span>求期望</p>
+<blockquote>
+<p>所以RL的实现思路有两条：选择动作价值最大（value-based），或者策略概率分布最大（policy-based）</p>
+</blockquote>
+<p>这里的<code>agent</code>策略网络可以是最简单的查找表<code>look-up table</code>，也可以是<code>CNN</code>或者<code>transformer</code></p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G7dEbQBZPosl4DxoXO7cVSjYnVc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/G7dEbQBZPosl4DxoXO7cVSjYnVc.png"></a></center>
+</div>
+<p>具体的算法模型与数理推导，才疏学浅，暂时搁置，<code>top-down framwork</code>（很<code>cool</code>的名字）如下</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WgoqbrLOkoxy5kxstKKcKDacnUe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/WgoqbrLOkoxy5kxstKKcKDacnUe.png"></a></center>
+</div>
+<blockquote>
+<p><strong>Actor-Critic</strong> 框架一定程度上综合了<code>Policy-based</code>和<code>Value-based</code></p>
+</blockquote>
+<p>再插一个：梯度上升与策略梯度</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GtvCbtTwVo3TcgxfrZJcoan2nPg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/GtvCbtTwVo3TcgxfrZJcoan2nPg.png"></a></center>
+</div>
+<div class="admonition success">
+<p class="admonition-title">题外话 | 关于Agent</p>
+<p>大语言模型（LLM）智能体的定义：它会不断调用一组工具，循环执行，以实现特定目标（Tools in a loop to achieve a goal）</p>
+</div>
+<hr>
+<h2 id="_41">大模型发展总结图<a class="headerlink" href="#_41" title="Permanent link">¶</a></h2>
+<blockquote>
+<p><a href="https://koorye.github.io/blog/2024/03/01/2024-03-01%20%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0%E5%8F%91%E5%B1%95%E7%BB%BC%E8%BF%B0/">大模型与迁移学习发展综述</a></p>
+</blockquote>
+<p>可以说，是<code>预制菜+微调（迁移学习）</code>让LLM的发展就此起飞</p>
+<div class="admonition tips">
+<p></p><center><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SsdibstnZoxRF9xdkQHcjNsvnte.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/SsdibstnZoxRF9xdkQHcjNsvnte.png"></a></center>
+</div>
+<blockquote>
+<p>我们正在经历这样一个的时代——少数人负责“造神”（预训练大模型），而多数人学习如何与神对话</p>
+</blockquote></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-11 13:24:41</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-11 13:15:29</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../ML01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 01 从函数到模型">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                01 从函数到模型
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../MLreport/" class="md-footer__link md-footer__link--next" aria-label="下一页: 基于卷积神经网络的FashionMNIST分类">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                基于卷积神经网络的FashionMNIST分类
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

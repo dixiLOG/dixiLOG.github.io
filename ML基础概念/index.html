@@ -1,0 +1,1994 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/ML%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">
+      
+      
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>ML基础概念 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ml" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ML基础概念
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href=".." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      绪论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="绪论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      什么是机器学习
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何学习
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      有哪些学习方式
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="有哪些学习方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习场景
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      学习方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="引入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见问题与解决
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      进一步的思考
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进一步的思考">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      局部最小值与鞍点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      批量大小、动量法与梯度下降
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      自适应学习率 | 优化器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      多分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bn" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征归一化BN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见架构/学习场景概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常见架构/学习场景概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      CNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      自注意机制
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      生成模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩散模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      迁移学习
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      强化学习
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="ml">ML基础概念<a class="headerlink" href="#ml" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4757 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 26 分钟</p>
+<hr>
+</div>
+<p><strong>一文带你串联机器学习导论</strong></p>
+<p>基于<a href="https://www.youtube.com/watch?v=CXgbekl66jc&amp;list=PLJV_el3uVTsPy9oCRY30oBPNLCo89yu49">李宏毅老师的ML课程</a>，以分类问题为引快速回顾ML的基础概念，略带一点点延伸</p>
+<p>看完# 进一步的思考，就基本能说上一二了</p>
+<blockquote>
+<p>参考</p>
+<div class="arithmatex">\[LeeDL\_Tutorial\_v\.1\.2\.4\.pdf\]</div>
+</blockquote>
+<h3 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<p><a href="https://www.quantamagazine.org/how-can-ai-id-a-cat-an-illustrated-guide-20250430/">How Can AI ID a Cat? An Illustrated Guide</a></p>
+<p>---------------------</p>
+<p>这一篇文章图文并茂地描述了ML的作用</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MGNiYTkyOGMzYWQzODMxOWMxODhiZDA4NDVkYTc4MDZfNWI1MWE4ODZiMjM2Y2NjODQzYWUyZjk3YmVmYmViZDBfSUQ6NzU0NDIxMjYzMjk2Mjk5MDA4MV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MGNiYTkyOGMzYWQzODMxOWMxODhiZDA4NDVkYTc4MDZfNWI1MWE4ODZiMjM2Y2NjODQzYWUyZjk3YmVmYmViZDBfSUQ6NzU0NDIxMjYzMjk2Mjk5MDA4MV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTM2OWZlMGI3NGE5MTkyNmJjMzgxY2VjZThiMGFkZDBfNDE1ZDFmZWM3YzY0YjM5OWQ3Y2Q5ZTBiNzgzMjQ5OGJfSUQ6NzU0NDIxNDA2ODA5NDM1MzQwOV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTM2OWZlMGI3NGE5MTkyNmJjMzgxY2VjZThiMGFkZDBfNDE1ZDFmZWM3YzY0YjM5OWQ3Y2Q5ZTBiNzgzMjQ5OGJfSUQ6NzU0NDIxNDA2ODA5NDM1MzQwOV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDcyYWFjMjE5ODBhZGFlNTgwYWEyNmQyNzJkYzIyNWNfODMzZGIyMWViOWM3MGJhYjQyMjE1NzMwYmM4Mjk1ZmFfSUQ6NzU0NDIxNDEyNTA0NzExOTg3NV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDcyYWFjMjE5ODBhZGFlNTgwYWEyNmQyNzJkYzIyNWNfODMzZGIyMWViOWM3MGJhYjQyMjE1NzMwYmM4Mjk1ZmFfSUQ6NzU0NDIxNDEyNTA0NzExOTg3NV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<h2 id="_2">绪论<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="_3"><strong>什么是机器学习</strong><a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<p>让<code>Machine</code>自动找到一个<code>Function</code></p>
+<h3 id="_4"><strong>如何学习</strong><a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>分为<code>training</code>和<code>testing</code></p>
+</blockquote>
+<ol>
+<li>
+<p>设计一个<code>Model</code>来生成所有可能的<code>function</code></p>
+</li>
+<li>
+<p>找一个评价函数来量化误差</p>
+</li>
+<li>
+<p>不断迭代优化/挑选，直至找出最优的<code>function</code></p>
+</li>
+</ol>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjRiNTU5YzhmMGNlOTg1NzQ0ZjJkMTFiM2U5Y2FiMTdfZGVhNzY5OTcxNDQyYzczNjEwNjU5YjNmZmZmYWM3ZGVfSUQ6NzU0NDM2MzYyODg5MjY1MTUyNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjRiNTU5YzhmMGNlOTg1NzQ0ZjJkMTFiM2U5Y2FiMTdfZGVhNzY5OTcxNDQyYzczNjEwNjU5YjNmZmZmYWM3ZGVfSUQ6NzU0NDM2MzYyODg5MjY1MTUyNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<h3 id="_5"><strong>有哪些学习方式</strong><a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<p>从结构上，自上而下分有：学习场景（不同环境拥有不同的限制）、学习任务（目标类型）、学习方法</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZDI4OTkxMjE2YTEzN2I4NTdlZDE5YTQ1ZDM5ZWU4M2FfNGNhNzU2MWZhMDAzYjMyMDU5NmIwZDI4NGZlNDY2ZGRfSUQ6NzU0NDYzNTU4NDM2OTU3Mzg5MV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZDI4OTkxMjE2YTEzN2I4NTdlZDE5YTQ1ZDM5ZWU4M2FfNGNhNzU2MWZhMDAzYjMyMDU5NmIwZDI4NGZlNDY2ZGRfSUQ6NzU0NDYzNTU4NDM2OTU3Mzg5MV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<h4 id="_6">学习场景<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p><strong>监督学习（Supervised Learning）</strong></p>
+<ul>
+<li>
+<p><strong>先验</strong>：已知输入与输出间存在映射关系</p>
+</li>
+<li>
+<p><strong>数据</strong>：大量标注样本（feature + label）</p>
+</li>
+<li>
+<p><strong>目标</strong>：学习一个函数，能从输入特征预测输出标签</p>
+</li>
+<li>
+<p><strong>典型任务</strong>：回归（房价预测）、分类（猫狗识别）、序列标注（语音转文字）</p>
+</li>
+</ul>
+<hr>
+</li>
+<li>
+<p><strong>半监督学习（Semi-supervised Learning）</strong></p>
+<ul>
+<li>
+<p><strong>先验 + 后验结合</strong>：有一小部分标注数据，大部分是无标注数据</p>
+</li>
+<li>
+<p><strong>数据</strong>：少量 labeled + 大量 unlabeled</p>
+</li>
+<li>
+<p><strong>目标</strong>：利用未标注数据的分布结构，辅助提升模型的泛化能力</p>
+</li>
+<li>
+<p><strong>典型任务</strong>：文本分类（少量人工标注 + 大量未标注语料）、医学影像识别（部分样本有专家标注）</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>无监督学习（Unsupervised Learning）</strong></p>
+<ul>
+<li>
+<p><strong>后验</strong>：没有任何标签，完全依赖数据内在结构</p>
+</li>
+<li>
+<p><strong>数据</strong>：只有特征，没有 label</p>
+</li>
+<li>
+<p><strong>目标</strong>：发现隐藏模式、分布规律或低维表示</p>
+</li>
+<li>
+<p><strong>典型任务</strong>：聚类（用户分群）、降维（PCA、t-SNE）、生成模型（GAN 生成图片）</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>迁移学习（Transfer Learning）</strong></p>
+<ul>
+<li>
+<p><strong>跨域先验迁移</strong>：利用源任务（已有数据/模型）的知识，辅助目标任务</p>
+</li>
+<li>
+<p><strong>数据</strong>：源领域有标注数据，目标领域标注稀缺</p>
+</li>
+<li>
+<p><strong>目标</strong>：缩短训练时间、降低目标任务对数据的需求</p>
+</li>
+<li>
+<p><strong>典型任务</strong>：BERT 预训练 + 下游微调、ImageNet 预训练 + 医学图像识别</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>强化学习（Reinforcement Learning, RL）</strong></p>
+<ul>
+<li>
+<p><strong>交互式后验</strong>：智能体通过与环境交互，学习策略</p>
+</li>
+<li>
+<p><strong>数据</strong>：状态（state）、动作（action）、奖励（reward）</p>
+</li>
+<li>
+<p><strong>目标</strong>：最大化长期累积回报（reward）</p>
+</li>
+<li>
+<p><strong>典型任务</strong>：AlphaGo（围棋）、机器人控制、推荐系统动态优化</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="_7">主要任务<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p><strong>回归</strong>：预测连续值</p>
+</li>
+<li>
+<p><strong>分类</strong>：预测离散类别</p>
+</li>
+<li>
+<p><strong>其他复杂任务</strong>：</p>
+<ul>
+<li>
+<p>序列预测（机器翻译、语音识别）</p>
+</li>
+<li>
+<p>生成任务（图像生成、文本生成）</p>
+</li>
+<li>
+<p>决策任务（游戏 AI、自动驾驶）</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="_8">学习方法<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<p><strong>线性方法</strong>：线性回归、逻辑回归等</p>
+<p><strong>非线性方法</strong>：</p>
+<ul>
+<li>
+<p><strong>浅层</strong>：SVM、决策树、随机森林、kNN。</p>
+</li>
+<li>
+<p><strong>深层</strong>：神经网络、深度学习（DNN、CNN、RNN、LSTM、Transformer）</p>
+</li>
+</ul>
+<hr>
+<h2 id="_9">引入<a class="headerlink" href="#_9" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>让我们捋一遍最fundamental的一些概念吧</p>
+</blockquote>
+<p>对于最简单的线性回归问题，可以建立带有未知参数（parameter）的模型（model）</p>
+<p><span class="arithmatex">\(y=b+w*x\)</span></p>
+<p>其中，<span class="arithmatex">\(w、b\)</span>分别为权重（weight）和偏置（bias）</p>
+<p>接着需要评估模型，因此引入损失函数（loss function），去计算估计结果与期望之间的差距；可量化为平均绝对误差（MAE）、均方误差（MSE）、交叉熵（cross entropy）等。最后得到一个误差表面（error surface）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDQxYTE5ODE2MjE1NmJjNDViN2MxODkxMjlkMzA2ZjZfZGU5NWIyMzk5ODU1ZDFlYjUxMTlmMGM4N2UyYWJlZDFfSUQ6NzU0NDcxNzkzNTg1NzA1NzgyMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDQxYTE5ODE2MjE1NmJjNDViN2MxODkxMjlkMzA2ZjZfZGU5NWIyMzk5ODU1ZDFlYjUxMTlmMGM4N2UyYWJlZDFfSUQ6NzU0NDcxNzkzNTg1NzA1NzgyMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>把大象装进冰箱的最后一步，是找出最优参数<span class="arithmatex">\(w^*\&amp;b^*\)</span></p>
+<p>最常见的操作是梯度下降（gradient descent）：</p>
+<p><span class="arithmatex">\(w^{1}\leftarrow w^{0}-\eta\left.\frac{\partial L}{\partial w}\right|_{w=w^{0}}\)</span></p>
+<p>其中，计算梯度的过程称为反向传播（BackPropagation，BP）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NmMxM2Q0YmY5MGQ0OTQzMjI0MjMwNzUyODI5ZDAyOWRfZmIwY2E3YjY0MjRmODM0ZWJhNTZmNWNkOWIzMDQxM2VfSUQ6NzU0NDcyMDE0NTUzMzU4MzM3OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NmMxM2Q0YmY5MGQ0OTQzMjI0MjMwNzUyODI5ZDAyOWRfZmIwY2E3YjY0MjRmODM0ZWJhNTZmNWNkOWIzMDQxM2VfSUQ6NzU0NDcyMDE0NTUzMzU4MzM3OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>这一过程中所涉及的步长，namely 学习率<span class="arithmatex">\(\eta\)</span>，包含于超参数（hyperparameter）（又或者是<code>tol</code>）</p>
+<p>给定不同的步长，最终会落在local minima或者global minima上面</p>
+<p>扩展到二维，即在平面上优化</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWEyYWZlMWU1MTllNmJkOTRhZDJjN2JjN2NmYTA0ZjdfNmE4NzJmOWNjMzc0ZDlhOTJlN2UwMmM0ZjlmMDllODVfSUQ6NzU0NDcyMDYyMDQ2ODc5NzQ1OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWEyYWZlMWU1MTllNmJkOTRhZDJjN2JjN2NmYTA0ZjdfNmE4NzJmOWNjMzc0ZDlhOTJlN2UwMmM0ZjlmMDllODVfSUQ6NzU0NDcyMDYyMDQ2ODc5NzQ1OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>上述的模型被称为线性模型（linear model）</p>
+<p>显然线性意味着高频分量的丢失，那么global minima还是比较大。子曰过，办法总比困难多</p>
+<ul>
+<li>
+<p>利用领域背景知识先手set up a better model</p>
+</li>
+<li>
+<p>用激活函数来捏出更拟合结果的预测曲线（比如用多个sigmod拟合hard sigmod）</p>
+<ul>
+<li>
+<p>激活函数（activation function）望文生义，就是类比神经元，有着二极管的截止与导通能力，那么就可以通过多个激活函数（如ReLU，Rectified Linear Unit，修正线性单元）分段求和得到任意复杂的曲线</p>
+</li>
+<li>
+<p>同时，可以将线性结果映射到<code>[0,1]</code>之中（sigmod）</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>换句话说，在线性表达式外面套一层激活函数，再通过多个这样的激活函数叠加实现非线性拟合</p>
+<p>这里开始非线性了</p>
+</blockquote>
+<p><span class="arithmatex">\(y=b+\sum_{i}c_{i}\sigma(b_{i}+w_{i}x_{1})\)</span></p>
+<p>上式称为感知机（PLA，Perceptron Learning Algorithm），也被称为人工神经网络（ANN）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWQzN2QwM2M3ZTQ2NGYzNGQxMWFhYmQ4NTg0MDBlMGFfYjU3YWM0ZTA0MGI5NzQ0NzAyYjA5ZTE3ZTJlZjEwNzdfSUQ6NzU0NDcyNTc4NjkzOTYyMTQwNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWQzN2QwM2M3ZTQ2NGYzNGQxMWFhYmQ4NTg0MDBlMGFfYjU3YWM0ZTA0MGI5NzQ0NzAyYjA5ZTE3ZTJlZjEwNzdfSUQ6NzU0NDcyNTc4NjkzOTYyMTQwNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZjI4MDZlNWZjYjJlYjVjNDgxODczOGU3OWNmNzhhMjBfOWQyYTY5MGUzNGNkOWU1NGU1MGQ5Zjg0MTBiOTgzMjVfSUQ6NzU0NDc1NzQxMjgyNjUxMzQxMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZjI4MDZlNWZjYjJlYjVjNDgxODczOGU3OWNmNzhhMjBfOWQyYTY5MGUzNGNkOWU1NGU1MGQ5Zjg0MTBiOTgzMjVfSUQ6NzU0NDc1NzQxMjgyNjUxMzQxMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>矩阵表示为</p>
+<p><span class="arithmatex">\(\bf r=b+Wx\)</span></p>
+<p>此时的参数维度已经够多的了，于是乎把一组线性中的所有参数拉成列向量<span class="arithmatex">\(\theta\)</span>，再定义为<span class="arithmatex">\(L(\bm{\theta})\)</span>，那么问题就变成了优化下面这一向量</p>
+<p><span class="arithmatex">\(\boldsymbol{\theta}=\begin{bmatrix}\theta_1\\\theta_2\\\theta_3\\\vdots\end{bmatrix}\)</span></p>
+<blockquote>
+<p>本质上是一样的</p>
+</blockquote>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=M2QzODA2ZjZjMDMzMmMzNDQxYTIzMzhjNTUzNTNlM2JfN2FjY2FkZGQyNTc3ZTI0ZjljODhiYWQ1NjQxOWMyOTRfSUQ6NzU0NDcyODU2ODEwNzE3MTg0Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=M2QzODA2ZjZjMDMzMmMzNDQxYTIzMzhjNTUzNTNlM2JfN2FjY2FkZGQyNTc3ZTI0ZjljODhiYWQ1NjQxOWMyOTRfSUQ6NzU0NDcyODU2ODEwNzE3MTg0Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>大胆一点，假设有n个参数，则可得到梯度为</p>
+<p><span class="arithmatex">\(\bm g=\begin{bmatrix}\frac{\partial L}{\partial\theta_1}|_{\theta=\theta_0}\\\frac{\partial L}{\partial\theta_2}|_{\theta=\theta_0}\\\vdots\end{bmatrix}\)</span></p>
+<p>那么一次迭代就可以表示为</p>
+<p><span class="arithmatex">\(\left.\left[\begin{array}{c}\theta_{1}^{1}\\\theta_{1}^{2}\\\vdots\end{array}\right.\right]\leftarrow\begin{bmatrix}\theta_{0}^{1}\\\theta_{0}^{2}\\\vdots\end{bmatrix}-\begin{bmatrix}\eta\frac{\partial L}{\partial\theta_{1}}|_{\theta=\theta_{0}}\\\eta\frac{\partial L}{\partial\theta_{2}}|_{\theta=\theta_{0}}\\\vdots\end{bmatrix}\\\bm{\theta_{1}}\leftarrow \bm{\theta_{0}}- \eta \bm g\)</span></p>
+<blockquote>
+<p>这里的上下标有些混乱，懂了就行</p>
+</blockquote>
+<p>在实际百万量级的参数running中，我们做不到一次就跑完，于是分段，每一段称为一批（Batch），每一个batch后更新一次参数</p>
+<p>同时，往往整体走过一遍是不够的，需要定义其循环次数（这里的参数是static parameter类型/Lua中的闭包，不会重置的），即回合（epoch）</p>
+<blockquote>
+<p>也是超参
+<strong>Batch</strong> 决定了每次更新用多少样本</p>
+<p><strong>Epoch</strong> 决定了模型看整个数据集多少遍 </p>
+</blockquote>
+<p>为了降低Loss，可以尝试增加激活函数数量</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZGJmZWI2ZWIxMzEwOGI3NDExYzEyZmRiOGEwNmNkZjFfMTdlNzdiODJjNWU5NjRiMjQzNGI5ZTBiZDU5MTU3YTJfSUQ6NzU0NDc1ODcxMzM0ODQ0MDA2Nl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZGJmZWI2ZWIxMzEwOGI3NDExYzEyZmRiOGEwNmNkZjFfMTdlNzdiODJjNWU5NjRiMjQzNGI5ZTBiZDU5MTU3YTJfSUQ6NzU0NDc1ODcxMzM0ODQ0MDA2Nl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>但不难发现，在测试集上（即2021年），增加ReLU带来的边际效益已经递减，所以，也许我们可以创造很多层？</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzRkNTE3YTg2YjE0OTU1ZTI5NDE3ODM2MDk3MDExNDJfZDlkNDQ2ZjFiZjQyOGViOTc4YWQ3ZTZlMDg1MjE3NzdfSUQ6NzU0NDc1OTAzMjQyMzg3NDU2Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzRkNTE3YTg2YjE0OTU1ZTI5NDE3ODM2MDk3MDExNDJfZDlkNDQ2ZjFiZjQyOGViOTc4YWQ3ZTZlMDg1MjE3NzdfSUQ6NzU0NDc1OTAzMjQyMzg3NDU2Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>在此基础上，我们有了输入、输出和隐藏层（hidden layer），构成了多层感知机（MLP，Multi-Layer Perceptron）。这是深度学习的雏形</p>
+<blockquote>
+<p>所以人们把神经网络越叠越多越叠越深，<code>AlexNet</code>有8层，它的错误率是16.4%</p>
+<p>两年之后<code>VGG</code>有19层，错误率在图像识别上进步到7.3%</p>
+<p>后来<code>GoogleNet</code>有22层，错误率降到6.7%</p>
+<p>而残差网络（Residual Network，ResNet）有152层，错误率降到3.57%</p>
+</blockquote>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MmMyNzM0YmFiOWNiMDUyNTRhNTdmN2U4Mzg5MjBhZDRfMjk3NDFhMGY4ZTAyNjkxMzUxMjgzNmI3MzgzNTk3NzdfSUQ6NzU0NDc1OTIxODQxOTc5MzkyMl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MmMyNzM0YmFiOWNiMDUyNTRhNTdmN2U4Mzg5MjBhZDRfMjk3NDFhMGY4ZTAyNjkxMzUxMjgzNmI3MzgzNTk3NzdfSUQ6NzU0NDc1OTIxODQxOTc5MzkyMl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>显然，好多了。哦莫，怎么四层下测试集效果反而变差了，明明训练集好好的？</p>
+<p>你说的对，这就是过拟合（overfitting）</p>
+<hr>
+<h3 id="_10">总结<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<p>让我们总结一下一个典型监督学习的流程</p>
+<ul>
+<li>
+<p><strong>data loading</strong></p>
+</li>
+<li>
+<p><strong>模型定义（包含激活函数，可能包含全连接、卷积、池化等model structure）</strong></p>
+</li>
+<li>
+<p>**前向传播 **，把数据输入网络，得到预测结果</p>
+</li>
+<li>
+<p><strong>损失函数计算 <span class="arithmatex">\(Loss\)</span></strong></p>
+</li>
+<li>
+<p>**反向传播 **，计算损失函数对参数的梯度</p>
+</li>
+<li>
+<p><strong>参数更新 <span class="arithmatex">\(Optimization\)</span></strong>，用梯度下降（SGD/Adam等）更新参数</p>
+</li>
+<li>
+<p><strong>循环迭代 <span class="arithmatex">\(Epoch/Batch\)</span></strong>，重复前向+反向传播，直到收敛</p>
+</li>
+</ul>
+<hr>
+<h3 id="_11">常见问题与解决<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>模型偏差</strong></li>
+</ul>
+<p>模型太简单，model没有include理论上的最优function，不够泛化</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDdmOTc1NjBiMjM5MjAxMWVhNzA4YmQ1OTgzZGYxYTJfZGE3OTMwZTNhZGFhOTAwZWEzOTQzNDI3Y2Y0MzVjMjdfSUQ6NzU0NDk0MDcyODkxMzk1Mjc4N18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NDdmOTc1NjBiMjM5MjAxMWVhNzA4YmQ1OTgzZGYxYTJfZGE3OTMwZTNhZGFhOTAwZWEzOTQzNDI3Y2Y0MzVjMjdfSUQ6NzU0NDk0MDcyODkxMzk1Mjc4N18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>这时候可以通过增加激活函数、层数来实现深度学习</p>
+<ul>
+<li><strong>欠优化</strong></li>
+</ul>
+<p>训练集的结果不尽如意，甚至随着层数变多并没有变好（呜呜它甚至不愿意变成过拟合）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjNkOTlkMjAzNjRjNzg0NGVjZmY1ZmNmMDQ2ZDAxYWVfZWVkM2JmZTIwY2Q2MGUwMTRhMWM1MjhiZGU4ZTlkOTJfSUQ6NzU0NDk0MTM0MzIzMDYwNzM2Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NjNkOTlkMjAzNjRjNzg0NGVjZmY1ZmNmMDQ2ZDAxYWVfZWVkM2JmZTIwY2Q2MGUwMTRhMWM1MjhiZGU4ZTlkOTJfSUQ6NzU0NDk0MTM0MzIzMDYwNzM2Ml8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTA0Y2U0NTVkZWQ1MDFlZjE2ZjdiM2VjNjUzZTE1MmVfYjQwMTZhNmU2ODE5MGNiYjEwNWMxZWUxMmZlOGJmNzFfSUQ6NzU0NDk0MTU5OTI2Mjg2NzQ1N18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTA0Y2U0NTVkZWQ1MDFlZjE2ZjdiM2VjNjUzZTE1MmVfYjQwMTZhNmU2ODE5MGNiYjEwNWMxZWUxMmZlOGJmNzFfSUQ6NzU0NDk0MTU5OTI2Mjg2NzQ1N18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<ul>
+<li><strong>过拟合</strong></li>
+</ul>
+<p>在测试集上marvellous，在训练集上like a shit</p>
+<p><strong>怎么解决</strong></p>
+<ol>
+<li>
+<p>增加样本数量，力大砖飞（数据增强，data augmentation）</p>
+</li>
+<li>
+<p>增加限制，适当减少参数，或者共用（比如全连接，fully-connected network）</p>
+</li>
+<li>
+<p>早停（early stopping）、正则化（Regularization）和丢弃法（dropout method）</p>
+</li>
+</ol>
+<ul>
+<li><strong>不匹配</strong></li>
+</ul>
+<p>需要社会工程学才能补偿的现象</p>
+<ul>
+<li><strong>交叉验证</strong></li>
+</ul>
+<p>常见于K折交叉验证（K-fold CV），每次取其中一份作为验证集（validation set），其余的training，再轮换验证集并重复，最后取平均，使得结果更<code>robust</code></p>
+<hr>
+<h2 id="_12">进一步的思考<a class="headerlink" href="#_12" title="Permanent link">¶</a></h2>
+<h3 id="_13">局部最小值与鞍点<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<p>考虑一个两个参数构成的误差表面</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDljMTUyOTNmYzZhYzdiOTY5MWI0NjAzNjQwYTRiOTVfMjI4MjdlMTJmN2MxM2Q2MmY0ODc2OTg2YzI1NWVlMzBfSUQ6NzU0NDk1MDA5NDU2NDk4Mjc4OF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDljMTUyOTNmYzZhYzdiOTY5MWI0NjAzNjQwYTRiOTVfMjI4MjdlMTJmN2MxM2Q2MmY0ODc2OTg2YzI1NWVlMzBfSUQ6NzU0NDk1MDA5NDU2NDk4Mjc4OF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>当发现梯度很小，但Loss较大时，不难怀疑是陷入了<code>local minima</code></p>
+<p>实际上，更多时候是掉入了鞍点（saddle point）</p>
+<blockquote>
+<p>鞍点意味着，还有救🤪</p>
+</blockquote>
+<p><strong>结论先行，在巨量参数加持下，高维度意味着总归会有几个维度并没有到达最值，所以绝大部分情况都是鞍点，即是可优化的</strong></p>
+<p>下面介绍如何通过Hessian矩阵的正定性判断临界值类型</p>
+<ul>
+<li><strong>正定矩阵</strong></li>
+</ul>
+<p><span class="arithmatex">\(\text{一个实对称矩阵 }A\in\mathbb{R}^{n\times n}\text{ 称为 正定矩阵,如果对任意非零向量 }x\text{,都有}:\)</span></p>
+<p><span class="arithmatex">\(x^TAx&gt;0\)</span></p>
+<p><strong>正定矩阵的特性</strong></p>
+<ol>
+<li>
+<p>对称</p>
+</li>
+<li>
+<p>特征值都为正（作为评判依据）</p>
+</li>
+<li>
+<p>可逆</p>
+</li>
+<li>
+<p>任意正定矩阵都可以进行 Cholesky 分解：<span class="arithmatex">\(A=LL^T\)</span>，L为下三角矩阵</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li><strong>Hessian Matrix</strong></li>
+</ul>
+<p>在多元函数里，Hessian 矩阵是由 <strong>所有二阶偏导数</strong> 组成的方阵，对于n维实函数，可定义为</p>
+<p><span class="arithmatex">\(\begin{gathered}H(f)=\begin{bmatrix}\frac{\partial^2f}{\partial x_1^2}&amp;\frac{\partial^2f}{\partial x_1\partial x_2}&amp;\cdots&amp;\frac{\partial^2f}{\partial x_1\partial x_n}\\\frac{\partial^2f}{\partial x_2\partial x_1}&amp;\frac{\partial^2f}{\partial x_2^2}&amp;\cdots&amp;\frac{\partial^2f}{\partial x_2\partial x_n}\\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\\frac{\partial^2f}{\partial x_n\partial x_1}&amp;\frac{\partial^2f}{\partial x_n\partial x_2}&amp;\cdots&amp;\frac{\partial^2f}{\partial x_n^2}\end{bmatrix}\end{gathered}\)</span></p>
+<p>在 <strong>优化问题</strong> 中，如果目标函数的 Hessian 在某点正定，就能保证它是一个局部极小点</p>
+<p>在 <strong>凸优化</strong> 里，如果目标函数的 Hessian <strong>全局正定</strong>（对所有点都正定），那么函数就是 <strong>严格凸函数</strong>，其极小点唯一</p>
+<hr>
+<ul>
+<li><strong>损失函数临界值判断</strong></li>
+</ul>
+<p>损失函数可基于泰勒展开得近似结果：</p>
+<p><span class="arithmatex">\(f(x_0+\Delta x)\approx f(x_0)+\nabla f(x_0)^T\Delta x+\frac{1}{2}\Delta x^TH(x_0)\Delta x\)</span></p>
+<p>H矩阵就是Hessian Matrix</p>
+<p>如果该点偏导为0，则有</p>
+<p><span class="arithmatex">\(f(x_0+\Delta x)\approx f(x_0)+\frac{1}{2}\Delta x^TH(x_0)\Delta x\)</span></p>
+<p>所以，当H为正定（所有特征值为正）时，为凸函数，在极小值点</p>
+<p>通常情况下，H的特征值有正有负，为鞍点</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTI0ZTBjM2RmMWYxYzc2Mzg5MDZkNTBmZGZjODAxNzJfMTIwZjhlZjJiNTc5ZTQ2NjJjNGZkZDhkNTQ3NDY3MmVfSUQ6NzU0NDk2MTE5NDIyODM4Mzc0NV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTI0ZTBjM2RmMWYxYzc2Mzg5MDZkNTBmZGZjODAxNzJfMTIwZjhlZjJiNTc5ZTQ2NjJjNGZkZDhkNTQ3NDY3MmVfSUQ6NzU0NDk2MTE5NDIyODM4Mzc0NV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<hr>
+<h3 id="_14">批量大小、动量法与梯度下降<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<ul>
+<li>极端地考虑，分为批量梯度下降法（Batch Gradient Descent）和随机梯度下降法（SGD）
+分别意味着不分批、batch大小为1</li>
+</ul>
+<p><strong>有结论：在考虑算力限制条件下，批量应尽可能小</strong>（小批量带来的噪声有助于逃离鞍点）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NWVlOGU3MDU5ZGMxMGVjYzBlYWRiYzdlZTIwYzI4N2VfYTI3NDJjMjlhOGQ3YjA1YzJjOTk5MTFiNmYwZTVlYzlfSUQ6NzU0NTAxNDEzMDY0NzU5NzA1OF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NWVlOGU3MDU5ZGMxMGVjYzBlYWRiYzdlZTIwYzI4N2VfYTI3NDJjMjlhOGQ3YjA1YzJjOTk5MTFiNmYwZTVlYzlfSUQ6NzU0NTAxNDEzMDY0NzU5NzA1OF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>进一步，可以引入人为的<code>噪声</code>，即物理世界的<code>惯性</code></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWZiYmIwZjhlZmY1ZjkxYmMwMDU0YWQwNzQxZDJjYmFfMzQ2NmM4NDU3ZWNmODFmZWI1OGU4ODhhMzllYTUwMDBfSUQ6NzU0NTAxNDM1OTUzMTI5MDYyOF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWZiYmIwZjhlZmY1ZjkxYmMwMDU0YWQwNzQxZDJjYmFfMzQ2NmM4NDU3ZWNmODFmZWI1OGU4ODhhMzllYTUwMDBfSUQ6NzU0NTAxNDM1OTUzMTI5MDYyOF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>通过动量，可以越↑过→山↑丘↑😆</p>
+<hr>
+<h3 id="_15">自适应学习率 | 优化器<a class="headerlink" href="#_15" title="Permanent link">¶</a></h3>
+<p>观察Loss function，已经不再下降，但是梯度仍然在抖动</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzRlOGMyZWQ4MzMzOTVlYzY1ZGJhNzcxYmM3ODMwZjJfMTI5OWEzMzQyMDU4YTQ0YjgzYzE0NGY4ZmM2ZWI4OTJfSUQ6NzU0NTAxNTUyODMwMjcyMzEwMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MzRlOGMyZWQ4MzMzOTVlYzY1ZGJhNzcxYmM3ODMwZjJfMTI5OWEzMzQyMDU4YTQ0YjgzYzE0NGY4ZmM2ZWI4OTJfSUQ6NzU0NTAxNTUyODMwMjcyMzEwMF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>再看看损失表面</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NGYzZTVlMDFjODRkNTIwNGM2OGMxZWJlNzg3MTFkZjFfNjVlNDgzNDQyNzZhZTM3Mjc2NDUwNjc5YzUxNThhMzhfSUQ6NzU0NTAxNTYzNTY3NDQxNTEzMl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NGYzZTVlMDFjODRkNTIwNGM2OGMxZWJlNzg3MTFkZjFfNjVlNDgzNDQyNzZhZTM3Mjc2NDUwNjc5YzUxNThhMzhfSUQ6NzU0NTAxNTYzNTY3NDQxNTEzMl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>不难得出结论，学习率太大了，这里需要小一点；但太小也不行，要是能自适应调整多好呀</p>
+<p>有的兄弟，有的</p>
+<ul>
+<li><strong>AdaGrad</strong></li>
+</ul>
+<p>回忆基础的梯度下降</p>
+<p><span class="arithmatex">\(\bm \theta_{t+1}^i\leftarrow \bm \theta_t^i-\eta\boldsymbol{g}_t^i\)</span></p>
+<p>我们希望学习率与梯度成负相关，于是有</p>
+<p><span class="arithmatex">\(\theta_{t+1}^i\leftarrow\theta_t^i-\frac{\eta}{\sigma_t^i}g_t^i\quad\sigma_t^i=\sqrt{\frac{1}{t+1}\sum_{j=0}^t\left(g_j^i\right)^2}\)</span></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWQ4MGNkODU4YmU3MzRmNTJmMTAxMWRmZTUwZTg0YTJfOWMzNDBmMzAzNDM0YjVmMTIzMTMzOTVkYzUzNTg0NDJfSUQ6NzU0NTAyMDQ2NjUwOTEwMzEyM18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=ZWQ4MGNkODU4YmU3MzRmNTJmMTAxMWRmZTUwZTg0YTJfOWMzNDBmMzAzNDM0YjVmMTIzMTMzOTVkYzUzNTg0NDJfSUQ6NzU0NTAyMDQ2NjUwOTEwMzEyM18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<ul>
+<li><strong>RMSprop</strong></li>
+</ul>
+<p>加入指数衰减（Exponential Decay），或者指数加权移动平均（Exponential Moving Average, EMA），以具备更灵活的步进</p>
+<p>具体来说，有</p>
+<p><span class="arithmatex">\(\theta_{t+1}^i\leftarrow\theta_t^i-\frac{\eta}{\sigma_t^i}g_t^i\quad\sigma_t^i=\sqrt{\alpha\left(\sigma_{t-1}^i\right)^2+\left(1-\alpha\right)\left(g_t^i\right)^2}\)</span></p>
+<ul>
+<li><strong>Adam（adaptive moment estimation）</strong></li>
+</ul>
+<p>这是最常用的优化器了，是<code>RMSprop</code>与<code>动量</code>的组合，灰常好使</p>
+<hr>
+<ul>
+<li><strong>退火与预热</strong></li>
+</ul>
+<p>当接近minima时，梯度很小，会出现爆炸的现象</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDcwOGQ1OGI2NjQyNWNmNjJhN2E5NmViYTg4MTlmNzBfMzA3M2QzMGY5ZDM4MjAxNDhjNDk1NGE3NDgxMWIwYWZfSUQ6NzU0NTAyMjkxMzgzMTE1Nzc3OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDcwOGQ1OGI2NjQyNWNmNjJhN2E5NmViYTg4MTlmNzBfMzA3M2QzMGY5ZDM4MjAxNDhjNDk1NGE3NDgxMWIwYWZfSUQ6NzU0NTAyMjkxMzgzMTE1Nzc3OV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>于是引入学习率调度，让学习率与时间有关，随时间衰减，即退火（annealing）</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWNkNWFjNzdiMWRkYmQ0ZDEzYmFmN2U2ZGFlM2IxMzBfNWFmMjk1N2FkMmE2ZDMwODljNjYzYWUzNDk4NDQ2Y2RfSUQ6NzU0NTAyMzQ3MTQyODk5MzAyOF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=YWNkNWFjNzdiMWRkYmQ0ZDEzYmFmN2U2ZGFlM2IxMzBfNWFmMjk1N2FkMmE2ZDMwODljNjYzYWUzNDk4NDQ2Y2RfSUQ6NzU0NTAyMzQ3MTQyODk5MzAyOF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>但在实际应用中，往往是先采用一个较小的学习率，先变大再变小，称为预热</p>
+<blockquote>
+<p>在 Adam、RMSprop 或 AdaGrad 中，我们通过统计量<span class="arithmatex">\(\sigma\)</span>来估计各方向的陡峭程度</p>
+<p>由于初期数据不足，<span class="arithmatex">\(\sigma\)</span>不够准确，所以学习率会先保持较小以探索误差面；</p>
+<p>等统计更稳定后，再逐步增大学习率</p>
+</blockquote>
+<hr>
+<h3 id="_16">多分类<a class="headerlink" href="#_16" title="Permanent link">¶</a></h3>
+<p>在独热编码后，我们希望最终的output也是同样大小的矩阵，并用归一化值表示各个种类的可能</p>
+<p>最常见的激活函数就是<code>softmax</code></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTFlMWIwYWI1M2ViZjRjN2QxYTkxODg1OWUwZTA3ZmZfZTEzZDY5ZDJmN2Q0NzBhZjkxOGM2YTZjYjAzYTMyZTlfSUQ6NzU0NTAyNjEzMTE5OTM3NzQyN18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=OTFlMWIwYWI1M2ViZjRjN2QxYTkxODg1OWUwZTA3ZmZfZTEzZDY5ZDJmN2Q0NzBhZjkxOGM2YTZjYjAzYTMyZTlfSUQ6NzU0NTAyNjEzMTE5OTM3NzQyN18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p>思想为取指数后归一化，具体有</p>
+<p><span class="arithmatex">\(\mathrm{Softmax}(z_i)=\frac{e^{z_i}}{\sum_{j=1}^Ke^{z_j}}\)</span></p>
+<hr>
+<h3 id="bn">特征归一化BN<a class="headerlink" href="#bn" title="Permanent link">¶</a></h3>
+<p>我们之所以考虑自适应学习，一个原因是因为误差平面的样本方差太大。那有没有可能预处理数据，削高填低呢</p>
+<p>一种很经典的做法，就是标准化（standardization），或者叫做批次归一化（Batch Normalization，BN ）</p>
+<p>在计算Q函数时也采纳这一惯用手法，这里就不再赘述了</p>
+<p><span class="arithmatex">\(\tilde{x}_i^r\leftarrow\frac{x_i^r-m_i}{\sigma_i}\)</span></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDk2MzM0OGMwNGJjNTA2MWY4ODIxZTA1NmNkMDViMDFfNmExZTM2ZGUzYzE5MWM2ZjJhNGY4MjY1NWE5YmQwZGZfSUQ6NzU0NTAyOTI3MzkzNTY3NTQxMV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MDk2MzM0OGMwNGJjNTA2MWY4ODIxZTA1NmNkMDViMDFfNmExZTM2ZGUzYzE5MWM2ZjJhNGY4MjY1NWE5YmQwZGZfSUQ6NzU0NTAyOTI3MzkzNTY3NTQxMV8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTZjMmE1MDc0NmE4NjQzZjMwMjUwZjkyNWE4YWE4ZjFfZmI3NTFlNDlhZmRiYWNlMzY3YTkzMzMzZThhNjQ0NWRfSUQ6NzU2NDgwMjgwNzIzNzIzMDU5Nl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTZjMmE1MDc0NmE4NjQzZjMwMjUwZjkyNWE4YWE4ZjFfZmI3NTFlNDlhZmRiYWNlMzY3YTkzMzMzZThhNjQ0NWRfSUQ6NzU2NDgwMjgwNzIzNzIzMDU5Nl8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTYyZTY5NjM2N2U5MDlkNmUyZmExNThjNWMxZjdiOGRfMGIyY2UxMGIyZGRlZjg1Y2U0MDQ1Y2U3ODY5YTEzNjdfSUQ6NzU2NDgwMjg2NjU5MDkyNDgwNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=MTYyZTY5NjM2N2U5MDlkNmUyZmExNThjNWMxZjdiOGRfMGIyY2UxMGIyZGRlZjg1Y2U0MDQ1Y2U3ODY5YTEzNjdfSUQ6NzU2NDgwMjg2NjU5MDkyNDgwNF8xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<blockquote>
+<p>反标准化工序，即对标准化后的数据再扩展和平移，其中涉及到扩展参数γ和平移参数β</p>
+<p>这两个参数是可学习的，能够让模型在训练过程中自己去修改</p>
+<p>如果前面的标准化工序有没有起到优化的作用，就可以通过调整γ和β参数来在一定程度上抵消标准化操作</p>
+</blockquote>
+<p>至此，你应该能在各种有白板的场合对着你一无所知的朋友手脚并用地吹水啦XD</p>
+<hr>
+<h2 id="_17">常见架构/学习场景概述<a class="headerlink" href="#_17" title="Permanent link">¶</a></h2>
+<p>这一章旨在简要介绍各种classical model的特点、应用和结构，并引入一些非监督学习场景</p>
+<p>具体自行Google/Gemini，我也会贴一篇excellent paper，可以与References的PDF配合食用，我就不班门弄斧了</p>
+<blockquote>
+<p>我的整理归档于<a href="https://o2ywbvn10e.feishu.cn/docx/JDJFdqBcOonyU2xBgh4cuP59ndP?from=from_copylink">智人能工</a></p>
+</blockquote>
+<h3 id="cnn">CNN<a class="headerlink" href="#cnn" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：通过局部感受野、参数共享与池化操作，捕捉数据的局部结构与平移不变性</p>
+</li>
+<li>
+<p><strong>结构</strong>：由卷积层（feature extraction）、激活函数（非线性）、池化层（降采样）、全连接层（分类/回归输出）组成</p>
+</li>
+<li>
+<p><strong>应用</strong>：计算机视觉（图像分类、目标检测、语义分割）、语音识别、医疗影像</p>
+</li>
+<li>
+<p><strong>关键点</strong>：善于处理有 <strong>空间结构</strong> 的数据</p>
+</li>
+</ul>
+<blockquote>
+<p>好文：<a href="https://zhuanlan.zhihu.com/p/561991816">一文读懂卷积神经网络<span class="arithmatex">\(CNN\)</span></a></p>
+</blockquote>
+<p>注意卷积后紧跟激活函数，而非直接池化</p>
+<p><a class="glightbox" href="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NGZiYmE4ODA2ZTA1MWU0MjhkM2QxZGRiNDJiMTBiZWJfMmQzMmQzNjkzYTA5NjU3YzIwYTkwOWY5M2Q4NDEyY2NfSUQ6NzU0NTA0MDAxNjA5NDE4MzQ0M18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://internal-api-drive-stream.feishu.cn/space/api/box/stream/download/authcode/?code=NGZiYmE4ODA2ZTA1MWU0MjhkM2QxZGRiNDJiMTBiZWJfMmQzMmQzNjkzYTA5NjU3YzIwYTkwOWY5M2Q4NDEyY2NfSUQ6NzU0NTA0MDAxNjA5NDE4MzQ0M18xNzgxMDAxNzU1OjE3ODEwODgxNTVfVjM"></a></p>
+<hr>
+<h3 id="rnn">RNN<a class="headerlink" href="#rnn" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：通过循环结构引入“记忆”，能够处理序列数据</p>
+</li>
+<li>
+<p><strong>结构</strong>：输入在时间维度上递归传递隐藏状态，常见改进有 LSTM、GRU 用于缓解梯度消失/爆炸</p>
+</li>
+<li>
+<p><strong>应用</strong>：自然语言处理（语言模型、机器翻译）、时间序列预测（金融、气象）、语音建模</p>
+</li>
+<li>
+<p><strong>关键点</strong>：建模 <strong>序列依赖</strong>，但训练难度较大，长序列建模能力有限</p>
+</li>
+</ul>
+<blockquote>
+<p>好文：<a href="https://zhuanlan.zhihu.com/p/123211148">史上最详细循环神经网络讲解（RNN/LSTM/GRU）</a></p>
+</blockquote>
+<hr>
+<h3 id="_18">自注意机制<a class="headerlink" href="#_18" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：通过 Query、Key、Value 的加权计算，让序列中的每个位置都能与其他位置建立动态联系</p>
+</li>
+<li>
+<p><strong>结构</strong>：核心公式<span class="arithmatex">\(\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\)</span></p>
+</li>
+<li>
+<p><strong>应用</strong>：自然语言处理（上下文关系建模）、图像理解（Vision Transformer）、多模态融合</p>
+</li>
+<li>
+<p><strong>关键点</strong>：突破了 RNN 的序列计算限制，能够全局建模依赖关系</p>
+</li>
+</ul>
+<blockquote>
+<p>好文：</p>
+<p>李宏毅深度学习教程</p>
+<p><a href="https://blog.csdn.net/weixin_42110638/article/details/134016569">一文搞定自注意力机制（Self-Attention）</a></p>
+</blockquote>
+<hr>
+<h3 id="transformer">Transformer<a class="headerlink" href="#transformer" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：完全基于自注意机制，摒弃了循环与卷积结构，实现高效并行训练</p>
+</li>
+<li>
+<p><strong>结构</strong>：由编码器-解码器堆叠而成，包含多头注意力机制、前馈网络、残差连接与层归一化</p>
+</li>
+<li>
+<p><strong>应用</strong>：机器翻译（原始应用）、大规模预训练模型（BERT、GPT 系列）、视觉、语音、多模态</p>
+</li>
+<li>
+<p><strong>关键点</strong>：奠定了 **预训练-微调**范式与大模型（foundation model）的基础</p>
+</li>
+</ul>
+<blockquote>
+<p>好文：</p>
+<p>李宏毅深度学习教程</p>
+<p><a href="https://zhuanlan.zhihu.com/p/675569052">Transformer原理详解</a></p>
+</blockquote>
+<hr>
+<h3 id="_19">生成模型<a class="headerlink" href="#_19" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：学习数据分布，能够生成新的样本</p>
+</li>
+<li>
+<p><strong>代表方法</strong>：</p>
+<ul>
+<li>
+<p>VAE（变分自编码器）：通过潜变量建模，优化基于证据下界（ELBO）</p>
+</li>
+<li>
+<p>GAN（生成对抗网络）：通过生成器-判别器博弈，实现逼真的样本生成</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>应用</strong>：图像生成（人脸、艺术风格迁移）、语音合成、数据增强</p>
+</li>
+<li>
+<p><strong>关键点</strong>：在 <strong>分布建模与数据生成</strong> 方面发挥核心作用</p>
+</li>
+</ul>
+<blockquote>
+<p>视频：</p>
+<ul>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1ix4y1x7MR/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清 VAE 变分自编码器 | 原理图解+公式推导</a></p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1Yg4y1K7LP/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">秒懂，生成对抗网络（GAN可视化）</a></p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="_20">扩散模型<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：通过逐步向数据添加噪声（正向扩散）与学习去噪过程（反向扩散）实现生成</p>
+</li>
+<li>
+<p><strong>结构</strong>：常结合 U-Net + 时间嵌入，训练目标为重建无噪声数据或预测噪声</p>
+</li>
+<li>
+<p><strong>应用</strong>：图像生成（Stable Diffusion、DALL·E）、音频生成、科学计算（分子结构）</p>
+</li>
+<li>
+<p><strong>关键点</strong>：目前最强大的生成模型类别，兼具稳定性与高质量生成能力</p>
+</li>
+</ul>
+<blockquote>
+<p>视频： <a href="https://www.bilibili.com/video/BV1xih7ecEMb/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清 Diffusion Model 扩散模型 | 原理图解+公式推导</a></p>
+</blockquote>
+<hr>
+<h3 id="_21">迁移学习<a class="headerlink" href="#_21" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：利用源任务的知识（参数/特征）来提升目标任务的学习效率</p>
+</li>
+<li>
+<p><strong>形式</strong>：微调（fine-tuning）、特征迁移（feature transfer）、多任务学习、领域自适应（domain adaptation）</p>
+</li>
+<li>
+<p><strong>应用</strong>：NLP（BERT 微调下游任务）、计算机视觉（ImageNet 预训练模型迁移到检测/分割）、跨模态学习</p>
+</li>
+<li>
+<p><strong>关键点</strong>：解决 <strong>数据不足</strong> 和 <strong>训练成本高</strong> 的问题</p>
+</li>
+</ul>
+<blockquote>
+<p>好文：</p>
+<ul>
+<li>
+<p><a href="https://juejin.cn/post/7317697939915784230">深入理解模型迁移学习：从基础到实践</a></p>
+</li>
+<li>
+<p><a href="https://19z.github.io/pytorch-deep-learning/06_pytorch_transfer_learning/">PyTorch迁移学习</a></p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="_22">强化学习<a class="headerlink" href="#_22" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>特点</strong>：智能体（agent）通过与环境（environment）交互，基于奖励（reward）信号学习策略（policy）</p>
+</li>
+<li>
+<p><strong>核心元素</strong>：状态（state）、动作（action）、奖励（reward）、策略（policy）、价值函数（value function）</p>
+</li>
+<li>
+<p><strong>算法</strong>：</p>
+<ul>
+<li>
+<p>价值迭代类（Q-learning, DQN）</p>
+</li>
+<li>
+<p>策略梯度类（REINFORCE, PPO, A3C）</p>
+</li>
+<li>
+<p>模型基方法（Model-based RL）</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>应用</strong>：游戏（AlphaGo）、机器人控制、推荐系统、资源调度</p>
+</li>
+<li>
+<p><strong>关键点</strong>：适用于 <strong>序列决策问题</strong>，与监督学习的“有标注训练”不同</p>
+</li>
+</ul>
+<blockquote>
+<p>视频：</p>
+<ul>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1rooaYVEk8/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清强化学习RL基本原理 | 原理图解+公式推导</a></p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV15cZYYvEhz/?share_source=copy_web&amp;vd_source=19e88925ba133bc70484383287d3591f">一文理清强化学习PPO和GRPO算法流程 | 原理图解</a></p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<p>最后，以一篇<a href="https://koorye.github.io/blog/2024/03/01/2024-03-01%20%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0%E5%8F%91%E5%B1%95%E7%BB%BC%E8%BF%B0/">overview</a>结束这次学习，也算是一窥LLM的大门</p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-11 13:15:29</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-11 13:15:29</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

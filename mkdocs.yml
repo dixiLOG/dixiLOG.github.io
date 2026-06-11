@@ -332,6 +332,10 @@
           - changheji/bookReport/《华尔街日报是如何讲故事的》阅读报告.md
           - changheji/bookReport/《文心雕龙》摘抄本.md
           - changheji/bookReport/《远大前程》阅读报告.md
+        - 机器学习导论:
+          - changheji/ml-intro/index.md
+          - 01 从函数到模型: changheji/ml-intro/ML01.md
+          - 02 从卷积到大模型: changheji/ml-intro/ML02.md
         - changheji/MLreport.md
         - changheji/GeminiCLI.md
     - NBU_ROCOS:

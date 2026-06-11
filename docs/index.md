@@ -683,7 +683,7 @@ title: DIXI的个人博客
         <li>坦克动荡2 20:0 零封 Laika</li>
         <li>喜欢看书</li>
         <li>喜欢折腾和开源</li>
-        <li>公众号单篇推文阅读量 14k+</li>
+        <li>公众号单篇推文阅读量 15k+</li>
       </ul>
     </div>
 
@@ -869,7 +869,7 @@ title: DIXI的个人博客
       <h3>联系与说明</h3>
       <p class="dixihome-contact">
         <span>QQ：1444127184</span>
-        <a href="mailto:huang1444127184@gmail.com">huang1444127184@gmail.com</a>
+        <span>Email： <a href="mailto:huang1444127184@gmail.com">huang1444127184@gmail.com</a></span>
         <span>转载请标明出处及作者呦~</span>
       </p>
     </section>

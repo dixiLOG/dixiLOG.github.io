@@ -761,6 +761,13 @@ title: DIXI的个人博客
       <h3>上新</h3>
       <ol class="dixihome-updates">
         <li class="dixihome-update">
+          <span class="dixihome-date">2026<br>06.11</span>
+          <span class="dixihome-update-body">
+            <strong>长河集补入机器学习导论 <span class="dixihome-badge">DOCS</span></strong>
+            <span>新增 <a href="https://dixilog.github.io/changheji/ml-intro/">机器学习导论</a> 分册，并补入 <a href="https://dixilog.github.io/changheji/ml-intro/ML01/">ML 基础概念</a>、<a href="https://dixilog.github.io/changheji/ml-intro/ML02/">现代机器学习结构速览</a> 两篇入门整理。</span>
+          </span>
+        </li>
+        <li class="dixihome-update">
           <span class="dixihome-date">2026<br>05.20</span>
           <span class="dixihome-update-body">
             <strong>首页改版，随手记与博客同步上新 <span class="dixihome-badge">SITE&amp;DOCS</span></strong>
@@ -788,13 +795,6 @@ title: DIXI的个人博客
             <span>围绕院校选择、复盘经验与朋辈感受继续补档，推免线内容从时间线扩展到更细的经验层。</span>
           </span>
         </li>
-        <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>12.14</span>
-          <span class="dixihome-update-body">
-            <strong>推免 Flysheet V0.1 上线 <span class="dixihome-badge">NEW</span></strong>
-            <span>首次集中整理推免路径，补入时间线、经验感悟、信息搜集与导师选择等一整套入口。</span>
-          </span>
-        </li>
       </ol>
 
       <div class="dixihome-archive">
@@ -803,6 +803,13 @@ title: DIXI的个人博客
             <span>展开查看更多历史装修</span>
           </summary>
           <div class="dixihome-archive-list">
+            <div class="dixihome-archive-item">
+              <span class="dixihome-archive-date">2025<br>12.14</span>
+              <ul>
+                <li>推免 <a href="https://dixilog.github.io/Flysheet/">Flysheet</a> V0.1 上线。</li>
+                <li>首次集中整理时间线、经验感悟、信息搜集与导师选择等一整套入口。</li>
+              </ul>
+            </div>
             <div class="dixihome-archive-item">
               <span class="dixihome-archive-date">2025<br>02.10-03.11</span>
               <ul>

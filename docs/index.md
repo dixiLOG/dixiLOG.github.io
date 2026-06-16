@@ -608,47 +608,47 @@ title: DIXI的个人博客
     .dixihome-me {
       grid-template-columns: 1fr;
     }
-
+    
     .dixihome-avatar {
       width: 3.8rem;
       height: 3.8rem;
     }
-
+    
     .dixihome-map a {
       grid-template-columns: 1.8rem minmax(0, 1fr) auto;
       gap: 0.55rem;
     }
-
+    
     .dixihome-tags {
       min-height: 10.4rem;
     }
-
+    
     .dixihome-tags li {
       max-width: 86%;
       white-space: normal;
     }
-
+    
     .dixihome-tags li:nth-child(2),
     .dixihome-tags li:nth-child(4),
     .dixihome-tags li:nth-child(7),
     .dixihome-tags li:nth-child(8) {
       --tag-x: 36%;
     }
-
+    
     .dixihome-updates::before {
       left: 0.2rem;
     }
-
+    
     .dixihome-update {
       grid-template-columns: 1fr;
       gap: 0.25rem;
       padding-left: 1.2rem;
     }
-
+    
     .dixihome-update::before {
       left: 0;
     }
-
+    
     .dixihome-archive-item {
       grid-template-columns: 1fr;
       gap: 0.25rem;
@@ -674,7 +674,7 @@ title: DIXI的个人博客
       <p class="dixihome-lead">
         NBU 本科在读（自称 <em>NBUCETer</em>）
       </p>
-
+    
       <ul class="dixihome-tags" aria-label="个人标签">
         <li>青龙山外派光明顶发电厂首席技工</li>
         <li>智商税拥趸</li>
@@ -683,10 +683,10 @@ title: DIXI的个人博客
         <li>坦克动荡2 20:0 零封 Laika</li>
         <li>喜欢看书</li>
         <li>喜欢折腾和开源</li>
-        <li>公众号单篇推文阅读量 15k+</li>
+        <li>公众号单篇推文阅读量 16k+</li>
       </ul>
     </div>
-
+    
     <nav class="dixihome-route" aria-label="快速引导">
       <a href="NBU-NOTEBOOK/">
         <span><b>第一次来找笔记</b><br>课程内容从这里进，计网、信号、概率论、通信原理都在里面。</span>
@@ -871,7 +871,7 @@ title: DIXI的个人博客
       <h3>打油诗</h3>
       <p>多少桐柳不得问，匆忙梦里寻佳人<br>辗转衾湿茫然顾，恍惚秦皇骊山坟</p>
     </section>
-
+    
     <section class="dixihome-scrap" data-mark="03">
       <h3>联系与说明</h3>
       <p class="dixihome-contact">
@@ -910,21 +910,21 @@ title: DIXI的个人博客
     if (feedbackSection && giscusContainer && feedbackSection.parentNode) {
       feedbackSection.parentNode.appendChild(giscusContainer);
     }
-
+    
     var palette = __md_get("__palette");
     var theme = palette && palette.color.scheme === "slate" ? "dark" : "light";
     var giscusScript = document.querySelector("#giscus-container script");
     if (giscusScript) {
       giscusScript.setAttribute("data-theme", theme);
     }
-
+    
     var paletteToggle = document.querySelector("[data-md-component=palette]");
     if (paletteToggle) {
       paletteToggle.addEventListener("change", function() {
         var newPalette = __md_get("__palette");
         var newTheme = newPalette && newPalette.color.scheme === "slate" ? "dark_dimmed" : "light_high_contrast";
         var giscusFrame = document.querySelector("iframe.giscus-frame");
-
+    
         if (giscusFrame) {
           giscusFrame.contentWindow.postMessage(
             { giscus: { setConfig: { theme: newTheme } } },

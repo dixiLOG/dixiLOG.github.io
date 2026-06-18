@@ -1,0 +1,3494 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/changheji/%E7%8E%AF%E5%A2%83%E5%AD%A6%E4%B9%A0/">
+      
+      
+        <link rel="prev" href="../GeminiCLI/">
+      
+      
+        <link rel="next" href="../../ROCOS/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>环境学习 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              环境学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../NBU-NOTEBOOK/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../NBU-NOTEBOOK/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            长河集
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../bookReport/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    荒唐言
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../ml-intro/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    机器学习导论
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MLreport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基于卷积神经网络的FashionMNIST分类
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GeminiCLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gemini CLI 摸索笔记
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    环境学习
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    环境学习
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux shell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看与帮助
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="查看与帮助">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whatis" class="md-nav__link">
+    <span class="md-ellipsis">
+      whatis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which" class="md-nav__link">
+    <span class="md-ellipsis">
+      which
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis" class="md-nav__link">
+    <span class="md-ellipsis">
+      whereis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      man
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件目录管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件目录管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      pwd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      rmdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    <span class="md-ellipsis">
+      in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    <span class="md-ellipsis">
+      rename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat" class="md-nav__link">
+    <span class="md-ellipsis">
+      stat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件内容查看
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件内容查看">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headtail" class="md-nav__link">
+    <span class="md-ellipsis">
+      head/tail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      vim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件压缩解压
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件压缩解压">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-etcos-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat /etc/os-release
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      reboot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      shutdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    <span class="md-ellipsis">
+      date
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      jobs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      ip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      hostname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nslookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      nslookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nc" class="md-nav__link">
+    <span class="md-ellipsis">
+      nc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      ss
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    <span class="md-ellipsis">
+      df
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      top
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    <span class="md-ellipsis">
+      free
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      apt-get
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      绪论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      小试牛刀
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker compose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="docker compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      写 Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      写 Docker-compose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建并启动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      进入容器 bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      rebuild
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      停止与清理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux shell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      查看与帮助
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="查看与帮助">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    <span class="md-ellipsis">
+      help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whatis" class="md-nav__link">
+    <span class="md-ellipsis">
+      whatis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    <span class="md-ellipsis">
+      info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which" class="md-nav__link">
+    <span class="md-ellipsis">
+      which
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#whereis" class="md-nav__link">
+    <span class="md-ellipsis">
+      whereis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      man
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件目录管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件目录管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      pwd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      rmdir
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    <span class="md-ellipsis">
+      in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rename" class="md-nav__link">
+    <span class="md-ellipsis">
+      rename
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stat" class="md-nav__link">
+    <span class="md-ellipsis">
+      stat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件内容查看
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件内容查看">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headtail" class="md-nav__link">
+    <span class="md-ellipsis">
+      head/tail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    <span class="md-ellipsis">
+      vim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      文件压缩解压
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件压缩解压">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat-etcos-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat /etc/os-release
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reboot" class="md-nav__link">
+    <span class="md-ellipsis">
+      reboot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      shutdown
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    <span class="md-ellipsis">
+      date
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      kill
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      jobs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="网络管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wget" class="md-nav__link">
+    <span class="md-ellipsis">
+      wget
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      ip
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      hostname
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nslookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      nslookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nc" class="md-nav__link">
+    <span class="md-ellipsis">
+      nc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      ss
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="硬件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    <span class="md-ellipsis">
+      df
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      top
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    <span class="md-ellipsis">
+      free
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件管理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="软件管理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apt-get" class="md-nav__link">
+    <span class="md-ellipsis">
+      apt-get
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      绪论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      小试牛刀
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker compose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="docker compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建app
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      写 Dockerfile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      写 Docker-compose
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建并启动
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bash" class="md-nav__link">
+    <span class="md-ellipsis">
+      进入容器 bash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      rebuild
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      停止与清理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">环境学习<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 1794 个字  • <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"></path></svg></span> 422 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 15 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="linux-shell">Linux shell<a class="headerlink" href="#linux-shell" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>参考：<a href="https://dunwu.github.io/linux-tutorial/linux/cli/">Linux 命令行 | LINUX-TUTORIAL</a></p>
+</blockquote>
+<p>先集中学习一下最基础的<code>linux shell</code>命令。至于运维、环境配置等进一步的操作，再议再议🤪</p>
+<p>下面的九大分类已包含大部分日常所需：</p>
+<ul>
+<li>查看与帮助</li>
+<li>文件目录管理</li>
+<li>文件内容查看</li>
+<li>文件压缩解压</li>
+<li>用户管理</li>
+<li>系统管理</li>
+<li>网络管理</li>
+<li>硬件管理</li>
+<li>软件管理</li>
+</ul>
+<hr>
+<h3 id="_2">查看与帮助<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>help</code>/<code>whatis</code>/<code>info</code>/<code>which</code>/<code>whereis</code>/<code>man</code>（不是牢大）</p>
+</div>
+<h4 id="help">help<a class="headerlink" href="#help" title="Permanent link">¶</a></h4>
+<p>用于查看帮助信息</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rmdir<span class="w"> </span>--help
+</code></pre></div>
+<h4 id="whatis">whatis<a class="headerlink" href="#whatis" title="Permanent link">¶</a></h4>
+<p>查询一个命令执行什么功能，即<code>feature</code>查询</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>➜<span class="w">  </span>~<span class="w"> </span>whatis<span class="w"> </span>git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Git<span class="w"> </span><span class="o">(</span>3pm<span class="o">)</span><span class="w">            </span>-<span class="w"> </span>Perl<span class="w"> </span>interface<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Git<span class="w"> </span>version<span class="w"> </span>control<span class="w"> </span>system
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">              </span>-<span class="w"> </span>the<span class="w"> </span>stupid<span class="w"> </span>content<span class="w"> </span>tracker
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>➜<span class="w">  </span>~<span class="w"> </span>whatis<span class="w"> </span>-w<span class="w"> </span><span class="s2">"su*"</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>su<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">               </span>-<span class="w"> </span>run<span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span>with<span class="w"> </span>substitute<span class="w"> </span>user<span class="w"> </span>and<span class="w"> </span>group<span class="w"> </span>ID
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>subgid<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span>subordinate<span class="w"> </span>group<span class="w"> </span>ids
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>subpage_prot<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="w">     </span>-<span class="w"> </span>define<span class="w"> </span>a<span class="w"> </span>subpage<span class="w"> </span>protection<span class="w"> </span><span class="k">for</span><span class="w"> </span>an<span class="w"> </span>address<span class="w"> </span>range
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>subuid<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w">           </span>-<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span>subordinate<span class="w"> </span>user<span class="w"> </span>ids
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>sudo<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">             </span>-<span class="w"> </span>execute<span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span>as<span class="w"> </span>another<span class="w"> </span>user
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>sudo.conf<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w">        </span>-<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span>sudo<span class="w"> </span>front-end
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>sudo_logsrv.proto<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Sudo<span class="w"> </span>log<span class="w"> </span>server<span class="w"> </span>protocol
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>sudo_logsrvd<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">     </span>-<span class="w"> </span>sudo<span class="w"> </span>event<span class="w"> </span>and<span class="w"> </span>I/O<span class="w"> </span>log<span class="w"> </span>server
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>sudo_logsrvd.conf<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>configuration<span class="w"> </span><span class="k">for</span><span class="w"> </span>sudo_logsrvd
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>sudo_plugin<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w">      </span>-<span class="w"> </span>Sudo<span class="w"> </span>Plugin<span class="w"> </span>API
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>sudo_root<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">        </span>-<span class="w"> </span>How<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>administrative<span class="w"> </span>commands
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>sudo_sendlog<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">     </span>-<span class="w"> </span>send<span class="w"> </span>sudo<span class="w"> </span>I/O<span class="w"> </span>log<span class="w"> </span>to<span class="w"> </span>log<span class="w"> </span>server
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>sudoedit<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">         </span>-<span class="w"> </span>execute<span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span>as<span class="w"> </span>another<span class="w"> </span>user
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>sudoers<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w">          </span>-<span class="w"> </span>default<span class="w"> </span>sudo<span class="w"> </span>security<span class="w"> </span>policy<span class="w"> </span>plugin
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>sudoers_timestamp<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Sudoers<span class="w"> </span>Time<span class="w"> </span>Stamp<span class="w"> </span>Format
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>sudoreplay<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">       </span>-<span class="w"> </span>replay<span class="w"> </span>sudo<span class="w"> </span>session<span class="w"> </span>logs
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>suffixes<span class="w"> </span><span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="w">         </span>-<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>file<span class="w"> </span>suffixes
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>sulogin<span class="w"> </span><span class="o">(</span><span class="m">8</span><span class="o">)</span><span class="w">          </span>-<span class="w"> </span>single-user<span class="w"> </span>login
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>sum<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w">              </span>-<span class="w"> </span>checksum<span class="w"> </span>and<span class="w"> </span>count<span class="w"> </span>the<span class="w"> </span>blocks<span class="w"> </span><span class="k">in</span><span class="w"> </span>a<span class="w"> </span>file
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>suseconds_t<span class="w"> </span><span class="o">(</span>3type<span class="o">)</span><span class="w">  </span>-<span class="w"> </span>integer<span class="w"> </span><span class="nb">time</span>
+</code></pre></div>
+<h4 id="info">info<a class="headerlink" href="#info" title="Permanent link">¶</a></h4>
+<p>命令的详细说明，是<code>whatis</code>的延伸</p>
+<h4 id="which">which<a class="headerlink" href="#which" title="Permanent link">¶</a></h4>
+<p>PATH查询</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>➜<span class="w">  </span>~<span class="w"> </span>which<span class="w"> </span>zsh
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/usr/bin/zsh
+</code></pre></div>
+<h4 id="whereis">whereis<a class="headerlink" href="#whereis" title="Permanent link">¶</a></h4>
+<p>搜索程序名对应的所有文件，包括二进制程序、源代码文件和 man 手册页等相关文件的路径</p>
+<p>对应<code>Win</code>下的<code>where</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>➜<span class="w">  </span>~<span class="w"> </span>whereis<span class="w"> </span>git
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># 找到可执行文件和帮助文档</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>git:<span class="w"> </span>/usr/bin/git<span class="w"> </span>/usr/share/man/man1/git.1.gz
+</code></pre></div>
+<h4 id="man">man<a class="headerlink" href="#man" title="Permanent link">¶</a></h4>
+<p>命令使用手册，即<code>help</code></p>
+<p>善用快捷键，如<code>w/z</code>翻页，<code>&gt;/&lt;</code>首尾跳转，<code>q</code>退出。具体可<code>h</code>查询</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>➜<span class="w">  </span>~<span class="w"> </span>man<span class="w"> </span>git
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># 打开文档后，可见名字、概要、描述、可选项、常见命令等提示</span>
+</code></pre></div>
+<hr>
+<h3 id="_3">文件目录管理<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>cd</code>/<code>ls</code>/<code>pwd</code>/<code>mkdir</code>/<code>rmdir</code>/<code>tree</code>/<code>touch</code>/<code>ln</code>/<code>rename</code>/<code>stat</code>/<code>chmod</code>/<code>chown</code>/<code>find</code>/<code>cp</code>/<code>scp</code>/<code>mv</code>/<code>rm</code></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">linux目录树与功能</p>
+<center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-941ac38987.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-941ac38987.png"></a></p>
+</center>
+</div>
+<p>当我们列出一个目录的详细信息时，可以得到</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>➜<span class="w">  </span>~<span class="w"> </span>ls<span class="w"> </span>-l
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># 目录下文件共占用80KB</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>total<span class="w"> </span><span class="m">80</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">16</span><span class="w">  </span><span class="m">2025</span><span class="w"> </span>Linear-Algebra-Left-Undone
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>drwxr-xr-x<span class="w">  </span><span class="m">4</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">28</span><span class="w">  </span><span class="m">2025</span><span class="w"> </span>go
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">64138</span><span class="w"> </span>Oct<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">16</span>:46<span class="w"> </span>ion
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>drwxr-xr-x<span class="w"> </span><span class="m">13</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>rocos
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">7</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>scripts
+</code></pre></div>
+<p>对于每一列，以空格分开，分别代表着该文件的：</p>
+<ul>
+<li><strong>属性</strong></li>
+<li>硬链接数量（可视为子文件夹数量）</li>
+<li>文件所有者</li>
+<li>文件所属用户组</li>
+<li>文件大小</li>
+<li>最后修改时间（年月日）</li>
+<li>文件/目录名</li>
+</ul>
+<p>对于属性的10个字母，以<code>1+3*3</code>的视角去看待，分别表示着文件类型与用户权限</p>
+<p>第一个符号表示文件类型：</p>
+<ul>
+<li><code>d</code> → 目录</li>
+<li><code>-</code> → 文件</li>
+<li><code>l</code> → 链接文档(link file)</li>
+<li><code>b</code> → 装置文件里面的可供储存的接口设备(可随机存取装置)</li>
+<li><code>c</code> → 装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)</li>
+</ul>
+<p>后面三组（每组的顺序都是<code>rwx</code>，分别代表可读/可写/可执行；若无权限则用<code>-</code>表示）分别说明文件的拥有者、拥有者同组用户、其他用户的权限</p>
+<h4 id="cd">cd<a class="headerlink" href="#cd" title="Permanent link">¶</a></h4>
+<p>目录跳转</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w">          </span><span class="c1"># 切换到用户主目录</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">cd</span><span class="w"> </span>~<span class="w">        </span><span class="c1"># 切换到用户主目录</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">cd</span><span class="w"> </span>-<span class="w">        </span><span class="c1"># 切换到上一个工作目录</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">cd</span><span class="w"> </span>..<span class="w">       </span><span class="c1"># 切换到上级目录</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">cd</span><span class="w"> </span>../..<span class="w">    </span><span class="c1"># 切换到上两级目录</span>
+</code></pre></div>
+<h4 id="ls">ls<a class="headerlink" href="#ls" title="Permanent link">¶</a></h4>
+<p>显示目录信息</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ls<span class="w">        </span><span class="c1"># 列出当前目录可见文件</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ls<span class="w"> </span>-l<span class="w">     </span><span class="c1"># 列出当前目录可见文件详细信息</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>ls<span class="w"> </span>-la<span class="w">    </span><span class="c1"># 列出所有文件（包括隐藏）的详细信息</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>ls<span class="w"> </span>-lh<span class="w">    </span><span class="c1"># 列出详细信息并以可读大小显示文件大小</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>ls<span class="w"> </span>-lt<span class="w">    </span><span class="c1"># 按时间列出文件和文件夹详细信息</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>ls<span class="w"> </span>-ltr<span class="w">   </span><span class="c1"># 按修改时间列出文件和文件夹详细信息</span>
+</code></pre></div>
+<h4 id="pwd">pwd<a class="headerlink" href="#pwd" title="Permanent link">¶</a></h4>
+<p>打印当前目录</p>
+<h4 id="mkdir">mkdir<a class="headerlink" href="#mkdir" title="Permanent link">¶</a></h4>
+<p>新建文件夹</p>
+<h4 id="rmdir">rmdir<a class="headerlink" href="#rmdir" title="Permanent link">¶</a></h4>
+<p>删除空文件夹</p>
+<h4 id="tree">tree<a class="headerlink" href="#tree" title="Permanent link">¶</a></h4>
+<p>目录可视化，可选项非常丰富，是做目录树的好帮手</p>
+<h4 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">¶</a></h4>
+<p>新建文件</p>
+<h4 id="in">in<a class="headerlink" href="#in" title="Permanent link">¶</a></h4>
+<p>创建链接（硬链接/符号链接）</p>
+<center>
+
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-d28b04c2c0.png){: .zoom}
+
+</center>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># 将目录 /usr/mengqc/mub1 下的文件 m2.c 链接到目录 /usr/liu 下的文件 a2.c</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">cd</span><span class="w"> </span>/usr/mengqc
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>ln<span class="w"> </span>/mub1/m2.c<span class="w"> </span>/usr/liu/a2.c
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># 在目录 /usr/liu 下建立一个符号链接文件 abc，使它指向目录 /usr/mengqc/mub1</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># 执行该命令后，/usr/mengqc/mub1 代表的路径将存放在名为 /usr/liu/abc 的文件中</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>ln<span class="w"> </span>-s<span class="w"> </span>/usr/mengqc/mub1<span class="w"> </span>/usr/liu/abc
+</code></pre></div>
+<h4 id="rename">rename<a class="headerlink" href="#rename" title="Permanent link">¶</a></h4>
+<p>重命名，可用<code>mv</code>平替</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># 将 main1.c 重命名为 main.c</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>rename<span class="w"> </span>main1.c<span class="w"> </span>main.c<span class="w"> </span>main1.c
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>rename<span class="w"> </span><span class="s2">"s/AA/aa/"</span><span class="w"> </span>*<span class="w">             </span><span class="c1"># 把文件名中的 AA 替换成 aa</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>rename<span class="w"> </span><span class="s2">"s//.html//.php/"</span><span class="w"> </span>*<span class="w">      </span><span class="c1"># 把 .html 后缀的改成 .php 后缀</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>rename<span class="w"> </span><span class="s2">"s/</span>$<span class="s2">//.txt/"</span><span class="w"> </span>*<span class="w">           </span><span class="c1"># 把所有的文件名都以 txt 结尾</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>rename<span class="w"> </span><span class="s2">"s//.txt//"</span><span class="w"> </span>*<span class="w">            </span><span class="c1"># 把所有以 .txt 结尾的文件名的.txt 删掉</span>
+</code></pre></div>
+<h4 id="stat">stat<a class="headerlink" href="#stat" title="Permanent link">¶</a></h4>
+<p>文件状态显示</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="l l-Scalar l-Scalar-Plain">➜  ~ stat rocos</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">File</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rocos</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">Size</span><span class="nt">: 4096            Blocks: 8          IO Block</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4096   directory</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nt">Device</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8,48    Inode</span><span class="nt">: 21531       Links</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">13</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nt">Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(    0/    root)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">Access</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-10-02 16:59:56.972664273 +0800</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nt">Modify</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-08 15:41:06.884941531 +0800</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">Change</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-08 15:41:06.884941531 +0800</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Birth</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2024-12-08 15:40:17.350917325 +0800</span>
+</code></pre></div>
+<h4 id="chmod">chmod<a class="headerlink" href="#chmod" title="Permanent link">¶</a></h4>
+<p>权限修改</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">  </span>-rw-r--r--
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># ↑╰┬╯╰┬╯╰┬╯</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># ┆ ┆  ┆  ╰┈ 0 其他人</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># ┆ ┆  ╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ g 属组</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># ┆ ╰┈┈┈┈ u 属组</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># ╰┈┈ 第一个字母 `d` 代表目录，`-` 代表普通文件</span>
+</code></pre></div>
+<p>每一组的三个权限以二进制赋值。如<code>7</code>意味着<code>rwx</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>chmod<span class="w"> </span>u+x,g+w<span class="w"> </span>file<span class="w">　　</span><span class="c1"># 为文件f01设置自己可以执行，组员可以写入的权限</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>rwx,g<span class="o">=</span>rw,o<span class="o">=</span>r<span class="w"> </span>file
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>chmod<span class="w"> </span><span class="m">764</span><span class="w"> </span>file
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># 将/home/wwwroot/里的所有文件和文件夹设置为755权限</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>chmod<span class="w"> </span>-R<span class="w">  </span><span class="m">755</span><span class="w"> </span>/home/wwwroot/*
+</code></pre></div>
+<h4 id="chown">chown<a class="headerlink" href="#chown" title="Permanent link">¶</a></h4>
+<p>目录所有者修改</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># 将目录/usr/meng及其下面的所有文件、子目录的文件主改成 liu</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>chown<span class="w"> </span>-R<span class="w"> </span>liu<span class="w"> </span>/usr/meng
+</code></pre></div>
+<h4 id="find">find<a class="headerlink" href="#find" title="Permanent link">¶</a></h4>
+<p>区别于<code>whereis</code>，<code>find</code>用于查找文件，操作很多，help/man一下</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>grep<span class="w"> </span><span class="s2">"140.206.111.111"</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="c1"># 列出当前目录及子目录下所有文件和文件夹</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>find<span class="w"> </span>.
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1"># 在 /home 目录下查找以 .txt 结尾的文件名</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.txt"</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="c1"># 同上，但忽略大小写</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>find<span class="w"> </span>/home<span class="w"> </span>-iname<span class="w"> </span><span class="s2">"*.txt"</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="c1"># 当前目录及子目录下查找所有以 .txt 和 .pdf 结尾的文件</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.txt"</span><span class="w"> </span>-o<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.pdf"</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="c1"># 匹配文件路径或者文件</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>find<span class="w"> </span>/usr/<span class="w"> </span>-path<span class="w"> </span><span class="s2">"*local*"</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="c1"># 基于正则表达式匹配文件路径</span>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>find<span class="w"> </span>.<span class="w"> </span>-regex<span class="w"> </span><span class="s2">".*\(\.txt\|\.pdf\)</span>$<span class="s2">"</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1"># 同上，但忽略大小写</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>find<span class="w"> </span>.<span class="w"> </span>-iregex<span class="w"> </span><span class="s2">".*\(\.txt\|\.pdf\)</span>$<span class="s2">"</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="c1"># 找出 /home 下不是以 .txt 结尾的文件</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>find<span class="w"> </span>/home<span class="w"> </span>!<span class="w"> </span>-name<span class="w"> </span><span class="s2">"*.txt"</span>
+</code></pre></div>
+<h4 id="cp">cp<a class="headerlink" href="#cp" title="Permanent link">¶</a></h4>
+<p>将一个或多个源文件或者目录复制到指定的目的文件或目录。目标目录必须存在。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 将文件 file 复制到目录 /usr/men/tmp 下，并改名为 file1</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>cp<span class="w"> </span>file<span class="w"> </span>/usr/men/tmp/file1
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># 将目录 /usr/men下的所有文件及其子目录复制到目录 /usr/zh 中</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>cp<span class="w"> </span>-r<span class="w"> </span>/usr/men<span class="w"> </span>/usr/zh
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1"># 强行将 /usr/men下的所有文件复制到目录 /usr/zh 中，无论是否有文件重复</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>cp<span class="w"> </span>-rf<span class="w"> </span>/usr/men/*<span class="w"> </span>/usr/zh
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1"># 将目录 /usr/men 中的以 m 打头的所有 .c 文件复制到目录 /usr/zh 中</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>cp<span class="w"> </span>-i<span class="w"> </span>/usr/men<span class="w"> </span>m*.c<span class="w"> </span>/usr/zh
+</code></pre></div>
+<h4 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">¶</a></h4>
+<p>跨服务器进行远程拷贝文件的</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># 拷贝文件到远程服务器的指定目录</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>scp<span class="w"> </span>&lt;file&gt;<span class="w"> </span>&lt;user&gt;@&lt;ip&gt;:&lt;url&gt;
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>scp<span class="w"> </span>test.txt<span class="w"> </span>root@192.168.0.1:/opt
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># 拷贝目录到远程服务器的指定目录</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>scp<span class="w"> </span>-r<span class="w"> </span>&lt;folder&gt;<span class="w"> </span>&lt;user&gt;@&lt;ip&gt;:&lt;url&gt;
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>scp<span class="w"> </span>-r<span class="w"> </span><span class="nb">test</span><span class="w"> </span>root@192.168.0.1:/opt
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">免密传输</p>
+<center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-1b8c9d7932.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-1b8c9d7932.png"></a></p>
+</center>
+</div>
+<h4 id="mv">mv<a class="headerlink" href="#mv" title="Permanent link">¶</a></h4>
+<p>移动、重命名和覆盖</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mv<span class="w"> </span>file1.txt<span class="w"> </span>/home/office/<span class="w">                      </span><span class="c1"># 移动单个文件</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>mv<span class="w"> </span>file2.txt<span class="w"> </span>file3.txt<span class="w"> </span>file4.txt<span class="w"> </span>/home/office/<span class="w">  </span><span class="c1"># 移动多个文件</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>mv<span class="w"> </span>*.txt<span class="w"> </span>/home/office/<span class="w">                          </span><span class="c1"># 移动所有 txt 文件</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>mv<span class="w"> </span>dir1/<span class="w"> </span>/home/office/<span class="w">                          </span><span class="c1"># 移动目录</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>mv<span class="w"> </span>/usr/men/*<span class="w"> </span>.<span class="w">                                 </span><span class="c1"># 将指定目录中的所有文件移到当前目录中</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>mv<span class="w"> </span>file1.txt<span class="w"> </span>file2.txt<span class="w">          </span><span class="c1"># 重命名文件</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>mv<span class="w"> </span>dir1/<span class="w"> </span>dir2/<span class="w">                  </span><span class="c1"># 重命名目录</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>mv<span class="w"> </span>-v<span class="w"> </span>*.txt<span class="w"> </span>/home/office<span class="w">        </span><span class="c1"># 打印移动信息</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>mv<span class="w"> </span>-i<span class="w"> </span>file1.txt<span class="w"> </span>/home/office<span class="w">    </span><span class="c1"># 提示是否覆盖文件</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>mv<span class="w"> </span>-uv<span class="w"> </span>*.txt<span class="w"> </span>/home/office<span class="w">       </span><span class="c1"># 源文件比目标文件新时才执行更新</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>mv<span class="w"> </span>-vn<span class="w"> </span>*.txt<span class="w"> </span>/home/office<span class="w">       </span><span class="c1"># 不要覆盖任何已存在的文件</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>mv<span class="w"> </span>-f<span class="w"> </span>*.txt<span class="w"> </span>/home/office<span class="w">        </span><span class="c1"># 无条件覆盖已经存在的文件</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>mv<span class="w"> </span>-bv<span class="w"> </span>*.txt<span class="w"> </span>/home/office<span class="w">       </span><span class="c1"># 复制时创建备份</span>
+</code></pre></div>
+<h4 id="rm">rm<a class="headerlink" href="#rm" title="Permanent link">¶</a></h4>
+<p>删除操作</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>rm<span class="w"> </span>test.txt<span class="w">               </span><span class="c1"># 删除文件</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>rm<span class="w"> </span>-i<span class="w"> </span>test.txt<span class="w"> </span>test2.txt<span class="w">  </span><span class="c1"># 交互式删除文件</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>rm<span class="w"> </span>-r<span class="w"> </span>*<span class="w">                   </span><span class="c1"># 删除当前目录下的所有文件和目录</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>rm<span class="w"> </span>-r<span class="w"> </span>testdir<span class="w">             </span><span class="c1"># 删除目录下的所有文件和目录</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>rm<span class="w"> </span>-rf<span class="w"> </span>testdir<span class="w">            </span><span class="c1"># 强制删除目录下的所有文件和目录</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>rm<span class="w"> </span>-v<span class="w"> </span>testdir<span class="w">             </span><span class="c1"># 显示当前删除操作的详情</span>
+</code></pre></div>
+<hr>
+<h3 id="_4">文件内容查看<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>cat</code>/<code>head</code>/<code>tail</code>/<code>vim</code>/<code>grep</code></p>
+</div>
+<h4 id="cat">cat<a class="headerlink" href="#cat" title="Permanent link">¶</a></h4>
+<p>打印内容到<code>shell</code>上</p>
+<h4 id="headtail">head/tail<a class="headerlink" href="#headtail" title="Permanent link">¶</a></h4>
+<p>显示文档前/后几行内容</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>tail<span class="w"> </span>file<span class="w">           </span><span class="c1"># 显示文件file的最后10行</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>tail<span class="w"> </span>-n<span class="w"> </span>+20<span class="w"> </span>file<span class="w">    </span><span class="c1"># 显示文件file的内容，从第20行至文件末尾</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>tail<span class="w"> </span>-c<span class="w"> </span><span class="m">10</span><span class="w"> </span>file<span class="w">     </span><span class="c1"># 显示文件file的最后10个字符</span>
+</code></pre></div>
+<h4 id="vim">vim<a class="headerlink" href="#vim" title="Permanent link">¶</a></h4>
+<p>等于<code>vi</code>，我用的比较习惯。可通过<a href="https://www.runoob.com/linux/linux-vim.html">菜鸟教程</a>快速上手</p>
+<h4 id="grep">grep<a class="headerlink" href="#grep" title="Permanent link">¶</a></h4>
+<p>非常强大的文件检索工具</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># 在多级目录中对文本递归搜索(程序员搜代码的最爱）:</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>grep<span class="w"> </span><span class="s2">"class"</span><span class="w"> </span>.<span class="w"> </span>-R<span class="w"> </span>-n
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># 忽略匹配样式中的字符大小写</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello world"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"HELLO"</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># 匹配多个模式:</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>grep<span class="w"> </span>-e<span class="w"> </span><span class="s2">"class"</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"vitural"</span><span class="w"> </span>file
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="c1"># 只在目录中所有的.php和.html文件中递归搜索字符"main()"</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>grep<span class="w"> </span><span class="s2">"main()"</span><span class="w"> </span>.<span class="w"> </span>-r<span class="w"> </span>--include<span class="w"> </span>*.<span class="o">{</span>php,html<span class="o">}</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c1"># 在搜索结果中排除所有README文件</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>grep<span class="w"> </span><span class="s2">"main()"</span><span class="w"> </span>.<span class="w"> </span>-r<span class="w"> </span>--exclude<span class="w"> </span><span class="s2">"README"</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="c1"># 在搜索结果中排除filelist文件列表里的文件</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>grep<span class="w"> </span><span class="s2">"main()"</span><span class="w"> </span>.<span class="w"> </span>-r<span class="w"> </span>--exclude-from<span class="w"> </span>filelist
+</code></pre></div>
+<hr>
+<h3 id="_5">文件压缩解压<a class="headerlink" href="#_5" title="Permanent link">¶</a></h3>
+<h4 id="tar">tar<a class="headerlink" href="#tar" title="Permanent link">¶</a></h4>
+<p>用这个enough</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>tar<span class="w"> </span>-cvf<span class="w"> </span>log.tar<span class="w"> </span>log2012.log<span class="w">            </span><span class="c1"># 仅打包，不压缩</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>tar<span class="w"> </span>-zcvf<span class="w"> </span>log.tar.gz<span class="w"> </span>log2012.log<span class="w">        </span><span class="c1"># 打包后，以 gzip 压缩</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>tar<span class="w"> </span>-jcvf<span class="w"> </span>log.tar.bz2<span class="w"> </span>log2012.log<span class="w">       </span><span class="c1"># 打包后，以 bzip2 压缩</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>tar<span class="w"> </span>-ztvf<span class="w"> </span>log.tar.gz<span class="w">                    </span><span class="c1"># 查阅上述 tar 包内有哪些文件</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>log.tar.gz<span class="w">                    </span><span class="c1"># 将 tar 包解压缩</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>log30.tar.gz<span class="w"> </span>log2013.log<span class="w">      </span><span class="c1"># 只将 tar 内的部分文件解压出来</span>
+</code></pre></div>
+<ul>
+<li>第一个字母（z/j/J）→ 压缩方式</li>
+<li>第二个字母（c/x/t）→ 压缩/解压/查看</li>
+<li><code>vf</code>→固定搭配</li>
+</ul>
+<hr>
+<h3 id="_6">用户管理<a class="headerlink" href="#_6" title="Permanent link">¶</a></h3>
+<center>
+
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-a7a804e166.png){: .zoom}
+
+</center>
+
+<blockquote>
+<p>目前不常用，暂时搁置</p>
+</blockquote>
+<hr>
+<h3 id="_7">系统管理<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>uname</code>/<code>reboot</code>/<code>shutdown</code>/<code>date</code>/<code>ps</code>/<code>kill</code>/<code>jobs</code></p>
+</div>
+<h4 id="cat-etcos-release">cat /etc/os-release<a class="headerlink" href="#cat-etcos-release" title="Permanent link">¶</a></h4>
+<p>查看发行版</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>➜<span class="w">  </span>~<span class="w"> </span>cat<span class="w"> </span>/etc/os-release
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">"Ubuntu 24.04.1 LTS"</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nv">NAME</span><span class="o">=</span><span class="s2">"Ubuntu"</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">"24.04"</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nv">VERSION</span><span class="o">=</span><span class="s2">"24.04.1 LTS (Noble Numbat)"</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="nv">VERSION_CODENAME</span><span class="o">=</span>noble
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="nv">ID</span><span class="o">=</span>ubuntu
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="nv">ID_LIKE</span><span class="o">=</span>debian
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">"https://www.ubuntu.com/"</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="nv">SUPPORT_URL</span><span class="o">=</span><span class="s2">"https://help.ubuntu.com/"</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="nv">BUG_REPORT_URL</span><span class="o">=</span><span class="s2">"https://bugs.launchpad.net/ubuntu/"</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="nv">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="s2">"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="nv">UBUNTU_CODENAME</span><span class="o">=</span>noble
+</code></pre></div>
+<p>查看内核可用<code>uname -a</code>命令</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>➜<span class="w">  </span>~<span class="w"> </span>uname<span class="w"> </span>-a
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>Linux<span class="w"> </span>localhost<span class="w"> </span><span class="m">6</span>.6.87.2-microsoft-standard-WSL2<span class="w"> </span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1">#1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux</span>
+</code></pre></div>
+<h4 id="reboot">reboot<a class="headerlink" href="#reboot" title="Permanent link">¶</a></h4>
+<p>重启</p>
+<h4 id="shutdown">shutdown<a class="headerlink" href="#shutdown" title="Permanent link">¶</a></h4>
+<p>关机</p>
+<h4 id="date">date<a class="headerlink" href="#date" title="Permanent link">¶</a></h4>
+<p>显示时间</p>
+<h4 id="ps">ps<a class="headerlink" href="#ps" title="Permanent link">¶</a></h4>
+<p>报告当前系统的进程状态；可以搭配 kill 指令随时中断、删除不必要的程序</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># 按内存资源的使用量对进程进行排序</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rnk<span class="w"> </span><span class="m">4</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1"># 按 CPU 资源的使用量对进程进行排序</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nk<span class="w"> </span><span class="m">3</span>
+</code></pre></div>
+<h4 id="kill">kill<a class="headerlink" href="#kill" title="Permanent link">¶</a></h4>
+<p>杀死进程</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># 先用 ps 查找进程，然后用 kill 杀掉</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>ps<span class="w"> </span>-ef<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>vim
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>root<span class="w">      </span><span class="m">3171</span><span class="w">     </span><span class="m">341</span><span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">19</span>:58<span class="w"> </span>pts/0<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>grep<span class="w"> </span>vim
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">kill</span><span class="w"> </span><span class="m">3171</span>
+</code></pre></div>
+<h4 id="jobs">jobs<a class="headerlink" href="#jobs" title="Permanent link">¶</a></h4>
+<p>查看后台任务</p>
+<hr>
+<h3 id="_8">网络管理<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>curl</code>/<code>wget</code>/<code>ip</code>/<code>hostname</code>/<code>nslookup</code>/<code>host</code>/<code>nc</code>/<code>ss</code></p>
+</div>
+<h4 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">¶</a></h4>
+<p>一个利用 URL 规则在命令行下工作的单文件传输工具，支持上传和下载</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># 下载文件</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>curl<span class="w"> </span>http://man.linuxde.net/text.iso
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># 下载文件，并查看进度</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>curl<span class="w"> </span>http://man.linuxde.net/test.iso<span class="w"> </span>--progress
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="c1">########################################## 100.0%</span>
+</code></pre></div>
+<h4 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">¶</a></h4>
+<p>很强大的命令行下载工具</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># 使用 wget 下载单个文件</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>wget<span class="w"> </span>http://www.linuxde.net/testfile.zip
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1"># 它以“爬虫”模式、无视 robots.txt 规则、只针对目标目录、并过滤掉无关文件的方式，精准而完整地克隆了服务器上意外暴露的 .git 仓库</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>wget<span class="w"> </span>-r<span class="w"> </span>-np<span class="w"> </span>-nH<span class="w"> </span>--cut-dirs<span class="o">=</span><span class="m">0</span><span class="w"> </span>-e<span class="w"> </span><span class="nv">robots</span><span class="o">=</span>off<span class="w"> </span>-R<span class="w"> </span><span class="s2">"index.html*"</span><span class="w"> </span>http://URL
+</code></pre></div>
+<h4 id="ip">ip<a class="headerlink" href="#ip" title="Permanent link">¶</a></h4>
+<p>代替<code>ifconfig</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w">                     </span><span class="c1"># 查看网络接口信息</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>upi<span class="w">             </span><span class="c1"># 开启网卡</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>down<span class="w">            </span><span class="c1"># 关闭网卡</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>promisc<span class="w"> </span>on<span class="w">      </span><span class="c1"># 开启网卡的混合模式</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>promisc<span class="w"> </span>offi<span class="w">    </span><span class="c1"># 关闭网卡的混个模式</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>txqueuelen<span class="w"> </span><span class="m">1200</span><span class="w"> </span><span class="c1"># 设置网卡队列长度</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1400</span><span class="w">        </span><span class="c1"># 设置网卡最大传输单元</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w">     </span><span class="c1"># 查看网卡IP信息</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.0.1/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span><span class="c1"># 设置eth0网卡IP地址192.168.0.1</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>ip<span class="w"> </span>addr<span class="w"> </span>del<span class="w"> </span><span class="m">192</span>.168.0.1/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span><span class="c1"># 删除eth0网卡IP地址</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>ip<span class="w"> </span>route<span class="w"> </span>show<span class="w"> </span><span class="c1"># 查看系统路由</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.1.254<span class="w">   </span><span class="c1"># 设置系统默认路由</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>ip<span class="w"> </span>route<span class="w"> </span>list<span class="w">                 </span><span class="c1"># 查看路由信息</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span><span class="m">192</span>.168.4.0/24<span class="w">  </span>via<span class="w">  </span><span class="m">192</span>.168.0.254<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span><span class="c1"># 设置192.168.4.0网段的网关为192.168.0.254,数据走eth0接口</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>via<span class="w">  </span><span class="m">192</span>.168.0.254<span class="w">  </span>dev<span class="w"> </span>eth0<span class="w">        </span><span class="c1"># 设置默认网关为192.168.0.254</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>ip<span class="w"> </span>route<span class="w"> </span>del<span class="w"> </span><span class="m">192</span>.168.4.0/24<span class="w">   </span><span class="c1"># 删除192.168.4.0网段的网关</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>route<span class="w"> </span>del<span class="w"> </span>default<span class="w">          </span><span class="c1"># 删除默认路由</span>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>ip<span class="w"> </span>route<span class="w"> </span>delete<span class="w"> </span><span class="m">192</span>.168.1.0/24<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span><span class="c1"># 删除路由</span>
+</code></pre></div>
+<h4 id="hostname">hostname<a class="headerlink" href="#hostname" title="Permanent link">¶</a></h4>
+<p>主机名</p>
+<h4 id="nslookup">nslookup<a class="headerlink" href="#nslookup" title="Permanent link">¶</a></h4>
+<p>DNS查询</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># sudo apt install dnsutils</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>➜<span class="w">  </span>~<span class="w"> </span>nslookup<span class="w"> </span>www.jsdig.com
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Server:<span class="w">         </span><span class="m">10</span>.255.255.254
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>Address:<span class="w">        </span><span class="m">10</span>.255.255.254#53
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>Non-authoritative<span class="w"> </span>answer:
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>Name:<span class="w">   </span>www.jsdig.com
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>Address:<span class="w"> </span><span class="m">154</span>.199.231.41
+</code></pre></div>
+<h4 id="host">host<a class="headerlink" href="#host" title="Permanent link">¶</a></h4>
+<p>分析域名查询工具</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>➜<span class="w">  </span>~<span class="w"> </span>host<span class="w"> </span>www.jsdig.com
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>www.jsdig.com<span class="w"> </span>has<span class="w"> </span>address<span class="w"> </span><span class="m">154</span>.199.231.41
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>➜<span class="w">  </span>~<span class="w"> </span>host<span class="w"> </span>-a<span class="w"> </span>www.jsdig.com
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>Trying<span class="w"> </span><span class="s2">"www.jsdig.com"</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">;;</span><span class="w"> </span>-&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de:<span class="w"> </span>QUERY,<span class="w"> </span>status:<span class="w"> </span>NOERROR,<span class="w"> </span>id:<span class="w"> </span><span class="m">59788</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="p">;;</span><span class="w"> </span>flags:<span class="w"> </span>qr<span class="w"> </span>rd<span class="w"> </span>ra<span class="p">;</span><span class="w"> </span>QUERY:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>ANSWER:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>AUTHORITY:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>ADDITIONAL:<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="p">;;</span><span class="w"> </span>QUESTION<span class="w"> </span>SECTION:
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="p">;</span>www.jsdig.com.<span class="w">                 </span>IN<span class="w">      </span>ANY
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="p">;;</span><span class="w"> </span>ANSWER<span class="w"> </span>SECTION:
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>www.jsdig.com.<span class="w">          </span><span class="m">526</span><span class="w">     </span>IN<span class="w">      </span>A<span class="w">       </span><span class="m">154</span>.199.231.41
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>Received<span class="w"> </span><span class="m">47</span><span class="w"> </span>bytes<span class="w"> </span>from<span class="w"> </span><span class="m">10</span>.255.255.254#53<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">12</span><span class="w"> </span>ms
+</code></pre></div>
+<h4 id="nc">nc<a class="headerlink" href="#nc" title="Permanent link">¶</a></h4>
+<p>netcat，常见于CTF—pwn，用于端口监听</p>
+<h4 id="ss">ss<a class="headerlink" href="#ss" title="Permanent link">¶</a></h4>
+<p><code>netstat</code>的现代版</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">#列出所有udp端口</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>➜<span class="w">  </span>~<span class="w"> </span>ss<span class="w"> </span>-au
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>State<span class="w">    </span>Recv-Q<span class="w">    </span>Send-Q<span class="w">        </span>Local<span class="w"> </span>Address:Port<span class="w">         </span>Peer<span class="w"> </span>Address:Port<span class="w">   </span>Process
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>UNCONN<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">                </span><span class="m">127</span>.0.0.54:domain<span class="w">            </span><span class="m">0</span>.0.0.0:*
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>UNCONN<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">             </span><span class="m">127</span>.0.0.53%lo:domain<span class="w">            </span><span class="m">0</span>.0.0.0:*
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>UNCONN<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">            </span><span class="m">10</span>.255.255.254:domain<span class="w">            </span><span class="m">0</span>.0.0.0:*
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>UNCONN<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">                 </span><span class="m">127</span>.0.0.1:323<span class="w">               </span><span class="m">0</span>.0.0.0:*
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>UNCONN<span class="w">   </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">                     </span><span class="o">[</span>::1<span class="o">]</span>:323<span class="w">                  </span><span class="o">[</span>::<span class="o">]</span>:*
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="c1"># 显示所有端口的统计信息</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>➜<span class="w">  </span>~<span class="w"> </span>ss<span class="w"> </span>-s
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>Total:<span class="w"> </span><span class="m">189</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>TCP:<span class="w">   </span><span class="m">3</span><span class="w"> </span><span class="o">(</span>estab<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>closed<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>orphaned<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>timewait<span class="w"> </span><span class="m">0</span><span class="o">)</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>Transport<span class="w"> </span>Total<span class="w">     </span>IP<span class="w">        </span>IPv6
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>RAW<span class="w">       </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">         </span><span class="m">0</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>UDP<span class="w">       </span><span class="m">5</span><span class="w">         </span><span class="m">4</span><span class="w">         </span><span class="m">1</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>TCP<span class="w">       </span><span class="m">3</span><span class="w">         </span><span class="m">3</span><span class="w">         </span><span class="m">0</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>INET<span class="w">      </span><span class="m">8</span><span class="w">         </span><span class="m">7</span><span class="w">         </span><span class="m">1</span>
+<a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>FRAG<span class="w">      </span><span class="m">0</span><span class="w">         </span><span class="m">0</span><span class="w">         </span><span class="m">0</span>
+</code></pre></div>
+<hr>
+<h3 id="_9">硬件管理<a class="headerlink" href="#_9" title="Permanent link">¶</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">本节涉及命令</p>
+<p><code>df</code>/<code>du</code>/<code>top</code>/<code>free</code></p>
+</div>
+<h4 id="df">df<a class="headerlink" href="#df" title="Permanent link">¶</a></h4>
+<p>用于显示磁盘分区上的可使用的磁盘空间（KB）</p>
+<p>可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>➜<span class="w">  </span>~<span class="w"> </span>df<span class="w"> </span>-h
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>Filesystem<span class="w">      </span>Size<span class="w">  </span>Used<span class="w"> </span>Avail<span class="w"> </span>Use%<span class="w"> </span>Mounted<span class="w"> </span>on
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>none<span class="w">            </span><span class="m">3</span>.9G<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>none<span class="w">            </span><span class="m">3</span>.9G<span class="w">  </span><span class="m">4</span>.0K<span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/mnt/wsl
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>drivers<span class="w">         </span>181G<span class="w">  </span>161G<span class="w">   </span>20G<span class="w">  </span><span class="m">90</span>%<span class="w"> </span>/usr/lib/wsl/drivers
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>/dev/sdd<span class="w">       </span>1007G<span class="w">  </span><span class="m">3</span>.9G<span class="w">  </span>952G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>none<span class="w">            </span><span class="m">3</span>.9G<span class="w">   </span>88K<span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/mnt/wslg
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>none<span class="w">            </span><span class="m">3</span>.9G<span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">0</span>%<span class="w"> </span>/usr/lib/wsl/lib
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>rootfs<span class="w">          </span><span class="m">3</span>.9G<span class="w">  </span><span class="m">2</span>.7M<span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/init
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>none<span class="w">            </span><span class="m">3</span>.9G<span class="w">  </span>560K<span class="w">  </span><span class="m">3</span>.9G<span class="w">   </span><span class="m">1</span>%<span class="w"> </span>/run
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>...
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">题外话 | 查询目录下文件大小</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>➜<span class="w">  </span>~<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-h
+</code></pre></div>
+</div>
+<h4 id="top">top<a class="headerlink" href="#top" title="Permanent link">¶</a></h4>
+<p>任务管理器</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>top<span class="w"> </span>-<span class="w"> </span><span class="m">20</span>:27:06<span class="w"> </span>up<span class="w">  </span><span class="m">3</span>:39,<span class="w">  </span><span class="m">1</span><span class="w"> </span>user,<span class="w">  </span>load<span class="w"> </span>average:<span class="w"> </span><span class="m">0</span>.00,<span class="w"> </span><span class="m">0</span>.00,<span class="w"> </span><span class="m">0</span>.00
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>Tasks:<span class="w">  </span><span class="m">25</span><span class="w"> </span>total,<span class="w">   </span><span class="m">1</span><span class="w"> </span>running,<span class="w">  </span><span class="m">23</span><span class="w"> </span>sleeping,<span class="w">   </span><span class="m">1</span><span class="w"> </span>stopped,<span class="w">   </span><span class="m">0</span><span class="w"> </span>zombie
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>%Cpu<span class="o">(</span>s<span class="o">)</span>:<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>us,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>sy,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>ni,100.0<span class="w"> </span>id,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>wa,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>hi,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>si,<span class="w">  </span><span class="m">0</span>.0<span class="w"> </span>st
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>MiB<span class="w"> </span>Mem<span class="w"> </span>:<span class="w">   </span><span class="m">7941</span>.2<span class="w"> </span>total,<span class="w">   </span><span class="m">7197</span>.9<span class="w"> </span>free,<span class="w">    </span><span class="m">702</span>.7<span class="w"> </span>used,<span class="w">    </span><span class="m">201</span>.7<span class="w"> </span>buff/cache
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>MiB<span class="w"> </span>Swap:<span class="w">  </span><span class="m">16384</span>.0<span class="w"> </span>total,<span class="w">  </span><span class="m">16384</span>.0<span class="w"> </span>free,<span class="w">      </span><span class="m">0</span>.0<span class="w"> </span>used.<span class="w">   </span><span class="m">7238</span>.5<span class="w"> </span>avail<span class="w"> </span>Mem
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="w">    </span>PID<span class="w"> </span>USER<span class="w">      </span>PR<span class="w">  </span>NI<span class="w">    </span>VIRT<span class="w">    </span>RES<span class="w">    </span>SHR<span class="w"> </span>S<span class="w">  </span>%CPU<span class="w">  </span>%MEM<span class="w">     </span>TIME+<span class="w"> </span>COMMAND
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="w">      </span><span class="m">1</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">21800</span><span class="w">  </span><span class="m">12384</span><span class="w">   </span><span class="m">9440</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.2<span class="w">   </span><span class="m">0</span>:01.83<span class="w"> </span>systemd
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="w">      </span><span class="m">2</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3072</span><span class="w">   </span><span class="m">1792</span><span class="w">   </span><span class="m">1792</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.01<span class="w"> </span>init-systemd<span class="o">(</span>Ub
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="w">      </span><span class="m">8</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3088</span><span class="w">   </span><span class="m">2008</span><span class="w">   </span><span class="m">1920</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span>init
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a><span class="w">     </span><span class="m">59</span><span class="w"> </span>root<span class="w">      </span><span class="m">19</span><span class="w">  </span>-1<span class="w">   </span><span class="m">50440</span><span class="w">  </span><span class="m">15184</span><span class="w">  </span><span class="m">14288</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.2<span class="w">   </span><span class="m">0</span>:02.07<span class="w"> </span>systemd-journal
+<a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a><span class="w">    </span><span class="m">108</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">25024</span><span class="w">   </span><span class="m">5888</span><span class="w">   </span><span class="m">4864</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.31<span class="w"> </span>systemd-udevd
+<a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="w">    </span><span class="m">193</span><span class="w"> </span>systemd+<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">19600</span><span class="w">  </span><span class="m">12416</span><span class="w">  </span><span class="m">10240</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.2<span class="w">   </span><span class="m">0</span>:00.29<span class="w"> </span>systemd-resolve
+<a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="w">    </span><span class="m">194</span><span class="w"> </span>systemd+<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">91020</span><span class="w">   </span><span class="m">7552</span><span class="w">   </span><span class="m">6784</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.79<span class="w"> </span>systemd-timesyn
+<a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="w">    </span><span class="m">209</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">4236</span><span class="w">   </span><span class="m">2688</span><span class="w">   </span><span class="m">2432</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.09<span class="w"> </span>cron
+<a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a><span class="w">    </span><span class="m">210</span><span class="w"> </span>message+<span class="w">  </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">9592</span><span class="w">   </span><span class="m">4736</span><span class="w">   </span><span class="m">4352</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.59<span class="w"> </span>dbus-daemon
+<a id="__codelineno-35-17" name="__codelineno-35-17" href="#__codelineno-35-17"></a><span class="w">    </span><span class="m">217</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">17956</span><span class="w">   </span><span class="m">8448</span><span class="w">   </span><span class="m">7552</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.32<span class="w"> </span>systemd-logind
+<a id="__codelineno-35-18" name="__codelineno-35-18" href="#__codelineno-35-18"></a><span class="w">    </span><span class="m">219</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w"> </span><span class="m">1756096</span><span class="w">  </span><span class="m">13696</span><span class="w">  </span><span class="m">10624</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.2<span class="w">   </span><span class="m">0</span>:00.98<span class="w"> </span>wsl-pro-service
+<a id="__codelineno-35-19" name="__codelineno-35-19" href="#__codelineno-35-19"></a><span class="w">    </span><span class="m">221</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3160</span><span class="w">   </span><span class="m">1920</span><span class="w">   </span><span class="m">1792</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.01<span class="w"> </span>agetty
+<a id="__codelineno-35-20" name="__codelineno-35-20" href="#__codelineno-35-20"></a><span class="w">    </span><span class="m">225</span><span class="w"> </span>syslog<span class="w">    </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">222508</span><span class="w">   </span><span class="m">5504</span><span class="w">   </span><span class="m">4352</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.37<span class="w"> </span>rsyslogd
+<a id="__codelineno-35-21" name="__codelineno-35-21" href="#__codelineno-35-21"></a><span class="w">    </span><span class="m">227</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3116</span><span class="w">   </span><span class="m">1792</span><span class="w">   </span><span class="m">1664</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.01<span class="w"> </span>agetty
+<a id="__codelineno-35-22" name="__codelineno-35-22" href="#__codelineno-35-22"></a><span class="w">    </span><span class="m">243</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">107008</span><span class="w">  </span><span class="m">22272</span><span class="w">  </span><span class="m">13184</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">0</span>:00.10<span class="w"> </span>unattended-upgr
+<a id="__codelineno-35-23" name="__codelineno-35-23" href="#__codelineno-35-23"></a><span class="w">    </span><span class="m">339</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3080</span><span class="w">   </span><span class="m">1024</span><span class="w">    </span><span class="m">896</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span>SessionLeader
+<a id="__codelineno-35-24" name="__codelineno-35-24" href="#__codelineno-35-24"></a><span class="w">    </span><span class="m">340</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">3096</span><span class="w">   </span><span class="m">1028</span><span class="w">    </span><span class="m">896</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.98<span class="w"> </span>Relay<span class="o">(</span><span class="m">341</span><span class="o">)</span>
+<a id="__codelineno-35-25" name="__codelineno-35-25" href="#__codelineno-35-25"></a><span class="w">    </span><span class="m">341</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">25164</span><span class="w">  </span><span class="m">21616</span><span class="w">   </span><span class="m">5760</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.3<span class="w">   </span><span class="m">0</span>:14.60<span class="w"> </span>zsh
+<a id="__codelineno-35-26" name="__codelineno-35-26" href="#__codelineno-35-26"></a><span class="w">    </span><span class="m">342</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">6668</span><span class="w">   </span><span class="m">4224</span><span class="w">   </span><span class="m">3584</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.01<span class="w"> </span>login
+<a id="__codelineno-35-27" name="__codelineno-35-27" href="#__codelineno-35-27"></a><span class="w">    </span><span class="m">389</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">20328</span><span class="w">  </span><span class="m">11264</span><span class="w">   </span><span class="m">9216</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.37<span class="w"> </span>systemd
+<a id="__codelineno-35-28" name="__codelineno-35-28" href="#__codelineno-35-28"></a><span class="w">    </span><span class="m">390</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">21156</span><span class="w">   </span><span class="m">3380</span><span class="w">   </span><span class="m">1664</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>:00.00<span class="w"> </span><span class="o">(</span>sd-pam<span class="o">)</span>
+<a id="__codelineno-35-29" name="__codelineno-35-29" href="#__codelineno-35-29"></a><span class="w">    </span><span class="m">412</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">7828</span><span class="w">   </span><span class="m">5972</span><span class="w">   </span><span class="m">4096</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.16<span class="w"> </span>zsh
+<a id="__codelineno-35-30" name="__codelineno-35-30" href="#__codelineno-35-30"></a><span class="w">    </span><span class="m">947</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">   </span><span class="m">22200</span><span class="w">  </span><span class="m">12800</span><span class="w">   </span><span class="m">7552</span><span class="w"> </span>T<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.2<span class="w">   </span><span class="m">0</span>:00.04<span class="w"> </span>vi
+<a id="__codelineno-35-31" name="__codelineno-35-31" href="#__codelineno-35-31"></a><span class="w">   </span><span class="m">1358</span><span class="w"> </span>polkitd<span class="w">   </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">  </span><span class="m">308164</span><span class="w">   </span><span class="m">7680</span><span class="w">   </span><span class="m">6912</span><span class="w"> </span>S<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.09<span class="w"> </span>polkitd
+<a id="__codelineno-35-32" name="__codelineno-35-32" href="#__codelineno-35-32"></a><span class="w">   </span><span class="m">3990</span><span class="w"> </span>root<span class="w">      </span><span class="m">20</span><span class="w">   </span><span class="m">0</span><span class="w">    </span><span class="m">9372</span><span class="w">   </span><span class="m">5632</span><span class="w">   </span><span class="m">3456</span><span class="w"> </span>R<span class="w">   </span><span class="m">0</span>.0<span class="w">   </span><span class="m">0</span>.1<span class="w">   </span><span class="m">0</span>:00.03<span class="w"> </span>top
+</code></pre></div>
+<center>
+
+![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-07aaa70df0.png){: .zoom}
+
+</center>
+
+<h4 id="free">free<a class="headerlink" href="#free" title="Permanent link">¶</a></h4>
+<p>显示内存用量</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>➜<span class="w">  </span>~<span class="w"> </span>free<span class="w"> </span>-h
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">               </span>total<span class="w">        </span>used<span class="w">        </span>free<span class="w">      </span>shared<span class="w">  </span>buff/cache<span class="w">   </span>available
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>Mem:<span class="w">           </span><span class="m">7</span>.8Gi<span class="w">       </span>706Mi<span class="w">       </span><span class="m">7</span>.0Gi<span class="w">       </span><span class="m">3</span>.5Mi<span class="w">       </span>201Mi<span class="w">       </span><span class="m">7</span>.1Gi
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>Swap:<span class="w">           </span>16Gi<span class="w">          </span>0B<span class="w">        </span>16Gi
+</code></pre></div>
+<hr>
+<h3 id="_10">软件管理<a class="headerlink" href="#_10" title="Permanent link">¶</a></h3>
+<h4 id="apt-get">apt-get<a class="headerlink" href="#apt-get" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># 更新 apt-get</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>apt-get<span class="w"> </span>update
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="c1"># 更新所有已安装的软件包</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>apt-get<span class="w"> </span>upgrade
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="c1"># 将系统升级到新版本</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>apt-get<span class="w"> </span>dist-upgrade
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="c1"># 安装一个软件包</span>
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>apt-get<span class="w"> </span>install<span class="w"> </span>&lt;packagename&gt;
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a><span class="c1"># 卸载一个已安装的软件包（保留配置文件）</span>
+<a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>apt-get<span class="w"> </span>remove<span class="w"> </span>&lt;packagename&gt;
+<a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>
+<a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a><span class="c1"># 卸载一个已安装的软件包（删除配置文件）</span>
+<a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>apt-get<span class="w"> </span>–purge<span class="w"> </span>remove<span class="w"> </span>&lt;packagename&gt;
+<a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>
+<a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a><span class="c1"># 如果需要空间的话，可以让这个命令来删除你已经删掉的软件</span>
+<a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>apt-get<span class="w"> </span>autoclean<span class="w"> </span>apt
+<a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>
+<a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a><span class="c1"># 把安装的软件的备份也删除，不过这样不会影响软件的使用的</span>
+<a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>apt-get<span class="w"> </span>clean
+</code></pre></div>
+<hr>
+<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">¶</a></h2>
+<p>如果你想了解啥是Docker（它的底层架构与特点、与虚拟机的差异等），不妨看看<a href="https://github.com/collabnix/dockerlabs/blob/master/beginners/README.md">Docker核心概念</a>，或者直接点开其中的<a href="https://dockerlabs.collabnix.com/beginners/docker/what-is-docker.html">第一课</a></p>
+<div class="admonition example">
+<p class="admonition-title">Docker和VMware的区别</p>
+<center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-eac4212c8d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-eac4212c8d.png"></a></p>
+</center>
+</div>
+<hr>
+<h3 id="_11">绪论<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p><code>Docker</code>是目前最流行的<code>Linux</code>容器解决方案</p>
+<p>它将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样</p>
+<p>总体来说，<code>Docker</code>的接口相当简单，用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样</p>
+<h3 id="_12">小试牛刀<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<p>这篇<a href="https://dunwu.github.io/linux-tutorial/docker/docker-quickstart.html">Docker快速入门</a>用实例<code>step by step</code>演示了<code>image</code>拉取和容器制作与上传，属于是朗朗上手，我就不借花献佛了</p>
+<div class="admonition note">
+<p class="admonition-title">备忘录</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># 查看容器</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="c1"># 要删除所有已停止的容器</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>docker<span class="w"> </span>container<span class="w"> </span>prune<span class="w"> </span>-f
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="c1"># 后台临时启动</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>ghcr.io/gchq/cyberchef:latest
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="c1"># 容器停止</span>
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>docker<span class="w"> </span>stop/kill<span class="w"> </span>&lt;ID/NAME&gt;
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">题外话</p>
+<p>在<code>push</code>到<code>hub</code>仓库后，本地的image便已经备份了，若存储捉急可删除</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># 查询现有镜像</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>docker<span class="w"> </span>images
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="c1"># 删除指定镜像</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>docker<span class="w"> </span>rmi<span class="w"> </span>&lt;image_id<span class="w"> </span>或<span class="w"> </span>镜像名:tag&gt;
+</code></pre></div>
+</div>
+<hr>
+<h3 id="docker-compose">docker compose<a class="headerlink" href="#docker-compose" title="Permanent link">¶</a></h3>
+<p>在实际的工程项目中往往涉及多个容器的协同，此时一个个<code>run</code>显得有些狼狈，于是<code>Docker Compose</code>应运而生</p>
+<ul>
+<li>容器编排工具</li>
+<li>用<code>YAML</code>文件（docker-compose.yml）定义一组服务，然后用一条命令就能启动 / 停止所有服务</li>
+<li>批量<code>docker run</code>+ 自动化配置</li>
+</ul>
+<p>下面以<code>Flask web + Redis</code>为例走一遍<code>compose</code>全流程</p>
+<blockquote>
+<p>环境：WIN11；WSL2下的<code>powershell + docker-desktop</code></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">项目结构</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>compose-demo/
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>├─<span class="w"> </span>docker-compose.yml
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>└─<span class="w"> </span>app/
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">   </span>├─<span class="w"> </span>Dockerfile
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="w">   </span>├─<span class="w"> </span>requirements.txt
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="w">   </span>└─<span class="w"> </span>app.py
+</code></pre></div>
+</div>
+<h4 id="app">创建app<a class="headerlink" href="#app" title="Permanent link">¶</a></h4>
+<p>按照项目结构<code>mkdir</code>、<code>touch</code>并<code>CV</code>一下内容</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">redis</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="n">r</span> <span class="o">=</span> <span class="n">redis</span><span class="o">.</span><span class="n">Redis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"REDIS_HOST"</span><span class="p">,</span><span class="s2">"redis"</span><span class="p">),</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">():</span>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>    <span class="n">r</span><span class="o">.</span><span class="n">incr</span><span class="p">(</span><span class="s2">"hits"</span><span class="p">)</span>
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>    <span class="k">return</span> <span class="sa">f</span><span class="s2">"Hello from Flask! Hits: </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'hits'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Flask 应用，每访问一次就对 Redis 的<code>hits</code>自增并返回</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>Flask&gt;<span class="o">=</span><span class="m">2</span>.0
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>redis&gt;<span class="o">=</span><span class="m">4</span>.0
+</code></pre></div>
+<h4 id="dockerfile">写 Dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">¶</a></h4>
+<p>将app打包为镜像</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>FROM<span class="w"> </span>python:3.11-slim
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>WORKDIR<span class="w"> </span>/app
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>COPY<span class="w"> </span>requirements.txt<span class="w"> </span>.
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>RUN<span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>RUN<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--no-cache-dir<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>COPY<span class="w"> </span>.<span class="w"> </span>.
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>
+<a id="__codelineno-43-10" name="__codelineno-43-10" href="#__codelineno-43-10"></a>ENV<span class="w"> </span><span class="nv">FLASK_APP</span><span class="o">=</span>app.py<span class="w"> </span><span class="nv">FLASK_ENV</span><span class="o">=</span>development<span class="w"> </span><span class="nv">FLASK_RUN_HOST</span><span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span><span class="nv">FLASK_RUN_PORT</span><span class="o">=</span><span class="m">5000</span>
+<a id="__codelineno-43-11" name="__codelineno-43-11" href="#__codelineno-43-11"></a>CMD<span class="w"> </span><span class="o">[</span><span class="s2">"flask"</span>,<span class="w"> </span><span class="s2">"run"</span><span class="o">]</span>
+</code></pre></div>
+<h4 id="docker-compose_1">写 Docker-compose<a class="headerlink" href="#docker-compose_1" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"3.9"</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./app</span>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"5000:5000"</span>
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./app:/app</span><span class="w">           </span><span class="c1"># 开发时把本地代码挂进去实现热更新</span>
+<a id="__codelineno-44-10" name="__codelineno-44-10" href="#__codelineno-44-10"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-44-11" name="__codelineno-44-11" href="#__codelineno-44-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">REDIS_HOST=redis</span>
+<a id="__codelineno-44-12" name="__codelineno-44-12" href="#__codelineno-44-12"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-44-13" name="__codelineno-44-13" href="#__codelineno-44-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span>
+<a id="__codelineno-44-14" name="__codelineno-44-14" href="#__codelineno-44-14"></a><span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<a id="__codelineno-44-15" name="__codelineno-44-15" href="#__codelineno-44-15"></a><span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"CMD"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"curl"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-f"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"http://localhost:5000/"</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-44-16" name="__codelineno-44-16" href="#__codelineno-44-16"></a><span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span>
+<a id="__codelineno-44-17" name="__codelineno-44-17" href="#__codelineno-44-17"></a><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<a id="__codelineno-44-18" name="__codelineno-44-18" href="#__codelineno-44-18"></a><span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-44-19" name="__codelineno-44-19" href="#__codelineno-44-19"></a>
+<a id="__codelineno-44-20" name="__codelineno-44-20" href="#__codelineno-44-20"></a><span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
+<a id="__codelineno-44-21" name="__codelineno-44-21" href="#__codelineno-44-21"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:7-alpine</span>
+<a id="__codelineno-44-22" name="__codelineno-44-22" href="#__codelineno-44-22"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-44-23" name="__codelineno-44-23" href="#__codelineno-44-23"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis-data:/data</span>
+<a id="__codelineno-44-24" name="__codelineno-44-24" href="#__codelineno-44-24"></a>
+<a id="__codelineno-44-25" name="__codelineno-44-25" href="#__codelineno-44-25"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-44-26" name="__codelineno-44-26" href="#__codelineno-44-26"></a><span class="w">  </span><span class="nt">redis-data</span><span class="p">:</span>
+</code></pre></div>
+<ul>
+<li><code>services</code> 下定义两个服务：<code>web</code>（自建镜像）和 <code>redis</code>（直接拉官方镜像）</li>
+<li><code>build: ./app</code>：从 <code>app</code> 目录的 Dockerfile 构建镜像</li>
+<li><code>ports</code>：把容器 5000 端口映射到主机 5000</li>
+<li><code>volumes</code>：绑定挂载本地代码到容器（方便开发时修改立即生效）</li>
+<li><code>depends_on</code>：让<code>web</code>在启动时依赖<code>redis</code>（只是启动顺序，不保证服务就绪）</li>
+<li><code>healthcheck</code>：定义健康检查，Compose 会报告服务健康状况</li>
+<li><code>volumes</code>（最外层的）：持久化 Redis 数据</li>
+</ul>
+<blockquote>
+<p>可使用<code>docker compose config</code>检查文件是否报错</p>
+</blockquote>
+<h4 id="_13">构建并启动<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="c1"># 在后台启动，不占用终端</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>除了看见容器被启用外，访问 <a href="http://localhost:5000/">http://localhost:5000/</a> 能得到类似<code>Hello from Flask! Hits: 21</code>（刷新数加）的结果，说明运行成功</p>
+<p>下面的命令可检查容器运行情况，与docker-desktop显示一致</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1"># 查看状态</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="c1"># 查看日志（跟随）</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">docker-desktop 截图</p>
+<center>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-bef66544ca.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/authcode-bef66544ca.png"></a></p>
+</center>
+</div>
+<h4 id="bash">进入容器 bash<a class="headerlink" href="#bash" title="Permanent link">¶</a></h4>
+<p>用于查看文件、运行命令、调试环境变量等</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>web<span class="w"> </span>sh
+</code></pre></div>
+<h4 id="rebuild">rebuild<a class="headerlink" href="#rebuild" title="Permanent link">¶</a></h4>
+<p>更新代码（Dockerfile/依赖）后需要重建环境</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</code></pre></div>
+<h4 id="_14">停止与清理<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>--volumes<span class="w"> </span>--rmi<span class="w"> </span><span class="nb">local</span>
+</code></pre></div>
+<ul>
+<li><code>--volumes</code> 会删除 <code>docker-compose.yml</code> 创建的命名卷，会丢数据</li>
+<li><code>--rmi local</code> 删除本地构建出来的镜像（非远程 pull 的镜像）</li>
+</ul>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-18 16:46:02</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-06-18 16:46:02</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../GeminiCLI/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Gemini CLI 摸索笔记">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Gemini CLI 摸索笔记
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../ROCOS/" class="md-footer__link md-footer__link--next" aria-label="下一页: rocos 菜鸟入门">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                rocos 菜鸟入门
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

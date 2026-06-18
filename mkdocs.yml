@@ -338,6 +338,7 @@
           - 02 从卷积到大模型: changheji/ml-intro/ML02.md
         - changheji/MLreport.md
         - changheji/GeminiCLI.md
+        - changheji/环境学习.md
     - NBU_ROCOS:
         - ROCOS/index.md
         - ROCOS/info&ref.md

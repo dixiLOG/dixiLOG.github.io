@@ -1,2 +1,22 @@
+# Local MkDocs/development files
 mkdocs.dev.yml
+site/
+.cache/
+
+# Local importers and generated content
 .blog-import/
+
+# Python/local environment files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Local editor and OS noise
+.DS_Store
+Thumbs.db
+
+# agent
+AGENTS.md

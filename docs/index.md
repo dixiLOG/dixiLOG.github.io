@@ -683,7 +683,7 @@ title: DIXI的个人博客
         <li>坦克动荡2 20:0 零封 Laika</li>
         <li>喜欢看书</li>
         <li>喜欢折腾和开源</li>
-        <li>公众号单篇推文阅读量 16k+</li>
+        <li>公众号单篇推文阅读量 17k+</li>
       </ul>
     </div>
     
@@ -760,6 +760,13 @@ title: DIXI的个人博客
     <article class="dixihome-note">
       <h3>上新</h3>
       <ol class="dixihome-updates">
+        <li class="dixihome-update">
+          <span class="dixihome-date">2026<br>06.18</span>
+          <span class="dixihome-update-body">
+            <strong>长河集补入环境学习 <span class="dixihome-badge">DOCS</span></strong>
+            <span>新增 <a href="https://dixilog.github.io/changheji/环境学习/">环境学习</a>，整理 Linux shell 与 Docker 相关笔记。</span>
+          </span>
+        </li>
         <li class="dixihome-update">
           <span class="dixihome-date">2026<br>06.11</span>
           <span class="dixihome-update-body">

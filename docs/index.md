@@ -761,6 +761,13 @@ title: DIXI的个人博客
       <h3>上新</h3>
       <ol class="dixihome-updates">
         <li class="dixihome-update">
+          <span class="dixihome-date">2026<br>07.21</span>
+          <span class="dixihome-update-body">
+            <strong>NBU 笔记补入高数整理 <span class="dixihome-badge">DOCS</span></strong>
+            <span>新增 <a href="https://dixilog.github.io/NBU-NOTEBOOK/高数整理/">高数整理</a>，从函数与极限一路串到微分方程，并补齐相关图示。</span>
+          </span>
+        </li>
+        <li class="dixihome-update">
           <span class="dixihome-date">2026<br>06.18</span>
           <span class="dixihome-update-body">
             <strong>长河集补入环境学习 <span class="dixihome-badge">DOCS</span></strong>
@@ -795,13 +802,6 @@ title: DIXI的个人博客
             <span>新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a>。</span>
           </span>
         </li>
-        <li class="dixihome-update">
-          <span class="dixihome-date">2025<br>12.23</span>
-          <span class="dixihome-update-body">
-            <strong>推免 Flysheet 持续补写 <span class="dixihome-badge">FLYSHEET</span></strong>
-            <span>围绕院校选择、复盘经验与朋辈感受继续补档，推免线内容从时间线扩展到更细的经验层。</span>
-          </span>
-        </li>
       </ol>
 
       <div class="dixihome-archive">
@@ -810,6 +810,12 @@ title: DIXI的个人博客
             <span>展开查看更多历史装修</span>
           </summary>
           <div class="dixihome-archive-list">
+            <div class="dixihome-archive-item">
+              <span class="dixihome-archive-date">2025<br>12.23</span>
+              <ul>
+                <li>推免 Flysheet 持续补写，围绕院校选择、复盘经验与朋辈感受继续补档，推免线内容从时间线扩展到更细的经验层。</li>
+              </ul>
+            </div>
             <div class="dixihome-archive-item">
               <span class="dixihome-archive-date">2025<br>12.14</span>
               <ul>

@@ -1,0 +1,3038 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/wirelessSensorNetwork/WSN04/">
+      
+      
+        <link rel="prev" href="../WSN03/">
+      
+      
+        <link rel="next" href="../WSN05/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>WSN04 MAC 层 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wsn04-mac" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WSN04 MAC 层
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../commuPrinc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../DSP/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    数字信号处理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线代速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高数速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analogElec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../wirelessCommunication/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线通信笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    无线传感器网络笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            无线传感器网络笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN01 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN02 设计影响因子
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN03 物理层设计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WSN04 MAC 层
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    WSN04 MAC 层
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAC层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MAC层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线信道特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于竞争的MAC协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于竞争的MAC协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csma" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍存在的问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsncsma" class="md-nav__link">
+    <span class="md-ellipsis">
+      面向WSN的CSMA修正
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="面向WSN的CSMA修正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      S-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      进一步改进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      空闲信道评估方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于预留的MAC协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于预留的MAC协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      分配基本思路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于簇结构的预留结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bma-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      BMA-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trama" class="md-nav__link">
+    <span class="md-ellipsis">
+      TRAMA协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于竞争与预留的MAC比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合介质访问
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="混合介质访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#z-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEEE 802.15.4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN05 网络层
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN06 传输层
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN07 跨层设计
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WSN08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WSN08 应用层
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../informationTheoryCoding/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信息论与编码笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAC层
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MAC层">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线信道特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于竞争的MAC协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于竞争的MAC协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csma" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csmaca" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSMA/CA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      仍存在的问题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wsncsma" class="md-nav__link">
+    <span class="md-ellipsis">
+      面向WSN的CSMA修正
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="面向WSN的CSMA修正">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      S-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      进一步改进
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      B-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      空闲信道评估方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于预留的MAC协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基于预留的MAC协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      分配基本思路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于簇结构的预留结构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bma-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      BMA-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trama" class="md-nav__link">
+    <span class="md-ellipsis">
+      TRAMA协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基于竞争与预留的MAC比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      混合介质访问
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="混合介质访问">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#z-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ieee-802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEEE 802.15.4
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="wsn04-mac">WSN04 MAC 层<a class="headerlink" href="#wsn04-mac" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4250 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 24 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="mac">MAC层<a class="headerlink" href="#mac" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>介质访问控制层（Medium Access Control,MAC）</p>
+</blockquote>
+<p>减少或避免节点间的传输冲突</p>
+<p>根据底层思想的差异，分为三类：</p>
+<ul>
+<li>基于竞争的MAC：Contention-based</li>
+<li>基于预留的MAC：Reservation-based</li>
+<li>Hybrid</li>
+</ul>
+<hr>
+<h3 id="_1">无线信道特点<a class="headerlink" href="#_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>是广播信道</li>
+<li>多节点同频同传传输会产生冲突</li>
+<li>需要通过协议协调</li>
+</ul>
+<hr>
+<h3 id="mac_1">基于竞争的MAC协议<a class="headerlink" href="#mac_1" title="Permanent link">¶</a></h3>
+<p>可参考<a href="https://dixilog.github.io/NBU-NOTEBOOK/computerNetwork/CN01/#_8">计网笔记之数据链路层</a></p>
+<ul>
+<li>无协调者</li>
+<li>随机胜出</li>
+<li>冲突保留</li>
+</ul>
+<hr>
+<h4 id="csma">CSMA<a class="headerlink" href="#csma" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>载波监听多路访问（carrier sense multiple access，CSMA）</p>
+</blockquote>
+<h5 id="_2">基本机制与额外机制<a class="headerlink" href="#_2" title="Permanent link">¶</a></h5>
+<ul>
+<li>先侦听后发送机制（listen-before-transmit）</li>
+<li>随机退避机制（random backoff）</li>
+<li>二进制指数退避机制（binary exponential backoff）</li>
+<li>（额外|选用）ACK确认机制</li>
+</ul>
+<hr>
+<h5 id="_3">先侦听后发送<a class="headerlink" href="#_3" title="Permanent link">¶</a></h5>
+<p>规定先<code>listen</code>一段时间（Inter-Frame Spacing，IFS）</p>
+<p>这段时间<code>IFS</code>应确保大于整个系统最远到达时间</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-77dc87b022.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-77dc87b022.png"></a></p>
+<ul>
+<li>可实现当前传输数据不被打断</li>
+<li>但在同时监听的小概率事件下，出现冲突可能</li>
+</ul>
+<hr>
+<h5 id="_4">随机退避机制<a class="headerlink" href="#_4" title="Permanent link">¶</a></h5>
+<p>错开各个等待传输的节点的启动时间</p>
+<p>对于<code>n</code>个需要传输的节点，在当前传输结束后，把<code>roll</code>出的<code>n</code>个倒计时随机值赋给它们<br>
+其中的最大值称为竞争窗口大小</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-301899331d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-301899331d.png"></a></p>
+<ul>
+<li>可规避等待数据同传冲突</li>
+<li>但随机数相同时仍会发生冲突</li>
+</ul>
+<hr>
+<h5 id="_5">二进制指数退避机制<a class="headerlink" href="#_5" title="Permanent link">¶</a></h5>
+<p>对于产生冲突的所有节点，将竞争大小窗口翻倍，再次重复随机退避机制</p>
+<ul>
+<li>这需要已经发送数据的节点**仍保持<code>listen</code>**</li>
+<li>可降低随机数相同的概率</li>
+<li><strong>隐终端问题（无限隔离下space无限远，无解）</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ca763e381b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ca763e381b.png"></a></p>
+<hr>
+<h5 id="ack">ACK确认机制<a class="headerlink" href="#ack" title="Permanent link">¶</a></h5>
+<p>引入数据链路层的ACK，使发送端知晓数据成功接收</p>
+<ul>
+<li>未接收到ACK视为丢帧</li>
+<li>ACK被规定为高优先级(设置一个SIFS&lt;IFS，保证侦听等待的过程中会先收到ACK的信息，以确保ACK的优先级大于数据包的优先级)</li>
+</ul>
+<hr>
+<h4 id="csmaca">CSMA/CA<a class="headerlink" href="#csmaca" title="Permanent link">¶</a></h4>
+<ul>
+<li>向下保留<code>CSMA</code>的三大机制和<code>ACK</code>确认</li>
+<li>引入<code>RTS</code>和<code>CTS</code>数据包</li>
+</ul>
+<h5 id="_6">四次握手<a class="headerlink" href="#_6" title="Permanent link">¶</a></h5>
+<ol>
+<li>发送节点获取Auth后广播RTS（Request to Send）</li>
+<li>接收节点广播CTS（Clear to Send）</li>
+<li>发送节点发送DATA</li>
+<li>成功接收，返回ACK</li>
+</ol>
+<blockquote>
+<p>相当于A在给B发送数据前先问一手你空不空，B回答空并告诉距离A比较远的节点：不要给我发数据我要跟A通信了</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-b2e895e071.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-b2e895e071.png"></a></p>
+<ul>
+<li>
+<p>RTS：抑制发送节点附近的待发送节点</p>
+</li>
+<li>
+<p>2+2+6+6+4=20字节</p>
+</li>
+<li>Frame Control + <strong>Duration</strong> + R Address + T Address + FCS </li>
+<li>
+<p>CTS：抑制接收节点附近的待发送节点，是规避隐终端的直接手段</p>
+</li>
+<li>
+<p>2+2+6+4=14字节</p>
+</li>
+<li>Frame Control + <strong>Duration</strong> + R Address + FCS</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-36c8a2355a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-36c8a2355a.png"></a></p>
+<hr>
+<h4 id="_7">仍存在的问题<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<h5 id="_8">节点如何知晓传输已经结束？<a class="headerlink" href="#_8" title="Permanent link">¶</a></h5>
+<p>保持侦听( listen | overhear )</p>
+<blockquote>
+<p>侦听：对信道信号抽样，观察能量波动</p>
+</blockquote>
+<hr>
+<h5 id="_9">持续的侦听利空能耗，能否补救？<a class="headerlink" href="#_9" title="Permanent link">¶</a></h5>
+<p><strong>虚拟侦听</strong>(Virtual Sensing)，即传输方主动广播，在NAV阶段关闭侦听</p>
+<ul>
+<li>在RTS中的**Duration字段**加入剩余时间广播</li>
+<li>在CTS中的**Duration字段**加入剩余时间广播</li>
+</ul>
+<p><strong>NAV（网络分配向量，Network Allocation Vector）</strong></p>
+<p>用于记录附近节点的剩余时间的表</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-42e14db791.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-42e14db791.png"></a></p>
+<hr>
+<h5 id="rtscsmacsmaca"><sub>~RTS带(CSMA和CSMA/CA均有)来</sub>~不必要的暴露终端抑制，怎么破？<a class="headerlink" href="#rtscsmacsmaca" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-10c99503b6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-10c99503b6.png"></a></p>
+<ul>
+<li>自适应功率控制</li>
+</ul>
+<p>若需要使用RTS/CTS机制，则常采用全功率控制—低功率数据传输的策略</p>
+<p>在RTS/CTS阶段，节点以较高的（全功率）发送控制信息，以确保隐藏终端能收到控制帧</p>
+<p>而在数据传输阶段，节点则降低传输功率，从而缩小干扰范围，使那些虽能听到RTS但不处于数据传输干扰范围的节点（即暴露终端）可以正常发射数据</p>
+<ul>
+<li>分离信令信道与数据信道</li>
+<li>增加忙音信道，用于节点的信道判断辅助</li>
+<li>多址接入(FDMA)</li>
+</ul>
+<hr>
+<h3 id="wsncsma">面向WSN的CSMA修正<a class="headerlink" href="#wsncsma" title="Permanent link">¶</a></h3>
+<p>考虑能耗限制，需要将休眠融入其中</p>
+<p>涉及俩方面：</p>
+<ul>
+<li>休眠周期设置</li>
+<li>休眠同同步设置（全局、局部、异步）</li>
+</ul>
+<hr>
+<h4 id="s-mac">S-MAC<a class="headerlink" href="#s-mac" title="Permanent link">¶</a></h4>
+<h5 id="_10">周期性侦听与休眠<a class="headerlink" href="#_10" title="Permanent link">¶</a></h5>
+<p>亦称为占空比技术</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-759f7453e2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-759f7453e2.png"></a></p>
+<ul>
+<li>取固定时间为时间帧，采用固定周期性休眠</li>
+<li>基于虚拟簇（Virtual Cluster）的局部同步</li>
+</ul>
+<blockquote>
+<p>局部一起睡，一起醒</p>
+</blockquote>
+<hr>
+<h5 id="_11">虚拟簇形成<a class="headerlink" href="#_11" title="Permanent link">¶</a></h5>
+<p>将侦听阶段划分为 SYNC 与 DATA 阶段，分别用于同步和数据传输</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-20b95b433c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-20b95b433c.png"></a></p>
+<p><strong>SYNC 阶段</strong></p>
+<ul>
+<li>同步消息（SYNC message）结构可分为节点ID和下一次休眠开始时间，并通过CSMA竞争广播同步消息</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-e63a174562.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-e63a174562.png"></a></p>
+<ul>
+<li>收到广播的节点设置相同的调度表，并继续传播</li>
+</ul>
+<blockquote>
+<p>所达最远跳数的范围称为虚拟簇</p>
+</blockquote>
+<p><strong>DATA 阶段</strong></p>
+<p>即<code>RTS→LTC→DATA→ACK</code>阶段</p>
+<ul>
+<li>虚拟簇内使用<code>CSMA/CA</code>进行竞争（这里面包含了虚拟侦听）</li>
+<li>虚拟簇间通过边界节点传输</li>
+</ul>
+<p><strong>虚拟簇中节点分类</strong></p>
+<ul>
+<li>同步节点（synchronizer）</li>
+<li>跟随节点（follower）</li>
+<li>边界节点（border），用于簇间信息传递，休眠时间取交集</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-c68302213a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-c68302213a.png"></a></p>
+<hr>
+<h4 id="_12">进一步改进<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<h5 id="_13">侦听（串音）避免<a class="headerlink" href="#_13" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>旨在减少DATA阶段的能量浪费</p>
+</blockquote>
+<p>其他节点传输时，提前进入休眠以减少功耗浪费</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-a8701949e2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-a8701949e2.png"></a></p>
+<blockquote>
+<p>听到旁边节点发<code>CTS</code>秒睡</p>
+</blockquote>
+<hr>
+<h5 id="_14">自适应侦听<a class="headerlink" href="#_14" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>解决缺乏多跳感知造成的时延问题</p>
+</blockquote>
+<p>如果下一跳节点是你还秒睡，不就要多等一个周期了？</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-3dfc96a9f0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-3dfc96a9f0.png"></a></p>
+<p>于是乎，RTS/CTS握手时会在下一跳节点睡前让它别睡太死，ACK就给我醒过来</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-15992d8ed5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-15992d8ed5.png"></a></p>
+<hr>
+<div class="admonition caution">
+<p class="admonition-title">题外话 | 自适应侦听与虚拟侦听的区别</p>
+<blockquote>
+<p>诶，在CTS休眠，在ACK醒来，这不是和虚拟侦听一模一样吗，有什么区别？</p>
+</blockquote>
+<p>谬矣！，从宏观与微观俩个角度都能发现差异</p>
+<p><strong>从宏观上</strong></p>
+<ul>
+<li>自适应侦听面向S-MAC的虚拟簇，动态调整所有节点状态，控制的是占空比</li>
+<li>虚拟侦听是CSMA/CA中的低功耗策略，在S-MAC的DATA阶段竞争中发挥作用，它甚至没有SYNC和SLEEP的概念</li>
+<li>自适应侦听可以让一坨节点分别找到各自的节奏，但虚拟侦听仅仅是让单个节点小睡一会儿，没有大局观</li>
+</ul>
+<blockquote>
+<p><strong>所以，这俩都不在同一个Vivo上，或者说虚拟侦听包含于自适应侦听</strong></p>
+</blockquote>
+<p><strong>从微观上</strong></p>
+<ul>
+<li>虚拟侦听没有同步操作</li>
+<li>RTS结束后，虚拟侦听也可以睡，但自适应侦听不行</li>
+</ul>
+<p><strong>总结一下</strong></p>
+<p>思想同源，层次不同</p>
+<p>虚拟侦听是面向单节点的瞬时行为优化，S-MAC的侦听避免|自适应侦听是面向虚拟簇的全局调度优化</p>
+<p>因此，可以说虚拟侦听是一个RTS/CTS阶段的微观冲突避免手段，而自适应侦听是一个S-MAC层面的全局调度优化手段，二者并不冲突</p>
+</div>
+<hr>
+<h5 id="_15">消息传递机制<a class="headerlink" href="#_15" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>解决突发性消息传递问题</p>
+</blockquote>
+<p>短时间内有大量数据包需要传输，不可避免带来<code>RTS/CTS</code>所引发的**时延&amp;能耗问题**</p>
+<p>在ACK后继续DATA，直到传输结束，断开连接</p>
+<blockquote>
+<p>类似TCP的短连接，建立连接后数据信道保持一段时间</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-0474b25875.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-0474b25875.png"></a></p>
+<blockquote>
+<p>ACK数据包中包含本次数据传输剩余的时间，防止隐终端问题的产生</p>
+</blockquote>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">第一次小测</p>
+<ul>
+<li>判断题</li>
+</ul>
+<ol>
+<li>距离发射机d处的路径损耗定义为接收信号功率与发射信号功率的比值，该比值在多径传播条件下，是一个随机值（×，定义错误）</li>
+<li>CSMA中，当发生冲突时，所有节点均需执行二进制指数退避（×，只有冲突的节点）</li>
+<li>CSMA/CA 的四次握手中的RTS起到防止隐终端回题。（×，CTS）</li>
+<li>实现S-MAC虚拟簇之间的数据传递，需要边界节点的中继和转发（√）</li>
+<li>S-MAC中的消息传递机制可同时实现能耗的降低和传输时延的缩小（√）</li>
+</ol>
+<ul>
+<li>选择题</li>
+</ul>
+<ol>
+<li>以下关于无线传感器网络 WSN 描述正确的是：</li>
+</ol>
+<ul>
+<li>A. WSN 是物联网的基础，位于网络层。</li>
+<li>B. 互联网是 WSN 的重要组成部分。</li>
+<li>C. WSN 采用多跳传输，有利于能耗的减少。</li>
+<li>
+<p>D. 以上说法均不正确。</p>
+</li>
+<li>
+<p><strong>正确答案：C</strong></p>
+</li>
+</ul>
+<ol>
+<li>以下关于 WSN 能耗描述错误的是：</li>
+</ol>
+<ul>
+<li>A. 处于空闲状态的收发机能耗是不可忽略的。</li>
+<li>B. 提高有效比特数，可降低感应单元的功耗。</li>
+<li>C. 对于处理单元而言，应该采用联合控制 CPU 频率和电源电压进行能耗的优化。</li>
+<li>
+<p>D. 处于发送状态的收发机能耗与发送速率有关。</p>
+</li>
+<li>
+<p><strong>正确答案：B</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>提高有效比特数，无法判断感应单元功耗的增减。因为有效比特数高，单元复杂，耗能可能更多，而有效比特数少，单元简单但是传输速率较低，耗能也有可能更多。</p>
+</blockquote>
+<ol>
+<li>以下哪个因素不属于造成多径传输的因素：</li>
+</ol>
+<ul>
+<li>A. 衰减</li>
+<li>B. 反射</li>
+<li>C. 折射</li>
+<li>
+<p>D. 散射</p>
+</li>
+<li>
+<p><strong>正确答案：A</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>无论有没有多径传输，衰减都是存在的</p>
+</blockquote>
+<ol>
+<li>统计信道中，可以利用哪一区域加速数据的传递：</li>
+</ol>
+<ul>
+<li>A. 连接区域</li>
+<li>B. 隔离区域</li>
+<li>C. 过渡区域</li>
+<li>
+<p>D. 两跳区域节点</p>
+</li>
+<li>
+<p><strong>正确答案：C</strong></p>
+</li>
+</ul>
+<ol>
+<li>关于竞争 MAC 的描述错误的是：</li>
+</ol>
+<ul>
+<li>A. 对信道的竞争具有不确定性。</li>
+<li>B. 一个节点的竞争窗口越大，越有利于获得信道的使用权。</li>
+<li>C. CSMA 中随机退避机制可避免多个等待传输的节点产生冲突。</li>
+<li>
+<p>D. 引入占空比技术，可降低竞争 MAC 的能耗。</p>
+</li>
+<li>
+<p><strong>正确答案：B</strong></p>
+</li>
+</ul>
+</div>
+<hr>
+<h4 id="b-mac">B-MAC<a class="headerlink" href="#b-mac" title="Permanent link">¶</a></h4>
+<p>Berkeley MAC，实现异步休眠调度，消解节点间采用同步休眠带来的开销问题，即</p>
+<ul>
+<li>周期性发送</li>
+<li>同步时钟精度差时，需要重复发送SYNC消息</li>
+</ul>
+<blockquote>
+<p>需要解决与休眠节点通信的问题</p>
+</blockquote>
+<h5 id="_16">时间帧设计<a class="headerlink" href="#_16" title="Permanent link">¶</a></h5>
+<ul>
+<li><strong>与帧长相同（保证一个周期内一定可唤醒，保证通信时延）</strong></li>
+<li>占空比相同</li>
+<li>休眠时间自由</li>
+</ul>
+<h5 id="_17">休眠通信<a class="headerlink" href="#_17" title="Permanent link">¶</a></h5>
+<ul>
+<li>发送方在DATA前使用前导码<code>preamble</code>，其长度等于帧长，包含N端接收节点字段反复发送，直到某一段中接收节点苏醒即完成同步</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-0716e2d442.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-0716e2d442.png"></a></p>
+<ul>
+<li>接收方在结束<code>SLEEP</code>后通过低功耗侦听（Low Power Listening）对信道采样，判断是否需要苏醒侦听</li>
+<li>使用CSMA传输</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ee35673744.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ee35673744.png"></a></p>
+<hr>
+<h5 id="_18">特点<a class="headerlink" href="#_18" title="Permanent link">¶</a></h5>
+<ul>
+<li>节省SYNC过程带来的<code>cost</code>，在高负载和高流量的情况下具有良好的性能</li>
+<li><code>preamble</code>会带来额外开销</li>
+</ul>
+<hr>
+<h5 id="stem">STEM<a class="headerlink" href="#stem" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>稀疏拓扑能源管理，Sparse Topology Energy Management，优化<code>preamble</code></p>
+</blockquote>
+<p>用于缩短<code>preamble</code>以降低能耗</p>
+<ul>
+<li>发送方改为停等</li>
+<li>接收方增添反馈，反馈被接受后直接进入<code>DATA</code></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-57270b9470.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-57270b9470.png"></a></p>
+<hr>
+<h4 id="_19">空闲信道评估方法<a class="headerlink" href="#_19" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>Clear Channel Assessment,CCA</p>
+<p>广泛运用于WIFI</p>
+</blockquote>
+<h5 id="_20">错误感知的影响<a class="headerlink" href="#_20" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>类似于发1判0，虚警/漏警</p>
+</blockquote>
+<p><strong>误以为信道空闲</strong></p>
+<ul>
+<li>冲突</li>
+<li><code>preamble</code>重复传输，增加传输时延</li>
+</ul>
+<p><strong>误以为信道忙碌</strong></p>
+<ul>
+<li>节点因误判信道有信号而进入侦听阶段，导致能量浪费</li>
+</ul>
+<hr>
+<h5 id="_21">传统感知方法<a class="headerlink" href="#_21" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-d2be44558d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-d2be44558d.png"></a></p>
+<hr>
+<h5 id="b-mac_1">B-MAC感知方法<a class="headerlink" href="#b-mac_1" title="Permanent link">¶</a></h5>
+<ol>
+<li>噪声本底估计值</li>
+</ol>
+<p>在数据传输结束（<strong>此时存在IFS帧间隔，只有信道噪声</strong>）后多次采样，并采用滑动平均计算</p>
+<ol>
+<li>信道判断</li>
+</ol>
+<p>若存在能量远小于噪声本底值的采样值，则认为空闲</p>
+<hr>
+<h3 id="mac_2">基于预留的MAC协议<a class="headerlink" href="#mac_2" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>计划经济，slot 分配</p>
+</blockquote>
+<p>改时间帧为超帧：在预留阶段进行时隙分配；在DATA阶段进行节点间无冲突数据传输</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-62f1b84290.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-62f1b84290.png"></a></p>
+<h4 id="_22">分配基本思路<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<ul>
+<li>基于簇的预留（选举出协调节点进行分配）</li>
+<li>基于协议机制的协商预留</li>
+</ul>
+<hr>
+<h4 id="_23">基于簇结构的预留结构<a class="headerlink" href="#_23" title="Permanent link">¶</a></h4>
+<h5 id="_24">概念|簇<a class="headerlink" href="#_24" title="Permanent link">¶</a></h5>
+<p>由相邻节点组成的一个集合，包含簇头与簇节点</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-5fed81bad8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-5fed81bad8.png"></a></p>
+<blockquote>
+<p>WSN可视为多个簇组成的网络，簇之间亦可相互通信</p>
+</blockquote>
+<h5 id="sift">簇的形成与Sift<a class="headerlink" href="#sift" title="Permanent link">¶</a></h5>
+<ul>
+<li>WSN节点通过CSMA广播竞争出<code>CH</code>（能量优先，谁嗓门大，等待时间短就听谁的）</li>
+<li>其余收到广播的节点称为簇节点，并将信息继续广播（类似虚拟簇，不过这是真的）</li>
+<li>一段时间后需要重新竞争，轮流当排头（以免簇头能量消耗过大）</li>
+</ul>
+<p><strong>问题：高密度节点下的大量簇头冲突</strong></p>
+<p>于是引入另一种簇头形成方式——<strong>Sift</strong></p>
+<ul>
+<li>对于竞争窗口：大随机数大概率，小随机数小概率</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-43da4f63b0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-43da4f63b0.png"></a></p>
+<hr>
+<h4 id="bma-mac">BMA-MAC<a class="headerlink" href="#bma-mac" title="Permanent link">¶</a></h4>
+<blockquote>
+<p><strong>Bit-Map-Assisted MAC</strong></p>
+</blockquote>
+<p>分为簇组织阶段与簇稳定阶段，稳定阶段分为预留与DATA俩阶段</p>
+<ul>
+<li>组织阶段（Set-up），簇头要求能量超过门限</li>
+<li>预留阶段，每一节点告知簇头自己哪一slot需要传数据（0011000...，形成<code>bit-map</code>）</li>
+<li>DATA阶段按需传输，传输结束后进入Idle（空间挂起状态）</li>
+</ul>
+<blockquote>
+<p>一段时间后，簇将重新组织</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-77961ebe85.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-77961ebe85.png"></a></p>
+<hr>
+<h4 id="trama">TRAMA协议<a class="headerlink" href="#trama" title="Permanent link">¶</a></h4>
+<p>对于隐终端与暴露终端，节点传输时需要且仅需要考虑两跳邻节点</p>
+<p>因而一个可以与其两跳邻节点协商的协议应运而生<br>
+即Traffic Adaptive Media Access Protocol</p>
+<blockquote>
+<p><strong>TRAMA是一种两跳邻节点发现机制（NP: Neighbor Protocol）</strong></p>
+</blockquote>
+<p>TRAMA 的核心是通过周期性广播来发现一跳和两跳邻节点，在两跳范围内为某个时隙分配使用权</p>
+<p><strong>周期性广播</strong></p>
+<ul>
+<li>每个节点会定期广播自己的一跳邻节点信息，这些信息帮助其他节点了解谁是它们的直接邻居</li>
+</ul>
+<p><strong>广播时隙</strong></p>
+<ul>
+<li>在一些特定的时隙（称为<code>signaling</code>时隙）中，节点会随机选择一个时隙进行广播</li>
+<li>这种随机选择可以避免冲突，确保广播信息能够成功传输</li>
+</ul>
+<p><strong>广播结果</strong></p>
+<ul>
+<li>每个节点通过接收其他节点的广播，可以获取 <strong>一跳邻节点</strong> 和 <strong>两跳邻节点</strong> 的信息</li>
+</ul>
+<p><strong>确定时隙归属</strong></p>
+<ul>
+<li>使用 <strong>自适应选举机制（adaptive election algorith，AEA）</strong> 来决定哪个节点可以使用某个时隙</li>
+<li>
+<p>时隙的归属通过优先级计算来确定</p>
+</li>
+<li>
+<p>公式：</p>
+<ul>
+<li>$ p(u, t) = h(u \oplus t)$</li>
+<li><code>u</code>是节点的 ID</li>
+<li><code>t</code>是某个时隙的编号</li>
+<li><code>h</code>是一个预先设计好的函数，用于计算节点对某个时隙的优先级</li>
+<li>优先级最高的节点会获得该时隙的使用权，从而完成时隙的分配</li>
+</ul>
+</li>
+</ul>
+<p><strong>调度交换机制——增加slot调度灵活性</strong></p>
+<ul>
+<li>分配的slot无数据传输需求，则通知其他节点</li>
+</ul>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">第四次课后练习题</p>
+<ol>
+<li>在占空比技术中，假设帧长为1秒，休眠时长为0.3秒，那么占空比是多少?（70%）</li>
+<li>在S-MAC中，节点是否共享一个休眠调度时间表?（是的）</li>
+<li>在S-MAC中，使用自适应侦听后，数据报文在一个时间帧内可传输几跳?（两跳）</li>
+<li>在B-MAC中，节点间可有不同的休眠调度表，如何在两个节点间进行数据传输?（发送前导码实现异步休眠调度）</li>
+<li>在B-MAC中，当一个节点在传输前导码过程，若数据接收节点在期间唤醒。那么前导码的发送是可以即刻终止并开始数据传输的。（×，添加<code>stem</code>后才能实现）</li>
+<li>在B-MAC中，信道噪声采样发生在当前传输结束后的帧间隔内,可有效反映噪声真实情况。（√）</li>
+<li>采用Sift协议中的“小随机数小概率”，可提高建簇的成功率（√）</li>
+</ol>
+</div>
+<hr>
+<h3 id="mac_3">基于竞争与预留的MAC比较<a class="headerlink" href="#mac_3" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>小小的总结</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ae6c664c71.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-ae6c664c71.png"></a></p>
+<hr>
+<h3 id="_25">混合介质访问<a class="headerlink" href="#_25" title="Permanent link">¶</a></h3>
+<h4 id="z-mac">Z-MAC<a class="headerlink" href="#z-mac" title="Permanent link">¶</a></h4>
+<ul>
+<li>两跳范围内进行时隙预留（思路与TRAMA不同）</li>
+<li>已预留的slot在idle状态下可被竞争使用</li>
+<li>高负载使用预留MAC | 低负载使用竞争MAC</li>
+</ul>
+<h5 id="_26">两跳范围内的时隙预留<a class="headerlink" href="#_26" title="Permanent link">¶</a></h5>
+<p>分两跳邻节点发现机制（簇组织）和时隙预留分配两个阶段</p>
+<ul>
+<li><strong>两跳邻节点发现机制</strong></li>
+</ul>
+<p>每个节点知悉其两跳范围内的所有节点</p>
+<blockquote>
+<p>因为冲突在两跳内产生</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-1ce1484fd5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-1ce1484fd5.png"></a></p>
+<ul>
+<li>
+<p><strong>时隙预留机制</strong></p>
+</li>
+<li>
+<p>预留节点向所有一跳节点广播 request</p>
+</li>
+<li>所有一跳节点回复 grant</li>
+<li>向两跳邻节点广播 release（让两跳都知晓slot占用，避免冲突|类比竞争下的隐终端问题）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-c617a5e3f6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-c617a5e3f6.png"></a></p>
+<ul>
+<li><strong>高负载预留，低负载竞争</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-6784663c5f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-6784663c5f.png"></a></p>
+<hr>
+<h4 id="ieee-802154">IEEE 802.15.4<a class="headerlink" href="#ieee-802154" title="Permanent link">¶</a></h4>
+<ul>
+<li>一种标准化的、低速率的无线网络标准</li>
+<li>对无线网络的物理层与MAC层的操作进行了定义</li>
+<li>MAC类型为时分混合MAC：不同时间段使用不同的MAC协议</li>
+<li>
+<p>将超帧分为<code>CAP</code>与<code>CFP</code></p>
+</li>
+<li>
+<p>CAP: contention access period</p>
+<ul>
+<li>CSMA/CA</li>
+<li>
+<p>CFP: contention free period</p>
+</li>
+<li>
+<p>基于簇结构的TDMA（星状、网状、树状）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-9dfffd4eaf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-9dfffd4eaf.png"></a></p>
+<ul>
+<li>
+<p>网络节点分三类</p>
+</li>
+<li>
+<p>网络协调器</p>
+<ul>
+<li>全功能设备</li>
+<li>簇头，分配时隙</li>
+<li>
+<p>全功能设备</p>
+</li>
+<li>
+<p>实现路由与数据转发</p>
+</li>
+<li>
+<p>精简功能设备</p>
+</li>
+<li>
+<p>不能路由</p>
+</li>
+<li>不能充当网络协调器</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-a48e2557e6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/wireless-sensor-network-20260721-173359-authcode-a48e2557e6.png"></a></p>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../WSN03/" class="md-footer__link md-footer__link--prev" aria-label="上一页: WSN03 物理层设计">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                WSN03 物理层设计
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../WSN05/" class="md-footer__link md-footer__link--next" aria-label="下一页: WSN05 网络层">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                WSN05 网络层
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

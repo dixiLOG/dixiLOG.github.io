@@ -1,0 +1,2948 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/informationTheoryCoding/ITC02/">
+      
+      
+        <link rel="prev" href="../ITC01/">
+      
+      
+        <link rel="next" href="../ITC03/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>ITC02 信源与信息熵 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#itc02" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ITC02 信源与信息熵
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../commuPrinc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../DSP/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    数字信号处理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线代速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高数速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analogElec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../wirelessCommunication/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线通信笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../wirelessSensorNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线传感器网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    信息论与编码笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            信息论与编码笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC01 绪论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ITC02 信源与信息熵
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    ITC02 信源与信息熵
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      信源与信息熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信源与信息熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信源的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信源的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      单符号离散信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号序列信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      马尔可夫信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳态分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息度量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      自信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      单符号离散信源熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      相对熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散序列信源的熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散序列信源的熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      无记忆序列熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      有记忆序列熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      马氏链极限熵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续信源的熵与互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续信源的熵与互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      幅度连续的单个符号信源熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大熵定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      冗余度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC03 信道与信道容量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC04 率失真函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC05 信源编码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC06 信道编码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ITC07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ITC07 加密编码
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      信源与信息熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信源与信息熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信源的分类
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信源的分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      单符号离散信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号序列信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      马尔可夫信源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳态分布
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息度量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信息度量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      自信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      单符号离散信源熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      互信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      相对熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      熵的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      离散序列信源的熵
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="离散序列信源的熵">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      无记忆序列熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      有记忆序列熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      马氏链极限熵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续信源的熵与互信息
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="连续信源的熵与互信息">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      幅度连续的单个符号信源熵
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大熵定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      冗余度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="itc02">ITC02 信源与信息熵<a class="headerlink" href="#itc02" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4849 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 27 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_1"><strong>信源与信息熵</strong><a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>信源是产生消息（符号）的来源</strong><br>
+<strong>由于消息的不确定性，信源是产生随机变量、随机序列和随机过程的源</strong></li>
+<li><strong>信源的基本特性是具有随机属性和概率统计特性</strong></li>
+</ul>
+<h3 id="_2"><strong>信源的分类</strong><a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p><strong>信源有三大类，用概率空间（分布律）描述：</strong></p>
+<h4 id="_3"><strong>单符号离散信源</strong><a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<p><strong>离散信源</strong></p>
+<p><strong><span class="arithmatex">\(\begin{bmatrix}X\\P\end{bmatrix}=\begin{bmatrix}a_1&amp;a_2&amp;\cdots&amp;a_n\\p(a_1)&amp;p(a_2)&amp;\cdots&amp;p(a_n)\end{bmatrix}\)</span></strong></p>
+<p><strong>满足完备性</strong></p>
+<div class="arithmatex">\[\sum_ip_i=1\]</div>
+<p><strong>连续信源</strong></p>
+<p><strong><span class="arithmatex">\(\begin{bmatrix}X\\P\end{bmatrix}=\begin{bmatrix}(a,b)\\p_X(x)\end{bmatrix}\)</span></strong></p>
+<p><strong><span class="arithmatex">\(p_X\)</span>为概率密度函数，满足<span class="arithmatex">\(\int_a^bp_X(x)dx=1\)</span></strong></p>
+<hr>
+<h4 id="_4"><strong>符号序列信源</strong><a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<p><strong>以符号序列为整体的消息</strong></p>
+<p><strong><span class="arithmatex">\(\begin{bmatrix}X\\P\end{bmatrix}=\begin{bmatrix}X=x_1&amp;X=x_2&amp;\cdots&amp;X=x_{n^L}\\p(x_1)&amp;p(x_2)&amp;\cdots&amp;p(x_{n^L})\end{bmatrix}\)</span></strong></p>
+<p><strong>如</strong></p>
+<p><strong><span class="arithmatex">\(\begin{bmatrix}X\\P\end{bmatrix}=\begin{bmatrix}X=000&amp;X=001&amp;\cdots&amp;X=111\\p_0^3&amp;p_0^2p_1&amp;\cdots&amp;p_1^3\end{bmatrix}\)</span></strong></p>
+<ul>
+<li><strong>无记忆信源的联合概率密度等于边缘概率密度之积</strong></li>
+<li><strong>离散平稳无记忆信源亦称为独立同分布信源</strong></li>
+</ul>
+<hr>
+<h4 id="_5"><strong>连续信源</strong><a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>连续平稳信源（时间离散，幅值连续）</strong></li>
+</ol>
+<p><strong>连续型随机变量，与时间起点无关（无记忆）</strong></p>
+<p><strong><span class="arithmatex">\(\begin{gathered}p_{x}(x)=p_{X}(x_{1},x_{2},...,x_{N})\\=\prod_{i=1}^Np_X(x_i)\\=\begin{bmatrix}p_X(x)\end{bmatrix}^N\end{gathered}\)</span></strong></p>
+<ol>
+<li><strong>随机波形信源（均连续）</strong></li>
+</ol>
+<p><strong>一般用平稳遍历的随机过程来描述</strong></p>
+<ul>
+<li><strong>采样得到的随机变量之间一般是线性相关的，故随机波形信源也是一种有记忆信源</strong></li>
+</ul>
+<hr>
+<h4 id="_6"><strong>马尔可夫信源</strong><a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<p><strong>当前时刻符号与前<code>m</code>个符号有关，而与此前的符号无关，即</strong></p>
+<p><strong><span class="arithmatex">\(\begin{aligned}&amp; P(X_n=x_n\mid X_{n-1}=x_{n-1},X_{n-2}=x_{n-2},\ldots,X_1=x_1)\\&amp;= P(X_n=x_n\mid X_{n-1}=x_{n-1},X_{n-2}=x_{n-2},\ldots,X_{n-m}=x_{n-m})\mathrm{~for~}n&gt;m\end{aligned}\)</span></strong></p>
+<p><strong>!!! question "后无效性 OR 记忆性？"</strong></p>
+<p><strong>随机信号处理告诉我们，马尔可夫链具备后无效性</strong><br>
+<strong>但高阶马链定义式似乎又意味着记忆性的存在</strong><br>
+<strong>是否矛盾了？</strong></p>
+<p><strong>从定义出发，迎刃破解</strong></p>
+<p>无记忆性，实际上是马尔可夫性，即</p>
+<div class="arithmatex">\[P(X_{n+1}|X_n,X_{n-1},\ldots,X_0)=P(X_{n+1}|X_n)\]</div>
+<div class="arithmatex">\[\text{给定当前状态 }X_n\text{,未来状态 }X_{n+1}\text{ 的分布不依赖于过去的状态 }X_{n-1},X_{n-2},\ldots.\]</div>
+<p>另一方面，后无效性可以描述为</p>
+<div class="arithmatex">\[P(X_{n+1}|X_n,X_{n-1},\ldots,X_0)=P(X_{n+1}|X_n,X_{n-1},\ldots,X_{n-m+1})\]</div>
+<p>这与m阶马链定义完全一致！</p>
+<p>得出结论，高阶马尔科夫链不满足标准的一阶马尔科夫性，但它满足后无效性</p>
+<p>同时，可以通过构造扩展状态向量将其转换为一阶马尔科夫链</p>
+<div class="arithmatex">\[Y_n=(X_n,X_{n-1},...,X_{n-m+1})\]</div>
+<hr>
+<p>为了更好的分析高阶马尔可夫信源，规定状态描述的矢量集</p>
+<div class="arithmatex">\[s_i=(x_{i_1},x_{i_2},\cdots x_{i_m})\quad x_{i_k}\in A=\{a_1,\cdots a_n\}\]</div>
+<p>状态表示按照左旧右新的形式排布，类似队列<code>queue</code>，右进左出</p>
+<p>举个例子，二阶马氏链，含有子集<span class="arithmatex">\([0,1]\)</span>，若上一状态是0，当前为1<br>
+则状态表示为<code>01</code></p>
+<blockquote>
+<p>转移概率、齐次、一步/n步概率矩阵、<code>c-k</code>方程的概念与性质见<a href="https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/RSA05/#_4">随机信号分析笔记</a></p>
+</blockquote>
+<h4 id="_7">稳态分布<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<p>定义各状态**稳态分布**为状态转移的极限</p>
+<div class="arithmatex">\[\lim_{k\to\infty}p_{ij}^{(k)}=W_j\]</div>
+<p>另有更便于计算的表达式，与转移矩阵有关</p>
+<div class="arithmatex">\[\sum_iW_iP_{ij}=W_j\]</div>
+<p>再通过</p>
+<div class="arithmatex">\[\sum_{j}W_{j}=1\]</div>
+<p>即可解出各稳态分布概率</p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-d033a6906d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-d033a6906d.png"></a></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-4b415a2448.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-4b415a2448.png"></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">题外话—隐马尔可夫</p>
+<p>在实际应用中，某些信源(如语音)的输出是非平稳随机过程，但在一个短时段(也称为“帧”)内是平稳的，而相邻的帧与帧之间的状态可能会发生变化。<br>
+因而可以看成局部平稳(即具有短时平稳性),而全局是非平稳的随机过程</p>
+<p>它在经过抽样和量化后成为时间和取值均为离散的准平稳随机序列，这样的信源可以用隐马尔可夫模型(hidden markov model,HMM)来加以描述。</p>
+<p>隐马尔可夫模型应用领域非常广泛，如语音识别、人脸检测、机器人足球、图像去噪、图像识别和 DNA/蛋白质序列分析等。</p>
+</div>
+<hr>
+<h3 id="_8">信息度量<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<h4 id="_9">自信息<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>信息量</strong>：对消息中信息的不确定性的量化</li>
+<li><strong>度量原则</strong>：与种类、重要程度无关，与概率成反比</li>
+</ul>
+<p>由定义推演，函数需为负相关，且多个事件同时发生（概率相乘）转为多个信息量相加</p>
+<p>因此选对数</p>
+<ul>
+<li><strong>自信息量定义式</strong>：<span class="arithmatex">\(I=-\log_{2}\left[p(x)\right] (bit)\)</span> </li>
+</ul>
+<blockquote>
+<p>因此，二进制每个码元 <span class="arithmatex">\((0|1)\)</span> 信息量为<code>1 bit</code></p>
+<p>进一步可得到，M进制每一码元信息量为 <span class="arithmatex">\(l o g_{2}M\)</span></p>
+</blockquote>
+<ul>
+<li>**自信息量性质**非负、单调递减、可加</li>
+<li><strong>联合自信息量</strong><br>
+<span class="arithmatex">\(I(x_i,y_j)=-\log p(x_i,y_j)=\log\frac{1}{p(x_i,y_j)}\)</span></li>
+<li><strong>条件自信息量</strong><br>
+<span class="arithmatex">\(I(x_i\mid y_j)=-\log p(x_i \mid y_j)=\log\frac{1}{p(x_i \mid y_j)}\)</span></li>
+</ul>
+<blockquote>
+<p>这里的下标是定值</p>
+<p>即表示分别取X、Y中的一个基本事件（样本点）</p>
+</blockquote>
+<hr>
+<h4 id="_10">单符号离散信源熵<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<p>平均信息量(面向信源)，记为信息量的统计平均值 H</p>
+<p><strong>你需要先入为主的意识到，熵无非是离散随机变量*函数* 的期望E，或者条件期望</strong></p>
+<h5 id="_11"><strong>符号熵表达式</strong><a class="headerlink" href="#_11" title="Permanent link">¶</a></h5>
+<div class="arithmatex">\[H={\color{red}E[I(X)]}=\sum_{i=1}^{M}p(x_{i})I_{i}=\sum_{i=1}^{M}p(x_{i})\log_{2}{\frac{1}{p(x_{i})}}(\mathrm{bit/符号})\]</div>
+<blockquote>
+<p>求所有样本信息量，即随机变量<code>X</code>的加权和（均值）</p>
+</blockquote>
+<p>【Jensen 不等式】告诉我们等概时熵最大，在后面的证明中会具体说明这一不等式</p>
+<hr>
+<h5 id="_12"><strong>条件熵</strong><a class="headerlink" href="#_12" title="Permanent link">¶</a></h5>
+<p>看看<a href="https://zh.wikipedia.org/wiki/%E6%9D%A1%E4%BB%B6%E7%86%B5">维基百科</a></p>
+<div class="arithmatex">\[H(X\mid Y)=-\sum_{i,j}p(x_{i},y_{j})\log p(x_{i}\mid y_{j})\]</div>
+<hr>
+<p>??? note ”如果你忘记了条件期望，看看这里的证明“</p>
+<p>基于<a href="https://dixilog.github.io/NBU-NOTEBOOK/probabilityTheory/PT03/#_4">概率论之统计特征</a>，我们能了解到</p>
+<ul>
+<li>条件期望<span class="arithmatex">\(E(X\mid Y)\)</span>仍是【随机变量】，随<code>Y</code>变化而变化 | 当<code>Y = y</code>时确定</li>
+<li>
+<p>条件期望有俩种形式，显然条件熵是前者</p>
+</li>
+<li>
+<p>给定<code>Y</code>：<span class="arithmatex">\(E(X\mid Y)\)</span></p>
+</li>
+<li>给定<code>Y=y</code>：<span class="arithmatex">\(E(X\mid Y=y)\)</span></li>
+</ul>
+<p>闭着眼睛写出确定条件的条件期望：</p>
+<div class="arithmatex">\[E[X\mid Y=y]=\sum_i{\color{red}x_j}P\{X=x_i\mid Y=y\}\]</div>
+<p>照猫画虎，试试计算条件熵<span class="arithmatex">\(H(X\mid Y=y)=H(X\mid y)\)</span></p>
+<p>从定义出发，熵是对信息量求期望，即</p>
+<div class="arithmatex">\[H(X\mid y) = E[I(X\mid y)] = -\sum_{i}p(x_{i}\mid y){\color{red}\log p(x_{i}\mid y)}\]</div>
+<blockquote>
+<p>这里的求期望是对信息量，也就是对随机变量函数求期望</p>
+<p>例如<span class="arithmatex">\(E(f(X \mid y))=E(log(X \mid y))=\sum_i p(x_i \mid y) log(x_i \mid y)\)</span></p>
+<p>所以式子中是<span class="arithmatex">\(\log p(x_{i}\mid y)而非\log p(x_{i})\)</span></p>
+</blockquote>
+<p>再进一步，我们终于要得到条件熵的定义式</p>
+<div class="arithmatex">\[H(X\mid Y)=E[I(X\mid Y)]=E_Y[I(X\mid Y=y_j)]=\sum_j p(y_j)\cdot H(X\mid y_j)\\ =\sum_jp(y_j)\left[-\sum_ip(x_i\mid y_j)\log p(x_i\mid y_j)\right]\]</div>
+<blockquote>
+<p>放在连续域就是二重积分</p>
+</blockquote>
+<p>有乘法公式</p>
+<div class="arithmatex">\[p(x,y)=p(y) \cdot p(x\mid y)\]</div>
+<p>故原式能合并为</p>
+<div class="arithmatex">\[H(X\mid Y)=-\sum_j\sum_ip(x_i,y_j)\log p(x_i\mid y_j)\xlongequal{简化}-\sum_{i,j}p(x_i,y_j)\log p(x_i\mid y_j)\]</div>
+<blockquote>
+<p>好了，了解原理后，还是希望你能记住它~</p>
+</blockquote>
+<hr>
+<h5 id="_13"><strong>联合熵</strong><a class="headerlink" href="#_13" title="Permanent link">¶</a></h5>
+<p>不难观察得到</p>
+<p><span class="arithmatex">\(H(X,Y)=-\sum_{i,j}p(x_{i},y_{j})\log p(x_{i},y_{j})\)</span></p>
+<p><strong>一个常用恒等式</strong></p>
+<div class="arithmatex">\[H(X,Y)=H(X)+H(Y \mid X)\]</div>
+<p>或者</p>
+<div class="arithmatex">\[H(X,Y)=H(Y)+H(X \mid Y)\]</div>
+<blockquote>
+<p>土想想，概率上的相乘等于熵（对数）上的相加</p>
+</blockquote>
+<hr>
+<details class="quote">
+<summary>证明</summary>
+</details>
+<p>从联合熵定义出发</p>
+<div class="arithmatex">\[H(X,Y)=-\sum_{i,j}p(x_{i},y_{j})\log p(x_{i},y_{j})\]</div>
+<p>根据条件概率定义</p>
+<div class="arithmatex">\[p(x,y)=p(x)p(y\mid x)\]</div>
+<p>有</p>
+<div class="arithmatex">\[\log p(x,y)=\log p(x)+\log p(y\mid x)\]</div>
+<p>代入得</p>
+<div class="arithmatex">\[\begin{aligned}H(X,Y)&amp;=-\sum_{i,j}p(x_i,y_j)\left[\log p(x_i)+\log p(y_j\mid x_i)\right]\\&amp;=-\sum_{i,j}p(x_i,y_j)\log p(y)-\sum_{i,j}p(x_i,y_j)\log p(y_j \mid x_i)\\ &amp;=-\sum_{i,j}p(x_i,y_j)\log p(y)+ H(Y \mid X) \end{aligned}\]</div>
+<p>对于前一项，进行简单的转化</p>
+<div class="arithmatex">\[\sum_{i}\sum_{j} p(y_j)p(x_i \mid y_j)\log p(y)\xlongequal{\sum_i p(x_i \mid y) =1}=-H(Y)\]</div>
+<p>所以，证毕</p>
+<hr>
+<details class="question">
+<summary>题外话 | 奇怪的问题</summary>
+</details>
+<p>为什么边缘概率 <span class="arithmatex">\(p(x)\)</span> 与条件概率 <span class="arithmatex">\(p(x\mid y)\)</span> 无必然联系，但单符号熵<span class="arithmatex">\(H(X)\)</span>却一定≥条件熵<span class="arithmatex">\(H(X \mid Y)\)</span>？</p>
+<ul>
+<li>先采用最朴素的思想</li>
+</ul>
+<p>虽然<span class="arithmatex">\(p(x)\)</span>与<span class="arithmatex">\(p(x|y)\)</span> 有数学上的关系</p>
+<div class="arithmatex">\[p(x)=\sum_j p(x,y_j)=\sum_{j}p(y_j)p(x|y_j)\]</div>
+<p>但不同的y下的条件概率是相对无规律的，可能是集中或分散，与边缘概率没有确定的联系，故无法比较大小</p>
+<p>而熵是对概率分布的不确定性进行加权平均的度量，即求期望特征，这是稳定的。那么在存在约束条件（Y）的前提下，条件熵的不确定量一定会变小，于是得到结论。</p>
+<ul>
+<li>现在来推导</li>
+</ul>
+<div class="arithmatex">\[H(X)\geq H(X|Y)\]</div>
+<p>其实灰常简单，即利用平均互信息的非负性解决问题</p>
+<div class="arithmatex">\[I(X;Y)=H(X)-H(X\mid Y)=\sum_{x,y}p(x,y)\log\frac{p(x\mid y)}{p(x)} \geq 0\]</div>
+<blockquote>
+<p>但，还有问题</p>
+<ul>
+<li>啥是互信息？</li>
+<li>为什么平均互信息量有非负性？</li>
+</ul>
+<p>往下看吧~</p>
+</blockquote>
+<hr>
+<h4 id="_14">互信息<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">一图以蔽之</p>
+<p>反复回忆这张图，就会明白一切</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-8ce04e3c05.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-8ce04e3c05.png"></a></p>
+</div>
+<h5 id="_15">平均互信息量<a class="headerlink" href="#_15" title="Permanent link">¶</a></h5>
+<p>表示XY的相关性，与熵是同一层概念</p>
+<div class="arithmatex">\[\mathrm{I(X;Y)=H(X)-H(X\mid Y)}\]</div>
+<p>相减意为：给定<code>Y</code>后获得关于<code>X</code>的信息量，即<code>X和Y</code>共同的信息</p>
+<p>得到联合熵的又一种表达式：</p>
+<div class="arithmatex">\[\mathrm{H(XY)=H(X)+H(Y\mid X)=H(X)+H(Y)-I(X;Y)}\]</div>
+<p><strong>定义式</strong></p>
+<div class="arithmatex">\[I(X;Y)=H(X)-H(X\mid Y)=\sum_{i,j}p(x_i,y_j)\log\frac{p(x_i\mid y_j)}{p(x_i)}\]</div>
+<details class="quote">
+<summary>推导一下</summary>
+</details>
+<p>代入展开得</p>
+<div class="arithmatex">\[H(X)-H(X\mid Y)=-\sum_xp(x)\log p(x)+\sum_{x,y}p(x,y)\log p(x\mid y)\]</div>
+<p>其中，边缘概率可用联合概率边缘求和得到，即</p>
+<div class="arithmatex">\[p(x)=\sum_y p(x,y)\]</div>
+<p>代入合并同类项即可</p>
+<div class="arithmatex">\[H(X)-H(X\mid Y)=\sum_{x,y}p(x,y)\left[\log p(x\mid y)-\log p(x)\right]=\sum_{x,y}p(x,y)\log\frac{p(x\mid y)}{p(x)}\]</div>
+<div class="admonition note">
+<p class="admonition-title">题外话</p>
+<p>在互信息量中，分号有时也代表<code>条件</code>的分隔符，如平均条件互信息量</p>
+<div class="arithmatex">\[I(X;Y=y_0)=\sum_x p(x \mid y_0) \log_2 \frac{p(x \mid y_0)}{p(x)}\]</div>
+<p>而平均互信息量也可以表示为</p>
+<div class="arithmatex">\[I(X;Y)=\sum_y p(y)I(X;Y=y)\]</div>
+<p>这与条件熵有异曲同工之妙</p>
+</div>
+<hr>
+<h5 id="_16">离散信源互信息量<a class="headerlink" href="#_16" title="Permanent link">¶</a></h5>
+<p>也叫点互信息量，定义为</p>
+<div class="arithmatex">\[I(x;y)=\log_a\frac{p(x \mid y)}{p(x)},x\in X,y\in Y\]</div>
+<p>非常糟糕，因为互信息量与平均互信息量采用了同样的符号I😭</p>
+<blockquote>
+<p>可能为负，因为边缘概率与条件概率并无关联</p>
+</blockquote>
+<hr>
+<h5 id="_17">平均互信息量的性质<a class="headerlink" href="#_17" title="Permanent link">¶</a></h5>
+<ul>
+<li><strong>非负性</strong></li>
+</ul>
+<div class="arithmatex">\[I(X;Y)=H(X)-H(X\mid Y)=\sum_{x,y}p(x,y)\log\frac{p(x\mid y)}{p(x)} \geq 0\]</div>
+<p>亦称为<code>KL散度</code>非负性</p>
+<p>而KL散度非负性证明的关键在于利用 凸函数 与 Jensen 不等式</p>
+<p><strong>KL散度</strong></p>
+<p>对于两个离散概率分布 p(x) 和 q(x),<a href="https://zh.wikipedia.org/wiki/%E7%9B%B8%E5%AF%B9%E7%86%B5">KL 散度</a>定义为</p>
+<div class="arithmatex">\[D_\mathrm{KL}(p\|q)=\sum_xp(x)\log\frac{p(x)}{q(x)}\]</div>
+<blockquote>
+<p>是不是长得很像</p>
+</blockquote>
+<p><strong>凸函数</strong></p>
+<div class="arithmatex">\[\text{如果函数 }f\text{ 满足对于任意 }x_1,x_2\text{ 以及 }t\in[0,1]\]</div>
+<div class="arithmatex">\[f(tx_1+(1-t)x_2)\leq tf(x_1)+(1-t)f(x_2)\]</div>
+<p>则称<code>f</code>为凸函数</p>
+<blockquote>
+<p>也许<code>t=0.5</code>代入会让你对它更熟悉一些</p>
+</blockquote>
+<p><strong>Jensen不等式</strong></p>
+<p>对于任意凸函数<code>f</code>和随机变量<code>Z</code>,有</p>
+<div class="arithmatex">\[f(E[Z])\leq E[f(Z)]\]</div>
+<blockquote>
+<p>看看<a href="https://zh.wikipedia.org/wiki/%E7%B0%A1%E6%A3%AE%E4%B8%8D%E7%AD%89%E5%BC%8F">维基百科</a>，是你高中就学过的琴生不等式</p>
+</blockquote>
+<p>OK让我们继续</p>
+<p><strong>先证明KL散度的非负性</strong></p>
+<p>令随机变量<code>T</code>为</p>
+<div class="arithmatex">\[T=\frac{q(x)}{p(x)}\]</div>
+<p>那么有</p>
+<div class="arithmatex">\[{E}_p\left[T\right]=\sum_xp(x)\frac{q(x)}{p(x)}=\sum_xq(x)=1\]</div>
+<p>已知<span class="arithmatex">\(f(t) = -\log t\)</span>为凸函数，有</p>
+<div class="arithmatex">\[f\left({E}_p[T]\right)\leq{E}_p[f(T)]\]</div>
+<p>左边直接代入，即为零，则整理得</p>
+<div class="arithmatex">\[0\leq\sum_xp(x)\left[-\log\frac{q(x)}{p(x)}\right]\]</div>
+<p>得证</p>
+<p>再将互信息量改写为</p>
+<div class="arithmatex">\[I(X;Y)=D_{\mathrm{KL}}(p(x,y)\parallel p(x)p(y))\]</div>
+<p>根据非负性，直接得证~</p>
+<hr>
+<ul>
+<li><strong>互易性</strong></li>
+</ul>
+<div class="arithmatex">\[I(X;Y)=I(Y;X)\]</div>
+<div class="arithmatex">\[\begin{gathered}I(X;Y)=\sum_{x,y}p(xy)\log\frac{p(x\mid y)}{p(x)}\\=\sum_{x,y}p(xy)\log\frac{p(y\mid x)}{p(y)}=I(Y;X)\end{gathered}\]</div>
+<hr>
+<ul>
+<li><strong>极值性</strong></li>
+</ul>
+<div class="arithmatex">\[\begin{aligned}&amp;I(X;Y)\leq H(X)\\&amp;I(Y;X)\leq H(Y)\\&amp;当X,Y独立\\&amp;I(X;Y)=0\end{aligned}\]</div>
+<hr>
+<ul>
+<li><strong>凸性</strong></li>
+</ul>
+<p>互信息可表示成<span class="arithmatex">\([p(x_i),p(y_j \mid x_i )]\)</span>的函数</p>
+<div class="arithmatex">\[\begin{aligned}I(X;Y)&amp;=\sum_{i,j}p(x_{i})p(y_{j}\mid x_{i})\log\frac{p(y_{j}\mid x_{i})}{p(y_{j})}\\&amp;=\sum_{i,j}p(x_{i})p(y_{j}\mid x_{i})\log\frac{p(y_{j}\mid x_{i})}{\sum_{i}p(x_{i})p(y_{j}\mid x_{i})}=I\left[p(x_{i}),p(y_{j}\mid x_{i})\right]\end{aligned}\]</div>
+<ul>
+<li>当<span class="arithmatex">\(p(y_j\mid x_i )\)</span>确定，即给定信道，则函数存在最大值，视为信道限</li>
+<li>当<span class="arithmatex">\(p(x_i)\)</span>确定，即信源给定，则函数存在最小值，视为最小传输量</li>
+</ul>
+<hr>
+<h5 id="_18">条件互信息量<a class="headerlink" href="#_18" title="Permanent link">¶</a></h5>
+<p>z一定下，x与y的条件互信息量</p>
+<div class="arithmatex">\[I(x;y\mid z)=\log_{a}\frac{p(x\mid y,z)}{p(x\mid z)},x\in X,y\in Y,z\in Z\]</div>
+<hr>
+<h5 id="_19">联合互信息量<a class="headerlink" href="#_19" title="Permanent link">¶</a></h5>
+<p>x与yz的联合互信息量</p>
+<div class="arithmatex">\[I(x;y,z)=\log_{a}\frac{p(x\mid y,z)}{p(x)},x\in X,y\in Y,z\in Z\]</div>
+<blockquote>
+<p>注意<code>z</code>的位置</p>
+</blockquote>
+<hr>
+<h5 id="_20">信息不增性<a class="headerlink" href="#_20" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-7d4b23b6dd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-7d4b23b6dd.png"></a></p>
+<details open="open">
+<summary>推导过程</summary>
+</details>
+<p>假设Y条件下X与Z独立，则有</p>
+<div class="arithmatex">\[I(X;Y,Z)=I(X;Y)+I(X;Z\mid Y)\\I(X;Y,Z)=I(X;Z)+I(X;Y\mid Z)\]</div>
+<blockquote>
+<p>同理的，把X遮住，联想概率的乘法公式即可</p>
+</blockquote>
+<p>两项作差</p>
+<div class="arithmatex">\[I(X;Z)=I(X;Y)+I(X;Z\mid Y)-I(X;Y\mid Z)\]</div>
+<p>因为独立，中间项为0，所以</p>
+<div class="arithmatex">\[I(X;Z)\leq I(X;Y)\]</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-28f5a0c6aa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-28f5a0c6aa.png"></a></p>
+</div>
+<hr>
+<h4 id="_21">相对熵<a class="headerlink" href="#_21" title="Permanent link">¶</a></h4>
+<p>定义为在同一概率空间上的两个<a href="https://zh.wikipedia.org/wiki/%E6%A6%82%E7%8E%87%E6%B5%8B%E5%BA%A6">概率测度</a>的Kullback_Leibler距离，亦称为前面的KL散度</p>
+<div class="arithmatex">\[D_\mathrm{KL}(p\|q)=\sum_xp(x)\log\frac{p(x)}{q(x)}\]</div>
+<ul>
+<li>非负性</li>
+<li>非互易性</li>
+</ul>
+<p><strong>相对熵的意义</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-f3965e59bd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-f3965e59bd.png"></a></p>
+<hr>
+<h4 id="_22">熵的性质<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>有所重复</p>
+</blockquote>
+<ul>
+<li>非负性</li>
+</ul>
+<div class="arithmatex">\[H(X)=H(p_1,p_2,\cdots,p_n)\geq0\]</div>
+<ul>
+<li>确定性</li>
+<li>对称性</li>
+</ul>
+<div class="arithmatex">\[H(X)=H(p_1,p_2,\cdots,p_n)=H(p_n,p_{n-1},\cdots,p_1)\]</div>
+<ul>
+<li>香农辅助定理</li>
+</ul>
+<div class="arithmatex">\[H(p_1,p_2,p_3)=-\sum_ip_i\log p_i\leq-\sum_ip_i\log q_i\]</div>
+<ul>
+<li>最大熵定理</li>
+</ul>
+<p>等概最大</p>
+<div class="arithmatex">\[H(X)\leq H(\frac{1}{M},\frac{1}{M},\cdots\frac{1}{M})=\log M\]</div>
+<ul>
+<li>条件熵小于无条件熵</li>
+</ul>
+<p>前已证明</p>
+<div class="arithmatex">\[H(Y \mid X)\leq H(Y)\]</div>
+<ul>
+<li>扩展性</li>
+</ul>
+<div class="arithmatex">\[\lim_{\varepsilon\to0}H_{n+1}(p_1,\cdots,p_n-\varepsilon,\varepsilon)=H_n(p_1,\cdots,p_n)\]</div>
+<ul>
+<li>可加性</li>
+</ul>
+<div class="arithmatex">\[H(X,Y)=H(X)+H(Y\mid X)\]</div>
+<p>X、Y独立下</p>
+<div class="arithmatex">\[H(X,Y)=H(X)+H(Y)\]</div>
+<ul>
+<li>递增性</li>
+</ul>
+<p>若以一事件拆分成更小的若干个概率和不变的事件，则熵增</p>
+<div class="arithmatex">\[\begin{aligned}&amp;H_{n+m-1}(p_1,p_2,\cdots,p_{n-1},{\color{red}q_1,q_2,\cdots,q_m})=H_n(p_1,p_2,\cdots,p_{n-1},{\color{red}p_n})+p_nH_m(\frac{q_1}{p_n},\frac{q_2}{p_n},\cdots,\frac{q_m}{p_n})\end{aligned}\]</div>
+<hr>
+<h3 id="_23">离散序列信源的熵<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<h4 id="_24">无记忆序列熵<a class="headerlink" href="#_24" title="Permanent link">¶</a></h4>
+<h5 id="_25">序列熵<a class="headerlink" href="#_25" title="Permanent link">¶</a></h5>
+<p>定义序列符号数为L，则</p>
+<div class="arithmatex">\[H({\bf X})=H(X_L,X_{L-1},...,X_1)=H({ X^L})=-\sum_{i=1}^{n^{L}}p(x_{i})\log p(x_{i})\]</div>
+<blockquote>
+<p>粗体表示序列，大写表示随机变量，小写表示符号</p>
+<p>下标表示指针，上标表示序列缩写|只保留最高位</p>
+</blockquote>
+<p>独立同分布下，序列的熵为L个符号熵之和，即</p>
+<div class="arithmatex">\[H({\bf X})=LH(X)(bit/序列)\]</div>
+<h5 id="_26"><strong>消息熵</strong><a class="headerlink" href="#_26" title="Permanent link">¶</a></h5>
+<p>平均符号熵为序列熵均值，即</p>
+<div class="arithmatex">\[H_{L}(\mathbf{X})=\frac{1}{L}H(\mathbf{X})\xlongequal{i.i.d.}H(X)(bit/sym)\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-164c167b7b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-164c167b7b.png"></a></p>
+<hr>
+<h4 id="_27">有记忆序列熵<a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<h5 id="_28">序列熵<a class="headerlink" href="#_28" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>加上条件</p>
+</blockquote>
+<div class="arithmatex">\[\begin{aligned}H(\mathbf{X})&amp;=H(X_{1})+H(X_{2}\mid X_{1})+\cdots+H(X_{L}\mid X_{1}\cdots X_{L-1})\\&amp;=\sum_{i=1}^{L}H(X_{i}\mid X^{i-1})\end{aligned}\]</div>
+<h5 id="_29">消息熵<a class="headerlink" href="#_29" title="Permanent link">¶</a></h5>
+<div class="arithmatex">\[H_{L}(\mathbf{X})=\frac{1}{L}H(\mathbf{X})=\frac{1}{L}\sum_{i=1}^{L}H(X_{i}\mid X^{i-1})\]</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>记离散有记忆信源：<span class="arithmatex">\(\begin{bmatrix}X&amp;P\end{bmatrix}=\begin{bmatrix}a_1&amp;a_2&amp;a_3\\\frac{11}{36}&amp;\frac{4}{9}&amp;\frac{1}{4}\end{bmatrix}\)</span></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-4c255fbb61.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-4c255fbb61.png"></a></p>
+<p>单符号消息熵为</p>
+<div class="arithmatex">\[H_1({\bf X})=-\sum_a p(a)\log p(a) = 1.543 \: bit/sym \]</div>
+<p>双符号消息熵为</p>
+<div class="arithmatex">\[H_{2}(\mathbf{X})=\frac{1}{2}H(\mathbf{X})=\frac{1}{2}H(X^2) =\frac{1}{2}H(X_1,X_2)=0.5[H(X_1)+H(X_2 \mid X_1)]\]</div>
+<p>其中</p>
+<div class="arithmatex">\[H(X_2 \mid X_1)=-\sum_{i,j} p(x_i,x_j)\log p(x_j \mid x_i)=-\sum_{i,j} p(x_i)\cdot p(x_j \mid x_i)\log p(x_j \mid x_i)=0.872\: bit/sym\]</div>
+<p>所以</p>
+<div class="arithmatex">\[H_{2}(\mathbf{X})=1.21 \: bit/sym\]</div>
+<blockquote>
+<p>消息熵变小了，因为存在相关性，信息量减少</p>
+</blockquote>
+</div>
+<hr>
+<h5 id="_30">性质<a class="headerlink" href="#_30" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>序列长度变大，概率均值变小，信息熵递减收敛，最终确定</p>
+</blockquote>
+<ul>
+<li><span class="arithmatex">\(H(X_L\mid X^{L-1})\text{ 是L的单调非增函数}\)</span></li>
+<li><span class="arithmatex">\(H_L(\mathbf{X})\geq H(X_L\mid X^{L-1})\)</span></li>
+<li><span class="arithmatex">\(H_L(\mathbf{X})\text{ 是L的单调非增函数}\)</span><br>
+<span class="arithmatex">\(H_0(X)\geq H_1(X)\geq H_2({\bf X})\cdots\geq H_\infty({\bf X})\)</span></li>
+<li>极限信息量：<span class="arithmatex">\(\text{当}L\to\infty时，消息熵的极限为条件熵的极限\)</span><br>
+<span class="arithmatex">\(H_\infty(\mathbf{X})=\lim_{L\to\infty}H_L(\mathbf{X})=\lim_{L\to\infty}H(X_L\mid X^{L-1})\)</span></li>
+</ul>
+<hr>
+<p>因为序列中首尾相关性弱，可认为当前状态只和前m个状态有关，即m阶马链</p>
+<h4 id="_31">马氏链极限熵<a class="headerlink" href="#_31" title="Permanent link">¶</a></h4>
+<p>对于n阶齐次遍历马链</p>
+<blockquote>
+<p>不做推导，直给结论</p>
+</blockquote>
+<div class="arithmatex">\[H(X_{m+1}\mid X_{m},\cdots X_{1})=H_{\infty}(\mathbf{X})=\sum_{i}p(s_{i})H(X\mid s_{i})\]</div>
+<blockquote>
+<p>s为状态，p(s)为<a href="https://o2ywbvn10e.feishu.cn/docx/AY6FdVwDRoXgTYxbwH2cdw6unEf#share-XkHEdrq3noykoHxkI5pcGWjqnJd">稳态概率</a></p>
+</blockquote>
+<p>可理解为：求给定状态下的条件熵，并加权平均</p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-6c3a99bb94.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-6c3a99bb94.png"></a></p>
+<p>以某一状态为例</p>
+<table>
+<thead>
+<tr>
+<th>s1状态下的**X**</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p(x)</td>
+<td>0.9</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+<p>∴<span class="arithmatex">\(H(X\mid s_1)=-0.1 \log 0.1 -0.9 \log 0.9  = H(0.9,0.1)\)</span></p>
+</div>
+<hr>
+<h3 id="_32">连续信源的熵与互信息<a class="headerlink" href="#_32" title="Permanent link">¶</a></h3>
+<h4 id="_33">幅度连续的单个符号信源熵<a class="headerlink" href="#_33" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-d3e58603d4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-d3e58603d4.png"></a></p>
+<hr>
+<h4 id="_34">最大熵定理<a class="headerlink" href="#_34" title="Permanent link">¶</a></h4>
+<p>不同功率约束条件意味着不同的最大熵；无约束则不存在最大熵</p>
+<ul>
+<li>均匀分布|幅值约束于[a,b]</li>
+</ul>
+<p>当<span class="arithmatex">\(p_{X}(x){=}1/(\mathrm{b-a})\)</span>时，<span class="arithmatex">\(H_c(X)=log(b-a)\)</span></p>
+<ul>
+<li>高斯分布 | 与均值无关，只与方差有关</li>
+</ul>
+<div class="arithmatex">\[p(x)=\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{\frac{-(x-m)^{2}}{2a^{2}}}\]</div>
+<div class="arithmatex">\[\begin{aligned}H_{c}(X)&amp;=-\int_{-\infty}^{\infty}p(x)\log[\frac{1}{\sqrt{2\pi\sigma^{2}}}e^{\frac{-(x-m)^{2}}{2\sigma^{2}}}]dx\\&amp;=\log\sqrt{2\pi\sigma^2e}=\frac{1}{2}\log(2\pi e\sigma^2)\end{aligned}\]</div>
+<hr>
+<h3 id="_35">冗余度<a class="headerlink" href="#_35" title="Permanent link">¶</a></h3>
+<p>表示给定信源在实际发出消息时所包含的多余信息</p>
+<p>来自于信源符号间的相关性&amp;分布的不均匀性</p>
+<div class="arithmatex">\[\gamma=1-\eta=1-\frac{H_{\infty}(X)}{H_{m}(X)}\]</div>
+<p><span class="arithmatex">\(\eta\)</span>为信息效率</p>
+<p>绝对冗余度</p>
+<div class="arithmatex">\[\gamma_{abs}=C-I(X;Y)\]</div>
+<p>相对冗余度</p>
+<div class="arithmatex">\[\gamma_{rel}=\frac{\gamma_{abs}}{C}\cdot 100\%\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-e136501569.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-information-theory-coding-authcode-e136501569.png"></a></p>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../ITC01/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ITC01 绪论">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                ITC01 绪论
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../ITC03/" class="md-footer__link md-footer__link--next" aria-label="下一页: ITC03 信道与信道容量">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                ITC03 信道与信道容量
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

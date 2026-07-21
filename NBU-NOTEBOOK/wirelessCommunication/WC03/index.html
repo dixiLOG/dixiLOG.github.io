@@ -1,0 +1,3176 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/wirelessCommunication/WC03/">
+      
+      
+        <link rel="prev" href="../WC02/">
+      
+      
+        <link rel="next" href="../WC04/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>WC03 大尺度路径损耗 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wc03" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WC03 大尺度路径损耗
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../commuPrinc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../DSP/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    数字信号处理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线代速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高数速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analogElec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    无线通信笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            无线通信笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC01 绪论与基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC02 蜂窝系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WC03 大尺度路径损耗
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    WC03 大尺度路径损耗
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      大尺度路径损耗
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="大尺度路径损耗">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号强度的度量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线电波传输概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无线电波传输概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      信道分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用波段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      传播方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      天线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      自由空间的电波传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自由空间的电波传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      远场条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径损耗
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      大气中的电波传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="大气中的电波传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效地球半径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOS极限距离
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      非视距传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非视距传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种传播方式发生条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之绕射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之散射
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      对数距离路径损耗模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对数距离路径损耗模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径损耗模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      阴影衰落
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      小区面积覆盖范围
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      小区边缘覆盖概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      覆盖范围表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      衰落容限
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算|链路预算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      室外传播模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="室外传播模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#okumura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Okumura模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hata模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC04 多径传播与小尺度衰落
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC05 移动无线电数字调制
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC06 抗衰落技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC07 多址接入技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../wirelessSensorNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线传感器网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../informationTheoryCoding/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信息论与编码笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      大尺度路径损耗
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="大尺度路径损耗">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号强度的度量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无线电波传输概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无线电波传输概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      信道分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用波段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      传播方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      天线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      自由空间的电波传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="自由空间的电波传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      远场条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径损耗
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      大气中的电波传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="大气中的电波传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效地球半径
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#los" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOS极限距离
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      非视距传输
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非视距传输">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      三种传播方式发生条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之绕射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nlos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLOS之散射
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      对数距离路径损耗模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对数距离路径损耗模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      路径损耗模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      阴影衰落
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      小区面积覆盖范围
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      小区边缘覆盖概率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      覆盖范围表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      衰落容限
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算|链路预算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      室外传播模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="室外传播模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#okumura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Okumura模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hata模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="wc03">WC03 大尺度路径损耗<a class="headerlink" href="#wc03" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4787 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 27 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_1">大尺度路径损耗<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<h3 id="_2">信号强度的度量<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<p>用<code>dB/dBm</code>表示功率与电压</p>
+<div class="arithmatex">\[\text{功率(dBm)=10lg[功率(mW)/1mW]}\\\text{电平(dBμV)=20lg[电平(μV)/1μV]}\]</div>
+<div class="admonition tip">
+<p class="admonition-title">典型值</p>
+<p>BS接收机灵敏度：-104dBm</p>
+<p>MS接收机灵敏度：-102dBm</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[\begin{aligned}&amp;假定某接收机灵敏度为一100dBm,接收\\&amp;机输入阻抗为50\Omega,不考虑天线损耗,试\\&amp;\text{计算以}\mathbf{dB\mu V}\text{计的接收机灵敏度。}\end{aligned}\]</div>
+<ol>
+<li><strong>将dBm转换为功率（单位毫瓦）</strong>：</li>
+</ol>
+<div class="arithmatex">\[P_{\text{mW}} = 10^{\frac{-100}{10}} = 10^{-10} \text{ mW} = 10^{-13} \text{ W}\]</div>
+<ol>
+<li><strong>计算电压（单位伏特）</strong>：</li>
+</ol>
+<div class="arithmatex">\[V_{\text{rms}} = \sqrt{P \times R} = \sqrt{10^{-13} \text{ W} \times 50 \Omega} = \sqrt{5 \times 10^{-12}} \approx 2.236 \times 10^{-6} \text{ V} = 2.236 \mu\text{V}\]</div>
+<ol>
+<li><strong>将电压转换为dBμV</strong>：</li>
+</ol>
+<div class="arithmatex">\[V_{\text{dBμV}} = 20 \times \log_{10}\left(\frac{V_{\text{rms}}}{1 \mu\text{V}}\right) = 20 \times \log_{10}(2.236) \approx 20 \times 0.35 \approx 7 \text{ dBμV}\]</div>
+</div>
+<hr>
+<h3 id="_3">无线电波传输概述<a class="headerlink" href="#_3" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>一些概念引入</p>
+</blockquote>
+<h4 id="_4">信道分类<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>根据信道的时变特性(乘性噪声是否恒定 | 是否线性时不变)，分为恒参信道和随参信道</li>
+</ul>
+<p>恒参信道，又称为加性高斯白噪声信道模型</p>
+<blockquote>
+<p>具体参见<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp04/#_9">信道 - dixi's BLOG</a></p>
+</blockquote>
+<ul>
+<li>以波长或时间或参考值，分为大尺度传播/小尺度衰落模型</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TSEjbrtvfoRMuQxWE9hcrZLynWg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TSEjbrtvfoRMuQxWE9hcrZLynWg.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ZofgbwH0FoI5ZRxdN69c9eRznzg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ZofgbwH0FoI5ZRxdN69c9eRznzg.png"></a></p>
+<hr>
+<h4 id="_5">常用波段<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<ul>
+<li>VHF：30~300M</li>
+<li>微波：毫米波段</li>
+</ul>
+<hr>
+<h4 id="_6">传播方式<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<p>传播方式分视距传输（Line of Sight,LOS）与非视距传输（NLOS）</p>
+<div class="admonition tip">
+<p class="admonition-title">非视距传输三大类</p>
+<p>反射、绕射与散射</p>
+</div>
+<hr>
+<h4 id="_7">天线<a class="headerlink" href="#_7" title="Permanent link">¶</a></h4>
+<ul>
+<li>各向同性天线（点源）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WMvQbcu8PoBciixAlp5ccaSBnec.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WMvQbcu8PoBciixAlp5ccaSBnec.png"></a></p>
+<ul>
+<li>方向图（波瓣图）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WUX8blGYNoW9L3xeMvjchatsndZ.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WUX8blGYNoW9L3xeMvjchatsndZ.png"></a></p>
+<ul>
+<li>天线增益<span class="arithmatex">\(G\)</span></li>
+</ul>
+<p>若某（无耗）方向性天线在其最大辐射方向上某一位置处可以达到的辐射强度为 <span class="arithmatex">\(U_m\)</span>，而发射功率为 <span class="arithmatex">\(P_t\)</span> ，则要在同一位置达到同样的辐射强度，理想化点源的发射功率为 <span class="arithmatex">\(P_t G\)</span>（称为等效各向同性辐射功率<code>EIRP</code>，单位为dBi）</p>
+<p>我们称 <span class="arithmatex">\(G\)</span> 为该方向性天线的增益</p>
+<blockquote>
+<p>理想化点源，<span class="arithmatex">\(G = 1\)</span>；方向性天线，<span class="arithmatex">\(G &gt; 1\)</span>。</p>
+</blockquote>
+<ul>
+<li>天线有效面积（口径，<span class="arithmatex">\(A_e\)</span>）</li>
+</ul>
+<div class="arithmatex">\[A_e=\frac{D\lambda^2}{4\pi}\]</div>
+<blockquote>
+<p><code>D</code>为天线的方向因子</p>
+</blockquote>
+<p>对于无损耗天线，<code>G=D</code>时，有</p>
+<div class="arithmatex">\[A_e=\frac{\lambda^2}{4\pi}G\]</div>
+<div class="admonition bug">
+<p class="admonition-title">题外话 | 今年通信热点</p>
+<p>近场通信（NFC）与水下通信</p>
+</div>
+<hr>
+<h3 id="_8">自由空间的电波传输<a class="headerlink" href="#_8" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MmzNb0hamoPCCFx3UiDc5dR8nqD.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MmzNb0hamoPCCFx3UiDc5dR8nqD.png"></a></p>
+<h4 id="_9">远场条件<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<p>离天线足够远的区域，满足接收信号近似为平面波（而非球面波）</p>
+<p>远场数学定义</p>
+<div class="arithmatex">\[d\geq d_f=\frac{2L^2}{\lambda}\]</div>
+<blockquote>
+<p>L为天线长度</p>
+</blockquote>
+<h4 id="_10">路径损耗<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<div class="admonition quote">
+<p class="admonition-title">在自由空间传播的前提下</p>
+<p>用发射天线增益表示</p>
+<ul>
+<li>接收功率密度</li>
+</ul>
+<div class="arithmatex">\[S=\frac{P_TG_T}{4\pi d^2}\quad(W/m^2)\]</div>
+<ul>
+<li>电场强度与磁场强度</li>
+</ul>
+<div class="arithmatex">\[E_0=\frac{\sqrt{30P_TG_T}}{d}\quad(V/m)\]</div>
+<div class="arithmatex">\[H_0=\frac{\sqrt{30P_TG_T}}{120\pi d}\quad(A/m)\]</div>
+<p>接收功率为功率密度乘以有效面积</p>
+<div class="arithmatex">\[{P_R=SA_R=P_TG_TG_R\left(\frac{\lambda}{4\pi d}\right)^2}\]</div>
+<p>其中，有效面积表示为</p>
+<div class="arithmatex">\[A_R=\frac{\lambda^2}{4\pi}G_R\]</div>
+<p>当增益为<code>0</code>，接收功率简化为</p>
+<div class="arithmatex">\[P_R=P_T\left(\frac{\lambda}{4\pi d}\right)^2\]</div>
+<p>已知路径损耗（Pass Loss）定义为</p>
+<div class="arithmatex">\[\mathrm{PL}(d)=\frac{P_T}{P_R}\]</div>
+<p>进一步用<code>dB</code>简化</p>
+<div class="arithmatex">\[PL(dB)=10\lg\left(\frac{4\pi d}{\lambda}\right)^2(dB)=20\lg\frac{4\pi d}{\lambda}(dB)\]</div>
+<p>拆项得</p>
+<div class="arithmatex">\[PL(dB)=32.44+20lgd(km)+20lgf(MHz)\]</div>
+<blockquote>
+<p>注意单位</p>
+</blockquote>
+</div>
+<hr>
+<h3 id="_11">大气中的电波传输<a class="headerlink" href="#_11" title="Permanent link">¶</a></h3>
+<p>在实际的移动信道中,电波是在低层大气中传播的,为非均匀介质,因此会产生折射和吸收现象  </p>
+<p>对于超短波频段,折射现象尤为突出,它会影响到视距的极限传播距离</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-OymnbxGD9opNnsxQEqBcsX0CnQe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-OymnbxGD9opNnsxQEqBcsX0CnQe.png"></a></p>
+<h4 id="_12">等效地球半径<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<p>考虑到大气的折射作用，需要等效半径<span class="arithmatex">\(R_e\)</span>代替实际半径<span class="arithmatex">\(R_0=6370 \: km\)</span></p>
+<div class="arithmatex">\[R_{e}=R_{0}/(1+R_{0}\frac{\mathrm{d}n}{dh})\]</div>
+<p>最终有等效地球半径</p>
+<div class="arithmatex">\[R_\mathrm{e}=8500\mathrm{km}\]</div>
+<h4 id="los">LOS极限距离<a class="headerlink" href="#los" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>视距传输下可达最远距离</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Iw6DbSvn0oIKyyxzDQtccOpEnwM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Iw6DbSvn0oIKyyxzDQtccOpEnwM.png"></a></p>
+<p>地球半径为<span class="arithmatex">\(R_e\)</span>，发射天线高度为 <span class="arithmatex">\(h_t\)</span>，则从地球中心到发射天线顶点的距离为 <span class="arithmatex">\(R_e + h_t\)</span></p>
+<p>切点 <span class="arithmatex">\(C\)</span> 到地球中心的距离为 <span class="arithmatex">\(R_e\)</span></p>
+<p>由勾股定理得：<span class="arithmatex">\((R_e + h_t)^2 = R_e^2 + d_1^2\)</span></p>
+<p>展开并忽略高阶小量（因为 <span class="arithmatex">\(h_t \ll R_e\)</span>），得到：</p>
+<div class="arithmatex">\[d_1 \approx \sqrt{2 R_e h_t}\]</div>
+<p>同理，从切点 <span class="arithmatex">\(C\)</span> 到接收天线顶点 <span class="arithmatex">\(B\)</span> 的距离 <span class="arithmatex">\(d_2\)</span> 为：  </p>
+<div class="arithmatex">\[d_2 \approx \sqrt{2 R_e h_r}\]</div>
+<p>将 <span class="arithmatex">\(d_1\)</span> 和 <span class="arithmatex">\(d_2\)</span> 相加，得到视距极限距离：</p>
+<div class="arithmatex">\[d_{LOS, Max} = d_1 + d_2 = \sqrt{2 R_e} (\sqrt{h_t} + \sqrt{h_r})\]</div>
+<p>在标准大气折射情况下，地球等效半径 <span class="arithmatex">\(R_e\)</span> 取 8500 km。代入上式</p>
+<div class="arithmatex">\[d_{LOS, Max} = 4.12 (\sqrt{h_t} + \sqrt{h_r})\]</div>
+<hr>
+<h3 id="_13">非视距传输<a class="headerlink" href="#_13" title="Permanent link">¶</a></h3>
+<h4 id="_14">三种传播方式发生条件<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<div class="admonition quote">
+<p class="admonition-title">波长与障碍物尺寸的比较</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反射</td>
+<td>障碍所投表面尺寸远大于波长</td>
+</tr>
+<tr>
+<td>绕射</td>
+<td>尺寸与波长相比拟</td>
+</tr>
+<tr>
+<td>散射(乱射)</td>
+<td>尺寸远小于波长</td>
+</tr>
+</tbody>
+</table>
+<details class="question">
+<summary>什么是波束成形(BeamForming)技术</summary>
+<p>波束成形是利用天线阵列中各元件因接收到远场平面波(多径)的相位差</p>
+<p>通过调制加权使得来自某一方向的信号相干叠加</p>
+<p>从而增强该方向信号、抑制其他方向干扰的一种技术。</p>
+</details>
+</div>
+<hr>
+<h4 id="nlos">NLOS之反射<a class="headerlink" href="#nlos" title="Permanent link">¶</a></h4>
+<div class="admonition quote">
+<p class="admonition-title">掠地入射时，可以将地面建模为理想反射面</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VmGXbrTkCoxZFNxZJ2hcbMm9nVf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VmGXbrTkCoxZFNxZJ2hcbMm9nVf.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WNX2bfcIpoHznxxm4rAcouBLnmg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WNX2bfcIpoHznxxm4rAcouBLnmg.png"></a></p>
+</div>
+<hr>
+<h5 id="_15">理想的双线模型<a class="headerlink" href="#_15" title="Permanent link">¶</a></h5>
+<p>简单的多径接收模型</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-B0HebDEJhosm9Dx2TBmcBNq9nQb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-B0HebDEJhosm9Dx2TBmcBNq9nQb.png"></a></p>
+<p>计算两条路径的距离差<span class="arithmatex">\(\Delta d\)</span></p>
+<div class="arithmatex">\[\begin{aligned}\Delta d&amp;=d''-d'=\sqrt{\left(h_{t}+h_{r}\right)^{2}+\left(d\right)^{2}}-\sqrt{\left(h_{t}-h_{r}\right)^{2}+\left(d\right)^{2}}\\&amp;=d\left[\sqrt{1+\left(\frac{h_{t}+h_{r}}{d}\right)^{2}}-\sqrt{1+\left(\frac{h_{t}-h_{r}}{d}\right)^{2}}\right]\end{aligned}\]</div>
+<p>不难观察<span class="arithmatex">\((h_t+h_r)&lt;&lt;d\)</span>，则有近似（利用泰勒展开）</p>
+<div class="arithmatex">\[\sqrt{1+\left(\frac{h_t+h_t}{d}\right)^2}\approx1+\frac{1}{2}\left(\frac{h_t+h_t}{d}\right)^2\]</div>
+<p>代入得</p>
+<div class="arithmatex">\[\Delta d\approx d\left[1+\frac{1}{2}\left(\frac{h_{t}+h_{r}}{d}\right)^{2}-1-\frac{1}{2}\left(\frac{h_{t}-h_{r}}{d}\right)^{2}\right]=\frac{2h_{t}h_{r}}{d}\]</div>
+<p>对应的相位差</p>
+<div class="arithmatex">\[\Delta\phi=\frac{2\pi}{\lambda}\Delta d\]</div>
+<p>此时的场强</p>
+<div class="arithmatex">\[\begin{gathered}E=E_{0}(1+\Gamma\mathrm{e}^{-\mathrm{j}\Delta\phi})=E_{0}-E_{0}\mathrm{e}^{-\mathrm{j}\Delta\phi}\\\left|E\right|=E_{0}\sqrt{2-2\cos\Delta\phi}=2E_{0}\sin\frac{\Delta\phi}{2}\end{gathered}\]</div>
+<blockquote>
+<p>甚至可能会为0！</p>
+</blockquote>
+<p>将相位差表达式代入场强，得</p>
+<div class="arithmatex">\[\left|E\right|=2E_0\frac{\Delta\phi}{2}=E_0\frac{4\pi h_th_r}{\lambda d}=\frac{4\pi h_th_r\sqrt{30P_TG_T}}{\lambda d^2}\]</div>
+<p>最终得到接收功率为</p>
+<div class="arithmatex">\[P_{r}=\frac{\left|E\right|^{2}}{\eta_{0}}A_{R}=\frac{16\pi^{2}h_{t}^{2}h_{r}^{2}\cdot30G_{T}}{\lambda^{2}d^{4}\cdot120\pi}\cdot\frac{\lambda^{2}}{4\pi}G_{r}=P_{T}\frac{G_{T}G_{r}h_{t}^{2}h_{r}^{2}}{d^{4}}\]</div>
+<div class="admonition tip">
+<p class="admonition-title">与自由空间相比</p>
+<ul>
+<li>注意路径损耗指数的差异</li>
+<li>与波长无关</li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">小结</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SqipbzSraomp44xoSIdctYhJnmh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SqipbzSraomp44xoSIdctYhJnmh.png"></a></p>
+</div>
+<hr>
+<h4 id="nlos_1">NLOS之绕射<a class="headerlink" href="#nlos_1" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ElJ7b6VrDovkG0x8VuQciemUnJe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ElJ7b6VrDovkG0x8VuQciemUnJe.png"></a></p>
+<h5 id="_16">惠更斯原理<a class="headerlink" href="#_16" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QZhbbDHW8o9yDaxSB2wcuumWnZb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QZhbbDHW8o9yDaxSB2wcuumWnZb.png"></a></p>
+<h5 id="_17">理想的刃型绕射模型<a class="headerlink" href="#_17" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-RVggbZa8yopCfyxOnRacl3m2nuf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-RVggbZa8yopCfyxOnRacl3m2nuf.png"></a></p>
+<p>计算附加路径长度</p>
+<div class="arithmatex">\[d_{n1}=\sqrt{h^{2}+d_{1}^{2}},d_{n2}=\sqrt{h^{2}+d_{2}^{2}}\]</div>
+<div class="arithmatex">\[\begin{aligned}&amp;\Delta=\sqrt{h^{2}+d_{1}^{2}}+\sqrt{h^{2}+d_{2}^{2}}-d\\&amp;=d_{1}\sqrt{1+\frac{h^{2}}{d_{1}^{2}}}+d_{2}\sqrt{1+\frac{h^{2}}{d_{2}^{2}}}-(d_{1}+d_{2})\end{aligned}\]</div>
+<p>依据近似</p>
+<div class="arithmatex">\[\sqrt{1+\left(\frac{h^{2}}{d_{1}^{2}}\right)}\approx1+\frac{1}{2}\left(\frac{h^{2}}{d_{1}^{2}}\right)\sqrt{1+\left(\frac{h^{2}}{d_{2}^{2}}\right)}\approx1+\frac{1}{2}\left(\frac{h^{2}}{d_{2}^{2}}\right)\]</div>
+<p>代入得附加路径长度</p>
+<div class="arithmatex">\[\begin{aligned}\Delta&amp;=d_{1}+\frac{d_{1}}{2}\frac{h^{2}}{d_{1}^{2}}+d_{2}+\frac{d_{2}}{2}\frac{h^{2}}{d_{2}^{2}}-d_{1}-d_{2}\\&amp;=\frac{h^{2}}{2}\frac{d_{1}+d_{2}}{d_{1}d_{2}}\end{aligned}\]</div>
+<p>对应的相位差为</p>
+<div class="arithmatex">\[\varphi=\frac{2\pi\Delta}{\lambda}=\frac{2\pi}{\lambda}\frac{h^2}{2}\frac{d_1+d_2}{d_1d_2}\]</div>
+<h5 id="_18">菲涅耳带域<a class="headerlink" href="#_18" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-An57byQuMoiSJbxTkmKcGmGLnQe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-An57byQuMoiSJbxTkmKcGmGLnQe.png"></a></p>
+<p>有第n菲涅耳区的半径</p>
+<div class="arithmatex">\[r_n=h=\sqrt{\frac{n\lambda d_1d_2}{d_1+d_2}}=\sqrt{\frac{n\lambda d_1d_2}{d}}\]</div>
+<p><strong>第一菲涅耳区半径</strong></p>
+<div class="arithmatex">\[\text{当}d_1=d_2=d/2\text{时有},\quad r_{1\mathrm{max}}=\frac{1}{2}\sqrt{\lambda d}\]</div>
+<p><strong>传播主区</strong></p>
+<p>理论分析表明，要使得接收功率满足要求，不一定需要避开其他的菲涅耳区，亦或是避开全部的第一菲涅尔区</p>
+<p>只要第一菲涅尔区面积的<code>1/3</code>不被阻挡即可</p>
+<p>得到最小菲涅耳半径</p>
+<div class="arithmatex">\[\text{最小菲涅尔半径为:}{\operatorname*{\operatorname*{r_0}}}{\operatorname*{\operatorname*{=}}}\frac{1}{\sqrt{3}}\overset{}{\operatorname*{\operatorname*{r_1}}}=0.577r_1\]</div>
+<p>一图让你了解菲涅耳带域</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TzWYbYKSOoIXXzxR84yciV5Fnyd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TzWYbYKSOoIXXzxR84yciV5Fnyd.png"></a></p>
+<hr>
+<h5 id="_19">绕射损耗<a class="headerlink" href="#_19" title="Permanent link">¶</a></h5>
+<p>采用理论近似加上必要的经验修正的方法来计算绕射损耗</p>
+<div class="admonition info">
+<p class="admonition-title">有下面三种情况</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BXkqbJi0qoq4NLx7sUGcjCHunVb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BXkqbJi0qoq4NLx7sUGcjCHunVb.png"></a></p>
+<p>注意<code>h</code>的定义（<code>positive|0|negative</code>）</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">定义 | 绕射参数</p>
+<div class="arithmatex">\[\nu=h\sqrt{\frac{2(d_1+d_2)}{\lambda d_1d_2}}=\alpha\sqrt{\frac{2d_1d_2}{\lambda(d_1+d_2)}}\]</div>
+<p><span class="arithmatex">\(\alpha\)</span>为幅度单位。相位差可表示为</p>
+<div class="arithmatex">\[\varphi=\frac{\pi}{2}\nu^2\]</div>
+<p>这表明相位差是发射机与接收机位置的函数</p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">定义 | 绕射增益</p>
+<p>将有损场强与理论相比</p>
+<div class="arithmatex">\[\frac{E_d}{E_0}=F(\nu)=\frac{1+j}{2}{{\int_v^{\infty}}}\exp((-j\pi t^2)/2)\mathrm{d}t\]</div>
+<p>再取<code>dB</code>得到绕射增益</p>
+<div class="arithmatex">\[G_d(\mathrm{dB})=20\log|F(\nu)|\]</div>
+<p>实际上的函数是复杂的菲涅耳积分，于是给出近似解</p>
+<div class="arithmatex">\[\begin{aligned}&amp;G_{d}(\mathrm{dB})=0&amp;&amp;\nu\leq-1\\&amp;G_{d}(\mathrm{dB})=20\log(0.5-0.62\nu)&amp;&amp;-1\leq\nu\leq0\\&amp;G_{d}(\mathrm{dB})=20\log(0.5\exp(-0.95\nu))&amp;&amp;0\leq\nu\leq1\\&amp;G_{d}(\mathrm{dB})=20\log(0.4-\sqrt{0.1184-(0.38-0.1\nu)^{2}})&amp;&amp;1\leq\nu\leq2.4\\&amp;G_{d}(\mathrm{dB})=20\log\left(\frac{0.225}{\nu}\right)&amp;&amp;\nu\geq2.4\end{aligned}\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>假设<span class="arithmatex">\(\lambda=1/3m,d_{1}=1km,d_{2}=1km\)</span>,并且<span class="arithmatex">\((a)h=25m,(b)h=0m,(c)h=-25m\)</span></p>
+<p>对于每一种情况，求解阻挡体顶部所在的费涅尔区</p>
+<ul>
+<li>h=25m</li>
+</ul>
+<div class="arithmatex">\[\nu=h\sqrt{\frac{2(d_{1}+d_{2})}{\lambda d_{1}d_{2}}}=25\sqrt{\frac{2(1000+1000)}{1/3\times1000\times1000}}=2.74\]</div>
+<p>绕射损耗数值解为</p>
+<div class="arithmatex">\[G_{d}(\mathrm{dB})=20\log\left(\frac{0.225}{\nu}\right)=20\log\left(\frac{0.225}{2.74}\right)=-21.7\mathrm{dB}\]</div>
+<p>可计算各个菲涅尔区的半径</p>
+<div class="arithmatex">\[r_1=\sqrt{\frac{\lambda d_1d_2}{d_1+d_2}}=12.9~m\]</div>
+<p>同理，<span class="arithmatex">\(r_2=18.3~m,r_3=22.4~m,r_4=25.8~m\)</span></p>
+<p>所以完全阻挡了前三个菲涅尔区</p>
+<ul>
+<li>h=0m</li>
+</ul>
+<div class="arithmatex">\[\nu = 0\]</div>
+<p>绕射损耗为<code>6dB</code></p>
+<p>它阻挡了一半的菲涅尔区</p>
+<ul>
+<li>h=-25m</li>
+</ul>
+<div class="arithmatex">\[\nu = -2.74\quad G_d=0~dB\]</div>
+<p>它对于前三个菲涅尔区完全没有影响，故绕射损耗几乎忽略不计</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例 | 不平齐收发</p>
+<blockquote>
+<p>重点在等效<code>h</code>的计算</p>
+</blockquote>
+<p>给定下面的几何图形，<code>f=900MHz</code>，求解</p>
+<ol>
+<li>刃形绕射损耗  </li>
+<li>引起<code>6dB</code>绕射损耗的阻挡体高度</li>
+</ol>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-I04JbDxuyoM1clxjpG7cTT1knWb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-I04JbDxuyoM1clxjpG7cTT1knWb.png"></a></p>
+</div>
+<hr>
+<p>计算刃形绕射损耗，需要先求出绕射参数，即</p>
+<div class="arithmatex">\[\nu=h\sqrt{\frac{2(d_1+d_2)}{\lambda d_1d_2}}\]</div>
+<p>其中，h为视距上高度，经简单三角计算，约为<code>70.83</code>m</p>
+<p>则代入得</p>
+<div class="arithmatex">\[\nu\approx4.25\]</div>
+<p>代入绕射增益</p>
+<div class="arithmatex">\[G_d(\mathrm{dB})=20\log\left(\frac{0.225}{\nu}\right)\approx -25.5 dB \]</div>
+<p>即为绕射损耗</p>
+<hr>
+<p>基于经验，引起<code>6dB</code>绕射损耗的阻挡体高度就是<code>h=0</code>时的损耗</p>
+<div class="arithmatex">\[\therefore h=29.17~m\]</div>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">小结</p>
+<ul>
+<li>当<span class="arithmatex">\(\nu\leq-1\text{即}h\leq-\sqrt{\frac{\lambda d_1d_2}{2(d_1+d_2)}}\)</span>，绕射损耗忽略不计</li>
+<li><span class="arithmatex">\(当v=0(h=0)时,绕射损耗为6dB\)</span></li>
+<li><span class="arithmatex">\(当v&gt;0(h&gt;0)时,绕射损耗急剧增加\)</span></li>
+</ul>
+</div>
+<hr>
+<h4 id="nlos_2">NLOS之散射<a class="headerlink" href="#nlos_2" title="Permanent link">¶</a></h4>
+<p>电波遇到粗糙表面而发生溅射</p>
+<div class="admonition quote">
+<p class="admonition-title">定义 | 表面平整度</p>
+<p>给定入射角的情况下，定义表面平整度的参考高度</p>
+<div class="arithmatex">\[h_c=\frac{\lambda}{8\sin\theta_i}\]</div>
+<p>如果平面上的最大凸起高于参考高度，则称为粗糙</p>
+</div>
+<hr>
+<h3 id="_20">对数距离路径损耗模型<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
+<h4 id="_21">路径损耗模型<a class="headerlink" href="#_21" title="Permanent link">¶</a></h4>
+<ul>
+<li>平均路径损耗与<code>d</code>的关系</li>
+</ul>
+<div class="arithmatex">\[\overline{PL}(d)\propto\left(\frac{d}{d_0}\right)^n,\text{对于}d&gt;d_0\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Tbz8bbS0MojMPWxZODicYJftnHh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Tbz8bbS0MojMPWxZODicYJftnHh.png"></a></p>
+<ul>
+<li>用dB表示路径损耗模型</li>
+</ul>
+<div class="arithmatex">\[\overline{PL}(d)_{dB}=\overline{PL}(d_0)_{dB}+10n\lg\left(\frac{d}{d_0}\right),\text{对于}d&gt;d_0\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-XFGOb3LBuoOltDx35n9c2KhGnDe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-XFGOb3LBuoOltDx35n9c2KhGnDe.png"></a></p>
+<ul>
+<li>平均接收功率为发射功率减去路径损耗</li>
+</ul>
+<div class="arithmatex">\[\overline{P}_{r}(d)[dBm]=P_{t}[dBm]-\overline{PL}(d_{0})[dB]-10n\lg\left(\frac{d}{d_{0}}\right)=P_r(d_0)[\mathrm{dBm}]-10n\log_{10}\left(\frac{d}{d_0}\right),\text{对于}d&gt;d_{0}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Cc3FbwTERoonzux5Md7cgjrcnle.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Cc3FbwTERoonzux5Md7cgjrcnle.png"></a></p>
+<p>同理，每十倍距离功率减小<code>10n</code>dB</p>
+<hr>
+<h4 id="_22">阴影衰落<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<p>除了路径损耗，大尺度衰落还存在阴影衰落（shadowing）</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JCEmb5SnCollfOxc6x0cYrqnnAh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JCEmb5SnCollfOxc6x0cYrqnnAh.png"></a></p>
+<h5 id="_23">对数正态阴影模型<a class="headerlink" href="#_23" title="Permanent link">¶</a></h5>
+<p>实际上的路径损耗围绕理想线值，服从对数正态分布</p>
+<p>用分贝表示的概率密度函数为</p>
+<div class="arithmatex">\[\mathrm{P}(PL(\mathrm{~dB~}))=\frac{1}{\sqrt{2\pi}\sigma_{PL_{dB}}}\exp\left(-\frac{(PL_{dB}-\mu_{PL_{dB}})^{2}}{2\sigma_{PL_{dB}}^{2}}\right)\]</div>
+<p>或者，可以表示为</p>
+<div class="arithmatex">\[\begin{aligned}PL(d)[dB]&amp;=\overline{PL}(d)[dB]+X_{\sigma}[dB]\\&amp;=\overline{PL}(d_{0})[dB]+10n\lg\left(\frac{d}{d_{0}}\right)+\color{red}X_{\sigma}[dB]\end{aligned}\]</div>
+<blockquote>
+<p>此时在<code>WSN</code>中亦有记载</p>
+</blockquote>
+<hr>
+<h5 id="_24">中断概率<a class="headerlink" href="#_24" title="Permanent link">¶</a></h5>
+<div class="admonition warning">
+<p class="admonition-title">你不得不知道的</p>
+<ul>
+<li><strong>Q函数</strong></li>
+</ul>
+<p>高斯尾概率函数，类似<a href="https://www.zhihu.com/question/292047444">上α点</a></p>
+<p>对于标准正态分布来说，大于某一点<code>z</code>的概率</p>
+<div class="arithmatex">\[Q(z)=P(X&gt;z)=\int_{z}^{\infty}p(x)dx\]</div>
+<p>亦即</p>
+<div class="arithmatex">\[Q(z)=\int_{z}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-\frac{y^{2}}{2}}dy\]</div>
+<p>Q函数的性质</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VWNObX42coEDwzxKXIlcPZsPn2O.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VWNObX42coEDwzxKXIlcPZsPn2O.png"></a></p>
+<blockquote>
+<p>注意其中的标准化</p>
+</blockquote>
+</div>
+<hr>
+<ul>
+<li><strong>误差函数</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UogEbxsCYonlzuxizjEcV1j5n5d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UogEbxsCYonlzuxizjEcV1j5n5d.png"></a></p>
+<p>有没有感觉有点眼熟？在通信原理的双极性基带误码率计算中出现过</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Dqm3bCY0uo7G1mxf84qcAgtQn29.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Dqm3bCY0uo7G1mxf84qcAgtQn29.png"></a></p>
+<p>总之，我们可得到Q函数与误差函数之间的关联</p>
+<div class="arithmatex">\[\mathrm{Q}(x)=\frac{1}{2}-\frac{1}{2}\mathrm{erf}(\frac{x}{\sqrt2})\]</div>
+<hr>
+<p>基于路径损耗，易知接收功率（dBm）也服从正态分布，即<span class="arithmatex">\(P_r(d)\sim N(\overline{P_r}(d),\sigma^2)\)</span></p>
+<p>则接收信号功率超过指定值<span class="arithmatex">\(\gamma\)</span>的概率为</p>
+<div class="arithmatex">\[\Pr[P_{r}(d)&gt;\gamma]=Q\left(\frac{\gamma-\overline{P_{r}}(d)}{\sigma}\right)\]</div>
+<p>而Q函数的性质让我们很轻易地得到另一面</p>
+<div class="arithmatex">\[\Pr[P_{r}(d)&lt;\gamma]=Q\left(\frac{\overline{P_{r}}(d)-\gamma}{\sigma}\right)\]</div>
+<hr>
+<p>终于，我们可以给出中断概率的定义</p>
+<div class="admonition info">
+<p class="admonition-title">定义</p>
+<p>在给定距离上，接收功率小于系统最小分辨率的概率（outage probability）</p>
+<div class="arithmatex">\[Pr_{\mathrm{outage}}=Pr[P_r(d)&lt;P_{\mathrm{min}}]=Q\left(\frac{\overline{P_r}(d)-P_{\mathrm{min}}}{\sigma}\right)\]</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VWIhbVOlKo3NWkx9pzHcYBypneh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VWIhbVOlKo3NWkx9pzHcYBypneh.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-LriYbRy7EoniKAxOf2NchKAdnQg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-LriYbRy7EoniKAxOf2NchKAdnQg.png"></a></p>
+</div>
+<hr>
+<h4 id="_25">小区面积覆盖范围<a class="headerlink" href="#_25" title="Permanent link">¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">定义</p>
+<p>小区内接收功率超过最小可用接收功率所占面积的百分比</p>
+</div>
+<hr>
+<h4 id="_26">小区边缘覆盖概率<a class="headerlink" href="#_26" title="Permanent link">¶</a></h4>
+<div class="admonition info">
+<p class="admonition-title">定义</p>
+<div class="arithmatex">\[\Pr[P_r(R)&gt;\gamma]\]</div>
+<p>它表示理想小区边界R上的实际接收功率大于最小分辨率的概率</p>
+<p>特殊的，若<span class="arithmatex">\(P_r(R)=\overline{P_r}(R)\)</span>，则覆盖概率为</p>
+<div class="arithmatex">\[\Pr[P_r(R)&gt;\gamma]=Q\left(\frac{\overline{P_{r}}(R)-\overline{P_{r}}(R)}{\sigma}\right)=Q(0)=50\%\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UbcjbNfVwohcfxxyTbDcNxhzn8d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UbcjbNfVwohcfxxyTbDcNxhzn8d.png"></a></p>
+</div>
+<hr>
+<h4 id="_27"><strong>覆盖范围表达式</strong><a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<p>探求覆盖范围与边缘覆盖率的数学联系</p>
+<div class="admonition quote">
+<p class="admonition-title">证明</p>
+<p>令最小分辨率为<span class="arithmatex">\(\gamma\)</span>，CA可视为ECP的面积分，记作<span class="arithmatex">\(U(\gamma)\)</span>，有</p>
+<div class="arithmatex">\[\begin{aligned}U(\gamma)&amp;=\frac{1}{\pi R^{2}}\oint_{A}\Pr[P_{r}(r)&gt;\gamma]dA\\&amp;=\frac{1}{\pi R^{2}}\int_{0}^{2\pi}\int_{0}^{R}\Pr[P_{r}(r)&gt;\gamma]rdrd\theta\end{aligned}\]</div>
+<p>面积可用极化坐标系表示</p>
+<blockquote>
+<p>每一微分可表示为<span class="arithmatex">\(rd\theta \cdot dr\)</span>  </p>
+<p>因概率不超过<code>1</code>，因此有修正系数<span class="arithmatex">\(\frac{1}{\pi R^2}\)</span></p>
+</blockquote>
+<p>其中，积分项可展开为</p>
+<div class="arithmatex">\[\begin{aligned}\Pr[P_{r}(r)&gt;\gamma]&amp;=Q\left(\frac{\gamma-\overline{P}_{r}(r)}{\sigma}\right)=\frac{1}{2}-\frac{1}{2}erf\left(\frac{\gamma-\overline{P}_{r}(r)}{\sigma\sqrt{2}}\right)\\&amp;=\frac{1}{2}-\frac{1}{2}erf\left(\frac{\gamma-\left[P_{r}-\left(\overline{PL}(d_{0})+10n\log(r/d_{0})\right)\right]}{\sigma\sqrt{2}}\right)\end{aligned}\]</div>
+<p>为找到二者关联，修正路径损耗为</p>
+<div class="arithmatex">\[\overline{PL}(r)=\overline{PL}(d_{0})+10n\log(r/d_{0})=\overline{PL}(d_{0})+\color{red}10n\log\left(\frac{R}{d_{0}}\right)+10n\log\left(\frac{r}{R}\right)\]</div>
+<p>再令</p>
+<div class="arithmatex">\[a=\frac{\gamma-P_t+\overline{PL}(d_0)+10n\log(R/d_0)}{\sigma\sqrt{2}}=\frac{\gamma-\overline{P}_r(R)}{\sigma\sqrt{2}}\]</div>
+<div class="arithmatex">\[b=\frac{10n\log e}{\sigma}\]</div>
+<p>并假设<span class="arithmatex">\(\gamma = P_r(R)=\overline{P_r}(R)\)</span>，即边缘覆盖概率为50%，亦即<code>a=0</code></p>
+<p>一通小鸡炖蘑菇，最终可以得到</p>
+<div class="arithmatex">\[U(\gamma)=\frac{1}{2}+\exp\left(\frac{2}{b^2}\right)\mathrm{Q}(\frac{2}{b})\]</div>
+<p>说明当小区边缘覆盖概率一定时，覆盖面积与<code>b</code>，即与路径衰减指数和标准差<span class="arithmatex">\(n|\sigma\)</span>有关</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-R27KbIF8boAFKpxfUD8czZCjnUg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-R27KbIF8boAFKpxfUD8czZCjnUg.png"></a></p>
+<p>计算得具体数值</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-FGb0bPQcsoofDUxZUD4cvGYOnDg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-FGb0bPQcsoofDUxZUD4cvGYOnDg.png"></a></p>
+<p><strong>可以分析得</strong></p>
+<ul>
+<li><code>n</code>一定时，随着标准差变大，阴影衰落更严重，覆盖范围变小</li>
+<li>阴影衰落一定时，路径衰减指数越大，满足小区边缘覆盖概率为50%，即<span class="arithmatex">\(\bar{P}_{r}(R)=\gamma\)</span>这一前提的R变小<br>
+因此反而覆盖范围变大</li>
+</ul>
+<blockquote>
+<p>其实是废话，如果R小到基站gNB那么大，肯定全覆盖的</p>
+</blockquote>
+</div>
+<p>在上述关于覆盖范围的推导与分析中，都涵盖了一个必要前提<br>
+即小区边界覆盖概率为50%</p>
+<p>很显然，谁都不想赌运气，这个概率是很不满意的<br>
+退一步说，即使容忍这一点，在<span class="arithmatex">\(\sigma/n=2dB\)</span>时，小区覆盖率只有77%<br>
+与90%的要求相比就有些相形见绌了</p>
+<p>于是，聪明的，我们想到了把<code>Tx</code>功率提上去（扩大阴影面积），或者调整小区半径（缩圈）</p>
+<p>那么如何量化这额外付出的功率呢？看看衰落容限吧~</p>
+<hr>
+<h4 id="_28">衰落容限<a class="headerlink" href="#_28" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>提高tx功率</strong></li>
+</ul>
+<p>提高边缘覆盖率（从50%开始）所需要增加的发射功率（dB）称为大尺度下的衰落容限（Fading Margin）</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zo8hbLwGEosN4Dxoj3Pc19wunug.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zo8hbLwGEosN4Dxoj3Pc19wunug.png"></a></p>
+<ul>
+<li><strong>减小小区半径</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-HoO5bqvQvoXxENxi89icKSQjnud.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-HoO5bqvQvoXxENxi89icKSQjnud.png"></a></p>
+<p>这里提及概率中值的概念：</p>
+<ul>
+<li>对于随机变量X，有a使得<span class="arithmatex">\(P[X\geq a]=0.5\)</span>，则a为中值<br>
+即半概率点</li>
+<li>对于正态分布中值就是均值，但其他分布不保证</li>
+</ul>
+<hr>
+<h3 id="_29">计算|链路预算<a class="headerlink" href="#_29" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>综合阴影衰落、覆盖范围和衰落容限的大尺度损耗下的接收功率等信道参数估计，称为链路预算</p>
+</blockquote>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{考虑GSM系统的下行链路。载波频率为}\text{950 MHz,接收机灵敏度(依据}\mathbf{GSM}\text{规}\text{范)为-102 dBm。}\\&amp;{发射机放大器的输出}\text{功率为30 W。发射天线的天线增益为10}dB,连接器、合并器等的损耗为5dB。\\&amp;\text{衰落容限(余量)为12 dB,参考距离为}\text{100 m,该距离处的平均路径损耗为72dB}\\&amp;\text{路径损耗指数n=3.5。那么可以覆盖的最}远距离是多少呢?\end{aligned}\]</div>
+<p>最核心的表达式：</p>
+<div class="arithmatex">\[\overline{P}_{r}(d)[dBm]=P_{t}[dBm]-\overline{PL}(d_{0})[dB]-10n\lg\left(\frac{d}{d_{0}}\right)=P_r(d_0)[\mathrm{dBm}]-10n\log_{10}\left(\frac{d}{d_0}\right),\text{对于}d&gt;d_{0}\]</div>
+<p>本例中求最远距离，即求路径损耗</p>
+<blockquote>
+<p>链路预算中有三个计算维度</p>
+<ul>
+<li>发送端：发射功率、天线增益、馈线损耗</li>
+<li>接收端：最小接收功率（灵敏度）、衰落容限</li>
+<li>衰落损耗：R、参考距离、路径衰减指数</li>
+</ul>
+<p>注意，对数上都是加减 | dBm 和 dB 只是有无量纲的区别</p>
+</blockquote>
+<p>再看题目，能得到发送功率为</p>
+<div class="arithmatex">\[P_t[dBm]=10\log30\:000 + 10 - 5=49.77dBm\]</div>
+<p>接收功率为</p>
+<div class="arithmatex">\[\overline{P_r}(R)=-102+12=-90dBm\]</div>
+<p>则</p>
+<div class="arithmatex">\[\overline{PL}(R)=139.77dBm\]</div>
+<p>代入路径损耗表达式，得最终<span class="arithmatex">\(R=8.7km\)</span></p>
+</div>
+<hr>
+<h3 id="_30">室外传播模型<a class="headerlink" href="#_30" title="Permanent link">¶</a></h3>
+<p>复杂环境下的经验信道模型</p>
+<h4 id="okumura">Okumura模型<a class="headerlink" href="#okumura" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>奥村模型，尤其适用于城区室外模型</p>
+</blockquote>
+<p>有以下定义：</p>
+<ul>
+<li>基准（损耗）中值<span class="arithmatex">\({{A}}_{\mathrm{m}}(f,{d})\)</span></li>
+<li>基站天线（高度）修正因子<span class="arithmatex">\(H_{\rm{b}}(h_{\rm b},d)\)</span></li>
+<li>移动台天线（高度）修正因子<span class="arithmatex">\(H_{\rm m}(h_{\rm m},f)\)</span></li>
+<li>街道走向修正因子<span class="arithmatex">\(K_{\mathrm{al}}\text{和}K_{\mathrm{ac}}\)</span></li>
+<li>郊区修正因子<span class="arithmatex">\(K_{\mathrm{mr}}\)</span></li>
+<li>开阔地、准开阔地修正因子<span class="arithmatex">\(Q_{\rm o}\text{和}Q_\mathrm{r}\)</span></li>
+<li>丘陵地的修正因子<span class="arithmatex">\(K_{\mathrm{h}}\)</span></li>
+<li>孤立山岳修正因子<span class="arithmatex">\(K_{\mathrm{js}}\)</span></li>
+<li>斜波地形修正因子<span class="arithmatex">\(K_{\mathrm{sp}}\)</span></li>
+<li>水陆混合路径修正因子<span class="arithmatex">\(K_{\rm s}\)</span></li>
+</ul>
+<blockquote>
+<p>Crazy,bro</p>
+</blockquote>
+<hr>
+<h5 id="_31">任意地区地形的传播损耗中值<a class="headerlink" href="#_31" title="Permanent link">¶</a></h5>
+<div class="arithmatex">\[L_{\mathrm{A}}=L_{\mathrm{T}}-K_{\mathrm{T}}\]</div>
+<p>其中，市区传播损耗中值为</p>
+<div class="arithmatex">\[L_{\mathrm{T}}=L_{\rm fs}+{{A}}_{\mathrm{m}}(f,{d})-H_{\mathrm{b}}(h_{\mathrm{b}},d)-H_{\rm m}(h_{\rm m},f)\]</div>
+<p>其中有自由空间传播损耗：</p>
+<div class="arithmatex">\[[L_{fs}]=32.44+20\lg d(km)+20\lg f(MHz)\]</div>
+<p>地形修正因子</p>
+<div class="arithmatex">\[K_{\mathrm{T}}=K_{mr}+Q_{\mathrm{o}}+Q_{r}+K_{h}+K_{hf}+K_{\mathrm{j}s}+K_{sp}+K_{S}\]</div>
+<hr>
+<h5 id="_32">接收信号的功率中值<a class="headerlink" href="#_32" title="Permanent link">¶</a></h5>
+<div class="arithmatex">\[[P_{\mathrm{PC}}]=[P_{\mathrm{T}}]+[G_{\mathrm{b}}]+[G_{\mathrm{m}}]-[L_{\mathrm{A}}]\]</div>
+<p>即发射功率加上发射、接收增益，再减去传播损耗中值</p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QsTqbrl5noxXrvxXPV1cBiqon5d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QsTqbrl5noxXrvxXPV1cBiqon5d.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-NLtsb1CpUo1mBRx3DDdcV5scnCh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-NLtsb1CpUo1mBRx3DDdcV5scnCh.png"></a></p>
+</div>
+<hr>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TyTKbVTjkoGWVpxLOYhc2uzOnHd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TyTKbVTjkoGWVpxLOYhc2uzOnHd.png"></a></p>
+<hr>
+<h4 id="hata">Hata模型<a class="headerlink" href="#hata" title="Permanent link">¶</a></h4>
+<p>公式表达上一经验模型</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-R4mUbELLOoIpEXxYWLVck9a6nVd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-R4mUbELLOoIpEXxYWLVck9a6nVd.png"></a></p>
+<div class="admonition example">
+<p class="admonition-title">例 | 略略繁琐，代入即可</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WEG7bjhpxoSx60xSctAc3VmrnGb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WEG7bjhpxoSx60xSctAc3VmrnGb.png"></a></p>
+</div>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../WC02/" class="md-footer__link md-footer__link--prev" aria-label="上一页: WC02 蜂窝系统">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                WC02 蜂窝系统
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../WC04/" class="md-footer__link md-footer__link--next" aria-label="下一页: WC04 多径传播与小尺度衰落">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                WC04 多径传播与小尺度衰落
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

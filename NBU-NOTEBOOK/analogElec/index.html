@@ -1,0 +1,4518 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/analogElec/">
+      
+      
+        <link rel="prev" href="../mathematics/">
+      
+      
+        <link rel="next" href="../wirelessCommunication/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>模电速通 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              模电速通
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../commuPrinc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../DSP/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    数字信号处理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线代速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高数速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      写在前面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用半导体器件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用半导体器件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      本征半导体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结伏安特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      极间电容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二极管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管伏安特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他二极管
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bjt" class="md-nav__link">
+    <span class="md-ellipsis">
+      BJT三极管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BJT三极管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构与类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      共射特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      温度的影响
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      结型场效应管
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管主要参数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管主要参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念与指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      图解法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图解法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      直流通路与交流通路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      非线性失真分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流负载线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      微变等效电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      分压偏置电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分压偏置电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      电路设计思路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bjt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      BJT放大电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本电路与Q点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      微变等效电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      派生电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多级放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      耦合方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      长尾式差分放大
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="长尾式差分放大">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q点计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      四种常见组态
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      集成运放
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="集成运放">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      电流源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型集成运放
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      运放常用指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      频响
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频响">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波与波特图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      再探放大电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      单管放大分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大截止频率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      负反馈稳定与裕度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="负反馈稳定与裕度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      平衡条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳定裕度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    <span class="md-ellipsis">
+      反馈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="反馈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本组态
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本组态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      F与A计算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    <span class="md-ellipsis">
+      负反馈对放大电路性能的影响
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    <span class="md-ellipsis">
+      运放运算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    <span class="md-ellipsis">
+      波形发生与信号变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="波形发生与信号变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦波发生
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正弦波发生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC文氏桥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lc" class="md-nav__link">
+    <span class="md-ellipsis">
+      LC震荡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_63" class="md-nav__link">
+    <span class="md-ellipsis">
+      变压器反馈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_64" class="md-nav__link">
+    <span class="md-ellipsis">
+      石英晶体震荡
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_65" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="比较器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_66" class="md-nav__link">
+    <span class="md-ellipsis">
+      单限比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_67" class="md-nav__link">
+    <span class="md-ellipsis">
+      滞回比较器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_68" class="md-nav__link">
+    <span class="md-ellipsis">
+      窗口比较器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_69" class="md-nav__link">
+    <span class="md-ellipsis">
+      非正弦波发生
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非正弦波发生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_70" class="md-nav__link">
+    <span class="md-ellipsis">
+      方波发生器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_71" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角波
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_72" class="md-nav__link">
+    <span class="md-ellipsis">
+      锯齿波发生电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_73" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_74" class="md-nav__link">
+    <span class="md-ellipsis">
+      精密整流电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vco" class="md-nav__link">
+    <span class="md-ellipsis">
+      VCO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_75" class="md-nav__link">
+    <span class="md-ellipsis">
+      功放
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_76" class="md-nav__link">
+    <span class="md-ellipsis">
+      直流电源
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../wirelessCommunication/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线通信笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../wirelessSensorNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线传感器网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../informationTheoryCoding/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信息论与编码笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      写在前面
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用半导体器件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用半导体器件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      本征半导体
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pn_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PN结伏安特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      极间电容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二极管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管伏安特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      二极管参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他二极管
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bjt" class="md-nav__link">
+    <span class="md-ellipsis">
+      BJT三极管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BJT三极管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      结构与类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      共射特性曲线
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      主要参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      温度的影响
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      结型场效应管
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mos" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOS管
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管主要参数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管主要参数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念与指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      图解法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="图解法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      直流通路与交流通路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      非线性失真分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      交流负载线
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      微变等效电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      分压偏置电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分压偏置电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      电路设计思路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bjt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      BJT放大电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      场效应管放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="场效应管放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本电路与Q点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      微变等效电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      派生电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多级放大电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      耦合方式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      长尾式差分放大
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="长尾式差分放大">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q点计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      等效模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      四种常见组态
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      集成运放
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="集成运放">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      特点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      电流源
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型集成运放
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      运放常用指标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      常见类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      频响
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="频响">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波与波特图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      再探放大电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      单管放大分析
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    <span class="md-ellipsis">
+      多级放大截止频率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    <span class="md-ellipsis">
+      负反馈稳定与裕度
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="负反馈稳定与裕度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    <span class="md-ellipsis">
+      平衡条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    <span class="md-ellipsis">
+      稳定裕度
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    <span class="md-ellipsis">
+      反馈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="反馈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本组态
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本组态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fa" class="md-nav__link">
+    <span class="md-ellipsis">
+      F与A计算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    <span class="md-ellipsis">
+      负反馈对放大电路性能的影响
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    <span class="md-ellipsis">
+      运放运算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    <span class="md-ellipsis">
+      波形发生与信号变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="波形发生与信号变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    <span class="md-ellipsis">
+      正弦波发生
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正弦波发生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC文氏桥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lc" class="md-nav__link">
+    <span class="md-ellipsis">
+      LC震荡
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_63" class="md-nav__link">
+    <span class="md-ellipsis">
+      变压器反馈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_64" class="md-nav__link">
+    <span class="md-ellipsis">
+      石英晶体震荡
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_65" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="比较器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_66" class="md-nav__link">
+    <span class="md-ellipsis">
+      单限比较
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_67" class="md-nav__link">
+    <span class="md-ellipsis">
+      滞回比较器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_68" class="md-nav__link">
+    <span class="md-ellipsis">
+      窗口比较器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_69" class="md-nav__link">
+    <span class="md-ellipsis">
+      非正弦波发生
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非正弦波发生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_70" class="md-nav__link">
+    <span class="md-ellipsis">
+      方波发生器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_71" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角波
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_72" class="md-nav__link">
+    <span class="md-ellipsis">
+      锯齿波发生电路
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_73" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他电路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_74" class="md-nav__link">
+    <span class="md-ellipsis">
+      精密整流电路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vco" class="md-nav__link">
+    <span class="md-ellipsis">
+      VCO
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_75" class="md-nav__link">
+    <span class="md-ellipsis">
+      功放
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_76" class="md-nav__link">
+    <span class="md-ellipsis">
+      直流电源
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="_1">模电速通<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 4993 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 28 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_2">写在前面<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p>笔记无了，也得复习，于是借着PPT光速梳理一遍模电</p>
+<p>等推免结束了再细细整理一遍，搬运到博客上</p>
+<blockquote>
+<p>希望多长一岁，能有点用 | 最后一次修改：25 年 8 月</p>
+</blockquote>
+<hr>
+<div class="admonition note">
+<p class="admonition-title">符号规定</p>
+<p>通过字母与下标区分交/直流分量</p>
+<ul>
+<li>直流量：<span class="arithmatex">\(I_C\)</span></li>
+<li>交流量：<span class="arithmatex">\(i_c\)</span></li>
+<li>交流有效值：<span class="arithmatex">\(I_b\)</span></li>
+<li>总量（包含交直流）：<span class="arithmatex">\(u_{CE}\)</span></li>
+<li>相量（复数表述）：<span class="arithmatex">\(\dot{U}_{ce}\)</span></li>
+</ul>
+</div>
+<h2 id="_3">常用半导体器件<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<h3 id="_4">基础概念<a class="headerlink" href="#_4" title="Permanent link">¶</a></h3>
+<h4 id="_5">本征半导体<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<div class="admonition success">
+<p class="admonition-title">关键词</p>
+<p>本征半导体 | 电子空穴对 | 本征激发</p>
+</div>
+<ul>
+<li>化学成分纯净（九个9，比999还多六个）的半导体晶体，比如四价的硅Si/锗Ge</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a4bbe7f050.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了硅原子和锗原子的电子轨道结构。左侧是硅原子，其最外层轨道上有四个电子，被红色点标注；右侧是锗原子，最外层轨道上也有四个电子，同样用红色点表示。右侧还单独展示了四个电子，标注为“+4”。图片下方文字说明“硅和锗最外层轨道上的四个电子称为价电子”。此图与文档中介绍本征半导体化学成分纯净、通过共价键结构构成的内容相关，直观呈现了硅、锗原子的电子结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a4bbe7f050.png"></a></p>
+<ul>
+<li>通过共价键结构构成本征半导体</li>
+<li>受温度影响，电子热运动随温度上升而变得剧烈，产生电子空穴对，即本征激发</li>
+<li>在电场作用下电子定向运动，形成电流，具备一定导电能力</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-49dd2ada99.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了本征半导体中电子定向运动形成电流的示意图。图中上方有箭头表示外加电场E方向。下方硅原子结构中，红色球代表电子，蓝色球代表空穴。在电场作用下，电子（红色球）向右移动形成电流，而空穴（蓝色球）向左移动。该图与上文介绍的本征半导体在电场作用下电子定向运动形成电流，具备一定导电能力的内容相呼应，直观呈现了这一过程。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-49dd2ada99.png"></a></p>
+<hr>
+<h4 id="pn">PN结<a class="headerlink" href="#pn" title="Permanent link">¶</a></h4>
+<div class="admonition success">
+<p class="admonition-title">关键词</p>
+<p>耗尽层 | 电子扩散/漂移 | 单向导通性 | 反向饱和电流</p>
+</div>
+<ul>
+<li>单纯的导电能力并不有趣，于是希望通过掺杂和组合build出一个具备良好单向导通性的新结构</li>
+<li>分别在原有物质中掺入五价、三价杂质，构成自由电子/空穴为多数载流子的新半导体</li>
+<li>将多子为电子的称为N型半导体（negative），反之为P型半导体</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a243f89db5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了P型和N型半导体的结构。左侧为P型半导体，标注有“多子—空穴”“少子—电子”，其内部有蓝色圆圈代表空穴，红色圆圈代表电子；右侧为N型半导体，标注有“多子—电子”“少子—空穴”，其内部有红色圆圈代表电子，蓝色圆" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a243f89db5.png"></a></p>
+<ul>
+<li>将二者拼接在一起，形成PN结。在结合暂态，因多子浓度差，N级电子向P扩散，并在中心形成阻止多子扩散的稳定层（扩散电流=漂移电流），称为耗尽层</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ce2dbfcfee.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了P型和N型半导体的结构。左侧为P型半导体，右侧为N型半导体，中间有耗尽层。P型半导体中，空穴（红点）多于电子（蓝点），N型半导体中，电子多于空穴。在耗尽层处，空穴和电子相互抵消形成空间电荷区。图中还标注了内电场E，以及少子漂移电流和多子扩散电流的方向。该图与文档中介绍本征半导体基础概念的内容相关，直观呈现了耗尽层的形成及电流方向。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ce2dbfcfee.png"></a></p>
+<ul>
+<li>通过PN结加不同方向的电压，控制耗尽层宽度来实现单向导通性</li>
+<li>正向电压下，耗尽层变窄，扩散电流&gt;漂移电流，形成正向电流，呈现低阻性，PN结导通</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-dd4accd98f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了PN结在正向 addCriterion&gt;向电压下的状态。左侧为P型半导体，右侧为N型半导体，中间是空间电荷区。图中箭头表示内电场E，正向电流从P型半导体流向N型半导体。该图与文档中“正向电压下，耗尽层变窄，扩散电流&gt;漂移电流，形成正向电流，呈现低阻性，PN结导通”的内容相呼应，直观呈现了正向电流的流向和内电场的作用。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-dd4accd98f.png"></a></p>
+<ul>
+<li>反向电压下反之，PN结截止，但有少量漂移电流，称为反向饱和电流</li>
+</ul>
+<hr>
+<h4 id="pn_1">PN结伏安特性曲线<a class="headerlink" href="#pn_1" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bcbd1b15ae.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了PN结伏安特性曲线。横轴为电压u，纵轴为电流i。曲线分为正偏和反偏两部分，正偏时电流随电压增大而迅速增大；反偏时，电压在一定范围内电流几乎为零，之后电流迅速增大，且有反向饱和电流IS。图中还标注了反向击穿电压UBR、反向饱和电流IS、正偏电流IF（多子扩散）和反偏电流IR（少子漂移）。该图与上下文紧密相关，直观呈现了PN结在不同电压下的电流变化情况。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bcbd1b15ae.png"></a></p>
+<p>室温下有表达式：</p>
+<div class="arithmatex">\[i=I_{\mathrm{S}}(\mathrm{e}^{u/_{U_{\mathrm{T}}}}-1)\]</div>
+<p>其中，<span class="arithmatex">\(I_S\)</span>为反向饱和电流（与温度T成正比），<span class="arithmatex">\(U_T=26mV\)</span>为温度电压当量</p>
+<hr>
+<h4 id="_6">极间电容<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<p>从上述表述中，不难观察出，加压后耗尽层的变化过程可等效为电容的充放电</p>
+<p>那么对于高频信号，就需要关注频率与极间电容带来的时间<span class="arithmatex">\(\tau\)</span>的关系，即结电容效应</p>
+<ul>
+<li>反向电压下有势垒电容<span class="arithmatex">\(C_B\)</span>，正向下有扩散电容<span class="arithmatex">\(C_D\)</span></li>
+</ul>
+<hr>
+<h3 id="_7">二极管<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<h4 id="_8">二极管伏安特性曲线<a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<div class="admonition success">
+<p class="admonition-title">关键词</p>
+<p>开启/导通电压 | 反向漏电 | 最高工作频率</p>
+</div>
+<ul>
+<li>与PN结曲线相比，二极管伏安曲线存在等效串联电阻R（开启电压）</li>
+<li>二极管的正向压降与温度T成反比</li>
+</ul>
+<div class="arithmatex">\[\begin{array}{ccc}&amp;\text{硅二极管}&amp;\text{锗二极管}\\\text{开启电压}&amp;0.5\mathrm{V}&amp;0.1\mathrm{V}\\\text{导通电压}&amp;0.6-0.8\mathrm{V}&amp;0.2-0.3\mathrm{V}\\&amp;(\text{取 }0.7\mathrm{V})&amp;(\text{取 }0.3\mathrm{V})\end{array}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3bbb07b344.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了二极管伏安特性曲线及相关参数示意图。左侧电路图中，二极管与电阻R串联，电压表测二极管两端电压。右侧坐标图中，横轴为电压v，纵轴为电流i，分别标注了PN结特性曲线和二极管特性曲线。图中用箭头标注了导通电压、开启电压Uon、反向漏电等关键参数，还标出了死区、反向击穿电压V(BR)、最大反向工作电压U(R)等参数。该图与上下文紧密相关，直观呈现了二极管伏安特性曲线及参数。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3bbb07b344.png"></a></p>
+<h4 id="_9">二极管参数<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<ul>
+<li>最大整流电流<span class="arithmatex">\(I_F\)</span>：二极管长期连续工作时，允许通过的最大正向平均电流值，其值与PN结面积及外部散热条件等有关</li>
+<li>反向击穿电压<span class="arithmatex">\(U_{BR}\)</span>：热击穿极限</li>
+<li>最大反向工作电压<span class="arithmatex">\(U_{R}\)</span>：反向安全工作区的电压上限</li>
+<li>反向电流<span class="arithmatex">\(I_R\)</span></li>
+<li>最高工作频率：1N4000系列整流管：3kHz；1N4148开关管：～MHz</li>
+</ul>
+<hr>
+<h4 id="_10">等效电路<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<div class="admonition success">
+<p class="admonition-title">关键词</p>
+<p>开关模型 | 微变等效模型 | 钳位</p>
+</div>
+<p>几种closed-form近似模型</p>
+<ul>
+<li><strong>理想二极管模型</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5920600a90.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了理想二极管的符号及伏安特性曲线。左侧是理想二极管的电路符号，由一个三角形和两条线组成。右侧是伏安特性曲线，横轴为电压UD（V），纵轴为电流ID，曲线在0V处与横轴相交，之后以直线形式上升，表示当电压大于0V时，电流随电压线性增加。该图与文档中介绍理想二极管模型的内容相关，直观呈现了理想二极管的特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5920600a90.png"></a></p>
+<ul>
+<li><strong>开关模型</strong></li>
+</ul>
+<p>较为常用的一种模型</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-096fb7d91a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了二" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-096fb7d91a.png"></a></p>
+<ul>
+<li><strong>折线模型</strong></li>
+</ul>
+<p>串联一个等效电阻</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4050cc63a3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了二极管折线模型相关内容。上方公式为“rD = ΔU / ΔI”。下方图（a）是二极管伏安特性曲线，虚线为折线模型。图（c）是折线模型电路图，二极管与电阻串联，标注有电压Vth、电流iD，电阻标为rD。该图片与" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4050cc63a3.png"></a></p>
+<ul>
+<li><strong>微变等效模型</strong></li>
+</ul>
+<div class="arithmatex">\[r_\mathrm{d}=\frac{\Delta u_\mathrm{D}}{\Delta i_\mathrm{D}}\]</div>
+<p>根据</p>
+<p><span class="arithmatex">\(i_\mathrm{d}=I_\mathrm{s}(e^{u_\mathrm{D}/U_\mathrm{T}}-1)\)</span>，可得切点的等效电阻：</p>
+<div class="arithmatex">\[r_{\mathrm{d}}=\frac{1}{g_{\mathrm{d}}}=\frac{U_{T}}{I_{\mathrm{D}}} = \frac{26~mV}{I_D~mA}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-93c3c261bb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了二极管的微变等效模型。上方是二极管伏安特性曲线图，横轴为电压uD，纵轴为电流iD，图中以Q点为切点，标注了ΔuD、ΔiD。下方是对应模型的电路图，左侧为电压源ΔuD，右侧为电流源ΔiD，中间串联一个电阻rD。该图与上下文紧密相关，是对微变等效模型的直观呈现，帮助理解二极管伏安特性的微小变化情况。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-93c3c261bb.png"></a></p>
+<hr>
+<h4 id="_11">其他二极管<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>稳压二极管</strong></li>
+</ul>
+<p>利用二极管反向击穿特性实现稳压，此时工作电流满足<span class="arithmatex">\(I_{Zmin}\leq I_{Z}\leq I_{Zmax}\)</span></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-84adf99c2e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了稳压二极管的伏安特性曲线。横轴为电压V，纵轴为电流I。曲线呈现非线性特征，电压在0.4V左右时电流迅速上升。图中用虚线标注了稳压二极管的稳定电压VZ，以及工作电流范围IZmin和IZmax。还标出了ΔVZ和ΔIZ，分别代表电压和电流的变化量。该图与上下文紧密相关，直观呈现了稳压二极管工作时的电压电流关系，帮助理解其利用反向击穿特性实现稳压的原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-84adf99c2e.png"></a></p>
+<ul>
+<li><strong>发光二极管</strong></li>
+</ul>
+<p>电信号转为光信号，开启电压1.5V以上，电流一般需要若干mA</p>
+<ul>
+<li><strong>光电二极管</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f960bd5fc2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了光电二极管的相关内容。左侧是光电二极管的符号，标注正负极。中间是光电二极管伏安特性曲线，横轴为电压，纵轴为电流，标注了光照强度为200lx和400lx时的曲线。右侧是光电二极管的等效电路图，左侧为电流源，标注电流为I_s=f(E)，右侧为二极管，标注正负极。该图与文档中介绍光电二极管的内容相呼应，直观呈现了其伏安特性及等效电路。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f960bd5fc2.png"></a></p>
+<ul>
+<li><strong>变容二极管</strong></li>
+</ul>
+<hr>
+<h3 id="bjt">BJT三极管<a class="headerlink" href="#bjt" title="Permanent link">¶</a></h3>
+<h4 id="_12">结构与类型<a class="headerlink" href="#_12" title="Permanent link">¶</a></h4>
+<ul>
+<li>分为NPN与PNP型</li>
+<li>发射区（e）掺杂浓度高，基区（b）薄而掺杂浓度低，集电区（c）面积大</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3482884359.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了NPN型和PNP型BJT三极管的结构与符号。NPN型三极管由发射区（N）、基区（P）、集电区（N）组成，发射极（e）、基极（b）、集电极（c）分别对应符号中的e、b、c；PNP型三极管则由发射区（P）、基区（N）、集电区（P）构成，其发射极、基极、集电极在符号中同样对应e、b、c。该图与上文介绍的NPN与PNP型三极管结构相呼应，直观呈现了其组成。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3482884359.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3a87d10095.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了NPN型三极管的结构示意图及管芯剖面图。示意图中，集电极c、基极b、发射极e标注清晰，集电区面积大、基区薄且掺杂浓度低、发射区掺杂浓度高。管芯剖面图直观呈现了三极管内部结构，与示意图对应。该图与上下文紧密相关，直观呈现了NPN型三极管的结构特点，为理解其工作原理提供了直观参考。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3a87d10095.png"></a></p>
+<p><strong>当发射结正偏，集电结反偏时</strong>：</p>
+<ul>
+<li>e极中大量的电子冲进b区，与少量空穴结合，成为<span class="arithmatex">\(I_B\)</span></li>
+<li>剩下的大部分电子没刹住车，又因为反偏，耗尽层很宽，电子穿过形成<span class="arithmatex">\(I_C\)</span></li>
+<li><span class="arithmatex">\(I_E=I_C+I_B \quad I_C = \beta I_B\)</span></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2cbba8393f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示 addCriterion addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2cbba8393f.png"></a></p>
+<hr>
+<h4 id="_13">共射特性曲线<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
+<div class="admonition success">
+<p class="admonition-title">关键词</p>
+<p>输入/输出特性曲线 | 三种导通状态与依据 </p>
+</div>
+<ul>
+<li><strong>输入特性曲线</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c50553a874.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了BJT三极管的输入特性曲线及相关参数。左侧是电路图，标注有基极电流iB、发射极电压uBE、集电极电压uCE、集电极电流iC。右侧是iB随uBE变化的曲线图，uCE=0V时曲线陡峭，uCE&gt;1V时曲线平缓。图中还标注了硅管和锗管的死区电压（0.5V、0.1V）和导通压降（0.7V、0.3V）。该图与上下文紧密相关，直观呈现了输入特性曲线的形状及硅锗管参数，帮助理解基极电流iB随发射结电压u addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c50553a874.png"></a></p>
+<ul>
+<li>描述基极电流<span class="arithmatex">\(i_B\)</span>随发射结电压的变化，与PN结类似</li>
+<li>
+<p>当CE两端加压导通后，<span class="arithmatex">\(i_B\)</span>被分流而减小，特性曲线右移（但不多）</p>
+</li>
+<li>
+<p><strong>输出特性曲线</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>注意c极输出电流达mA级</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-21af25bfff.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了BJT三极管的输入" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-21af25bfff.png"></a></p>
+<ul>
+<li>描述在<span class="arithmatex">\(i_B\)</span>确定下,<span class="arithmatex">\(i_C\)</span>随<span class="arithmatex">\(u_{CE}\)</span>的变化</li>
+<li>根据两个PN结的导通状态，可划分为饱和、放大、截止三个区域，可起到开关/放大的作用</li>
+<li>饱和分为临界饱和（集电结零偏）与深度饱和（CE压降小，类似开关通路）</li>
+</ul>
+<hr>
+<h4 id="_14">主要参数<a class="headerlink" href="#_14" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p><strong>电流放大倍数</strong></p>
+</li>
+<li>
+<p>共射放大倍数<span class="arithmatex">\(\beta \in(50,300)\)</span></p>
+</li>
+<li>共基放大倍数<span class="arithmatex">\(\alpha \in(0.95,0.995)\)</span></li>
+</ul>
+<blockquote>
+<p>注意，对于交流放大倍数，有<span class="arithmatex">\(\beta=\frac{\Delta i_{C}}{\Delta i_{B}}=\frac{i_{C2}-i_{C1}}{i_{B2}-i_{B1}}\)</span>
+- <strong>极间反向电流</strong></p>
+</blockquote>
+<ul>
+<li>集电结反向饱和电流<span class="arithmatex">\(I_{CBO}\)</span></li>
+<li>穿透电流<span class="arithmatex">\(I_{CEO} = (1+\beta)I_{CBO}\)</span>，越小越好；与温度强相关</li>
+<li>
+<p><strong>特征频率</strong></p>
+</li>
+<li>
+<p><span class="arithmatex">\(f_T\)</span>时<span class="arithmatex">\(\beta=1\)</span></p>
+</li>
+<li>
+<p><strong>安全工作区（极限参数）</strong></p>
+</li>
+<li>
+<p><span class="arithmatex">\(i_C, u_{CE},P_{CM}\)</span>都存在额定值</p>
+</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b30f28e972.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了BJT三极管的输出特性曲线，横轴为集电极 - 发射极电压v_{CE}，纵轴为集电极电流i_{C}。图中用不同颜色和线条表示了不同集电极电流i_{C}的特性曲线，标注了过流区、过压区、过损区、安全工作区等区域。其中，过流区对应i_{C}超过额定值I_{CM}的情况，过压区对应v_{CE}超过V_{(BR)}_{CEO}的情况，过损区对应集电极功率P_{CM}超过额定值的情况。该图与上下文介绍的BJT三极管安全工作区（极限参数）内容相关，直观呈现了极限参数对应区域。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b30f28e972.png"></a></p>
+<hr>
+<h4 id="_15">温度的影响<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
+<ul>
+<li>输入特性曲线左移，输出特性曲线抬高</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c206b24824.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了温度对晶体管输入和输出特性的影响。左图是温度对 addCriterion图片内容" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c206b24824.png"></a></p>
+<h4 id="_16">总结<a class="headerlink" href="#_16" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-76117c1dca.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为黑色背景，上方用红色字体标注了三个状态名称。（" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-76117c1dca.png"></a></p>
+<hr>
+<h3 id="_17">场效应管<a class="headerlink" href="#_17" title="Permanent link">¶</a></h3>
+<ul>
+<li>分为结型（就是BJT的那个junction）场效应管与MOS管</li>
+<li>有源（Source）漏（Drain）栅（Gate）极</li>
+<li>与BJT的流控放大电流相比，场效应管采用压控电流（VCCS）</li>
+</ul>
+<h4 id="_18">结型场效应管<a class="headerlink" href="#_18" title="Permanent link">¶</a></h4>
+<ul>
+<li>分为N沟道与P沟道，除了特性相反别无二致</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-64591d4aaa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了N沟道耗尽型结型场效应管的结构示意图。图中标识了源极S、漏极D、栅极G及耗尽层。源极和漏极分别连接N型沟道的两端，栅极通过P型掺杂区与N型沟道接触。耗尽层位于N型沟道两侧，由P型掺杂区形成。该图与文档中介绍结型场效应管的内容相关，直观呈现了其内部结构，帮助理解其工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-64591d4aaa.png"></a></p>
+<ul>
+<li>沟道本身是开放的（耗尽型），需要通过<span class="arithmatex">\(U_{GS}\)</span>（加负压）控制耗尽层宽度，从而控制<span class="arithmatex">\(i_D\)</span></li>
+<li>当<span class="arithmatex">\(u_{DS}\)</span>加压时，耗尽层呈楔形</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4d2147c822.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片中" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4d2147c822.png"></a></p>
+<h5 id="_19">特性曲线<a class="headerlink" href="#_19" title="Permanent link">¶</a></h5>
+<ul>
+<li>转移特性曲线近似公式</li>
+</ul>
+<div class="arithmatex">\[I_\mathrm{D}=I_\mathrm{DSS}(1-\frac{U_\mathrm{GS}}{\mathrm{U}_\mathrm{GS(off)}})^2\]</div>
+<p><grid>
+<column width-ratio="0.700000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aec28770a1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了结型场效应管的特性曲线。左侧为转移特性曲线，横轴为栅源电压UGS，纵轴为漏源电流ID，U_DS=15V，曲线呈抛物线形。右侧为输出特性曲线，横轴为U_DS，纵轴为ID，U_DS为常数，UGS分别为0、-" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aec28770a1.png"></a>
+</column>
+<column width-ratio="0.300000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b3aa886f89.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了结型场效应管的输出特性曲线。横轴为漏源电压U_{DS}，纵轴为漏极电流I_{D}。图中有多条曲线，每条曲线对应不同的栅源电压U_{GS}，从-1V到-7V。曲线分为可变电阻区、预夹断轨迹、恒流区与夹断区。当U_{DS} &lt; U_{GS} - U_{GS(off)}时，等效为不同电阻；当U_{DS} = U_{GS} - U_{GS(off)}时为预夹断；当U_{DS}足够大时，I_{D}仅与U_{GS}有关，有最大值I_{DSS}，对应U_{GS} =" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b3aa886f89.png"></a>
+</column>
+</grid></p>
+<ul>
+<li>分为可变电阻区、恒流区与夹断区</li>
+<li>当<span class="arithmatex">\(u_{\mathrm{DS}}&lt;u_{\mathrm{GS}}-u_{\mathrm{GS(off)}}\)</span>时（可以理解为夹断了），等效为不同的电阻</li>
+<li>当相等时为预夹断</li>
+<li>当DS两端足够大时，<span class="arithmatex">\(i_D\)</span>仅与<span class="arithmatex">\(u_{GS}\)</span>有关</li>
+<li><span class="arithmatex">\(i_D\)</span>有最大值<span class="arithmatex">\(i_{DSS}\)</span>，对应GS两端电压为0</li>
+</ul>
+<hr>
+<h4 id="mos">MOS管<a class="headerlink" href="#mos" title="Permanent link">¶</a></h4>
+<ul>
+<li>绝缘栅型，通过栅极电压调控沟道的导通能力，从而控制漏源间电流的大小</li>
+<li>分为N沟道与P沟道，每种沟道又分为增强型（本没有沟道需要开启）和耗尽型</li>
+<li>B极一般与S短接</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9271720ede.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了N沟道增强型MOS场效应管的结构示意图。左侧为结构图，P型衬底上嵌有N+型区域，中间有SiO2绝缘层，栅极G、源极S、漏极D及衬底引线B通过引线连接。右侧是该管的电路符号，D、G、S分别对应漏极、栅极、源极，B为衬底引线。此图与文档中介绍MOS管结构的内容相关，直观呈现了N沟道增强型MOS管的内部组成。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9271720ede.png"></a></p>
+<p><strong>特性曲线</strong></p>
+<ul>
+<li>增强型NMOS类似BJT，耗尽型NMOS类似结型场效应管，不再赘述，单纯放图</li>
+</ul>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b6db4d4c08.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了增强型NMOS管的转移特性曲线及相关公式。在一定uDS下，栅 - 源电压uGS与漏极电流iD之间的关系为iD = f(uGS) |uDS = const，公式为iD = ID0( uGS / UGS(th) - 1)²，其中ID0是uGS = 2UGS(th)时的漏极电流。图中以uGS为横坐标，iD为纵坐标，展示了不同uGS值对应的iD变化情况，如vDS = 5V时，uGS = 2V时iD为0，uGS = 4V时iD约为50μA等。该图与上下文介绍的增强型NMOS管特性曲线内容相关。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b6db4d4c08.png"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e9bb8363f2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了增强型NMOS管输出特性（漏极特性）曲线图，表示漏极电流iD与漏-源电压uD S之间的关系。图中曲线分别对应不同栅-源电压vGS（2.5V、4.0V、5.0V、5.5V、6.5V）的值。曲线分为可变电阻区、放大区（恒流区、饱和区）和截止区（夹断区）。其中，vDS = vGS - VT时，对应放大区。该图与上文介绍增强型NMOS管特性曲线的内容相呼应，直观呈现了其特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e9bb8363f2.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-021afb5220.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了N沟道耗尽型MOS管特性曲线，图中给出了不同栅源电压（vGS）时的漏极电流（iD）与漏源电压（vDS）" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-021afb5220.png"></a>
+</column>
+</grid></p>
+<h3 id="_20">场效应管主要参数<a class="headerlink" href="#_20" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>跨导</strong> <span class="arithmatex">\(g_\mathrm{m}=\Delta i_\mathrm{D}/\Delta u_\mathrm{GS}~mS\)</span></li>
+<li><strong>饱和漏极电流</strong> <span class="arithmatex">\(I_{DSS}\)</span></li>
+<li><strong>夹断电压</strong> <span class="arithmatex">\(U_P\)</span>：耗尽型参数</li>
+<li><strong>开启电压</strong> <span class="arithmatex">\(U_T\)</span>：增强型</li>
+<li><strong>直流输入电阻</strong> <span class="arithmatex">\(R_{GS}\)</span>：<span class="arithmatex">\(10^7\sim10^9 \Omega\)</span></li>
+<li><strong>极间电容、DS/GS击穿电压，最大允许耗散功率</strong></li>
+</ul>
+<hr>
+<h4 id="_21">总结<a class="headerlink" href="#_21" title="Permanent link">¶</a></h4>
+<p>认识三种N沟道管子即可</p>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5f4f905084.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为表1 - 2，展示了各类场效应管的符号和特性曲线。表格分为种类、符号、转移特性、漏极特性四列。结型N沟道耗尽型场效应管，符号为G、D、S，转移特性曲线中U_p为负值，漏极特性曲线中U_GS=0V时I_D为负值；结型P沟道耗尽型场效应管，符号为G、D、S，转移特性曲线中U_p为正值，漏极特性曲线中U_GS=0V时I_D为正值；绝缘栅型N沟道增强型场效应管，符号为G、D、S、B，转移特性曲线中U_T为正值，漏极特性曲线中U_GS=U_T时I_D为 addCriterion图片id" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5f4f905084.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-886a6075a3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了绝缘栅极型场效应管的种类、符号、转移特性及漏极特性。分为N沟道耗尽型、增强型和P沟道耗尽型三种。N沟道耗尽型的转移特性曲线为上升型，漏极特性曲线在UGS=0V时有明显变化；增强型转移特性曲线为下降型，漏极特性曲线在UGS=UT时有明显变化；P沟道耗尽型转移特性曲线为上升型，漏极特性曲线在UGS=0V时有明显变化。该图与上文介绍场效应管主要参数的内容相呼应，直观呈现了不同类型的场效应管特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-886a6075a3.png"></a>
+</column>
+</grid></p>
+<ul>
+<li>场效应管（FET）噪声系数比BJT小，不取电流</li>
+</ul>
+<hr>
+<h2 id="_22">基本放大电路<a class="headerlink" href="#_22" title="Permanent link">¶</a></h2>
+<h3 id="_23">概念与指标<a class="headerlink" href="#_23" title="Permanent link">¶</a></h3>
+<ul>
+<li>放大电路，就是将微小信号（电压/电流/功率）放大指定的倍数（dB）</li>
+<li>对于每一级，都要尽可能保证高输入阻抗（对前级的影响小），低输出阻抗（带负载能力强），并具备指定需求（倍数、频带）下的高保真放大能力</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f8faaa64c8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了放大电路示意图，信号源（含内阻）通过电阻Rs与放大电路相连，放大电路输出端接负载RL。图中用红色箭头标注了信号源、输入阻抗、输出阻抗、负载等关键部分。该图与文档中放大电路概念与指标的内容相关，直观呈现了放大电路的基本结构，帮助理解输入阻抗、输出阻抗等指标在电路中的位置和作用。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f8faaa64c8.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9066b26958.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了基本放大电路的示意图。左侧为信号源，标注有电压Us和电阻Rs，信号源输出电压Ui经输入电阻Ri进入放大电路。放大电路右侧输出电压Uo，经负载电阻RL输出电流Io。电路中还标注了输入电流Ii和输出电流Io。该图与文档中放大电路概念与指标的内容相关，直观呈现了放大电路的基本结构，帮助理解输入输出参数等概念。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9066b26958.png"></a></p>
+<ul>
+<li><strong>电压放大倍数</strong> <span class="arithmatex">\(\dot{A}_{\mathrm{uu}}=\dot{U}_{O}/\dot{U}_{\mathrm{I}}\)</span></li>
+<li><strong>输入阻抗</strong> ：从入口两端看进去的等效电阻<span class="arithmatex">\(r_i=\frac{\dot{U}_i}{\dot{I}_i}\)</span></li>
+<li>
+<p><strong>输出阻抗</strong> ：</p>
+</li>
+<li>
+<p>戴维宁等效，加压求流法（前级电源置零，电压源开路，电流源短路，保留受控源）<span class="arithmatex">\(R_o=\frac{\dot{U}} {\dot{I}}\)</span></p>
+</li>
+<li><strong>通频带</strong></li>
+<li><strong>THD（总谐波失真）</strong> ：<span class="arithmatex">\(THD=\frac{\sqrt{H_2^2+H_3^2+\ldots+H_n^2}}{H_1}\times100\%\)</span></li>
+<li><strong>最大不失真输出幅度</strong></li>
+<li><strong>效率</strong> ：<span class="arithmatex">\(\eta=\frac{P_{\mathrm{om}}}{P_{\mathrm{v}}}\)</span>（最大输出功率/电源视在功率）</li>
+</ul>
+<hr>
+<h3 id="q">Q点<a class="headerlink" href="#q" title="Permanent link">¶</a></h3>
+<p>即静态工作点。合理的静态工作点可以提高管子效率，并规避失真（影响动态参数）</p>
+<p><strong>静态参数</strong>：<span class="arithmatex">\(I_{BQ},I_{CQ},U_{CEQ}\)</span></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a7f7ed3ab0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了 addCriterion addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a7f7ed3ab0.png"></a></p>
+<p><strong>常见的两种共射放大电路</strong></p>
+<ul>
+<li>输入信号源短接，大电容开路看Q点（问就是肌肉记忆了）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-10b0ba63be.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了两种共射放大电路。左侧为直接耦合共射放大电路，电路中有Rb1、Rb2、Rc、R1等电阻，以及电源VCC，输入信号源u1，输出信号uO，还标注了Q点参数公式。右侧为阻容耦合共射放大电路，电路中增加了C1、C2电容，其余元件与左侧电路类似，同样标注了Q点参数公式。该图与上下文介绍的共射放大电路类型相关，直观呈现了两种电路结构及Q点参数计算。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-10b0ba63be.png"></a></p>
+<h3 id="_24">图解法<a class="headerlink" href="#_24" title="Permanent link">¶</a></h3>
+<h4 id="_25">直流通路与交流通路<a class="headerlink" href="#_25" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>为微变等效电路奠基</p>
+</blockquote>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fe505b8bb1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了直流通路与交流通路的定义及处理方式。直流通路在直流电源作用下，直流电流流经的通路，电容视为开路，电感视为短路，交流信号源视为短路但需保留其内阻（若有的话）。交流通路在输入信号作用下，交流信号流经的通路，大电容（如耦合电容）视为短路，无内阻的直流电源（如VBB、VCC）视为短路。该图与上下文紧密相关，是对直流通路与交流通路概念的直观说明，为后续微变等效电路的建立奠定基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fe505b8bb1.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-18459882d8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了阻容耦合共射极放大电路及其直流通路和交流通路。左侧为阻容耦合共射极放大电路，包含电源、耦合电容、基极电阻、集电极电阻、负载电阻和晶体管。右侧是其直流通路，去除了耦合电容。底部文字说明直流电源内阻为零，耦合电容隔直通交，直流电源和耦合电容对交流相当于短路。该图与上文介绍的放大电路直流通路相关，直观呈现了电路结构，为后续交流负载线等分析打下基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-18459882d8.png"></a>
+</column>
+</grid></p>
+<p>容易得到共射放大的输入输出特性表达式</p>
+<ul>
+<li><span class="arithmatex">\(u_{\mathrm{BE}}=V_{\mathrm{BB}}-i_{\mathrm{B}}R_{\mathrm{b}}\)</span></li>
+<li><span class="arithmatex">\(u_{\mathrm{CE}}=V_{\mathrm{CC}}-i_{\mathrm{C}}R_{\mathrm{c}}\)</span></li>
+</ul>
+<p>thus 能画出负载线</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-95ce09428e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了共射放大电路的交流通路及输入输出特性。电路中包含电源VBB、基极电阻Rb、集电极电阻Rc、晶体管T等元件。下方是输入回路负载线和输出回路负载线，以及对应的输入输出特性曲线。输入回路负载线为直线，输出回路负载线为折线。Q点位于输入回路负载线与输出回路负载线的交点，标注有静态时交流输入为零。该图与上下文紧密相关，直观呈现了交流负载线的形成及Q点位置，为后续非线性失真分析等奠定基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-95ce09428e.png"></a></p>
+<p>而输入信号便在Q点上下震荡：</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7a00b25f6f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了共射放大电路的输入输出特性。图（a）中，横轴为基极电压u_{BI}，纵轴为基极电流i_{B}，虚线为输入信号u_{i}，实线为基极电流i_{B}，Q点位于虚线与实线交点。图（b）为交流负载线图，横轴为集电极电压u_{CE}，纵轴为集电极电流i_{C}，虚线为输入信号u_{o}，实线为集电极电流i_{C}，Q点位于虚线与实线交点。该图与上下文关系紧密，直观呈现了共射放大电路的输入输出特性，为后续分析奠定了基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7a00b25f6f.png"></a></p>
+<blockquote>
+<p>是通信电子线路中丙类功放的阉割版</p>
+</blockquote>
+<hr>
+<h4 id="_26">非线性失真分析<a class="headerlink" href="#_26" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>截止失真</strong></li>
+</ul>
+<p>Q点过低，信号底部低于开启电压，<span class="arithmatex">\(i_B\)</span>底部失真，<span class="arithmatex">\(u_{CE}\)</span>顶部失真</p>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-d13775979d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了交流信号波形，左侧为红色的i_b波形，右侧为蓝色的u_be波形。i_b波形呈现正负 自动生成" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-d13775979d.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e02d2824f6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片image addCriterion图片展示了NPN管截止失真时的输出uo波形。上方为输入信号波形，下方为输出uo波形，呈现顶部失真现象。输出uo波形顶部被削平，底部有尖角。右侧标注“NPN管截止失真时的输出uo波形。uo波形顶部失真”，并有“uo=uce”标识。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e02d2824f6.png"></a>
+</column>
+</grid></p>
+<ul>
+<li><strong>饱和失真</strong></li>
+</ul>
+<p>Q点过高，以致于<span class="arithmatex">\(i_C\)</span>顶部冲进饱和区，无法做到线性跟随，甚至削平</p>
+<ul>
+<li>输出信号表现为削底（但没有截止失真那么明显）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f6b6cb54aa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了共射放大电路的输入输出特性曲线。左侧为输入特性曲线，横轴为基极电流i_b，纵轴为基极电压u_{BE}，曲线与直线I_{BQ}相交于Q点，Q点处有虚线标注。右侧为输出特性曲线，横轴为集电极电压u_{CE}，纵轴为集电极电流i_c，曲线与水平线I_{CQ}相交于Q点，Q点处有虚线标注，还标注了饱和失真。该图与上下文关系紧密，直观呈现了共射放大电路的输入输出特性，帮助理解Q点位置及失真情况。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f6b6cb54aa.png"></a></p>
+<ul>
+<li>
+<p><strong>交越失真</strong></p>
+</li>
+<li>
+<p>一般出现在功放管没加二极管钳位/运放SR不够时</p>
+</li>
+<li><strong>注意Rb、Rc、VCC、β对Q点的影响</strong></li>
+</ul>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-27f14c55ef.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了改变Rb、VCC对Q点位置的影响。左侧图中，改变Rb，保持VCC、Rc、β不变，Rb增大Q点下移，Rb减小Q点上上移；右侧图中，改变VCC，保持Rb、Rc、β不变，升高VCC，直流负载线平行右移，动态工作范围增大，但管子的动态功耗也增大。该图与上下文紧密相关，直观呈现了Rb、VCC变化对Q点位置的影响，为理解Q点位置变化提供了可视化参考。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-27f14c55ef.png"></a>
+对第二点持异议，Q点应该还在红线上，向右平移而非往右上跑
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2e9ce4cc3c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了直流通路中交流负载线的变化情况。左侧图2.4.9（c）标注“改变Rc，保持Rb，VCC，β不变”，负载线由红色变为蓝色，Q点从Q1移动到Q2；右侧图2.4.9（d）标注“改变β，保持Rb，Rc，VCC不变”，负载线由红色变为蓝色，Q点从Q1移动到Q2。图片与上下文紧密相关，直观呈现了改变Rc和β时，负载线及Q点位置的变化，帮助理解Q点对交流负载线的影响。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2e9ce4cc3c.png"></a>
+</column>
+</grid></p>
+<h4 id="_27">交流负载线<a class="headerlink" href="#_27" title="Permanent link">¶</a></h4>
+<p>交流通路下，Rc与负载并联，斜率发生变化</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b860b4078b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了直流通路与交流通路的负载线。左侧标注“直流负载线”“交流负载线”，右侧绘有负载线。负载线有红色、蓝色、绿色三种，其中红色负载线标注“静态工作点”，并有Q点标识。图片下方有“特征”内容，显示交流负载线斜率为-1/R'，R' = R_L || R_c。还标注了“注意”：交流负载线是有交流输入信号时工作点的运动轨迹，空载时与直流负载线重合。该图与文档中交流负载线部分内容对应，直观呈现了负载。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b860b4078b.png"></a></p>
+<h3 id="_28">微变等效电路<a class="headerlink" href="#_28" title="Permanent link">¶</a></h3>
+<ul>
+<li>交流小信号下，可以在Q附近用直线段近似地将三极管等效为一个线性电路</li>
+</ul>
+<blockquote>
+<p>具体的H等效参数模型这里不作赘述，通信电子线路里面已有</p>
+</blockquote>
+<p>简化后可得三极管简化模型</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-664bd247e1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了交流小信号下三极管的微变等效电路。电路中，b端输入电流i_b，e端输入电压v_be，r_be为输入电阻，c端输出电流i_c，v_ce为输出电压。b、c端标注有正负极性，e端标注有负极性。该电路是上文介绍的三极管简化模型，用于交流小信号分析，是理解三极管放大电路工作原理的基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-664bd247e1.png"></a></p>
+<p>对于小功率三极管：<span class="arithmatex">\(r_{be}=300+(1+\beta)\frac{26(mV)}{I_E(mA)}(\Omega)\)</span></p>
+<ul>
+<li>注意内阻问题，此时的放大倍数是正常计算后的输入阻抗的分压</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9e5f51b4e8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了当信号源有内阻时的放大电路相关知识。左侧文字说明了放大倍数定义，包括电压放大倍数（A_u）和电压源内阻（R_s）的放大倍数（A_us），并给出公式A_us = R_i / (R_s + R_i) * A_u。右侧是放大电路示意图，信号源内阻为R_s，放大�� addCriterion图片展示了当信号源有内阻时的放大电路相关知识。左侧文字说明了放大倍数定义，包括电压放大倍数（A_u）和电压源内阻（R_s）的放大倍数（A_us），并给出公式A_us = R_i / (R_s + R_i) * A_u。右侧是放大电路示意图，信号源内阻为R_s，信号源输出电压为U_s，放大电路输出电压为U_o，负载电阻为R_L。该图片与上下文紧密相关，是对上下文中放大电路知识的直观呈现，帮助理解信号源内阻对放大电路放大倍数的影响。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9e5f51b4e8.png"></a></p>
+<ul>
+<li>输入输出阻抗不再赘述，见后面的总结</li>
+</ul>
+<hr>
+<h3 id="_29">分压偏置电路<a class="headerlink" href="#_29" title="Permanent link">¶</a></h3>
+<ul>
+<li>加入偏置与负反馈电阻<span class="arithmatex">\(R_e\)</span>以对抗温漂带来的Q点上移（<a href="https://o2ywbvn10e.feishu.cn/docx/QqtxdxgWVoAs3uxso04c8pFAnFh#share-XQ2UdK7f2oXM2OxO3s0cApMen5d">BJT温度影响</a>）</li>
+<li>对于直流信号来说，温度上升后，Ic变大，则Ie也变大，E点电位上升，BE两端电位下降（B点偏置认为稳定），由输入特性曲线得，Ib减小，从而抑制Ic</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8d29b093f2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了标题“" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8d29b093f2.png"></a></p>
+<ul>
+<li>抓住主要矛盾：<span class="arithmatex">\(U_B\approx\frac{R_{b2}}{R_{b1}+R_{b2}}V_{cc}\)</span>，后面的Q点参数都好求</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-61f20f83c2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了分压偏置电路中Q点参数的计算公式。上方黄色框内为基极电压U_B的计算公式，即U_B约等于R_b2除以R_b1加R_b2再乘以Vcc。下方紫色框内是集电极电流I_C的计算公式，I_C约等于I_E，等于U_E除以R_e，也等于(U_B减U_BE)除以R_e。蓝色框内是基极电流I_B的计算公式，I_B等于I_C除以β。绿色框内是集电极-发射极电压U_CE的计算公式，U_CE等于Vcc减I_CR_C减I_ER_e。最下方蓝色框内是U_BE约等于0.7V。这些公式与上下文介绍的分压偏置电路Q点参数计算相关。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-61f20f83c2.png"></a></p>
+<ul>
+<li>精确Q点计算（没啥印象）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4819a5ac9c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了分 addCriterion图片描述专家" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4819a5ac9c.png"></a></p>
+<ul>
+<li>去掉旁路电容<span class="arithmatex">\(C_E\)</span>后</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e8aeed4d03.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了分压偏置共射放大电路去掉旁路电容CE后的等效电路。左侧为原电路图，右侧是去掉CE后的等效电路图，箭头标注了各电流方向。等效电路中，输入信号ui经Rb1、Rb2分压后加至基极，发射极有Rb、rbe、Re等元件，集电极有Rc、RL等元件。图片下方蓝色框内文字“去掉CE后，Au变小”表明去掉旁路电容后，电压增益Au会减小，与上下文讨论电路设计思路中关于去掉旁路电容后Q点参数变化的内容相呼应。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e8aeed4d03.png"></a></p>
+<h4 id="_30">电路设计思路<a class="headerlink" href="#_30" title="Permanent link">¶</a></h4>
+<ol>
+<li><span class="arithmatex">\(I_c \approx 1,2mA\)</span></li>
+<li>空载下<span class="arithmatex">\(U_{CEQ} \approx 0.5V_{CC}\)</span>，负载下小于（交流负载线）</li>
+<li><span class="arithmatex">\(R_c \approx 2K \quad R_E \text{比较小}\)</span></li>
+<li><span class="arithmatex">\(R_1,R_2\)</span>几十KΩ，需要保证<span class="arithmatex">\(I_{R_2}&gt;&gt;I_B\)</span></li>
+</ol>
+<h3 id="bjt_1">BJT放大电路<a class="headerlink" href="#bjt_1" title="Permanent link">¶</a></h3>
+<p>一图以蔽之，自己推一遍</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-00e52faeb1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了三种BJT放大电路的类型及特点。上方文字说明了共射、共集、共基电路的特点，如共射电路电压增益大、共集电路适用于信号跟随等。下方分别以电路图形式呈现了共射、共集、共基电路，各电路图中标注了、集电极、发射极等标注清晰，还标注了输入电阻、输出电阻等参数。该图与上下文紧密相关，是对BJT放大电路设计思路中电路类型及特点的直观呈现。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-00e52faeb1.png"></a></p>
+<h3 id="_31">场效应管放大电路<a class="headerlink" href="#_31" title="Permanent link">¶</a></h3>
+<p><strong>基本接法</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-92c1dd4447.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了场效应管放大电路的三种接法。左侧为共源接法，标注“共源uGS-&gt;iD”，输入信号从栅极g输入，输出信号为d�������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������� addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-92c1dd4447.png"></a></p>
+<h4 id="q_1">基本电路与Q点<a class="headerlink" href="#q_1" title="Permanent link">¶</a></h4>
+<p>压控电源流的特性使得栅极电流忽略不计，进而有<span class="arithmatex">\(U_{\mathrm{GS}}=V_{\mathrm{GG}}\)</span></p>
+<ol>
+<li><strong>基本共源放大电路</strong></li>
+</ol>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2fb9ced377.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了基本共源放大电路的图解法与解析法。图解法中，直流负载线方程为uDS = VDD - iDRd，因UGS = VGG，可得IDQ和UDSQ。解析法给出uDS = VDD - iDRd和iD = ID0(UGS/UGS(th) - 1)²的方程。电路图中，T为场效应管，Rg、Rd为电阻，VGG为偏置电压，uI为输入信号，uO为输出信号。下方有iD和uDS的图像，Q点位于交点。该图与上下文介绍的基本共源放大电路内容紧密相关，直观呈现了电路工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2fb9ced377.png"></a></p>
+<ol>
+<li><strong>自给偏压放大电路</strong></li>
+</ol>
+<p>存在一个负偏</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6b6057679f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了自给偏压放大电路的电路图及Q点计算公式。电路图中，(a)图是自给偏压放大电路，(b)图是其简化版。图中包含场效应管、电源、电阻、电容等元件。Q点计算公式为：U_{GSQ} = -I_{DQ}R_{S}，U_{DSQ} = V_{DD} - I_{DQ}(R_{d} + R_{S})，I_{DQ} = I_{DSS}(1 - \frac{U_{CSQ}}{U_{GS(off)}})^{2}。该图与上下文介绍的自给偏压放大电路相关，用于说明电路结构及Q点计算方法。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6b6057679f.png"></a></p>
+<ol>
+<li><strong>分压偏置放大电路</strong></li>
+</ol>
+<p>大电阻<span class="arithmatex">\(R_{g3}\)</span>减小分流，类似电压跟随，仅提供电平</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9c901ec632.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了分压偏置放大电路的电路图及Q点计算公式。电路图中，场效应管、电阻、电容等元件组成放大电路，标注了输入信号ui、输出信号uo等。公式部分，通过已知UGS(th)计算UGSQ、IDQ、UDSQ，可解出Q点参数。底部文字说明该电路产生的栅源电压可正可负，适用于所有场效应管电路，还标注了为增加R1～数MΩ的提示。此图与上下文介绍的分压偏置放大电路内容紧密相关，是对电路工作原理的直观呈现。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9c901ec632.png"></a></p>
+<hr>
+<h4 id="_32">微变等效电路<a class="headerlink" href="#_32" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ae068e7a7f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片 addCriterion图片展示了场效应管放大电路及其微变等效电路 addCriterion图片展示了场效应管放大电路及其微变等效电路。图(a)是场效应管放大电路，标注有栅极（g）、源极（s）、漏极（d）等端口，以及输入电压Ugs。图(b)是其微变等效电路，将场效应管简化为压控电流源g_mUgs，串联r_ds电阻，Ugs addCriterion图片展示了场效应管放大电路及其微变等效电路。图(a)是场效应管放大电路，标注有栅极（g）、源极（s）、漏极（d）等端口，以及输入电压Ugs。图(b)是其微变等效电路，将场效应管简化为压控电流 addCriterion addCriterion图片展示了场效应管放大电路及其微变等效电路。图(a)是场效应管放大电路，标注有栅极（g）、源极 addCriterion图片展示了场效应管放大电路及其微变等效电路。图(a)是场效应管放大电路，标注有栅极（g）、源极（s）、漏极（d）等端口，以及输入电压Ugs。图(b)是其微变等效电路，将场效应管简化为压控电流源g_mUgs，串联r_ds电阻，Ugs为输入电压，Uo为输出电压。图片与上下文的关系是，上下文介绍了场效应管放大电路的输入与输出电压、放大倍数、输入阻抗、输出阻抗等参数，此图直观呈现了电路结构，辅助理解相关参数。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ae068e7a7f.png"></a></p>
+<p><strong>跨导计算</strong></p>
+<div class="arithmatex">\[g_m=\frac{\partial i_D}{\partial u_{GS}}|_{u_{DS}}=\begin{cases}\frac{2}{U_{GS(th)}}\sqrt{I_{DO}I_{DQ}}&amp;\text{n沟增强}\\\frac{-2}{U_{GS(off)}}\sqrt{I_{DSS}I_{DQ}}&amp;\text{n沟耗尽,J}&amp;\end{cases}\]</div>
+<h5 id="_33">共源放大电路<a class="headerlink" href="#_33" title="Permanent link">¶</a></h5>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2a9e4d3dba.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了共源放大电路的微变等效电路图。电路中，栅极输入端有Rg1、Rg2、Rg3等电阻，栅极输入电压为Ugs，输出端有Rd、RL等电阻，输出电流为id，输出电压为Ugs。图中还标注了输入阻抗Ri、输出阻抗Ro、跨导gm等参数，以及id、Ugs、Rd、RL等变量。该图与文档中共源放大电路内容相关，直观呈现了电路结构及参数，辅助理解输入与输出电压、放大倍数、输入阻抗、输出阻抗等计算公式。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2a9e4d3dba.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-88d1b4c331.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了 addCriterion&lt;qa:image&gt;&lt;/qa&gt;" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-88d1b4c331.png"></a>
+</column>
+</grid></p>
+<p>输入与输出电压：</p>
+<div class="arithmatex">\[\dot{U}_i=\dot{U}_{gs} \quad \dot{U}_o=-g_m\cdot\dot{U}_{gs}\cdot(R_D\parallel  R_L)\]</div>
+<p>放大倍数：</p>
+<div class="arithmatex">\[\dot{A}_u=\frac{\dot{U}_o}{\dot{U}_i}=-g_m\cdot R_L^{\prime}\]</div>
+<p>输入阻抗：</p>
+<div class="arithmatex">\[R_i=R_{g3}+R_{g1}\parallel R_{g2}\]</div>
+<p>输出阻抗：</p>
+<div class="arithmatex">\[R_O=R_D\]</div>
+<hr>
+<h5 id="_34">共漏放大电路<a class="headerlink" href="#_34" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-94aaaa84b5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了共漏放大电路的分析电路图。上方电路图中，VDD为电源，Rg1、Rg2、Rg3为偏置电阻，C1、C2为耦合电容，RL为负载电阻，Ri为输入电阻，Ro为输出电阻。下方电路图中，VDD、Rg1、Rg2、Rg3、C1、C2、RL、Ri、Ro等元件位置与上方相同，但Vgs、Vs、Ri、Ro旁有标注，Vgs旁有g_m符号，Vs旁有g_mVgs符号。该图与上下文共同呈现共漏放大电路的结构与参数分析。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-94aaaa84b5.png"></a></p>
+<p><strong>微变参数</strong></p>
+<div class="arithmatex">\[\begin{aligned}&amp;\dot{U}_{\mathrm{i}}=\quad\dot{U}_{\mathrm{gs}}+g_{\mathrm{m}}\dot{U}_{\mathrm{gs}}(R_{s}\|R_{\mathrm{L}})\\&amp;\dot{U}_{\mathrm{o}}=\quad g_{\mathrm{m}}\dot{U}_{\mathrm{gs}}(R_{S}\|R_{\mathrm{L}})\\&amp;\dot{A}_{u}=\quad\frac{\dot{U}_{\mathrm{o}}}{\dot{U}_{\mathrm{i}}}\quad=\frac{g_{\mathrm{m}}(R_{S}\|R_{\mathrm{L}})}{1+g_{\mathrm{m}}(R_{S}\|R_{\mathrm{L}})}\quad\approx 1\end{aligned}\]</div>
+<div class="arithmatex">\[R_{\mathrm{i}}=R_{\mathrm{g3}}+(R_{\mathrm{g1}}\parallel R_{\mathrm{g2}})\]</div>
+<div class="arithmatex">\[R_o=\frac{\dot{U}_o}{\dot{I}_o}=\frac{1}{\frac{1}{R_S}+g_m}=R_S\parallel\frac{1}{g_m}\]</div>
+<hr>
+<h3 id="_35">派生电路<a class="headerlink" href="#_35" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>复合管，以T1为准</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1b9ab8438d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片中展示了复合管的结构。图中以T1为准，分别标注了T1和T2的电流方向，T1的电流为i_{b addCriterion图片位于文档“派生电路”部分，是复合管结构的示意图。图中以T1为准，分别标注了T1和T2的电流方向，T1的电流为i_{b11}（i_{b12}），T2的电流为i_{b21}（i_{b22}）。图中还 addCriterion图片位于文档“派生电路”部分，是复合管结构的示意图。图中以T1为准，分别标注了T1和T2的电流方向，T1的电流为i_{b11}（i_{b12}），T2的电流为i_{b21}（i_{b22}）。图 addCriterion图片位于文档“派生电路”部分，是复合管结构的示意图。图 addCriterion图片位于文档“派生电路”部分，是复合管结构的示意图。图中以T1为准，分别标注了T1和T2的电流方向，T1的电流为i_{b11}（i_{b12}），T2的电流为i_{b21}（i_{b22}）。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1b9ab8438d.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ee443c7d6e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片中展示了复合管放大电路及其微变等效电路，包括电路图（a）和等效电路图（b）。电路图中，T1和T2为复合管，Rb、Rc、Rl、C1、C2为相关元件，u1和uo为输入和输出电压。等效电路中突出显示了β1、β2、rbe1、rbe2等参数。下方公式计算了复合管放大电路交流参数，表明复合管放大电路的电压增益与β、rbe等参数相关。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ee443c7d6e.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9b516635f6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了复合管放大电路及其等效电路。图（a）是复合管放大电路，由T1和T2组成，有输入信号ui、输出信号uo、电源Vcc等。图（b）是其等效电路，标注了各电流、电压参数。下方公式表明复合管输入电阻比单管大，输出电阻与单管相同。该图与上下文紧密相关，是对复合管放大电路结构及等效电路的直观呈现，帮助理解其工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-9b516635f6.png"></a></p>
+<hr>
+<h2 id="_36">多级放大电路<a class="headerlink" href="#_36" title="Permanent link">¶</a></h2>
+<h3 id="_37">耦合方式<a class="headerlink" href="#_37" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><strong>直接耦合</strong></p>
+</li>
+<li>
+<p>放大缓慢变换的信号</p>
+</li>
+<li>无电容，便于集成化</li>
+<li>Q点影响，温漂逐级累积</li>
+<li>
+<p><strong>阻容耦合</strong></p>
+</li>
+<li>
+<p>各级独立（计算Q点时）</p>
+</li>
+<li>温漂较小</li>
+<li>不适合集成，不适合缓变信号</li>
+<li>
+<p><strong>变压器耦合</strong></p>
+</li>
+<li>
+<p>阻抗变换</p>
+</li>
+<li>高频放大</li>
+<li>笨重</li>
+<li>
+<p><strong>光电耦合</strong></p>
+</li>
+<li>
+<p>电隔离</p>
+</li>
+</ul>
+<h3 id="_38">多级放大<a class="headerlink" href="#_38" title="Permanent link">¶</a></h3>
+<ul>
+<li>后级的输入阻抗作为前级的负载</li>
+<li>前级的输出阻抗作为后级的信号源阻抗</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f3ff209acc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了多 addCriterion图片位于介绍多级放大电路耦合方式相关内容之后，用于说明多级放大电路中阻容耦合的特点。图中电路包含两个放大级，标注了各级的输入输出电压及阻抗，如输入电压Vi1、Vi2，输出电压Vo1、Vo2，以及各级的输入输出阻抗Ri1、Ri2，Ri11、Ri12，Ri21、Ri22。下方文字总结了阻容耦合的特点：后级的输入阻抗是前级的负载，前级的输出阻抗是后级的信号源阻抗。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f3ff209acc.png"></a></p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-75c7aac7a1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了多级放大电路的电路图。左侧为输入级，有信号源US、电阻RS、电容C1、电阻R1、晶体管T1、电阻RE1等元件；中间为中间级，有电容C2、电阻R2、晶体管T2、电阻RC2等元件；右侧为输出级，有电容C3、电阻RL、晶体管T2、电阻RE2等元件。各元件参数标注清晰，如R1为1MΩ、C1为电容、US为信号源等。该图与上文多级放大电路耦合方式的内容相关，直观呈现了电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-75c7aac7a1.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b945b6128d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了多级放大电路的耦合方式。电路由三部分组成，左侧为输入级，有信号源US、电阻RS、电容C1、电容C2、电阻R1、电阻RE1、电容C3、电阻R2、电阻R3、电容C4、电阻RC2、电阻RL等元件；中间为中间级，有晶体管Q1、晶体管Q2；右侧为输出级，有晶体管Q3。各部分间通过耦合电容C1、C2、C3、C4连接，电路中还标注了电流i_b1、i_b2、i_b3，以及电压U_i、U_o等。该图与上文多级放大电路耦合方式的计算公式等内容相呼应。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b945b6128d.png"></a></p>
+<div class="arithmatex">\[R_i=R_1\parallel [r_{be1}+(1+\beta)R_{L1}^{\prime}]\]</div>
+<div class="arithmatex">\[R_o=R_{o2}=R_{C2}\]</div>
+<div class="arithmatex">\[\dot{A}_{us1}=\frac{R_i}{R_i+R_s}\cdot\dot{A}_{u1}\quad\dot{A}_{u1}=\frac{(\beta+1)R_{L1}^{\prime}}{r_{be1}+(\beta+1)R_{L1}^{\prime}}\]</div>
+<div class="arithmatex">\[\dot{A}_{u2}=-\frac{\beta R_{L2}^{\prime}}{r_{be2}}\]</div>
+<div class="arithmatex">\[\dot{A}_{us}=\dot{A}_{us1}\times\dot{A}_{u2}\]</div>
+</div>
+<h3 id="_39">长尾式差分放大<a class="headerlink" href="#_39" title="Permanent link">¶</a></h3>
+<p>为克服温漂而生</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1a11999e53.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1a11999e53.png"></a></p>
+<h4 id="q_2">Q点计算<a class="headerlink" href="#q_2" title="Permanent link">¶</a></h4>
+<ul>
+<li><span class="arithmatex">\(U_{BQ}=0V\)</span></li>
+<li><span class="arithmatex">\(I_{\mathrm{Re}}=\frac{-0.7V-(-V_{\mathrm{EE}})}{R_{\mathrm{o}}}\)</span></li>
+<li><span class="arithmatex">\(I_{\mathrm{CQ1}}=I_{\mathrm{CQ2}}=I_{\mathrm{CQ}}\approx I_{EQ}=\frac{1}{2}I_{\mathrm{Re}}\)</span></li>
+<li><span class="arithmatex">\(I_{\mathrm{BQ1}}=I_{\mathrm{BQ2}}=\frac{I_{\mathrm{CQ}}}{\beta}\)</span></li>
+<li><span class="arithmatex">\(U_{\mathrm{CEQ1}}=U_{\mathrm{CEQ2}}=V_{\mathrm{CC}}-I_{\mathrm{CQ}}R_{\mathrm{C}}-(-0.7)\)</span></li>
+</ul>
+<p>通过完全一样的参数和<span class="arithmatex">\(R_e\)</span>（自带两倍功效）实现共模抑制，即：<span class="arithmatex">\(u_{0}=(u_{\mathrm{C1}}+\Delta u_{\mathrm{C1}})-(u_{\mathrm{C2}}+\Delta u_{\mathrm{C2}})=0\)</span></p>
+<blockquote>
+<p>共模抑制比：<span class="arithmatex">\(\mathrm{CMRR}=20\log_{10}(\frac{\mathrm{A_d}}{\mathrm{A_c}})\)</span>，越大越好</p>
+</blockquote>
+<h4 id="_40">等效模型<a class="headerlink" href="#_40" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-245f2de28e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了长尾式差分放大电路的等效模型。上方电路图中，输入信号ui1d、ui2d分别通过Rb1、Rb2加到T1、T2基极，集电极分别有Rc1、Rc2，发射极有Re，还有VCC、VEE电源。下方是等效电路，将T1、T2基极信号源等效为电流源，发射极电阻等效为内阻，集电极电阻等效为外阻，直观呈现了信号传输与放大过程中的等效关系。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-245f2de28e.png"></a></p>
+<h4 id="_41">四种常见组态<a class="headerlink" href="#_41" title="Permanent link">¶</a></h4>
+<ul>
+<li>指标仅与输出方式有关</li>
+<li>为进一步抑制漂移，可将Re换成恒流源，并增加调零电路（e极增加Rw）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-682dbdcaa7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了长尾式差分放大电路的电流源电路部分，并进行电路分析。电路中包含三极管T3，以及电阻R1、R2、R3等。分析得出IC3≈IE3≈常[公式]，即IC3≈IE≈常数。该图片与上文介绍长尾式差分放大电路的内容相关，是对电路中电流关系的数学描述，帮助理解电路工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-682dbdcaa7.png"></a></p>
+<ul>
+<li><strong>双入双出</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5eac0427cd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了双入双出长尾式差分放大电路的电路图。电路中包含两个晶体管T1和T2，分别连接有基极电阻Rb、集电极电阻Rc和发射极电阻Re。T1的发射极与T2的基极通过Re连接，T2的发射极接地。T1的集电极与T2的集电极分别通过Rc与电源VCC连接，T1的集电极还通过Rc与负载RL连接。左侧有差分输入信号源，右侧有输出信号vO1和vO2。该图与上文介绍的双入双出长尾式差分放大电路的内容相呼应，直观呈现了电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5eac0427cd.png"></a></p>
+<p><strong>差模放大倍数</strong></p>
+<div class="arithmatex">\[A_\mathrm{d}=-\frac{\beta(R_\mathrm{c}\parallel {R_\mathrm{L}}/{2})}{R_b+r_\mathrm{be}}\]</div>
+<p><strong>共模放大倍数</strong></p>
+<div class="arithmatex">\[A_{c}=0\]</div>
+<p><strong>输入阻抗</strong></p>
+<div class="arithmatex">\[R_\mathrm{i}=2(R_b+r_\mathrm{be})\]</div>
+<p><strong>输出阻抗</strong></p>
+<div class="arithmatex">\[R_{\mathrm{o}}=2R_{\mathrm{c}}\]</div>
+<ul>
+<li><strong>双入单出</strong></li>
+</ul>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f37c9ad7c7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了双入单出长尾式差分放大电路的电路图。电路中，T1和T2为晶体管，T1的基极通过Rb1与输入信号v11相连，T2的基极通过Rb2与输入信号v12相连。T1和T2的集电极分别通过Rc与电源VCC和地相连，发射极通过Re与地和电源VEE相连，发射极间有RL。该电路用于差分放大，可进一步抑制漂移，与上下文介绍的双入单出长尾式差分放大电路结构相呼应。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f37c9ad7c7.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-da5a2f997f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了������" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-da5a2f997f.png"></a>
+</column>
+</grid></p>
+<p><strong>差模放大倍数</strong></p>
+<div class="arithmatex">\[A_\mathrm{d}=-\frac{\beta(R_\mathrm{c}\parallel R_\mathrm{L})}{2(R_\mathrm{b}+r_\mathrm{be})}\]</div>
+<p><strong>共模放大倍数</strong></p>
+<blockquote>
+<p>共模下需要考虑<span class="arithmatex">\(R_e\)</span></p>
+</blockquote>
+<div class="arithmatex">\[A_{c}=\frac{\Delta u_{\mathrm{OC}}}{\Delta u_{\mathrm{IC}}}=-\frac{\beta(R_{c}\parallel R_{L})}{R_{b}+r_{bc}+2(1+\beta)R_{c}}\approx-\frac{R_{L}^{\prime}}{2R_{c}}\]</div>
+<p>共模抑制比为</p>
+<div class="arithmatex">\[\begin{aligned}K_{CMR}&amp;=\left|\frac{A_{\mathrm{d}}}{A_{\mathrm{c}}}\right|\\&amp;=-\frac{R_{b}+r_{be}+2(1+\beta)R_{e}}{2(R_{b}+r_{be})}\end{aligned}\]</div>
+<p><strong>输入阻抗</strong></p>
+<div class="arithmatex">\[R_\mathrm{i}=2(R_b+r_\mathrm{be})\]</div>
+<p><strong>输出阻抗</strong></p>
+<div class="arithmatex">\[R_{\mathrm{o}}=R_{\mathrm{c}}\]</div>
+<ul>
+<li><strong>单入双出</strong></li>
+</ul>
+<p>需要先进行信号的分解，将单端等效为双端输入</p>
+<p>对于输入的任意俩信号，都可以分出差模信号与共模信号</p>
+<div class="arithmatex">\[u_{\mathrm{Id}}=u_{\mathrm{I1}}-u_{\mathrm{I2}}\]</div>
+<div class="arithmatex">\[u_{\mathrm{Ic}}=(u_{11}+u_{12})/2\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-64d09d524f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为单入单出电路的示意图，展示了输入信号uI的波形。图中uI1和uI2分别代表输入信号的两个不同电平，二者在时间 addCriterion图片" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-64d09d524f.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-83dfaf4e9f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了长尾式差分放大电路单入单出时的动态参数计算。电路中有两个晶体管T1" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-83dfaf4e9f.png"></a></p>
+<ul>
+<li><strong>单入单出</strong></li>
+</ul>
+<div class="arithmatex">\[\Delta u_o=A_cu_{Ic}+A_du_{Id}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-082c17f868.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了单端输入单端输出的长尾式差分放大电路及相关公式。电路中T1、T2为晶体管，Rc、Rb、Re等为电阻，Ri、Ro为输入、输出电阻。公式包括差分放大电路的输出电压公式、差分放大倍数A_d" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-082c17f868.png"></a></p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8d820adfd4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片是例题2，给出多级放大电路参数，求u1。电路中T1、T2为晶体管，Rb、Rc、Rl等为电阻，Vcc、Vee为电源。已知β1=β2=100，rbe=2kΩ，Rb=1kΩ，Rc=10kΩ，RL=5.1kΩ，Vcc=12V，ICQ=0.5mA。uO=3.5V（万用表测）。解题中计算出UcQ1=2.36V，ΔuO=0.64V，ΔuI=-11.4mV。图片与上下文紧密相关，通过具体数值和计算过程，展示了长尾式差分放大电路中求u1的计算方法。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8d820adfd4.png"></a></p>
+</div>
+<hr>
+<h2 id="_42">集成运放<a class="headerlink" href="#_42" title="Permanent link">¶</a></h2>
+<h3 id="_43">特点<a class="headerlink" href="#_43" title="Permanent link">¶</a></h3>
+<ul>
+<li>对称</li>
+<li>多管子少电阻</li>
+<li>直接耦合</li>
+<li>三极管构建恒流/恒压源</li>
+<li>由输入、输出、放大、偏置电路构成</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8865466fd6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了集成电路放大器内部组成原理图，包括差分输入级、电压放大级、输出级、，以及偏置电路。图中还标注了对输入级、中、输出级的要求，如输入级要求减小零点漂移、提高KCMR、输入阻抗大；中级要求放大倍数大；输出级要求提高带负载能力、输出电流大。偏置电路为各级设置合适的工作点。该图与文档中介绍集成运放特点的内容相关，直观呈现了集成运放的内部结构及各部分功能。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8865466fd6.png"></a></p>
+<hr>
+<h3 id="_44">电流源<a class="headerlink" href="#_44" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>镜像</strong></li>
+</ul>
+<div class="arithmatex">\[\begin{aligned}I_{\mathbf{R}}&amp;=\frac{V_{\mathrm{CC}}-U_{\mathrm{BE}}}{R}\quad\text{(常数)}\\&amp;=I_{\mathrm{C}}+2I_{B}=I_{\mathrm{C}}+2\frac{I_{C}}{\beta}=\frac{2+\beta}{\beta}I_{\mathrm{C}}\end{aligned}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4184688fe5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了威尔逊电流源 addCriterion源电路图。电路中，T0、T1为晶体管，R为电阻，+VCC为电源。图中标注了电流方向和数值，如IR、IC0、IC1、IB0、IB1、2IB等。该图与文档中介绍威尔逊电流源的内容相关，直观呈现了威尔逊等式中电流关系，帮助理解威尔逊电流源在电路中的工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4184688fe5.png"></a></p>
+<p>进一步优化：</p>
+<div class="arithmatex">\[I_{C1}=\frac{\beta^2+\beta}{\beta^2+\beta+2}I_R\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-71f68bf4db.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了威尔逊电流源电路。电路中，+VCC电源通过电阻R与T2管的基极相连，T0、T1、T2均为三极管，T0、T1的发射极相连，T2的发射极与T0、T1的基极相连。各三极管的基极、发射极分别标注有电流I_B0、I_B1、I_B2、I_C0、I_C1。该电路用于进一步优化威尔逊电流源，使I_C与I_R更接近，是文档中介绍电流源相关内容的电路示例。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-71f68bf4db.png"></a></p>
+<p><strong>威尔逊电流源</strong></p>
+<p><span class="arithmatex">\(I_{\mathrm{C}}\text{与}I_{\mathrm{R}}\)</span>更接近了</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-112e6b9016.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了威尔逊电流源电路。电路中，T0、T1、T2为三极管，T0、T1基极相连，T2基极与T1集电极相连，T2集电极接地。T0、T1发射极分别接电阻R，T2发射极接电源Vcc。T0、T1发射极电流分别为IC0、IC1，T2发射极电流为IC2，T2基极电流为IB2，T0、T1基极电流均为2IB。该电路用于构建更接近威尔逊电流源的电路，是威尔逊电流源电路的示例。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-112e6b9016.png"></a></p>
+<ul>
+<li><strong>比例</strong></li>
+</ul>
+<div class="arithmatex">\[I_{C1}\approx\frac{R_{e0}}{R_{e1}}I_{R}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-92c65da37b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了了 addCriterion文档中介绍微电流源相关内容时，给出了一张电路图。图中电源为+VCC，有电阻R、T0、T1等元件，标注了I_R、I_C0、I_C1、I_E0、I_E1、I_B0、I_B1等电流。T0、T1为晶体管，R_{e0}、R_{e1}为电阻。该图直观呈现了微电流源电路结构，与上下文介绍的微电流源公式相呼应，帮助理解其工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-92c65da37b.png"></a></p>
+<ul>
+<li><strong>微电流源</strong></li>
+</ul>
+<div class="arithmatex">\[I_{C1}\approx\frac{U_T}{R_e}\ln(\frac{I_R}{I_{C1}})\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8bc31ec869.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了威尔逊电流源 addCriterion源电路图。图中包含电源+Vcc、电阻R、晶体管T0和T1、" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8bc31ec869.png"></a></p>
+<hr>
+<h3 id="_45">典型集成运放<a class="headerlink" href="#_45" title="Permanent link">¶</a></h3>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-23b104c78e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了集成运放的电路结构，分为输入级、中间级和输出级。输入级由T1 - T4管构成，T10、T1" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-23b104c78e.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4aa9857535.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了集成运放的内部电路结构。输入电路部分，T1、T2、T3、T4组成共集一共基复合差动输入电路，T5、T6、T7、R1、R2、R3组成镜像电流源，作为差动输入级的有源负载。中间级T16和T17是复合管组成的共射放大电路，T13管作集电极有源负载。输出级T14和T18、T19管组成互补输出级，T15与R4、R5组成电压源提供静态偏置，D1、D2为过流保护电路。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4aa9857535.png"></a>
+</column>
+</grid></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-be659c430a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了集成运放的等效电路。左侧为输入等效电路，包含两个电流源IIO/2、IIO、IIB、IIB，以及电压源UIO、电阻r_id等；中间是简化等效电路，有电压源u1、电流源A_oo、r_id等；下方是输出等效电路，有电压源A_oe、A_od、r_o等；最右侧是理想运放等效电路，标注了A_od、K_CMR、r_id、f_C、S_R等参数均为无穷大，r_o、U_IO、I_IB、I_IO等参数均为0。该图与文档中介绍集成运放特点的内容相关，直观呈现了其等效电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-be659c430a.png"></a></p>
+<h3 id="_46">运放常用指标<a class="headerlink" href="#_46" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>分别从输入、偏置、放大、输出去考虑</p>
+</blockquote>
+<ul>
+<li>输入阻抗、偏置电流（共模抑制比）</li>
+<li>压摆率</li>
+<li>增益带宽积（开环差模增益、带宽）</li>
+<li>输出阻抗、带载能力、失调电压</li>
+</ul>
+<hr>
+<h3 id="_47">常见类型<a class="headerlink" href="#_47" title="Permanent link">¶</a></h3>
+<ul>
+<li>高精度（共模抑制比高）</li>
+<li>低功耗</li>
+<li>高速（大压摆率，高带宽[高频敏感、鲁棒性差]）</li>
+<li>高阻（采样保持电路、带通滤波器）</li>
+<li>大功率、高压</li>
+</ul>
+<p>推挽输出，加二极管避免交越失真</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a26ba6eeec.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了在运放输出端的 addCriterion端加一级射极输出器或互补输出级的电路图。图（a）为加射极输出 addCriterion输出器电路，运放A的输出经T管、RL电阻后输出；图（b）为加互补输出级电路，运放A的输出经T1、T2管、D1、D2二极管后输出。该图与上下文紧密相关，上下文提到“在运放的输出端加一级射极输出器或互补输出级”，此图直观呈现了这两种加法措施的电路结构，帮助理解其工作原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a26ba6eeec.png"></a></p>
+<hr>
+<h2 id="_48">频响<a class="headerlink" href="#_48" title="Permanent link">¶</a></h2>
+<p>考虑高频下带来的极间电容</p>
+<h3 id="_49">滤波与波特图<a class="headerlink" href="#_49" title="Permanent link">¶</a></h3>
+<p><strong>低通/高通</strong></p>
+<p><grid>
+<column width-ratio="0.500000">
+$<span class="arithmatex">\(\dot{A}_u=\frac{\dot{U}_\mathrm{o}}{\dot{U}_\mathrm{i}}=\frac{\frac{1}{j\omega C}}{R+\frac{1}{j\omega C}}=\frac{1}{1+j\omega RC}\)</span>$
+$<span class="arithmatex">\(\dot{A}_u=\frac{1}{1+j\frac{f}{f_H}}\)</span>$
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b07aabfadb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了RC电路的电路图。图中 自动生成 addCriterion图片位于文档中“滤波与波特图”部分，是对RC电路的电路图展示。图中R表示电阻，C表示电容，U₁和U₀分别标注了输入和 addCriterion图片位于文档中“滤波与波特图”部分，是对RC电路的电路图展示。图中R表示电阻，C表示电容，U₁和U₀分别标注了输入和输出电压，箭头指向对应电压。该图与上下文内容紧密相关，直观呈现了RC电路结构，为后续分析低通、高通滤波器的频率响应等奠定基础。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b07aabfadb.png"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2f4b522337.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了低通滤波器的1 的波特图，横轴 addCriterion addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2f4b522337.png"></a>
+</column>
+<column width-ratio="0.500000">
+$<span class="arithmatex">\(\begin{aligned}\dot{A}_{u}&amp;=\frac{\dot{U}_{0}}{\dot{U}_{1}}=\frac{R}{R+\frac{1}{j\omega C}}=\frac{1}{1+\frac{1}{j\omega RC}}\\&amp;=\frac{j\omega RC}{1+j\omega RC}\end{aligned}\)</span>$
+$<span class="arithmatex">\(\dot{A}_u=\frac{1}{1+\frac{f_L}{jf}}\quad=\frac{j\frac{f}{f_L}}{1+j\frac{f}{f_L}}\)</span>$
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3f7559e98b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了RC低通滤波电路的电路图。图中有两个电压源，上方为正极，下方为负极，分别标有U_i和U_o。电路中串联了一个电阻R和一个电容C，电阻R连接在U_i和U_o之间，电容C与U_i相连。该电路图与文档中关于RC低通滤波电路的描述相呼应，直观呈现了电路结构，为理解低通滤波原理提供可视化参考。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3f7559e98b.png"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b53a8415ab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片是一幅波特图，展示了幅值和相位随频率变化的关系。横坐标为频率f，纵坐标上方为20lg|Au|/dB，下方为φ。图中红色折线代表幅值变化，从0dB在0.1fL处下降至-3dB，再在10fL处保持不变；橙色折线代表相位变化，从+90°在0.1fL处下降至+45°，再在10fL处保持不变。该图与上文关于低通/高通滤波器的幅值和相位变化分析相呼应，直观呈现了频率变化对幅值和相位的影响。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b53a8415ab.png"></a>
+</column>
+</grid></p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p>注意负号说明相位倒π</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e48c275486.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了放大电路的波特图�� addCriterion 自动生成" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e48c275486.png"></a></p>
+</div>
+<hr>
+<h3 id="_50">再探放大电路<a class="headerlink" href="#_50" title="Permanent link">¶</a></h3>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5c54c32d10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了 addCriterion&lt;qa:image_id&gt;image1&lt;/qa:image_id&gt;展示了根据高频下极间电容影响画出的 addCriterion&lt;qa:image_id&gt;image1&lt;/qa:image_id&gt;展示了根据高频下极间电容影响画出的图片内容" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5c54c32d10.png"></a></p>
+<p>简化为</p>
+<div class="arithmatex">\[f_\beta=\frac{1}{2\pi r_{_br_e}(C_\pi+C_\mu)}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5201d80b6c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了三极管放大电路的交流等效电路。电路中，b点与b'点通过电阻r'bb'相连，b'点与e点通过电阻r'b'e和电容C'π相连，e点与c点通过电流源gm和电容C'π相连。各点标注有电压符号，如b点标注Ube，b'点标注Ub'e，e点标注Ue。该电路是上文放大电路内容的简化模型，用于分析放大电路的频率响应等特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5201d80b6c.png"></a></p>
+<h3 id="_51">单管放大分析<a class="headerlink" href="#_51" title="Permanent link">¶</a></h3>
+<blockquote>
+<p><strong>由此得到该电路的带宽</strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aa7003dc1c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了单管放大电路在不同频段时电容的作用及电路简化情况。高频段时，只有C′π、C′gs起作用，C1、C2、Ce等耦合旁路电容视为短路；中频段时，C′π、C′gs视为开路，C1、C2、Ce均视为短路；低频段时，C1、C2、Ce起作用，C′π、C′gs等视为开路。图中还标注了各电容、电阻及信号源、负载等元件，直观呈现了电容在各频段的等效电路。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aa7003dc1c.png"></a></p>
+<p><grid>
+<column width-ratio="0.333333">
+低频下
+$<span class="arithmatex">\(f_L=\frac{1}{2\pi(R_c+R_L)C}\)</span>$
+</column>
+<column width-ratio="0.333333">
+高频下
+<span class="arithmatex">\(f_H=\frac{1}{2\pi RC_\pi^{\prime}}\)</span><span class="arithmatex">\(R=r_{b^{\prime}e}//[r_{bb^{\prime}}+R_{s}//R_{b}]\)</span>
+</column>
+<column width-ratio="0.333333">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ceff270870.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了单管放大电路的波特图，包括幅值和相位随频率变化的曲线。幅值曲线在0.1fL处开始上升，fL处达到13dB，之后保持不变，fH处再次下降；相位曲线在0.1fL处开始下降，fL处降至-90°，fH处降至-270°。该图与上文单管放大电路的带宽分析相关，直观呈现了电路在不同频率下的幅值和相位变化情况。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ceff270870.png"></a>
+</column>
+</grid></p>
+<p>FET（场效应管）同理</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-0d7109fa67.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了场效应管（FET）放大器的等效电路及频响分析。左侧为FET放大器电路图，标注有信号源、栅极电阻、源极电阻、负载电阻等。右侧是等效电路图，标注了栅极、源极、漏极等。下方有中频段、低频段、高频段的公式及频率表达式，如中频段R_L' = R_d // R_L，低频段f_L = 1 / 2πC(R_d + R_L)，高频段f_H = 1 / 2πR_g C'_gs。该图与上下文关于FET同理的分析内容相呼应，直观呈现了FET放大器的频响特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-0d7109fa67.png"></a></p>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-58e70beea2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了例题中放大电路的交流等效电路，包括晶体管、电阻、电容等元件。电路中，交流信号源u1经Rb1、Rb2、Rc等元件，通过晶体管T，经Rc、Rl等元件，最终输出uo。下方有时间常数法计算公式，用于计算各电容单独作用时的时间常数τ，只保留起主要作用的τ，如τ1、τ2、τe等，选取最小的τe。该图与上文例题中放大电路频率响应计算相关，用于辅助理解电路频率响应分析。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-58e70beea2.png"></a></p>
+</div>
+<hr>
+<h3 id="_52">多级放大截止频率<a class="headerlink" href="#_52" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[f_L\approx1.1\sqrt{\sum_{k=1}^nf_{Lk}^2}\]</div>
+<div class="arithmatex">\[\frac{1}{f_H}\approx1.1\sqrt{\sum_{k=1}^n\frac{1}{f_{Hk}^2}}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2d4ba5c22e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了多级放大截止频率分析中的关键步骤。1. 利用分频段法，求每一级放大电路RC回路的时间常数τ，然后写出截止频率。2. 当回路中有多个电容时，利用时间常数法，分别计算每个电容单独作用时的时间常数τ，然后取起主要作用的时间常数τ。图片中还用红色箭头和黄色框突出标注了“其它C短路、电压源短路、电流源开路”这一内容，强调在计算电容单独作用时间常数时的处理方式，与上下文关于多级放大截止频率分析的步骤紧密相关。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-2d4ba5c22e.png"></a></p>
+<h3 id="_53">负反馈稳定与裕度<a class="headerlink" href="#_53" title="Permanent link">¶</a></h3>
+<p>自激振荡原因：相位位移超过180°，而仍在通频带内</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fd3f26a5cf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为波特图，展示了放大器增益（20lg|A|/dB）与频率（f/Hz）的关系。图中红色区域标注了通p1、10f p1、10^3f p1等频率点，以及-20dB/十倍频程、-40dB/十倍频程等增益值。在通频带以内，即f ≤ f p1时，其附加相移小于45°，引入负反馈；而在通频带以外，如在f p1频率上，附加相移达-180°，是正反馈。这说明放大器在通频带以内是负反馈，但在通频带以外的某一频率上，原负反馈变成正反馈，可能导致自激。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fd3f26a5cf.png"></a></p>
+<h4 id="_54">平衡条件<a class="headerlink" href="#_54" title="Permanent link">¶</a></h4>
+<div class="arithmatex">\[\begin{aligned}|\dot{A}\dot{F}|&amp;=1\\\angle\dot{A}\dot{F}&amp;=(2n+1)\pi\end{aligned}\]</div>
+<p>所以三阶RC才会产生自激</p>
+<p><strong>波特图判定</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-104d44f8d4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了AF的Bode图，用于波特图判定。图中上方为20lg|AF|曲线，下方为相位φ曲线。判据为20lg|AF|=0时φ=±(2n+1)π，即当φ=±(2n+1)180°时，20lg|AF|≥0dB为自激，&lt;0dB为不自激。还指出fc&lt;f0时为不自激。该图与上文波特图判定内容对应，直观呈现了AF的幅值和相位随频率变化的情况，帮助理解自激与不自激的判定条件。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-104d44f8d4.png"></a></p>
+<h4 id="_55">稳定裕度<a class="headerlink" href="#_55" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e19cc7506d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了放大器稳定裕度的两种标准。增益裕度Gm，当AF附加相移Δφ(f) = ±(2n+1)π时，其对应的环路增益即为Gm，图中要求Gm ≤ -10dB。相位裕度φm，在20lg|AF| = 0dB时，(f = fc)，φm = 180° - |φ(fc)|，图中要求φm ≥ 45°。该图与上文介绍的稳定裕度内容相关，直观呈现了增益裕度和相位裕度的计算条件及要求。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e19cc7506d.png"></a></p>
+<p><strong>消除方法</strong></p>
+<ul>
+<li>缩减带宽</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-df46db280f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了RC addCriterion简单滞后补偿法的波特图。图中红色折线代表放大器的幅频特性，标注有-20 dB/十倍频、-40 dB/十倍频等。黑色折线为相频特性，标注有φm = 45°。图中还标注了fH1、fH2、fH3等截止频率。文字说明将补偿电容连接在前级输出电阻和本级输入电阻都比较大的回路（即最小的fHk回路），目的是使上限截止频率下移。该图与上文介绍的消除自激振荡方法中滞后补偿法的内容相关，直观呈现了补偿电容对波特图的影响。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-df46db280f.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fcc3eb0cc8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了补偿电路及相关等效电路。左侧是包含晶体管T1、T2、电阻Rb、Rc、电容C的电路图，右侧是两个运算放大器A1、A2的电路图，以及等效电路图，其中包含电阻R01、R12、电容C、C12。图片下方文字说明“该两个电路可以等效成”，表明左侧电路与右侧电路及其等效电路在功能上有相似之处，可能是用于说明补偿电路的等效原理，与文档中RC滞后补偿内容相关。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-fcc3eb0cc8.png"></a></p>
+<ul>
+<li>RC滞后补偿</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-42b48498cc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了RC零" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-42b48498cc.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a283bb78a2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了密勒效应补偿法和相位超前补偿法的电路及波特 addCriterion图片内容" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a283bb78a2.png"></a></p>
+<hr>
+<h2 id="_56">反馈<a class="headerlink" href="#_56" title="Permanent link">¶</a></h2>
+<h3 id="_57">基本概念<a class="headerlink" href="#_57" title="Permanent link">¶</a></h3>
+<ul>
+<li>开环/闭环</li>
+<li>正/负反馈</li>
+<li>直流/交流反馈</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aabce8e484.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了三种反馈类型电路。左侧为直流负反馈电路，输入信号u1经R1、R2反馈到运放负输入；A�� addCriterion图片展示了三种反馈类型电路。左侧为直流负反馈电路，输入信号u1经R1、R2反馈到运放负输入端，R1、R2构成串联反馈网络。中间是交流负反馈电路，输入信号u1经R1、C���� addCriterion图片展示了三种反馈类型电路。左侧为直流负反馈电路，输入信号u1经R1、R2" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aabce8e484.png"></a></p>
+<p><strong>开环增益、反馈系数、闭环增益与环路增益</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4090c9ded8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了负反馈放大电路的方块图表示，包含净输入、开环增益、反馈系数、闭环增益和环路增益等概念。净输入为基本放大电路输入信号与反馈信号之差；开环增益是基本放大器增益；反馈系数是反馈网络增益；闭环增益是负反馈电路增益；环路增益是反馈系数与开环增益的乘积。图中还标注了基本放大电路和反馈网络，箭头 addCriterion图片位于介绍负反馈放大电路方块图表示的上下文，是对该内容的直观呈现，帮助理解负反馈放大电路中各增益参数的含义及其在电路中的位置关系。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-4090c9ded8.png"></a></p>
+<p><strong>反馈系数与反馈深度的关系</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7579c06fdc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了反馈增益的计算公式及反馈深度的讨论。公式中，反馈增益A_f等于输出信号变化率与输入信号变化率之比，也可表示为A_f等于A除以1加AF。中频时A_f等于A除以1加AF。反馈深度为1加AF的绝对值，表示反馈的强弱，为实数。讨论1中，当1加AF大于1时，反馈为负反馈；小于1时，为正反馈；等于1时，无反馈。该图与上下文紧密相关，是对反馈增益计算及反馈深度讨论的数学表达。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7579c06fdc.png"></a></p>
+<h3 id="_58">基本组态<a class="headerlink" href="#_58" title="Permanent link">¶</a></h3>
+<p>四种组态与判别方法</p>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5a31b6f67c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了四种反馈组态的名称及对应英文缩写。左侧为中文名称，分别为电压串联负反馈、电压并联负反馈、电流串联负反馈、电流并联负反馈；右侧为英文缩写，分别为series-shunt、shunt-shunt、series-series、shunt-series。该图片与文档中“反馈基本组态”部分内容相关，是对四种反馈组态名称及英文缩写的直观呈现，帮助读者更清晰地记忆和理解这些反馈组态。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5a31b6f67c.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-50fb48f845.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了反馈基本 addCriterion addCriterion基本组态相关内容。左侧“RL短接”处，红色标注“uO = 0”，蓝色文字“反馈消失”“反馈存在”；中间“电压”“电流”对应“RL短接”；右侧“输入与反馈信号连接点”处，蓝色文字“同一点”“不同点”，红色文字“并联”“串联”。该图与上文四种组态与判别方法的内容相关，直观呈现了RL短接、反馈、连接点等关键信息。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-50fb48f845.png"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7c4b69bb54.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了四种运算放大器组态电路。上方从左至右分别为电压串联、电流串联、电流并联组态，电路中包含运算放大器A、电阻R1、R2等元件，标注了输入输出电流、电压等参数。下方从左至右分别是电流" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7c4b69bb54.png"></a>
+</column>
+</grid></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-00bfd61f02.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电压负反馈电路的两种组态。左侧为电压串联负反馈，输入信号从输入端输入，经放大器放大后，输出信号通过反馈网络反馈到输入端，反馈信号与输入信号相减。右侧为电压并联负反馈，输入信号从输入端输入，经放大器放大后，输出信号通过反馈网络反馈到输入端，反馈信号与输入信号相减。该图与上下文介绍的反馈基本组态内容相关，直观呈现了两种反馈组态的电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-00bfd61f02.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a91114fe19.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电流反馈放大器的两种组态电路。左侧为电流串联负反馈，输入信号经放大器后，输出电流I_o通过负载电阻R_L，反馈信号为U_f，反馈系数为F_ui。右侧为电流并联负反馈，输入信号经放大器后，输出电流I_o通过负载电阻R_L，反馈信号为I_f，反馈系数为F_ii。该图与上文介绍的反馈基本组态内容相呼应，直观呈现了电流反馈放大器的两种组态形式。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a91114fe19.png"></a></p>
+<p>总结表，注意下标</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8b6bfcb456.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为表6.3.1，标题为“四种组态负反馈放大电路的比较”。表格展示了电压串联式、电压并联式、电流串联式、电流并联式四种组态的输出信号、反馈信号、开环电路的放大。如电压串联式输出信号为Uo，反馈信号为Uf，开环电路的放大倍数为电压放大倍数Auu，反馈系数为Fuu。该表与上下 addCriterion图片" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-8b6bfcb456.png"></a></p>
+<h4 id="fa">F与A计算<a class="headerlink" href="#fa" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e74da4603d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片为文档中“反馈基本组态”部分的插图，背景为黑色，文字为蓝色。内容为三个步骤：（1）正确判断反馈组态；（2）求解反馈系数；（3）利用F求解。该图片与上文“反馈基本组态”内容紧密相关，是对反馈基本组态计算步骤的总结，为后续F与A计算提供明确的步骤指引。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e74da4603d.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aeebbbe74a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了串联反馈和并联反馈的电路图，用于说明计算反馈增益F时去除X_i和基本放大电路影响的原理。串联反馈图中，输入信号U_i经放大器后，反馈信号U_f与输入信号U_i相减，再经放大器放大后输出。并联反馈图中，输入信号U_i经放大器后，反馈信号U_f与输入信号U_i相加，再经放大器放大后输出。图片与上下文紧密相关，直观呈现了反馈网络的两种组态，帮助理解计算F时去除X_i和基本放大电路影响的必要性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-aeebbbe74a.png"></a></p>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f873a4eaa5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电压串联负反馈电路及相关内容。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-f873a4eaa5.png"></a>
+$<span class="arithmatex">\(\dot{A}_{uuf}=\dot{A}_{uf}=\frac{\dot{U}_{0}}{\dot{U}_{i}}\approx\frac{\dot{U}_{0}}{\dot{U}_{f}}=\frac{1}{\dot{F}_{uu}}\)</span>$
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-eab026f418.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电压并联负反馈电路及相关公式。电路中，输入信号经R反馈到输入端，输出端有RL负载。左侧公式显示电流反馈系数为1/R，即 1/R，表明反馈系数与R成反比。右侧电路图中，R用红色框突出显示，箭头指向表明反馈信号方向。该图与上文电压并联负反馈内容对应，直观呈现了反馈电路结构及反馈系数计算原理。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-eab026f418.png"></a>
+$<span class="arithmatex">\(\dot{A}_{uif}=\frac{\dot{U}_0}{\dot{I}_i}\approx\frac{\dot{U}_0}{\dot{I}_f}=\frac{1}{\dot{F}_iu}\)</span>$
+$<span class="arithmatex">\(\dot{A}_{usf}=\frac{\dot{U}_0}{\dot{U}_s}\approx\frac{\dot{U}_0}{\dot{I}_fR_s}=\frac{1}{\dot{F}_{uu}}\bullet\frac{1}{R_s}\)</span>$
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-796a630854.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电流串联负反馈电路。左侧文字说明了反馈系数计算公式，分别为Uf = RIo、Fr = Uf / Io = R。右侧电路图中，运算放大器A的输出端通过RL与负载相连，反馈支路由R构成，R与负载RL串联后与运算放大器输出端并联。该图与上文电流串联负反馈内容对应，直观呈现了电路结构，辅助理解反馈系数计算。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-796a630854.png"></a>
+$<span class="arithmatex">\(\begin{aligned}&amp;\dot{A}_{iuf}=\frac{\dot{I}_{0}}{\dot{U}_{i}}\approx\frac{\dot{I}_{0}}{\dot{U}_{f}}=\frac{1}{\dot{F}_{ui}}\\&amp;\dot{A}_{uf}=\frac{\dot{U}_{0}}{\dot{U}_{i}}\approx\frac{\dot{I}_{0}R_{L}}{\dot{U}_{f}}=\frac{R_{L}}{\dot{F}_{ui}}\end{aligned}\)</span>$
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e76c621103.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电流并联负反馈电路及相关计算公式。左侧方框内有公式，左侧为电流反馈系数计算公式，右侧为反馈系数计算公式，均与电阻R1、R2相关。右侧电路图中，运算放大器A的输入端有标注，输出端连接负载RL，RL两端有电压Uo，RL与R1、R2组成反馈网络，R1、R2用红色框突出显示。该图与上文电流并联负反馈内容对应，直观呈现了电路结构及关键参数。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e76c621103.png"></a>
+$<span class="arithmatex">\(\dot{A}_{iif}=\frac{\dot{I}_0}{\dot{I}_i}\approx\frac{\dot{I}_0}{\dot{I}_f}=\frac{1}{\dot{F}_{ii}}\)</span>$
+$<span class="arithmatex">\(\dot{A}_{usf}=\frac{\dot{U}_0}{\dot{U}_s}\approx\frac{\dot{I}_0R_L}{\dot{I}_fR_s}=\frac{1}{\dot{F}_{ii}}\bullet\frac{R_L}{R_s}\)</span>$
+</column>
+</grid></p>
+<h3 id="_59">负反馈对放大电路性能的影响<a class="headerlink" href="#_59" title="Permanent link">¶</a></h3>
+<ul>
+<li>放大倍数衰减</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bc049909ea.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了深度负 addCriterion addCriterion" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bc049909ea.png"></a></p>
+<ul>
+<li>串联负反馈增加输入阻抗，并联反之，倍数皆为<code>1+AF</code></li>
+<li>电流负反馈增加输出阻抗，电压反之，倍数皆为<code>1+AF</code></li>
+<li>频带展宽，上下限均为倍数为<code>1+AF</code></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c705ac45ba.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片是一幅幅值对频率的对数坐标图，横轴为频率f（Hz），纵轴为20lg|A|（dB）。图中有两条曲线，蓝色曲线代表放大倍数A，红色曲线代表增益的幅值。图中还标注了频率的上下限，分别为f_Lf、f_L、f_H、f_Hf。该图与文档中“频带展宽，上下限均为倍数为1+AF”内容相关，直观呈现了放大电路在不同频率下的增益变化情况。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-c705ac45ba.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b66354900a.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了如何引入负反馈的内容，分为10个步骤。步骤1为稳定工作点，引入直流负反馈；步骤2为改善动态特性，引入交流负反馈；步骤3为减小输出电阻，引入电压负反馈；步骤4为增大输出电阻，引入电流负反馈；步骤5为增大输入电阻，引入串联负反馈；步骤6为减小输入电阻，引入电流串联负反馈；步骤7为u→i，引入电压并联负反馈；步骤8为i→u，引入电流并联负反馈；步骤9为i→i，引入电流串联负反馈；步骤10为u→u，引入电压串联负反馈。这些步骤与上文介绍的负反馈对放大电路性能的影响相呼应，为引入不同类型的负反馈提供了具体操作指引。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b66354900a.png"></a></p>
+<hr>
+<h2 id="_60">运放运算<a class="headerlink" href="#_60" title="Permanent link">¶</a></h2>
+<p>不再赘述</p>
+<hr>
+<h2 id="_61">波形发生与信号变换<a class="headerlink" href="#_61" title="Permanent link">¶</a></h2>
+<h3 id="_62">正弦波发生<a class="headerlink" href="#_62" title="Permanent link">¶</a></h3>
+<p>正反馈，震荡条件</p>
+<div class="arithmatex">\[\begin{vmatrix}\dot{A}\dot{F}\end{vmatrix}=1\\\angle\dot{A}\dot{F}=2n\pi\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7a71e6979e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了正弦振荡电路的组成与分类。组成方面为放大电路、反馈网络、选频网络、稳幅环节；分类按选频网络的组成分为RC、LC、石英晶体振荡电路，其中RC对应低频，LC对应高频。图片与上下上文内容紧密相关，是对正弦振荡电路组成与分类的总结，帮助理解正弦振荡电路" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7a71e6979e.png"></a></p>
+<h4 id="rc">RC文氏桥<a class="headerlink" href="#rc" title="Permanent link">¶</a></h4>
+<blockquote>
+<p><strong>增益为3</strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-88e03059eb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了RC桥式正弦波振荡电路。电路中包含运放A、电阻R、电容C、热敏电阻Rf、二极管等元件。电路连接部分说明了稳幅环节，当Uo较大时，Rf↓或R1↑，使Au=3。还给出了两种稳幅方法：方法1是热敏电阻（负温度系数）替换Rf，方法2是热敏电阻（正温度系数）替换R1。电路反馈、选频网络部分指出，当f=f0=1/2πRC时，|F|Max=1/3，φ=0。放大电路部分说明是同相放大电路，Au=1+Rf/R1略大于3。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-88e03059eb.png"></a></p>
+<h4 id="lc">LC震荡<a class="headerlink" href="#lc" title="Permanent link">¶</a></h4>
+<p><grid>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a3d1da05fe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了LC并联谐振回路的频率特性。左侧电路图中，L、C并联，有电阻R。右侧电路图中，R被绿色圆圈标注，说明考虑了L的电阻。下方公式计算阻图计算出：阻抗Z = (jωC (R + jωL)) / (1 / jωC + R + jωL)，当R &lt;&lt; ωL时，简化为1 / (jωC) jωL / (R + j(ωL - 1 / ωC))。该图与" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a3d1da05fe.png"></a>
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-14a61140e2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了LC选频放大电路及其相关特性。电路中包含晶体管T、电感L、电容C、电阻R等元件。右侧有幅值和相位随频率变化的曲线图，展示了不同Q值（Q值大、Q值小）时的阻抗Z和相位φ随频率f的变化情况，其中Q值大时曲线峰值更明显，相位变化更剧烈。该图与上下文介绍的LC震荡电路相关，直观呈现了LC电路的选频特性。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-14a61140e2.png"></a>
+</column>
+<column width-ratio="0.500000">
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7c7cca8794.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了LC振荡电路的品质因数Q、谐振频率f0、阻抗Z、相位φ等关键参数的计算公式，以及品质因数Q值大小对电路的影响。其中，品质因数Q = ω0L/R = 1/ω0RC，反映R的损耗大小（几十~几百）。还给出了谐振时ω0L - 1/ω0C = 0的条件。下方有两幅图，左图是Z值随频率变化的曲线，Q值大时曲线峰值高，Q值小时峰值低；右图是φ值随频率变化的曲线，Q值大时曲线在0°附近，Q值小时曲线在90°附近。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-7c7cca8794.png"></a>
+</column>
+</grid></p>
+<h4 id="_63">变压器反馈<a class="headerlink" href="#_63" title="Permanent link">¶</a></h4>
+<p><grid>
+<column width-ratio="0.500000">
+电感反馈
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6b3de962f5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片 addCriterion图片展示了电感反馈式正弦波振荡电路的电路构成及工作原理。电路中包含电源、电容、电感、晶体管等元件。上方标注了振荡频率公式f0 = 1 / (2π√L'C)，其中L为L1 + L L2 + 2M。下方说明当C采用可变电容时，可获得调节范围较宽的振荡频率，对高频率信号具有较大电抗，输出电压波形中常含高次谐波。该图与上下中上文介绍的电感反馈式正弦波振荡电路内容相。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6b3de962f5.png"></a>
+</column>
+<column width-ratio="0.500000">
+电容反馈
+<a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6155285117.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电容反馈式正弦波振荡电路，即哈特莱振荡器的电路图及相关信息。电路中包含电感L、电容C1、C2、C3，以及晶体管T等元件。左侧标注有输入信号ui，右侧有输出信号uf。电路构成及工作原理、振荡频率和起振条件等内容被突出显示，振荡频率公式为f0 = 1 / (2π√LC')，其中C' = C1C2 / (C1 + C2)。该图与文档中介绍的电容反馈式正弦波振荡电路内容相契合，直观呈现了电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-6155285117.png"></a>
+</column>
+</grid></p>
+<h4 id="_64">石英晶体震荡<a class="headerlink" href="#_64" title="Permanent link">¶</a></h4>
+<blockquote>
+<p><strong>参见通信电子线路</strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b10dda438c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片介绍了石英晶体振荡电路的相关知识。左侧展示了石英晶体的外形、结构及符号，等效电路为RC文氏桥。右侧是石英晶体的频率特性曲线，标注了串联谐振频率fs和并联谐振频率fp。还列出了模拟晶体机械振动惯性和摩擦损耗的参数L和R，以及静态电容C0、晶体弹性电容C的数值范围，还给出了串联谐振和并联谐振频率的计算公式。该图与上下文紧密相关，是对石英晶体振荡电路的详细说明。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-b10dda438c.png"></a></p>
+<hr>
+<h3 id="_65">比较器<a class="headerlink" href="#_65" title="Permanent link">¶</a></h3>
+<h4 id="_66">单限比较<a class="headerlink" href="#_66" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1115e360ed.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了单 addCriterion单限比较器的电路与电压传输特性。电路中，运放A的同相输入端接参考电压U_REF，反相输入端接输入电压u_I，输出端经R电阻连接负载。电压传输特性图中，当u_I &lt; U_T时，u_O = -U_L；当u_I &gt; U_T时，u_O = +U_L。图中还标注了虚断成立、叠加原理等关键信息，以及U_T = -R_2/R_1 * U_REF的计算公式，与上下文介绍的单限比较器工作原理相呼应。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-1115e360ed.png"></a></p>
+<h4 id="_67">滞回比较器<a class="headerlink" href="#_67" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-d6ea173206.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了反相滞回比较器电路及相关计算公式。电路中包含运放、电阻R1、R2、R、Dz等元件，UREF为参考电压，UZ为反馈电压。文字说明了单限比较器工作在开环状态，干扰会使输出状态改变，希望电路具有滞回特性。通过叠加原理，推导出当uI = UT时，存在2个阈值电压U_T的计算公式。该图与上下文紧密相关，是对上文介绍的滞回比较器相关内容的直观呈现与公式支撑。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-d6ea173206.png"></a></p>
+<h4 id="_68">窗口比较器<a class="headerlink" href="#_68" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e1f6db5561.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了单限比较器、滞回比较器和窗口比较器的工作原理及电路图。单限比较器在输入单向变化时输出只跳变一次，电路中A1、A2为运放，D1、D2为二极管。滞回比较器输入单向变化输出跳变二次，电路中A1、A2为运放，D1、D2为二极管，有UHL和UHR两个阈值电压。窗口比较器输入单向变化输出跳变二次，电路中A1、A2为运放，D1、D2为二极管，有UHL和UHR两个阈值电压。右侧为传输特性图，直观呈现了三种比较器的输出状态。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-e1f6db5561.png"></a></p>
+<h3 id="_69">非正弦波发生<a class="headerlink" href="#_69" title="Permanent link">¶</a></h3>
+<h4 id="_70">方波发生器<a class="headerlink" href="#_70" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>滞回比较器+ RC电路</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a42183a8aa.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了7.3.1矩形波发生电路的电路。电路是一个滞回比较器，图中给出了U_{T+}和U_{T-}的计算公式。电路分析部分，设初始时u_{C}=0，u_{O}=U_{Z}，并列出3个步骤：1. R_{3}对C充电；2. � addCriterion充电到U_{T+}后，R_{3}对C放电；3. 放到U_{T-}后，R_{3}对C充电。右侧电路图中，有R_{1}、R_{2}、R_{3}、R_{4}、C、A、D_{z}等元件，还标注了u_{N}" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-a42183a8aa.png"></a></p>
+<p>三要素法解周期</p>
+<p><span class="arithmatex">\(x(t)=x(\infty)+[x(0^+)-x(\infty)]e^{-t/\tau}\)</span>，$\tau = R_{eq}C <sub>|</sub> \frac{L}{R_{eq}} $</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ed6ee3b855.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了方波发生器的波形 addCriterion形参数计算。左侧文字说明输出电压为 ±Uz，脉冲幅度为 2Uz，脉冲周期 T = T1 + T2。右侧是方波波形图，标注了 Uc、Uo、Uz、UT+、UT-等电压点。下方公式计算 T1、T2，最终得出 T = 2R3C ln(2R1 + R2) / R2，频率 f = 1 / T，占空比 q = T2 / T = 1 / 2。该图与文档中方波发生器内容相关，直观呈现了方波参数计算过程。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ed6ee3b855.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-dc73052381.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示的是锯齿波发生电路及其波形图。电路中包含运放A、电容C、电阻R1、R" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-dc73052381.png"></a></p>
+<hr>
+<h4 id="_71">三角波<a class="headerlink" href="#_71" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>方波 + 积分电路</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3bbb70492c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了改进的方波发生电路，包含同相滞回比较器A1、反相积分电路A2及相关元器件。电路中R1、R2、R3、R4、R5、C、U1、U2、U3、U4、U5、U6、U7、U8、U9、U10、U" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-3bbb70492c.png"></a></p>
+<hr>
+<h4 id="_72">锯齿波发生电路<a class="headerlink" href="#_72" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-019cd6bedf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示的是锯齿波发生电路的电路图及波形图。电路中包含两个运放A1、A2，多个电阻（R、R1 - R5）、电容C、二极管D1 - D2、稳压管Dz等元件。当D1通路的电阻很小时，电路会产生如图所示的锯齿波波形，波形图中展示了uO、uC随时间t的变化情况，包括uO的三角波形和uC的锯齿波形。该电路图与上下文介绍的锯齿波发生电路内容相契合。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-019cd6bedf.png"></a></p>
+<hr>
+<h3 id="_73">其他电路<a class="headerlink" href="#_73" title="Permanent link">¶</a></h3>
+<h4 id="_74">精密整流电路<a class="headerlink" href="#_74" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bf04ed29c5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了精密整流电路的原理及波形。电路中包含半波精密整流部分，由电阻R、电容C、二极管D1、D2和运放A1组成；反相加法器部分，由电阻R、电容C、二极管D2和运放A2组成。左侧图示了半波精密整流原理，u1正半周时D1截止、D2导通，u1负半周时D1导通、D2截止。右侧图展示了精密整流波形，u0波形为单向脉冲波。该图与文档中介绍的精密整流电路内容相契合，直观呈现了其工作原理和波形特点。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-bf04ed29c5.png"></a></p>
+<h4 id="vco">VCO<a class="headerlink" href="#vco" title="Permanent link">¶</a></h4>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-042292c56e.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了方波发生器电路图，包含积分器和滞回比较器。左侧为积分器，由A1运放、R1、R2、C等组成；右侧为滞回比较器，由A2运放、R3、R4、D、Dz等构成。图中还标注了周期T、积分起始值、积分终止值等参数，如T≈T1，积分起始值为-Ur，积分终止值为Ur，以及Ur的计算公式。该图与文档中方波发生器内容相关，直观呈现了其电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-042292c56e.png"></a></p>
+<hr>
+<h2 id="_75">功放<a class="headerlink" href="#_75" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>见通信电子线路</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ec944709b2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了消除交越失真的OCL电路的工作原理。左侧电路图中，利用二极管的U_{F}抵消三极管的U_{ON}，并有R_{1}、R_{3}、R_{2}等元件标注。右侧电路图中，增加R_{2}以调整电压大小，同样标注有R_{1}、R_{2}等元件。下方是电压倍增电路U_{BE} multiplier，公式为U_{CE} = (R_{1} + R_{2}) / R_{2} U_{BE}，并有R_{1}、R_{2}等元件标注。该图与上下文介绍的消除交越失真的OCL电路工作原理相关，直观呈现了电路结构。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-ec944709b2.png"></a></p>
+<h2 id="_76">直流电源<a class="headerlink" href="#_76" title="Permanent link">¶</a></h2>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5daa10b96b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="图片展示了电子电路中直流电源的构成及工作原理。220V 50Hz的交流电经电源变压器变为合适的交流电压，再经整流电路变为脉动的直流电压，滤波电路将脉动直流电压转变为平滑的直流电压，最后稳压电路清除电网波动及负载变化影响，保持输出电压稳定。图中还标注了各环节的电压变化情况，直观呈现了从交流电到直流电的转换过程。" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-164127-authcode-5daa10b96b.png"></a></p></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 17:28:39</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 17:28:39</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../mathematics/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 高数速通">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                高数速通
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../wirelessCommunication/" class="md-footer__link md-footer__link--next" aria-label="下一页: 无线通信笔记">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                无线通信笔记
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

@@ -1,0 +1,4304 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Welcome to dixi's BLOG. Ad infinitum, ad aeternum progredi.">
+      
+      
+        <meta name="author" content="dixi">
+      
+      
+        <link rel="canonical" href="https://dixilog.github.io/NBU-NOTEBOOK/wirelessCommunication/WC05/">
+      
+      
+        <link rel="prev" href="../WC04/">
+      
+      
+        <link rel="next" href="../WC06/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>WC05 移动无线电数字调制 - dixi's BLOG</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-12 6 6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-WNP42HF8NE"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-WNP42HF8NE",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-WNP42HF8NE",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wc05" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-header__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dixi's BLOG
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              WC05 移动无线电数字调制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1zM19 9c0 2.38-1.19 4.47-3 5.74V17c0 .55-.45 1-1 1H9c-.55 0-1-.45-1-1v-2.26C6.19 13.47 5 11.38 5 9c0-3.87 3.13-7 7-7s7 3.13 7 7m-4.29-.71c-.39-.39-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h2v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7m2 11.58V16h-1v-4.59l1.71-1.7c.39-.39.39-1.03 0-1.42s-1.03-.39-1.42 0L12 9.59l-1.29-1.3c-.39-.39-1.03-.39-1.42 0s-.39 1.03 0 1.42l1.71 1.7V16h-1v-2.42C8.23 12.81 7 11.05 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.05-1.23 3.81-3 4.58M9 20h6v1c0 .55-.45 1-1 1h-4c-.55 0-1-.45-1-1z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 12c2.5 0 4.5 2 4.5 4.5 0 .88-.25 1.71-.69 2.4l3.08 3.1L21 23.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5m0 2a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5M7 15v2h2c.14 1.55.8 2.94 1.81 4H5a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h14a2 2 0 0 1 2 2v8.03A6.49 6.49 0 0 0 15.5 10c-1.27 0-2.46.37-3.46 1H7v2h3c-.36.6-.66 1.28-.83 2zm10-6V7H7v2z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 16H5V5h14zM17 8.4 13.4 12l3.6 3.6-1.4 1.4-3.6-3.6L8.4 17 7 15.6l3.6-3.6L7 8.4 8.4 7l3.6 3.6L15.6 7z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  NBU-NOTEBOOK
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-tabs__link">
+          
+  
+    
+  
+  随手记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../changheji/" class="md-tabs__link">
+          
+  
+    
+  
+  长河集
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ROCOS/" class="md-tabs__link">
+          
+  
+    
+  
+  NBU_ROCOS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Flysheet/" class="md-tabs__link">
+          
+  
+    
+  
+  推免 Flysheet
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  闲言碎语
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="dixi&#39;s BLOG" class="md-nav__button md-logo" aria-label="dixi's BLOG" data-md-component="logo">
+      
+  <img src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F_4x.png" alt="logo">
+
+    </a>
+    dixi's BLOG
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dixiLOG/dixiLOG.github.io.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dixiLOG
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    NBU-NOTEBOOK
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NBU-NOTEBOOK
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../computerNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../probabilityTheory/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    概率论笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../S%26S/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信号与系统笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../RanSigAnalysis/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随机信号分析笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../commuPrinc/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    通信原理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../DSP/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    数字信号处理笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linearAlgebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    线代速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高数速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analogElec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    模电速通
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    无线通信笔记
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            无线通信笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC01 绪论与基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC02 蜂窝系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC03 大尺度路径损耗
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC04 多径传播与小尺度衰落
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    WC05 移动无线电数字调制
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    WC05 移动无线电数字调制
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      移动无线电数字调制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="移动无线电数字调制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      调制与解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字调制的优点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      正交基
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      带宽
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本要求与指标
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本要求与指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      功率效率—数字信噪比
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      带宽效率—频带利用率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      折中案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      约束与限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psd" class="md-nav__link">
+    <span class="md-ellipsis">
+      线路码及其PSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      脉冲成型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脉冲成型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC滤波器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯滤波器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信号空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字键控原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正交基信号集合和信号空间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      星座图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      误码性能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性调制技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性调制技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpsk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      BPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qpsk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      QPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oqpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      OQPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dqpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      π/4 DQPSK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      恒包络调制技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="恒包络调制技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msk" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gmsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      GMSK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳频与扩频—SS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跳频与扩频—SS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳频
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      直序扩频
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩频码设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPS定位实现方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qam" class="md-nav__link">
+    <span class="md-ellipsis">
+      QAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      QAM实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      频谱特征
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OFDM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHY 多载波调制？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM正交条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      频带利用率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM实现方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC06 抗衰落技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WC07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WC07 多址接入技术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../wirelessSensorNetwork/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    无线传感器网络笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../informationTheoryCoding/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    信息论与编码笔记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../%E9%9A%8F%E6%89%8B%E8%AE%B0/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    随手记
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../changheji/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    长河集
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ROCOS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    NBU_ROCOS
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Flysheet/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    推免 Flysheet
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../blog/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    闲言碎语
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      移动无线电数字调制
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="移动无线电数字调制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      调制与解调
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字调制的优点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      正交基
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      带宽
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本要求与指标
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本要求与指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      功率效率—数字信噪比
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      带宽效率—频带利用率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      折中案例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      约束与限制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psd" class="md-nav__link">
+    <span class="md-ellipsis">
+      线路码及其PSD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      脉冲成型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="脉冲成型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Review
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rc" class="md-nav__link">
+    <span class="md-ellipsis">
+      RC滤波器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高斯滤波器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      信号空间
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="信号空间">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字键控原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      标准正交基信号集合和信号空间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      星座图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      误码性能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性调制技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性调制技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bpsk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      BPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      DPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qpsk_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      QPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oqpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      OQPSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-dqpsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      π/4 DQPSK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      恒包络调制技术
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="恒包络调制技术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msk" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gmsk" class="md-nav__link">
+    <span class="md-ellipsis">
+      GMSK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ss" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳频与扩频—SS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="跳频与扩频—SS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      跳频
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      直序扩频
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩频码设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gps" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPS定位实现方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qam" class="md-nav__link">
+    <span class="md-ellipsis">
+      QAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qam_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      QAM实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      频谱特征
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OFDM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why" class="md-nav__link">
+    <span class="md-ellipsis">
+      WHY 多载波调制？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM表达式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM正交条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM优缺点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      频带利用率
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ofdm_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      OFDM实现方式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<div><h1 id="wc05">WC05 移动无线电数字调制<a class="headerlink" href="#wc05" title="Permanent link">¶</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p> </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"></path></svg></span> 约 14781 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"></path></svg></span> 预计阅读时间 82 分钟</p>
+<hr>
+</div>
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+<h2 id="_1">移动无线电数字调制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p>是充分回顾通信原理的一门课</p>
+<h3 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">¶</a></h3>
+<h4 id="_3">调制与解调<a class="headerlink" href="#_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>调制，是将要传输的调制信号搭载到载波的某一特征上，以适应收发信道特性</li>
+<li>解调是调制的逆过程，希望误码率尽可能小</li>
+<li>
+<p>调制的分类</p>
+</li>
+<li>
+<p>按调制信号类型：模拟/数字</p>
+</li>
+<li>按已调信号的PSD结构：（非）线性调制</li>
+</ul>
+<blockquote>
+<p>如ASK，线性调制不会引入新的频谱分量</p>
+</blockquote>
+<ul>
+<li>按包络分：恒包络调制</li>
+</ul>
+<blockquote>
+<p>PSK相位翻转，故不是</p>
+</blockquote>
+<ul>
+<li>（非）连续相位调制</li>
+<li>时间/空间复杂度是一个必须考虑的因素</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KRyabco34owUaSxwg4fc3QuAngd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KRyabco34owUaSxwg4fc3QuAngd.png"></a></p>
+<hr>
+<h4 id="_4">数字调制的优点<a class="headerlink" href="#_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>抗干扰，噪声不积累</li>
+<li>差错控制</li>
+<li>集成加密</li>
+<li>信息时频域复用</li>
+<li>软件SDR，灵活</li>
+</ul>
+<hr>
+<h4 id="_5">正交基<a class="headerlink" href="#_5" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>这个概念也许你没有听过，但一定看见过——星座图</p>
+</blockquote>
+<p>让我们先回顾一下，<a href="https://o2ywbvn10e.feishu.cn/docx/KcNldgiKvoXc3XxFDtPc5mmFnPg#share-Yk6ndbLyFo7dGPxVFwkcGd34nJb">PSK（Phase-shift keying）的概念</a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Du1Vb7BidoJCv9xNdilcLd9Onvd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Du1Vb7BidoJCv9xNdilcLd9Onvd.png"></a></p>
+<p>相位偏移键控（Phase-shift keying , PSK），是使用数字信号中的不同相位来调制数据的一种方法，根据使用的相位数量上的区别，相位调制又可分为二相位偏移键控(Binary PSK, BPSK), 四相位偏移键控(Quadrature PSK, QPSK)和八相位偏移键控(8PSK)等。</p>
+<p>以BPSK为例，假设每次码元为1bit，即0/1信号。则区分需要用两个不同相位。结合高效率与低噪声的需求，不难得到圆上均匀分布的结论。在BPSK中，两个点的位置(I Q)分别为(1,0), (-1,0)，我们可以用(1, 0)编码bit 1，用(-1, 0)编码bit 0，即</p>
+<div class="arithmatex">\[I*sin(2\pi ft)-Q*cos(2\pi ft)=1*sin(2\pi ft)-0*cos(2\pi ft)=sin(2\pi ft)\\I*sin(2\pi ft)-Q*cos(2\pi ft)=-1*sin(2\pi ft)-0*cos(2\pi ft)=sin(2\pi ft+\pi)\]</div>
+<p>注意，其中<code>(1,0),(-1,0)</code>就是正交基</p>
+<blockquote>
+<p>暂时从宏观上理解，严谨定义见信号空间部分</p>
+</blockquote>
+<p><a href="https://my.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-JhwSd5zQksT0RFbkBqpc0wdPn1f">飞书同步引用原文（block: JhwSd5zQksT0RFbkBqpc0wdPn1f）</a></p>
+<hr>
+<h4 id="_6">带宽<a class="headerlink" href="#_6" title="Permanent link">¶</a></h4>
+<ul>
+<li>绝对带宽：轴上面积积分之和</li>
+<li>零点带宽：主瓣带宽</li>
+<li>半功率带宽：亦称为3dB带宽</li>
+</ul>
+<hr>
+<h3 id="_7">基本要求与指标<a class="headerlink" href="#_7" title="Permanent link">¶</a></h3>
+<p><strong>功率效率</strong>：数字信噪比</p>
+<p><strong>带宽效率</strong>：频带利用率</p>
+<p><strong>一个令人满意的数字调制方案希望在占用带宽尽量小的前提下保持低误码率</strong></p>
+<hr>
+<h4 id="_8"><strong>功率效率—数字信噪比</strong><a class="headerlink" href="#_8" title="Permanent link">¶</a></h4>
+<p>每bit能量与噪声PSD之比，即<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp09/?h=%E9%A2%98%E5%A4%96%E8%AF%9D#_8">通信原理</a>中的比特信噪比</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UrpHbLtQWo31NIxnln0ceUBinNb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UrpHbLtQWo31NIxnln0ceUBinNb.png"></a></p>
+<p>看看典型的瀑布图</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Qcd4bq3KwoKFm9xIBzLcmYHRndc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Qcd4bq3KwoKFm9xIBzLcmYHRndc.png"></a></p>
+<p>在通信原理的<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#_4">数字调制误码率</a>中已经见过面了</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UVLbbWtykoN9CfxbOV7c6Ugin2d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UVLbbWtykoN9CfxbOV7c6Ugin2d.png"></a></p>
+<hr>
+<h4 id="_9">带宽效率—频带利用率<a class="headerlink" href="#_9" title="Permanent link">¶</a></h4>
+<p>频带利用率：经典皮肤</p>
+<div class="arithmatex">\[\eta_b=\frac{R_b}{B}(bit/s/Hz)\]</div>
+<p>信道容量上限，即香农限</p>
+<div class="arithmatex">\[\eta_{B\max}=\frac{C}{B}=\log_{2}\left(1+\frac{S}{N}\right)\]</div>
+<p>控制变量，多进制调制具有更高的带宽效率</p>
+<blockquote>
+<p>对应的，电平间隔变小，对扰动的容忍度降低</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-OibUbKf0yoHhDjx7JVac82J5nmh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-OibUbKf0yoHhDjx7JVac82J5nmh.png"></a></p>
+<div class="admonition tip">
+<p class="admonition-title">题外话 | 带通信号</p>
+<p>高频载波将基带信号搬移到信道频带上，这一信号称为带通信号</p>
+<p>一般可表示为</p>
+<div class="arithmatex">\[s(t)=\mathrm{Re}[g(t)\exp(j2\pi f_ct)]\]</div>
+<p><span class="arithmatex">\(g(t)\)</span>为<span class="arithmatex">\(s(t)\)</span>的等效复基带信号，包含其包络相位信息，即</p>
+<div class="arithmatex">\[g(t)=\mid g(t)\mid e^{j\phi(t)}\]</div>
+<p>也可得到PSD</p>
+<div class="arithmatex">\[P_s(f)=\frac{1}{4}[P_g(f-f_c)+P_g(f+f_c)]\]</div>
+<blockquote>
+<p>功率有效值为<span class="arithmatex">\((\frac{1}{\sqrt{2}})^2 = 0.5\)</span>，FT卷积又有0.5（双边带频谱搬移），故幅值为原来的0.25</p>
+</blockquote>
+</div>
+<hr>
+<h4 id="_10">折中案例<a class="headerlink" href="#_10" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>信道编码</strong>—以带宽效率换取功率效率</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KzVibhBoMoqbltxwZ5wclQGCnVf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KzVibhBoMoqbltxwZ5wclQGCnVf.png"></a></p>
+<blockquote>
+<p>通信原理告诉我们，总体是提升的</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zgj1bM9ytoco5qxifMsctV9gn9f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zgj1bM9ytoco5qxifMsctV9gn9f.png"></a></p>
+<ul>
+<li><strong>多进制传输</strong>—以功率效率换取带宽效率</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Pe2VbjlKKoxkJbxSeLAcPUU0nRd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Pe2VbjlKKoxkJbxSeLAcPUU0nRd.png"></a></p>
+<hr>
+<h4 id="_11">约束与限制<a class="headerlink" href="#_11" title="Permanent link">¶</a></h4>
+<p><synced-source><ol><li seq="1">存在<u>衰落</u>，因此希望信息与包络无关，即更倾向于<u>恒包络调制</u></li><li>对于蜂窝系统，为同时使用相邻信道，<u>要求旁瓣比主瓣低60dB</u></li><li>受限于移动电源功率，MS更希望使用<u>简单高效的解调方案</u></li></ol></synced-source></p>
+<hr>
+<h3 id="psd">线路码及其PSD<a class="headerlink" href="#psd" title="Permanent link">¶</a></h3>
+<p>基带信号的电波形，称为线路码（Line Coding）</p>
+<p>即通信原理的<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp07/#_3">数字基带码</a></p>
+<ul>
+<li>归零/非归零码的PSD</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-XHLObKemQox4Njx7o3aczTENn56.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-XHLObKemQox4Njx7o3aczTENn56.png"></a></p>
+<p>非归零码比归零码频谱效率高，但同步能力差</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Ps2ebX0qaoJ7KdxDqXGcT3xsnZ7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Ps2ebX0qaoJ7KdxDqXGcT3xsnZ7.png"></a></p>
+<div class="admonition abstract">
+<p class="admonition-title">了解一下 | <a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp07/?h=hdb#__tabbed_1_3">双相码</a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MgHlbcPxHoWgMUxG2XNcplrEn6b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MgHlbcPxHoWgMUxG2XNcplrEn6b.png"></a></p>
+</div>
+<hr>
+<h3 id="_12">脉冲成型<a class="headerlink" href="#_12" title="Permanent link">¶</a></h3>
+<p>事实上，数字基带信号（即上一节的线路码）到达<code>Tx</code>天线前并不会保持<code>方方正正</code>的形态，而是经过脉冲成型（Pulse shaping）滤波器的调教，以期获得更强的噪声容忍度与更少的ISI</p>
+<p>下面将会介绍俩种常见的滤波器，分别应用于线性调制与恒包络调制：</p>
+<ul>
+<li>线性调制——升余弦滤波器</li>
+<li>恒包络调制——高斯滤波器（部分响应）</li>
+</ul>
+<h4 id="review">Review<a class="headerlink" href="#review" title="Permanent link">¶</a></h4>
+<ol>
+<li><strong>什么是脉冲成型？</strong></li>
+</ol>
+<p>一种在数字通信系统中通过设计传输信号的时域波形（如使用升余弦滤波器）来抑制码间干扰（ISI）并限制信号频带占用的信号处理技术</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-O2gjbZBK5oQgErxGrFzcYoeXnic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-O2gjbZBK5oQgErxGrFzcYoeXnic.png"></a></p>
+<blockquote>
+<p>Tony老师，把信号变得圆滑</p>
+</blockquote>
+<ol>
+<li><strong>脉冲成型的好兄弟是谁？</strong></li>
+</ol>
+<p><a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp10/#_12">匹配滤波</a>，位于接收端，旨在在抽样时刻上获得最大SNR的线性滤波器,常在发送和接收端放置参数匹配的RRC</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-CAokbiCAHoykWYxj4iSc9o0ynT1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-CAokbiCAHoykWYxj4iSc9o0ynT1.png"></a></p>
+<ol>
+<li><strong>为什么需要脉冲成型？</strong></li>
+</ol>
+<p>信号经过<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp04/#_11">随参信道</a>后，多径效应导致时域延拓，造成ISI，进一步导致抽样判决错误，BER升高，而脉冲成型可压低调制信号旁瓣</p>
+<ol>
+<li><strong>无ISI条件？</strong></li>
+</ol>
+<p>可从<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp07/?h=hdb#isi_2">时频域角度</a>分析</p>
+<ul>
+<li>时域角度，抽样函数只在 k 倍 Tb 上，即抽样时刻只有当前符号存在响应</li>
+</ul>
+<div class="arithmatex">\[h(kT_B)=\delta(k)\]</div>
+<ul>
+<li>频域角度，一个实际的 H(w)特性若能等效成一个理想（矩形）低通滤波器，则可实现无码间串扰，即</li>
+</ul>
+<div class="arithmatex">\[\sum_iH\left(\omega+\frac{2\pi}{T_B}i\right)=T_B,|\omega|\leq\frac{\pi}{T_B}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WvOGbUCIDomOI7xp746cetuznoc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WvOGbUCIDomOI7xp746cetuznoc.png"></a></p>
+<ol>
+<li>为什么不用理想矩形滤波器？</li>
+</ol>
+<ul>
+<li>不可实现</li>
+<li>Sa函数摆尾过大，尾部收敛慢，对定时要求严格</li>
+<li>旁瓣泄露，有邻频干扰</li>
+</ul>
+<hr>
+<h4 id="rc">RC滤波器<a class="headerlink" href="#rc" title="Permanent link">¶</a></h4>
+<p>具体参见<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp07/?h=hdb#_12">余弦滚降滤波器 - dixi's BLOG</a>，此处不再赘述</p>
+<ul>
+<li>滚降系数的概念</li>
+<li>频带利用率 | <a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp07/?h=hdb#isi_2">奈奎斯特速率</a></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IJXzbEeIuofn5oxDIZtcL921nUb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IJXzbEeIuofn5oxDIZtcL921nUb.png"></a></p>
+<p>升余弦滚降与理想矩形滤波器的区别</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EAvrbE9VVoeeMex7bpQcZcnsnbc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EAvrbE9VVoeeMex7bpQcZcnsnbc.png"></a></p>
+<div class="admonition example">
+<p class="admonition-title">BPSK-PSD（归一化结果）</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EWIibt7iWoMsFZxqNdScGjB9nUc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EWIibt7iWoMsFZxqNdScGjB9nUc.png"></a></p>
+</div>
+<hr>
+<p>缺陷是RC滤波器的实现，需要线性功放</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-RN8ZbQtepoV9NOxPcpXcEC6Xnee.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-RN8ZbQtepoV9NOxPcpXcEC6Xnee.png"></a></p>
+<hr>
+<h4 id="_13">高斯滤波器<a class="headerlink" href="#_13" title="Permanent link">¶</a></h4>
+<p>频响函数</p>
+<div class="arithmatex">\[H_G(f)=\exp(-\alpha^2f^2)\]</div>
+<p>冲激响应函数</p>
+<div class="arithmatex">\[h_{G}(t)=\frac{\sqrt{\pi}}{\alpha}\exp\left(-\frac{\pi^{2}}{\alpha^{2}}t^{2}\right)\]</div>
+<p>其中</p>
+<div class="arithmatex">\[\alpha=\frac{\sqrt{\ln2}}{\sqrt2B_{3dB}}=\frac{0.5887}{B_{3dB}}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QwP4bSWBWoVvbEx0VIgcPXqTnQ1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QwP4bSWBWoVvbEx0VIgcPXqTnQ1.png"></a></p>
+<ul>
+<li>不过零点（一定存在ISI），但滚降快</li>
+<li>相较于RC Filter，瀑布图右移，功率效率降低，需要允许失真</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DceEbXTzRohWp1xnxcucqU3Enlh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DceEbXTzRohWp1xnxcucqU3Enlh.png"></a></p>
+<hr>
+<h3 id="_14">信号空间<a class="headerlink" href="#_14" title="Permanent link">¶</a></h3>
+<p>从二进制数字调制，到标准正交基与信号空间的定义，最后引入星座图的概念与特点</p>
+<h4 id="_15">数字键控原理<a class="headerlink" href="#_15" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>GO BACK TO <a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-GAEQdv2vvotrbLxPdnkcTWe6nFf">正交基</a>部分</p>
+</blockquote>
+<h5 id="_16">二进制调制<a class="headerlink" href="#_16" title="Permanent link">¶</a></h5>
+<p><a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#what-is-sk">举个例子</a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zlpcby9G6oEV2gxWfVQc68IjnDb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Zlpcby9G6oEV2gxWfVQc68IjnDb.png"></a></p>
+<h5 id="_17">正交复用调制方案<a class="headerlink" href="#_17" title="Permanent link">¶</a></h5>
+<p>显然，二进制的一维设计不足以支撑数据传输，或者说二进制只是M进制调制的特殊情况。</p>
+<p>让我们先回顾一下通信原理实验二—IQ调制的概念</p>
+<ul>
+<li>IQ调制的定义为：“IQ调制就是数据分为两路，分别进行载波调制，两路载波相互正交。I是in-phase（同相）, q是 quadrature（正交）。”</li>
+</ul>
+<p>数学表达上有：</p>
+<div class="arithmatex">\[s(t)=\mathrm{Icos}\omega_{0}\mathrm{t-Qsin}\omega_{0}\mathrm{t}\]</div>
+<p>关于使用I/Q调制的原因，从数学角度看，基于和角公式能很容易的用I路和Q路信号合成任意指定幅值与相位的信号</p>
+<p>和角，得</p>
+<div class="arithmatex">\[s(t)=\sqrt{I^{2}+Q^{2}}sin(\omega_{0}t+(-\arctan\frac{Q}{I}))\]</div>
+<p>这一形式与复指数形式有异曲同工之妙，后续也将说明，借助复指数载波的I/Q信号实现会更加简洁。</p>
+<p>更重要的，根据输入消息信号精确地改变硬件电路中的高频载波正弦波的相位是困难的，操纵载波正弦波的幅度和相位的硬件信号调制器将是昂贵而难以设计和构建的，且不如使用I和Q波形的电路那样灵活</p>
+<p>与之对应，I/Q电路实现只需要生成两个相位相差90°、幅值可调的正弦波，即可通过和角</p>
+<p>这与上述的直接相位处理相比是一个更简单的设计问题</p>
+<p>进一步的，从I/Q双路信号简化为单路朴素需求入手，结合复指数信号，我们能得到I/Q调制的基本原理框图。</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-J8ZpbgzG4oBkjFxR94NcHknyn6c.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-J8ZpbgzG4oBkjFxR94NcHknyn6c.png"></a></p>
+<p>将信号用复数表示，即的形式，那么与负指数信号混频后得</p>
+<div class="arithmatex">\[(I+\mathrm{j}Q)\mathrm{e}^{\mathrm{i}\omega_{0}t}=(I+\mathrm{j}Q)(\cos\omega_{0}t+\mathrm{j}\sin\omega_{0}t)\]</div>
+<p>那么，以I为横轴，Q为纵轴，<code>(I,Q)</code>即正交基，对应星座图上的一个点</p>
+<p>以QPSK为例，框图如下</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Rib2bWbbaos7l0xGrqqcL8fNnKf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Rib2bWbbaos7l0xGrqqcL8fNnKf.png"></a></p>
+<p>不难发现，M进制调制方案需要M个信号波形，即</p>
+<div class="arithmatex">\[S=\{s_1(t),s_1(t),...,s_M(t)\}\]</div>
+<p>其最多能传输<span class="arithmatex">\(\log M\)</span>个信号波形</p>
+<hr>
+<h4 id="_18">标准正交基信号集合和信号空间<a class="headerlink" href="#_18" title="Permanent link">¶</a></h4>
+<p>关于[正交][正交基][信号空间]，我们需要从严谨的数学推导引入，这样对通信下的定义能有更深的理解</p>
+<h5 id="_19">线代引入<a class="headerlink" href="#_19" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>摘自<a href="https://github.com/yhwu-is/Linear-Algebra-Left-Undone">ZJU-LALU</a></p>
+</blockquote>
+<p><strong>线性空间</strong></p>
+<p>你会怎么回答？满足加减、数乘的数域？事实上它有相当严谨（长）的定义：</p>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{设V是一个非空集合,}\bf{F}\text{是一个数域,我们定义两种运算,其中第一个运算是我们} \\&amp;\text{熟知的加法}+.\text{ 在线性空间的定义中,我们要求 }\langle V:+\rangle\text{ 构成 Abel 群,即其中元素}\\&amp;\text{满足如下运算律:}\end{aligned}\]</div>
+<div class="arithmatex">\[\begin{aligned}&amp;1.(\text{加法结合律})\alpha+(\beta+\gamma)=(\alpha+\beta)+\gamma,\forall\alpha,\beta,\gamma\in V;\\&amp;2.(\text{加法单位元})\exists0\in V\text{使得 }\forall\alpha\in V\text{有 }\alpha+0=0+\alpha=\alpha;\\&amp;3.(\text{逆元})\forall\alpha\in V,\exists\beta\in V,\text{有 }\alpha+\beta=\beta+\alpha=0,\text{记 }\beta=-\alpha;\\&amp;4.(\text{交换律})\forall\alpha,\beta\in V,\alpha+\beta=\beta+\alpha.\end{aligned}\]</div>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{第二种运算和之前学习的其他代数结构不同,我们需要首先引入一个数域 F,接下}\\&amp;\text{来在 }\mathbf{F}\times V\text{ 上定义取值于 }V\text{ 的数乘运算,即 }\mathbf{F}\times V\text{ 中的每个元素 }(\lambda,\alpha)\mapsto\lambda\alpha\in V\\&amp;\text{并且数乘运算满足以下性质:}\forall\alpha,\beta\in V,\forall\lambda,\mu\in\mathcal{F}\text{ 以及 F 上的乘法单位元 1, 有}\end{aligned}\]</div>
+<div class="arithmatex">\[\begin{aligned}&amp;1.(\text{数乘单位元})1\cdot\alpha=\alpha;\\&amp;2.\text{ (数乘结合律) }\lambda(\mu\alpha)=(\lambda\mu)\alpha;\\&amp;3.(\text{左分配律})(\lambda+\mu)\alpha=\lambda\alpha+\mu\alpha;\\&amp;4.\text{ (右分配律) }\lambda(\alpha+\beta)=\lambda\alpha+\lambda\beta.\end{aligned}\]</div>
+<p>基于此，我们称集合V关于上述两种运算在域**F**上构成一个线性空间，记作<span class="arithmatex">\(V(\bf{F})\)</span></p>
+<blockquote>
+<p>就像母语，线性空间早在幼儿园阶段就与我们相遇</p>
+</blockquote>
+<hr>
+<p><strong>内积空间</strong></p>
+<p>前面研究的所有空间都是线性空间，只注重于线性结构</p>
+<p>忽视了向量的度量性质,如向量的长度、夹角等</p>
+<p>但面向投影、正交，向量是必不可少的</p>
+<p>于是我们将线性空间推广为内积空间（它以线性空间为基础）</p>
+<div class="arithmatex">\[\text{内积的引入始于我们曾在高中研究过的 }\mathbb{R}^2\text{ 与 }\mathbb{R}^3\text{ 上的向量点积,范数则是始于向量的长度概念. }\\\text{内积即是点积性质的推广,本质上就是一个函数,它把 }V\text{ 中元素的每个有序}\text{对 }(u,v)\\\text{都映射成一个数 }\langle u,v\rangle\in\mathbf{F},\text{ 并且具有以下性质}:\]</div>
+<p><span class="arithmatex">\(\begin{aligned}&amp;1.\text{ 正定性:}\forall v\in V,\langle v,v\rangle\geqslant0,\langle v,v\rangle=0\Longleftrightarrow v=0;\\&amp;2.\text{ 第一个位置的加性:}\forall u,v,w\in V,\langle u+v,w\rangle=\langle u,w\rangle+\langle v,w\rangle;\\&amp;3.\text{ 第一个位置的齐性:}\forall\lambda\in\mathbf{F},\forall u,v\in V,\langle\lambda u,v\rangle=\lambda\langle u,v\rangle;\\&amp;4.\text{ 共轭对称性:}\forall u,v\in V,\langle u,v\rangle=\overline{\langle v,u\rangle}.\end{aligned}\)</span>、</p>
+<ul>
+<li>**欧几里得空间**即典型的内积空间</li>
+</ul>
+<p>通俗地说，就是我们高中接触的投影</p>
+<div class="arithmatex">\[{\bf u}\cdot {\bf v} = \langle u,v\rangle = uv\cos\theta\]</div>
+<p>如果向量是高维的，则有</p>
+<div class="arithmatex">\[\mathbf{u}\cdot\mathbf{v}=\sum_{i=1}^nu_iv_i\]</div>
+<p>但上式准确的名称是&lt;点积&gt;</p>
+<p>事实上内积要考虑到复数向量空间</p>
+<div class="arithmatex">\[\langle\mathbf{a},\mathbf{b}\rangle=\sum_{i=1}^na_i\overline{b_i}\]</div>
+<p>进一步的，我们能顺手得到另一个概念：范数</p>
+<p><strong>范数</strong></p>
+<p>范数由内积确定，定义为</p>
+<div class="arithmatex">\[\|v\|=\sqrt{\langle v,v\rangle}\]</div>
+<p>准确地说，这是模，范数在低维的特例</p>
+<p>如[-1,1]上的连续实值函数构成的向量空间，可定义内积如下：</p>
+<div class="arithmatex">\[\langle f,g\rangle=\int_{-1}^1f(x)g(x)\mathrm{d}x\]</div>
+<p>其范数为</p>
+<div class="arithmatex">\[\|f\|=\sqrt{\int_{-1}^{1}(f(x))^{2}\mathrm{d}x}\]</div>
+<hr>
+<p><strong>正交与线性扩张</strong></p>
+<p>内积为0则称两向量正交，即</p>
+<div class="arithmatex">\[\langle u,v\rangle=0\]</div>
+<p>正交让我们联想到把一个向量用一组互相正交的向量表示，就像经典物理学中力的分解那样</p>
+<p>上面的句子太长了，我们定义为线性扩张，记为</p>
+<div class="arithmatex">\[\mathrm{span}(S)=\{\lambda_1\alpha_1+\cdots+\lambda_k\alpha_k\mid\lambda_1,\ldots,\lambda_k\in\mathbf{F},\alpha_1,\ldots,\alpha_k\in S,k\in\mathbf{N}_+\}\]</div>
+<p>但还不够准确，span并没有对子向量做任何（比如正交）限定</p>
+<p>对了，物理受力分析中最常用的方法，就是正交分解</p>
+<hr>
+<p><strong>正交分解</strong></p>
+<div class="arithmatex">\[\text{设 }u,v\in V\text{ 且 }v\neq0.\text{ 令 }c=\frac{\langle u,v\rangle}{\|v\|^2},w=u-\frac{\langle u,v\rangle}{\|v\|^2}v.\text{ 则 }\langle w,v\rangle=0\text{ 且 }u=cv+w.\]</div>
+<p>任何内积空间中的向量都可以唯一表示为一组正交基向量的线性组合</p>
+<blockquote>
+<p>诶，什么是正交基？或者说什么是基？</p>
+</blockquote>
+<hr>
+<p><strong>基</strong></p>
+<p>对于基，有如下的定义</p>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{若线性空间 }V(\mathbf{F})\text{ 的有限子集 }B=\{\alpha_1,\alpha_2,\ldots,\alpha_n\}\text{ 线性无关,且 }\mathrm{span}(B)=V,\text{ 则}\\&amp;\text{称 }B\text{ 为 }V\text{ 的一组基,并称 }n\text{ 为 }V\text{ 的维数,记作}\dim V=n.\end{aligned}\]</div>
+<blockquote>
+<p>线性空间已经不再陌生，但&lt;线性无关&gt;又是什么？</p>
+</blockquote>
+<hr>
+<p><strong>线性相关性</strong></p>
+<div class="arithmatex">\[\text{设 }V(\mathbf{F})\text{ 是一个线性空间},\alpha_1,\alpha_2,\ldots,\alpha_m\in V,\text{若存在不全为 }0\text{ 的 }\lambda_1,\lambda_2,\ldots,\lambda_m\in\mathbf{F},\text{使得}\]</div>
+<div class="arithmatex">\[\lambda_1\alpha_1+\lambda_2\alpha_2+\cdots+\lambda_m\alpha_m=0\]</div>
+<div class="arithmatex">\[\text{成立,则称 }\alpha_1,\alpha_2,\ldots,\alpha_m\text{ 线性相关,否则称线性无关(即系数只能为 }0)\]</div>
+<div class="admonition quote">
+<p class="admonition-title">题外话 | 极大线性无关组&amp;秩</p>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{设向量组 }S=\{\alpha_1,\alpha_2,\ldots,\alpha_m\}\text{ 张成的线性空间为 }V,\text{ 若存在 }S\text{ 的一个线性无关向}\\&amp;\text{量组 }B=\{\alpha_{k1},\alpha_{k2},\ldots,\alpha_{kr}\},\text{ 使得 }V=\mathrm{span}(B),\text{ 则称 }B\text{ 为 }S\text{ 的一个极大线性无}\\&amp;\text{关组,并称极大线性无关组的长度 }r=r(S)\text{ 为 }S\text{ 的秩}.\end{aligned}\]</div>
+<p>这里关于秩的定义显得有些陌生，让我们从行列式的角度出发</p>
+</div>
+<hr>
+<p><strong>秩</strong></p>
+<p>先给出非零子式的概念</p>
+<div class="arithmatex">\[\text{矩阵 }A=(a_{ij})_{n\times n}\text{ 的任意 }k\text{ 行 }i_1&lt;i_2&lt;\cdots&lt;i_k\text{ 行)和任意 }k\text{ 列 }(j_1&lt;j_2&lt;\cdots&lt;j_k\\\text{列)的交点上的 }k^2\text{ 个元素排成的行列式}\]</div>
+<div class="arithmatex">\[\begin{vmatrix}a_{i_1,j_1}&amp;a_{i_1,j_2}&amp;\cdots&amp;a_{i_1,j_k}\\a_{i_2j_1}&amp;a_{i_2j_2}&amp;\cdots&amp;a_{i_2j_k}\\\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\a_{i_kj_1}&amp;a_{i_kj_2}&amp;\cdots&amp;a_{i_kj_k}\end{vmatrix}\]</div>
+<div class="arithmatex">\[\begin{aligned}&amp;\text{称为矩阵 }A\text{ 的一个 }k\text{ 阶子式,若子式等于 }0\text{ 则称 }k\text{ 阶零子式,否则称非零子式}.\\&amp;\text{当 }A\text{ 为方阵且 }i_t=j_t\mathrm{~}(t=1,2,\ldots,k)\text{ (即选取相同行列)时,称为 }A\text{ 的 }k\text{ 阶主子}\\&amp;\text{式. 若 }i_t=j_t=t(t=1,2,\ldots,k),\text{称为 }A\text{ 的 }k\text{ 阶顺序主子式(取前 }k\text{ 行 }k\text{ 列的左}\\&amp;\text{上角主子式).}\end{aligned}\]</div>
+<blockquote>
+<p>可以类比子集的概念</p>
+</blockquote>
+<p>那么，我们可以得到行列式秩的定义式：</p>
+<div class="arithmatex">\[\text{矩阵 }A\text{ 的非零子式的最高阶数 }r\text{ 称为 }A\text{ 的行列式秩}\]</div>
+<p>在矩阵中，关于秩有以下结论：</p>
+<ul>
+<li><span class="arithmatex">\(\text{矩阵的秩=行秩=列秩}\)</span></li>
+<li><span class="arithmatex">\(\text{矩阵 }A\text{ 的非零子式的最高阶数 }r\text{ 称为 }A\text{ 的行列式秩}.\)</span></li>
+<li><span class="arithmatex">\(\text{矩阵 }A\text{ 的秩 }r(A)=r\Longleftrightarrow A\text{ 的行列式的秩为 }r\)</span></li>
+</ul>
+<hr>
+<p><strong>正交基</strong></p>
+<p>在基的基础上，我们进一步约束，要求向量组之间两两正交（正交一定是线性无关的）</p>
+<blockquote>
+<p>所以我们的物理题全倚仗正交基惹🫡</p>
+</blockquote>
+<p>再进一步的，我们联想到单位向量（就像坐标系、单位圆那样），引申出标准正交基</p>
+<p><strong>标准正交基</strong></p>
+<div class="arithmatex">\[\text{如果一个向量组的每个向量范数都是 1 且与其他向量正交则称这个向量组是标准正}\text{交(规范正交)的}\]</div>
+<blockquote>
+<p>这里的范数=1等效为单位向量</p>
+</blockquote>
+<hr>
+<p>OK，现在再让我们回到通信领域</p>
+<h5 id="_20">概念|正交<a class="headerlink" href="#_20" title="Permanent link">¶</a></h5>
+<ol>
+<li><a href="https://dixilog.github.io/NBU-NOTEBOOK/S%26S/S%26S03/">信号与系统</a>告诉我们，正交即乘积积分为0，且自身平方积分收敛（功率有限）</li>
+</ol>
+<div class="arithmatex">\[\begin{cases}\int_{t_1}^{t_2}g_1(t)g_2(t)dt=0\\\\\int_{t_1}^{t_2}g_i^2(t)dt=k_i&amp;i=1,2&amp;\end{cases}\]</div>
+<ol>
+<li><a href="https://dixilog.github.io/NBU-NOTEBOOK/RanSigAnalysis/RSA01/?h=%E6%AD%A3%E4%BA%A4#_9">随机信号处理</a>告诉我们，正交即自相关函数为0</li>
+</ol>
+<div class="arithmatex">\[R_{XY}(t_1,t_2)=E[XY]=0\]</div>
+<ol>
+<li>刚刚的线代知识告诉我们，线性无关组内积为零则正交</li>
+</ol>
+<blockquote>
+<p>仔细看看，他们在本质上没有区别</p>
+</blockquote>
+<hr>
+<p>我们已经体验过正交分解带来的乐趣。现在需要考虑的是，既然物理领域可迁移，是否也能迁移到信号领域呢？</p>
+<p>换句话说，能否构造一个类似于内积空间的&lt;信号空间&gt;，使得能用&lt;一组标准正交基信号&gt;（二维下是IQ调制）去表示数字调制结果，并用标准正交基为轴，将信号描绘在空间内（二维下是星座图）呢？</p>
+<blockquote>
+<p>其实我已经说出答案了🤣下面直接给出定义，不再赘述</p>
+</blockquote>
+<h5 id="_21">概念|信号空间<a class="headerlink" href="#_21" title="Permanent link">¶</a></h5>
+<ul>
+<li>某种调制方式的所有波形信号构成的空间</li>
+<li>
+<p>能找到一组标准正交基信号，得到空间中的任意波形</p>
+</li>
+<li>
+<p>正交：<span class="arithmatex">\(\underset{-\infty}{\operatorname*{\operatorname*{\overset{\infty}{\operatorname*{\operatorname*{\int}}}}}}\varphi(t)\psi(t)dt=0\)</span></p>
+</li>
+<li>标准：<span class="arithmatex">\(\underset{-\infty}{\operatorname*{\operatorname*{\overset{+\infty}{\operatorname*{\operatorname*{\int}}}}}}\varphi^{2}(t)dt=1\)</span></li>
+</ul>
+<p>调制信号集合为</p>
+<div class="arithmatex">\[S=\{s_1(t),s_2(t),...,s_M(t)\}\]</div>
+<p>其中的每一sample可表示为</p>
+<div class="arithmatex">\[s_i(t)=\sum_{j=1}^Ns_{ij}\phi_j(t)\]</div>
+<blockquote>
+<p>s是一个只含0与1的矩阵，M进制下标准正交基信号数量为<span class="arithmatex">\(\log M\)</span></p>
+</blockquote>
+<hr>
+<p>下面通过BPSK、QPSK及其星座图的例子具体感受上述定义</p>
+<h4 id="_22">星座图<a class="headerlink" href="#_22" title="Permanent link">¶</a></h4>
+<p>星座图（Signal Constellation Diagram），是信号空间的几何表达</p>
+<h5 id="bpsk">BPSK<a class="headerlink" href="#bpsk" title="Permanent link">¶</a></h5>
+<p>传输<code>1bit</code>二进制信息，故只需一个标准正交基信号</p>
+<p>不妨令</p>
+<div class="arithmatex">\[\phi(t)=\sqrt{\frac{2}{T_{s}}}\cos2\pi f_{c}t\quad,\quad0\leq t\leq T_{s}\]</div>
+<p>则信号空间为</p>
+<div class="arithmatex">\[\left\{\sqrt{E_s}\phi(t),-\sqrt{E_s}\phi(t)\right\}\]</div>
+<blockquote>
+<p>你看到的系数都是归一化因子</p>
+</blockquote>
+<p>于是我们得到了BPSK的星座图</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-CeVQbp77coywM0xAFRTcGwi5nGf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-CeVQbp77coywM0xAFRTcGwi5nGf.png"></a></p>
+<h5 id="qpsk">QPSK<a class="headerlink" href="#qpsk" title="Permanent link">¶</a></h5>
+<p>因为有四种可能（四进制），故二维平面需要两个正交标准信号，即</p>
+<div class="arithmatex">\[\left\{\phi_1(t)=\sqrt{\frac{2}{\mathrm{T_S}}}\cos2\pi f_ct,\phi_2(t)=-\sqrt{\frac{2}{T_S}}\sin2\pi f_ct\right\}\quad,\quad0\leq t\leq T_{s}\]</div>
+<p>IQ路分别调制，信号空间为</p>
+<div class="arithmatex">\[\sqrt{\frac{\mathrm{E_S}}{2}}\phi_1(t)+\sqrt{\frac{\mathrm{E_S}}{2}}\phi_2(t),-\sqrt{\frac{\mathrm{E_S}}{2}}\phi_1(t)+\sqrt{\frac{\mathrm{E_S}}{2}}\phi_2(t)\\-\sqrt{\frac{\mathrm{E_S}}{2}}\phi_1(t)-\sqrt{\frac{\mathrm{E_S}}{2}}\phi_2(t),\sqrt{\frac{\mathrm{E_S}}{2}}\phi_1(t)-\sqrt{\frac{\mathrm{E_S}}{2}}\phi_2(t)\]</div>
+<blockquote>
+<p>就是{00,01,10,11}</p>
+</blockquote>
+<p>再看星座图</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KUkzbmYGVo7Dj4xlEj3cpfHknfe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KUkzbmYGVo7Dj4xlEj3cpfHknfe.png"></a></p>
+<hr>
+<h5 id="_23">信号点数与维度<a class="headerlink" href="#_23" title="Permanent link">¶</a></h5>
+<ul>
+<li>更密集，说明进制更高，带宽效率（有效性）更高</li>
+<li>维度增加，则带宽增加</li>
+</ul>
+<h5 id="_24">信号的幅度<a class="headerlink" href="#_24" title="Permanent link">¶</a></h5>
+<p>若存在线性调制（QAM），则星座点会散布在多个同心圆上</p>
+<p>我们在前面正交基的介绍中提到了：</p>
+<p><synced-source><p><b>正交基旨在实现已调信号与信道特性的最大相容</b></p><ul><li>星座外包络决定了平均能量，最远点决定最大发射功率</li><li>星座内部点结构决定了差错概率，码距决定平均发射功率</li><li>维数设计决定频带利用率</li></ul></synced-source></p>
+<p>很显然，介又是平衡的艺术</p>
+<blockquote>
+<p>以上，相信你已经较为了解信号空间与星座图了~</p>
+</blockquote>
+<hr>
+<h4 id="_25">误码性能<a class="headerlink" href="#_25" title="Permanent link">¶</a></h4>
+<p><strong>结论先行：</strong></p>
+<ul>
+<li>差错概率由星座图最小欧氏距离决定</li>
+<li>距离越小，BER越大，功率效率越低（功率一定下）</li>
+</ul>
+<blockquote>
+<p>直观上容易理解，通信原理中也已有所接触</p>
+</blockquote>
+<h5 id="_26">信号点之间的欧式距离<a class="headerlink" href="#_26" title="Permanent link">¶</a></h5>
+<p>对于星座图上的任意两点<code>i</code>与<code>j</code>，他们之间的欧式距离为</p>
+<div class="arithmatex">\[d_{ij}=\sqrt{(x_i-x_j)^2+(y_i-y_j)^2}=\|s_i-s_j\|\]</div>
+<h5 id="_27">误码概率<a class="headerlink" href="#_27" title="Permanent link">¶</a></h5>
+<p>在AWGN信道中，符号<span class="arithmatex">\(s_i\)</span>变成符号<span class="arithmatex">\(s_j\)</span>的错误概率由<a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-RmMfdpwyxol34TxHdJ4cRvaJnkh"><code>Q</code></a><a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-RmMfdpwyxol34TxHdJ4cRvaJnkh">函数</a>表示：</p>
+<div class="arithmatex">\[P(s_i)=Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right)\]</div>
+<p>那么总误码率就是所有点出错概率之和</p>
+<div class="arithmatex">\[P_s(\xi\mid s_i)\leq\sum_{j=1,j\neq i}Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right)\]</div>
+<p>其中，噪声的PSD（即方差）为<span class="arithmatex">\(\frac{N_0}{2}\)</span></p>
+<div class="admonition quote">
+<p class="admonition-title">推导过程</p>
+<p>接收信号<span class="arithmatex">\(r\)</span>可表示为</p>
+<div class="arithmatex">\[r=s_i+n\]</div>
+<p><code>n</code>为零均值高斯白噪</p>
+<p>错误概率表达式为</p>
+<div class="arithmatex">\[P(s_i\to s_j)=P\left(\left\|r-s_j\right\|^2&lt;\left\|r-s_i\right\|^2\right)\]</div>
+<p>代入<code>r</code>得</p>
+<div class="arithmatex">\[P(s_i\to s_j)=P\left(\|s_i+n-s_j\|^2&lt;\|n\|^2\right)=P\left(\|n+d\|^2&lt;\|n\|^2\right)\]</div>
+<p>不等式左边平方项展开</p>
+<div class="arithmatex">\[\|n+d\|^2=\|n\|^2+\|d\|^2+2n^Td\]</div>
+<p>两边整理得</p>
+<div class="arithmatex">\[n^Td&lt;-\frac{\|d\|^2}{2}=-\frac{d_{ij}^2}{2}\]</div>
+<p>记左边为一随机变量，服从零均值高斯噪声</p>
+<div class="arithmatex">\[X=n^{T}d,\quad X\sim\mathcal{N}\left(0,\frac{N_{0}}{2}d_{ij}^{2}\right)\]</div>
+<p>其中，方差为</p>
+<div class="arithmatex">\[\sigma^{2}=\frac{N_{0}}{2}\left\|d\right\|^{2}=\frac{N_{0}}{2}d_{ij}^{2}\]</div>
+<p>那么可得误码概率</p>
+<div class="arithmatex">\[P(s_{i}\to s_{j})=P\left(X&lt;-\frac{d_{ij}^{2}}{2}\right)\]</div>
+<p>又有Q函数对称性质</p>
+<div class="arithmatex">\[P(Z&lt;-z)=P(Z&gt;z)=Q(z)\]</div>
+<p>则原式转为</p>
+<div class="arithmatex">\[P(s_{i}\to s_{j})=P\left(X&gt;\frac{d_{ij}^{2}}{2}\right)\]</div>
+<p>归一化，使得满足Q函数条件</p>
+<div class="arithmatex">\[P\left(Z=\frac{X}{\sqrt{\frac{N_{0}}{2}d_{ij}^{2}}}&gt;\frac{\frac{d_{ij}^2}{2}}{\sqrt{\frac{N_{0}}{2}d_{ij}^{2}}}\right)= P\left(Z&gt;\frac{d_{ij}}{\sqrt{2N_{0}}}\right)\]</div>
+<p>最终得到单一点误差</p>
+<div class="arithmatex">\[P(s_i\to s_j)=Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right)\]</div>
+<p>求和得证</p>
+<div class="arithmatex">\[P_s(\xi\mid s_i)\leq\sum_{j=1,j\neq i}Q\left(\frac{d_{ij}}{\sqrt{2N_0}}\right)\]</div>
+<p>Q函数是减函数，因此想要找出误码上界，需要取最短欧式距离</p>
+<p>假设该点到其他<code>M-1</code>个点的距离都为</p>
+<div class="arithmatex">\[d_{\min}=\min_{i\neq j}\|s_i-s_j\|\]</div>
+<p>可得平均符号差错概率，即</p>
+<div class="arithmatex">\[P_{s}\leq(M-1)Q\left(\frac{d_{min}}{\sqrt{2N_{0}}}\right)\]</div>
+</div>
+<hr>
+<h5 id="_28">常见调制方式<a class="headerlink" href="#_28" title="Permanent link">¶</a></h5>
+<ul>
+<li><strong>MPSK</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ISNObfEW2oefOVxWuBfcQmsMnge.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ISNObfEW2oefOVxWuBfcQmsMnge.png"></a></p>
+<blockquote>
+<p>注意，这里的频带利用率是基于信息量的（bit）</p>
+<p>之前学习的理论无ISI频带利用率上限为2面向的是码元（Baud）</p>
+</blockquote>
+<ul>
+<li><strong>MFSK</strong></li>
+</ul>
+<p>注意维度上与MPSK的区别</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DBrSbNZVDoDlUExzPBacBIayn3g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DBrSbNZVDoDlUExzPBacBIayn3g.png"></a></p>
+<ul>
+<li><strong>MQAM</strong></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KwTMbdPZroKd06xb4RGcw6mZnye.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KwTMbdPZroKd06xb4RGcw6mZnye.png"></a></p>
+<hr>
+<h3 id="_29">线性调制技术<a class="headerlink" href="#_29" title="Permanent link">¶</a></h3>
+<p>见<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#2psk">数字带通传输—数字调制 - dixi's BLOG</a>，这一节不做过多解释</p>
+<blockquote>
+<p>误码率计算包含等概前提</p>
+</blockquote>
+<h4 id="_30">概念<a class="headerlink" href="#_30" title="Permanent link">¶</a></h4>
+<blockquote>
+<p><a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-FLqedESeooLKOyx62fbc1lcFnDd">上一节</a>已说明，不再阐述</p>
+</blockquote>
+<hr>
+<h4 id="bpsk_1">BPSK<a class="headerlink" href="#bpsk_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>已调信号</li>
+</ul>
+<div class="arithmatex">\[s_{BPSK}=m(t)\sqrt{\frac{2E_{b}}{T_{b}}}\cos(2\pi f_{c}t+\theta_{c})\]</div>
+<ul>
+<li>误比特率</li>
+</ul>
+<div class="arithmatex">\[P_{e,BPSK}=Q\left(\sqrt{\frac{2E_{b}}{N_{0}}}\right)\]</div>
+<p>注意，理想情况下<span class="arithmatex">\(r = \sqrt{\frac{E_b}{N_0}}\)</span>，而Q函数与补误差函数差了<span class="arithmatex">\(2\sqrt{2}\)</span>的系数，指数上差了2，所以另可写作</p>
+<div class="arithmatex">\[P_{e,BPSK}=Q\left(\sqrt{\frac{2E_{b}}{N_{0}}}\right)=\frac{1}{2}erfc(\sqrt{r})\]</div>
+<blockquote>
+<p>这不就和通信原理串起来了</p>
+<p>所以你知道为什么通原里面要用<code>erfc</code>而不是<code>erf</code>了吧😜</p>
+</blockquote>
+<ul>
+<li>PSD与带宽</li>
+</ul>
+<div class="arithmatex">\[P_{BPSK}(f)=\frac{E_{b}}{2}\left[\left(\frac{\sin\pi(f-f_{c})T_{s}}{\pi(f-f_{c})T}\right)^{2}+\left(\frac{\sin\pi(-f-f_{c})T_{s}}{\pi(-f-f_{c})T}\right)\right]\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Kf2WbaO2NoWRJaxP5AxcE2MCn2b.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Kf2WbaO2NoWRJaxP5AxcE2MCn2b.png"></a></p>
+<ul>
+<li>调制解调框图</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-YgGNbTM6Yoynu1xssO3cxLUnnDb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-YgGNbTM6Yoynu1xssO3cxLUnnDb.png"></a></p>
+<hr>
+<h4 id="dpsk">DPSK<a class="headerlink" href="#dpsk" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>避免倒π | 非相干解调实现简单</p>
+</blockquote>
+<ul>
+<li>非相干解调误比特率</li>
+</ul>
+<div class="arithmatex">\[P_{e,DPSK}=\frac{1}{2}\exp\left(-\frac{E_{b}}{N_{0}}\right)\]</div>
+<ul>
+<li>相干解调误比特率</li>
+</ul>
+<div class="arithmatex">\[P_{e,DPSK}=erfc(\sqrt{r}) = 2P_{e,BPSK}\]</div>
+<ul>
+<li>调制解调框图</li>
+</ul>
+<p>见<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#2psk">数字调制—DBPSK - dixi's BLOG</a></p>
+<hr>
+<h4 id="qpsk_1">QPSK<a class="headerlink" href="#qpsk_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>信号表达式</li>
+</ul>
+<div class="arithmatex">\[\begin{aligned}s_{QPSK}(t)&amp;=\sqrt{\frac{2E_{s}}{T_{s}}}\cos\left[2\pi f_{c}t+(i-1)\frac{\pi}{2}\right]\\&amp;=\sqrt{\frac{2E_{s}}{T_{s}}}\cos\left[(i-1)\frac{\pi}{2}\right]\mathrm{cos}(2\pi f_{c}t)-\sqrt{\frac{2E_{s}}{T_{s}}}\sin\left[(i-1)\frac{\pi}{2}\right]\mathrm{sin}(2\pi f_{c}t)\\&amp;0\leq t\leq T_{s}\quad i=1,2,3,4\end{aligned}\]</div>
+<ul>
+<li>误比特率</li>
+</ul>
+<div class="arithmatex">\[P_{e,QPSK}=Q\left(\sqrt{\frac{2E_{b}}{N_{0}}}\right)\]</div>
+<blockquote>
+<p>维度扩展，使得距离一致，与BPSK误码率一致</p>
+</blockquote>
+<ul>
+<li>PSD与带宽</li>
+</ul>
+<div class="arithmatex">\[\begin{aligned}P_{QPSK}(f)&amp;=\frac{E_{s}}{2}\left[\left(\frac{\sin\pi(f-f_{c})T_{s}}{\pi(f-f_{c})T_{s}}\right)^{2}+\left(\frac{\sin\pi(-f-f_{c})T_{s}}{\pi(-f-f_{c})T_{s}}\right)\right]\\&amp;=E_{b}\left[\left(\frac{\sin2\pi(f-f_{c})T_{b}}{2\pi(f-f_{c})T_{b}}\right)^{2}+\left(\frac{\sin2\pi(-f-f_{c})T_{b}}{2\pi(-f-f_{c})T_{b}}\right)\right]\end{aligned}\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VOdbbC060o27tMxZc2WctdEOnMf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VOdbbC060o27tMxZc2WctdEOnMf.png"></a></p>
+<blockquote>
+<p>带宽是BPSK的一半。因为是双通道，所需要的带宽减半</p>
+</blockquote>
+<ul>
+<li>调制与解调框图</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-V3LRbQ3Q6omc13xLZIpccgtTnvh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-V3LRbQ3Q6omc13xLZIpccgtTnvh.png"></a></p>
+<h5 id="qpsk_2">QPSK的相位转移图<a class="headerlink" href="#qpsk_2" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-P0kXb0D68oGp6LxKCj0cuTpRnvd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-P0kXb0D68oGp6LxKCj0cuTpRnvd.png"></a></p>
+<p>最大调制的相位突变达到180，使得包络发生较大变化，这是不尽人意的</p>
+<hr>
+<h4 id="oqpsk">OQPSK<a class="headerlink" href="#oqpsk" title="Permanent link">¶</a></h4>
+<p>将其中一路信号延迟一个bit周期，保证短时间内只有一个bit发生变化</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-YzyxbDU9OoTCUqx1VfTcTKJZnx9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-YzyxbDU9OoTCUqx1VfTcTKJZnx9.png"></a></p>
+<p><strong>框图与状态转换图</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-E38Nb8g5JolRP7xTch5c3CA9nEg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-E38Nb8g5JolRP7xTch5c3CA9nEg.png"></a></p>
+<p>但，它没有行之有效的非相干解调方式（相干解调的误比特率只比非相干多3dB（一个数量级），但同频同相载波获得很难），且本质上是二维的BPSK，仍有可能出现倒π现象，所以并不常用</p>
+<hr>
+<h4 id="4-dqpsk">π/4 DQPSK<a class="headerlink" href="#4-dqpsk" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>广泛应用于2G的D-AMPS等规范中</p>
+</blockquote>
+<p><strong>基本思想</strong>  </p>
+<ul>
+<li>交替选取星座图并取点</li>
+<li>相位差为<code>π/4</code>或<code>3/4π</code></li>
+<li>因为一次只在一个星座图中选择，故误比特率仍然与QPSK一致</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-HUZrb7YPfozfnDx4N6ycBblpnkf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-HUZrb7YPfozfnDx4N6ycBblpnkf.png"></a></p>
+<ul>
+<li>发射框图</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QkqEbD3Z3oq4y8xlBiUc1mZ7nSg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QkqEbD3Z3oq4y8xlBiUc1mZ7nSg.png"></a></p>
+<p>令前后绝对码的相位差为<span class="arithmatex">\(\varphi_k\)</span></p>
+<div class="arithmatex">\[\varphi_k=\theta_{\mathrm{k}}-\theta_{k-1}\]</div>
+<p>假设基带符号与已调信号相位差的映射关系（1认为是正象限）为</p>
+<div class="arithmatex">\[\begin{array}{ccc}(m_{I,k},m_{Q,k})&amp;&amp;\varphi_k\\\\11&amp;&amp;\pi/4\\\\01&amp;&amp;3\pi/4\\\\00&amp;&amp;-3\pi/4\\\\10&amp;&amp;-\pi/4\end{array}\]</div>
+<p>令</p>
+<div class="arithmatex">\[I_{k}=\cos\theta_{k},Q_{k}=\sin\theta_{k}\]</div>
+<p>再将<span class="arithmatex">\(\theta_{\mathrm{k}}=\varphi_k+\theta_{k-1}\)</span>代入，并拆项，可得同向与正交分量表达式</p>
+<div class="arithmatex">\[\begin{cases}I_k=I_{k-1}\cos\varphi_k-Q_{k-1}\sin\varphi_k&amp;,\in\{0,\pm1,\pm1/\sqrt{2}\}\\Q_k=I_{k-1}\sin\varphi_k+Q_{k-1}\cos\varphi_k&amp;,\in\{0,\pm1,\pm1/\sqrt{2}\}&amp;\end{cases}\]</div>
+<p>输出波形表达式</p>
+<div class="arithmatex">\[S_{\pi/4QPSK}(t)=I(t)\cos\omega_ct-Q(t)\sin\omega_ct\]</div>
+<p>其中</p>
+<div class="arithmatex">\[I(t)=\sum_{k=0}^{N-1}I_{k}p(t-kT_{s}-T_{s}/2)=\sum_{k=0}^{N-1}\cos\theta_{k}p(t-kT_{s}-T_{s}/2)\\Q(t)=\sum_{k=0}^{N-1}Q_{k}p(t-kT_{s}-T_{s}/2)=\sum_{k=0}^{N-1}\sin\theta_{k}p(t-kT_{s}-T_{s}/2)\]</div>
+<p><code>p</code>为脉冲成型滤波器</p>
+<hr>
+<ul>
+<li>相干解调—基带差分检测</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VrH3bbsvboKw3Hxza4XcS4OfnGb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VrH3bbsvboKw3Hxza4XcS4OfnGb.png"></a></p>
+<p>混频低通后，得到</p>
+<div class="arithmatex">\[w_k=\cos(\theta_k-\gamma)\quad z_k=\sin(\theta_k-\gamma)\]</div>
+<p>利用和差化积得到</p>
+<div class="arithmatex">\[\begin{aligned}&amp;x_{k}=w_{k}w_{k-1}+z_{k}z_{k-1}\\&amp;=\cos(\theta_{k}-\gamma)\cos(\theta_{k-1}-\gamma)+\sin(\theta_{k}-\gamma)\sin(\theta_{k-1}-\gamma)=\cos(\theta_{k}-\theta_{k-1})=\cos\varphi_k\\&amp;y_{k}=z_{k}w_{k-1}-w_{k}z_{k-1}\\&amp;=\sin(\theta_{k}-\gamma)\cos(\theta_{k-1}-\gamma)-\cos(\theta_{k}-\gamma)\sin(\theta_{k-1}-\gamma)=\sin(\theta_{k}-\theta_{k-1})=\sin \varphi_k\end{aligned}\]</div>
+<p>判决</p>
+<div class="arithmatex">\[s_{\mathrm{I}}=1\text{,如果}x_k&gt;0\text{ 或 }s_\mathrm{I}=0\text{,如果}x_k&lt;0\\s_{\mathrm{Q}}=1\text{,如果}y_k&gt;0\text{ 或 }s_{\mathrm{Q}}=0\text{,如果}y_k&lt;0\]</div>
+<hr>
+<ul>
+<li>差分相干解调（非相干解调）</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-L0PGbjLxBoRYSUxcuu5cPHKCnTc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-L0PGbjLxBoRYSUxcuu5cPHKCnTc.png"></a></p>
+<p>输入信号为<span class="arithmatex">\(S_{k}(t)=\cos(\omega_{c}t+\theta_{k})\)</span>，混频后得</p>
+<div class="arithmatex">\[\cos(\omega_{c}t+\theta_{k})\cdot\cos[\omega_{c}(t-T_{b})+\theta_{k-1}]\\\sin(\omega_{c}t+\theta_{k})\cdot\cos[\omega_{c}(t-T_{b})+\theta_{k-1}]\]</div>
+<p>经LPF后取低频分量</p>
+<div class="arithmatex">\[\begin{gathered}X_{k}=\frac{1}{2}\cos(\theta_{k}-\theta_{k-1})=\frac{1}{2}\cos\Delta\theta_{k}\\Y_{k}=\frac{1}{2}\mathrm{sin}(\theta_{k}-\theta_{k-1})=\frac{1}{2}\mathrm{sin}\Delta\theta_{k}\end{gathered}\]</div>
+<hr>
+<ul>
+<li>鉴频器解调</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TfVWbmC8Vo8otLxBkm2cIBLfnth.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-TfVWbmC8Vo8otLxBkm2cIBLfnth.png"></a></p>
+<hr>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[\text{假设}\theta_0=0\degree,\text{比特流 }0\text{ 0 1 0 1 1 用 }\pi/4\text{ DQPSK 发送。比特从左到右送入发射机。}\\\text{确定在发送期间相位}\theta_k\text{和}I_k\mathrm{、}Q_k\text{的值。}\]</div>
+<blockquote>
+<p>这种题没必要算的，用脑子想一想即可，关键是转移图与映射关系</p>
+</blockquote>
+<p>已知起始点为0的位置，比特组分别是<code>00</code>,<code>10</code>,<code>11</code>，则对应的变化角为<code>-135</code>,<code>-45</code>,<code>45</code></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ZCpNbU42ooIEHlx8nmfcCyaznic.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ZCpNbU42ooIEHlx8nmfcCyaznic.png"></a></p>
+<p>则对应位置取横纵坐标即为答案：</p>
+<p>(-0.707,-0.707)</p>
+<p>(-1,0)</p>
+<p>(-0.707,-0.707)</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<div class="arithmatex">\[\text{用上一例所示的}\pi/4\text{ DQPSK 信号,说明接收信号是如何通过基带差分检测器被正确检测的，即解调过程}\]</div>
+<p>将上一问的IQ坐标对应的角度分别与前一项作差，相当于恢复出映射角<span class="arithmatex">\(\varphi_k\)</span></p>
+<p>即得到<code>-135</code>,<code>-45</code>,<code>45</code></p>
+<p>那么就可以得到x与y，或者可以直接看出答案：<code>00</code>,<code>10</code>,<code>11</code></p>
+</div>
+<hr>
+<h3 id="_31">恒包络调制技术<a class="headerlink" href="#_31" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>典型例子：3G-GSM下所使用的GMSK</p>
+</blockquote>
+<p>上一节介绍了常见的几种线性调制技术，可以做到理论上的无ISI。</p>
+<p>然而，在介绍<a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-I5OxdmhKBolymrxYkWKcuQe8ngh">多进制调制</a>时，提到了其缺陷</p>
+<p><a href="https://my.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-HwADdu7JDsEVmIbfGqLcIi9znLc">飞书同步引用原文（block: HwADdu7JDsEVmIbfGqLcIi9znLc）</a></p>
+<p><strong>本质上是相位不连续引起的</strong></p>
+<p>于是乎，以BFSK为基底的恒包络调制技术应运而生，并在3G时代大放异彩</p>
+<p>具体的说，其优点有</p>
+<ul>
+<li>可允许非线性功放（丙类）</li>
+<li>带外旁瓣低60dB</li>
+<li>可用鉴频器，设计简单</li>
+</ul>
+<hr>
+<p>本节将从BFSK的一般概念出发，并重点解释MSK、GMSK的调制逻辑</p>
+<h4 id="_32">基本概念<a class="headerlink" href="#_32" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>先简单回顾一下<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#2fsk">BFSK</a></p>
+</blockquote>
+<p>可视为Double OOK</p>
+<div class="arithmatex">\[e_{2\mathrm{FSK}}(t)=s_1(t)\cos\omega_st+s_2(t)\cos\omega_mt\]</div>
+<p>为方便后续计算，修改载频表达式</p>
+<div class="arithmatex">\[\omega_m = \omega_c + \Delta\omega_d\\\omega_s=\omega_c-\Delta\omega_d\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SWRubbmqto9JymxT5KnchZrIncg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SWRubbmqto9JymxT5KnchZrIncg.png"></a></p>
+<p><strong>带宽</strong></p>
+<div class="arithmatex">\[B_{2\mathrm{FSK}}\approx|f_m-f_s|+2f_B\]</div>
+<p><strong>调制指数</strong></p>
+<p>载频所用带宽与码元带宽的比值，越小有效性越好</p>
+<div class="arithmatex">\[h=\frac{\left|\omega_\mathrm{m}-\omega_\mathrm{s}\right|}{2\pi/T_b}=\frac{2\Delta\omega_d}{\omega_b}\]</div>
+<p>姑且称<span class="arithmatex">\(\Delta\omega_d\)</span>为频偏，亦写为<span class="arithmatex">\(\omega_d\)</span>；<span class="arithmatex">\(\omega_c\)</span>为哑载频（我自己命名的😜）</p>
+<hr>
+<h4 id="msk">MSK<a class="headerlink" href="#msk" title="Permanent link">¶</a></h4>
+<p>Minimum Shift Keying，是一种特殊的BFSK（恒包络、相位连续、频差最小、载频严格正交），它被设计为：</p>
+<ul>
+<li>两载波在码元周期内累积相位差为<span class="arithmatex">\(\pi\)</span></li>
+</ul>
+<blockquote>
+<p>保证正交性
+- 两载波信号正交</p>
+<p>避免符号间干扰，简化解调过程
+- 码元转换时刻已调信号相位连续</p>
+<p>消除传统FSK因相位突变导致的频谱扩展，从而压缩信号带宽</p>
+<p>注意，这三个条件并非是并列的，而是递进的</p>
+</blockquote>
+<p>MSK表达式为</p>
+<div class="arithmatex">\[S(t)=\cos\left[\omega_ct+a_k\omega_dt+x_k\right]\quad kT_b\leq t\leq(k+1)T_b\]</div>
+<div class="arithmatex">\[a_k=\{-1,1\}\]</div>
+<p><span class="arithmatex">\(x_k\)</span>用于相位连续补偿，在一个bit持续时间内是一个常数</p>
+<h5 id="_33">相位差条件<a class="headerlink" href="#_33" title="Permanent link">¶</a></h5>
+<p>依条件得</p>
+<div class="arithmatex">\[(\omega_c+\omega_d)T_b-(\omega_c-\omega_d)T_b=\pi\]</div>
+<p>得到</p>
+<div class="arithmatex">\[\omega_d=\frac{\pi}{2T_b}\:\text{或}\: f_d=\frac{1}{4T_b}\]</div>
+<p>如此便固定了频偏</p>
+<p>此时的信号可改写为</p>
+<div class="arithmatex">\[S(t)=\cos\left[\omega_{c}t+\frac{\pi a_{k}}{2T_{b}}t+x_{k}\right]\quad kT_{b}\leq t\leq(k+1)T_{b}\]</div>
+<p>调制指数为</p>
+<div class="arithmatex">\[h=\frac{2\Delta\omega_d}{\omega_b}=\frac{2 \cdot \pi/(2T_b)}{{2\pi /T_b}}=0.5\]</div>
+<hr>
+<h5 id="_34">正交条件<a class="headerlink" href="#_34" title="Permanent link">¶</a></h5>
+<p>依条件得</p>
+<div class="arithmatex">\[\rho=\int_{0}^{T_{0}}\cos2\pi f_{m}t\cos2\pi f_{s}tdt=\frac{\sin2\pi(f_{m}-f_{s})T_{b}}{2\pi(f_{m}-f_{s})T_{b}}+\frac{\sin4\pi f_{c}T_{b}}{4\pi f_{c}T_{b}}\]</div>
+<p>正交即相关系数为0，则各项都为0</p>
+<blockquote>
+<p>事实上第二项常常因为分母远远大于1而忽略不计，但这里我们仍然考虑进去</p>
+</blockquote>
+<p>要使得第一项为0，需要<span class="arithmatex">\(2\pi(2f_d)T_b=n\pi\)</span></p>
+<div class="arithmatex">\[f_d=\frac{n}{4T_b}\]</div>
+<p>为了尽可能让调制指数小（带宽占用尽量小），不妨令<code>n=1</code>，得频偏</p>
+<div class="arithmatex">\[\omega_d=\frac{\pi}{2T_b}\:\text{或}\: f_d=\frac{1}{4T_b}\]</div>
+<p>诶🧐这不就是相位差条件嘛</p>
+<blockquote>
+<p>所以，我们可以说，相位差条件更像是最小正交的必要条件，他们并不平等</p>
+</blockquote>
+<p>而此频偏已经是带宽最小的正交FSK，称为最小频移键控调制（MSK）（名字就是这么来滴）</p>
+<hr>
+<p>要使得第二项为0，需要<span class="arithmatex">\(4\pi f_{c}T_{b}=n\pi\)</span>，即</p>
+<div class="arithmatex">\[T_b=\frac{n}{4}T_c\]</div>
+<p><strong>这说明码元周期应是哑载频周期的0.25的整数倍</strong></p>
+<p>事实上，不仅仅是哑载频，两个载频都是如此，都是0.25的整数倍</p>
+<div class="arithmatex">\[\begin{gathered}f_{m}=f_{c}+f_{d}\xlongequal{n=N+m/4}(N+\frac{m}{4})\frac{1}{T_{b}}+\frac{1}{4T_{b}}=(N+\frac{m+1}{4})\frac{1}{T_{b}}\\f_{s}=f_{c}-f_{d}\xlongequal{n=N+m/4}(N+\frac{m}{4})\frac{1}{T_{b}}-\frac{1}{4T_{b}}=(N+\frac{m-1}{4})\frac{1}{T_{b}}\end{gathered}\]</div>
+<ul>
+<li><code>N</code>是中心频率的整数倍基频，决定载波频率的基础值 </li>
+<li><code>m</code>是分数偏移量（取0、1、2、3），用于微调频率偏移，确保两个载波正交且相位连续  </li>
+</ul>
+<p>同时，需要注意两载波周期的周期数相差半个周期</p>
+<p>比如，若<span class="arithmatex">\(T_b = 1.25T_m\)</span>，则<span class="arithmatex">\(T_b=0.75T_s\)</span>、<span class="arithmatex">\(T_b = T_c\)</span></p>
+<p>再比如</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GIkqbpKxRoSi2ixO6NQcW6G4nLe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GIkqbpKxRoSi2ixO6NQcW6G4nLe.png"></a></p>
+<hr>
+<h5 id="_35">相位连续条件<a class="headerlink" href="#_35" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>可找出编码规律</p>
+</blockquote>
+<p>在满足前两项条件后，再来分析相位连续条件</p>
+<p>把<span class="arithmatex">\(\omega_d\)</span>代入</p>
+<div class="arithmatex">\[S(t)=\cos\left[\omega_{c}t+\frac{\pi a_{k}}{2T_{b}}t+x_{k}\right]\quad kT_{b}\leq t\leq(k+1)T_{b}\]</div>
+<p>令附加相位为</p>
+<div class="arithmatex">\[\theta(t)=\frac{\pi a_k}{2T_b}t+x_k\quad,\quad kT_b\leq t\leq(k+1)T_b\]</div>
+<p>显然为线性函数，码元内连续</p>
+<p>要满足转换时连续，即</p>
+<div class="arithmatex">\[\frac{\pi a_{k-1}}{2T_{b}}t|_{t=kT_{b}}+x_{k-1}=\frac{\pi a_{k}}{2T_{b}}t|_{t=kT_{b}}+x_{k}\]</div>
+<p>整理得</p>
+<div class="arithmatex">\[x_k=x_{k-1}+\frac{k\pi}{2}(a_{k-1}-a_k)\]</div>
+<blockquote>
+<p>是有记忆的调制（有后效性）</p>
+</blockquote>
+<p>ak符号为二进制，代入后有</p>
+<div class="arithmatex">\[x_{k}=\begin{cases}\quad x_{k-1}&amp;\quad,\quad a_{k-1}=a_{k}\\x_{k-1}\pm k\pi&amp;\quad,\quad a_{k-1}\neq a_{k}&amp;\end{cases}\]</div>
+<p>令初始相位<span class="arithmatex">\(x_0\)</span>为0，MSK表达式转化为</p>
+<div class="arithmatex">\[\begin{aligned}S(t)&amp;=\cos2\pi f_{c}t\left(\cos\frac{\pi t}{2T_{b}}\cos x_{k}-\sin\frac{\pi t}{2T_{b}}\sin x_{k}\right)-\sin2\pi f_{c}t\left(a_{k}\sin\frac{\pi t}{2T_{b}}\cos x_{k}+\cos\frac{\pi t}{2T_{b}}\sin x_{k}\right)\\&amp;=\cos2\pi f_{c}t\left(\cos\frac{\pi t}{2T_{b}}\cos x_{k}\right)-\sin2\pi f_{c}t\left(a_{k}\sin\frac{\pi t}{2T_{b}}\cos x_{k}\right)\\&amp;=I_{k}{\color{red}\cos\frac{\pi t}{2T_{b}}}\cos2\pi f_{c}t-Q_{k}{\color{red}\sin\frac{\pi t}{2T_{b}}}\sin2\pi f_{c}t\end{aligned}\]</div>
+<blockquote>
+<p>红色部分用于和哑载频一起形成载频</p>
+</blockquote>
+<p>这里的运算用到三个method</p>
+<ul>
+<li>三角函数的拆项</li>
+<li><span class="arithmatex">\(\sin x_k\)</span>始终为0</li>
+<li><span class="arithmatex">\(a_k\)</span>仅代表符号，故利用三角函数的奇偶性将其从<code>sin</code>里面提出来</li>
+</ul>
+<hr>
+<h5 id="_36">相位路径图<a class="headerlink" href="#_36" title="Permanent link">¶</a></h5>
+<p>经过上面的分析，不难发现<span class="arithmatex">\(\theta_k\)</span>每次变化<span class="arithmatex">\(\pm \pi/2\)</span>，于是我们能绘出附加函数的相位路径（渔网）图</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GI3lbT6WIo8hbUxFnUEcR1Mknke.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GI3lbT6WIo8hbUxFnUEcR1Mknke.png"></a></p>
+<hr>
+<p>再分析IQ路信号。回顾之前的结论</p>
+<div class="arithmatex">\[S(t)=I_{k}{\color{red}\cos\frac{\pi t}{2T_{b}}}\cos2\pi f_{c}t-Q_{k}{\color{red}\sin\frac{\pi t}{2T_{b}}}\sin2\pi f_{c}t=I_{k}{\color{red}C(t)}\cos2\pi f_{c}t-Q_{k}{\color{red}S(t)}\sin2\pi f_{c}t\]</div>
+<p><span class="arithmatex">\(\begin{cases}\mathbf{I}_\mathrm{k}=\cos{x}_{k}\\\mathbf{Q}_\mathrm{k}={a}_{k}\cos{x}_{k} = a_kI_k&amp;\end{cases}\)</span><span class="arithmatex">\(x_{k}=\begin{cases}\quad x_{k-1}&amp;\quad,\quad a_{k-1}=a_{k}\\x_{k-1}\pm k\pi&amp;\quad,\quad a_{k-1}\neq a_{k}&amp;\end{cases}\)</span></p>
+<p>分析一下，调制波形是有限的（类似于打表），而不同的IQ编码就是在查表，再在一个码元周期内由t表现出来</p>
+<p><strong>而决定IQ信号的，归根到底是<span class="arithmatex">\(a_k\&amp;k\)</span>，即第k码元的bit</strong></p>
+<p>注意到标红区域，<code>Ct</code>与<code>St</code>互相正交，且过零点隔了俩个码元宽度，即至少两符号才I/Q可能变换一次</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KAvybCxsSoT8XQxPO2vcUAsBnTh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KAvybCxsSoT8XQxPO2vcUAsBnTh.png"></a></p>
+<div class="admonition success">
+<p class="admonition-title">综上，能找到以下规律</p>
+<ul>
+<li><span class="arithmatex">\(a_k=a_{k-1}\)</span>则都不变</li>
+<li>
+<p><span class="arithmatex">\(a_k\neq a_{k-1}\)</span>变化时，I与Q只会变一个</p>
+</li>
+<li>
+<p>k为奇数时，I变Q不变</p>
+</li>
+<li>k为偶数时，I不变Q变</li>
+<li><span class="arithmatex">\(a_k、I_k、Q_k\)</span>三者有异或关系，如<span class="arithmatex">\(a_k=I_k\:\textcircled{+}\: Q_k\)</span></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Q7IvbphFToUM6axGju2ceVp9nhg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Q7IvbphFToUM6axGju2ceVp9nhg.png"></a></p>
+<blockquote>
+<p>我们似乎已经摸到调制逻辑的门边边了，但到底应该如何优雅地产生I/Q路信号呢🧐</p>
+</blockquote>
+</div>
+<div class="admonition example">
+<p class="admonition-title">例</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JCatb5vQcoPyTFxggy6csyE7ngc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JCatb5vQcoPyTFxggy6csyE7ngc.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UZTwbQnvBoIrmCx6ZuucNuIxnVg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-UZTwbQnvBoIrmCx6ZuucNuIxnVg.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-S3awbSRrXopQE4xNGiYc7ai5n4g.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-S3awbSRrXopQE4xNGiYc7ai5n4g.png"></a></p>
+</div>
+<hr>
+<h5 id="_37">调制与解调<a class="headerlink" href="#_37" title="Permanent link">¶</a></h5>
+<p><strong>调制框图</strong></p>
+<div class="arithmatex">\[S(t)=I_{k}{\color{red}C(t)}\cos2\pi f_{c}t-Q_{k}{\color{red}S(t)}\sin2\pi f_{c}t\]</div>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JlMeb6zw3olg86xw3KVckezDnlc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-JlMeb6zw3olg86xw3KVckezDnlc.png"></a></p>
+<p>后面的载波混频都是能理解的，但I与Q路信号（图中的p和q）怎么来呢？差分编码🧐</p>
+<p>以一个例子为引，解释如何通过输出馈异（还是我自己造的词略略略）实现IQ路编码</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IsTAbXs1poueK8xlH0Ycs3jsnne.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IsTAbXs1poueK8xlH0Ycs3jsnne.png"></a></p>
+<p>首先明确，最重要的<span class="arithmatex">\(b_k\)</span>是怎么差分出来的？</p>
+<p>注意绿色箭头的方向，能得出结论，即<span class="arithmatex">\(b_k=a_k\textcircled{+}b_{k-1}\)</span>输出馈异<br>
+用语言描述：输出比特流为输入与上一码元输出反馈的异或</p>
+<blockquote>
+<p>需要明确，不要与<span class="arithmatex">\(b_k=a_k\textcircled{+}a_{k-1}\)</span>混淆</p>
+<p>那叫输入自异，你曾在DQPSK的<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp08/#2dpsk">差分相干解调</a>见过，仔细对比框图，是不一样滴~</p>
+</blockquote>
+<p><span class="arithmatex">\(b_k\)</span>的发现是伟大的。分别跟着红色与蓝色箭头，你将惊喜发觉<span class="arithmatex">\(b_k\)</span>的奇数位对应I路，偶数位对应Q位<br>
+这可以说是必然下的表象</p>
+<p>而且，随着串并变换，两路信号上的速率减半，码元宽度加倍，正好对上了！</p>
+<p>调制框图解释完毕啦~</p>
+<div class="admonition quote">
+<p class="admonition-title">题外话|关于输出馈异</p>
+<p>其实你已经学过了，就在通信原理的部分响应中</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QvDBbhCjCofvbAxPecIcSKrXnZd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QvDBbhCjCofvbAxPecIcSKrXnZd.png"></a></p>
+</div>
+<hr>
+<p><strong>解调框图</strong></p>
+<p>这一部分涉及到最佳接受，<sub>~我有点乏了</sub>~课程没说，作罢</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WUR4bUyJQokI9ZxccY5cttRfn1d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WUR4bUyJQokI9ZxccY5cttRfn1d.png"></a></p>
+<div class="admonition example">
+<p class="admonition-title">一个粗糙的例子</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Wh9nbLvIPolmtvx6Z6lc2Dx3n2H.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Wh9nbLvIPolmtvx6Z6lc2Dx3n2H.png"></a></p>
+</div>
+<hr>
+<h5 id="psd_1">PSD<a class="headerlink" href="#psd_1" title="Permanent link">¶</a></h5>
+<p>设基带数据速率为<span class="arithmatex">\(R_B\: bps\)</span></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-PezTbPxqloiQgrx8At9cltdkn1d.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-PezTbPxqloiQgrx8At9cltdkn1d.png"></a></p>
+<hr>
+<h5 id="_38">小结<a class="headerlink" href="#_38" title="Permanent link">¶</a></h5>
+<ul>
+<li>包络恒定</li>
+<li>频偏严格地等于<span class="arithmatex">\(\frac{1}{4T_b}\)</span>,调制指数<code>h=0.5</code>，每个码元周期的相位变化<span class="arithmatex">\(\pm\pi/2\)</span></li>
+<li>在一个码元期间，包含的<code>fm</code>、<code>fs</code>和<code>fc</code>的周期数都是四分之一的整数倍</li>
+<li>附加相位在码元转换时刻信号的相位连续</li>
+<li>其功率谱密度的主瓣较QPSK宽，但滚降速率较快</li>
+</ul>
+<hr>
+<p>从PSD能看出，旁瓣抑制仍然不够满足-60dB的标准，且零点-零点带宽较大，需要加一个高斯脉冲成型滤波器</p>
+<p>由此引入GMSK</p>
+<h4 id="gmsk">GMSK<a class="headerlink" href="#gmsk" title="Permanent link">¶</a></h4>
+<p>GMSK信号就是在MSK前加一个高斯脉冲成型滤波器</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VPjHbOoMao42aIxSkzmcM9FvnHh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-VPjHbOoMao42aIxSkzmcM9FvnHh.png"></a></p>
+<p>此举消除了相位转变时的棱角，从而削去高频分量，使得旁瓣衰减更快，能量集中</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WK1abghspo65Xpxdo2YcE9Yinqg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WK1abghspo65Xpxdo2YcE9Yinqg.png"></a></p>
+<blockquote>
+<p>但注意，严格意义上，不再是恒包络调制</p>
+</blockquote>
+<p><strong>小结</strong></p>
+<ul>
+<li>GMSK的相位不但连续，而且平滑可导，使得带外滚降更快</li>
+<li>高斯滤波器一定存在ISI，但可通过部分响应控制</li>
+<li>GSM采用<span class="arithmatex">\(BT_b=0.3\)</span>的GMSK调制</li>
+</ul>
+<hr>
+<h3 id="ss">跳频与扩频—SS<a class="headerlink" href="#ss" title="Permanent link">¶</a></h3>
+<p>这一节引入了扩展频谱系统（Spread Spectrum,SS），与我们此前学习非扩展频谱系统（线性调制、恒包络调制）有所差异</p>
+<p>望文生义一下，感觉变化位于已调信号的带宽上，<br>
+我们知道<code>MPSK(M≥2)</code>调制的已调信号带宽是基带带宽的<code>2</code>倍<br>
+<code>MSK</code>调制的已调信号带宽是基带带宽的<code>1.5</code>倍</p>
+<p>而事实上，SS系统是远大于，即几十倍甚至几百倍的增加带宽，此乃SS最大的特征，极大的带宽🤪<br>
+如<code>CDMAone</code>采用直接序列扩频技术，基射频信道带宽为<code>1.25MHz</code>，而在其前向信道中，编码后基带符号速率为<code>19.2kpbs</code>，二者之间约<code>65</code>倍的关系</p>
+<p>作为一个合格的学习者，紧接着张口就来的是，为什么要扩频？</p>
+<p>扩频的诞生伊始并不直接为熟知的<code>DSSS</code>，而是受军事保密通信的考究。最早提出的扩频系统称为调频扩频（FHSS）</p>
+<p>总的来说，扩频通信有以下优点：</p>
+<ul>
+<li>一定的抗干扰与抗阻塞</li>
+<li>安全，使得有用信号淹没在噪声信号之中</li>
+<li>利用分集有效抗多径干扰（RAKE接收机）</li>
+<li>CDMA实现码分多址，提高频带利用率</li>
+<li>实现两点间距离测量（GPS）</li>
+</ul>
+<hr>
+<p>在正式介绍之前，我认为有必要先引入通信原理实验六中<code>DSSS</code>相关内容<br>
+以对本节内容起铺垫作用</p>
+<p><a href="https://my.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#source-OAnMbgIXPoOkUXxIRa3cCN0OnGg">DSSS 通信原理实验六 PDF 卡片（飞书原文）</a></p>
+<p>你可以通篇看完，或者跳着看，Anw，你需要能回答以下问题</p>
+<ul>
+<li>DS、SS、DSSS、PN码、消息信号、扩频序列、码片、扩频因子的概念</li>
+<li>DSSS的优势（抗干扰、安全）与应用（CDMAone、WIFI、GPS）</li>
+<li>扩频与解扩、同步的概念，自相关函数定义式及其特征</li>
+<li>CDM的概念，正交扩频码组，高频带利用率（图6）</li>
+</ul>
+<blockquote>
+<p>粗略回顾后，让我们正式开始学习扩展频谱系统</p>
+</blockquote>
+<hr>
+<h4 id="_39">跳频<a class="headerlink" href="#_39" title="Permanent link">¶</a></h4>
+<p>跳频扩频（Frequency Hopping Spread Spectrum，FHSS），即一种基于伪随机码（PN码）构建跳频图案，从而不断更替载波频率以保证安全（不被敌方扫频截获）</p>
+<blockquote>
+<p>GSM也接入了跳频技术，但目的有所不同，着眼于其频率分集与干扰白化的能力，进一步提升信道容量</p>
+<p>同时，TDMA因其时隙的特征非常适合引入FHSS，两者相得益彰</p>
+</blockquote>
+<h5 id="_40"><strong>关键参数与跳频图案</strong><a class="headerlink" href="#_40" title="Permanent link">¶</a></h5>
+<ul>
+<li>跳频周期<span class="arithmatex">\(T_{hop}\)</span></li>
+<li>跳频速率<span class="arithmatex">\(v_{hop} \quad (hops/s)\)</span></li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MW4XbMA8IogRPaxddkgc1Ds5n4q.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MW4XbMA8IogRPaxddkgc1Ds5n4q.png"></a></p>
+<blockquote>
+<p>应该无须解释</p>
+</blockquote>
+<hr>
+<h5 id="_41">收发框图<a class="headerlink" href="#_41" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ICxebbrLKofhIuxWGECcxJECnab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ICxebbrLKofhIuxWGECcxJECnab.png"></a></p>
+<p>可以看出，PN码确定跳变规律，因而PN码的产生与同步是我们所关心的</p>
+<hr>
+<h5 id="_42"><strong>跳频目的</strong><a class="headerlink" href="#_42" title="Permanent link">¶</a></h5>
+<ul>
+<li>较好地规避阻塞式干扰，只要跳变范围足够宽</li>
+<li>防止截获，只要跳变速率足够高</li>
+<li>多址组网（CDMA）</li>
+<li>
+<p>分集，对抗衰落</p>
+</li>
+<li>
+<p>需要跳变频率间隔大于衰落信道相关带宽，且频道切换速度够快</p>
+</li>
+</ul>
+<h5 id="pn"><strong>PN码型的要求</strong><a class="headerlink" href="#pn" title="Permanent link">¶</a></h5>
+<ul>
+<li>良好的伪随机性，并易于同步</li>
+<li>使得收发设备快速同步</li>
+<li>使得硬件上能快速合成跳频频率</li>
+</ul>
+<hr>
+<h4 id="_43">直序扩频<a class="headerlink" href="#_43" title="Permanent link">¶</a></h4>
+<p>直接序列扩频（Direct Sequence Spread Spectrum，DSSS）系统通过将已调载波与扩频码相乘来实现带宽的扩展</p>
+<blockquote>
+<p>具体解释案例见实验报告</p>
+</blockquote>
+<h5 id="_44"><strong>码片</strong><a class="headerlink" href="#_44" title="Permanent link">¶</a></h5>
+<p>扩频码的每一位，为了区别码元的概念而生</p>
+<p>类似的，有码片周期<span class="arithmatex">\(T_c\)</span>与码片速率<span class="arithmatex">\(R_c \:(chip/s)\)</span></p>
+<p>为了达到扩频的目的，一般而言码片宽度要远低于<code>bit</code>宽度</p>
+<h5 id="_45"><strong>扩频增益</strong><a class="headerlink" href="#_45" title="Permanent link">¶</a></h5>
+<p>望文生义即可</p>
+<div class="arithmatex">\[G_{SS}{=}\mathbf{B}_{\text{扩频后}}/\mathbf{B}_{\text{扩频前}}\]</div>
+<blockquote>
+<p>与扩频因子在结果上是一致的</p>
+</blockquote>
+<hr>
+<h5 id="_46"><strong>扩频与解扩</strong><a class="headerlink" href="#_46" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>以三倍扩频为例</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IFkwbQhjqozJdUxxRlZc3p3jnMh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IFkwbQhjqozJdUxxRlZc3p3jnMh.png"></a></p>
+<p>发射信号为</p>
+<div class="arithmatex">\[s_{t}(t)=c(t)cos[\omega_{\theta}t+\theta_{d}(t)]\]</div>
+<p>即扩频就是把能量分散到超级宽的带宽上</p>
+<p>接收到的信号为</p>
+<div class="arithmatex">\[s_{r}(t)=c(t-T_{d})cos[\omega_{\theta}t+\theta_{d}(t-T_{d})+\varphi]\]</div>
+<p>在解调前需要先解扩，而只有同步后才能正确解扩<br>
+从表达式上看，本地载波估计的码片的延迟需要与信道延迟一致，否则自相关结果会灰常失望</p>
+<div class="arithmatex">\[\begin{aligned}s_{r}(t)\bullet c(t-\hat{T}_{d})&amp;=c(t-T_{d})\cos[\omega_{0}t+\theta_{d}(t-T_{d})+\varphi]\bullet c(t-\hat{T}_{d})\\&amp;=c(t-T_{d})\bullet c(t-\hat{T}_{d})\cos[\omega_{0}t+\theta_{d}(t-T_{d})+\varphi]\end{aligned}\]</div>
+<p>准确的说，就是使得<span class="arithmatex">\(\hat{T_d}=T_d\)</span>，从而保证</p>
+<div class="arithmatex">\[c(t-T_d)\bullet c(t-\hat{T}_d)=1\]</div>
+<blockquote>
+<p>为什么两者相等后，扩频码的乘积为<code>1</code>？别急马上来</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-NkqIbxR6jol91Dxl2hPcs0FNnmf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-NkqIbxR6jol91Dxl2hPcs0FNnmf.png"></a></p>
+<hr>
+<h5 id="psd_2"><strong>PSD</strong><a class="headerlink" href="#psd_2" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SVyfbUS1PoYEmBx5dQeconhRn3N.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-SVyfbUS1PoYEmBx5dQeconhRn3N.png"></a></p>
+<p>扩频后PSD减小，使得有用信号有意湮没在噪声之中，for security</p>
+<hr>
+<h5 id="dsss"><strong>DSSS对抗窄带干扰</strong><a class="headerlink" href="#dsss" title="Permanent link">¶</a></h5>
+<p>解扩时有用信号再乘一次扩频PN码而使得PSD恢复</p>
+<p>但对于窄带干扰来说是扩频，PSD下降</p>
+<p>再通过带通滤波器即可有效提高可靠性</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EtwlbEilroE4sexo8yFcLszJnCb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-EtwlbEilroE4sexo8yFcLszJnCb.png"></a></p>
+<hr>
+<h4 id="_47"><strong>扩频码设计</strong><a class="headerlink" href="#_47" title="Permanent link">¶</a></h4>
+<ul>
+<li>在单用户工作时扩频码在时域应该具有强的自相关峰值，确保信号在正确对齐时能量集中，便于在噪声中识别自身信号</li>
+<li>多用户工作时，每个用户的扩频码在时域应该具有强的互相关峰值（如正交码），使不同用户的信号在特定相对位移时产生可区分的特征，实现多路信号分离</li>
+</ul>
+<h5 id="m"><strong>小m序列</strong><a class="headerlink" href="#m" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>参考</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/665773062">伪随机序列之m序列</a>（通信原理之伪随机序列）</li>
+<li><a href="https://www.cnblogs.com/YangGuangPu/p/12711649.html">小m序列的自相关与互相关</a></li>
+</ul>
+</blockquote>
+<p>在介绍这一序列之前，有必要回顾通信原理纠错编码中的<a href="https://dixilog.github.io/NBU-NOTEBOOK/commuPrinc/cp09/#_14">码多项式</a>概念</p>
+<p><code>n</code>阶的码多项式可表示为</p>
+<div class="arithmatex">\[A(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\]</div>
+<p><span class="arithmatex">\(a_n\)</span>为抽头</p>
+<p>在这里称为本原多项式（Primitive Polynomial）</p>
+<blockquote>
+<p>我感觉与循环码有异曲同工之妙</p>
+</blockquote>
+<p>m序列是最长线性反馈移位寄存器(LFSR)序列的简称。它是由带线性反馈的移位寄存器（移存器）产生的周期最长的序列（<code>n</code>级寄存器可得码序列长度为<span class="arithmatex">\(2^{n-1}\)</span>），将此序列<code>周期延拓、移位并取主值区间</code>，可得到<span class="arithmatex">\(2^{n-1}\)</span></p>
+<p>就像马氏链由初始状态分布与转移矩阵决定一样，m序列由种子（Seed，初始状态）与本原多项式决定</p>
+<div class="admonition example">
+<p class="admonition-title">举个例子</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-H0e3bUqZFonEntxDi1PcWH1Knfc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-H0e3bUqZFonEntxDi1PcWH1Knfc.png"></a></p>
+<p>这里的种子为<span class="arithmatex">\(\{1\: 0\: 0 \:0\}\)</span>，本原多项式为<span class="arithmatex">\(x^3+1\)</span></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">题外话 | 为什么本原多项式的常数项必须存在？</p>
+<p>我们在扩频通信中使用线性反馈移位寄存器（LFSR）生成伪随机序列（PN码），比如小m序列</p>
+<p>m序列的核心目标是：生成一个周期为<span class="arithmatex">\(2^{m}-1\)</span>的伪随机序列，具有最强的统计均匀性和最长周期性</p>
+<p>这一要求意味着生成的码组是有限的，即（看图）</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-V8DSbQU9Po3A1Mxa5ioczVkunAh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-V8DSbQU9Po3A1Mxa5ioczVkunAh.png"></a></p>
+<p><strong>一句话总结：</strong></p>
+<p>本原多项式之所以常数项不能为0，是因为这将使它含有因子<code>x</code>，从而不再是不可约的，无法构造有限域，也就不存在能生成域中所有非零元素的本原元（能生成整个有限域的非零元素）。</p>
+</div>
+<hr>
+<h5 id="m_1">小m序列自相关函数与互相关函数<a class="headerlink" href="#m_1" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>在计算之前对伪随机序列做双极性处理</p>
+</blockquote>
+<p>自相关函数对象是自身或者自身的周期位移，互相关则是指不同码组（不同本原多项式|不同阶数）</p>
+<ul>
+<li><code>m</code>序列的自相关函数具有较好的二值特性，即对于非同步序列抑制好，这为实现多址/多径创造条件</li>
+</ul>
+<div class="arithmatex">\[\rho(j)=\begin{cases}1&amp;j=0\\\\\frac{-1}{m}&amp;j=1,2,\cdots,m-1&amp;\end{cases}\]</div>
+<ul>
+<li><code>m</code>序列的互相关函数并没有二值，而是多值，这是不尽如人意的，值得改进</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-O0aTbqbLXoBAbexyA72c6Eo7nWc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-O0aTbqbLXoBAbexyA72c6Eo7nWc.png"></a></p>
+<hr>
+<h5 id="m_2"><strong>小m序列特点</strong><a class="headerlink" href="#m_2" title="Permanent link">¶</a></h5>
+<ul>
+<li>
+<p><strong>均衡性</strong></p>
+</li>
+<li>
+<p><code>1</code>码元数目=<code>0</code>码元数目+1</p>
+</li>
+<li>
+<p>**游程分布**游程指的是连续同值段<br>
+游程分布旨在统计序列中连续相同符号的长度分布情况如<span class="arithmatex">\(1001110\)</span>应该被拆分为$1: 00: 111: 0 $</p>
+</li>
+<li>
+<p>游程总数为<span class="arithmatex">\(2^{n-1}\)</span>，且<code>1</code>游程和<code>0</code>游程各占一半</p>
+</li>
+<li>游程长度为<span class="arithmatex">\(k(1\leq k\leq n-2)\)</span>的游程的数量占游程总数的<span class="arithmatex">\(2^{-k}*100(\%)\)</span></li>
+<li>存在一个长度为<code>n</code>的<code>1</code>游程与一个长度为<code>n-1</code>的<code>0</code>游程</li>
+</ul>
+<blockquote>
+<p>好神奇噻，具有非常良好的规律性，可用于数据压缩、干扰检测等</p>
+</blockquote>
+<hr>
+<h4 id="gps">GPS定位实现方式<a class="headerlink" href="#gps" title="Permanent link">¶</a></h4>
+<blockquote>
+<p>参考：<a href="http://fancyerii.github.io/2020/04/06/gps/">GPS定位技术 - 李理的博客</a>，究极全面详细</p>
+</blockquote>
+<p>利用PN码实现时延检测，从而计算推出卫星—设备距离，再通过3颗卫星锁定一个点</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BFXWboak3omzZRxRZnrcZdz8nAd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BFXWboak3omzZRxRZnrcZdz8nAd.png"></a></p>
+<p>只要获知目标点到三颗卫星的距离（已知卫星位置），即可通过三棱锥的妙妙空间关系求得目标位置</p>
+<div class="arithmatex">\[\begin{gathered}dist_1=\sqrt{(x-x_1)^2+(y-y_1)^2+(z-z_1)^2}\\dist_2=\sqrt{(x-x_2)^2+(y-y_2)^2+(z-z_2)^2}\\dist_3=\sqrt{(x-x_3)^2+(y-y_3)^2+(z-z_3)^2}\end{gathered}\]</div>
+<p>利用我们初中就学过的<code>距离=速度*时间</code>，将问题转化为求时间，也就是信号的时延</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Ce9Ib7qedo04M1xd1SccpwfKnMf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Ce9Ib7qedo04M1xd1SccpwfKnMf.png"></a></p>
+<p>计算扩频码（估计时延）与实际接收扩频码的相关性。由于其二值性，自相关结果最大时即可视为同步，此时本地的估计时延即为结果</p>
+<p>码片速度越高（最小刻度变小），分辨率越高。同时，为了减小伪矩测量带来的误差，我们的手机会在需要定位时，同时与十几颗卫星相连接（校园跑时一度高达七十颗）</p>
+<hr>
+<h3 id="qam">QAM<a class="headerlink" href="#qam" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>参考：</p>
+<ul>
+<li><a href="https://yishuai.github.io/book/comm/5-9-mask">MASK</a></li>
+<li><a href="https://yishuai.github.io/book/comm/5-11-qam">MQAM</a></li>
+</ul>
+</blockquote>
+<p>正交振幅调制，Aka Quadrature Amplitude Modulation，是一种结合<code>ASK</code>与<code>PSK</code>的数字调制技术</p>
+<blockquote>
+<p>是现代通信中最常用的高进制调制</p>
+</blockquote>
+<p>我们在本章的<a href="https://o2ywbvn10e.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-BttMdaEURoZqzNxRQ9tcbh34n2e">信号空间—误码性能</a>这一节中介绍了平均符号差错概率表达式</p>
+<div class="arithmatex">\[P_{s}\leq(M-1)Q\left(\frac{d_{min}}{\sqrt{2N_{0}}}\right)\]</div>
+<p>而随着高进制调制的发展，MPSK的发展陷入了瓶颈，分布在同一圆上的星座点距离越发接近，对信道质量要求愈发严苛</p>
+<p>那如果把振幅也纳入调制对象之中呢？</p>
+<p>于是我们把星座点改成<code>16QAM</code>的模样</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QpAKbgH8joezwPxl83TcTGein7v.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-QpAKbgH8joezwPxl83TcTGein7v.png"></a></p>
+<p>不难发现无论如何，<code>16QAM</code>的最短欧式距离总是比后者更大</p>
+<p>而（允许我再carry一遍）</p>
+<p><a href="https://my.feishu.cn/docx/HGlTdLtAnoMcz7x1hXpcb1WenRb#share-JhwSd5zQksT0RFbkBqpc0wdPn1f">飞书同步引用原文（block: JhwSd5zQksT0RFbkBqpc0wdPn1f）</a></p>
+<p><code>QAM</code>利用星座图内部，使得平均功率下降</p>
+<p>于是，在平均功率相同的情况下</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-W4f4bFdYOo3sPbxrEdXcMor4nFg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-W4f4bFdYOo3sPbxrEdXcMor4nFg.png"></a></p>
+<p><code>QAM</code>WIN🤪</p>
+<p>进一步的，星座点的分布也有考究。具体而言有以下准则</p>
+<ul>
+<li>欧式距离应大，平均功率应小</li>
+<li>振幅环/相位个数应少，有利于实现自动增益控制/载波相位跟踪</li>
+</ul>
+<blockquote>
+<p>目前主流有星型与方型俩种，星型的性能更优，但代价更高</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ChffbotOkoJpG9x8aubcBJOBnEg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-ChffbotOkoJpG9x8aubcBJOBnEg.png"></a></p>
+<hr>
+<h4 id="qam_1">QAM实现<a class="headerlink" href="#qam_1" title="Permanent link">¶</a></h4>
+<p>我们希望同时控制振幅与相位，于是码元可表示为</p>
+<div class="arithmatex">\[\boxed{e_k(t)=A_k\cos(\omega_ct+\theta_k)}\quad kT_B&lt;t\leq(k+1)T_B\]</div>
+<p>展开后</p>
+<div class="arithmatex">\[\boxed{e_k\left(t\right)=X_k\cos\omega_ct+Y_k\sin\omega_ct}\]</div>
+<div class="arithmatex">\[{X_k=A_kcos\theta_k,~Yk=-A_ksin\theta_k}\]</div>
+<p>仔细看，<span class="arithmatex">\(X_k\)</span><span class="arithmatex">\(Y_k\)</span>不正是横纵坐标嘛</p>
+<p>也就是说，问题转为控制两个坐标值，即二维幅值</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IOQLbGM6SoBYcSxSazlcrfT3nRc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-IOQLbGM6SoBYcSxSazlcrfT3nRc.png"></a></p>
+<p>于是想到他们的取值各有<code>4</code>个，即<span class="arithmatex">\(\{\pm 1 ,\pm 3\}\)</span>（这正式4ASK的电平取值）</p>
+<p>而16QAM的每个点可有<span class="arithmatex">\(\log_216=4bit\)</span>，2位又正好可译码为4种可能</p>
+<p>不妨对半分到I/Q路，两路正交的4ASK信号叠加，实现2-4电平转换下正交载波调制</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KGqkbAU6yoIt0WxW1b0chtZPnie.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-KGqkbAU6yoIt0WxW1b0chtZPnie.png"></a></p>
+<p><span class="arithmatex">\(X(t)\)</span>和<span class="arithmatex">\(Y (t)\)</span>分别与相互正交的两路载波相乘（调制），形成两路互为正交的4ASK信号，最后将两路信号相加即可得到16QAM信号  </p>
+<blockquote>
+<p>2-4电平转换一般使用格雷码，以保证相邻符号仅一位不同</p>
+</blockquote>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-N7y8bIHaeoyuVjxyVA2cxMSUnje.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-N7y8bIHaeoyuVjxyVA2cxMSUnje.png"></a></p>
+<p>解调端在混频、匹配滤波、符号定时采样（忘记概念自觉面壁查百度）后进行4电平判决、4-2电平恢复与并串转换</p>
+<blockquote>
+<p>注意，码元符号数变为原来的两倍，并行序列速度是减半的</p>
+</blockquote>
+<hr>
+<h4 id="_48">频谱特征<a class="headerlink" href="#_48" title="Permanent link">¶</a></h4>
+<p><strong>谱零点带宽</strong></p>
+<div class="arithmatex">\[B_{\mathrm{MQAM}}=2R_{_B}=\frac{2R_{_b}}{\log_{_2}M}\]</div>
+<p><strong>频带利用率</strong></p>
+<div class="arithmatex">\[\eta_{\mathrm{MQAM}}=\frac{R_{b}}{B}=2\times\frac{1}{2}\log_{2}L=\frac{1}{2}\log_{2}M\quad\mathrm{(bps/Hz)}\]</div>
+<p>实际上，在<code>2-L电平</code>转换后需要对基带信号脉冲成型，考虑滚降系数为<span class="arithmatex">\(\alpha\)</span>的<code>RC Filter</code><br>
+有带宽与频带利用率</p>
+<div class="arithmatex">\[B=(1+\alpha)R_{B}=\frac{(1+\alpha)R_{b}}{\log_{2}M}\]</div>
+<div class="arithmatex">\[\eta_{\mathrm{b}}=\frac{\log_{2}M}{(1+\alpha)}\]</div>
+<hr>
+<h3 id="ofdm">OFDM<a class="headerlink" href="#ofdm" title="Permanent link">¶</a></h3>
+<p>正交频分复用，Aka Orthogonal Frequency Division Multiplexing，是一种典型的多载波调制<br>
+具有较强的抗多径传播和抗频率选择性衰落的能力以及较高的频谱利用率，在高速无线通信系统中得到了广泛应用</p>
+<div class="admonition tip">
+<p class="admonition-title">题外话 | Orthogonal 与 Quadrature</p>
+<p>同样都是正交，为什么用不同的单词？</p>
+<ul>
+<li>Quadrature更强调垂直概念，即信号间相位相差90°，比如QAM中的同向与正交载波分量</li>
+<li>Orthogonal则倾向于正交，即内积为零，如$\sin wt <span class="arithmatex">\(与\)</span>\sin 2wt $<br>
+所以你看见的子载波间隔是<span class="arithmatex">\(1/T_B\)</span>而不是90°</li>
+</ul>
+</div>
+<h4 id="why">WHY 多载波调制？<a class="headerlink" href="#why" title="Permanent link">¶</a></h4>
+<p>对于单载波调制来说，越高的码元速率意味着时域的缩短，即频域展宽</p>
+<p>而随参信道的信道特征自带滤波，引起时域延拓带来的ISI（虽然也可以通过均衡补偿）</p>
+<p>同时，<span class="arithmatex">\(T_B &lt; \sigma_\tau\)</span>，会导致信号的频选衰落</p>
+<p>能否高效地利用频率呢？</p>
+<p>多载波调制（本质是频分复用）应运而生，将信道划分为子信道，把各路低速子数据流调制到各个子载波上</p>
+<div class="admonition success">
+<p class="admonition-title">多载波调制的优势</p>
+<ul>
+<li>降速分频，规避频率选择性衰落</li>
+<li>分集，增强抗干扰能力（子信道的均衡也更为容易）</li>
+<li>灵活，高评估信道可使用更高阶调制</li>
+</ul>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WGoCblXbOoN8QyxuIcXcTQP2nGe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WGoCblXbOoN8QyxuIcXcTQP2nGe.png"></a></p>
+<p>而满足任意两个子载波正交的多载波调制即为<code>OFDM</code></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WBfabHwLuoMzDOxJfLrcq8cWnGe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-WBfabHwLuoMzDOxJfLrcq8cWnGe.png"></a></p>
+</div>
+<hr>
+<h4 id="ofdm_1">OFDM表达式<a class="headerlink" href="#ofdm_1" title="Permanent link">¶</a></h4>
+<p>设共有<code>N</code>个子信道，每个信道的子载波为</p>
+<div class="arithmatex">\[x_{k}(t)=B_{k}\cos(2\pi f_{k}t+\varphi_{k})\quad k={0},{1},{2}\cdots,N-{1}\]</div>
+<p>则此OFDM信号可表示为</p>
+<div class="arithmatex">\[e(t)=\sum_{k=0}^{N-1}x_{k}(t)=\sum_{k=0}^{N-1}B_{k}\cos(2\pi f_{k}t+\varphi_{k})\]</div>
+<p>根据欧拉公式，余弦项可展开为</p>
+<div class="arithmatex">\[x_k(t)=\frac{B_k}{2}\left[e^{j(2\pi f_kt+\varphi_k)}+e^{-j(2\pi f_kt+\varphi_k)}\right]\]</div>
+<p>引入复数项</p>
+<div class="arithmatex">\[\mathbf{B}_k=|B_k|e^{j\varphi_k}\]</div>
+<p>则可改写为</p>
+<div class="arithmatex">\[x_k(t)=\frac{1}{2}\left(\mathbf{B}_ke^{j2\pi f_kt}+\mathbf{B}_k^*e^{-j2\pi f_kt}\right)\]</div>
+<p>后半项为负频部分。将双边谱变为单边谱，幅值翻倍，有</p>
+<div class="arithmatex">\[x_k(t)=\mathbf{B}_ke^{j2\pi f_kt}\]</div>
+<p>将所有实信号叠加</p>
+<div class="arithmatex">\[e(t)=\sum_{k=0}^{N-1}\mathbf{B}_{k}e^{j(2\pi f_{k}t+\varphi_{k})}\]</div>
+<blockquote>
+<p>此处是否能回忆起<code>DFT</code>？</p>
+</blockquote>
+<hr>
+<h4 id="ofdm_2">OFDM正交条件<a class="headerlink" href="#ofdm_2" title="Permanent link">¶</a></h4>
+<p>为了规避ICI，需要对子载波分布提出要求</p>
+<p>互相间隔一定距离是可行的，但不如两两正交来的天才🤣</p>
+<p>具体条件为</p>
+<div class="arithmatex">\[\int_{0}^{T_{B}}\cos(2\pi f_{k}t+\varphi_{k})\cos(2\pi f_{i}t+\varphi_{i})dt=0\]</div>
+<blockquote>
+<p>此处的<span class="arithmatex">\(T_B\)</span>为频分复用后子载波宽度而非数据流的比特宽度<span class="arithmatex">\(T_s\)</span></p>
+</blockquote>
+<p>积化和差得到</p>
+<div class="arithmatex">\[\frac{1}{2}\int_{0}^{T_{B}}\{\cos[(2\pi(f_{k}-f_{i})t+\varphi_{k}-\varphi_{i}]+\cos[(2\pi(f_{k}+f_{i})t+\varphi_{k}+\varphi_{i}]\}dt=0\]</div>
+<p>妙妙积分后有</p>
+<div class="arithmatex">\[\frac{\sin\left[2\pi(f_{k}+f_{i})T_{z}+\varphi_{k}+\varphi_{i}\right]}{2\pi(f_{k}+f_{i})}+\frac{\sin\left[2\pi(f_{k}-f_{i})T_{z}+\varphi_{k}-\varphi_{i}\right]}{2\pi(f_{k}-f_{i})}-\frac{\sin\left(\varphi_{k}+\varphi_{i}\right)}{2\pi(f_{k}+f_{i})}-\frac{\sin\left(\varphi_{k}-\varphi_{i}\right)}{2\pi(f_{k}-f_{i})}=0\]</div>
+<p>注意到第一项与第三项、第二项与第四项分子相等即可，即</p>
+<div class="arithmatex">\[(f_k+f_i)T_B=m\quad\text{和}\quad(f_k-f_i)T_B=n\]</div>
+<p><code>m、n</code>均为整数</p>
+<p>换句话说，子载波需要满足</p>
+<div class="arithmatex">\[f_k=(m+n)/2T_\mathrm{B}\quad,\quad f_i=(m-n)/2T_\mathrm{B}\]</div>
+<p>诶🤓，那最小的子载波间隔不就是</p>
+<div class="arithmatex">\[\boxed{\Delta f_{\min}=1/T_{\mathrm{B}}}\]</div>
+<p>介就是正交条件啦</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BwwobuMmAo5w0lxtgZKctPE3nCg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-BwwobuMmAo5w0lxtgZKctPE3nCg.png"></a></p>
+<blockquote>
+<p>与无ISI抽样判决有点点相似</p>
+</blockquote>
+<p>解调端利用正交特性将其他信号抑制为0，从而分离信号</p>
+<hr>
+<h4 id="ofdm_3">OFDM优缺点<a class="headerlink" href="#ofdm_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>规避ISI，减小ICI，同时还提高了频谱利用率</li>
+<li>灵活，可基于各个子载波所处信道特性做出调制方式的调整</li>
+<li>同步严苛，对偏差时延容忍度低</li>
+</ul>
+<hr>
+<h4 id="_49">频带利用率<a class="headerlink" href="#_49" title="Permanent link">¶</a></h4>
+<p>N路子载波，子载波码元间隔为<span class="arithmatex">\(T_B\)</span>，均采用M进制调制，则占用带宽为</p>
+<div class="arithmatex">\[B_{\mathrm{OFDM}}=\frac{N+1}{T_{\mathrm{B}}}\quad\mathrm{(Hz)}\]</div>
+<p>OFDM信号的传信率为</p>
+<div class="arithmatex">\[NR_{b}=N\cdot \frac{1}{T_B}\cdot \log_2M\]</div>
+<p>频带利用率为</p>
+<div class="arithmatex">\[\eta_{\mathrm{OFDM}}=\frac{R_b}{B_{\mathrm{OFDM}}}=\frac{N/T_\mathrm{B}}{B_{\mathrm{OFDM}}}\cdot\log_2M=\frac{N}{N+1}\log_2M\quad\mathrm{(bps/Hz)}\]</div>
+<p>当N很大时</p>
+<div class="arithmatex">\[\eta_{\mathrm{OFDM}}\approx\log_2M\quad\mathrm{(bps/Hz)}\]</div>
+<p>而单载波下的频带利用率为</p>
+<div class="arithmatex">\[\eta_\mathrm{b}=\frac{N/T_\mathrm{B}}{2N/T_\mathrm{B}}\cdot\log_2M=\frac{1}{2}\log_2M\quad\mathrm{(bps/Hz)}\]</div>
+<p>不难注意到，<code>OFDM</code>的频带利用率几乎翻倍</p>
+<hr>
+<h4 id="ofdm_4">OFDM实现方式<a class="headerlink" href="#ofdm_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>利用DFT进行多载波调制，利用CP消除<code>ISI与ICI</code></p>
+</li>
+<li>
+<p>注意，这里的ISI指的是多径效应引发的符号间干扰，而非信道抑制高频时域延拓造成的码间串扰</p>
+</li>
+<li>OFDM正交性对信号质量的高要求要求零ISI，虽然CP有降速、冗余的缺点，它仍起到石破天惊的作用</li>
+</ul>
+<p>易知OFDM信号可表示为承载符号序列的不同子载波的叠加</p>
+<div class="arithmatex">\[e(t)=\sum_{k=0}^{N-1}x_{k}(t)=\sum_{k=0}^{N-1}B_{k}\cos(2\pi f_{k}t+\varphi_{k})\]</div>
+<p>其中,各路子载波表示为</p>
+<div class="arithmatex">\[f_k=f_c+k\frac{1}{T_B}\quad k=0,\cdots N-1\]</div>
+<p>代入得</p>
+<div class="arithmatex">\[e(t)=\sum_{k=0}^{N-1}\mathbf{B}_{k}e^{j(2\pi f_{k}t+\varphi_{k})}=\sum_{k=0}^{N-1}\mathbf{B}_{k}e^{j(2\pi f_ct+\varphi_{k})}e^{j2\pi \frac{k}{T_B}t}\]</div>
+<blockquote>
+<p>关键来了</p>
+</blockquote>
+<p>重点关注<span class="arithmatex">\(e^{j2\pi \frac{k}{T_B}t}\)</span>项。OFDM中子载波宽度<span class="arithmatex">\(T_B=MT_S\)</span>，而这个M与子载波数量N，即求和标一致</p>
+<blockquote>
+<p>回忆，DFT的<code>H矩阵</code>是个方阵，即序列长度与DFT点数一致，否则需要补零</p>
+</blockquote>
+<p>统一变量，<span class="arithmatex">\(T_B=NT_S\)</span>。离散化采样，得</p>
+<div class="arithmatex">\[e[n\cdot T_s]=\sum_{k=0}^{N-1}\mathbf{B}_{k}e^{j(2\pi f_cn\cdot T_s+\varphi_{k})}e^{j2\pi \frac{k}{NT_s}n\cdot T_s}=\sum_{k=0}^{N-1}\mathbf{B}_{k}e^{j(2\pi f_cn\cdot T_s+\varphi_{k})}W_N^{-nk}\]</div>
+<div class="admonition quote">
+<p class="admonition-title">求和N为序列长度，旋转因子幂上N为DFT点数</p>
+<div class="arithmatex">\[\begin{array}{c}{{\displaystyle X\left(k\right)=\sum_{n=0}^{N-1}x\left(n\right)W_{N}^{n k}R_{N}\left(k\right)=\widetilde{X}\left(k\right)R_{N}\left(k\right)}}\\ {{\displaystyle x\left(n\right)=\frac{1}{N}\sum_{k=0}^{N-1}X\left(k\right)W_{N}^{-n k}R_{N}\left(n\right)=\widetilde{x}\left(n\right)R_{N}\left(n\right)}}\end{array}\]</div>
+<p>其中 <span class="arithmatex">\(x((n))_{N}\)</span> 为取模操作，映射到主值区间</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-S8cwbiDhdoyIV0xwGtPc5QQonNe.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-S8cwbiDhdoyIV0xwGtPc5QQonNe.png"></a></p>
+<p>莫不是和IDFT一模一样</p>
+<p>至此，我们知道的信道输入信号的表达式，那么输出呢？</p>
+<p>不考虑噪声，输出仅受信道特征影响</p>
+<div class="arithmatex">\[\begin{aligned}&amp;y[n]&amp;&amp;=\quad\tilde{x}[n]*h[n]\\&amp;&amp;&amp;=\sum_{k=0}^{\mu-1}h[k]\tilde{x}[n-k]\\&amp;&amp;&amp;=\sum_{k=0}^{\mu-1}h[k]x[n-k]_{N}\\&amp;&amp;&amp;=\quad x[n]\otimes h[n]\end{aligned}\]</div>
+<p>离散下，为圆周卷积</p>
+<p>而频域为DFT变换乘积</p>
+<div class="arithmatex">\[Y[i]=\mathrm{DFT}\{y[n]=x[n]\otimes h[n]\}=X[i]H[i],0\leq i\leq N-1\]</div>
+<p>在数字信号处理中，我们用线性卷积计算圆周卷积和（只要圆周卷积点数够多即视为等价）</p>
+<p>其中，<span class="arithmatex">\(h[n]\)</span>为<span class="arithmatex">\(\mu\)</span>点信道响应，<span class="arithmatex">\((x[n])_N\)</span>为N点输入</p>
+<blockquote>
+<p>诶，这里的<span class="arithmatex">\(\mu\)</span>是甚么？不得不提到循环前缀</p>
+</blockquote>
+</div>
+<hr>
+<h5 id="_50">循环前缀<a class="headerlink" href="#_50" title="Permanent link">¶</a></h5>
+<blockquote>
+<p>Cyclic Prefix,CP</p>
+</blockquote>
+<p>参考：<a href="https://blog.csdn.net/weixin_42227141/article/details/83988746">多径效应、符号内干扰、符号间干扰ISI、ICI-CSDN博客</a></p>
+<p>为了抵消掉非理想信道产生的码间串扰（多径效应）和帧间干扰，循环前缀将N长度序列的后<span class="arithmatex">\(\mu\)</span>个点拿到前面</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Hm4objWcdoUxA3xxZiScGc0mnze.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-Hm4objWcdoUxA3xxZiScGc0mnze.png"></a></p>
+<p>其中，<span class="arithmatex">\(\mu = \frac{T_m}{T_s}\)</span>，为信道时延与离散序列采样时间的比值，即最大时延扩展点数</p>
+<blockquote>
+<p>所以信道长度为<span class="arithmatex">\(\mu\)</span>点，以表示时延</p>
+</blockquote>
+<p>那么，凭什么把后面一坨挪到前面就可以解决ISI和ICI了呢？</p>
+<p>先要对这俩干扰作<code>Definition</code></p>
+<p>首先，OFDM中的干扰分为3种：符号内干扰、ISI和ICI</p>
+<ul>
+<li>符号内干扰是由于信道的频率选择性，同一符号内不同频率分量到达接收端时信号衰减不一样，因此会产生误差。一般通过高速率数据流进行串/并转换或者信道均衡/信道估计来消除，此处不再赘述</li>
+<li>符号间干扰（Symbol Interference）和之前我们挂在嘴边的码间串扰是两个不同的概念<br>
+具体而言，ISI是对于某一个子载波因为多径传输造成的第<code>i</code>条路径信号对第<code>1</code>条路径造成的影响<br>
+并且我们认为第<code>i</code>条路径传送的信号相比第<code>1</code>条路径来讲具有最大的时延（最后一条到达的路径）</li>
+<li>信道干扰（Carrier Interference）在理论模型里面是不存在的。但是实际的系统因为子载波的相互独立是存在时延的，从而引起非正交</li>
+</ul>
+<hr>
+<p>先看ISI的解决方案，灰常简单，在每个符号前延时</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-P3Y2byfKtoyR3cxfc6Vc4gUDnOd.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-P3Y2byfKtoyR3cxfc6Vc4gUDnOd.png"></a></p>
+<p>提供一段空窗期，使得其他径的第<code>k</code>个符号不影响第<code>1</code>径的第<code>k+1</code>个符号</p>
+<p>这个空窗长度即为<span class="arithmatex">\(\mu\)</span>，最大附加时延</p>
+<hr>
+<p>但仅仅什么都不传并不能解决ICI</p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MrxEb3gPno3OEwxhDj4c56QnnhA.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-MrxEb3gPno3OEwxhDj4c56QnnhA.png"></a></p>
+<p>由于时延，两本正交的子载波因为时延，其一必然出现空值的现象，则两载波非正交，产生载波间干扰</p>
+<p>解决方案也是自然的，即将空值换成载波值</p>
+<p>回忆李军老师告诉我们的，DFT最重要的性质是什么？对啦，隐周期性</p>
+<p>与其说是将符号最后一部分搬移到前面，不如说是周期延拓后重新选取区间</p>
+<blockquote>
+<p>这就是其循环的由来</p>
+</blockquote>
+<p>如此，既能保证载波的完美正交，还实现了序列的连续性，winwin！（哦顺便还解决了<code>ISI</code>的问题）</p>
+<hr>
+<h5 id="_51">实现框图<a class="headerlink" href="#_51" title="Permanent link">¶</a></h5>
+<p>当划分的子信道N数足够大时，各子信道带宽很窄，于是每个子信道的传输函数可近似看成幅度频率平坦，相频线性且相互独立，可以实现无码间干扰传输的理想信道</p>
+<p>从时域上看，多载波调制系统中的串并转换等效于延长了符号周期，从而提高了系统的抗脉冲噪声干扰的性能，并增强了系统的抗快衰落的能力，多载波技术不仅使通信系统降低了对均衡器复杂性的要求，而且提高了系统灵活适应信道的能力</p>
+<p>但由于当时实现的复杂度太大，使这一先进的传输方式没有得到广泛应用</p>
+<p>直到，FFT带着它的蝶形运算闪亮登场</p>
+<p><strong>发射与接收框图</strong></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DP1mbaAZUo3bmmxznGscQHZdnlb.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-DP1mbaAZUo3bmmxznGscQHZdnlb.png"></a></p>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GIAvb5z9VokVnHx7dYmc7S05nbc.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GIAvb5z9VokVnHx7dYmc7S05nbc.png"></a></p>
+<p>有意思的是，DFT中的H矩阵作为正交矩阵，有</p>
+<div class="arithmatex">\[H^{-1}=H^{T}\]</div>
+<p>这就规避了求逆带来的高复杂度</p>
+<hr>
+<h5 id="_52">应用<a class="headerlink" href="#_52" title="Permanent link">¶</a></h5>
+<p><a class="glightbox" href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GbqWb96OfomYQjx9gsZcfzMPnjg.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" class="zoom" src="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20260721-wc-fixed-GbqWb96OfomYQjx9gsZcfzMPnjg.png"></a></p>
+<hr></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_datetime">2026-07-21 22:18:53</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Looking for your feedback!
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 9v12H1V9zm4 12a2 2 0 0 1-2-2V9c0-.55.22-1.05.59-1.41L14.17 1l1.06 1.06c.27.27.44.64.44 1.05l-.03.32L14.69 8H21a2 2 0 0 1 2 2v2c0 .26-.05.5-.14.73l-3.02 7.05C19.54 20.5 18.83 21 18 21zm0-2h9.03L21 12v-2h-8.79l1.13-5.32L9 9.03z"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15V3h4v12zM15 3a2 2 0 0 1 2 2v10c0 .55-.22 1.05-.59 1.41L9.83 23l-1.06-1.06c-.27-.27-.44-.64-.44-1.06l.03-.31.95-4.57H3a2 2 0 0 1-2-2v-2c0-.26.05-.5.14-.73l3.02-7.05C4.46 3.5 5.17 3 6 3zm0 2H5.97L3 12v2h8.78l-1.13 5.32L15 14.97z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              O(∩_∩)O谢谢啦~
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              嘿呀嘿呀，努力搬砖...
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../WC04/" class="md-footer__link md-footer__link--prev" aria-label="上一页: WC04 多径传播与小尺度衰落">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 18V6h2v12zm3.5-6L18 6v12z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                WC04 多径传播与小尺度衰落
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../WC06/" class="md-footer__link md-footer__link--next" aria-label="下一页: WC06 抗衰落技术">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                WC06 抗衰落技术
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 18h2V6h-2M6 18l8.5-6L6 6z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 | powered by dixiLOG | All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="/feed_rss_created.xml" target="_blank" rel="noopener" title="RSS订阅" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24zM3.291 17.415a3.3 3.3 0 0 1 3.293 3.295A3.303 3.303 0 0 1 3.283 24C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295M15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/dixiLOG" target="_blank" rel="noopener" title="我滴GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<huang1444127184@gmail.com>" target="_blank" rel="noopener" title="我滴邮箱 | huang1444127184@gmail.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085545.png" target="_blank" rel="noopener" title="我滴QQ" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/20250311085606.png" target="_blank" rel="noopener" title="我滴微信" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.33.33 0 0 0 .167-.054l1.903-1.114a.86.86 0 0 1 .717-.098 10.2 10.2 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348M5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18m5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.72.72 0 0 1 .598.082l1.584.926a.3.3 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.6.6 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tracking", "navigation.footer", "search.highlight", "navigation.indexes", "navigation.prune", "toc.follow", "navigation.top", "content.code.annotate", "content.tooltips", "search.suggest", "search.share", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="https://imgbb.com/upload.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

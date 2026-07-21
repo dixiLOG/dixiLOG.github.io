@@ -304,6 +304,34 @@
         - NBU-NOTEBOOK/linearAlgebra.md
         - NBU-NOTEBOOK/mathematics.md
         - NBU-NOTEBOOK/analogElec.md
+        - 无线通信笔记:
+          - NBU-NOTEBOOK/wirelessCommunication/index.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC01.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC02.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC03.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC04.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC05.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC06.md
+          - NBU-NOTEBOOK/wirelessCommunication/WC07.md
+        - 无线传感器网络笔记:
+          - NBU-NOTEBOOK/wirelessSensorNetwork/index.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN01.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN02.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN03.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN04.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN05.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN06.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN07.md
+          - NBU-NOTEBOOK/wirelessSensorNetwork/WSN08.md
+        - 信息论与编码笔记:
+          - NBU-NOTEBOOK/informationTheoryCoding/index.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC01.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC02.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC03.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC04.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC05.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC06.md
+          - NBU-NOTEBOOK/informationTheoryCoding/ITC07.md
 
     - 随手记:
         - 随手记/index.md

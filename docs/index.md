@@ -763,8 +763,15 @@ title: DIXI的个人博客
         <li class="dixihome-update">
           <span class="dixihome-date">2026<br>07.21</span>
           <span class="dixihome-update-body">
-            <strong>NBU 笔记补入高数整理 <span class="dixihome-badge">DOCS</span></strong>
-            <span>新增 <a href="https://dixilog.github.io/NBU-NOTEBOOK/高数整理/">高数整理</a>，从函数与极限一路串到微分方程，并补齐相关图示。</span>
+            <strong>NBU 笔记集中补档，课程区基本收官 <span class="dixihome-badge">DOCS</span></strong>
+            <span>新增 <a href="https://dixilog.github.io/NBU-NOTEBOOK/mathematics/">高数速通</a>、<a href="https://dixilog.github.io/NBU-NOTEBOOK/linearAlgebra/">线代速通</a>、<a href="https://dixilog.github.io/NBU-NOTEBOOK/analogElec/">模电速通</a>，并补齐 <a href="https://dixilog.github.io/NBU-NOTEBOOK/wirelessCommunication/">无线通信笔记</a>、<a href="https://dixilog.github.io/NBU-NOTEBOOK/wirelessSensorNetwork/">无线传感器网络笔记</a> 与 <a href="https://dixilog.github.io/NBU-NOTEBOOK/informationTheoryCoding/">信息论与编码笔记</a>。</span>
+          </span>
+        </li>
+        <li class="dixihome-update">
+          <span class="dixihome-date">2026<br>07.21</span>
+          <span class="dixihome-update-body">
+            <strong>荒唐言补入《逻辑新引》概念笔记 <span class="dixihome-badge">DOCS</span></strong>
+            <span><a href="https://dixilog.github.io/changheji/bookReport/">荒唐言</a> 继续补档，新增 <a href="https://dixilog.github.io/changheji/bookReport/%E3%80%8A%E9%80%BB%E8%BE%91%E6%96%B0%E5%BC%95%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">《逻辑新引》概念笔记</a>，把读书笔记线再往前推了一格。</span>
           </span>
         </li>
         <li class="dixihome-update">
@@ -795,13 +802,6 @@ title: DIXI的个人博客
             <span><a href="https://dixilog.github.io/随手记/whywhy/offerTerms/">就业黑话</a> 单独成篇，继续整理求职场景里常见但不直说的表达。</span>
           </span>
         </li>
-        <li class="dixihome-update">
-          <span class="dixihome-date">2026<br>02.26</span>
-          <span class="dixihome-update-body">
-            <strong>长河集与随手记继续扩容 <span class="dixihome-badge">DOCS</span></strong>
-            <span>新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a>。</span>
-          </span>
-        </li>
       </ol>
 
       <div class="dixihome-archive">
@@ -810,6 +810,12 @@ title: DIXI的个人博客
             <span>展开查看更多历史装修</span>
           </summary>
           <div class="dixihome-archive-list">
+            <div class="dixihome-archive-item">
+              <span class="dixihome-archive-date">2026<br>02.26</span>
+              <ul>
+                <li>长河集新增 <a href="https://dixilog.github.io/changheji/GeminiCLI/">GeminiCLI</a>，并在随手记补入 <a href="https://dixilog.github.io/随手记/JHMath/">初中数学保命手册</a>。</li>
+              </ul>
+            </div>
             <div class="dixihome-archive-item">
               <span class="dixihome-archive-date">2025<br>12.23</span>
               <ul>

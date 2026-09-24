@@ -221,6 +221,7 @@
     javascript:
       - https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js
       - javascripts/extra.js
+    - javascripts/cloudflare-analytics.js  # Cloudflare Web Analytics
 
   # 额外的模板文件
   extra_templates:

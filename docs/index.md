@@ -672,7 +672,7 @@ title: DIXI的个人博客
       </div>
 
       <p class="dixihome-lead">
-        NBU 本科在读（自称 <em>NBUCETer</em>）
+        SEU 研究生在读 ， NBU 本科（自称 <em>NBUCETer</em>）
       </p>
     
       <ul class="dixihome-tags" aria-label="个人标签">

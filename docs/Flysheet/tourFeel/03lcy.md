@@ -102,6 +102,10 @@ B同学陶瓷的是电科信通院“雷达探测与成像技术”团队的老�
 
 - 微波的频段范围是多少？对应的波长是多少？
 
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E7%94%B5%E7%A7%91.jpg" alt="电科" width="60%">
+</div>
+
 ### SEU
 
 在结束杭高院之旅之后，我并未再获得任何夏令营的机会，因此也是在专心准备东南鲁汶的面试。不得不说，我的东南之旅异常坎坷。首先是报名之后发现群里报鲁汶的同学越来越多，再叠加上东南几乎算是最早的预推免了，很多同学可能会拿东南当保底，于是我开始担心鲁汶能否进面。
@@ -122,14 +126,18 @@ B同学陶瓷的是电科信通院“雷达探测与成像技术”团队的老�
 
 - 给你一个共栅共射级联放大电路，判断放大电路类型并画出它的等效交流通路,类似于下面这张图。
 
-![](https://github.com/xxlcy12345-oss/blogStatic/blob/main/%E5%9B%BE%E7%89%871.png)
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E5%9B%BE%E7%89%871.png" alt="图片 1" width="60%">
+</div>
 
 #### 面试问题（me）
 
 - 共源放大器和共漏放大器的特性是什么？各自的应用场合是什么？
 
 - 给你一个电路，分析它是什么类型的反馈电路，类似于下面这张图。
-![](https://github.com/xxlcy12345-oss/blogStatic/blob/main/%E5%9B%BE%E7%89%872.png)
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E5%9B%BE%E7%89%872.png" alt="图片 2" width="60%">
+</div>
 
 - 你为什么报考鲁汶方向？你做的东西和鲁汶方向有什么关联吗？
 

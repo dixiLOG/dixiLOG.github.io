@@ -172,7 +172,7 @@ B同学陶瓷的是电科信通院“雷达探测与成像技术”团队的老�
 东南微波专硕面试每人约15分钟，具体的面试流程是：进去首先进行两分钟自我介绍，然后翻译抽到的英文文献（同学C抽到的是关于波导的），后面就是开始轮流对着你的简历进行提问。
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E4%B8%9C%E5%8D%97.jpg" alt="东南" width="60%">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E4%B8%9C%E5%8D%97.jpg" alt="东南" width="40%">
 </div>
 
 ### TJU

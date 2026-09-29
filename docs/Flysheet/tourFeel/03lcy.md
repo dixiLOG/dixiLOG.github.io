@@ -64,7 +64,9 @@
 
 南航电信院开放日的基本流程与去年一致，没有专门的考核环节，7.11上午报到后下午可以选择两个自己感兴趣的实验室参观交流，参观完后还可以与自己的意向导师面谈，聊聊天。由于我对南航的研究方向并不是很感兴趣，后续预推免并未报考南航。南航预推免是去开放日的同学和没去开放日的同学分开进行面试的，面试形式为群面，总时间大概是30分钟左右。
 
-![](https://github.com/xxlcy12345-oss/blogStatic/blob/main/%E5%A4%A9%E5%85%83.jpg)
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E5%A4%A9%E5%85%83.jpg" alt="天元" width="60%">
+</div>
 
 ### UCAS
 

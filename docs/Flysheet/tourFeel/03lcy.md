@@ -247,7 +247,9 @@ B同学陶瓷的是电科信通院“雷达探测与成像技术”团队的老�
 
 - 最后，面试还是比较重要的，对于一些不看出身的学校（比如东南、北航等），进面之后，你的个人背景和一个完美的面试表现很大概率能帮助你拿到一个铁offer。同时，你也要有继续出发的勇气，不要因为一次的面试发挥失常否定了自己三年的努力，你可能只是当时状态不好而已。（面试也比较玄学，你也不知道面试老师究竟看重你的哪一点😂）
 
-![](https://github.com/xxlcy12345-oss/blogStatic/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260929173132_246_134.jpg)
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/xxlcy12345-oss/blogStatic@main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260929173132_246_134.jpg" alt="图片" width="60%">
+</div>
 
 ## 致谢
 

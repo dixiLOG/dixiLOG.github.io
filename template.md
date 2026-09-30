@@ -8,13 +8,15 @@
 ![](../img/zmbz.png){: .zoom}
 
 
-<center>
+ <!-- 图片居中 -->
+
+<div align="center" markdown="1">
 
 ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/202502101757.svg "封面"){style="zoom:75%;"}
 
-</center>
 
- 
+</div>
+
 <!--  卡片式超链接 -->
 
 <div class="flink-list">

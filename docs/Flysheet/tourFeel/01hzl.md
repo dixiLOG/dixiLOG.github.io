@@ -44,11 +44,11 @@
 
 午饭和晚饭都有饭票，下面是点的根本吃不完的鸡扒饭
 
-<center>
+<div align="center" markdown="1">
 
 ![](https://cdn.jsdelivr.net/gh/dixiLOG/blogStatic/RbF3bTHj9olmOrxx9ZdcBDmHnQh.jpg){style="zoom:25%;"}
 
-</center>
+</div>
 
 也许是判断失误，也可能是过于心急（没书读了)，我们太在意第二天的“面对面交流”，将其视为预推免的面试，导致院方的一点失误把我们当晚的心态搞崩
 
